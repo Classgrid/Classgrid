@@ -77,12 +77,12 @@ export function AgentRealWorkSection() {
                       <Files className="h-5 w-5" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-[16px] font-medium md:text-[17px]">Created 3 files</p>
+                      <p className="whitespace-nowrap text-[16px] font-medium md:text-[17px]">Created 3 files</p>
                       <p className="text-[14px] text-emerald-600 dark:text-emerald-400">Ready to download</p>
                     </div>
-                    <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-black/10 px-4 py-2 text-[14px] font-medium dark:border-white/15">
+                    <span aria-label="Download" className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-black/10 p-2.5 text-[14px] font-medium sm:px-4 sm:py-2 dark:border-white/15">
                       <Download className="h-4 w-4" />
-                      Download
+                      <span className="hidden sm:inline">Download</span>
                     </span>
                   </div>
 

@@ -82,7 +82,7 @@ export function AgentHeroSection() {
       </div>
 
       {/* ── Content ── */}
-      <div className="mx-auto flex max-w-[1728px] flex-col items-center px-5 pb-44 pt-24 text-center md:px-10 md:pt-[120px]">
+      <div className="mx-auto flex max-w-[1728px] flex-col items-center px-5 pb-32 pt-20 text-center md:px-10 md:pb-44 md:pt-[120px]">
         <img
           src="/logo.png"
           alt="Classgrid"
@@ -123,10 +123,10 @@ export function AgentHeroSection() {
         {/* "Trusted by top teams" strip */}
         <div className="cgh-rise mt-24 w-full md:mt-[110px]" style={{ animationDelay: "0.55s" }}>
           <p className="text-lg text-black/85 md:text-[22px]">Powered by leading AI models</p>
-          <ul className="mx-auto mt-10 flex max-w-[1600px] flex-wrap items-center justify-center gap-x-14 gap-y-8 md:mt-14 lg:justify-between lg:px-6">
+          <ul className="mx-auto mt-10 flex max-w-[1600px] flex-wrap items-center justify-center gap-x-5 gap-y-5 sm:gap-x-12 sm:gap-y-8 md:mt-14 lg:justify-between lg:px-6">
             {MODEL_MAKERS.map((maker) => (
-              <li key={maker.name} className="flex items-center gap-3 text-[26px] font-semibold tracking-[-0.02em] md:text-[32px]">
-                <span className="flex h-8 w-8 items-center justify-center overflow-hidden md:h-10 md:w-10">
+              <li key={maker.name} className="flex items-center gap-2 text-[18px] font-semibold tracking-[-0.02em] sm:gap-3 sm:text-[26px] md:text-[32px]">
+                <span className="flex h-6 w-6 items-center justify-center overflow-hidden sm:h-8 sm:w-8 md:h-10 md:w-10">
                   <img
                     src={maker.src}
                     alt=""
