@@ -204,7 +204,7 @@ export const placeholderHomePage = {
   whatsNew: homeCopy.whatsNew,
   heroPrimaryCtaLabel: heroContent.primaryCta,
   heroPrimaryCtaHref: "/#demo",
-  heroSecondaryCtaLabel: "View Platform Tour",
+  heroSecondaryCtaLabel: "Use Agent",
   heroSecondaryCtaHref: "/view-platform",
   empowerSection: {
     heading: "All-in-One ERP for Schools, Colleges & Coaching Institutes",
@@ -306,7 +306,7 @@ export const placeholderHomePage = {
   modulesCalloutTitle: "Experience the platform yourself",
   modulesCalloutBody:
     "Step inside Classgrid. Take an interactive tour through our real dashboards and see exactly how our 30+ modules work together.",
-  modulesCalloutCtaLabel: "View Platform Tour",
+  modulesCalloutCtaLabel: "Use Agent",
   modulesCalloutCtaHref: "/view-platform",
   stakeholderSectionHeading: "One system for every stakeholder",
   stakeholderSectionSubtext:
