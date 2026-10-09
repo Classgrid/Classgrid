@@ -90,7 +90,7 @@ export function ViewPlatformPreview() {
             }
           }}
           placeholder="Ask a question..."
-          className="w-full resize-none bg-transparent pt-4 pb-12 pr-32 sm:pr-60 pl-24 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none overflow-y-auto min-h-[56px] max-h-[180px] leading-relaxed"
+          className="w-full resize-none bg-transparent pt-4 pb-12 pl-4 pr-4 sm:pl-24 sm:pr-60 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none overflow-y-auto min-h-[56px] max-h-[180px] leading-relaxed"
         />
 
         {/* Bottom Left actions */}
@@ -131,7 +131,7 @@ export function ViewPlatformPreview() {
       <section className="relative pt-8 pb-12 md:pb-16">
         <div className="relative z-10 mx-auto max-w-[1400px] px-6">
           <div className="mx-auto w-full max-w-5xl">
-            <div className="flex flex-col overflow-hidden bg-background dark:bg-black rounded-2xl border border-border shadow-2xl h-[600px] transition-all relative">
+            <div className="flex flex-col overflow-hidden bg-background dark:bg-black rounded-2xl border border-border shadow-2xl h-[480px] md:h-[600px] transition-all relative">
               {/* Browser chrome */}
                 <div className="flex items-center gap-4 border-b border-border bg-muted/40 dark:bg-[#0a0a0a] px-4 py-2.5 shrink-0">
                   <div className="flex gap-1.5">

@@ -16,9 +16,11 @@ export function AgentFinalCtaSection() {
             <div aria-hidden className="pointer-events-none absolute -bottom-40 -right-16 h-[30rem] w-[30rem] rounded-full bg-[#c7d2fe]/55 blur-3xl dark:bg-[#6366f1]/20" />
 
             <div className="relative">
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[22px] bg-white shadow-lg ring-1 ring-black/5 md:h-24 md:w-24">
-                <img src="/logo.png" alt="Classgrid" className="h-11 w-11 object-contain md:h-14 md:w-14" />
-              </div>
+              <img
+                src="/logo.png"
+                alt="Classgrid"
+                className="mx-auto h-[72px] w-[72px] object-contain drop-shadow-[0_10px_24px_rgba(30,27,75,0.28)] md:h-[88px] md:w-[88px]"
+              />
 
               <h2 className="mx-auto mt-10 max-w-4xl text-balance text-4xl font-medium leading-[1.06] tracking-[-0.035em] md:text-6xl lg:text-[72px]">
                 Start working with Classgrid AI
