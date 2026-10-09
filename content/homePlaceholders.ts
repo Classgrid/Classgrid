@@ -114,7 +114,7 @@ export const placeholderChromeContent: ChromeContent = {
       sections: [
         {
           links: [
-            { label: "View Platform", href: "/view-platform" },
+            { label: "Agent", href: "/agent" },
             { label: "Features", href: "/features" },
             { label: "Modules", href: "/modules" },
             { label: "Integrations", href: "/#integrations" },
@@ -205,7 +205,7 @@ export const placeholderHomePage = {
   heroPrimaryCtaLabel: heroContent.primaryCta,
   heroPrimaryCtaHref: "/#demo",
   heroSecondaryCtaLabel: "Use Agent",
-  heroSecondaryCtaHref: "/view-platform",
+  heroSecondaryCtaHref: "/agent",
   empowerSection: {
     heading: "All-in-One ERP for Schools, Colleges & Coaching Institutes",
     description:
@@ -307,7 +307,7 @@ export const placeholderHomePage = {
   modulesCalloutBody:
     "Step inside Classgrid. Take an interactive tour through our real dashboards and see exactly how our 30+ modules work together.",
   modulesCalloutCtaLabel: "Use Agent",
-  modulesCalloutCtaHref: "/view-platform",
+  modulesCalloutCtaHref: "/agent",
   stakeholderSectionHeading: "One system for every stakeholder",
   stakeholderSectionSubtext:
     "Classgrid connects students, staff, leadership, and compliance into one unified system.",
@@ -514,7 +514,7 @@ function ensureCorrectViewPlatformLink(menuItems?: ChromeMenuItem[]): ChromeMenu
           ...section,
           links: section.links?.map(link => {
             if (link.label?.toLowerCase().includes("view platform")) {
-              return { ...link, href: "/view-platform" };
+              return { ...link, href: "/agent" };
             }
             return link;
           })
@@ -522,7 +522,7 @@ function ensureCorrectViewPlatformLink(menuItems?: ChromeMenuItem[]): ChromeMenu
       };
     }
     if (item.label?.toLowerCase().includes("view platform")) {
-      return { ...item, href: "/view-platform" };
+      return { ...item, href: "/agent" };
     }
     return item;
   });

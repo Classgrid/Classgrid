@@ -81,10 +81,10 @@ export const pageMeta: Record<string, PageMeta> = {
     path: "/features",
   },
   viewPlatform: {
-    title: "View Platform",
+    title: "Classgrid AI Agent",
     description:
-      "Guided Classgrid product preview across student, faculty, parent, and admin experiences on one connected platform.",
-    path: "/view-platform",
+      "Use the Classgrid AI agent to research, analyse files, run code, build reports and send scheduled messages on WhatsApp.",
+    path: "/agent",
   },
   integrations: {
     title: "Integrations",

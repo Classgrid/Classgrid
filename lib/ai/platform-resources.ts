@@ -85,11 +85,11 @@ export const PLATFORM_RESOURCES: PlatformResource[] = [
     keywords: ["modules", "features", "product", "capabilities"],
   },
   {
-    label: "Platform Preview",
-    href: "/view-platform",
-    description: "Guided preview of Classgrid platform experiences across roles.",
+    label: "Classgrid AI Agent",
+    href: "/agent",
+    description: "Try the Classgrid AI agent: research, files, code, reports and scheduled WhatsApp messages.",
     category: "product",
-    keywords: ["platform", "preview", "dashboard", "product tour"],
+    keywords: ["agent", "ai", "assistant", "platform", "preview"],
   },
   {
     label: "Solutions",

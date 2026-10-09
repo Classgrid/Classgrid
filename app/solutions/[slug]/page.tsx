@@ -143,7 +143,7 @@ export default async function SolutionPage({ params }: PageProps) {
         }
         faqs={Array.isArray(page?.faqs) ? page.faqs : []}
         primaryCtaLabel="View Platform"
-        primaryCtaHref="/view-platform"
+        primaryCtaHref="/agent"
         trustBadges={solutionTrustBadges}
         clientLogos={solutionClientLogos}
         impactMetrics={solutionImpactMetrics}

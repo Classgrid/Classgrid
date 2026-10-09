@@ -93,7 +93,7 @@ export default async function ProductModuleDetailPage({ params }: PageProps) {
           relatedHelpArticles={Array.isArray(mod?.relatedHelpArticles) ? mod.relatedHelpArticles : []}
           relatedChangelogs={Array.isArray(mod?.relatedChangelogs) ? mod.relatedChangelogs : []}
           primaryCtaLabel="View Platform"
-          primaryCtaHref="/view-platform"
+          primaryCtaHref="/agent"
           allModules={allModules}
           currentSlug={slug}
         />

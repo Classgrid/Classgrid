@@ -12,7 +12,7 @@ const staticRoutes = [
   "/compare",
   "/contact",
   "/contact/sales",
-  "/view-platform",
+  "/agent",
   "/pricing",
   "/reviews",
   "/support",

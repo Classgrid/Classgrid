@@ -30,7 +30,7 @@ export const headerNav = {
     },
   ],
   platformLinks: [
-    { label: "Platform Overview", href: "/view-platform" },
+    { label: "Platform Overview", href: "/agent" },
     { label: "Pricing", href: "/pricing" },
     { label: "Integrations", href: "/integrations" },
     { label: "Blog", href: "/blog" },
@@ -40,7 +40,7 @@ export const headerNav = {
     { label: "About", href: "/about" },
   ],
   mobileLinks: [
-    { label: "Modules", href: "/view-platform" },
+    { label: "Modules", href: "/agent" },
     { label: "Institutions", href: "/institutions/college" },
     { label: "Platform", href: "/pricing" },
     { label: "Demo", href: "/#demo" },
@@ -122,37 +122,37 @@ export const homeModuleHighlights = [
   {
     title: "Attendance Engine",
     description: "GPS and device-validated attendance with appeals and analytics.",
-    href: "/view-platform",
+    href: "/agent",
   },
   {
     title: "Result Engine",
     description: "CSV upload to SGPA, CGPA, rank, and marksheet generation.",
-    href: "/view-platform",
+    href: "/agent",
   },
   {
     title: "Online Exam Suite",
     description: "NTA-style exams, hall tickets, proctoring, and auto-grading.",
-    href: "/view-platform",
+    href: "/agent",
   },
   {
     title: "Fee Management",
     description: "Razorpay split settlements, ledgers, reminders, and receipts.",
-    href: "/view-platform",
+    href: "/agent",
   },
   {
     title: "Admission Engine",
     description: "Spot, merit, and CET workflows with parent OTP tracker.",
-    href: "/view-platform",
+    href: "/agent",
   },
   {
     title: "Real-Time Chat",
     description: "Role-isolated communication replacing fragmented chat groups.",
-    href: "/view-platform",
+    href: "/agent",
   },
   {
     title: "AI Viva",
     description: "Practice, exam, and rapid-fire oral assessments with scoring.",
-    href: "/view-platform",
+    href: "/agent",
   },
   {
     title: "Security Core",

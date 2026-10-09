@@ -297,7 +297,7 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
             sessionStatus={status}
           />
         </Suspense>
-        {pathname !== "/blog/unsubscribed" && pathname !== "/careers" && pathname !== "/brand" && pathname !== "/reviews" && !pathname.startsWith("/view-platform") && <RouteBreadcrumb />}
+        {pathname !== "/blog/unsubscribed" && pathname !== "/careers" && pathname !== "/brand" && pathname !== "/reviews" && !pathname.startsWith("/agent") && <RouteBreadcrumb />}
         <SmoothScrollHandler />
         <main className={`flex-1 ${isDocsRoute ? '' : 'overflow-x-clip'}`}>{children}</main>
         {(

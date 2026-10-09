@@ -149,7 +149,7 @@ WEBSITE PAGES AND RESOURCES:
 - FAQ: /faq — Migration, security, pricing, and workflow questions
 - Documentation: /docs — Official technical documentation, platform guides, and API references
 - Product Modules: /product/modules — Full module directory (NOTE: There is NO /features page. Always link to /product/modules instead.)
-- View Platform: /view-platform — Guided product preview across roles
+- Agent: /agent — Try the Classgrid AI agent (research, files, code, scheduled messages)
 - Integrations: /integrations — Payment, communication, cloud, AI services
 - Institutions: /institutions — Choose institution profile
 - Institutions/College: /institutions/college
