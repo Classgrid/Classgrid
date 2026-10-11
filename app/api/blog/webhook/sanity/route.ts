@@ -148,6 +148,11 @@ export async function POST(req: Request) {
             status: "pending",
             retry_count: 0,
             error_message: null,
+            // One row per document is reused: a new send must start from zero, otherwise the worker
+            // "resumes" from the old sent_count (e.g. 90) past the end of the list and sends nobody
+            sent_count: 0,
+            failed_count: 0,
+            processed_at: null,
             created_at: new Date().toISOString(),
           },
           { onConflict: "document_id" }
