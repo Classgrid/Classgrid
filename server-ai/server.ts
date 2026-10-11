@@ -1186,6 +1186,39 @@ app.post("/api/whatsapp-webhook", async (req, res) => {
           console.error(`[WhatsApp] Failed to send mark_as_read:`, err);
         }
 
+        // --- AI SWITCH ---
+        // WhatsApp AI is OFF unless WHATSAPP_AI_ENABLED=true. While off, every message gets a fixed reply that explains
+        // the chat.classgrid.in WhatsApp verification ("Hi" sent, now go back and tap Send OTP). The AI and /image code
+        // below stays as it is and runs again once the switch is turned on.
+        if (process.env.WHATSAPP_AI_ENABLED !== "true") {
+          const { pickLoginHelpReply } = require("../lib/whatsapp/login-help-bot");
+          const botReply: string | null = pickLoginHelpReply(fromNumber, text);
+          if (!botReply) {
+            console.log(`[WhatsApp] Login-help bot staying quiet for ${fromNumber} (too many messages).`);
+            return;
+          }
+          const botRes = await fetch(`https://graph.facebook.com/v19.0/${incomingPhoneId}/messages`, {
+            method: "POST",
+            headers: { "Authorization": `Bearer ${token}`, "Content-Type": "application/json" },
+            body: JSON.stringify({
+              messaging_product: "whatsapp",
+              recipient_type: "individual",
+              to: fromNumber,
+              type: "text",
+              text: { preview_url: false, body: botReply }
+            })
+          });
+          if (botRes.ok) {
+            usage.messageCount += 1;
+            await usage.save();
+            console.log(`[WhatsApp] ✅ Login-help bot reply sent to ${fromNumber}. Month usage: ${usage.messageCount} / 1000`);
+          } else {
+            console.error(`[WhatsApp] ❌ Login-help bot reply failed!`, JSON.stringify(await botRes.json().catch(() => ({}))));
+          }
+          return; // AI is off: skip image generation and the RAG answer
+        }
+        // ---------------------------------
+
         console.log(`[WhatsApp] Generating RAG Answer for ${fromNumber}...`);
 
         // --- WHATSAPP IMAGE GENERATION ---
