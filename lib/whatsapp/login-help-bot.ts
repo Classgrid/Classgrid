@@ -61,6 +61,9 @@ const NUMBER_TAKEN_MESSAGE = [
 const SLOW_DOWN_MESSAGE =
   "Got it! 🙂 We've already sent the steps above. Please go back to chat.classgrid.in and tap *Send OTP*. Your code will come here.";
 
+// Whole message is a greeting or "start" word (optionally + "classgrid"): always answer with the full steps
+const GREETING_ONLY =
+  /^(hi+|hii+|hello+|helo|hlo|hey+|hay|namaste|namaskar|good\s+(morning|afternoon|evening)|start|login|log\s?in|verify|sign\s?up)(\s+(classgrid|team|there))?[\s!.,🙏👋]*$/iu;
 const CODE_WORDS = /\b(otp|code|not\s+(received|receive|coming|came|getting)|didn'?t\s+(get|receive|come)|no\s+code|resend|expired?)\b/i;
 const HELP_WORDS = /\b(help|support|problem|issue|stuck|error|not\s+working|how)\b/i;
 const TAKEN_WORDS = /\b(already\s+linked|another\s+(account|email)|already\s+(used|registered))\b/i;
@@ -93,7 +96,8 @@ export function pickLoginHelpReply(fromNumber: string, text: string, now = Date.
     return SLOW_DOWN_MESSAGE;
   }
 
-  const t = String(text || "");
+  const t = String(text || "").trim();
+  if (GREETING_ONLY.test(t)) return FIRST_MESSAGE; // "hi", "hello classgrid" etc. always get the steps
   if (TAKEN_WORDS.test(t)) return NUMBER_TAKEN_MESSAGE;
   if (CODE_WORDS.test(t)) return CODE_HELP_MESSAGE;
   if (state.count === 1) return FIRST_MESSAGE;
