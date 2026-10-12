@@ -9,7 +9,6 @@ import {
   Library, 
   Pin,
   Clock,
-  MoreHorizontal,
   Bell,
   Paperclip,
   Mic,
@@ -197,7 +196,6 @@ export function ViewPlatformPreview() {
                     <div className="mt-auto border-t border-border p-3 flex items-center gap-2">
                       <img src="https://cdn.classgrid.in/android-chrome-512x512.png" alt="Classgrid" className="w-7 h-7 rounded-full object-cover" />
                       <div className="text-[13px] font-medium text-foreground truncate flex-1">Classgrid</div>
-                      <MoreHorizontal className="w-4 h-4 text-muted-foreground hover:text-foreground cursor-pointer" />
                       <Bell className="w-4 h-4 text-muted-foreground hover:text-foreground cursor-pointer" />
                     </div>
                   </aside>
