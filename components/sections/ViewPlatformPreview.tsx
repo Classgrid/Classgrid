@@ -19,7 +19,8 @@ import {
   Copy,
   ThumbsUp,
   ThumbsDown,
-  SquarePen
+  SquarePen,
+  PanelLeft
 } from "lucide-react";
 
 const CustomSlidersIcon = ({ className }: { className?: string }) => (
@@ -65,6 +66,8 @@ const ChatBubbleIcon = ({ className }: { className?: string }) => (
 export function ViewPlatformPreview() {
   const [input, setInput] = useState("");
   const [submittedMessage, setSubmittedMessage] = useState("");
+  // Same as the app: the sidebar toggle at the top left of the chat hides and shows the sidebar
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -132,20 +135,11 @@ export function ViewPlatformPreview() {
         <div className="relative z-10 mx-auto max-w-[1400px] px-6">
           <div className="mx-auto w-full max-w-5xl">
             <div className="flex flex-col overflow-hidden bg-background dark:bg-black rounded-2xl border border-border shadow-2xl h-[480px] md:h-[600px] transition-all relative">
-              {/* Browser chrome */}
-                <div className="flex items-center gap-4 border-b border-border bg-muted/40 dark:bg-[#0a0a0a] px-4 py-2.5 shrink-0">
-                  <div className="flex gap-1.5">
-                    <div className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
-                  </div>
-                </div>
-
                 {/* Agent App Layout */}
                 <div className="flex flex-1 min-h-0 overflow-hidden relative">
                   
                   {/* Sidebar */}
-                  <aside className="w-[220px] shrink-0 border-r border-border bg-muted/20 dark:bg-black hidden md:flex flex-col text-foreground">
+                  <aside className={cn("w-[220px] shrink-0 border-r border-border bg-muted/20 dark:bg-black hidden flex-col text-foreground", sidebarOpen && "md:flex")}>
                     <div className="flex items-center gap-2 p-3 font-semibold text-[13px]">
                       <img src="/logo.png" alt="" className="w-5 h-5 object-contain" />
                       Classgrid
@@ -210,7 +204,19 @@ export function ViewPlatformPreview() {
 
                   {/* Main Chat Area */}
                   <div className="flex-1 flex flex-col relative bg-background dark:bg-black">
-                    
+                    {/* Sidebar toggle (same icon, size and place as the app's SidebarTrigger) */}
+                    <div className="shrink-0 hidden md:flex items-center px-3 pt-3 h-14">
+                      <button
+                        type="button"
+                        onClick={() => setSidebarOpen((open) => !open)}
+                        className="inline-flex items-center justify-center h-8 w-8 rounded-md text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
+                        aria-label={sidebarOpen ? "Hide sidebar" : "Show sidebar"}
+                        title={sidebarOpen ? "Hide sidebar" : "Show sidebar"}
+                      >
+                        <PanelLeft className="h-4 w-4" />
+                      </button>
+                    </div>
+
                     {!submittedMessage ? (
                       <div className="flex-1 flex flex-col items-center justify-center px-4 md:px-8">
                         <div className="max-w-[68rem] w-full flex flex-col items-center gap-6">
