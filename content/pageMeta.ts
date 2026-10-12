@@ -81,9 +81,9 @@ export const pageMeta: Record<string, PageMeta> = {
     path: "/features",
   },
   viewPlatform: {
-    title: "Classgrid AI Agent",
+    title: "Classgrid AI: Free AI Assistant for Students",
     description:
-      "Use the Classgrid AI agent to research, analyse files, run code, build reports and send scheduled messages on WhatsApp.",
+      "Free AI assistant for students and teachers: ask anything, analyse PDFs, write code and get WhatsApp reminders. A free ChatGPT alternative made in India.",
     path: "/agent",
   },
   integrations: {
