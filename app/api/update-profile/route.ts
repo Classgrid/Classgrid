@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
           ...(name && { name: name }) // Only update name if they provided it
         } 
       },
-      { new: true }
+      { returnDocument: 'after' }
     );
 
     if (!updatedUser) {

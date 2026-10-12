@@ -350,7 +350,7 @@ const aiChatHandler = async (req: express.Request, res: express.Response) => {
                     updatedAt: new Date()
                   }
                 },
-                { upsert: true, new: true }
+                { upsert: true, returnDocument: 'after' }
               ).catch(console.error);
             }
 
