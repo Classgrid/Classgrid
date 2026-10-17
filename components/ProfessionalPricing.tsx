@@ -79,8 +79,3 @@ export function ProfessionalPricing() {
     </section>
   );
 }
-est your search tools:
-
-Search for the word "Classgrid", ignoring upper and lower case. Tell me how many files and lines have it.
-Search by meaning: "how does the WhatsApp bot reply to messages". Show me the top places it found.
-Open the best place from step 2 and explain in 3 lines what that code does.
