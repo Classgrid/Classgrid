@@ -50,7 +50,7 @@ No formal awards. Classgrid is registered as an MSME with the Government of Indi
 
 ### List any relevant or impressive test scores.
 
-**[NOTE TO YAHIA — remove before submission]:** I have currently left this section blank as I do not have a 99th percentile score. Given your experience as a YC founder, I would deeply appreciate your guidance on whether I should leave this completely empty or approach it differently.
+No standardized test scores to report.
 
 ---
 
@@ -297,6 +297,6 @@ Vercel's startup team mentioned YC as one of their accelerator partners.
 - [ ] Capture user count / traction screenshot
 - [ ] Capture super admin dashboard image
 - [ ] Get Yahia's review and feedback
-- [ ] Remove the `[NOTE TO YAHIA]` tag from test scores section
+- [x] Remove the `[NOTE TO YAHIA]` tag from test scores section
 - [ ] Remove both video script sections before final submission
 - [ ] Final proofread before pasting into YC form 
