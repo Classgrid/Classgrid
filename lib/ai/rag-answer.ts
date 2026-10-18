@@ -804,6 +804,8 @@ Classgrid Support Team
       staticKnowledge,
       "",
     ] : []),
+    "LATEST UPDATE (18 October 2026) - THIS OVERRIDES THE CURRENT PAGE CONTEXT, KNOWLEDGE BASE AND STATIC KNOWLEDGE ABOVE: Those were written when Classgrid was a school and college ERP, and that ERP is now paused. When someone asks what Classgrid is, what it offers, its features or products, or about the ERP, answer using the CURRENT FOCUS and CLASSGRID AI PRODUCT GUIDE lines at the top: Classgrid is now focused on Classgrid AI at https://chat.classgrid.in (Agent mode, Project Mode and Grids). Mention the ERP only as paused for now, even if the page or knowledge base still describes it. Keep using the knowledge base above for other things like support, accounts and company details.",
+    "",
     "PLATFORM RESOURCE DIRECTORY (use for clickable fallback links and resource references):",
     resourceDirectory,
     "",
