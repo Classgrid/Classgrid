@@ -1,4 +1,5 @@
 import express from "express";
+import { createHmac } from "crypto";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -1073,6 +1074,19 @@ app.get("/api/whatsapp-webhook", (req, res) => {
   return res.sendStatus(400);
 });
 
+// WhatsApp voice calls are answered by the main Classgrid backend (same machine, port 3000). It checks this signature
+// (HMAC of the body with the shared WhatsApp key), so nobody else can send it calls.
+function forwardCallToPlatform(value: any) {
+  const body = JSON.stringify(value);
+  const signature = createHmac("sha256", process.env.WHATSAPP_ACCESS_TOKEN || "").update(body).digest("hex");
+  fetch(process.env.PLATFORM_CALLS_URL || "http://127.0.0.1:3000/api/whatsapp/calls-internal", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Classgrid-Call-Signature": signature },
+    body,
+  }).then((r) => { if (!r.ok) console.error(`[WhatsApp call] platform answered ${r.status}`); })
+    .catch((err) => console.error("[WhatsApp call] could not reach the platform:", err.message));
+}
+
 app.post("/api/whatsapp-webhook", async (req, res) => {
   try {
     const body = req.body;
@@ -1080,6 +1094,12 @@ app.post("/api/whatsapp-webhook", async (req, res) => {
     console.log(JSON.stringify(body, null, 2));
 
     if (body.object === "whatsapp_business_account") {
+      const callChanges = (body.entry || []).flatMap((e: any) => e.changes || []).filter((c: any) => c.field === "calls" && c.value);
+      if (callChanges.length > 0) {
+        res.sendStatus(200);
+        for (const c of callChanges) forwardCallToPlatform(c.value);
+        return;
+      }
       const entry = body.entry?.[0];
       const changes = entry?.changes?.[0];
       const value = changes?.value;
