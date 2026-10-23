@@ -1076,10 +1076,11 @@ app.get("/api/whatsapp-webhook", (req, res) => {
 
 // WhatsApp voice calls are answered by the main Classgrid backend (same machine, port 3000). It checks this signature
 // (HMAC of the body with the shared WhatsApp key), so nobody else can send it calls.
-function forwardCallToPlatform(value: any) {
+function forwardCallToPlatform(value: any, path = "calls-internal") {
   const body = JSON.stringify(value);
   const signature = createHmac("sha256", process.env.WHATSAPP_ACCESS_TOKEN || "").update(body).digest("hex");
-  fetch(process.env.PLATFORM_CALLS_URL || "http://127.0.0.1:3000/api/whatsapp/calls-internal", {
+  const base = process.env.PLATFORM_WHATSAPP_URL || "http://127.0.0.1:3000/api/whatsapp";
+  fetch(`${base}/${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "X-Classgrid-Call-Signature": signature },
     body,
@@ -1099,6 +1100,11 @@ app.post("/api/whatsapp-webhook", async (req, res) => {
         res.sendStatus(200);
         for (const c of callChanges) forwardCallToPlatform(c.value);
         return;
+      }
+      // Every message users send (text and files) is also kept by the main Classgrid backend, so the Agent can read
+      // follow-ups while it works. The replies below are unchanged.
+      for (const c of (body.entry || []).flatMap((e: any) => e.changes || [])) {
+        if (c.value?.messages?.length) forwardCallToPlatform(c.value, "messages-internal");
       }
       const entry = body.entry?.[0];
       const changes = entry?.changes?.[0];
