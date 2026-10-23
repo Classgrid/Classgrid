@@ -1,5 +1,6 @@
 import express from "express";
 import { createHmac } from "crypto";
+import { verifyMetaAppSignature } from "../lib/whatsapp/verify-app-signature";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -132,7 +133,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({ origin: true, credentials: true }));
-app.use(express.json({ limit: "2mb" }));
+// rawBody: the exact bytes Meta signed, for the WhatsApp webhook signature check
+app.use(express.json({ limit: "2mb", verify: (req: any, _res, buf) => { req.rawBody = buf; } }));
 
 // ── Health / root ─────────────────────────────────────────────────────────────
 app.get("/health", (_req, res) => {
@@ -1076,16 +1078,18 @@ app.get("/api/whatsapp-webhook", (req, res) => {
 
 // WhatsApp voice calls are answered by the main Classgrid backend (same machine, port 3000). It checks this signature
 // (HMAC of the body with the shared WhatsApp key), so nobody else can send it calls.
-function forwardCallToPlatform(value: any, path = "calls-internal") {
+function forwardCallToPlatform(value: any, path = "calls-internal"): Promise<any> {
   const body = JSON.stringify(value);
   const signature = createHmac("sha256", process.env.WHATSAPP_ACCESS_TOKEN || "").update(body).digest("hex");
   const base = process.env.PLATFORM_WHATSAPP_URL || "http://127.0.0.1:3000/api/whatsapp";
-  fetch(`${base}/${path}`, {
+  return fetch(`${base}/${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "X-Classgrid-Call-Signature": signature },
     body,
-  }).then((r) => { if (!r.ok) console.error(`[WhatsApp call] platform answered ${r.status}`); })
-    .catch((err) => console.error("[WhatsApp call] could not reach the platform:", err.message));
+  }).then(async (r) => {
+    if (!r.ok) { console.error(`[WhatsApp call] platform answered ${r.status}`); return null; }
+    return r.json().catch(() => null);
+  }).catch((err) => { console.error("[WhatsApp call] could not reach the platform:", err.message); return null; });
 }
 
 app.post("/api/whatsapp-webhook", async (req, res) => {
@@ -1094,23 +1098,44 @@ app.post("/api/whatsapp-webhook", async (req, res) => {
     console.log(`\n📱 ════════════ INCOMING WHATSAPP EVENT ════════════`);
     console.log(JSON.stringify(body, null, 2));
 
+    // Meta signs every webhook with the app secret. Once WHATSAPP_APP_SECRET is set, anything not signed by Meta
+    // (a fake "message from" someone) is refused.
+    const appSecret = process.env.WHATSAPP_APP_SECRET;
+    if (appSecret) {
+      const raw = (req as any).rawBody ? (req as any).rawBody.toString("utf8") : "";
+      if (!verifyMetaAppSignature(raw, req.get("x-hub-signature-256") || null, appSecret)) {
+        console.warn("[WhatsApp] Webhook refused: Meta signature missing or wrong");
+        return res.sendStatus(403);
+      }
+    }
+
     if (body.object === "whatsapp_business_account") {
-      const callChanges = (body.entry || []).flatMap((e: any) => e.changes || []).filter((c: any) => c.field === "calls" && c.value);
-      if (callChanges.length > 0) {
-        res.sendStatus(200);
-        for (const c of callChanges) forwardCallToPlatform(c.value);
-        return;
+      const allChanges = (body.entry || []).flatMap((e: any) => e.changes || []);
+      // Calls go to the main Classgrid backend, which answers them
+      for (const c of allChanges) if (c.field === "calls" && c.value) forwardCallToPlatform(c.value);
+      // Every message users send (text and files) and every delivery report is also kept by the main Classgrid
+      // backend, so the Agent can read follow-ups while it works. It answers busy:true when a call or an Agent task
+      // is using that person's chat; then the help bot below stays quiet (so it doesn't talk over the Agent).
+      let agentBusy: Promise<boolean> = Promise.resolve(false);
+      for (const c of allChanges) {
+        if (c.value?.messages?.length || c.value?.statuses?.length) {
+          const answer = forwardCallToPlatform(c.value, "messages-internal");
+          if (c.value?.messages?.length) agentBusy = answer.then((a) => !!a?.busy);
+        }
       }
-      // Every message users send (text and files) is also kept by the main Classgrid backend, so the Agent can read
-      // follow-ups while it works. The replies below are unchanged.
-      for (const c of (body.entry || []).flatMap((e: any) => e.changes || [])) {
-        if (c.value?.messages?.length) forwardCallToPlatform(c.value, "messages-internal");
-      }
+      if (!allChanges.some((c: any) => c.value?.messages?.length)) return res.sendStatus(200);
       const entry = body.entry?.[0];
       const changes = entry?.changes?.[0];
       const value = changes?.value;
       const message = value?.messages?.[0];
       const contact = value?.contacts?.[0];
+
+      // An Agent is waiting for this person's reply (or a call task is running): the help bot doesn't answer
+      const busy = await Promise.race([agentBusy, new Promise<boolean>((r) => setTimeout(() => r(false), 1500))]);
+      if (busy && message) {
+        console.log(`[WhatsApp] ${message.from} is talking to the Agent; help bot stays quiet`);
+        return res.sendStatus(200);
+      }
 
       if (message && message.type === "text") {
         const fromNumber = message.from; // User's phone number
