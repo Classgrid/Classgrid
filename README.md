@@ -1,13 +1,15 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/Classgrid/Classgrid_marketting/main/public/logo.png" alt="Classgrid Logo" width="140" height="140" />
-  
-  <h1 align="center">Classgrid | Marketing & Growth Engine</h1>
+
+  <h1 align="center">Classgrid | Website</h1>
 
   <p align="center">
-    <strong>The Operating System for Edcational Institution — Built on the Edge.</strong>
+    <strong>The website for Classgrid AI: an AI agent that can actually do the work.</strong>
   </p>
 
   <p align="center">
+    <a href="https://chat.classgrid.in">Open Classgrid AI</a>
+    ·
     <a href="https://classgrid.in">Website</a>
     ·
     <a href="https://classgrid.in/blog">Blog</a>
@@ -18,18 +20,14 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Next.js-14_App_Router-black?style=for-the-badge&logo=next.js" alt="Next.js" />
+    <img src="https://img.shields.io/badge/Next.js-App_Router-black?style=for-the-badge&logo=next.js" alt="Next.js" />
     <img src="https://img.shields.io/badge/TypeScript-Strict-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
     <img src="https://img.shields.io/badge/Framer_Motion-Dynamic-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
     <br/>
     <img src="https://img.shields.io/badge/Sanity_CMS-GROQ-F03E2F?style=for-the-badge&logo=sanity&logoColor=white" alt="Sanity" />
     <img src="https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
-    <img src="https://img.shields.io/badge/MongoDB-NoSQL-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-    <br/>
-    <img src="https://img.shields.io/badge/AWS-EC2-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS EC2" />
     <img src="https://img.shields.io/badge/Vercel-Edge_Network-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
-    <img src="https://img.shields.io/badge/Nginx-Proxy-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
   </p>
 </div>
 
@@ -38,55 +36,40 @@
 <br/>
 
 > **Proprietary Software**
-> This repository represents the proprietary frontend and marketing engine for Classgrid. It is **NOT** open-source software. This is a private organization repository.
+> This repository is the proprietary website for Classgrid (classgrid.in). It is **NOT** open-source software. This is a private organization repository.
 
-## 🏫 What is Classgrid?
+## What is Classgrid?
 
-Classgrid is a comprehensive Operating System built exclusively for modern education. We replace fragmented legacy software by combining:
-- **Core ERP:** Admissions, Fee Management, and Attendance.
-- **Academic Engine:** Exams, Report Cards, and AI-driven insights.
-- **Growth Engine:** Lead tracking, Marketing automation, and parent communication.
+Classgrid builds **Classgrid AI** at **[chat.classgrid.in](https://chat.classgrid.in)**: one place to talk to an AI agent that can actually do the work, build inside your own code, and work with the apps you already use.
 
-Our software is utilized by forward-thinking Schools, Junior Colleges, and Coaching Institutes to scale their operations efficiently.
+| | What it is |
+|---|---|
+| **Agent Mode** | An AI agent that thinks, uses tools, runs code and shows every step live |
+| **Project Mode** | The agent working inside your GitHub repository, with a private browser code editor; every change comes as a pull request |
+| **WhatsApp** | Message or call the agent on WhatsApp; it takes the task and works on it in the background |
+| **Connected apps** | Gmail, Google Drive, Calendar, Classroom, Notion, Slack, GitHub, Vercel and more |
 
-<br/>
-
-## ✨ Next-Level Engineering Highlights
-
-<table>
-  <tr>
-    <td width="50%">
-      <h3>🛸 The Blueprint Box Architecture</h3>
-      <p>We abandoned standard <code>&lt;div&gt;</code> containers. Every section of the blog and platform comparisons is wrapped in our custom <code>BlueprintBox</code>—a dynamically styled, responsive grid container featuring animated crosshair corners inspired by raw engineering schematics.</p>
-    </td>
-    <td width="50%">
-      <h3>🪐 Radial Orbital Timelines</h3>
-      <p>No basic SVG lines here. We utilized raw trigonometry and Framer Motion to build an infinite-rotating, pulsing timeline that visually explains how Classgrid connects the entire ecosystem (Admissions → Fees → Academics).</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h3>📝 Sanity Headless Integration</h3>
-      <p>Our Sanity Studio isn't a basic text editor. We engineered <strong>Dynamic Content Sections</strong> allowing content writers to inject videos, multi-author case studies, and customized split-layouts dynamically without ever touching a line of code.</p>
-    </td>
-    <td width="50%">
-      <h3>⚡ Serverless Cron & Webhooks</h3>
-      <p>Our background infrastructure never sleeps. Supabase runs secure Cron Jobs that trigger Next.js Serverless API routes to process bulk email notifications automatically, entirely bypassing frontend timeouts.</p>
-    </td>
-  </tr>
-</table>
+This website explains Classgrid AI, hosts the blog, case studies, changelog, docs, help center and legal pages, and links people to chat.classgrid.in.
 
 <br/>
 
-## 🏗️ Technical Architecture
+## Design
+
+- **Vercel design system:** the whole site follows the Vercel look (Geist type, dark and light mode, subtle borders). New pages reuse the existing components and styles.
+- **Micro-interactions:** Framer Motion animations and a cursor-following glow on buttons.
+- **Sanity CMS:** blog posts, case studies and legal pages are written in Sanity and published without a code change.
+
+<br/>
+
+## Technical Architecture
 
 <details>
   <summary><strong>1. Design System & Animations</strong></summary>
   <br/>
   <ul>
-    <li><strong>Vercel Aesthetic:</strong> Deep dark modes, subtle borders, perfect typography (Geist/Inter).</li>
-    <li><strong>Tailwind Mastery:</strong> Zero external CSS files. Everything is utility-first, utilizing complex <code>conic-gradient</code> and <code>radial-gradient</code> logic embedded directly in Tailwind configurations.</li>
-    <li><strong>Micro-Interactions:</strong> Custom <code>Button</code> components utilizing <code>useMotionTemplate</code> and <code>useMotionValue</code> to create a dynamic "flashlight" glow that follows the user's cursor perfectly at 60fps.</li>
+    <li><strong>Vercel Aesthetic:</strong> Deep dark mode, subtle borders, clean typography (Geist/Inter).</li>
+    <li><strong>Tailwind:</strong> Utility-first styling, including <code>conic-gradient</code> and <code>radial-gradient</code> effects in the Tailwind configuration.</li>
+    <li><strong>Micro-Interactions:</strong> Custom <code>Button</code> components using <code>useMotionTemplate</code> and <code>useMotionValue</code> for a glow that follows the cursor.</li>
   </ul>
 </details>
 
@@ -94,68 +77,64 @@ Our software is utilized by forward-thinking Schools, Junior Colleges, and Coach
   <summary><strong>2. The Blog Engine</strong></summary>
   <br/>
   <ul>
-    <li><strong>Sticky Intelligent TOC:</strong> The Table of Contents automatically calculates scroll position and highlights the active section in real-time.</li>
-    <li><strong>GROQ Optimization:</strong> We fetch only exactly what we need using highly typed GROQ queries inside the <code>sanity/lib</code> directory.</li>
-    <li><strong>Flawless Open Graph:</strong> Engineered to defeat WhatsApp and Telegram scrapers. The metadata perfectly exposes custom-generated 1200x630 images for flawless social sharing.</li>
+    <li><strong>Sticky Table of Contents:</strong> highlights the section being read.</li>
+    <li><strong>GROQ Queries:</strong> typed queries in the <code>sanity/lib</code> directory fetch only what each page needs.</li>
+    <li><strong>Open Graph:</strong> 1200x630 share images for WhatsApp, Telegram and social sharing.</li>
   </ul>
 </details>
 
 <details>
-  <summary><strong>3. Database & Cloud Infrastructure</strong></summary>
+  <summary><strong>3. Hosting & Infrastructure</strong></summary>
   <br/>
   <ul>
-    <li><strong>AWS EC2 & Nginx:</strong> Platform backend routing and intensive data processing are deployed on a secure, self-hosted AWS EC2 Linux instance with Nginx serving as the reverse proxy for SSL termination.</li>
-    <li><strong>Vercel Edge Network:</strong> The Next.js frontend (this repo) is hosted on Vercel to utilize their global CDN for millisecond load times on marketing pages.</li>
-    <li><strong>Hybrid Database Architecture:</strong> 
-      <ul>
-        <li><strong>MongoDB:</strong> Handles the massive scale of student records, exam data, and dynamic RPC platform calls.</li>
-        <li><strong>Supabase (PostgreSQL):</strong> Specifically utilized for marketing lead tracking, blog metrics, and executing serverless Cron Jobs.</li>
-      </ul>
-    </li>
-    <li><strong>Sanity Webhooks:</strong> Revalidates Next.js cache <em>instantly</em> when a blog post is published. No waiting for rebuilds.</li>
+    <li><strong>Vercel Edge Network:</strong> this Next.js site is hosted on Vercel.</li>
+    <li><strong>Supabase (PostgreSQL):</strong> leads, blog metrics and scheduled jobs.</li>
+    <li><strong>Sanity Webhooks:</strong> refresh pages as soon as a post is published.</li>
+    <li><strong><code>server-ai/</code>:</strong> the WhatsApp webhook service, running on AWS EC2 next to the Classgrid AI backend (api.classgrid.in).</li>
   </ul>
 </details>
 
 <br/>
 
-## 📂 Folder Structure Map
+## Folder Structure Map
 
 ```text
 Classgrid_marketting/
 ├── app/
-│   ├── (marketing)/       # Landing pages, pricing, features
-│   ├── blog/              # Headless Blog Engine
-│   ├── case-studies/      # Enterprise client stories
-│   ├── api/               # Serverless Webhooks & Crons
-│   └── layout.tsx         # Global Providers & SEO Base
+│   ├── agent/             # Classgrid AI agent page
+│   ├── pricing/           # Pricing
+│   ├── blog/              # Blog engine
+│   ├── case-studies/      # Customer stories
+│   ├── changelog/         # Product updates
+│   ├── (legal)/           # Legal pages (text in Sanity)
+│   ├── api/               # Serverless webhooks & crons
+│   └── layout.tsx         # Global providers & SEO base
 ├── components/
-│   ├── ui/                # Custom shadcn/framer components
+│   ├── ui/                # shadcn / Framer Motion components
 │   ├── blog/              # PortableText and CMS renderers
-│   └── shared/            # Navbars, Footers, Contact Forms
-├── sanity/                # CMS Schemas & GROQ Queries
-└── lib/                   # Utility functions, Supabase clients
+│   └── layout/            # Navbar, footer
+├── sanity/                # CMS schemas & GROQ queries
+├── server-ai/             # WhatsApp webhook service (EC2)
+└── lib/                   # Utilities, Supabase clients
 ```
 
 <br/>
 
-## 🚀 Deployment Instructions
+## Running Locally
 
-Getting the environment running locally is seamless. 
-
-1. **Clone the Source Code**
+1. **Clone the source code**
    ```bash
    git clone https://github.com/Classgrid/Classgrid_marketting.git
    cd Classgrid_marketting
    ```
 
-2. **Install Dependencies**
-   *We use npm for strict dependency locking.*
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Configure the Environment**
-   Duplicate `.env.example` to `.env.local` and inject your keys.
+3. **Configure the environment**
+   Duplicate `.env.example` to `.env.local` and add your keys.
    ```env
    # Sanity Configuration
    NEXT_PUBLIC_SANITY_PROJECT_ID="your_sanity_id"
@@ -169,24 +148,24 @@ Getting the environment running locally is seamless.
    NEXT_PUBLIC_APP_URL="http://localhost:3000"
    ```
 
-4. **Ignite the Server**
+4. **Start the site**
    ```bash
    npm run dev
    ```
-   > 🌐 Application is now running on `http://localhost:3000`
+   > The site runs on `http://localhost:3000`
 
 ---
 
-## ⚖️ Legal & Licensing (Strictly Enforced)
+## Legal & Licensing (Strictly Enforced)
 
-**Copyright © 2026 Classgrid Operating System. All Rights Reserved.**
+**Copyright © 2026 Classgrid. All Rights Reserved.**
 
-This repository and all source code, design assets, and UI components within it are the exclusive intellectual property of Classgrid. 
+This repository and all source code, design assets, and UI components within it are the exclusive intellectual property of Classgrid.
 
 🚫 **Strictly Prohibited:**
 - You may **NOT** copy, clone, distribute, or host this website (or parts of it) for any personal, commercial, or agency use.
-- You may **NOT** rip the design, CSS, or custom animations (like the BlueprintBox) for other projects.
-- This is a proprietary repository. It is **not** MIT or GPL licensed. 
+- You may **NOT** rip the design, CSS, or custom animations for other projects.
+- This is a proprietary repository. It is **not** MIT or GPL licensed.
 
 🤝 **Contribution & Access:**
 - Access to this code is strictly limited to authorized members of the **[Classgrid GitHub Organization](https://github.com/Classgrid)**.
@@ -196,5 +175,5 @@ This repository and all source code, design assets, and UI components within it 
 ---
 <div align="center">
   <img src="https://raw.githubusercontent.com/Classgrid/Classgrid_marketting/main/public/logo.png" alt="Classgrid Logo" width="50" />
-  <p><b>Built with absolute precision for the future of Indian Education.</b></p>
+  <p><b>Classgrid AI: an AI agent that can actually do the work.</b></p>
 </div>
