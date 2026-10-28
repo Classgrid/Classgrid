@@ -472,7 +472,9 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
           <div className="px-6 md:px-12 pb-12 pt-8 text-center">
             <p className="text-[11px] text-slate-400 dark:text-neutral-500 max-w-3xl mx-auto leading-relaxed">
               {comparison.slug === "legacy-platforms"
-                ? `This comparison uses “${comparison.competitorName}” as a category label for similar institutional ERP, LMS, and campus-management products. It does not refer to any single vendor, and Classgrid is not affiliated with any third-party platform represented by this category.`
+                ? `This comparison uses “${comparison.competitorName}” as a category label for similar AI assistant and agent products. It does not refer to any single vendor, and Classgrid is not affiliated with any third-party product in this category.`
+                : /,|&| and /.test(comparison.competitorName ?? "")
+                ? `${comparison.competitorName} are trademarks of their respective owners. Classgrid is not affiliated with them.`
                 : `${comparison.competitorName} is a trademark of its respective owners. Classgrid is not affiliated with them.`}
             </p>
           </div>

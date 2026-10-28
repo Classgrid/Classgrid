@@ -54,6 +54,8 @@ const nextConfig: NextConfig = {
       { source: "/agent", destination: "/", permanent: true },
       // Legacy comparison links
       { source: "/compare/vs-competitors", destination: "/compare", permanent: true },
+      { source: "/compare/legacy-platforms", destination: "/compare/ai-agents", permanent: true },
+      { source: "/compare/classgrid-vs-dots-grok-muse", destination: "/compare/ai-agents", permanent: true },
       // Legacy institution → new solutions/industries
       { source: "/institutions", destination: "/solutions", permanent: true },
       { source: "/institutions/school", destination: "/solutions/industries/school", permanent: true },
