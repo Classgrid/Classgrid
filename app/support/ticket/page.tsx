@@ -58,6 +58,7 @@ function normalizeSupportEmail(value?: string | null) {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
+  general: "General Question",
   login: "Login & Account",
   ai: "Agent Mode",
   "project-mode": "Project Mode & GitHub",
@@ -67,6 +68,8 @@ const CATEGORY_LABELS: Record<string, string> = {
   schedules: "Schedules & Background Tasks",
   documents: "Files & Uploads",
   profile: "Profile & Settings",
+  privacy: "Privacy & Security",
+  "mobile-browser": "Mobile & Browser",
   bug: "Bug Report",
   feature: "Feature Request",
   other: "Other"
@@ -94,6 +97,21 @@ export default function RaiseTicketPage() {
   const [files, setFiles] = useState<File[]>([]);
   const [category, setCategory] = useState("general");
   const [customCategory, setCustomCategory] = useState("");
+
+  // A category card on /support links here with ?category=..., so start the form on that category
+  // (kept in sessionStorage so it survives the sign-in step)
+  useEffect(() => {
+    const fromLink = new URLSearchParams(window.location.search).get("category");
+    let picked = fromLink && CATEGORY_LABELS[fromLink] ? fromLink : null;
+    try {
+      if (picked) sessionStorage.setItem("support_category", picked);
+      else {
+        const saved = sessionStorage.getItem("support_category");
+        if (saved && CATEGORY_LABELS[saved]) picked = saved;
+      }
+    } catch {}
+    if (picked) setCategory(picked);
+  }, []);
   const [priority, setPriority] = useState("medium");
   const [dragActive, setDragActive] = useState(false);
   const [uploadingImage, setUploadingImage] = useState(false);
@@ -564,6 +582,7 @@ export default function RaiseTicketPage() {
                       </SelectValue>
                     </SelectTrigger>
                     <SelectContent side="bottom" className="max-h-[280px] overflow-y-auto">
+                      <SelectItem value="general">General Question</SelectItem>
                       <SelectItem value="login">Login &amp; Account</SelectItem>
                       <SelectItem value="ai">Agent Mode</SelectItem>
                       <SelectItem value="project-mode">Project Mode &amp; GitHub</SelectItem>
@@ -573,6 +592,8 @@ export default function RaiseTicketPage() {
                       <SelectItem value="schedules">Schedules &amp; Background Tasks</SelectItem>
                       <SelectItem value="documents">Files &amp; Uploads</SelectItem>
                       <SelectItem value="profile">Profile &amp; Settings</SelectItem>
+                      <SelectItem value="privacy">Privacy &amp; Security</SelectItem>
+                      <SelectItem value="mobile-browser">Mobile &amp; Browser</SelectItem>
                       <SelectItem value="bug">Bug Report</SelectItem>
                       <SelectItem value="feature">Feature Request</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
@@ -586,6 +607,7 @@ export default function RaiseTicketPage() {
                     className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
                   >
                     <option value="" disabled>Select category</option>
+                    <option value="general">General Question</option>
                     <option value="login">Login &amp; Account</option>
                     <option value="ai">Agent Mode</option>
                     <option value="project-mode">Project Mode &amp; GitHub</option>
@@ -595,6 +617,8 @@ export default function RaiseTicketPage() {
                     <option value="schedules">Schedules &amp; Background Tasks</option>
                     <option value="documents">Files &amp; Uploads</option>
                     <option value="profile">Profile &amp; Settings</option>
+                    <option value="privacy">Privacy &amp; Security</option>
+                    <option value="mobile-browser">Mobile &amp; Browser</option>
                     <option value="bug">Bug Report</option>
                     <option value="feature">Feature Request</option>
                     <option value="other">Other</option>

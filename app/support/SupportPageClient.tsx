@@ -32,66 +32,77 @@ import { buildLangHref, type SupportedLang } from "@/lib/locale";
 const CATEGORIES = [
   {
     title: "Agent Mode",
+    value: "ai",
     description: "Answers, tool steps, research, or a task that stopped midway.",
     icon: Bot,
     delay: 0.1,
   },
   {
     title: "Project Mode",
+    value: "project-mode",
     description: "Your repo, the code editor, pull requests, and deploys.",
     icon: Terminal,
     delay: 0.15,
   },
   {
     title: "Billing & Credits",
+    value: "billing",
     description: "Plans, top-ups, invoices, and payments.",
     icon: CreditCard,
     delay: 0.2,
   },
   {
     title: "WhatsApp & Calls",
+    value: "whatsapp",
     description: "Messaging or calling the agent on WhatsApp.",
     icon: MessageCircle,
     delay: 0.25,
   },
   {
     title: "Connected Apps",
+    value: "connected-apps",
     description: "Gmail, Drive, Calendar, Notion, Slack, GitHub, Vercel and more.",
     icon: Plug,
     delay: 0.3,
   },
   {
     title: "Schedules & Background Tasks",
+    value: "schedules",
     description: "Daily briefs, reminders, and long tasks that report back.",
     icon: CalendarDays,
     delay: 0.35,
   },
   {
     title: "Files & Uploads",
+    value: "documents",
     description: "PDFs, spreadsheets, images, and files the agent made.",
     icon: FileUp,
     delay: 0.4,
   },
   {
     title: "Account & Login",
+    value: "login",
     description: "Sign-in codes, passwords, and login errors.",
     icon: Key,
     delay: 0.45,
   },
   {
     title: "Profile & Settings",
+    value: "profile",
     description: "Personal info, notification preferences, and display issues.",
     icon: UserCog,
     delay: 0.5,
   },
   {
     title: "Privacy & Security",
+    value: "privacy",
     description: "Your data, connected access, and account safety.",
     icon: ShieldCheck,
     delay: 0.55,
   },
   {
     title: "Mobile & Browser",
+    value: "mobile-browser",
     description: "Slow loading, phone layout, and browser issues.",
     icon: Globe,
     delay: 0.6,
@@ -194,7 +205,7 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
           {CATEGORIES.map((category) => {
             const IconComp = category.icon;
             return (
-              <Link key={category.title} href={ticketUrl}>
+              <Link key={category.title} href={`${ticketUrl}?category=${category.value}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
