@@ -114,11 +114,17 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
   const { data: session, status, update } = useSession();
 
   // Logged in on chat.classgrid.in but not here yet: sign in with that login so the header shows Dashboard.
-  // Checked again when the tab gets focus, e.g. after logging in on chat.classgrid.in in another tab.
+  // Checked again when the tab is shown again, and every few seconds for 10 minutes after a chat.classgrid.in
+  // link is clicked, so the header updates without a refresh once they log in there in the other tab.
   const skipPlatformLogin = pathname === "/login" || pathname === "/logout";
   useEffect(() => {
     if (status !== "unauthenticated" || skipPlatformLogin) return;
     let busy = false;
+    let watchTimer: ReturnType<typeof setInterval> | null = null;
+    const stopWatching = () => {
+      if (watchTimer) clearInterval(watchTimer);
+      watchTimer = null;
+    };
     const syncPlatformLogin = async () => {
       if (busy) return;
       busy = true;
@@ -127,7 +133,10 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
         const data = await res.json();
         if (data?.loggedIn) {
           const result = await signIn("platform-token", { redirect: false });
-          if (result?.ok) await update();
+          if (result?.ok) {
+            stopWatching();
+            await update();
+          }
         }
       } catch {
         // stay logged out
@@ -135,9 +144,31 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
         busy = false;
       }
     };
+    const startWatching = () => {
+      if (watchTimer) return;
+      const startedAt = Date.now();
+      watchTimer = setInterval(() => {
+        if (Date.now() - startedAt > 10 * 60 * 1000) stopWatching();
+        else syncPlatformLogin();
+      }, 3000);
+    };
+    const onClick = (e: MouseEvent) => {
+      if ((e.target as Element | null)?.closest?.('a[href^="https://chat.classgrid.in"]')) startWatching();
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") syncPlatformLogin();
+    };
+
     syncPlatformLogin();
     window.addEventListener("focus", syncPlatformLogin);
-    return () => window.removeEventListener("focus", syncPlatformLogin);
+    document.addEventListener("visibilitychange", onVisible);
+    document.addEventListener("click", onClick, true);
+    return () => {
+      stopWatching();
+      window.removeEventListener("focus", syncPlatformLogin);
+      document.removeEventListener("visibilitychange", onVisible);
+      document.removeEventListener("click", onClick, true);
+    };
   }, [status, skipPlatformLogin, update]);
 
   // Auto-open Ask AI panel on mount if the user has an unsent draft OR if it was open before refresh
