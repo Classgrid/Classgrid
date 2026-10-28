@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 import { AppBreadcrumb } from "@/components/navigation/AppBreadcrumb";
@@ -20,6 +20,23 @@ const segmentLabelMap: Record<string, string> = {
   erp: "ERP",
   lms: "LMS",
   "help-center": "Articles",
+};
+
+const solutionLabels: Record<string, string> = {
+  "agent-mode": "Agent mode",
+  "project-mode": "Project Mode",
+  grids: "Grids",
+  "whatsapp-calls": "WhatsApp calls",
+  research: "Research & data",
+  "documents-and-files": "Documents & files",
+  "reminders-and-automation": "Reminders & automation",
+  "email-and-calendar": "Email & calendar",
+};
+
+const isSolutionPage = (path: string) => /^\/solutions\/[^/]+$/.test(path);
+const solutionLabel = (path: string) => {
+  const slug = path.split("/").pop() || "";
+  return solutionLabels[slug] ?? formatSegmentLabel(slug);
 };
 
 function capitalizeWord(word: string): string {
@@ -48,6 +65,17 @@ function formatSegmentLabel(segment: string): string {
 
 export function RouteBreadcrumb() {
   const pathname = usePathname();
+  // Solution pages show a breadcrumb only after moving from one solution page to another
+  const [fromSolution, setFromSolution] = useState<string | null>(null);
+  const lastPathRef = useRef<string | null>(null);
+  useEffect(() => {
+    const last = lastPathRef.current;
+    if (isSolutionPage(pathname)) {
+      if (last && last !== pathname && isSolutionPage(last)) setFromSolution(last);
+      else if (last !== pathname) setFromSolution(null);
+    }
+    lastPathRef.current = pathname;
+  }, [pathname]);
   const [articleCategory, setArticleCategory] = useState<{ label: string; slug: string } | null>(null);
 
   // Watch for article category data attributes set by ArticlePageClient
@@ -113,6 +141,17 @@ export function RouteBreadcrumb() {
   // Keep it for nested routes like /solutions/agent-mode, /changelog/slug, /case-studies/slug
   const topLevelHidden = ["/team", "/acknowledgement", "/community", "/about", "/pricing", "/blog", "/changelog", "/contact", "/case-studies"];
   const isHidden = topLevelHidden.includes(pathname) || pathname.startsWith("/compare") || pathname.startsWith("/docs");
+
+  if (isSolutionPage(pathname)) {
+    if (!fromSolution) return null;
+    return (
+      <div className="bg-background/80">
+        <div className="container mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+          <AppBreadcrumb items={[{ label: solutionLabel(fromSolution), href: fromSolution }, { label: solutionLabel(pathname) }]} />
+        </div>
+      </div>
+    );
+  }
 
   if (isHidden || items.length === 0) return null;
 
