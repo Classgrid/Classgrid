@@ -11,6 +11,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { getPresignedUrlForResume } from "@/app/actions/r2-actions";
 import FilePreviewModal from "@/app/support/components/FilePreviewModal";
 import { Spinner } from "@/components/ui/spinner";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import locationData from "@/data/india-locations.json";
 
 const DEGREES = [
@@ -25,6 +26,75 @@ const DEGREES = [
 ];
 
 const CAREER_STEPS = ["About you", "Location & education", "Role & availability", "Your profiles", "Skills & questions"];
+
+type FieldOption = { value: string; label: string };
+const toOptions = (values: string[]): FieldOption[] => values.map((v) => ({ value: v, label: v }));
+
+// Our Select for the look, plus a hidden native select with the same name so FormData,
+// "required" and the step checks keep working. On phones a see-through native select sits on top.
+function FieldSelect({ name, options, placeholder, value, onChange, required, disabled }: {
+  name?: string;
+  options: FieldOption[];
+  placeholder: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  required?: boolean;
+  disabled?: boolean;
+}) {
+  const [inner, setInner] = useState("");
+  const current = value ?? inner;
+  const update = (next: string) => {
+    if (value === undefined) setInner(next);
+    onChange?.(next);
+  };
+  const labelOf = (v: string) => options.find((o) => o.value === v)?.label ?? v;
+
+  return (
+    <div className="relative">
+      <Select value={current} onValueChange={(v) => update(String(v ?? ""))} disabled={disabled}>
+        <SelectTrigger className={`!h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] font-normal shadow-none disabled:cursor-not-allowed disabled:opacity-50 ${current ? "text-foreground" : "text-muted-foreground"}`}>
+          <SelectValue placeholder={placeholder}>{(v) => (v ? labelOf(String(v)) : placeholder)}</SelectValue>
+        </SelectTrigger>
+        <SelectContent side="bottom" className="max-h-[300px] overflow-y-auto">
+          {options.map((o) => (
+            <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+      <select
+        value={current}
+        onChange={(e) => update(e.target.value)}
+        onClick={(e) => e.stopPropagation()}
+        onPointerDown={(e) => e.stopPropagation()}
+        disabled={disabled}
+        aria-label={placeholder}
+        className="absolute inset-0 z-10 h-full w-full appearance-none opacity-0 sm:hidden"
+      >
+        <option value="" disabled>{placeholder}</option>
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>{o.label}</option>
+        ))}
+      </select>
+      {name ? (
+        <select
+          name={name}
+          required={required}
+          disabled={disabled}
+          value={current}
+          onChange={(e) => update(e.target.value)}
+          tabIndex={-1}
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 left-1/2 h-px w-px opacity-0"
+        >
+          <option value="" />
+          {options.map((o) => (
+            <option key={o.value} value={o.value}>{o.label}</option>
+          ))}
+        </select>
+      ) : null}
+    </div>
+  );
+}
 
 const YEARS_OF_STUDY = [
   "1st Year", "2nd Year", "3rd Year", "4th Year", "5th Year", "Graduated", "Post-Graduated", "Dropped Out"
@@ -449,8 +519,6 @@ export function CareersForm({
 
       if (response.ok) {
         setIsSuccess(true);
-        // Fix for footer jump: manually scroll back to top of the page when the form collapses
-        window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         const data = await response.json();
         setErrorMsg(data.message || "Something went wrong. Please try again.");
@@ -485,21 +553,7 @@ export function CareersForm({
 
   return (
     <>
-      {isSuccess ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex flex-col items-center justify-center text-center py-16 space-y-4"
-        >
-          <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-500 mb-4">
-            <CheckCircle2 className="w-8 h-8" />
-          </div>
-          <h3 className="text-2xl font-bold text-zinc-900">Application Sent!</h3>
-          <p className="text-muted-foreground max-w-sm">
-            Thank you for applying to Classgrid! We have received your application and will be in touch shortly.
-          </p>
-        </motion.div>
-      ) : (
+      {(
         <>
           <h2 className="text-xl font-semibold">{formTitle}</h2>
           <p className="mt-2 text-sm text-muted-foreground">{formSubtitle}</p>
@@ -532,7 +586,7 @@ export function CareersForm({
                 type="button"
                 onClick={handleGooglePrefill}
                 disabled={googleLoading}
-                className="flex items-center gap-2 whitespace-nowrap rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 border border-slate-200 shadow-sm transition hover:bg-slate-50 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 disabled:opacity-50"
+                className="flex items-center gap-2 whitespace-nowrap rounded-lg bg-white px-4 py-2 text-sm font-semibold text-foreground border border-slate-200 shadow-sm transition hover:bg-slate-50 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 disabled:opacity-50"
               >
                 <img src="https://cdn.classgrid.in/svg__logo_collection/google-icon-logo-svgrepo-com.svg" alt="Google" className="h-5 w-5" />
                 {googleLoading ? "Connecting..." : "Fill with Google"}
@@ -554,6 +608,8 @@ export function CareersForm({
               }
             }}
           >
+            {/* Locked while sending, and after the application is sent */}
+            <fieldset disabled={isSubmitting || isSuccess} className="m-0 min-w-0 space-y-6 border-0 p-0 disabled:opacity-60">
             {/* Step progress */}
             {!isUnder18 && (
               <div>
@@ -637,7 +693,7 @@ export function CareersForm({
                   />
                 ) : phoneVerified ? (
                   <div className="flex items-center gap-2">
-                    <div className="h-11 flex-1 flex items-center rounded-lg border border-emerald-500/40 bg-emerald-50/50 dark:bg-emerald-950/20 px-3 text-slate-900">
+                    <div className="h-11 flex-1 flex items-center rounded-lg border border-emerald-500/40 bg-emerald-50/50 dark:bg-emerald-950/20 px-3 text-foreground">
                       <span>+91 {phoneValue.replace(/^\+91/, "").replace(/\s+/g, "")}</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-sm font-semibold whitespace-nowrap">
@@ -708,18 +764,12 @@ export function CareersForm({
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Gender <span className="text-red-500">*</span></span>
-                <select
+                <FieldSelect
                   name="gender"
                   required
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                  <option value="Prefer not to say">Prefer not to say</option>
-                </select>
+                  placeholder="Select Gender"
+                  options={toOptions(["Male", "Female", "Other", "Prefer not to say"])}
+                />
               </label>
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Are you over the age of 18? <span className="text-red-500">*</span></span>
@@ -733,7 +783,7 @@ export function CareersForm({
                       onChange={() => setIsUnder18(false)}
                       className="accent-foreground w-4 h-4"
                     />
-                    <span className="text-slate-900">Yes</span>
+                    <span className="text-foreground">Yes</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input 
@@ -744,7 +794,7 @@ export function CareersForm({
                       onChange={() => setIsUnder18(true)}
                       className="accent-foreground w-4 h-4"
                     />
-                    <span className="text-slate-900">No</span>
+                    <span className="text-foreground">No</span>
                   </label>
                 </div>
               </label>
@@ -759,7 +809,7 @@ export function CareersForm({
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Country</span>
-                <div className="flex items-center gap-2 h-11 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 text-slate-900 cursor-not-allowed dark:border-zinc-800 dark:bg-zinc-900 opacity-80">
+                <div className="flex items-center gap-2 h-11 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 text-foreground cursor-not-allowed dark:border-zinc-800 dark:bg-zinc-900 opacity-80">
                   <img
                     src="https://bumxgscngzjadyozdpce.supabase.co/storage/v1/object/public/LOGO%20AND%20%20SVG/Flag_of_India.svg.png"
                     alt="India"
@@ -771,53 +821,39 @@ export function CareersForm({
               </label>
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">State / UT <span className="text-red-500">*</span></span>
-                <select
+                <FieldSelect
                   name="state"
                   required
                   value={selectedState}
-                  onChange={(e) => handleStateChange(e.target.value)}
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
-                >
-                  <option value="" disabled>Select State</option>
-                  {allStates.map((state) => (
-                    <option key={state} value={state}>{state}</option>
-                  ))}
-                </select>
+                  onChange={handleStateChange}
+                  placeholder="Select State"
+                  options={toOptions(allStates)}
+                />
               </label>
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">District <span className="text-red-500">*</span></span>
-                <select
+                <FieldSelect
                   name="district"
                   required
                   value={selectedDistrict}
-                  onChange={(e) => handleDistrictChange(e.target.value)}
+                  onChange={handleDistrictChange}
                   disabled={!selectedState}
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <option value="" disabled>{selectedState && districts.length === 0 ? "Coming soon" : "Select District"}</option>
-                  {districts.map((district) => (
-                    <option key={district} value={district}>{district}</option>
-                  ))}
-                  <option value="Other">Other (Please specify)</option>
-                </select>
+                  placeholder={selectedState && districts.length === 0 ? "Coming soon" : "Select District"}
+                  options={[...toOptions(districts), { value: "Other", label: "Other (Please specify)" }]}
+                />
               </label>
               {selectedDistrict !== "Other" && (
                 <label className="block text-sm">
                   <span className="mb-2 block font-medium text-foreground">Taluka <span className="text-red-500">*</span></span>
-                  <select
+                  <FieldSelect
                     name="taluka"
                     required
                     value={selectedTaluka}
-                    onChange={(e) => setSelectedTaluka(e.target.value)}
+                    onChange={setSelectedTaluka}
                     disabled={!selectedDistrict}
-                    className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <option value="" disabled>{selectedDistrict && talukas.length === 0 ? "Coming soon" : "Select Taluka"}</option>
-                    {talukas.map((taluka) => (
-                      <option key={taluka} value={taluka}>{taluka}</option>
-                    ))}
-                    <option value="Other">Other (Please specify)</option>
-                  </select>
+                    placeholder={selectedDistrict && talukas.length === 0 ? "Coming soon" : "Select Taluka"}
+                    options={[...toOptions(talukas), { value: "Other", label: "Other (Please specify)" }]}
+                  />
                 </label>
               )}
             </motion.div>
@@ -851,31 +887,11 @@ export function CareersForm({
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Highest Qualification / Degree <span className="text-red-500">*</span></span>
-                <select
-                  name="degree"
-                  required
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select your degree</option>
-                  {DEGREES.map(deg => (
-                    <option key={deg} value={deg}>{deg}</option>
-                  ))}
-                </select>
+                <FieldSelect name="degree" required placeholder="Select your degree" options={toOptions(DEGREES)} />
               </label>
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Current Year of Study <span className="text-red-500">*</span></span>
-                <select
-                  name="yearOfStudy"
-                  required
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select year</option>
-                  {YEARS_OF_STUDY.map(year => (
-                    <option key={year} value={year}>{year}</option>
-                  ))}
-                </select>
+                <FieldSelect name="yearOfStudy" required placeholder="Select year" options={toOptions(YEARS_OF_STUDY)} />
               </label>
             </motion.div>
 
@@ -927,49 +943,28 @@ export function CareersForm({
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-1 gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">{fieldRole} <span className="text-red-500">*</span></span>
-                <select
-                  name="role"
-                  required
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
-                  defaultValue=""
-                >
-                  <option value="" disabled>{rolePlaceholder}</option>
-                  {roles.map((role) => (
-                    <option key={role.value} value={role.label}>{role.label}</option>
-                  ))}
-                </select>
+                <FieldSelect name="role" required placeholder={rolePlaceholder} options={toOptions(roles.map((role) => role.label))} />
               </label>
             </motion.div>
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Current Occupation <span className="text-red-500">*</span></span>
-                <select
-                  name="currentOccupation"
-                  required
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select Occupation</option>
-                  <option value="Student">Student</option>
-                  <option value="Fresher">Fresher</option>
-                  <option value="Working Professional">Working Professional</option>
-                </select>
+                <FieldSelect name="currentOccupation" required placeholder="Select Occupation" options={toOptions(["Student", "Fresher", "Working Professional"])} />
               </label>
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Years of Experience <span className="text-red-500">*</span></span>
-                <select
+                <FieldSelect
                   name="experience"
                   required
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select Experience</option>
-                  <option value="0">0 (Fresher)</option>
-                  <option value="1-2">1–2 Years</option>
-                  <option value="3-5">3–5 Years</option>
-                  <option value="5+">5+ Years</option>
-                </select>
+                  placeholder="Select Experience"
+                  options={[
+                    { value: "0", label: "0 (Fresher)" },
+                    { value: "1-2", label: "1–2 Years" },
+                    { value: "3-5", label: "3–5 Years" },
+                    { value: "5+", label: "5+ Years" },
+                  ]}
+                />
               </label>
             </motion.div>
 
@@ -980,7 +975,7 @@ export function CareersForm({
                   <PopoverTrigger asChild>
                     <button
                       type="button"
-                      className={`h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-left font-normal outline-none transition-all focus:border-foreground flex items-center gap-2 ${!availabilityDate ? "text-slate-500 dark:text-zinc-500" : "text-slate-900"}`}
+                      className={`h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-left font-normal outline-none transition-all focus:border-foreground flex items-center gap-2 ${!availabilityDate ? "text-slate-500 dark:text-zinc-500" : "text-foreground"}`}
                       onClick={() => { setTempDate(availabilityDate); setIsCalendarOpen(true); }}
                     >
                       <CalendarIcon className="h-4 w-4" />
@@ -1001,7 +996,7 @@ export function CareersForm({
                       <button
                         type="button"
                         onClick={() => { setAvailabilityDate(tempDate); setIsCalendarOpen(false); }}
-                        className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium bg-transparent text-slate-900 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-md transition-all border border-transparent dark:hover:border-zinc-700 hover:scale-[0.98]"
+                        className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium bg-transparent text-foreground hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-md transition-all border border-transparent dark:hover:border-zinc-700 hover:scale-[0.98]"
                       >
                         Apply <span className="opacity-50 text-[10px]">↵</span>
                       </button>
@@ -1011,17 +1006,7 @@ export function CareersForm({
               </div>
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Preferred Work Type <span className="text-red-500">*</span></span>
-                <select
-                  name="workType"
-                  required
-                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select Work Type</option>
-                  <option value="Remote">Remote</option>
-                  <option value="Hybrid">Hybrid</option>
-                  <option value="On-site">On-site</option>
-                </select>
+                <FieldSelect name="workType" required placeholder="Select Work Type" options={toOptions(["Remote", "Hybrid", "On-site"])} />
               </label>
             </motion.div>
 
@@ -1098,19 +1083,16 @@ export function CareersForm({
                         </div>
                       )}
                       <div className="flex flex-col gap-3">
-                        <select
+                        <FieldSelect
                           value={selectedDropdownRepo}
-                          onChange={(e) => setSelectedDropdownRepo(e.target.value)}
+                          onChange={setSelectedDropdownRepo}
                           disabled={isVerifyingRepo}
-                          className="w-full h-11 rounded-md border border-border bg-background px-3 text-foreground outline-none transition focus:border-foreground disabled:opacity-50"
-                        >
-                          <option value="" disabled>Select a repository you've contributed to...</option>
-                          {githubRepos.map(repo => (
-                            <option key={repo.id} value={repo.url}>
-                              {repo.name} {repo.language ? `• ${repo.language}` : ''} {repo.stars > 0 ? `• ★ ${repo.stars}` : ''}
-                            </option>
-                          ))}
-                        </select>
+                          placeholder="Select a repository you've contributed to..."
+                          options={githubRepos.map((repo) => ({
+                            value: repo.url,
+                            label: `${repo.name}${repo.language ? ` • ${repo.language}` : ""}${repo.stars > 0 ? ` • ★ ${repo.stars}` : ""}`,
+                          }))}
+                        />
                         <button
                           type="button"
                           onClick={() => {
@@ -1125,7 +1107,7 @@ export function CareersForm({
                             }
                           }}
                           disabled={!selectedDropdownRepo || isVerifyingRepo}
-                          className="w-full sm:w-auto sm:self-start h-11 px-6 rounded-lg bg-white border border-slate-200 text-slate-900 text-sm font-medium hover:bg-slate-50 transition dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 disabled:opacity-50 shadow-sm"
+                          className="w-full sm:w-auto sm:self-start h-11 px-6 rounded-lg bg-white border border-slate-200 text-foreground text-sm font-medium hover:bg-slate-50 transition dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 disabled:opacity-50 shadow-sm"
                         >
                           {isVerifyingRepo ? "Verifying..." : "Use this repository"}
                         </button>
@@ -1219,7 +1201,7 @@ export function CareersForm({
                                 onClick={() => toggleStack(stack)}
                                 className={`rounded-md border px-2.5 py-1.5 text-xs font-medium transition-all ${isSelected
                                     ? "border-foreground bg-foreground/10 text-foreground"
-                                    : "border-slate-200 bg-white text-muted-foreground hover:border-slate-300 dark:hover:border-zinc-600"
+                                    : "border-border bg-background text-muted-foreground hover:border-foreground/40"
                                   } ${isDisabled ? "cursor-not-allowed opacity-40" : ""}`}
                               >
                                 {stack}
@@ -1359,13 +1341,18 @@ export function CareersForm({
             <motion.button
               variants={itemVariants}
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || isSuccess}
               className="inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-md border border-transparent bg-foreground px-5 text-[15px] font-medium text-background transition-colors hover:bg-zinc-700 dark:hover:bg-zinc-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>
                   <Spinner className="h-4 w-4 text-inherit" />
                   <span>Submitting Application...</span>
+                </>
+              ) : isSuccess ? (
+                <>
+                  <CheckCircle2 className="h-4 w-4" />
+                  <span>Application sent</span>
                 </>
               ) : (
                 <>
@@ -1391,6 +1378,23 @@ export function CareersForm({
             </div>
           </>
         )}
+            </fieldset>
+
+            {isSuccess ? (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-start gap-3 rounded-md border border-border bg-muted/40 p-4"
+              >
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
+                <div>
+                  <p className="text-[15px] font-medium text-foreground">Application sent</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">
+                    Thank you for applying to Classgrid! We have received your application and will be in touch soon.
+                  </p>
+                </div>
+              </motion.div>
+            ) : null}
       </motion.form>
         </>
       )}

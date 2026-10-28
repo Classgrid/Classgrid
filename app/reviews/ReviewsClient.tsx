@@ -299,7 +299,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
                   <div>
                     <p className="text-[15px] font-medium text-foreground">Review sent</p>
-                    <p className="mt-0.5 text-sm text-muted-foreground">Thanks! Our team will reply to you and publish your review here.</p>
+                    <p className="mt-0.5 text-sm text-muted-foreground">Thanks! We have received your review. Our team will reply to you and publish it in the feed.</p>
                   </div>
                 </div>
               )}

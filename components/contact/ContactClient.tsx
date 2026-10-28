@@ -267,7 +267,7 @@ export default function ContactClient() {
                     <div>
                       <p className="text-[15px] font-medium text-foreground">Message sent</p>
                       <p className="mt-0.5 text-sm text-muted-foreground">
-                        Thanks for reaching out. Our team has your message and will reply by email soon.
+                        Thanks for reaching out. Our team has received your message and will reply by email soon.
                       </p>
                     </div>
                   </div>
