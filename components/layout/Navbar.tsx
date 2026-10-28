@@ -638,6 +638,16 @@ export function Navbar({
                   {docsMode ? (
                     /* ── Docs mobile menu ── */
                     <div className="flex flex-col">
+                      {/* Docs Log In on phones (the desktop Log In button is hidden on small screens) */}
+                      {!isPlatformUser && (
+                        <Link
+                          href={`/login?callbackUrl=${encodeURIComponent(pathname || "/docs")}`}
+                          onClick={closeMobileMenu}
+                          className="mb-6 flex h-12 w-full items-center justify-center rounded-lg bg-accent border border-border text-[15px] font-medium text-foreground transition-transform active:scale-[0.98] active:bg-accent/80"
+                        >
+                          Log In
+                        </Link>
+                      )}
                       <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">Documentation</p>
                       {[
                         { label: 'Getting Started', href: '/docs/introduction' },

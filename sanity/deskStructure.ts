@@ -14,7 +14,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, { schemaType
 };
 
 // Singleton document types - only one instance should exist.
-const singletonTypes = new Set(["homePage", "circularTimeline", "homeStats", "aboutPage", "compareHubPage", "changelogSettings", "turboClassgrid", "isometricStack", "appEcosystem", "pluginsPage"]);
+const singletonTypes = new Set(["homePage", "circularTimeline", "homeStats", "aboutPage", "compareHubPage", "changelogSettings", "turboClassgrid", "isometricStack", "appEcosystem", "pluginsPage", "aiPricingPage"]);
 
 // Types already shown via custom items above.
 const hiddenTypes = new Set([
@@ -25,6 +25,7 @@ const hiddenTypes = new Set([
   "websiteFeedback",
   "legalPage",
   "ipProtectionPage",
+  "module",
 ]);
 
 export const structure = (S: StructureBuilder) =>
@@ -70,6 +71,11 @@ export const structure = (S: StructureBuilder) =>
         .title("Plugins Page")
         .id("pluginsPageSingleton")
         .child(S.document().schemaType("pluginsPage").documentId("pluginsPage")),
+
+      S.listItem()
+        .title("AI Pricing")
+        .id("aiPricingPageSingleton")
+        .child(S.document().schemaType("aiPricingPage").documentId("aiPricingPage")),
 
       S.listItem()
         .title("Circular Timeline")

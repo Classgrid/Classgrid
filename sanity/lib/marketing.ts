@@ -54,6 +54,7 @@ import {
   pluginsPageQuery,
   aiSolutionPageBySlugQuery,
   aiSolutionPagesListQuery,
+  aiPricingPageQuery,
 } from './queries'
 
 const SANITY_REVALIDATE_SECONDS = 300
@@ -206,3 +207,4 @@ export const getPluginsPage = () => safeFetch(pluginsPageQuery, undefined, { dis
 export const getAiSolutionPage = (slug: string) =>
   safeFetch(aiSolutionPageBySlugQuery, { slug }, { disableInMemoryCache: true })
 export const getAiSolutionPages = () => safeFetch(aiSolutionPagesListQuery, undefined, { disableInMemoryCache: true })
+export const getAiPricingPage = () => safeFetch(aiPricingPageQuery, undefined, { disableInMemoryCache: true })

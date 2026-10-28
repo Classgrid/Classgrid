@@ -1307,3 +1307,21 @@ export const classgridTeamVisionQuery = `*[_type == "classgridTeamVision"][0]{
   isVisible, label, title, description,
   quotes[]{name, role, "text": coalesce(text, quote), "avatarUrl": avatar.asset->url}
 }`;
+
+export const aiPricingPageQuery = `*[_type == "aiPricingPage" && _id == "aiPricingPage"][0]{
+  lastUpdated,
+  hero{ eyebrow, title, subtitle, primaryCtaLabel, primaryCtaHref },
+  freePlan{ name, priceLabel, tagline, features, ctaLabel, ctaHref },
+  paygPlan{ name, priceLabel, tagline, features, ctaLabel, ctaHref },
+  calculator{ title, subtitle, show },
+  howItWorks{ title, steps[]{ _key, title, body } },
+  modelPricing{
+    title, intro, note,
+    "models": models[hidden != true] | order(coalesce(order, 9999) asc){
+      _key, name, provider, group, input, output, cachedInput, cacheWrite, badge, order
+    }
+  },
+  teams{ title, body, ctaLabel, ctaHref },
+  faqs[]{ _key, question, answer },
+  seo{ title, description }
+}`;

@@ -11,7 +11,6 @@ import GlobeLight from "@/components/ui/GlobeLight";
 import { useTheme } from "next-themes";
 import { AboutMissionVision } from "@/components/about/AboutMissionVision";
 import { AboutCoreValues } from "@/components/about/AboutCoreValues";
-import { AboutTimeline } from "@/components/about/AboutTimeline";
 import { AboutMadeInIndia } from "@/components/about/AboutMadeInIndia";
 import { SectionAccentBar } from "@/components/ui/section-accent-bar";
 import { Badge } from "@/components/ui/badge";
@@ -225,10 +224,7 @@ export default function AboutPageClient({
       {/* 4. CORE VALUES */}
       <AboutCoreValues values={values} />
 
-      {/* 5. TIMELINE */}
-      <AboutTimeline timeline={timeline} />
-
-      {/* 6. MADE IN INDIA */}
+      {/* 5. MADE IN INDIA */}
       <section className="w-full bg-background px-4 py-12 sm:px-6 lg:px-8">
         <AboutMadeInIndia className="w-full h-auto max-w-[1400px] mx-auto" />
       </section>

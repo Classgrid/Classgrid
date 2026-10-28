@@ -55,7 +55,7 @@ import { clientLogoType } from './clientLogoType'
 import { homeStatsType } from './homeStatsType'
 
 import { postType } from './postType'
-import { pricingPageType, pricingPlanType } from './pricingPageType'
+import { aiPricingModelType, aiPricingPageType } from './aiPricingPageType'
 
 
 
@@ -128,8 +128,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     homeStatsType,
 
 
-    pricingPlanType,
-    pricingPageType,
     classgridIntegrationType,
     legalPageType,
     legalTableType,
@@ -178,5 +176,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     pluginItemType,
     pluginsPageType,
     aiSolutionPageType,
+    aiPricingModelType,
+    aiPricingPageType,
   ],
 }
