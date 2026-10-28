@@ -24,11 +24,11 @@ const nextConfig: NextConfig = {
     const aiRewrites = [
       {
         source: "/api/ask-ai",
-        destination: "http://16.192.13.132:5000/api/ask-ai",
+        destination: "https://ai.classgrid.in/api/ask-ai",
       },
       {
         source: "/api/ask-ai/:path*",
-        destination: "http://16.192.13.132:5000/api/ask-ai/:path*",
+        destination: "https://ai.classgrid.in/api/ask-ai/:path*",
       },
     ];
 
