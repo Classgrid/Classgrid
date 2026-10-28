@@ -126,7 +126,7 @@ export const solutionPageType = defineType({
             defineField({ name: 'icon', title: 'Icon (Lucide name)', type: 'string' }),
           ],
           preview: {
-            select: { title: 'feature', subtitle: 'description' },
+            select: { title: 'feature.en', subtitle: 'description.en' },
           },
         },
       ],
@@ -145,7 +145,7 @@ export const solutionPageType = defineType({
             defineField({ name: 'description', title: 'Their Experience', type: 'localeText' }),
           ],
           preview: {
-            select: { title: 'roleName', subtitle: 'description' },
+            select: { title: 'roleName.en', subtitle: 'description.en' },
           },
         },
       ],
