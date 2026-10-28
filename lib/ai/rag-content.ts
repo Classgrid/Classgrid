@@ -104,7 +104,22 @@ const EXCLUDED_KEYS = new Set([
   "photo",
   "posterImage",
   "wordmark",
+  // Dates, links and settings: saved as tiny chunks they crowd out the real text in search
+  "publishedAt",
+  "lastUpdatedAt",
+  "lastUpdated",
+  "updatedAt",
+  "createdAt",
+  "ctaHref",
+  "primaryCtaHref",
+  "secondaryCtaHref",
+  "order",
+  "docsVersion",
+  "slug",
 ]);
+
+// Already in the "Page summary" chunk, so not saved again on its own
+const TOP_LEVEL_SKIPPED_KEYS = new Set(["title"]);
 
 const URL_LIKE_KEYS = new Set([
   "href",
@@ -439,6 +454,7 @@ function flattenValue(
   const obj = value as Record<string, unknown>;
   for (const [key, childValue] of Object.entries(obj)) {
     if (EXCLUDED_KEYS.has(key) || URL_LIKE_KEYS.has(key)) continue;
+    if (depth === 0 && TOP_LEVEL_SKIPPED_KEYS.has(key)) continue;
     if (key.startsWith("_")) continue;
     if (childValue == null) continue;
 
