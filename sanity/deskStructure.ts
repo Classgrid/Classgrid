@@ -29,6 +29,9 @@ const hiddenTypes = new Set([
   "classgridVideo",
   "classgridTeamVision",
   "faqItem",
+  "testimonial",
+  "classgrid_talk",
+  "testimonialVideo",
 ]);
 
 export const structure = (S: StructureBuilder) =>
@@ -142,6 +145,15 @@ export const structure = (S: StructureBuilder) =>
               S.listItem()
                 .title("FAQ Item")
                 .child(S.documentTypeList("faqItem").title("FAQ Item")),
+              S.listItem()
+                .title("Testimonial")
+                .child(S.documentTypeList("testimonial").title("Testimonial")),
+              S.listItem()
+                .title("Classgrid Talk (Testimonial)")
+                .child(S.documentTypeList("classgrid_talk").title("Classgrid Talk (Testimonial)")),
+              S.listItem()
+                .title("Testimonial Video")
+                .child(S.documentTypeList("testimonialVideo").title("Testimonial Video")),
             ])
         ),
 
