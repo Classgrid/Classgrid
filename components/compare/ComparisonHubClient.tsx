@@ -37,8 +37,6 @@ export function ComparisonHubClient({ hubData, comparisons }: ComparisonHubClien
         
         {/* Hero Section — calm, editorial, typography-led */}
         <div className="text-center mb-28 space-y-8">
-          {/* Accent bar — thinner, quieter */}
-          <div className="mx-auto mb-4 h-[3px] w-16 rounded-full bg-orange-500/70" />
           
           {/* Headline — no italic, reduced weight, tighter measure */}
           <h1 className="text-xl md:text-2xl lg:text-[1.7rem] font-medium tracking-tight text-slate-800 dark:text-white/90 leading-[1.55] max-w-xl mx-auto">

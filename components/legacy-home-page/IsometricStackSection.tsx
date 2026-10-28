@@ -291,7 +291,6 @@ export function IsometricStackSection({ kicker, headline, subheadline, phases }:
         {/* ═══ SECTION HEADER — above the two columns ═══ */}
         {(headline || subheadline) && (
           <div className="cg-iso-section-header" style={{ maxWidth: 760, margin: '0 auto 52px', textAlign: 'center', width: '100%' }}>
-            <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
             {headline && (
               <h2 className="cg-iso-section-headline" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.5px', lineHeight: 1.15, color: '#e2e8f0', marginBottom: 14 }}>
                 {headline}

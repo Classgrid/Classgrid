@@ -295,7 +295,6 @@ export function YouTubeStylePlayer({
           variants={staggerContainer}
         >
           <motion.div variants={headingVariant}>
-            <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
             {label?.trim() ? (
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
                 {label}

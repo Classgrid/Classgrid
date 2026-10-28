@@ -231,7 +231,6 @@ export function PlatformAnimatedBeam({
                   {kicker}
                 </p>
               ) : null}
-              <div className="mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
               {title?.trim() ? (
                 <h2 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-foreground lg:text-5xl">
                   {title}

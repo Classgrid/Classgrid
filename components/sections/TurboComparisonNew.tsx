@@ -533,7 +533,6 @@ export function TurboComparisonNew({
 
                 {/* Heading */}
                 <div className="mb-8 md:mb-16 text-center">
-                    <div className="mx-auto mb-4 md:mb-6 h-1.5 w-16 md:w-24 rounded-full bg-orange-500" />
                     <h2 className="text-2xl font-extrabold tracking-tight text-foreground dark:text-white md:text-5xl">
                         {headline || "Close Admissions in Minutes, Not Days"}
                     </h2>

@@ -303,12 +303,6 @@ export function DemoRequestForm({
   return (
     <div className="mx-auto w-full max-w-3xl">
       <div className="mb-12 text-center">
-        <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
-        {label ? (
-          <div className="mb-6 flex justify-center">
-            <Chip variant="default">{label}</Chip>
-          </div>
-        ) : null}
 
         {title?.trim() ? (
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-5xl">

@@ -45,12 +45,6 @@ export default function IntegrationsMarquee({
     <section className="relative z-10 block overflow-hidden border-t border-foreground/10 bg-transparent py-32">
       {(kicker?.trim() || title?.trim() || subtitle?.trim()) ? (
         <div className="relative z-20 mx-auto mb-16 max-w-7xl px-6 text-center">
-          {kicker?.trim() ? (
-            <Chip variant="emerald" dot interactive className="mb-4 text-sm tracking-wider">
-              {kicker}
-            </Chip>
-          ) : null}
-          <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
           {title?.trim() ? (
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-5xl">
               {title}

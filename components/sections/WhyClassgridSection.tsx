@@ -27,7 +27,6 @@ export function WhyClassgridSection({
     <section className="mx-auto w-full max-w-[1400px] px-4 py-16 md:py-24">
       <Reveal>
         <div className="mb-12 text-center md:mb-16">
-          <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500"></div>
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
             {title}
           </h2>

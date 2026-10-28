@@ -201,7 +201,6 @@ export function ClassgridRoleShowcase({
       <div className="relative z-10 mx-auto max-w-[1400px] px-6">
         {/* ── Section header ── */}
         <div className="mb-16 text-center">
-          <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500"></div>
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-400">
             <span className="relative inline-flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />

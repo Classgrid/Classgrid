@@ -74,7 +74,6 @@ export function SectionHeader({
 
   return (
     <div className={cn("mb-12 text-center md:mb-16", className)}>
-      <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
       {label ? (
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
           {label}

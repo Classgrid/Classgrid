@@ -89,7 +89,6 @@ export function EmpowerSliderSection({ sectionHeadline, slides }: EmpowerSliderS
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="mx-auto mb-5 h-1.5 w-24 rounded-full bg-orange-500" />
             <h2 className="text-3xl font-extrabold leading-[1.15] tracking-tight text-foreground md:text-4xl lg:text-5xl">
               {sectionHeadline}
             </h2>

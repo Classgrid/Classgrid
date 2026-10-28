@@ -124,14 +124,6 @@ export function FAQSection({
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-16 text-center"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500"
-          />
-
           {subtitle?.trim() ? (
             <motion.p
               initial={{ opacity: 0, y: 12 }}
