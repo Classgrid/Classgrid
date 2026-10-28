@@ -328,34 +328,37 @@ export default function RaiseTicketPage() {
   if (knownEmail && platformRole === "super_admin") {
     return (
       <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
-        <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl md:rounded-[2rem] border border-blue-500/30 bg-card shadow-2xl shadow-black/30">
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-400 to-blue-500" />
+        <div className="relative w-full max-w-4xl overflow-hidden rounded-md border border-border bg-background">
           <div className="flex flex-col md:flex-row min-h-[400px]">
-            <div className="relative flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-gradient-to-br from-blue-500/5 to-transparent">
-              <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-8">
-                  <Shield className="w-8 h-8 text-blue-500" />
+            <div className="flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-muted/40">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Support</p>
+              <h2 className="mt-4 text-4xl font-medium tracking-[-0.03em] text-foreground">Super Admin Access</h2>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                You are logged in as a <span className="font-medium text-foreground">Super Admin</span>. You cannot raise support tickets for yourself. To manage support tickets and interact with users, please use the Super Admin Dashboard.
+              </p>
+              <div className="mt-8 flex items-center gap-4 px-4 py-3 rounded-md border border-border bg-background">
+                <div className="w-10 h-10 shrink-0 rounded-full bg-muted flex items-center justify-center text-foreground">
+                  <Shield className="w-5 h-5" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Super Admin Access</h2>
-                <div className="w-12 h-1.5 rounded-full bg-blue-500 mb-6" />
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  You are logged in as a <span className="font-medium text-foreground">Super Admin</span>. You cannot raise support tickets for yourself. To manage support tickets and interact with users, please use the Super Admin Dashboard.
-                </p>
+                <div className="flex flex-col min-w-0">
+                  <span className="text-sm font-medium text-foreground truncate max-w-[220px]">{knownEmail}</span>
+                  <span className="text-xs text-muted-foreground">Super Admin</span>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 bg-card">
-              <h3 className="text-xl font-semibold text-foreground mb-6 text-center">Platform Management</h3>
+            <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 gap-3 bg-background">
+              <p className="mb-3 text-center font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Platform Management</p>
               <a href="https://superadmin.classgrid.in" className="w-full max-w-[320px]">
-                <Button className="h-14 w-full rounded-xl bg-blue-600 font-semibold text-white shadow-lg shadow-blue-600/20 hover:bg-blue-700 transition-all text-base">
+                <Button className="h-11 w-full rounded-md border-transparent bg-foreground font-medium text-background hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors flex items-center justify-center gap-1.5 text-[15px]">
                   Go to Dashboard
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
               </a>
               <Button
                 onClick={handleLogout}
                 variant="outline"
                 showGlow={false}
-                className="mt-4 h-12 w-full max-w-[320px] rounded-xl font-medium text-muted-foreground hover:text-foreground transition-all flex items-center justify-center gap-2"
+                className="mt-3 h-11 w-full max-w-[320px] rounded-md border-transparent bg-transparent font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors flex items-center justify-center gap-2 text-[15px]"
               >
                 <LogOut className="w-4 h-4" />
                 Sign out
@@ -430,19 +433,20 @@ export default function RaiseTicketPage() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className="max-w-md w-full bg-card rounded-2xl p-8 sm:p-10 text-center shadow-xl border border-border"
+          className="max-w-md w-full bg-background rounded-md p-8 sm:p-10 text-center border border-border"
         >
-          <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-10 h-10 text-primary" />
+          <div className="w-14 h-14 bg-muted rounded-full flex items-center justify-center mx-auto mb-6">
+            <CheckCircle2 className="w-7 h-7 text-foreground" />
           </div>
-          <h2 className="text-2xl font-bold text-foreground mb-3">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Support</p>
+          <h2 className="mt-3 text-3xl font-medium tracking-[-0.03em] text-foreground mb-3">
             Request submitted
           </h2>
           <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
             Your ticket has been created. A member of our support team will
             respond as soon as possible. Redirecting you to your requests.
           </p>
-          <div className="flex items-center justify-center gap-2 text-sm font-semibold text-primary">
+          <div className="flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground">
             <Spinner className="w-4 h-4 text-inherit" />
             Opening your requests...
           </div>
