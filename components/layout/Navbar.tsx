@@ -142,7 +142,7 @@ const ICON_MAP: Record<string, any> = {
 
 /** Runtime label renames - catches stale Sanity / cached placeholder data */
 const LABEL_RENAME: Record<string, { label: string; href: string }> = {
-  "For Institutes": { label: "For Admins", href: "/solutions/for-admins" },
+  "For Institutes": { label: "For Admins", href: "/solutions/email-and-calendar" },
 };
 
 function normalizeNavItems(items: NavItem[]): NavItem[] {
@@ -240,19 +240,19 @@ export function Navbar({
         {
           heading: "Classgrid AI",
           links: [
-            { label: "Agent mode",      href: "/solutions/for-schools",     icon: Bot            },
-            { label: "Project Mode",    href: "/solutions/for-engineering", icon: Cpu            },
-            { label: "Grids",           href: "/solutions/for-colleges",    icon: MessagesSquare },
-            { label: "WhatsApp calls",  href: "/solutions/for-jr-colleges", icon: Phone          },
-            { label: "Research & data", href: "/solutions/for-coaching",    icon: BarChart3      },
+            { label: "Agent mode",      href: "/solutions/agent-mode",     icon: Bot            },
+            { label: "Project Mode",    href: "/solutions/project-mode", icon: Cpu            },
+            { label: "Grids",           href: "/solutions/grids",    icon: MessagesSquare },
+            { label: "WhatsApp calls",  href: "/solutions/whatsapp-calls", icon: Phone          },
+            { label: "Research & data", href: "/solutions/research",    icon: BarChart3      },
           ],
         },
         {
           heading: "Use cases",
           links: [
-            { label: "Documents & files",      href: "/solutions/for-students", icon: FileText   },
-            { label: "Reminders & automation", href: "/solutions/for-teachers", icon: AlarmClock },
-            { label: "Email & calendar",       href: "/solutions/for-admins",   icon: Mail       },
+            { label: "Documents & files",      href: "/solutions/documents-and-files", icon: FileText   },
+            { label: "Reminders & automation", href: "/solutions/reminders-and-automation", icon: AlarmClock },
+            { label: "Email & calendar",       href: "/solutions/email-and-calendar",   icon: Mail       },
           ],
         },
       ],

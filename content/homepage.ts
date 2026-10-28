@@ -86,10 +86,10 @@ export const additionalModules = categorizedModules.slice(9).map(m => m.title);
 export const heroContent = { primaryCta: "Book a Demo" };
 
 export const orgTypes = [
-  { title: "Schools", subtitle: "K-12", badge: "K12", description: "Comprehensive management for K-12 education.", href: "/solutions/for-schools" },
-  { title: "Junior Colleges", subtitle: "FYJC / SYJC", badge: "JRC", description: "Focused workflows for junior colleges.", href: "/solutions/for-jr-colleges" },
-  { title: "Engineering", subtitle: "Technical", badge: "ENG", description: "Specialized tools for technical institutes.", href: "/solutions/for-engineering" },
-  { title: "Coaching", subtitle: "Test Prep", badge: "COA", description: "Batch and test series management.", href: "/solutions/for-coaching" },
+  { title: "Schools", subtitle: "K-12", badge: "K12", description: "Comprehensive management for K-12 education.", href: "/solutions/agent-mode" },
+  { title: "Junior Colleges", subtitle: "FYJC / SYJC", badge: "JRC", description: "Focused workflows for junior colleges.", href: "/solutions/whatsapp-calls" },
+  { title: "Engineering", subtitle: "Technical", badge: "ENG", description: "Specialized tools for technical institutes.", href: "/solutions/project-mode" },
+  { title: "Coaching", subtitle: "Test Prep", badge: "COA", description: "Batch and test series management.", href: "/solutions/research" },
 ];
 
 export const timelineTabs = [

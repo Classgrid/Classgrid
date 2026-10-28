@@ -110,7 +110,7 @@ export function RouteBreadcrumb() {
   }, [pathname, articleCategory]);
 
   // Hide breadcrumb on top-level pages where it's redundant (just shows the page name)
-  // Keep it for nested routes like /solutions/for-schools, /changelog/slug, /case-studies/slug
+  // Keep it for nested routes like /solutions/agent-mode, /changelog/slug, /case-studies/slug
   const topLevelHidden = ["/team", "/acknowledgement", "/community", "/about", "/pricing", "/blog", "/changelog", "/contact", "/case-studies"];
   const isHidden = topLevelHidden.includes(pathname) || pathname.startsWith("/compare") || pathname.startsWith("/docs");
 

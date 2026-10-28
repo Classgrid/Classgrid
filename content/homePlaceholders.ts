@@ -94,19 +94,19 @@ export const placeholderChromeContent: ChromeContent = {
         {
           heading: "Classgrid AI",
           links: [
-            { label: "Agent mode", href: "/solutions/for-schools" },
-            { label: "Project Mode", href: "/solutions/for-engineering" },
-            { label: "Grids", href: "/solutions/for-colleges" },
-            { label: "WhatsApp calls", href: "/solutions/for-jr-colleges" },
-            { label: "Research & data", href: "/solutions/for-coaching" },
+            { label: "Agent mode", href: "/solutions/agent-mode" },
+            { label: "Project Mode", href: "/solutions/project-mode" },
+            { label: "Grids", href: "/solutions/grids" },
+            { label: "WhatsApp calls", href: "/solutions/whatsapp-calls" },
+            { label: "Research & data", href: "/solutions/research" },
           ],
         },
         {
           heading: "Use cases",
           links: [
-            { label: "Documents & files", href: "/solutions/for-students" },
-            { label: "Reminders & automation", href: "/solutions/for-teachers" },
-            { label: "Email & calendar", href: "/solutions/for-admins" },
+            { label: "Documents & files", href: "/solutions/documents-and-files" },
+            { label: "Reminders & automation", href: "/solutions/reminders-and-automation" },
+            { label: "Email & calendar", href: "/solutions/email-and-calendar" },
           ],
         },
       ],

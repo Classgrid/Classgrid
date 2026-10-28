@@ -140,19 +140,19 @@ const LEFT_NAV = [
   {
     section: "Classgrid AI",
     items: [
-      { label: "Agent mode", href: "/solutions/for-schools", icon: School },
-      { label: "Project Mode", href: "/solutions/for-engineering", icon: Cpu },
-      { label: "Grids", href: "/solutions/for-colleges", icon: GraduationCap },
-      { label: "WhatsApp calls", href: "/solutions/for-jr-colleges", icon: BookOpen },
-      { label: "Research & data", href: "/solutions/for-coaching", icon: Target },
+      { label: "Agent mode", href: "/solutions/agent-mode", icon: School },
+      { label: "Project Mode", href: "/solutions/project-mode", icon: Cpu },
+      { label: "Grids", href: "/solutions/grids", icon: GraduationCap },
+      { label: "WhatsApp calls", href: "/solutions/whatsapp-calls", icon: BookOpen },
+      { label: "Research & data", href: "/solutions/research", icon: Target },
     ],
   },
   {
     section: "Use cases",
     items: [
-      { label: "Documents & files", href: "/solutions/for-students", icon: Users },
-      { label: "Reminders & automation", href: "/solutions/for-teachers", icon: Presentation },
-      { label: "Email & calendar", href: "/solutions/for-admins", icon: ShieldCheck },
+      { label: "Documents & files", href: "/solutions/documents-and-files", icon: Users },
+      { label: "Reminders & automation", href: "/solutions/reminders-and-automation", icon: Presentation },
+      { label: "Email & calendar", href: "/solutions/email-and-calendar", icon: ShieldCheck },
     ],
   },
 ];

@@ -25,17 +25,20 @@ const INDUSTRY_SLUGS = new Set([
   "for-engineering",
 ]);
 
+/** Page address -> old key of its extra content in lib/solution-content */
+const OLD_KEYS: Record<string, string> = {
+  "agent-mode": "for-schools",
+  "project-mode": "for-engineering",
+  "grids": "for-colleges",
+  "whatsapp-calls": "for-jr-colleges",
+  "research": "for-coaching",
+  "documents-and-files": "for-students",
+  "reminders-and-automation": "for-teachers",
+  "email-and-calendar": "for-admins",
+};
+
 export async function generateStaticParams() {
-  return [
-    { slug: "for-schools" },
-    { slug: "for-colleges" },
-    { slug: "for-jr-colleges" },
-    { slug: "for-coaching" },
-    { slug: "for-engineering" },
-    { slug: "for-students" },
-    { slug: "for-teachers" },
-    { slug: "for-admins" },
-  ];
+  return Object.keys(OLD_KEYS).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -74,6 +77,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function SolutionPage({ params }: PageProps) {
   const { slug } = await params;
+  const oldKey = OLD_KEYS[slug] ?? slug;
   const page = (await getSolutionPage(slug)) as any;
 
   if (!page) {
@@ -87,7 +91,7 @@ export default async function SolutionPage({ params }: PageProps) {
   }
 
   const heroImageUrl = page?.heroImage?.asset?.url ?? null;
-  const isIndustry = INDUSTRY_SLUGS.has(slug);
+  const isIndustry = INDUSTRY_SLUGS.has(oldKey);
 
   const capabilities = Array.isArray(page?.capabilities)
     ? page.capabilities
@@ -147,11 +151,11 @@ export default async function SolutionPage({ params }: PageProps) {
         trustBadges={solutionTrustBadges}
         clientLogos={solutionClientLogos}
         impactMetrics={solutionImpactMetrics}
-        testimonials={solutionTestimonialsBySlug[slug] ?? []}
+        testimonials={solutionTestimonialsBySlug[oldKey] ?? []}
         problemSolution={
           isIndustry
-            ? (industryProblemSolution[slug] ?? [])
-            : (roleProblemSolution[slug] ?? [])
+            ? (industryProblemSolution[oldKey] ?? [])
+            : (roleProblemSolution[oldKey] ?? [])
         }
       />
     </>
