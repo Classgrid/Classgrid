@@ -65,7 +65,6 @@ const nextConfig: NextConfig = {
       { source: "/product/:path*", destination: "/", permanent: true },
       { source: "/modules/:path*", destination: "/", permanent: true },
       { source: "/features/:path*", destination: "/", permanent: true },
-      { source: "/case-studies/:path*", destination: "/reviews", permanent: true },
       // Redirect community/forum to new Discourse forum
       // { source: "/community", destination: "https://forum.classgrid.in", permanent: false },
       // { source: "/forum", destination: "https://forum.classgrid.in", permanent: false },
