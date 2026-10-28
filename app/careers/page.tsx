@@ -17,13 +17,18 @@ type SalesRole = {
 };
 
 export default async function Page() {
-  const title = "Join the Team";
-  const titleAccent = "Building Classgrid";
-  const body = "We are on a mission to build the best operating system for education in India. If you are passionate about coding, design, or marketing, we would love to have you on board! Apply for our open roles and internships below.";
-  
+  const title = "Join the team building Classgrid AI";
+  const body = "We're building an agentic platform for everyday work. If you love building, designing or telling great stories, we'd love to hear from you. Apply for an open role or internship.";
+
   const metrics: SalesMetric[] = [
-    { label: "WORKPLACE", value: "Remote & Flexible" },
-    { label: "ENVIRONMENT", value: "Learn & Grow" },
+    { label: "Workplace", value: "Remote and flexible" },
+    { label: "Environment", value: "Learn and grow fast" },
+  ];
+
+  const hiringSteps = [
+    "Apply with the form. It takes about 10 minutes.",
+    "Our team reviews your application and your GitHub work.",
+    "If it's a fit, we invite you to a short call.",
   ];
   
   const formTitle = "Apply to Classgrid";
@@ -146,28 +151,53 @@ export default async function Page() {
   
   return (
     <div className="bg-background text-foreground">
-      <section className="min-h-screen border-b border-slate-200 px-4 py-16 dark:border-white/10 sm:px-6 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center space-y-6 mb-12">
-            <h1 className="text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl mt-6">
-              {title}
-              <span className="block text-muted-foreground mt-2">{titleAccent}</span>
-            </h1>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {body}
-            </p>
+      {/* Heading */}
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1fr)_380px]">
+          <div className="px-6 pb-10 pt-28 md:px-10 md:pb-14 md:pt-36 lg:border-r lg:border-border">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Careers</p>
+            <h1 className="mt-5 text-balance text-5xl font-medium tracking-[-0.035em] md:text-7xl">{title}</h1>
+          </div>
+          <div className="flex items-end px-6 pb-10 md:px-10 md:pb-14">
+            <p className="text-lg leading-relaxed text-muted-foreground">{body}</p>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto mt-8">
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div className="bg-muted/40 px-6 py-12 md:px-10 lg:border-r lg:border-border lg:py-16">
+            <div className="divide-y divide-border border border-border bg-background">
               {metrics.map((metric) => (
-                <div key={metric.label} className="rounded-xl border border-border bg-card p-4 text-left">
-                  <p className="text-xs font-medium tracking-wide text-slate-500 dark:text-zinc-500">{metric.label}</p>
-                  <p className="mt-2 text-2xl font-bold">{metric.value}</p>
+                <div key={metric.label} className="p-7 md:p-8">
+                  <p className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">{metric.label}</p>
+                  <p className="mt-2 text-2xl font-medium tracking-[-0.02em]">{metric.value}</p>
                 </div>
               ))}
+              <div className="p-7 md:p-8">
+                <h2 className="text-2xl font-medium tracking-[-0.02em]">How hiring works</h2>
+                <ol className="mt-4 space-y-3">
+                  {hiringSteps.map((text, i) => (
+                    <li key={text} className="flex gap-3 text-[15px] leading-relaxed text-muted-foreground">
+                      <span className="font-mono text-sm text-foreground">0{i + 1}</span>
+                      <span>{text}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className="p-7 md:p-8">
+                <h2 className="text-2xl font-medium tracking-[-0.02em]">Questions</h2>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+                  Email{" "}
+                  <a href="mailto:support@classgrid.in" className="font-medium text-foreground hover:underline">support@classgrid.in</a>
+                  {" "}and we&apos;ll get back to you.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="mx-auto max-w-2xl rounded-md border border-border bg-card p-6 sm:p-10">
+          <div className="px-6 py-12 md:px-10 lg:py-16">
+            <div className="mx-auto w-full max-w-xl">
             <CareersForm
               formTitle={formTitle}
               formSubtitle={formSubtitle}
@@ -180,6 +210,7 @@ export default async function Page() {
               roles={roles}
               techStackGroups={techStackGroups}
             />
+            </div>
           </div>
         </div>
       </section>

@@ -2,8 +2,8 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
-import { motion } from "framer-motion";
-import { CheckCircle2, Send, Paperclip, Eye, Trash2, CalendarIcon, ChevronDown, Loader2, ShieldCheck, MessageSquare } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, Send, Paperclip, Eye, Trash2, CalendarIcon, ChevronDown, ChevronLeft, ChevronRight, Loader2, ShieldCheck, MessageSquare } from "lucide-react";
 import { Github } from "lucide-react";
 import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
@@ -23,6 +23,8 @@ const DEGREES = [
   "B.P.Ed", "M.P.Ed", "Integrated B.Tech+M.Tech", "Integrated B.Sc+M.Sc",
   "Integrated BBA+MBA", "Other"
 ];
+
+const CAREER_STEPS = ["About you", "Location & education", "Role & availability", "Your profiles", "Skills & questions"];
 
 const YEARS_OF_STUDY = [
   "1st Year", "2nd Year", "3rd Year", "4th Year", "5th Year", "Graduated", "Post-Graduated", "Dropped Out"
@@ -63,6 +65,35 @@ export function CareersForm({
   const REQUIRE_OTP = false;
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // The form is shown one step at a time; every field stays in the form, hidden steps are only not shown
+  const [step, setStep] = useState(0);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const firstInvalidField = (index: number) => {
+    const container = stepRefs.current[index];
+    if (!container) return null;
+    const fields = container.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>("input, select, textarea");
+    return Array.from(fields).find((field) => !field.disabled && field.type !== "hidden" && !field.checkValidity()) || null;
+  };
+
+  const showStep = (index: number) => {
+    setStep(index);
+    const form = stepRefs.current[0]?.closest("form");
+    if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const goNext = () => {
+    const invalid = firstInvalidField(step);
+    if (invalid) {
+      invalid.reportValidity();
+      return;
+    }
+    showStep(Math.min(step + 1, CAREER_STEPS.length - 1));
+  };
+
+  const goBack = () => showStep(Math.max(step - 1, 0));
+
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
@@ -433,6 +464,25 @@ export function CareersForm({
     }
   };
 
+  // Before sending, check every step; if one has a missing field, open that step and point to the field
+  const handleStepsSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    for (let i = 0; i < CAREER_STEPS.length; i++) {
+      if (firstInvalidField(i)) {
+        e.preventDefault();
+        showStep(i);
+        setTimeout(() => firstInvalidField(i)?.reportValidity(), 350);
+        return;
+      }
+    }
+    if (selectedGithubRepos.length === 0) {
+      e.preventDefault();
+      setErrorMsg("Please connect GitHub and select your best repository.");
+      showStep(3);
+      return;
+    }
+    handleSubmit(e);
+  };
+
   return (
     <>
       {isSuccess ? (
@@ -444,7 +494,7 @@ export function CareersForm({
           <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-500 mb-4">
             <CheckCircle2 className="w-8 h-8" />
           </div>
-          <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Application Sent!</h3>
+          <h3 className="text-2xl font-bold text-zinc-900">Application Sent!</h3>
           <p className="text-muted-foreground max-w-sm">
             Thank you for applying to Classgrid! We have received your application and will be in touch shortly.
           </p>
@@ -473,7 +523,7 @@ export function CareersForm({
           )}
 
           {!googleFilled && (
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 items-center justify-between bg-secondary/30 p-4 rounded-xl border border-border">
+            <div className="mt-6 flex flex-col sm:flex-row gap-4 items-center justify-between bg-muted/40 p-4 rounded-md border border-border">
               <div className="text-sm text-muted-foreground">
                 <span className="font-medium text-foreground block">Save time applying</span>
                 Autofill your name and email using Google.
@@ -482,7 +532,7 @@ export function CareersForm({
                 type="button"
                 onClick={handleGooglePrefill}
                 disabled={googleLoading}
-                className="flex items-center gap-2 whitespace-nowrap rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 border border-slate-200 shadow-sm transition hover:bg-slate-50 dark:bg-zinc-900 dark:text-white dark:border-zinc-800 dark:hover:bg-zinc-800 disabled:opacity-50"
+                className="flex items-center gap-2 whitespace-nowrap rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 border border-slate-200 shadow-sm transition hover:bg-slate-50 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 disabled:opacity-50"
               >
                 <img src="https://cdn.classgrid.in/svg__logo_collection/google-icon-logo-svgrepo-com.svg" alt="Google" className="h-5 w-5" />
                 {googleLoading ? "Connecting..." : "Fill with Google"}
@@ -491,7 +541,8 @@ export function CareersForm({
           )}
 
           <motion.form
-            onSubmit={handleSubmit}
+            onSubmit={handleStepsSubmit}
+            noValidate
             className="mt-6 space-y-6"
             initial="hidden"
             animate="show"
@@ -503,42 +554,78 @@ export function CareersForm({
               }
             }}
           >
+            {/* Step progress */}
+            {!isUnder18 && (
+              <div>
+                <div className="flex items-center justify-between text-sm">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={step}
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.2 }}
+                      className="font-medium text-foreground"
+                    >
+                      {CAREER_STEPS[step]}
+                    </motion.span>
+                  </AnimatePresence>
+                  <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                    Step {step + 1} of {CAREER_STEPS.length}
+                  </span>
+                </div>
+                <div className="mt-3 grid gap-1.5" style={{ gridTemplateColumns: `repeat(${CAREER_STEPS.length}, minmax(0, 1fr))` }}>
+                  {CAREER_STEPS.map((label, i) => (
+                    <div key={label} className="h-1 overflow-hidden rounded-full bg-muted">
+                      <motion.div
+                        className="h-full bg-foreground"
+                        initial={false}
+                        animate={{ width: i <= step ? "100%" : "0%" }}
+                        transition={{ duration: 0.35, ease: "easeOut" }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div ref={(el) => { stepRefs.current[0] = el; }} className={step === 0 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">First Name <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">First Name <span className="text-red-500">*</span></span>
                 <input
                   type="text"
                   name="firstName"
                   required
                   placeholder="John"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Last Name <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Last Name <span className="text-red-500">*</span></span>
                 <input
                   type="text"
                   name="lastName"
                   required
                   placeholder="Doe"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </label>
             </motion.div>
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">{fieldEmail} <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">{fieldEmail} <span className="text-red-500">*</span></span>
                 <input
                   type="email"
                   name="email"
                   required
                   placeholder="you@example.com"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </label>
               <div className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Phone Number <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Phone Number <span className="text-red-500">*</span></span>
                 {!REQUIRE_OTP ? (
                   <input
                     type="tel"
@@ -546,11 +633,11 @@ export function CareersForm({
                     required
                     placeholder="10-digit number"
                     maxLength={13}
-                    className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                    className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                   />
                 ) : phoneVerified ? (
                   <div className="flex items-center gap-2">
-                    <div className="h-11 flex-1 flex items-center rounded-lg border border-emerald-500/40 bg-emerald-50/50 dark:bg-emerald-950/20 px-3 text-slate-900 dark:text-white">
+                    <div className="h-11 flex-1 flex items-center rounded-lg border border-emerald-500/40 bg-emerald-50/50 dark:bg-emerald-950/20 px-3 text-slate-900">
                       <span>+91 {phoneValue.replace(/^\+91/, "").replace(/\s+/g, "")}</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-sm font-semibold whitespace-nowrap">
@@ -568,7 +655,7 @@ export function CareersForm({
                         onChange={(e) => { setPhoneValue(e.target.value); setOtpSent(false); setOtpError(""); setPhoneVerified(false); }}
                         placeholder="10-digit number"
                         maxLength={13}
-                        className="h-11 flex-1 rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                        className="h-11 flex-1 rounded-md border border-border bg-background px-3 text-foreground outline-none transition focus:border-foreground"
                       />
                       <button
                         type="button"
@@ -594,7 +681,7 @@ export function CareersForm({
                             onChange={(e) => { setOtpInput(e.target.value.replace(/\D/g, "").slice(0, 6)); setOtpError(""); }}
                             placeholder="Enter 6-digit OTP"
                             maxLength={6}
-                            className="h-11 flex-1 rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white tracking-[0.3em] text-center font-mono text-lg"
+                            className="h-11 flex-1 rounded-md border border-border bg-background px-3 text-foreground outline-none transition focus:border-foreground tracking-[0.3em] text-center font-mono text-lg"
                           />
                           <button
                             type="button"
@@ -620,11 +707,11 @@ export function CareersForm({
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Gender <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Gender <span className="text-red-500">*</span></span>
                 <select
                   name="gender"
                   required
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                   defaultValue=""
                 >
                   <option value="" disabled>Select Gender</option>
@@ -635,7 +722,7 @@ export function CareersForm({
                 </select>
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Are you over the age of 18? <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Are you over the age of 18? <span className="text-red-500">*</span></span>
                 <div className="flex gap-4 items-center h-11 px-3">
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input 
@@ -646,7 +733,7 @@ export function CareersForm({
                       onChange={() => setIsUnder18(false)}
                       className="accent-foreground w-4 h-4"
                     />
-                    <span className="text-slate-900 dark:text-white">Yes</span>
+                    <span className="text-slate-900">Yes</span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input 
@@ -657,20 +744,22 @@ export function CareersForm({
                       onChange={() => setIsUnder18(true)}
                       className="accent-foreground w-4 h-4"
                     />
-                    <span className="text-slate-900 dark:text-white">No</span>
+                    <span className="text-slate-900">No</span>
                   </label>
                 </div>
               </label>
             </motion.div>
 
+            </div>
             {!isUnder18 && (
               <>
+            <div ref={(el) => { stepRefs.current[1] = el; }} className={step === 1 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
 
             {/* Location: Country → State → District → Taluka */}
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Country</span>
-                <div className="flex items-center gap-2 h-11 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 text-slate-900 cursor-not-allowed dark:border-zinc-800 dark:bg-zinc-900 dark:text-white opacity-80">
+                <span className="mb-2 block font-medium text-foreground">Country</span>
+                <div className="flex items-center gap-2 h-11 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 text-slate-900 cursor-not-allowed dark:border-zinc-800 dark:bg-zinc-900 opacity-80">
                   <img
                     src="https://bumxgscngzjadyozdpce.supabase.co/storage/v1/object/public/LOGO%20AND%20%20SVG/Flag_of_India.svg.png"
                     alt="India"
@@ -681,13 +770,13 @@ export function CareersForm({
                 </div>
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">State / UT <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">State / UT <span className="text-red-500">*</span></span>
                 <select
                   name="state"
                   required
                   value={selectedState}
                   onChange={(e) => handleStateChange(e.target.value)}
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 >
                   <option value="" disabled>Select State</option>
                   {allStates.map((state) => (
@@ -696,14 +785,14 @@ export function CareersForm({
                 </select>
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">District <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">District <span className="text-red-500">*</span></span>
                 <select
                   name="district"
                   required
                   value={selectedDistrict}
                   onChange={(e) => handleDistrictChange(e.target.value)}
                   disabled={!selectedState}
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <option value="" disabled>{selectedState && districts.length === 0 ? "Coming soon" : "Select District"}</option>
                   {districts.map((district) => (
@@ -714,14 +803,14 @@ export function CareersForm({
               </label>
               {selectedDistrict !== "Other" && (
                 <label className="block text-sm">
-                  <span className="mb-2 block text-muted-foreground">Taluka <span className="text-red-500">*</span></span>
+                  <span className="mb-2 block font-medium text-foreground">Taluka <span className="text-red-500">*</span></span>
                   <select
                     name="taluka"
                     required
                     value={selectedTaluka}
                     onChange={(e) => setSelectedTaluka(e.target.value)}
                     disabled={!selectedDistrict}
-                    className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <option value="" disabled>{selectedDistrict && talukas.length === 0 ? "Coming soon" : "Select Taluka"}</option>
                     {talukas.map((taluka) => (
@@ -735,37 +824,37 @@ export function CareersForm({
 
             {selectedDistrict === "Other" && (
               <motion.label variants={{ hidden: { opacity: 0, height: 0 }, show: { opacity: 1, height: "auto" } }} className="block text-sm overflow-hidden">
-                <span className="mb-2 block text-muted-foreground">Enter your District</span>
+                <span className="mb-2 block font-medium text-foreground">Enter your District</span>
                 <input
                   type="text"
                   name="customDistrict"
                   required
                   placeholder="Your District name"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </motion.label>
             )}
 
             {selectedTaluka === "Other" && (
               <motion.label variants={{ hidden: { opacity: 0, height: 0 }, show: { opacity: 1, height: "auto" } }} className="block text-sm overflow-hidden">
-                <span className="mb-2 block text-muted-foreground">Enter your Taluka</span>
+                <span className="mb-2 block font-medium text-foreground">Enter your Taluka</span>
                 <input
                   type="text"
                   name="customTaluka"
                   required
                   placeholder="Your Taluka name"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </motion.label>
             )}
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Highest Qualification / Degree <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Highest Qualification / Degree <span className="text-red-500">*</span></span>
                 <select
                   name="degree"
                   required
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                   defaultValue=""
                 >
                   <option value="" disabled>Select your degree</option>
@@ -775,11 +864,11 @@ export function CareersForm({
                 </select>
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Current Year of Study <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Current Year of Study <span className="text-red-500">*</span></span>
                 <select
                   name="yearOfStudy"
                   required
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                   defaultValue=""
                 >
                   <option value="" disabled>Select year</option>
@@ -792,54 +881,56 @@ export function CareersForm({
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">College / University Name <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">College / University Name <span className="text-red-500">*</span></span>
                 <input
                   type="text"
                   name="college"
                   required
                   placeholder="Your College Name"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Branch / Specialization <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Branch / Specialization <span className="text-red-500">*</span></span>
                 <input
                   type="text"
                   name="branch"
                   required
                   placeholder="e.g. CSE, IT, ECE"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">CGPA / Percentage <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
+                <span className="mb-2 block font-medium text-foreground">CGPA / Percentage <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
                 <input
                   type="text"
                   name="cgpa"
                   placeholder="Optional"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                 />
               </label>
             </motion.div>
 
             <motion.label variants={itemVariants} className="block text-sm">
-              <span className="mb-2 block text-muted-foreground">City / Village <span className="text-red-500">*</span></span>
+              <span className="mb-2 block font-medium text-foreground">City / Village <span className="text-red-500">*</span></span>
               <input
                 type="text"
                 name="cityVillage"
                 required
                 placeholder="Your City or Village name"
-                className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
               />
             </motion.label>
 
+            </div>
+            <div ref={(el) => { stepRefs.current[2] = el; }} className={step === 2 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-1 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">{fieldRole} <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">{fieldRole} <span className="text-red-500">*</span></span>
                 <select
                   name="role"
                   required
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                   defaultValue=""
                 >
                   <option value="" disabled>{rolePlaceholder}</option>
@@ -852,11 +943,11 @@ export function CareersForm({
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Current Occupation <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Current Occupation <span className="text-red-500">*</span></span>
                 <select
                   name="currentOccupation"
                   required
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                   defaultValue=""
                 >
                   <option value="" disabled>Select Occupation</option>
@@ -866,11 +957,11 @@ export function CareersForm({
                 </select>
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Years of Experience <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Years of Experience <span className="text-red-500">*</span></span>
                 <select
                   name="experience"
                   required
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-all focus:border-foreground"
                   defaultValue=""
                 >
                   <option value="" disabled>Select Experience</option>
@@ -884,12 +975,12 @@ export function CareersForm({
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Expected Joining Date <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Expected Joining Date <span className="text-red-500">*</span></span>
                 <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
                   <PopoverTrigger asChild>
                     <button
                       type="button"
-                      className={`h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-left font-normal outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] flex items-center gap-2 ${!availabilityDate ? "text-slate-500 dark:text-zinc-500" : "text-slate-900 dark:text-white"}`}
+                      className={`h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-left font-normal outline-none transition-all focus:border-foreground flex items-center gap-2 ${!availabilityDate ? "text-slate-500 dark:text-zinc-500" : "text-slate-900"}`}
                       onClick={() => { setTempDate(availabilityDate); setIsCalendarOpen(true); }}
                     >
                       <CalendarIcon className="h-4 w-4" />
@@ -910,7 +1001,7 @@ export function CareersForm({
                       <button
                         type="button"
                         onClick={() => { setAvailabilityDate(tempDate); setIsCalendarOpen(false); }}
-                        className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium bg-transparent text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-md transition-all border border-transparent dark:hover:border-zinc-700 hover:scale-[0.98]"
+                        className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium bg-transparent text-slate-900 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-md transition-all border border-transparent dark:hover:border-zinc-700 hover:scale-[0.98]"
                       >
                         Apply <span className="opacity-50 text-[10px]">↵</span>
                       </button>
@@ -919,11 +1010,11 @@ export function CareersForm({
                 </Popover>
               </div>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Preferred Work Type <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Preferred Work Type <span className="text-red-500">*</span></span>
                 <select
                   name="workType"
                   required
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                   defaultValue=""
                 >
                   <option value="" disabled>Select Work Type</option>
@@ -934,23 +1025,25 @@ export function CareersForm({
               </label>
             </motion.div>
 
+            </div>
+            <div ref={(el) => { stepRefs.current[3] = el; }} className={step === 3 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Twitter / X profile <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
+                <span className="mb-2 block font-medium text-foreground">Twitter / X profile <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
                 <input
                   type="url"
                   name="twitter"
                   placeholder="https:// (Optional)"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">LinkedIn profile <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
+                <span className="mb-2 block font-medium text-foreground">LinkedIn profile <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
                 <input
                   type="url"
                   name="linkedin"
                   placeholder="https:// (Optional)"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </label>
             </motion.div>
@@ -1009,7 +1102,7 @@ export function CareersForm({
                           value={selectedDropdownRepo}
                           onChange={(e) => setSelectedDropdownRepo(e.target.value)}
                           disabled={isVerifyingRepo}
-                          className="w-full h-11 rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white disabled:opacity-50"
+                          className="w-full h-11 rounded-md border border-border bg-background px-3 text-foreground outline-none transition focus:border-foreground disabled:opacity-50"
                         >
                           <option value="" disabled>Select a repository you've contributed to...</option>
                           {githubRepos.map(repo => (
@@ -1032,7 +1125,7 @@ export function CareersForm({
                             }
                           }}
                           disabled={!selectedDropdownRepo || isVerifyingRepo}
-                          className="w-full sm:w-auto sm:self-start h-11 px-6 rounded-lg bg-white border border-slate-200 text-slate-900 text-sm font-medium hover:bg-slate-50 transition dark:bg-zinc-900 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-800 disabled:opacity-50 shadow-sm"
+                          className="w-full sm:w-auto sm:self-start h-11 px-6 rounded-lg bg-white border border-slate-200 text-slate-900 text-sm font-medium hover:bg-slate-50 transition dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 disabled:opacity-50 shadow-sm"
                         >
                           {isVerifyingRepo ? "Verifying..." : "Use this repository"}
                         </button>
@@ -1045,25 +1138,27 @@ export function CareersForm({
 
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Portfolio / Personal Website</span>
+                <span className="mb-2 block font-medium text-foreground">Portfolio / Personal Website</span>
                 <input
                   type="url"
                   name="portfolio"
                   placeholder="https:// (Optional)"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block text-muted-foreground">Coding Profile (LeetCode/HackerRank)</span>
+                <span className="mb-2 block font-medium text-foreground">Coding Profile (LeetCode/HackerRank)</span>
                 <input
                   type="url"
                   name="codingProfile"
                   placeholder="https:// (Optional)"
-                  className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-slate-900 outline-none transition focus:border-slate-900 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white dark:focus:border-white"
+                  className="h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition focus:border-foreground"
                 />
               </label>
             </motion.div>
 
+            </div>
+            <div ref={(el) => { stepRefs.current[4] = el; }} className={step === 4 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
             {Object.keys(techStackGroups).length > 0 && (
               <motion.div variants={itemVariants} className="block text-sm">
                 <span className="mb-1 flex items-center justify-between text-muted-foreground">
@@ -1124,7 +1219,7 @@ export function CareersForm({
                                 onClick={() => toggleStack(stack)}
                                 className={`rounded-md border px-2.5 py-1.5 text-xs font-medium transition-all ${isSelected
                                     ? "border-foreground bg-foreground/10 text-foreground"
-                                    : "border-slate-200 bg-white text-muted-foreground hover:border-slate-300 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:hover:border-zinc-600"
+                                    : "border-slate-200 bg-white text-muted-foreground hover:border-slate-300 dark:hover:border-zinc-600"
                                   } ${isDisabled ? "cursor-not-allowed opacity-40" : ""}`}
                               >
                                 {stack}
@@ -1140,17 +1235,17 @@ export function CareersForm({
             )}
 
             <motion.label variants={itemVariants} className="block text-sm">
-              <span className="mb-2 block text-muted-foreground">Additional Skills <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
+              <span className="mb-2 block font-medium text-foreground">Additional Skills <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
               <textarea
                 name="skills"
                 rows={2}
                 placeholder="e.g. Project Management, Graphic Design, Public Speaking..."
-                className="w-full rounded-lg border border-slate-300 bg-white p-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white resize-y"
+                className="w-full rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-all focus:border-foreground resize-y"
               ></textarea>
             </motion.label>
 
             <motion.label variants={itemVariants} className="block text-sm">
-              <span className="mb-2 block text-muted-foreground">Upload Resume (PDF, DOCX) - Max 5MB (Optional)</span>
+              <span className="mb-2 block font-medium text-foreground">Upload Resume (PDF, DOCX) - Max 5MB (Optional)</span>
               <div className="relative">
                 <motion.div
                   whileHover={(!isSubmitting ? { scale: 1.01 } : {}) as any}
@@ -1222,35 +1317,35 @@ export function CareersForm({
             </motion.label>
 
             <motion.label variants={itemVariants} className="block text-sm">
-              <span className="mb-2 block text-muted-foreground">Have you made any open source contributions in the past that you'd like to share with us? <span className="text-red-500">*</span></span>
+              <span className="mb-2 block font-medium text-foreground">Have you made any open source contributions in the past that you'd like to share with us? <span className="text-red-500">*</span></span>
               <textarea
                 name="openSource"
                 rows={3}
                 required
                 placeholder="Type here..."
-                className="w-full rounded-lg border border-slate-300 bg-white p-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white resize-y"
+                className="w-full rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-all focus:border-foreground resize-y"
               ></textarea>
             </motion.label>
 
             <motion.label variants={itemVariants} className="block text-sm">
-              <span className="mb-2 block text-muted-foreground">Why are you interested in joining the Classgrid team? <span className="text-red-500">*</span></span>
+              <span className="mb-2 block font-medium text-foreground">Why are you interested in joining the Classgrid team? <span className="text-red-500">*</span></span>
               <textarea
                 name="whyJoin"
                 rows={3}
                 required
                 placeholder="Type here..."
-                className="w-full rounded-lg border border-slate-300 bg-white p-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white resize-y"
+                className="w-full rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-all focus:border-foreground resize-y"
               ></textarea>
             </motion.label>
 
             <motion.label variants={itemVariants} className="block text-sm">
-              <span className="mb-2 block text-muted-foreground">Tell us about your experience working in an async and/or remote environment. What practices or approaches have worked well for you? What challenges have you faced? <span className="text-red-500">*</span></span>
+              <span className="mb-2 block font-medium text-foreground">Tell us about your experience working in an async and/or remote environment. What practices or approaches have worked well for you? What challenges have you faced? <span className="text-red-500">*</span></span>
               <textarea
                 name="asyncRemote"
                 rows={4}
                 required
                 placeholder="Type here..."
-                className="w-full rounded-lg border border-slate-300 bg-white p-3 text-slate-900 outline-none transition-all focus:border-slate-900 dark:focus:border-white dark:border-zinc-700 dark:bg-[#0A0A0A] dark:text-white resize-y"
+                className="w-full rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-all focus:border-foreground resize-y"
               ></textarea>
             </motion.label>
 
@@ -1265,20 +1360,35 @@ export function CareersForm({
               variants={itemVariants}
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-transparent bg-foreground px-4 text-sm font-semibold text-background shadow-black/10 dark:shadow-white/10 transition-all hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed mt-4"
+              className="inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-md border border-transparent bg-foreground px-5 text-[15px] font-medium text-background transition-colors hover:bg-zinc-700 dark:hover:bg-zinc-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>
-                  <Spinner className="h-4 w-4 text-white" />
+                  <Spinner className="h-4 w-4 text-inherit" />
                   <span>Submitting Application...</span>
                 </>
               ) : (
                 <>
                   <span>{submitLabel}</span>
-                  <Send className="h-4 w-4 text-white" />
+                  <ChevronRight className="h-4 w-4" />
                 </>
               )}
             </motion.button>
+            </div>
+            <div className="flex items-center justify-between gap-3 border-t border-border pt-6">
+              {step > 0 ? (
+                <button type="button" onClick={goBack} className="inline-flex h-11 items-center gap-1.5 rounded-md border border-border bg-background px-5 text-[15px] font-medium text-foreground transition-colors hover:bg-muted">
+                  <ChevronLeft className="h-4 w-4" />
+                  Back
+                </button>
+              ) : <span />}
+              {step < CAREER_STEPS.length - 1 ? (
+                <button type="button" onClick={goNext} className="inline-flex h-11 items-center gap-1.5 rounded-md bg-foreground px-5 text-[15px] font-medium text-background transition-colors hover:bg-zinc-700 dark:hover:bg-zinc-300">
+                  Next
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              ) : null}
+            </div>
           </>
         )}
       </motion.form>
