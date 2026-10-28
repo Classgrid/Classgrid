@@ -50,6 +50,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // One address only: login is tied to classgrid.in, so www pages never saw the session (double login)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.classgrid.in" }],
+        destination: "https://classgrid.in/:path*",
+        permanent: true,
+      },
       // /agent is now the home page
       { source: "/agent", destination: "/", permanent: true },
       // Legacy comparison links
