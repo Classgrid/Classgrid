@@ -646,7 +646,7 @@ export function CareersForm({
             )}
 
             <div ref={(el) => { stepRefs.current[0] = el; }} className={step === 0 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">First Name <span className="text-red-500">*</span></span>
                 <input
@@ -669,7 +669,7 @@ export function CareersForm({
               </label>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">{fieldEmail} <span className="text-red-500">*</span></span>
                 <input
@@ -761,7 +761,7 @@ export function CareersForm({
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Gender <span className="text-red-500">*</span></span>
                 <FieldSelect
@@ -806,7 +806,7 @@ export function CareersForm({
             <div ref={(el) => { stepRefs.current[1] = el; }} className={step === 1 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
 
             {/* Location: Country → State → District → Taluka */}
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Country</span>
                 <div className="flex items-center gap-2 h-11 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 text-foreground cursor-not-allowed dark:border-zinc-800 dark:bg-zinc-900 opacity-80">
@@ -884,7 +884,7 @@ export function CareersForm({
               </motion.label>
             )}
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Highest Qualification / Degree <span className="text-red-500">*</span></span>
                 <FieldSelect name="degree" required placeholder="Select your degree" options={toOptions(DEGREES)} />
@@ -895,9 +895,9 @@ export function CareersForm({
               </label>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 sm:items-end gap-4">
               <label className="block text-sm">
-                <span className="mb-2 block font-medium text-foreground">College / University Name <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">College / University <span className="text-red-500">*</span></span>
                 <input
                   type="text"
                   name="college"
@@ -907,7 +907,7 @@ export function CareersForm({
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block font-medium text-foreground">Branch / Specialization <span className="text-red-500">*</span></span>
+                <span className="mb-2 block font-medium text-foreground">Branch <span className="text-red-500">*</span></span>
                 <input
                   type="text"
                   name="branch"
@@ -917,7 +917,7 @@ export function CareersForm({
                 />
               </label>
               <label className="block text-sm">
-                <span className="mb-2 block font-medium text-foreground">CGPA / Percentage <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
+                <span className="mb-2 block font-medium text-foreground">CGPA / % <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
                 <input
                   type="text"
                   name="cgpa"
@@ -947,7 +947,7 @@ export function CareersForm({
               </label>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Current Occupation <span className="text-red-500">*</span></span>
                 <FieldSelect name="currentOccupation" required placeholder="Select Occupation" options={toOptions(["Student", "Fresher", "Working Professional"])} />
@@ -968,7 +968,7 @@ export function CareersForm({
               </label>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <div className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Expected Joining Date <span className="text-red-500">*</span></span>
                 <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
@@ -1012,7 +1012,7 @@ export function CareersForm({
 
             </div>
             <div ref={(el) => { stepRefs.current[3] = el; }} className={step === 3 ? "space-y-6 animate-in fade-in slide-in-from-right-4 duration-300" : "hidden"}>
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Twitter / X profile <span className="text-xs text-muted-foreground font-normal">(Optional)</span></span>
                 <input
@@ -1118,7 +1118,7 @@ export function CareersForm({
               )}
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 sm:items-end gap-4">
               <label className="block text-sm">
                 <span className="mb-2 block font-medium text-foreground">Portfolio / Personal Website</span>
                 <input

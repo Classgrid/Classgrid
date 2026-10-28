@@ -246,8 +246,8 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
 
                 {post.excerpt && (
                   <div className="mt-8 mb-8">
-                    <div className="relative px-6 py-5 sm:px-8 sm:py-6 bg-slate-50/50 dark:bg-white/[0.02] border border-slate-300 dark:border-white/[0.05] rounded-3xl shadow-sm backdrop-blur-md text-left">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-gradient-to-r from-foreground/0 via-foreground to-foreground/0 rounded-full" />
+                    <div className="relative px-6 py-5 sm:px-8 sm:py-6 bg-muted/40 border border-border rounded-md text-left">
+                      
                       <p className="text-[1.05rem] sm:text-[1.1rem] leading-relaxed text-foreground/80 font-medium">
                         {extractLocaleString(post.excerpt, lang)}
                       </p>
@@ -257,7 +257,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
 
                 {/* ── FULL-WIDTH COVER IMAGE ── */}
                 {post.coverImage && (
-                  <div className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-lg border border-border mt-8 mb-12">
+                  <div className="relative w-full aspect-video md:aspect-[21/9] rounded-md overflow-hidden border border-border mt-8 mb-12">
                     <Image
                       src={urlFor(post.coverImage).url()}
                       alt={post.title || 'Blog cover image'}
@@ -285,7 +285,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                   const imageFirst = layout === 'left';
 
                   const mediaElement = mediaType === 'video' && section.videoUrl ? (
-                    <div className={`relative ${layout === 'center' ? 'aspect-video' : 'aspect-[4/3]'} rounded-xl overflow-hidden bg-slate-100 dark:bg-muted shadow-2xl ring-1 ring-slate-300 dark:ring-white/10`}>
+                    <div className={`relative ${layout === 'center' ? 'aspect-video' : 'aspect-[4/3]'} rounded-md overflow-hidden bg-muted border border-border`}>
                       <video
                         src={section.videoUrl}
                         controls
@@ -293,7 +293,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                       />
                     </div>
                   ) : section.imageUrl ? (
-                    <div className={`relative ${layout === 'center' ? 'aspect-video' : 'aspect-[4/3]'} rounded-xl overflow-hidden bg-slate-100 dark:bg-muted shadow-2xl ring-1 ring-slate-300 dark:ring-white/10`}>
+                    <div className={`relative ${layout === 'center' ? 'aspect-video' : 'aspect-[4/3]'} rounded-md overflow-hidden bg-muted border border-border`}>
                       <ImageGallery
                         images={[{
                           id: `blog-section-${i}`,
@@ -350,7 +350,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                       <div className={`flex flex-col ${imageFirst ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-12 items-center`}>
                         <MotionDiv variants={isMobile ? mobileSlide : fadeSlide(imageFirst)} className="w-full md:w-[55%]">
                           {mediaElement || (
-                            <div className="w-full aspect-[4/3] rounded-xl bg-card border border-border flex items-center justify-center">
+                            <div className="w-full aspect-[4/3] rounded-md bg-card border border-border flex items-center justify-center">
                               <p className="text-zinc-500">No media</p>
                             </div>
                           )}
@@ -374,7 +374,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
         <article className="w-full">
           {/* ---------------- 4. REFERENCES ---------------- */}
           {post.references && post.references.length > 0 && (
-            <MotionDiv id="blog-references" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="mt-10 rounded-xl border border-slate-300 dark:border-border bg-slate-50 dark:bg-card/50 overflow-hidden">
+            <MotionDiv id="blog-references" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="mt-10 rounded-md border border-border bg-slate-50 dark:bg-card/50 overflow-hidden">
               <div className="px-6 py-4 border-b border-slate-300 dark:border-white/10">
                 <h3 className="text-base font-semibold text-foreground flex items-center">
                   <Link2 className="w-4 h-4 mr-2 text-foreground" /> References & Sources
@@ -425,7 +425,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
           {post.tags && post.tags.length > 0 && (
             <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="mt-12 flex flex-wrap gap-2">
               {post.tags.map((tag: string, i: number) => (
-                <span key={i} className="px-3 py-1 bg-foreground/5 border border-border rounded-full text-xs font-semibold tracking-wide text-foreground hover:bg-foreground/10 transition-colors cursor-default">
+                <span key={i} className="px-2.5 py-1 bg-muted rounded-sm font-mono text-[11px] uppercase tracking-[0.12em] text-foreground hover:bg-foreground/10 transition-colors cursor-default">
                   #{tag}
                 </span>
               ))}
@@ -441,13 +441,13 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <span className="text-sm font-semibold text-muted-foreground sm:mr-2">Share this post:</span>
               <div className="flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
-                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(extractLocaleString(post.title, lang) || "Check out this post")}&url=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-slate-700/50 dark:bg-slate-800/20 dark:hover:bg-slate-800/40 px-4 py-2 text-sm font-medium transition-colors text-slate-700 dark:text-slate-300 flex-1 sm:flex-auto justify-center">
+                <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(extractLocaleString(post.title, lang) || "Check out this post")}&url=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-slate-700/50 dark:bg-slate-800/20 dark:hover:bg-slate-800/40 px-4 py-2 text-sm font-medium transition-colors text-slate-700 dark:text-slate-300 flex-1 sm:flex-auto justify-center">
                   <Twitter className="w-4 h-4" /> <span className="hidden xs:inline">Twitter</span>
                 </a>
-                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 hover:bg-sky-100 dark:border-sky-600/30 dark:bg-sky-600/10 dark:hover:bg-sky-600/20 px-4 py-2 text-sm font-medium transition-colors text-sky-700 dark:text-sky-500 flex-1 sm:flex-auto justify-center">
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-md border border-sky-300 bg-sky-50 hover:bg-sky-100 dark:border-sky-600/30 dark:bg-sky-600/10 dark:hover:bg-sky-600/20 px-4 py-2 text-sm font-medium transition-colors text-sky-700 dark:text-sky-500 flex-1 sm:flex-auto justify-center">
                   <Linkedin className="w-4 h-4" /> <span className="hidden xs:inline">LinkedIn</span>
                 </a>
-                <a href={`https://wa.me/?text=${encodeURIComponent(`Check out this blog post from Classgrid:\n${canonicalUrl}`)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-slate-700/50 dark:bg-slate-800/20 dark:hover:bg-slate-800/40 px-4 py-2 text-sm font-medium transition-colors text-slate-700 dark:text-slate-300 flex-1 sm:flex-auto justify-center">
+                <a href={`https://wa.me/?text=${encodeURIComponent(`Check out this blog post from Classgrid:\n${canonicalUrl}`)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-slate-700/50 dark:bg-slate-800/20 dark:hover:bg-slate-800/40 px-4 py-2 text-sm font-medium transition-colors text-slate-700 dark:text-slate-300 flex-1 sm:flex-auto justify-center">
                   <WhatsappIcon className="w-4 h-4" /> <span className="hidden xs:inline">WhatsApp</span>
                 </a>
               </div>
@@ -469,7 +469,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
             return (
               <MotionDiv id="blog-author" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="mt-12 border-t border-border pt-10 pb-6">
                 <div className="text-center mb-8">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-foreground bg-foreground/5 px-3 py-1 rounded-full">
+                  <span className="rounded-sm bg-muted px-2 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-foreground">
                     {authorsList.length > 1 ? 'Content Writers' : 'Content Writer'}
                   </span>
                 </div>
@@ -577,12 +577,12 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
               <div className="flex items-center gap-3">
                 {relatedPosts.length > RELATED_PAGE_SIZE && (
                   <div className="flex items-center gap-2 mr-2">
-                    <Button variant="outline" size="icon" onClick={() => setRelatedPage(p => Math.max(0, p - 1))} disabled={relatedPage === 0} className="rounded-full h-10 w-10 border-slate-300 dark:border-border"><ChevronLeft className="w-4 h-4" /></Button>
-                    <Button variant="outline" size="icon" onClick={() => setRelatedPage(p => Math.min(Math.ceil(relatedPosts.length / RELATED_PAGE_SIZE) - 1, p + 1))} disabled={relatedPage >= Math.ceil(relatedPosts.length / RELATED_PAGE_SIZE) - 1} className="rounded-full h-10 w-10 border-slate-300 dark:border-border"><ChevronRight className="w-4 h-4" /></Button>
+                    <Button variant="outline" size="icon" onClick={() => setRelatedPage(p => Math.max(0, p - 1))} disabled={relatedPage === 0} className="rounded-md h-10 w-10 border-border dark:border-border"><ChevronLeft className="w-4 h-4" /></Button>
+                    <Button variant="outline" size="icon" onClick={() => setRelatedPage(p => Math.min(Math.ceil(relatedPosts.length / RELATED_PAGE_SIZE) - 1, p + 1))} disabled={relatedPage >= Math.ceil(relatedPosts.length / RELATED_PAGE_SIZE) - 1} className="rounded-md h-10 w-10 border-border dark:border-border"><ChevronRight className="w-4 h-4" /></Button>
                   </div>
                 )}
                 <Link href={buildLangHref("/blog", lang)}>
-                  <Button variant="outline" className="hidden md:flex rounded-full border-border text-foreground hover:bg-foreground/5">View All Blogs</Button>
+                  <Button variant="outline" className="hidden md:flex rounded-md border-border text-foreground hover:bg-muted">View All Blogs</Button>
                 </Link>
               </div>
             </MotionDiv>
@@ -594,7 +594,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                 <MotionDiv key={relatedPage} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full">
                   {relatedPosts.slice(relatedPage * RELATED_PAGE_SIZE, (relatedPage + 1) * RELATED_PAGE_SIZE).map((relatedPost: any, i: number) => (
                     <Link key={relatedPost._id || i} href={buildLangHref(`/blog/${getSlug(relatedPost.slug)}`, lang)}>
-                      <MotionDiv variants={slideUp} className="group h-full rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-300 dark:border-white/10 hover:border-foreground/30 flex flex-col isolate">
+                      <MotionDiv variants={slideUp} className="group h-full rounded-md bg-background overflow-hidden transition-colors duration-300 hover:border-foreground/40 border border-border dark:border-white/10 hover:border-foreground/30 flex flex-col isolate">
                         <div className="w-full h-56 bg-surface-container-lowest relative overflow-hidden rounded-t-2xl">
                           {relatedPost.coverImage ? (
                             <Image src={urlFor(relatedPost.coverImage).url()} alt={extractLocaleString(relatedPost.title, lang)} fill className="object-cover" />
@@ -604,12 +604,12 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                         </div>
                         <div className="p-6 flex flex-col flex-grow">
                           <div className="flex justify-between items-center mb-4">
-                            <span className="text-xs font-semibold tracking-wider text-foreground uppercase">{extractLocaleString(relatedPost.category, lang) || "Insight"}</span>
+                            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">{extractLocaleString(relatedPost.category, lang) || "Insight"}</span>
                             <span className="text-xs text-muted-foreground">{relatedPost.publishedAt ? formatDate(new Date(relatedPost.publishedAt), "MMM dd, yyyy") : "Mar 2024"}</span>
                           </div>
                           <h3 className="text-xl font-bold text-foreground mb-3 leading-snug group-hover:text-foreground/70 transition-colors line-clamp-2">{(extractLocaleString(relatedPost.title, lang) || "").replace(/\.\s*$/, "")}</h3>
                           {relatedPost.excerpt && <p className="text-muted-foreground text-base line-clamp-2 mb-6 flex-grow">{extractLocaleString(relatedPost.excerpt, lang)}</p>}
-                          <div className="flex items-center text-sm font-medium text-foreground group-hover:translate-x-1 transition-transform mt-auto">Read <ArrowRight className="w-4 h-4 ml-1.5" /></div>
+                          <div className="mt-auto"><span className="inline-flex items-center gap-1 rounded-md bg-muted px-2.5 py-1 text-[13px] font-medium text-foreground transition-colors group-hover:bg-foreground group-hover:text-background">Read <ChevronRight className="h-3.5 w-3.5" /></span></div>
                         </div>
                       </MotionDiv>
                     </Link>
