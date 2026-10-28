@@ -466,7 +466,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
                         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                           {s.legalBasis} {item.basis}
                         </p>
-                        <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-200">
+                        <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-700 dark:text-slate-200">
                           {item.description}
                         </p>
                       </div>
