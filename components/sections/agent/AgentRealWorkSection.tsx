@@ -3,9 +3,9 @@ import { Reveal } from "@/components/sections/Reveal";
 
 // A task the agent really does: read a spreadsheet, run Python, draw charts, hand back files.
 const CREATED_FILES = [
-  { dir: "reports/", name: "results_report.pdf", size: "1.4 MB", icon: FileText },
-  { dir: "charts/", name: "subject_averages.png", size: "286 KB", icon: ImageIcon },
-  { dir: "data/", name: "at_risk_students.csv", size: "4 KB", icon: FileSpreadsheet },
+  { dir: "reports/", name: "sales_report.pdf", size: "1.4 MB", icon: FileText },
+  { dir: "charts/", name: "revenue_by_region.png", size: "286 KB", icon: ImageIcon },
+  { dir: "data/", name: "top_products.csv", size: "4 KB", icon: FileSpreadsheet },
 ];
 
 export function AgentRealWorkSection() {
@@ -40,13 +40,13 @@ export function AgentRealWorkSection() {
               {/* Chat card */}
               <div className="relative rounded-2xl bg-white/60 p-5 shadow-sm ring-1 ring-white/60 backdrop-blur-xl md:absolute md:left-[7%] md:top-[9%] md:w-[64%] md:p-7 dark:bg-black/45 dark:ring-white/10">
                 <div className="flex items-center gap-3 text-[15px] font-medium">
-                  Term results analysis
+                  Quarterly sales analysis
                   <Ellipsis className="h-4 w-4 text-black/40 dark:text-white/40" />
                 </div>
 
                 <div className="mt-5 flex justify-end">
                   <p className="max-w-[92%] rounded-2xl bg-black/[0.06] px-4 py-2.5 text-[14px] leading-6 md:text-[15px] dark:bg-white/10">
-                    Analyse results.xlsx and send me a PDF report with charts
+                    Analyse sales.xlsx and send me a PDF report with charts
                   </p>
                 </div>
 
@@ -57,11 +57,11 @@ export function AgentRealWorkSection() {
 
                 <div className="mt-3 space-y-3 text-[14px] leading-6 text-black/70 [mask-image:linear-gradient(to_bottom,black_45%,transparent)] md:text-[15px] dark:text-white/70">
                   <p>
-                    Read 312 rows across 6 subjects. The class average is 72.4%, and Mathematics improved 8% over
-                    last term.
+                    Read 312 rows across 6 regions. Total revenue is up 12.4% on last quarter, and the South
+                    region grew the most at 18%.
                   </p>
-                  <p>Flagged 12 students below 40% and listed them with their weakest subjects.</p>
-                  <p>Built the PDF report with a subject chart and a short summary for each class.</p>
+                  <p>Listed the 10 best-selling products and flagged 3 that dropped below target.</p>
+                  <p>Built the PDF report with a revenue chart and a short summary for each region.</p>
                 </div>
               </div>
 

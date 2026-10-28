@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 import { DemoRequestForm } from "@/components/sections/DemoRequestForm";
-import { PlatformUserGate } from "@/components/shared/PlatformUserGate";
 import { HomeDevScrollReset } from "@/components/layout/HomeDevScrollReset";
 import { AgentHeroSection } from "@/components/sections/agent/AgentHeroSection";
 import { ViewPlatformPreview } from "@/components/sections/ViewPlatformPreview";
@@ -14,7 +13,6 @@ import { AgentModelsSection } from "@/components/sections/agent/AgentModelsSecti
 import { AgentFaqSection } from "@/components/sections/agent/AgentFaqSection";
 import { AgentFinalCtaSection } from "@/components/sections/agent/AgentFinalCtaSection";
 import { AgentPluginsSection } from "@/components/sections/agent/AgentPluginsSection";
-import { MobileStatsBridge } from "@/components/sections/MobileStatsBridge";
 import { Reveal } from "@/components/sections/Reveal";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { TimelineSection } from "@/components/sections/TimelineSection";
@@ -1033,7 +1031,6 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
       {showHero ? (
         <AgentHeroSection />
       ) : null}
-      <MobileStatsBridge />
 
       {showShowcase ? (
         <div className="relative z-10 w-full dark:[&>main]:bg-black">
@@ -1144,7 +1141,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
       </div>
 
       {showDemoForm ? (
-        <PlatformUserGate>
+        <>
           <Reveal>
             <section
               id="demo"
@@ -1169,7 +1166,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
               </div>
             </section>
           </Reveal>
-        </PlatformUserGate>
+        </>
       ) : null}
 
       <AgentFinalCtaSection />

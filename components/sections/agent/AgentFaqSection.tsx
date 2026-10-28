@@ -25,7 +25,7 @@ const FAQS: { question: string; answer: ReactNode }[] = [
   },
   {
     question: "How does pricing work?",
-    answer: "There's no fixed plan. Top up AI credits with any amount from ₹1 to ₹10,000 from Upgrade in the app.",
+    answer: "There's no fixed plan. Top up AI credits with any amount from ₹299 to ₹10,000 from Upgrade in the app.",
   },
   {
     question: "Which AI models can I use?",

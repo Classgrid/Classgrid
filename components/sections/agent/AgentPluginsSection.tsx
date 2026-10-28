@@ -5,7 +5,7 @@ import { PLUGINS } from "@/content/plugins";
 import { cn } from "@/lib/utils";
 
 // Mirrors the "Plugins & Integrations" tab of the AI Hub in the Classgrid app (AiHubModal.tsx)
-const PANEL_PLUGINS = PLUGINS.slice(0, 8);
+const PANEL_PLUGINS = PLUGINS.filter((plugin) => plugin.id !== "gclass").slice(0, 8);
 const GMAIL = PLUGINS.find((plugin) => plugin.id === "gmail")!;
 
 export function AgentPluginsSection() {

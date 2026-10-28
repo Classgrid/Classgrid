@@ -1,17 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export function MobileStatsBridge() {
-  const [count, setCount] = useState(10482910);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prev) => prev + Math.floor(Math.random() * 5) + 1);
-    }, 1200);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="sm:hidden w-full relative z-10 -mt-6">
       {/* Divider line 1 */}
@@ -43,15 +34,15 @@ export function MobileStatsBridge() {
           
           {/* Inner dark pill */}
           <div className="relative flex flex-col items-center px-8 py-3.5 rounded-full bg-white/90 dark:bg-[#050505]/90 backdrop-blur-xl z-10">
-            <span className="font-mono text-[26px] font-bold tracking-widest text-slate-900 dark:text-white">
-              {count.toLocaleString("en-US")}
+            <span className="text-[22px] font-bold tracking-tight text-slate-900 dark:text-white">
+              Classgrid AI
             </span>
           </div>
         </div>
 
         {/* Label */}
         <p className="mt-4 text-center text-[9px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-          Attendance Records Processed Monthly
+          Research · Files · Code · WhatsApp
         </p>
       </div>
 
