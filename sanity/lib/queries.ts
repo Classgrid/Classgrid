@@ -1331,6 +1331,7 @@ const aiUseCaseFields = `{
   title,
   summary,
   capabilities,
+  audiences,
   icon,
   challenge,
   solution,

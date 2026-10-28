@@ -3,17 +3,22 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ChevronRight, Search } from "lucide-react";
-import { USE_CASE_CAPABILITIES, type UseCase } from "@/content/useCases";
+import { USE_CASE_AUDIENCES, USE_CASE_CAPABILITIES, type UseCase } from "@/content/useCases";
 import { UseCaseIcon } from "@/components/use-cases/UseCaseIcon";
 import { cn } from "@/lib/utils";
 
 export function UseCasesHub({ useCases }: { useCases: UseCase[] }) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState<string[]>([]);
+  const [activeAudiences, setActiveAudiences] = useState<string[]>([]);
 
   // Only offer filters that at least one use case has
   const capabilities = useMemo(
     () => USE_CASE_CAPABILITIES.filter((cap) => useCases.some((item) => item.capabilities.includes(cap))),
+    [useCases]
+  );
+  const audiences = useMemo(
+    () => USE_CASE_AUDIENCES.filter((aud) => useCases.some((item) => item.audiences?.includes(aud))),
     [useCases]
   );
 
@@ -21,13 +26,14 @@ export function UseCasesHub({ useCases }: { useCases: UseCase[] }) {
     const q = query.trim().toLowerCase();
     return useCases.filter((item) => {
       if (active.length && !active.some((cap) => item.capabilities.includes(cap as UseCase["capabilities"][number]))) return false;
+      if (activeAudiences.length && !activeAudiences.some((aud) => item.audiences?.includes(aud as UseCase["audiences"][number]))) return false;
       if (!q) return true;
-      return [item.title, item.summary, ...item.capabilities].join(" ").toLowerCase().includes(q);
+      return [item.title, item.summary, ...item.capabilities, ...(item.audiences ?? [])].join(" ").toLowerCase().includes(q);
     });
-  }, [useCases, query, active]);
+  }, [useCases, query, active, activeAudiences]);
 
-  const toggle = (cap: string) =>
-    setActive((prev) => (prev.includes(cap) ? prev.filter((c) => c !== cap) : [...prev, cap]));
+  const toggleIn = (setter: React.Dispatch<React.SetStateAction<string[]>>) => (value: string) =>
+    setter((prev) => (prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]));
 
   return (
     <div className="grid border-t border-black/10 lg:grid-cols-[minmax(280px,360px)_1fr] dark:border-white/10">
@@ -45,37 +51,18 @@ export function UseCasesHub({ useCases }: { useCases: UseCase[] }) {
             />
           </label>
 
-          <div className="mt-8 flex items-baseline gap-3">
-            <h2 className="text-[15px] font-semibold text-black dark:text-white">Type of work</h2>
-            <span className="text-[14px] text-black/50 dark:text-white/50">
-              {shown.length} {shown.length === 1 ? "result" : "results"}
-            </span>
-          </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {capabilities.map((cap) => {
-              const on = active.includes(cap);
-              return (
-                <button
-                  key={cap}
-                  type="button"
-                  onClick={() => toggle(cap)}
-                  aria-pressed={on}
-                  className={cn(
-                    "rounded-md border px-2.5 py-1.5 font-mono text-[11.5px] uppercase tracking-[0.04em] transition-colors",
-                    on
-                      ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                      : "border-black/10 bg-black/[0.03] text-black/75 hover:border-black/25 hover:text-black dark:border-white/10 dark:bg-white/[0.04] dark:text-white/75 dark:hover:border-white/25 dark:hover:text-white"
-                  )}
-                >
-                  {cap}
-                </button>
-              );
-            })}
-          </div>
-          {active.length > 0 && (
+          <p className="mt-8 text-[14px] text-black/50 dark:text-white/50">
+            {shown.length} {shown.length === 1 ? "result" : "results"}
+          </p>
+          <FilterGroup title="Who it's for" options={audiences} active={activeAudiences} onToggle={toggleIn(setActiveAudiences)} />
+          <FilterGroup title="Type of work" options={capabilities} active={active} onToggle={toggleIn(setActive)} />
+          {(active.length > 0 || activeAudiences.length > 0) && (
             <button
               type="button"
-              onClick={() => setActive([])}
+              onClick={() => {
+                setActive([]);
+                setActiveAudiences([]);
+              }}
               className="mt-4 text-[13px] text-black/55 underline-offset-4 hover:text-black hover:underline dark:text-white/55 dark:hover:text-white"
             >
               Clear filters
@@ -113,6 +100,46 @@ export function UseCasesHub({ useCases }: { useCases: UseCase[] }) {
             ))}
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+function FilterGroup({
+  title,
+  options,
+  active,
+  onToggle,
+}: {
+  title: string;
+  options: string[];
+  active: string[];
+  onToggle: (value: string) => void;
+}) {
+  if (!options.length) return null;
+  return (
+    <div className="mt-6">
+      <h2 className="text-[15px] font-semibold text-black dark:text-white">{title}</h2>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {options.map((option) => {
+          const on = active.includes(option);
+          return (
+            <button
+              key={option}
+              type="button"
+              onClick={() => onToggle(option)}
+              aria-pressed={on}
+              className={cn(
+                "rounded-md border px-2.5 py-1.5 font-mono text-[11.5px] uppercase tracking-[0.04em] transition-colors",
+                on
+                  ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                  : "border-black/10 bg-black/[0.03] text-black/75 hover:border-black/25 hover:text-black dark:border-white/10 dark:bg-white/[0.04] dark:text-white/75 dark:hover:border-white/25 dark:hover:text-white"
+              )}
+            >
+              {option}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

@@ -14,6 +14,18 @@ import {
   Send,
   Sparkles,
   Users,
+  AudioLines,
+  ClipboardList,
+  Code2,
+  GraduationCap,
+  Layers,
+  ListChecks,
+  Map,
+  Mic,
+  PenLine,
+  Receipt,
+  Sigma,
+  Youtube,
   type LucideIcon,
 } from "lucide-react";
 
@@ -33,6 +45,18 @@ const ICONS: Record<string, LucideIcon> = {
   Send,
   Sparkles,
   Users,
+  AudioLines,
+  ClipboardList,
+  Code2,
+  GraduationCap,
+  Layers,
+  ListChecks,
+  Map,
+  Mic,
+  PenLine,
+  Receipt,
+  Sigma,
+  Youtube,
 };
 
 export function UseCaseIcon({ name, className }: { name: string; className?: string }) {

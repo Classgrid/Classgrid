@@ -1,7 +1,10 @@
-import { LOCAL_USE_CASES, type UseCase, type UseCaseCapability } from "@/content/useCases";
+import { LOCAL_USE_CASES, type UseCase, type UseCaseAudience, type UseCaseCapability } from "@/content/useCases";
 import { getAiUseCase, getAiUseCases } from "@/sanity/lib/marketing";
 
-type SanityUseCase = Partial<Omit<UseCase, "capabilities">> & { capabilities?: string[] | null };
+type SanityUseCase = Partial<Omit<UseCase, "capabilities" | "audiences">> & {
+  capabilities?: string[] | null;
+  audiences?: string[] | null;
+};
 
 function toUseCase(raw: SanityUseCase | null | undefined): UseCase | null {
   if (!raw?.slug || !raw.title) return null;
@@ -10,6 +13,7 @@ function toUseCase(raw: SanityUseCase | null | undefined): UseCase | null {
     title: raw.title,
     summary: raw.summary ?? "",
     capabilities: (raw.capabilities ?? []) as UseCaseCapability[],
+    audiences: (raw.audiences ?? []) as UseCaseAudience[],
     icon: raw.icon ?? "Sparkles",
     challenge: raw.challenge ?? "",
     solution: raw.solution ?? "",

@@ -11,7 +11,13 @@ const CAPABILITIES = [
   'Automation',
   'Email & calendar',
   'Teamwork',
+  'Learning',
+  'Audio & video',
+  'Writing',
+  'Connected apps',
 ]
+
+const AUDIENCES = ['Students', 'Faculty', 'Developers', 'Work', 'Everyday life']
 
 const ICONS = [
   'Search',
@@ -29,6 +35,18 @@ const ICONS = [
   'AlarmClock',
   'Users',
   'Sparkles',
+  'AudioLines',
+  'ClipboardList',
+  'Code2',
+  'GraduationCap',
+  'Layers',
+  'ListChecks',
+  'Map',
+  'Mic',
+  'PenLine',
+  'Receipt',
+  'Sigma',
+  'Youtube',
 ]
 
 export const aiUseCaseType = defineType({
@@ -53,6 +71,13 @@ export const aiUseCaseType = defineType({
       of: [{ type: 'string' }],
       options: { list: CAPABILITIES.map((value) => ({ title: value, value })) },
       validation: (rule) => rule.required().min(1),
+    }),
+    defineField({
+      name: 'audiences',
+      title: "Who it's for",
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: { list: AUDIENCES.map((value) => ({ title: value, value })) },
     }),
     defineField({
       name: 'icon',

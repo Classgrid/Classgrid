@@ -92,8 +92,8 @@ export default async function UseCasePage({ params }: PageProps) {
               {useCase.summary}
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
-              {useCase.capabilities.map((cap) => (
-                <Tag key={cap}>{cap}</Tag>
+              {[...(useCase.audiences ?? []), ...useCase.capabilities].map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
               ))}
             </div>
           </Reveal>
