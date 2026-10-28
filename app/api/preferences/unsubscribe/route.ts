@@ -23,9 +23,11 @@ export async function GET(req: NextRequest) {
     const loggedInEmail = session?.user?.email;
 
     const type = req.nextUrl.searchParams.get("type") || "blog";
-    const shortCode = req.nextUrl.searchParams.get("c");
+    let shortCode = req.nextUrl.searchParams.get("c");
+    // The welcome email links use ?token= (the subscriber's unsubscribe_token) instead of ?c=
+    const token = req.nextUrl.searchParams.get("token");
 
-    if (!shortCode) {
+    if (!shortCode && !token) {
       return createErrorPage("Invalid Unsubscribe Link", "This unsubscribe link is missing the required code. Please use the exact link from your email.");
     }
 
@@ -33,12 +35,13 @@ export async function GET(req: NextRequest) {
       return createErrorPage("Invalid Unsubscribe Link", "The unsubscribe type is not recognized.");
     }
 
-    // Lookup the email associated with this short code
+    // Lookup the email associated with this short code (or token)
     const { data: subscriberData, error: lookupError } = await supabaseAdmin
       .from("blog_subscribers")
-      .select("email")
-      .eq("short_code", shortCode)
+      .select("email, short_code")
+      .eq(shortCode ? "short_code" : "unsubscribe_token", shortCode || token)
       .maybeSingle();
+    if (!shortCode && subscriberData?.short_code) shortCode = subscriberData.short_code;
 
     if (lookupError || !subscriberData?.email) {
       return createErrorPage("Expired or Invalid Link", "This unsubscribe link is no longer valid or the code is incorrect. Please use the latest email you received.");
