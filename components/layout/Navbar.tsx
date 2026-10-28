@@ -641,7 +641,9 @@ export function Navbar({
                       {/* Docs Log In on phones (the desktop Log In button is hidden on small screens) */}
                       {!isPlatformUser && (
                         <Link
-                          href={`/login?callbackUrl=${encodeURIComponent(pathname || "/docs")}`}
+                          href="https://chat.classgrid.in/login"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           onClick={closeMobileMenu}
                           className="mb-6 flex h-12 w-full items-center justify-center rounded-lg bg-accent border border-border text-[15px] font-medium text-foreground transition-transform active:scale-[0.98] active:bg-accent/80"
                         >
