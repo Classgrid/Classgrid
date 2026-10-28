@@ -59,6 +59,7 @@ const nextConfig: NextConfig = {
       // Old ERP pages → Classgrid AI pages (permanent, so Google moves them over)
       { source: "/institutions/:path*", destination: "/solutions", permanent: true },
       { source: "/use-cases/:path*", destination: "/solutions", permanent: true },
+      { source: "/solutions/for-:who", destination: "/solutions", permanent: true },
       { source: "/solutions/industries/:path*", destination: "/solutions", permanent: true },
       { source: "/solutions/roles/:path*", destination: "/solutions", permanent: true },
       { source: "/product/:path*", destination: "/", permanent: true },
