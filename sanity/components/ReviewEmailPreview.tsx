@@ -36,8 +36,8 @@ export function ReviewEmailPreview(props: any) {
           </div>
         </div>
 
-        <p style="margin-top: 24px; color: #111111;"><strong>A note from me personally:</strong></p>
-        <p style="margin-top: 8px; color: #374151; font-style: italic;">"${cleanReply}"</p>
+        ${cleanReply.trim() ? `<p style="margin-top: 24px; color: #111111;"><strong>A note from me personally:</strong></p>
+        <p style="margin-top: 8px; color: #374151; font-style: italic;">"${cleanReply}"</p>` : ''}
 
         <p style="margin-top: 24px;">If you ever have more feedback, suggestions, or just want to talk — feel free to reply to this email directly. I read every single one.</p>
 
