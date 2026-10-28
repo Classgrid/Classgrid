@@ -56,6 +56,16 @@ function LoginContent() {
       if (saved) explicitNext = saved;
     }
 
+    // A page that sent the user here (e.g. Docs feedback) also saved where to come back; use it when the
+    // callbackUrl got lost on a Google retry, but only if it was saved in the last 30 minutes
+    if (isHomepageCallback && !oauthError) {
+      try {
+        const saved = localStorage.getItem("classgrid:login-callback");
+        const savedAt = Number(localStorage.getItem("classgrid:login-callback-at") || 0);
+        if (saved && saved.startsWith("/") && Date.now() - savedAt < 30 * 60 * 1000) explicitNext = saved;
+      } catch {}
+    }
+
     // AUTO-RECOVER: On OAuthCallback error, clear stale cookies and silently redirect
     // to a clean login page so the user never sees "Sign-in was interrupted."
     // The "retried" flag prevents infinite loops — if it fails twice, show the error.
@@ -97,9 +107,22 @@ function LoginContent() {
 
   // After OAuth → if there's an explicit callbackUrl (e.g. from docs ?openComment=true), honour it directly.
   // Otherwise fall back to /api/auth/post-login which checks role and redirects appropriately.
-  const oauthCallbackUrl = ssoReturnTo || unsubscribeReturnTo || explicitNext || "/api/auth/post-login";
-  const otpSuccessUrl = ssoReturnTo || unsubscribeReturnTo || explicitNext || "/api/auth/post-login";
+  // Normal Log In goes through post-login, which sends people without a chat.classgrid.in account there
+  // and everyone else back to the page that asked for the login. The support login accepts everyone.
+  const nextAfterLogin =
+    explicitNext && !isSupportLogin && explicitNext.startsWith("/")
+      ? `/api/auth/post-login?next=${encodeURIComponent(explicitNext)}`
+      : explicitNext;
+  const oauthCallbackUrl = ssoReturnTo || unsubscribeReturnTo || nextAfterLogin || "/api/auth/post-login";
+  const otpSuccessUrl = ssoReturnTo || unsubscribeReturnTo || nextAfterLogin || "/api/auth/post-login";
 
+
+  const clearSavedCallback = () => {
+    try {
+      localStorage.removeItem("classgrid:login-callback");
+      localStorage.removeItem("classgrid:login-callback-at");
+    } catch {}
+  };
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const isRedirecting = useRef(false);
@@ -115,6 +138,7 @@ function LoginContent() {
     // Save the real callbackUrl before OAuth starts, in case NextAuth mangles it on error
     if (typeof window !== "undefined" && oauthCallbackUrl !== "/api/auth/post-login") {
       localStorage.setItem("classgrid:login-callback", oauthCallbackUrl);
+      localStorage.setItem("classgrid:login-callback-at", String(Date.now()));
     }
     signIn("google", { callbackUrl: oauthCallbackUrl });
   };
@@ -123,6 +147,7 @@ function LoginContent() {
     // Save the real callbackUrl before OAuth starts, in case NextAuth mangles it on error
     if (typeof window !== "undefined" && oauthCallbackUrl !== "/api/auth/post-login") {
       localStorage.setItem("classgrid:login-callback", oauthCallbackUrl);
+      localStorage.setItem("classgrid:login-callback-at", String(Date.now()));
     }
     signIn("github", { callbackUrl: oauthCallbackUrl });
   };
@@ -150,8 +175,16 @@ function LoginContent() {
       window.location.href = unsubscribeReturnTo;
       return;
     }
+    // No chat.classgrid.in account (and not the support login, which accepts everyone): make one there
+    if (!user.isPlatformUser && !isSupportLogin) {
+      isRedirecting.current = true;
+      clearSavedCallback();
+      window.location.href = "https://chat.classgrid.in/login";
+      return;
+    }
     if (explicitNext) {
       isRedirecting.current = true;
+      clearSavedCallback();
       window.location.href = explicitNext;
       return;
     }
@@ -305,6 +338,7 @@ function LoginContent() {
       }
 
       isRedirecting.current = true;
+      clearSavedCallback();
       window.location.href = otpSuccessUrl;
     } catch (err: any) {
       setError(err?.message && typeof err.message === "string" ? err.message : "Something went wrong.");
