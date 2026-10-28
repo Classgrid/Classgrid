@@ -46,6 +46,8 @@ export type PreparedRagChunk = {
 export const INDEXABLE_SANITY_TYPES = [
   "homePage",
   "pricingPage",
+  "aiPricingPage",
+  "aiSolutionPage",
   "apiDoc",
   "aboutPage",
   "demoPage",
@@ -274,6 +276,7 @@ function resolveSourcePath(type: string, slug: string): string {
     homePage: "/",
     homeStats: "/",
     pricingPage: "/pricing",
+    aiPricingPage: "/pricing",
     careersPage: "/careers",
     sectionSettings: "/",
     supportPage: "/support",
@@ -292,7 +295,7 @@ function resolveSourcePath(type: string, slug: string): string {
   if (type === "comparison") return `/compare/${normalizedSlug}`;
   if (type === "institutionPage") return `/solutions/for-${normalizedSlug}`;
   if (type === "useCasePage") return `/solutions/for-${normalizedSlug}`;
-  if (type === "solutionPage") return `/solutions/${normalizedSlug}`;
+  if (type === "solutionPage" || type === "aiSolutionPage") return `/solutions/${normalizedSlug}`;
   if (type === "solutionModule" || type === "module") return `/product/modules/${normalizedSlug}`;
   if (type === "classgridIntegration") return "/integrations";
   if (type === "faqItem") return "/#faq";

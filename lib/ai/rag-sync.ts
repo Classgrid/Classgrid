@@ -7,6 +7,7 @@ import {
   INDEXABLE_SANITY_TYPES,
   isIndexableSanityType,
 } from "@/lib/ai/rag-content";
+import { LOCAL_SOLUTIONS } from "@/content/solutions";
 import { connectMongo } from "@/lib/mongodb";
 import { RagChunk } from "@/lib/models/RagChunk";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
@@ -143,6 +144,22 @@ export async function syncSanityDocumentToRag(
     documentType: extracted.documentType,
     chunks: rows.length,
   };
+}
+
+// The Solutions pages (content/solutions/*.json) are in the code, not Sanity, so they are synced from here
+export async function reindexLocalSolutionPages(): Promise<RagSyncResult[]> {
+  const results: RagSyncResult[] = [];
+  for (const page of LOCAL_SOLUTIONS) {
+    results.push(
+      await syncSanityDocumentToRag({
+        ...page,
+        _id: `local-solution-${page.slug}`,
+        _type: "aiSolutionPage",
+        slug: { current: page.slug },
+      })
+    );
+  }
+  return results;
 }
 
 export async function reindexAllSanityDocuments(): Promise<{

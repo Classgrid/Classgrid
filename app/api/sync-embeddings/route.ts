@@ -4,6 +4,7 @@ import { isValidSignature, SIGNATURE_HEADER_NAME } from "@sanity/webhook";
 import {
   deleteRagChunksForDocument,
   reindexAllSanityDocuments,
+  reindexLocalSolutionPages,
   syncSanityDocumentToRag,
   type RagSyncResult,
 } from "@/lib/ai/rag-sync";
@@ -121,6 +122,11 @@ export async function POST(req: Request) {
         },
         { status: 200 }
       );
+    }
+
+    if (payload.mode === "reindexSolutions") {
+      const results = await reindexLocalSolutionPages();
+      return NextResponse.json({ ok: true, results }, { status: 200 });
     }
 
     if (payload.mode === "reindexPlatform") {

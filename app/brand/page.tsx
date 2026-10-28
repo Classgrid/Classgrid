@@ -5,14 +5,22 @@ import { SectionAccentBar } from '@/components/ui/section-accent-bar';
 export default function BrandGuidelinesPage() {
   const brandColors = [
     { name: 'Dark Background', hex: '#0f0f0f', text: 'text-white' },
-    { name: 'Primary Black', hex: '#000000', text: 'text-white' },
+    { name: 'Primary Emerald', hex: '#34d399', text: 'text-black' },
     { name: 'Warning Orange', hex: '#f97316', text: 'text-white' },
     { name: 'Card Surface', hex: '#111111', text: 'text-white' },
     { name: 'Muted Accent', hex: '#141414', text: 'text-white' },
   ];
 
+  // Light mode colors (same values as the light theme in globals.css)
+  const lightBrandColors = [
+    { name: 'Light Background', hex: '#FFFFFF', text: 'text-black' },
+    { name: 'Light Text', hex: '#000000', text: 'text-white' },
+    { name: 'Light Muted', hex: '#F5F5F5', text: 'text-black' },
+    { name: 'Light Border', hex: '#EAEAEA', text: 'text-black' },
+  ];
+
   return (
-    <div className="min-h-screen bg-background text-foreground p-12 font-sans selection:bg-foreground selection:text-background flex flex-col items-center">
+    <div className="min-h-screen bg-background text-foreground p-12 font-sans selection:bg-[#34d399] selection:text-black flex flex-col items-center">
       <div className="max-w-4xl mx-auto space-y-16 flex flex-col items-center text-center w-full">
         {/* Header */}
         <header className="space-y-6 flex flex-col items-center">
@@ -51,7 +59,31 @@ export default function BrandGuidelinesPage() {
                 <div className="p-4 bg-muted space-y-1">
                   <h3 className="font-medium text-foreground dark:text-gray-200">{color.name}</h3>
                   <div className="flex items-center justify-between">
-                    <code className="text-foreground font-mono text-sm">{color.hex}</code>
+                    <code className="text-[#34d399] font-mono text-sm">{color.hex}</code>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Light Mode Colors Section */}
+        <section className="space-y-8 w-full flex flex-col items-center">
+          <h2 className="text-2xl font-semibold">Light Mode Colors</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-left w-full">
+            {lightBrandColors.map((color) => (
+              <div
+                key={color.hex}
+                className="group relative rounded-2xl overflow-hidden border border-border shadow-sm transition-all hover:border-foreground/20"
+              >
+                <div
+                  className="h-32 w-full transition-transform group-hover:scale-105"
+                  style={{ backgroundColor: color.hex }}
+                />
+                <div className="p-4 bg-muted space-y-1">
+                  <h3 className="font-medium text-foreground dark:text-gray-200">{color.name}</h3>
+                  <div className="flex items-center justify-between">
+                    <code className="text-[#34d399] font-mono text-sm">{color.hex}</code>
                   </div>
                 </div>
               </div>
