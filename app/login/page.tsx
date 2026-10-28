@@ -515,16 +515,6 @@ function LoginContent() {
             </form>
           )}
 
-          {step === "email" && searchParams.get("next") !== "/support/ticket" && intent !== "unsubscribe" && (
-            <div className="mt-8 text-center text-[13px]">
-              <span className="text-slate-500 dark:text-[#888888]">
-                Don't have an account?{" "}
-                <a href="https://chat.classgrid.in/login" className="font-medium text-slate-900 transition-colors hover:underline dark:text-[#f1f1f1]">
-                  Sign up
-                </a>
-              </span>
-            </div>
-          )}
         </div>
 
       </div>

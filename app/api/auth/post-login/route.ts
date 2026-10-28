@@ -12,14 +12,10 @@ export async function GET() {
 
   const user = session.user as any;
 
-  // If the user hasn't set a username yet, send them to onboarding first
-  if (!user.forumUsername) {
-    return NextResponse.redirect(new URL("/onboarding", base));
+  // No chat.classgrid.in account yet: accounts are created there, so send them to make one
+  if (!user.isPlatformUser) {
+    return NextResponse.redirect("https://chat.classgrid.in/login");
   }
 
-  if (user.isPlatformUser) {
-    return NextResponse.redirect(new URL("/support/ticket", base));
-  }
-
-  return NextResponse.redirect(new URL("/support/inquiry", base));
+  return NextResponse.redirect(new URL("/support/ticket", base));
 }

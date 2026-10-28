@@ -282,7 +282,7 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
             logoAlt={chromeContent?.logoAlt}
             menuItems={chromeContent?.navbarMenuItems}
             secondaryLinkLabel="Log In"
-            secondaryLinkHref="/login"
+            secondaryLinkHref="https://chat.classgrid.in/login"
             primaryCtaLabel={chromeContent?.navbarPrimaryCtaLabel}
             primaryCtaHref={chromeContent?.navbarPrimaryCtaHref}
             mobileMenuTitle={chromeContent?.mobileMenuTitle}
