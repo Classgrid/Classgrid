@@ -21,6 +21,12 @@ import {
   Scroll,
   XCircle,
   Zap,
+  Bot,
+  MessagesSquare,
+  Phone,
+  Plug,
+  CreditCard,
+  LifeBuoy,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -49,6 +55,12 @@ const ICON_MAP: Record<string, any> = {
   Scroll,
   Building2,
   Clock,
+  Bot,
+  MessagesSquare,
+  Phone,
+  Plug,
+  CreditCard,
+  LifeBuoy,
 };
 
 const CATEGORY_ACCENT: Record<

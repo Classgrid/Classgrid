@@ -16,6 +16,12 @@ import {
   LayoutGrid,
   Scroll,
   Zap,
+  Bot,
+  MessagesSquare,
+  Phone,
+  Plug,
+  CreditCard,
+  LifeBuoy,
 } from "lucide-react";
 import { buildLangHref, extractLocaleString, type SupportedLang } from "@/lib/locale";
 import { getCategoryArticles } from "./actions";
@@ -31,6 +37,12 @@ const ICON_MAP: Record<string, any> = {
   Scroll,
   Building2,
   Shield: Building2,
+  Bot,
+  MessagesSquare,
+  Phone,
+  Plug,
+  CreditCard,
+  LifeBuoy,
 };
 
 const CATEGORY_ACCENT: Record<string, { iconBg: string; iconColor: string }> = {
