@@ -120,7 +120,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                   "name": "Classgrid",
                   "url": "https://classgrid.in",
                   "logo": "https://classgrid.in/android-chrome-512x512.png",
-                  "description": "The Operating System for Educational Institutions. Manage admissions, academics, operations, communication, and analytics in one unified education platform.",
+                  "description": "Classgrid builds Classgrid AI, an AI agent that answers questions, researches the web, works with your files and runs tasks for you, with results on WhatsApp.",
                   "sameAs": [
                     "https://linkedin.com/company/classgrid",
                     "https://www.instagram.com/classgridedu/",
@@ -146,20 +146,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                   "@type": "WebSite",
                   "@id": "https://classgrid.in/#website",
                   "name": "Classgrid",
-                  "url": "https://classgrid.in",
-                  "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://classgrid.in/modules?q={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                  }
+                  "url": "https://classgrid.in"
                 },
                 {
                   "@type": "SoftwareApplication",
                   "@id": "https://classgrid.in/#software",
-                  "name": "Classgrid",
-                  "applicationCategory": "EducationalApplication",
+                  "name": "Classgrid AI",
+                  "applicationCategory": "BusinessApplication",
                   "operatingSystem": "Web",
-                  "url": "https://classgrid.in/product",
+                  "url": "https://chat.classgrid.in",
                   "publisher": {
                     "@id": "https://classgrid.in/#organization"
                   }

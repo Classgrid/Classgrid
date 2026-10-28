@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Case Studies | Classgrid",
-  description: "See how institutions across India are transforming campus operations with Classgrid.",
+  description: "See how people and teams get more done every day with Classgrid AI.",
 };
 
 export const revalidate = 60;

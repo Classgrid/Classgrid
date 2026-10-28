@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata = buildPageMetadata({
   title: "Solutions",
-  description: "Choose your role or institution type and explore how Classgrid solves that exact workflow.",
+  description: "See how Classgrid AI helps individuals, developers and teams with research, files, code and everyday tasks.",
   path: "/solutions",
 });
 

@@ -3,7 +3,7 @@ import { CommunityClient } from "./CommunityClient";
 
 export const metadata: Metadata = {
   title: "Community Forum (Coming Soon) | ClassGrid",
-  description: "An exclusive space for ClassGrid institutions to connect, share resources, and discuss best practices.",
+  description: "A space for Classgrid AI users to connect, share ideas and swap tips for getting more done.",
 };
 
 export default function CommunityPage() {

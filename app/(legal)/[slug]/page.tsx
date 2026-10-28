@@ -8,7 +8,7 @@ import { getLegalPageBySlug, getPolicyPage } from "@/sanity/lib/marketing";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 const LEGAL_DESCRIPTIONS: Record<string, string> = {
-  privacy: "How Classgrid collects, processes, and protects user and student data.",
+  privacy: "How Classgrid collects, processes, and protects your data when you use Classgrid AI.",
   terms: "Legal terms for platform usage, billing, licensing, and account responsibility.",
   security: "Infrastructure and application security controls powering tenant-safe operations.",
   cookies: "Cookie and local-storage usage policy with strict privacy safeguards.",

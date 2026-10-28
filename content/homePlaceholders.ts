@@ -82,7 +82,7 @@ export type ChromeContent = {
 
 export const placeholderChromeContent: ChromeContent = {
   brandName: "Classgrid",
-  brandTagline: "The AI-Powered Operating System for Educational Institutions",
+  brandTagline: "Your AI agent for everyday work",
   siteUrl: siteMeta.domain,
   contactEmail: siteMeta.supportEmail,
   logoUrl: "/logo.png?v=2",
@@ -185,8 +185,8 @@ export const placeholderChromeContent: ChromeContent = {
   footerStatusState: DEFAULT_FOOTER_STATUS_STATE,
   footerStatusHref: "https://status.classgrid.in",
   seo: {
-    metaTitle: "Classgrid | The AI-Powered Operating System for Educational Institutions",
-    metaDescription: "Manage admissions, academics, operations, communication, and analytics in one unified education platform.",
+    metaTitle: "Classgrid AI | Your AI agent for everyday work",
+    metaDescription: "Classgrid AI answers questions, researches the web, works with your files and runs tasks for you, with results on WhatsApp. Start free at chat.classgrid.in.",
     slug: "home",
   },
 };

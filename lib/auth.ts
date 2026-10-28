@@ -277,6 +277,8 @@ export const authOptions: NextAuthOptions = {
               if (platformUser) {
                 token.isPlatformUser = true;
                 token.platformRole = platformUser.role;
+                // What they picked at sign-up on chat.classgrid.in ("Student", "Marketer", ...)
+                token.jobRole = platformUser.metadata?.job_role || null;
                 
                 // Override the token name with the platform user's full name
                 if (platformUser.name) {
@@ -334,6 +336,7 @@ export const authOptions: NextAuthOptions = {
         (session.user as any).id = token.id as string;
         (session.user as any).isPlatformUser = token.isPlatformUser as boolean;
         (session.user as any).platformRole = token.platformRole as string | undefined;
+        (session.user as any).jobRole = token.jobRole as string | undefined;
         (session.user as any).orgName = token.orgName as string | undefined;
         (session.user as any).orgLogo = token.orgLogo as string | undefined;
         (session.user as any).orgId = token.orgId as string | undefined;

@@ -193,7 +193,7 @@ export function DocsUserButton() {
                     {user?.orgName || "Classgrid"}
                   </p>
                   <p className="text-[10px] text-slate-500 dark:text-white/40 truncate">
-                    {getRoleLabel(user?.platformRole)}
+                    {user?.jobRole || getRoleLabel(user?.platformRole)}
                   </p>
                 </div>
               </div>
