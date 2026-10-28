@@ -159,7 +159,6 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
     if (post?.references && post.references.length > 0) {
       items.push({ id: "blog-references", label: "References" });
     }
-    items.push({ id: "blog-author", label: "Author" });
     return items;
   }, [post]);
 
