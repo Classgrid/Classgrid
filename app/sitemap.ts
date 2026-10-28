@@ -1,14 +1,13 @@
 import type { MetadataRoute } from "next";
 
 import { siteMeta } from "@/content/siteMeta";
-import { getChangelogEntries, getComparisonPages, getCaseStudies, getLegalPageDates, getPosts } from "@/sanity/lib/marketing";
+import { getChangelogEntries, getComparisonPages, getDocPageDates, getLegalPageDates, getPosts } from "@/sanity/lib/marketing";
 import { SOLUTION_SLUGS } from "@/lib/solutions";
 
 const staticRoutes = [
   "/",
   "/about",
   "/blog",
-  "/case-studies",
   "/changelog",
   "/compare",
   "/contact",
@@ -34,7 +33,7 @@ const staticRoutes = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const cmsComparisons = ((await getComparisonPages()) as Array<{ slug?: string }> | null) ?? [];
   const cmsChangelogEntries = ((await getChangelogEntries()) as Array<{ slug?: string }> | null) ?? [];
-  const cmsCaseStudies = ((await getCaseStudies()) as Array<{ slug?: { current?: string } }> | null) ?? [];
+  const cmsDocPages = ((await getDocPageDates()) as Array<{ slug?: string; _updatedAt?: string }> | null) ?? [];
   const cmsPosts = ((await getPosts()) as Array<{ slug?: string }> | null) ?? [];
   const cmsLegalPages = ((await getLegalPageDates()) as Array<{ slug?: string; lastUpdated?: string; _updatedAt?: string }> | null) ?? [];
 
@@ -52,7 +51,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const dynamicCompareSlugs = unique(cmsComparisons.map((entry) => entry.slug));
   const dynamicChangelogSlugs = unique(cmsChangelogEntries.map((entry) => entry.slug));
-  const dynamicCaseStudySlugs = unique(cmsCaseStudies.map((entry) => entry.slug?.current));
   const dynamicPostSlugs = unique(cmsPosts.map((entry) => entry.slug));
   const solutionSlugs = unique(SOLUTION_SLUGS);
 
@@ -85,10 +83,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.75,
     })),
-    ...dynamicCaseStudySlugs.map((slug) => ({
-      url: `${siteMeta.domain}/case-studies/${slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
+    ...cmsDocPages
+      .filter((doc) => doc.slug)
+      .map((doc) => ({
+        url: `${siteMeta.domain}/docs/${doc.slug}`,
+        ...(doc._updatedAt ? { lastModified: new Date(doc._updatedAt) } : {}),
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      })),
   ];
 }

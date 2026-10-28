@@ -185,8 +185,8 @@ export const placeholderChromeContent: ChromeContent = {
   footerStatusState: DEFAULT_FOOTER_STATUS_STATE,
   footerStatusHref: "https://status.classgrid.in",
   seo: {
-    metaTitle: "Classgrid AI | Your AI agent for everyday work",
-    metaDescription: "Classgrid AI answers questions, researches the web, works with your files and runs tasks for you, with results on WhatsApp. Start free at chat.classgrid.in.",
+    metaTitle: "Classgrid AI — The AI Agent That Does Real Work For You",
+    metaDescription: "Classgrid AI researches, reads files, runs code, makes documents, works inside your connected apps, and takes tasks over WhatsApp. Try free at chat.classgrid.in.",
     slug: "home",
   },
 };

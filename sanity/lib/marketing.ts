@@ -170,6 +170,8 @@ export const getLegalPageBySlug = async (slug: string) => {
 }
 export const getLegalPageDates = () =>
   safeFetch(`*[_type == "legalPage" && !(_id in path("drafts.**"))]{ "slug": slug.current, lastUpdated, _updatedAt }`)
+export const getDocPageDates = () =>
+  safeFetch(`*[_type == "apiDoc" && docsVersion == "ai" && defined(slug.current) && !(_id in path("drafts.**"))]{ "slug": slug.current, _updatedAt }`)
 export const getStatusPage = () => safeFetch(statusPageQuery)
 export const getPageSettings = (slug: string) => safeFetch(pageSettingsBySlugQuery, { slug })
 
