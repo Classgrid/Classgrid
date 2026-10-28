@@ -40,7 +40,7 @@ export function ComparisonHubClient({ hubData, comparisons }: ComparisonHubClien
           
           {/* Headline — no italic, reduced weight, tighter measure */}
           <h1 className="text-xl md:text-2xl lg:text-[1.7rem] font-medium tracking-tight text-slate-800 dark:text-white/90 leading-[1.55] max-w-xl mx-auto">
-            Every institution works differently. Compare workflows, usability, architecture, and operational experience across platforms.
+            Every team works differently. Compare AI agents on what they can do, how easy they are to use, and what they cost.
           </h1>
           
           {hubData.heroSubheadline && (

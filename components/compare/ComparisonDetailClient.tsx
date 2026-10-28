@@ -341,7 +341,7 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
                   <section id="strengths" className="space-y-6 pt-4">
                     <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Strengths of each platform</h2>
                     <p className="text-[15px] leading-relaxed text-[#171717] dark:text-[#ededed]">
-                      Each platform has distinct strengths depending on your institutional requirements and architecture patterns.
+                      Each platform has distinct strengths depending on what you need an AI agent to do.
                     </p>
                   </section>
 
@@ -349,34 +349,34 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
                   <section id="when-to-choose" className="space-y-6 pt-4">
                     <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">When to choose Classgrid</h3>
                     <p className="text-[15px] leading-relaxed text-[#171717] dark:text-[#ededed]">
-                      Classgrid excels at institutional-wide automation, AI-driven workflows, and performance-critical operations. The platform provides native ERP integration, real-time analytics, and infrastructure designed for modern education with global edge distribution.
+                      Classgrid AI is an agent that does real work for you: it searches the web, reads your files, runs code, connects to your apps and runs scheduled tasks, with many AI models in one place.
                     </p>
                     <VercelTable
                       columns={[
-                        { key: "module", header: "Module", accent: true, width: "w-[200px]" },
-                        { key: "capabilities", header: "Capabilities" },
+                        { key: "module", header: "Capability", accent: true, width: "w-[200px]" },
+                        { key: "capabilities", header: "What it does" },
                       ]}
                       rows={[
-                        { module: "Attendance", capabilities: "Biometric sync, GPS geofencing, real-time dashboards, automated defaulter alerts" },
-                        { module: "Fee Management", capabilities: "Multi-gateway collection, auto-reconciliation, late-fee engine, parent SMS receipts" },
-                        { module: "Examination", capabilities: "Seating plan generation, hall ticket automation, result processing with grace marks" },
-                        { module: "NAAC/NBA", capabilities: "Auto-generated compliance reports, criterion-wise data aggregation, audit trails" },
+                        { module: "Web research", capabilities: "Searches the web, opens pages and gives answers with sources" },
+                        { module: "Files & documents", capabilities: "Reads PDFs, images and spreadsheets, and creates PDFs, charts and documents" },
+                        { module: "Apps", capabilities: "Connects to Gmail, Google Drive, Calendar, Notion, Slack, GitHub and more" },
+                        { module: "Schedules", capabilities: "Runs tasks and sends reminders by email or WhatsApp at the time you pick" },
                       ]}
                     />
                   </section>
 
                   {/* AI Tools */}
                   <section id="ai-tools" className="space-y-6 pt-4">
-                    <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">AI-powered institutional tools</h3>
+                    <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Built for everyday work</h3>
                     <p className="text-[15px] leading-relaxed text-[#171717] dark:text-[#ededed]">
-                      <span className="font-medium text-slate-900 dark:text-white">Classgrid AI</span> accelerates institutional workflows with AI assistance.
+                      <span className="font-medium text-slate-900 dark:text-white">Classgrid AI</span> helps you get everyday work done faster.
                     </p>
                     <div className="space-y-4">
-                      <h4 className="text-base font-semibold text-slate-900 dark:text-white">Smart Analytics</h4>
+                      <h4 className="text-base font-semibold text-slate-900 dark:text-white">Model choice</h4>
                       <ul className="ml-4 space-y-2 text-[15px] text-[#171717] dark:text-[#ededed]">
-                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Predicts student dropout risk from attendance and grade patterns</li>
-                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Generates compliance-ready reports automatically</li>
-                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />One-click NAAC/NBA data aggregation</li>
+                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Auto picks a model for each message, or you choose one yourself</li>
+                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Claude, DeepSeek, GLM, Kimi, Qwen and more in one chat</li>
+                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Pay only for what you use with credit top-ups</li>
                       </ul>
                     </div>
                   </section>
@@ -389,7 +389,7 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
                 <section id="competitor-comparison" className="space-y-6 pt-4">
                   <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">{comparison.competitorName} comparison</h3>
                   <p className="text-[15px] leading-relaxed text-[#171717] dark:text-[#ededed]">
-                    <span className="font-medium text-slate-900 dark:text-white">{comparison.competitorName}</span> provides foundational campus management features but may differ in automation depth, real-time capabilities, and deployment architecture.
+                    <span className="font-medium text-slate-900 dark:text-white">{comparison.competitorName}</span> has its own strengths but may differ in features, model choice, and pricing.
                   </p>
                   <VercelTable
                     columns={[

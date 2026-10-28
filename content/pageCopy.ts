@@ -591,19 +591,19 @@ export const compareRows = [
 
 export const campaignCards = [
   {
-    slug: "fees",
-    title: "Tired of chasing unpaid fees?",
-    body: "Automate fee collection, split settlements, and receipts with one parent-facing payment flow.",
+    slug: "research",
+    title: "Spending hours on research?",
+    body: "Classgrid AI searches the web, reads the pages and gives you a clear answer with sources.",
   },
   {
-    slug: "attendance",
-    title: "Proxy attendance draining your compliance?",
-    body: "Deploy GPS and device-validated attendance with appeals and institutional dashboards.",
+    slug: "documents",
+    title: "Drowning in PDFs and files?",
+    body: "Upload a PDF or spreadsheet and get a summary, a chart or a new document in seconds.",
   },
   {
-    slug: "results",
-    title: "Still calculating SGPA manually?",
-    body: "Upload marks once and generate SGPA, CGPA, ranks, and marksheets at scale.",
+    slug: "reminders",
+    title: "Forgetting important tasks?",
+    body: "Tell Classgrid AI once and it reminds you by email or WhatsApp at the right time.",
   },
 ];
 

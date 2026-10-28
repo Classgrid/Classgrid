@@ -119,9 +119,9 @@ function suggestedQuestionsForPage(pageContext?: PageContext) {
   if (path === "/pricing") {
     return [
       "How does Classgrid pricing work?",
-      "Which modules are included?",
-      "How do I get a quote?",
-      "Is pricing fixed or custom?",
+      "How do AI credits work?",
+      "How much can I top up?",
+      "Is there a free plan?",
     ];
   }
 
@@ -138,7 +138,7 @@ function suggestedQuestionsForPage(pageContext?: PageContext) {
     return [
       "How do I raise a support ticket?",
       "What is Classgrid Talk vs support tickets?",
-      "I'm from an institution — how do I get help?",
+      "How do I get help with my account?",
       "Can I track my ticket status?",
     ];
   }
@@ -147,7 +147,7 @@ function suggestedQuestionsForPage(pageContext?: PageContext) {
     return [
       "Summarize this policy",
       "What data does Classgrid handle?",
-      "What should institutions know?",
+      "What are my rights as a user?",
       "Who do I contact for policy questions?",
     ];
   }

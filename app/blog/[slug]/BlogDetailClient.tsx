@@ -571,7 +571,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
             <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="flex justify-between items-end mb-10">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-foreground">Related Blogs</h2>
-                <p className="text-muted-foreground">Keep exploring education and tech</p>
+                <p className="text-muted-foreground">Keep exploring AI and tech</p>
               </div>
               <div className="flex items-center gap-3">
                 {relatedPosts.length > RELATED_PAGE_SIZE && (

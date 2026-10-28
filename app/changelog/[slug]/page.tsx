@@ -355,7 +355,7 @@ export default async function ChangelogDetailPage({
           <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">Next step</p>
           <h3 className="mb-3 text-xl sm:text-2xl font-extrabold tracking-tight text-foreground">See it in action</h3>
           <p className="mb-6 text-sm leading-relaxed text-muted-foreground max-w-lg">
-            Book a demo to see how this update works in your institution&apos;s workflow.
+            Book a demo to see how this update fits into your everyday work.
           </p>
           <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
             <Link

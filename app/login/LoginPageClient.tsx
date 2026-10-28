@@ -222,7 +222,7 @@ export default function LoginPageClient({
                     <p className="mt-2 text-sm leading-6 text-muted-foreground sm:text-[15px]">
                       {redirectDiscourse
                         ? "Sign in to continue to the Classgrid Community."
-                        : "Unified ERP infrastructure for modern institutions"}
+                        : "The agentic platform for everyday work"}
                     </p>
                   </div>
                 </div>

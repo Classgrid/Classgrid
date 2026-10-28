@@ -117,8 +117,8 @@ export const placeholderChromeContent: ChromeContent = {
         {
           links: [
             { label: "Agent", href: "/agent" },
-            { label: "Features", href: "/features" },
-            { label: "Modules", href: "/modules" },
+            { label: "Use Cases", href: "/use-cases" },
+            { label: "Docs", href: "/docs" },
             { label: "Integrations", href: "/#integrations" },
 
             { label: "Compare", href: "/compare" },

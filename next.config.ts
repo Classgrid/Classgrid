@@ -80,6 +80,13 @@ const nextConfig: NextConfig = {
       { source: "/product/:path*", destination: "/", permanent: true },
       { source: "/modules/:path*", destination: "/", permanent: true },
       { source: "/features/:path*", destination: "/", permanent: true },
+      { source: "/campaigns/:old(fees|attendance|results)", destination: "/campaigns", permanent: true },
+      { source: "/case-studies/pccoe-fee-recovery", destination: "/case-studies", permanent: true },
+      { source: "/compare/vmedulife", destination: "/compare/ai-agents", permanent: true },
+      { source: "/changelog/:old(naac-nba-automated-compliance-engine|redis-streams-chat-architecture|enterprise-biometric-sdk-fixes)", destination: "/changelog", permanent: true },
+      // The old ERP brochure files stay in public/ but are no longer opened
+      { source: "/brochure.html", destination: "/", permanent: true },
+      { source: "/Classgrid-Enterprise-Brochure.pdf", destination: "/", permanent: true },
       // Redirect community/forum to new Discourse forum
       // { source: "/community", destination: "https://forum.classgrid.in", permanent: false },
       // { source: "/forum", destination: "https://forum.classgrid.in", permanent: false },

@@ -189,7 +189,7 @@ export default function TeamClient({ leadership, engineering, sales, support }: 
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg text-muted-foreground"
           >
-            We are a team of educators, engineers, and designers dedicated to transforming the way educational institutions manage their campus.
+            We are a team of engineers and designers building Classgrid AI, the agentic platform for everyday work.
           </motion.p>
         </div>
 

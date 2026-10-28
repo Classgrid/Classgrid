@@ -28,7 +28,8 @@ const DASHBOARD_TARGETS: Record<string, string> = {
 };
 
 const ROLE_LABELS: Record<string, string> = {
-  student: "Student",
+  // Every chat.classgrid.in account is saved with the "student" role, so it is not shown as "Student"
+  student: "Member",
   teacher: "Faculty",
   faculty: "Faculty",
   org_admin: "Organization Admin",

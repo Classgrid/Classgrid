@@ -34,7 +34,8 @@ export default async function CaseStudyDetailPage({ params }: Props) {
     slug,
   });
 
-  const data = caseStudy || (slug === "pccoe-fee-recovery" ? MOCK_DETAIL_DATA : null);
+  // The old made-up ERP case study (MOCK_DETAIL_DATA) is no longer shown
+  const data = caseStudy;
 
   if (!data) {
     notFound();

@@ -14,9 +14,9 @@ const FAQS: { question: string; answer: ReactNode }[] = [
       "An AI agent at chat.classgrid.in. It can chat, search the web, read your files, run Python, make charts and documents, and send scheduled messages on WhatsApp.",
   },
   {
-    question: "Do I need a school or college account?",
+    question: "Who can use Classgrid AI?",
     answer:
-      "No. Anyone can sign up with an email. Institutions on Classgrid ERP can also use the agent inside their ERP.",
+      "Anyone. Sign up with an email and start for free, whether you're a student, a developer, a founder or a working professional.",
   },
   {
     question: "Why do you ask for my WhatsApp number?",

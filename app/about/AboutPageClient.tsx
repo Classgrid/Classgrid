@@ -74,8 +74,8 @@ export default function AboutPageClient({
   let paragraphs = storyParagraphs.filter((p) => p.trim().length > 0);
   if (paragraphs.length === 0) {
     paragraphs = [
-      "Classgrid is a trusted product development and technology services company that leverages its expertise to provide educational institutes with cutting-edge solutions that lend them a competitive edge.",
-      "Our platform has been associated with premium educational institutes in the country, ensuring smoother operations and better outcomes.",
+      "Classgrid builds Classgrid AI, an agent that chats, searches the web, reads your files, writes code and runs scheduled tasks for you.",
+      "We want everyone, from students to founders, to get real work done with AI, without needing to be an expert.",
     ];
   }
 
@@ -94,7 +94,7 @@ export default function AboutPageClient({
             About Us
           </h1>
           <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-            We build the infrastructure that lets educators focus on education.
+            We build the agentic platform for everyday work.
           </p>
         </MotionDiv>
       </section>

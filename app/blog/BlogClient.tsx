@@ -482,7 +482,7 @@ export function BlogClient({
                     )}
                     {/* Category pill floating on image */}
                     <span className="absolute left-3 top-3 rounded-sm bg-background px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.15em] text-foreground">
-                      {extractLocaleString(post.category, lang) || "Education"}
+                      {extractLocaleString(post.category, lang) || "Updates"}
                     </span>
                   </div>
 

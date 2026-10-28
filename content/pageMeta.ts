@@ -13,17 +13,17 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   about: {
     title: "About",
-    description: "Classgrid journey and mission: democratizing elite education infrastructure.",
+    description: "Classgrid journey and mission: building the agentic platform for everyday work.",
     path: "/about",
   },
   blog: {
     title: "Blog",
-    description: "Classgrid insights on education operations, AI workflows, and digital campus transformation.",
+    description: "Classgrid insights on AI agents, AI workflows, and getting everyday work done with Classgrid AI.",
     path: "/blog",
   },
   campaigns: {
     title: "Campaigns",
-    description: "Conversion-focused campaign landing pages for specific institutional pain points.",
+    description: "Classgrid AI campaigns and offers.",
     path: "/campaigns",
   },
   caseStudies: {
@@ -44,7 +44,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   contact: {
     title: "Contact",
-    description: "Sales and support contact pathways for Classgrid institutions.",
+    description: "Contact the Classgrid team for sales, partnerships, and support for Classgrid AI.",
     path: "/contact",
   },
   contactSales: {
@@ -136,7 +136,7 @@ export const pageMeta: Record<string, PageMeta> = {
   privacy: {
     title: "Privacy Policy",
     description:
-      "Classgrid data processing, student privacy protections, encryption standards, and retention policy.",
+      "Classgrid data processing, user privacy protections, encryption standards, and retention policy.",
     path: "/privacy",
   },
   reviews: {
@@ -147,7 +147,7 @@ export const pageMeta: Record<string, PageMeta> = {
   security: {
     title: "Security",
     description:
-      "Classgrid infrastructure, application, and data isolation controls for education workloads.",
+      "Classgrid infrastructure, application, and data isolation controls for Classgrid AI.",
     path: "/security",
   },
   status: {

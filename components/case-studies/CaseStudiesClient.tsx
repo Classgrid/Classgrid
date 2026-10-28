@@ -92,7 +92,8 @@ const MOCK_CASE_STUDIES: CaseStudy[] = [
 
 export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitle }: CaseStudiesClientProps) {
   const [mounted, setMounted] = useState(false);
-  const caseStudies = initialCaseStudies.length > 0 ? initialCaseStudies : MOCK_CASE_STUDIES;
+  // The old made-up ERP case study (MOCK_CASE_STUDIES) is no longer shown
+  const caseStudies = initialCaseStudies;
   
   const [yearFilter,        setYearFilter]        = useState("all");
   const [institutionFilter, setInstitutionFilter] = useState("all");

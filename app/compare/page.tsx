@@ -22,18 +22,11 @@ export default async function CompareHubPage() {
   const comparisons = await client.fetch(comparisonPagesQuery);
 
   // Hardcode the neutral headline as the main text
-  const heroHeadline = "Every institution works differently. Compare workflows, usability, architecture, and operational experience across platforms";
+  const heroHeadline = "Every team works differently. Compare AI agents on what they can do, how easy they are to use, and what they cost";
   const heroSubheadline = "";
 
-  // If Sanity has no comparisons yet, provide a mock one so the layout looks great
-  const finalComparisons = comparisons && comparisons.length > 0 ? comparisons : [
-    {
-      _id: "mock-compare-vmedulife",
-      competitorName: "vmedulife",
-      slug: "vmedulife",
-      metaDescription: "In-depth technical comparison between vmedulife and Classgrid architecture.",
-    }
-  ];
+  // The old ERP mock comparison (vmedulife) is no longer shown
+  const finalComparisons = comparisons || [];
 
   const jsonLdData = [
     {

@@ -39,7 +39,7 @@ export function CommunityClient() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
             >
-              We are building a dedicated community forum where educators and administrators from schools, junior colleges, engineering institutes, and coaching centers can connect, share ideas, exchange best practices, and collaborate directly with the ClassGrid team.
+              We are building a dedicated community forum where Classgrid AI users can connect, share ideas, exchange tips and prompts, and collaborate directly with the ClassGrid team.
             </motion.p>
 
             {/* Feature Cards */}
@@ -60,7 +60,7 @@ export function CommunityClient() {
                     <MessagesSquare className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-foreground">Public Discussions</h3>
-                  <p className="text-sm text-muted-foreground">Participate in dedicated discussion categories, ask questions, and learn how other institutions manage academics, operations, and communication workflows.</p>
+                  <p className="text-sm text-muted-foreground">Participate in dedicated discussion categories, ask questions, and learn how other people use Classgrid AI for research, coding, writing and everyday tasks.</p>
                 </div>
               </motion.div>
 
@@ -78,7 +78,7 @@ export function CommunityClient() {
                     <Sparkles className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-foreground">Verified Member Badges</h3>
-                  <p className="text-sm text-muted-foreground">Verified students, teachers, and administrators on the ClassGrid platform will receive member badges. Non-platform users will also be able to join, browse discussions, and participate in the wider ClassGrid Community.</p>
+                  <p className="text-sm text-muted-foreground">Verified Classgrid AI users will receive member badges. Non-platform users will also be able to join, browse discussions, and participate in the wider ClassGrid Community.</p>
                 </div>
               </motion.div>
 
@@ -108,7 +108,7 @@ export function CommunityClient() {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="mt-16 text-sm text-muted-foreground"
             >
-              <strong className="text-foreground font-semibold tracking-wide">Launch Status:</strong> The forum will officially open once ClassGrid reaches 500 active users across 2–3 partner institutions.
+              <strong className="text-foreground font-semibold tracking-wide">Launch Status:</strong> The forum will officially open once Classgrid AI reaches 500 active users.
             </motion.div>
           </div>
         </section>

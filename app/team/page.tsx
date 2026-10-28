@@ -5,7 +5,7 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Meet Our Team | ClassGrid",
-  description: "Meet the innovators, educators, and engineers behind the ClassGrid platform.",
+  description: "Meet the engineers, designers, and builders behind Classgrid AI.",
 }
 
 export const revalidate = 60; // Revalidate every minute
