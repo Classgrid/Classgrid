@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { formatDate } from "date-fns";
-import { Search, Eye } from "lucide-react";
+import { Search, Eye, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -313,7 +313,7 @@ export function BlogClient({
               placeholder="Search a blog..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-12 rounded-xl border border-border bg-card pl-10 text-card-foreground shadow-sm placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-foreground/30 focus-visible:ring-offset-0"
+              className="h-12 rounded-md border border-border bg-background pl-10 text-[15px] text-foreground shadow-none placeholder:text-muted-foreground focus-visible:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
             />
           </div>
         </div>
@@ -325,11 +325,11 @@ export function BlogClient({
             <Select value={sortOrder} onValueChange={setSortOrder}>
               <SelectTrigger
                 aria-label="Sort Order"
-                className="h-11 w-[130px] rounded-xl border border-border bg-card text-card-foreground shadow-sm"
+                className="h-11 w-[130px] rounded-md border border-border bg-background text-foreground shadow-none"
               >
                 <SelectValue placeholder="Sort: Latest" />
               </SelectTrigger>
-              <SelectContent className="rounded-xl border-border bg-card text-card-foreground">
+              <SelectContent className="rounded-md border-border bg-background text-foreground">
                 <SelectItem value="latest">Latest</SelectItem>
                 <SelectItem value="popular">Popular</SelectItem>
                 <SelectItem value="oldest">Oldest</SelectItem>
@@ -352,11 +352,11 @@ export function BlogClient({
             <Select value={monthFilter} onValueChange={setMonthFilter}>
               <SelectTrigger
                 aria-label="Month Filter"
-                className="h-11 w-[150px] rounded-xl border border-border bg-card text-card-foreground shadow-sm"
+                className="h-11 w-[150px] rounded-md border border-border bg-background text-foreground shadow-none"
               >
                 <SelectValue placeholder="Month" />
               </SelectTrigger>
-              <SelectContent className="rounded-xl border-border bg-card text-card-foreground">
+              <SelectContent className="rounded-md border-border bg-background text-foreground">
                 <SelectItem value="all">All Months</SelectItem>
                 <SelectItem value="jan">January</SelectItem>
                 <SelectItem value="feb">February</SelectItem>
@@ -399,11 +399,11 @@ export function BlogClient({
             <Select value={yearFilter} onValueChange={setYearFilter}>
               <SelectTrigger
                 aria-label="Year Filter"
-                className="h-11 w-[120px] rounded-xl border border-border bg-card text-card-foreground shadow-sm"
+                className="h-11 w-[120px] rounded-md border border-border bg-background text-foreground shadow-none"
               >
                 <SelectValue placeholder="Year" />
               </SelectTrigger>
-              <SelectContent className="rounded-xl border-border bg-card text-card-foreground">
+              <SelectContent className="rounded-md border-border bg-background text-foreground">
                 {years.map((year) => (
                   <SelectItem key={year} value={year}>
                     {year === "all" ? "All Years" : year}
@@ -433,9 +433,9 @@ export function BlogClient({
               key={cat}
               variant="outline"
               onClick={() => setActiveTab(cat)}
-              className={`rounded-full border px-4 py-2 font-medium shadow-none transition ${activeTab === cat
+              className={`rounded-md border px-4 py-2 font-medium shadow-none transition ${activeTab === cat
                   ? "border-foreground bg-foreground text-background hover:bg-foreground hover:text-background"
-                  : "border-border bg-card text-muted-foreground hover:border-foreground/40 hover:bg-foreground/5 hover:text-foreground"
+                  : "border-border bg-background text-muted-foreground hover:border-foreground/40 hover:bg-muted hover:text-foreground"
                 }`}
             >
               {cat}
@@ -464,7 +464,7 @@ export function BlogClient({
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
                   }}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:border-foreground/30 hover:shadow-md"
+                  className="group flex h-full flex-col overflow-hidden rounded-md border border-border bg-background transition-colors duration-300 hover:border-foreground/40"
                 >
                   {/* Card Image */}
                   <div className="relative h-48 w-full flex-shrink-0 overflow-hidden bg-muted">
@@ -481,7 +481,7 @@ export function BlogClient({
                       </div>
                     )}
                     {/* Category pill floating on image */}
-                    <span className="absolute left-3 top-3 rounded-full bg-foreground px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-background shadow">
+                    <span className="absolute left-3 top-3 rounded-sm bg-background px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.15em] text-foreground">
                       {extractLocaleString(post.category, lang) || "Education"}
                     </span>
                   </div>
@@ -491,7 +491,7 @@ export function BlogClient({
                     <div className="mb-2 text-xs text-muted-foreground">
                       {formatPubDate(post.publishedAt)}
                     </div>
-                    <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-snug text-foreground transition-colors group-hover:text-foreground/70">
+                    <h3 className="mb-3 line-clamp-2 text-xl font-medium leading-snug tracking-[-0.01em] text-foreground transition-colors group-hover:text-foreground/70">
                       {extractLocaleString(post.title, lang)}
                     </h3>
                     {post.excerpt && (
@@ -554,8 +554,9 @@ export function BlogClient({
                             </span>
                           )}
                         </div>
-                        <span className="flex items-center gap-1 rounded-full border border-border bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground transition-all group-hover:bg-foreground group-hover:text-background">
-                          Read →
+                        <span className="flex items-center gap-1 rounded-md bg-muted px-2.5 py-1 text-[13px] font-medium text-foreground transition-colors group-hover:bg-foreground group-hover:text-background">
+                          Read
+                          <ChevronRight className="h-3.5 w-3.5" />
                         </span>
                       </div>
                     </div>
@@ -590,7 +591,7 @@ export function BlogClient({
 
       {totalPages > 1 && (
         <Pagination className="pb-20 pt-8">
-          <PaginationContent className="gap-1 rounded-xl border border-border bg-card/90 p-1 shadow-sm">
+          <PaginationContent className="gap-1 rounded-md border border-border bg-background p-1">
             <PaginationItem>
               <PaginationPrevious
                 href="#"
