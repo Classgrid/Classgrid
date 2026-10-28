@@ -404,6 +404,16 @@ export default function ArticlePageClient({
                   strong: ({ children }) => <strong className="font-semibold text-zinc-900 dark:text-white">{children}</strong>,
                   hr: () => <hr className="my-10 border-zinc-200 dark:border-zinc-800" />,
                   a: ({ href, children }) => <a href={href} className="text-zinc-900 dark:text-white hover:underline font-medium" target={href?.startsWith("http") ? "_blank" : undefined}>{children}</a>,
+                  img: ({ src, alt, title }) => {
+                    const darkSrc = title?.startsWith("dark:") ? title.slice(5) : "";
+                    if (!darkSrc) return <img src={typeof src === "string" ? src : undefined} alt={alt || ""} title={title} />;
+                    return (
+                      <>
+                        <img src={typeof src === "string" ? src : undefined} alt={alt || ""} className="dark:hidden" />
+                        <img src={darkSrc} alt={alt || ""} className="hidden dark:block" />
+                      </>
+                    );
+                  },
                 }}
               >
                 {article.markdownBody}
