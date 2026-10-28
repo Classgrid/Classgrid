@@ -36,7 +36,7 @@ const RagChunkSchema = new Schema<IRagChunk>(
     sourceUpdatedAt: { type: Date },
     metadata: { type: Schema.Types.Mixed },
   },
-  { collection: "rag_chunks", timestamps: true }
+  { collection: "marketing_rag_chunks", timestamps: true }
 );
 
 RagChunkSchema.index({ documentId: 1, chunkIndex: 1 }, { unique: true });
