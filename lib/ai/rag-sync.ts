@@ -7,6 +7,7 @@ import {
   INDEXABLE_SANITY_TYPES,
   isIndexableSanityType,
 } from "@/lib/ai/rag-content";
+import { liveTokens, normalizeLivePricing } from "@/app/pricing/pricing-format";
 import { LOCAL_SOLUTIONS } from "@/content/solutions";
 import { connectMongo } from "@/lib/mongodb";
 import { RagChunk } from "@/lib/models/RagChunk";
@@ -66,11 +67,34 @@ export async function deleteRagChunksForDocument(documentId: string): Promise<Ra
   };
 }
 
+// The pricing page text has blanks like {topupMin}; the site fills them live from the super admin settings.
+// Fill them the same way before saving, so the Ask AI memory has the real amounts.
+async function fillLivePricingTokens(doc: Record<string, unknown>): Promise<Record<string, unknown>> {
+  try {
+    const api = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
+    const res = await fetch(`${api}/api/public/ai-pricing`, { cache: "no-store", signal: AbortSignal.timeout(8000) });
+    if (!res.ok) return doc;
+    const tokens = liveTokens(normalizeLivePricing(await res.json()));
+    const fill = (value: unknown): unknown => {
+      if (typeof value === "string") return value.replace(/\{(\w+)\}/g, (match, key: string) => tokens[key] ?? match);
+      if (Array.isArray(value)) return value.map(fill);
+      if (value && typeof value === "object") {
+        return Object.fromEntries(Object.entries(value).map(([key, inner]) => [key, fill(inner)]));
+      }
+      return value;
+    };
+    return fill(doc) as Record<string, unknown>;
+  } catch {
+    return doc;
+  }
+}
+
 export async function syncSanityDocumentToRag(
   documentOrId: string | Record<string, unknown>
 ): Promise<RagSyncResult> {
-  const doc =
+  let doc =
     typeof documentOrId === "string" ? await fetchSanityDocumentById(documentOrId) : documentOrId;
+  if (doc && doc._type === "aiPricingPage") doc = await fillLivePricingTokens(doc);
 
   if (!doc) {
     return {
