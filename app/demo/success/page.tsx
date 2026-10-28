@@ -280,7 +280,7 @@ function DemoSuccessPageInner() {
 
       {!isVerified ? (
         /* OTP COVER PAGE */
-        <div className="w-full max-w-lg bg-card rounded-2xl border border-border shadow-xl overflow-hidden p-8 text-card-foreground">
+        <div className="w-full max-w-lg bg-card rounded-md border border-border overflow-hidden p-8 text-card-foreground">
 
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -453,7 +453,7 @@ function DemoSuccessPageInner() {
       ) : (
         /* CALENDAR SCHEDULER (Unlocked after Verification) */
         <div className="w-full max-w-[1000px] mx-auto">
-          <div className="bg-card rounded-2xl border border-border shadow-2xl overflow-hidden flex flex-col md:flex-row text-card-foreground animate-in fade-in zoom-in duration-500">
+          <div className="bg-card rounded-md border border-border overflow-hidden flex flex-col md:flex-row text-card-foreground animate-in fade-in zoom-in duration-500">
 
             {/* LEFT PANEL */}
             <div className="p-8 md:w-[320px] border-b md:border-b-0 md:border-r border-border">
@@ -754,7 +754,7 @@ function DemoSuccessPageInner() {
             transition={{ type: "spring", stiffness: 260, damping: 24, delay: 0.1 }}
             className="w-full max-w-[500px] mx-auto mt-10 mb-6 px-4 sm:px-0"
           >
-            <div className="relative text-center py-10 px-8 rounded-2xl border border-border bg-card/80 backdrop-blur-sm overflow-hidden shadow-xl">
+            <div className="relative text-center py-10 px-8 rounded-md border border-border bg-card/80 backdrop-blur-sm overflow-hidden">
               {/* Subtle top glow line */}
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-foreground/40 to-transparent" />
 
@@ -818,7 +818,7 @@ function DemoSuccessPageInner() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 80, opacity: 0, scale: 0.96 }}
               transition={{ type: "spring", damping: 26, stiffness: 320, mass: 0.85 }}
-              className="relative w-full sm:max-w-md overflow-hidden bg-card border border-border rounded-t-3xl sm:rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.3)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.8)]"
+              className="relative w-full sm:max-w-md overflow-hidden bg-card border border-border rounded-t-3xl sm:rounded-md shadow-[0_30px_80px_rgba(0,0,0,0.3)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.8)]"
             >
               {/* Thin line at top */}
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-foreground/60 to-transparent" />

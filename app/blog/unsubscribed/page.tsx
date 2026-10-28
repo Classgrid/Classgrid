@@ -32,7 +32,7 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
       </div>
 
       <section className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
-        <div className="rounded-3xl border border-border/70 bg-background/90 p-6 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.25)] backdrop-blur-md sm:p-10">
+        <div className="rounded-md border border-border/70 bg-background/90 p-6 backdrop-blur-md sm:p-10">
           
           <style dangerouslySetInnerHTML={{ __html: `
             .animate-spin-once {
@@ -73,7 +73,7 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
                 
                 {/* Checkmark Pop */}
                 <div className="animate-pop-in absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 shadow-[0_10px_20px_-5px_rgba(16,185,129,0.4)]">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500">
                     <svg className="h-7 w-7 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
@@ -97,7 +97,7 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
             </div>
 
             {/* RIGHT SIDE: What Happens Next Card */}
-            <aside className="rounded-2xl border border-border/70 bg-muted/30 p-5 sm:p-6 animate-fade-up">
+            <aside className="rounded-md border border-border/70 bg-muted/30 p-5 sm:p-6 animate-fade-up">
               <p className="text-sm font-semibold text-foreground">What Happens Next</p>
               <div className="mt-4 space-y-4 text-sm text-muted-foreground">
                 <div className="flex items-start gap-3">

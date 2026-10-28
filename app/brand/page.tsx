@@ -38,7 +38,7 @@ export default function BrandGuidelinesPage() {
         {/* Logo Section */}
         <section className="space-y-8 w-full flex flex-col items-center">
           <h2 className="text-2xl font-semibold">Official Logo</h2>
-          <div className="bg-card border border-border shadow-sm rounded-2xl w-80 h-80 flex items-center justify-center mx-auto">
+          <div className="bg-card border border-border shadow-sm rounded-md w-80 h-80 flex items-center justify-center mx-auto">
             <ClassgridLogo className="w-72 h-72 text-foreground dark:text-white" />
           </div>
         </section>
@@ -50,7 +50,7 @@ export default function BrandGuidelinesPage() {
             {brandColors.map((color) => (
               <div 
                 key={color.hex}
-                className="group relative rounded-2xl overflow-hidden border border-border shadow-sm transition-all hover:border-foreground/20"
+                className="group relative rounded-md overflow-hidden border border-border shadow-sm transition-all hover:border-foreground/20"
               >
                 <div 
                   className="h-32 w-full transition-transform group-hover:scale-105"
@@ -74,7 +74,7 @@ export default function BrandGuidelinesPage() {
             {lightBrandColors.map((color) => (
               <div
                 key={color.hex}
-                className="group relative rounded-2xl overflow-hidden border border-border shadow-sm transition-all hover:border-foreground/20"
+                className="group relative rounded-md overflow-hidden border border-border shadow-sm transition-all hover:border-foreground/20"
               >
                 <div
                   className="h-32 w-full transition-transform group-hover:scale-105"

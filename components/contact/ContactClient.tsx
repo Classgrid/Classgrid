@@ -93,11 +93,14 @@ export default function ContactClient() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
+    // Read the fields before they are locked: locked fields are left out of FormData
+    const formData = new FormData(form)
     setIsSubmitting(true)
+    setIsSuccess(false)
     setError("")
 
     try {
-      const formData = new FormData(e.currentTarget)
       const firstName = String(formData.get("firstName") || "").trim()
       const lastName = String(formData.get("lastName") || "").trim()
       const role = String(formData.get("role") || "").trim()
@@ -119,6 +122,8 @@ export default function ContactClient() {
       })
       if (response.ok) {
         setIsSuccess(true)
+        form.reset()
+        setMessageLength(0)
       } else {
         const data = await response.json().catch(() => ({}))
         setError(data?.message || "We couldn't send your message. Please try again.")
@@ -179,16 +184,8 @@ export default function ContactClient() {
 
           <div className="px-6 py-12 md:px-10 lg:py-16">
             <div className="mx-auto w-full max-w-xl">
-              {isSuccess ? (
-                <div className="flex flex-col items-start gap-4 py-10">
-                  <CheckCircle2 className="h-10 w-10" />
-                  <h2 className="text-3xl font-medium tracking-[-0.02em]">Message sent</h2>
-                  <p className="text-muted-foreground">
-                    Thanks for reaching out. Our team has your message and will reply by email soon.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit}>
+                <fieldset disabled={isSubmitting} className="space-y-6 disabled:opacity-60">
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     <div>
                       <RequiredLabel htmlFor="firstName">First name</RequiredLabel>
@@ -262,8 +259,20 @@ export default function ContactClient() {
                     {isSubmitting ? "Sending..." : "Talk with our team"}
                     {!isSubmitting && <ChevronRight className="h-4 w-4" />}
                   </button>
-                </form>
-              )}
+                </fieldset>
+
+                {isSuccess ? (
+                  <div className="mt-6 flex items-start gap-3 rounded-md border border-border bg-muted/40 p-4">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
+                    <div>
+                      <p className="text-[15px] font-medium text-foreground">Message sent</p>
+                      <p className="mt-0.5 text-sm text-muted-foreground">
+                        Thanks for reaching out. Our team has your message and will reply by email soon.
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+              </form>
             </div>
           </div>
         </div>

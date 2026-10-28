@@ -1265,7 +1265,7 @@ export function CareersForm({
               variants={itemVariants}
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-transparent bg-foreground px-4 text-sm font-semibold text-background shadow-lg shadow-black/10 dark:shadow-white/10 transition-all hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed mt-4"
+              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-transparent bg-foreground px-4 text-sm font-semibold text-background shadow-black/10 dark:shadow-white/10 transition-all hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed mt-4"
             >
               {isSubmitting ? (
                 <>

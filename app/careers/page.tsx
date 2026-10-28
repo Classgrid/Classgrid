@@ -167,7 +167,7 @@ export default async function Page() {
             </div>
           </div>
 
-          <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-6 sm:p-10 shadow-lg">
+          <div className="mx-auto max-w-2xl rounded-md border border-border bg-card p-6 sm:p-10">
             <CareersForm
               formTitle={formTitle}
               formSubtitle={formSubtitle}

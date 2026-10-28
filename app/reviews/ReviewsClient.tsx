@@ -3,15 +3,10 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Star, CheckCircle2, BadgeCheck, MessageSquareQuote,
-  Send, Sparkles, ArrowRight, Users
+  Star, CheckCircle2, BadgeCheck, MessageSquareQuote, ChevronRight, Users
 } from "lucide-react";
 import { Spinner } from "@/components/ui/spinner";
-import Marquee from "react-fast-marquee";
 import Masonry from "react-masonry-css";
-import { fetchReviewsData } from "./actions";
-import { Button } from "@/components/ui/button";
-import { SectionAccentBar } from "@/components/ui/section-accent-bar";
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
 
 const MotionDiv = motion.div as any;
@@ -128,229 +123,217 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
     700: 1
   };
 
+
+  const inputClass =
+    "h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground";
+
+  const RequiredLabel = ({ htmlFor, children }: { htmlFor?: string; children: React.ReactNode }) => (
+    <label htmlFor={htmlFor} className="mb-2 block text-sm font-medium text-foreground">
+      {children}
+      <span className="ml-0.5 text-red-500">*</span>
+    </label>
+  );
+
+  const STAT_CARDS = [
+    { icon: MessageSquareQuote, value: String(stats.total), label: "Reviews" },
+    { icon: Star, value: `${stats.average}/5`, label: "Average rating" },
+    { icon: Users, value: stats.verified, label: "Verified users" },
+  ];
+
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-24 pb-24 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
-
-      {/* ── LAYER 1: MARQUEE STRIP (TOP) ── */}
-      <MotionDiv
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="w-full border-y border-border bg-card/10 py-4 mb-12"
-      >
-        <Marquee pauseOnHover speed={45} gradient={false} className="dark:!bg-transparent !bg-transparent">
-          {featuredReviews.map((rev) => {
-            const palette = ['bg-neutral-900 dark:bg-neutral-100', 'bg-neutral-800 dark:bg-neutral-200', 'bg-neutral-700 dark:bg-neutral-300', 'bg-neutral-600 dark:bg-neutral-400', 'bg-neutral-500 dark:bg-neutral-500'];
-            const colorClass = palette[rev.name.charCodeAt(0) % palette.length];
-            return (
-              <div key={rev._id} className="flex items-center gap-6 px-12 border-r border-white/[0.05]">
-                {rev.photoUrl ? (
-                  <img src={rev.photoUrl} alt={rev.name} className="w-8 h-8 rounded-full object-cover shrink-0 border border-border" />
-                ) : (
-                  <div className={`w-8 h-8 rounded-full ${colorClass} flex items-center justify-center text-background text-xs font-bold shrink-0`}>
-                    {rev.name.charAt(0).toUpperCase()}
-                  </div>
-                )}
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className={`w-3 h-3 ${i < rev.rating ? "fill-foreground text-foreground" : "text-neutral-800"}`} />
-                  ))}
-                </div>
-                <p className="text-xs font-medium text-muted-foreground italic max-w-xs truncate">
-                  "{rev.reviewText}"
-                </p>
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold text-foreground">{rev.name}</span>
-                  <span title="User's Organization" className="text-[9px] font-medium text-muted-foreground uppercase tracking-tighter cursor-default">{rev.institution}</span>
-                </div>
-              </div>
-            );
-          })}
-        </Marquee>
-      </MotionDiv>
-
-      {/* ── LAYER 2: STATS BAR ── */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 py-10 bg-card/50 dark:bg-white/[0.02] border border-border rounded-3xl backdrop-blur-sm shadow-sm">
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 text-foreground mb-1">
-              <MessageSquareQuote className="w-5 h-5" />
-              <span className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground">{stats.total}</span>
-            </div>
-            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Global Reviews</span>
+    <main className="bg-background text-foreground">
+      {/* Heading */}
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1fr)_380px]">
+          <div className="px-6 pb-10 pt-28 md:px-10 md:pb-14 md:pt-36 lg:border-r lg:border-border">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Reviews</p>
+            <h1 className="mt-5 text-balance text-5xl font-medium tracking-[-0.035em] md:text-7xl">
+              What our users say
+            </h1>
           </div>
-          <div className="hidden md:block w-px h-12 bg-border/50" />
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 text-foreground mb-1">
-              <Star className="w-5 h-5 fill-current" />
-              <span className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground">{stats.average}/5</span>
-            </div>
-            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Average Rating</span>
-          </div>
-          <div className="hidden md:block w-px h-12 bg-border/50" />
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 text-foreground mb-1">
-              <Users className="w-5 h-5" />
-              <span className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground">{stats.verified}</span>
-            </div>
-            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Verified Users</span>
+          <div className="flex items-end px-6 pb-10 md:px-10 md:pb-14">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Real feedback from people using Classgrid AI. Tried it yourself? Share your experience and help us make it better.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── LAYER 3: SHARE YOUR STORY (UPSIDE SECTION) ── */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
-        <MotionDiv
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center bg-card dark:bg-[#171717] border border-border dark:border-white/[0.05] rounded-[2.5rem] p-8 md:p-10 lg:p-14 shadow-2xl dark:shadow-black/50 relative overflow-hidden"
-        >
-          {/* Decorative background glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-foreground/5 blur-[100px] -z-10 rounded-full" />
-
-          <div className="space-y-8">
-
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
-              Share Your <br />
-              <span className="text-foreground">Classgrid Story</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
-              Your feedback fuels our innovation. Help us shape the future of Classgrid AI by sharing your experience.
-            </p>
+      {/* Stats and form */}
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div className="bg-muted/40 px-6 py-12 md:px-10 lg:border-r lg:border-border lg:py-16">
+            <div className="divide-y divide-border border border-border bg-background">
+              {STAT_CARDS.map((card) => (
+                <div key={card.label} className="p-7 md:p-8">
+                  <div className="flex items-center gap-3">
+                    <card.icon className="h-6 w-6 shrink-0" />
+                    <span className="text-4xl font-medium tracking-[-0.03em]">{card.value}</span>
+                  </div>
+                  <p className="mt-2 text-[15px] text-muted-foreground">{card.label}</p>
+                </div>
+              ))}
+              <div className="p-7 md:p-8">
+                <h2 className="text-2xl font-medium tracking-[-0.02em]">Share your experience</h2>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+                  Your feedback helps us decide what to build next. Our team reads every review and replies to it.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5 bg-background/50 dark:bg-black/40 p-8 md:p-10 lg:px-12 rounded-[2rem] border border-border dark:border-white/[0.05] backdrop-blur-xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <input
-                type="text" required placeholder="Full Name *"
-                value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-              />
-              <input
-                type="text" required placeholder="Company / Organization *"
-                value={formData.institution} onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
-                className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-              />
-            </div>
-            <input
-              type="email" required placeholder="Email Address *"
-              value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="bg-background rounded-xl px-4 h-14 border border-border flex items-center">
-                <div className="flex gap-2 justify-center w-full">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <button
-                      key={star} type="button"
-                      onClick={() => setFormData({ ...formData, rating: star })}
-                      onMouseEnter={() => setHoveredStar(star)}
-                      onMouseLeave={() => setHoveredStar(0)}
-                      className="focus:outline-none group"
-                    >
-                      <Star className={`w-6 h-6 transition-all ${star <= (hoveredStar || formData.rating) ? "fill-foreground text-foreground scale-110" : "text-neutral-300 dark:text-neutral-800 scale-100"}`} />
-                    </button>
-                  ))}
-                  <span className="self-start text-sm text-muted-foreground" aria-hidden="true">*</span>
+          <div className="px-6 py-12 md:px-10 lg:py-16">
+            <form onSubmit={handleSubmit} className="mx-auto w-full max-w-xl">
+              <fieldset disabled={submitting} className="space-y-6 disabled:opacity-60">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <RequiredLabel htmlFor="review-name">Full name</RequiredLabel>
+                  <input
+                    id="review-name" type="text" required placeholder="Aarav Sharma"
+                    value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <RequiredLabel htmlFor="review-company">Company / Organization</RequiredLabel>
+                  <input
+                    id="review-company" type="text" required placeholder="Acme Inc."
+                    value={formData.institution} onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
+                    className={inputClass}
+                  />
                 </div>
               </div>
 
-              <Select
-                value={formData.moduleName}
-                onValueChange={(val) => setFormData({ ...formData, moduleName: val })}
-              >
-                <SelectTrigger
-                  className={`bg-background border border-border text-sm font-normal shadow-none focus:border-foreground/50 transition-all outline-none flex items-center justify-between gap-3 text-left ${!formData.moduleName ? 'text-muted-foreground' : 'text-foreground'}`}
-                  style={{ width: '100%', height: '56px', borderRadius: '0.75rem', paddingLeft: '1.25rem', paddingRight: '1.25rem' }}
-                >
-                  <span style={{ whiteSpace: 'normal', overflow: 'visible', textOverflow: 'clip', display: 'block' }}>
-                    <SelectValue placeholder="Which feature did you like most? *" />
-                  </span>
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Overall">Overall Experience</SelectItem>
-                  <SelectItem value="Agent Mode">Agent Mode</SelectItem>
-                  <SelectItem value="Project Mode">Project Mode</SelectItem>
-                  <SelectItem value="WhatsApp">WhatsApp & Calls</SelectItem>
-                  <SelectItem value="Connected Apps">Connected Apps</SelectItem>
-                  <SelectItem value="Schedules">Schedules & Background Tasks</SelectItem>
-                  <SelectItem value="Files & Reports">Files & Reports</SelectItem>
-                  <SelectItem value="Research">Web Research</SelectItem>
-                  <SelectItem value="AI Models">AI Models</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <textarea
-              required maxLength={2000} placeholder="How did Classgrid help your daily workflow? *"
-              value={formData.reviewText} onChange={(e) => setFormData({ ...formData, reviewText: e.target.value })}
-              className="w-full bg-background border border-border rounded-xl px-5 py-4 text-sm min-h-[140px] resize-none focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-            />
-
-            <textarea
-              maxLength={1000} placeholder="Any suggestions for us? (Optional)"
-              value={formData.suggestion} onChange={(e) => setFormData({ ...formData, suggestion: e.target.value })}
-              className="w-full bg-background border border-border rounded-xl px-5 py-4 text-sm min-h-[100px] resize-none focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-            />
-
-            <Button
-              type="submit"
-              disabled={submitting}
-              className="w-full h-14 font-bold relative text-base"
-            >
-              {submitting ? <><Spinner className="w-5 h-5 text-inherit mr-2" /> Submitting...</> : <>Submit Feedback <ArrowRight className="w-5 h-5 ml-2" /></>}
-            </Button>
-
-            {formStatus === "success" && (
-              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 shrink-0" />
-                <p>Submitted to the team! We will reply to you and publish in the feed.</p>
+              <div>
+                <RequiredLabel htmlFor="review-email">Email</RequiredLabel>
+                <input
+                  id="review-email" type="email" required placeholder="aarav@company.com"
+                  value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className={inputClass}
+                />
               </div>
-            )}
-          </form>
-        </MotionDiv>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <RequiredLabel>Your rating</RequiredLabel>
+                  <div className="flex h-12 items-center gap-2 rounded-md border border-border bg-background px-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star} type="button" aria-label={`${star} star${star > 1 ? "s" : ""}`}
+                        onClick={() => setFormData({ ...formData, rating: star })}
+                        onMouseEnter={() => setHoveredStar(star)}
+                        onMouseLeave={() => setHoveredStar(0)}
+                        className="focus:outline-none"
+                      >
+                        <Star className={`h-6 w-6 transition-colors ${star <= (hoveredStar || formData.rating) ? "fill-foreground text-foreground" : "text-neutral-300 dark:text-neutral-700"}`} />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <RequiredLabel>Which feature did you like most?</RequiredLabel>
+                  <Select
+                    value={formData.moduleName}
+                    onValueChange={(val) => setFormData({ ...formData, moduleName: val })}
+                  >
+                    <SelectTrigger
+                      className={`!h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] font-normal shadow-none ${!formData.moduleName ? "text-muted-foreground" : "text-foreground"}`}
+                    >
+                      <SelectValue placeholder="Choose a feature" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Overall">Overall Experience</SelectItem>
+                      <SelectItem value="Agent Mode">Agent Mode</SelectItem>
+                      <SelectItem value="Project Mode">Project Mode</SelectItem>
+                      <SelectItem value="WhatsApp">WhatsApp & Calls</SelectItem>
+                      <SelectItem value="Connected Apps">Connected Apps</SelectItem>
+                      <SelectItem value="Schedules">Schedules & Background Tasks</SelectItem>
+                      <SelectItem value="Files & Reports">Files & Reports</SelectItem>
+                      <SelectItem value="Research">Web Research</SelectItem>
+                      <SelectItem value="AI Models">AI Models</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div>
+                <RequiredLabel htmlFor="review-text">How did Classgrid AI help your daily work?</RequiredLabel>
+                <textarea
+                  id="review-text" required maxLength={2000} rows={5}
+                  placeholder="Tell us what you used it for and what changed for you."
+                  value={formData.reviewText} onChange={(e) => setFormData({ ...formData, reviewText: e.target.value })}
+                  className="w-full resize-y rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
+                />
+                <p className="mt-1.5 text-right text-xs text-muted-foreground">{formData.reviewText.length} / 2000</p>
+              </div>
+
+              <div>
+                <label htmlFor="review-suggestion" className="mb-2 block text-sm font-medium text-foreground">
+                  Any suggestions for us? <span className="font-normal text-muted-foreground">(Optional)</span>
+                </label>
+                <textarea
+                  id="review-suggestion" maxLength={1000} rows={3}
+                  placeholder="What should we improve or add next?"
+                  value={formData.suggestion} onChange={(e) => setFormData({ ...formData, suggestion: e.target.value })}
+                  className="w-full resize-y rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
+                />
+              </div>
+
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                By sending your review, you agree that we may publish it on this page with your name and company.
+              </p>
+
+              {formStatus === "error" && errorMessage ? <p className="text-sm text-red-500">{errorMessage}</p> : null}
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="inline-flex h-11 items-center gap-1.5 rounded-md bg-foreground px-5 text-[15px] font-medium text-background transition-colors hover:bg-zinc-700 disabled:opacity-60 dark:hover:bg-zinc-300"
+              >
+                {submitting ? <><Spinner className="h-4 w-4 text-inherit" /> Submitting...</> : <>Submit review <ChevronRight className="h-4 w-4" /></>}
+              </button>
+              </fieldset>
+
+              {formStatus === "success" && (
+                <div className="mt-6 flex items-start gap-3 rounded-md border border-border bg-muted/40 p-4">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
+                  <div>
+                    <p className="text-[15px] font-medium text-foreground">Review sent</p>
+                    <p className="mt-0.5 text-sm text-muted-foreground">Thanks! Our team will reply to you and publish your review here.</p>
+                  </div>
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
       </section>
 
-      {/* ── LAYER 4: COMMUNITY FEED (MASONRY GRID) ── */}
-      <section className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+      {/* Reviews feed */}
+      <section className="mx-auto max-w-7xl px-6 py-16 md:px-10">
+        <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <h3 className="text-2xl font-bold tracking-tight mb-1 text-foreground">What Our Users Say</h3>
-            <p className="text-muted-foreground text-sm font-medium">Verified feedback from people using Classgrid AI.</p>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Feedback</p>
+            <h2 className="mt-3 text-3xl font-medium tracking-[-0.03em] md:text-4xl">Latest reviews</h2>
           </div>
 
-          {/* Star Filter Bar */}
-          <div className="flex items-center gap-2 p-1.5 bg-card border border-border rounded-full overflow-x-auto scrollbar-hide">
+          <div className="flex gap-1 overflow-x-auto rounded-md border border-border p-1 scrollbar-hide">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className="relative px-5 py-2 rounded-full text-[10px] font-bold transition-all whitespace-nowrap"
+                className={`whitespace-nowrap rounded px-4 py-1.5 text-[13px] font-medium transition-colors ${activeFilter === cat ? "bg-foreground text-background" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}
               >
-                <span className={`relative z-10 ${activeFilter === cat ? "text-background" : "text-muted-foreground"}`}>
-                  {cat}
-                </span>
-                {activeFilter === cat && (
-                  <MotionDiv
-                    layoutId="activeFilter"
-                    className="absolute inset-0 bg-foreground rounded-full"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
+                {cat}
               </button>
             ))}
           </div>
         </div>
 
         {filteredReviews.length === 0 ? (
-          <div className="text-center py-40 border border-dashed border-border rounded-[2.5rem] bg-card/20">
-            <MessageSquareQuote className="w-12 h-12 text-muted-foreground/40 mx-auto mb-4" />
-            <p className="text-foreground/80 font-bold text-xl uppercase tracking-tighter">No feedback.</p>
-            <p className="text-sm text-muted-foreground mt-2 max-w-sm mx-auto font-medium">
-              Be the first one to become part of Classgrid community. Real-time feedback from the Classgrid ecosystem.
-            </p>
+          <div className="rounded-md border border-dashed border-border py-24 text-center">
+            <MessageSquareQuote className="mx-auto mb-4 h-10 w-10 text-muted-foreground/50" />
+            <p className="text-xl font-medium text-foreground">No reviews yet</p>
+            <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">Be the first to share your experience with Classgrid AI.</p>
           </div>
         ) : (
           <AnimatePresence mode="popLayout">
@@ -359,78 +342,66 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                 <MotionDiv
                   key={rev._id}
                   layout
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, delay: index * 0.07 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <MotionDiv
-                    className="group p-8 rounded-[2rem] bg-card dark:bg-[#171717] border border-border dark:border-white/[0.05] hover:border-foreground/30 transition-all shadow-xl dark:shadow-2xl relative overflow-hidden"
-                  >
-                    {/* Header: Avatar, Name, Stats */}
-                    <div className="flex items-start justify-between gap-4 mb-8">
-                      <div className="flex items-center gap-4 min-w-0 flex-1">
-                        {/* System-color Avatar (neutral variants only) */}
+                  <div className="rounded-md border border-border bg-background p-7 transition-colors hover:border-foreground/40">
+                    <div className="mb-6 flex items-start justify-between gap-4">
+                      <div className="flex min-w-0 flex-1 items-center gap-3">
                         {rev.photoUrl ? (
-                          <img src={rev.photoUrl} alt={rev.name} className="w-12 h-12 rounded-full object-cover shrink-0 shadow-lg border border-border" />
-                        ) : (() => {
-                          const palette = ['bg-neutral-900 dark:bg-neutral-100', 'bg-neutral-800 dark:bg-neutral-200', 'bg-neutral-700 dark:bg-neutral-300', 'bg-neutral-600 dark:bg-neutral-400', 'bg-neutral-500 dark:bg-neutral-500'];
-                          const colorClass = palette[rev.name.charCodeAt(0) % palette.length];
-                          return (
-                            <div className={`w-12 h-12 rounded-full ${colorClass} flex items-center justify-center text-background font-bold text-lg shrink-0 shadow-lg`}>
-                              {rev.name.charAt(0).toUpperCase()}
-                            </div>
-                          );
-                        })()}
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-bold text-base text-foreground truncate">{rev.name}</h4>
-                            {rev.isVerified && <span title="Verified Classgrid User" className="cursor-default"><BadgeCheck className="w-5 h-5 fill-[#1D9BF0] text-background shrink-0 -ml-0.5" /></span>}
+                          <img src={rev.photoUrl} alt={rev.name} className="h-11 w-11 shrink-0 rounded-full border border-border object-cover" />
+                        ) : (
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-muted text-base font-semibold text-foreground">
+                            {rev.name.charAt(0).toUpperCase()}
                           </div>
-                          <p title="User's Organization" className="text-[11px] text-muted-foreground font-bold truncate tracking-tight w-fit cursor-default">{rev.institution}</p>
-                          <p className="text-[11px] text-foreground/70 dark:text-foreground/80 font-semibold tracking-wide mt-1">{new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(rev._createdAt))}</p>
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-1.5">
+                            <h3 className="truncate text-base font-medium text-foreground">{rev.name}</h3>
+                            {rev.isVerified && <span title="Verified Classgrid User" className="cursor-default"><BadgeCheck className="h-5 w-5 shrink-0 fill-[#1D9BF0] text-background" /></span>}
+                          </div>
+                          <p title="User's Organization" className="truncate text-[13px] text-muted-foreground">{rev.institution}</p>
+                          <p className="mt-0.5 text-[12px] text-muted-foreground">{new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(rev._createdAt))}</p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-center bg-foreground/5 text-foreground px-3 py-1 rounded-full border border-border gap-1 shrink-0">
-                        <span className="font-bold text-sm leading-none">{rev.rating}</span>
-                        <Star className="w-3.5 h-3.5 fill-current leading-none mb-[1px]" />
+                      <div className="flex shrink-0 items-center gap-1 rounded-md bg-muted px-2.5 py-1 text-foreground">
+                        <span className="text-sm font-medium leading-none">{rev.rating}</span>
+                        <Star className="h-3.5 w-3.5 fill-current" />
                       </div>
                     </div>
 
-                    {/* Content Body */}
-                    <div className="space-y-6">
-                      <p className="text-[15px] text-muted-foreground text-muted-foreground leading-relaxed font-medium">"{rev.reviewText}"</p>
+                    <div className="space-y-5">
+                      <p className="text-[15px] leading-relaxed text-muted-foreground">&ldquo;{rev.reviewText}&rdquo;</p>
 
-                      {/* Tags (System Colors) */}
                       {(!!rev.positives?.length || (rev.moduleName && FEATURE_NAMES.includes(rev.moduleName))) && (
-                        <div className="flex flex-wrap gap-2 pt-4">
+                        <div className="flex flex-wrap gap-2">
                           {rev.moduleName && rev.moduleName !== 'Overall' && FEATURE_NAMES.includes(rev.moduleName) && (
-                            <span title={`This user specifically reviewed ${rev.moduleName}.`} className="px-3 py-1 rounded-lg bg-foreground/5 border border-border text-foreground text-[10px] font-bold tracking-wider uppercase cursor-default">Feature: {rev.moduleName}</span>
+                            <span title={`This user specifically reviewed ${rev.moduleName}.`} className="cursor-default rounded-sm bg-muted px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-foreground">Feature: {rev.moduleName}</span>
                           )}
                           {rev.positives?.filter(p => p && p.trim() !== '').map((p, i) => (
-                            <span key={i} title="A key positive point mentioned by the user" className="px-3 py-1 rounded-lg bg-muted/30 dark:bg-white/[0.03] border border-border dark:border-white/5 text-muted-foreground text-[10px] font-bold tracking-wider uppercase cursor-default">{p}</span>
+                            <span key={i} title="A key positive point mentioned by the user" className="cursor-default rounded-sm bg-muted px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">{p}</span>
                           ))}
                         </div>
                       )}
 
-                      {/* Optional Suggestion Box */}
                       {rev.suggestion && (
-                        <div className="bg-muted/10 dark:bg-white/[0.02] border border-border dark:border-white/[0.03] rounded-2xl p-5 shadow-inner">
-                          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] block mb-3 opacity-60">Improvement Insight</span>
-                          <p className="text-xs text-muted-foreground italic leading-relaxed">{rev.suggestion}</p>
+                        <div className="rounded-md border border-border bg-muted/40 p-4">
+                          <span className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">Suggestion</span>
+                          <p className="text-[13px] leading-relaxed text-muted-foreground">{rev.suggestion}</p>
                         </div>
                       )}
 
-                      {/* Admin Reply with Logo */}
                       {rev.adminReply && (
-                        <div className="pt-6 border-t border-border dark:border-white/[0.05]">
-                          <div className="flex gap-4 items-start">
-                            <div className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center shrink-0 overflow-hidden shadow-lg">
-                              <img src="/logo.png" alt="CG" className="w-6 h-6 object-contain" />
+                        <div className="border-t border-border pt-5">
+                          <div className="flex items-start gap-3">
+                            <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-background">
+                              <img src="/logo.png" alt="CG" className="h-5 w-5 object-contain" />
                             </div>
                             <div className="flex-1">
-                              <span className="text-[10px] font-bold text-foreground uppercase tracking-widest block mb-2">Team Response</span>
-                              <p className="text-sm text-muted-foreground text-muted-foreground leading-relaxed bg-muted/30 dark:bg-black/40 p-4 rounded-2xl rounded-tl-none border border-border dark:border-white/[0.03] shadow-inner">
+                              <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-[0.15em] text-foreground">Team response</span>
+                              <p className="rounded-md border border-border bg-muted/40 p-3 text-sm leading-relaxed text-muted-foreground">
                                 {rev.adminReply}
                               </p>
                             </div>
@@ -438,20 +409,13 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                         </div>
                       )}
                     </div>
-                  </MotionDiv>
+                  </div>
                 </MotionDiv>
               ))}
             </Masonry>
           </AnimatePresence>
         )}
       </section>
-
-      {/* Decorative Gradients */}
-      <div className="fixed inset-0 pointer-events-none -z-20">
-        <div className="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-b from-foreground/[0.03] to-transparent" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-foreground/[0.02] blur-[150px] rounded-full" />
-      </div>
-
     </main>
   );
 }

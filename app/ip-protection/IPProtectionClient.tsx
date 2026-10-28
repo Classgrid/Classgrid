@@ -287,7 +287,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
         {/* Main Content */}
         <main className="min-w-0 flex-1">
           {/* Hero */}
-          <div className="mb-12 rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-slate-50 p-6 dark:border-white/5 dark:from-white/[0.03] dark:via-[#111113] dark:to-white/[0.03] sm:p-10">
+          <div className="mb-12 rounded-md border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-slate-50 p-6 dark:border-white/5 dark:from-white/[0.03] dark:via-[#111113] dark:to-white/[0.03] sm:p-10">
             <div className="flex flex-col sm:flex-row items-start gap-5">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900/5 dark:bg-white/10">
                 <Shield className="h-6 w-6 text-slate-900 dark:text-white" />
