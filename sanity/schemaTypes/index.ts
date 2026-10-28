@@ -1,5 +1,4 @@
 import type { SchemaTypeDefinition } from "sanity";
-import { moduleType } from "./moduleType";
 import { apiDocType } from "./apiDocType";
 import { safetyIncidentType } from "./safetyIncidentType";
 import { aiEscalationType } from "./aiEscalationType";
@@ -67,7 +66,6 @@ import testimonialVideoType from './testimonialVideoType'
 
 
 import { solutionPageType } from './solutionPageType'
-import { solutionModuleType } from './solutionModuleType'
 import { richBodyType } from './richBodyType'
 import { localeStringType } from './localeStringType'
 import { localeTextType } from './localeTextType'
@@ -88,7 +86,6 @@ import { classgridVideoType } from './classgridVideoType'
 import { classgridTeamVisionType } from './classgridTeamVisionType'
 import { ipProtectionPageType } from './ipProtectionPageType'
 import { pluginItemType, pluginsPageType } from './pluginsPageType'
-import { aiSolutionPageType } from './aiSolutionPageType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -146,7 +143,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
 
     solutionPageType,
-    solutionModuleType,
     postType,
     changelogSettingsType,
     changelogEntryType,
@@ -158,7 +154,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     caseStudySettingsType,
     campaignPageType,
     communityReviewType,
-    moduleType,
     acknowledgementType,
     teamMemberType,
     sectionSettingsType,
@@ -175,7 +170,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     ipProtectionPageType,
     pluginItemType,
     pluginsPageType,
-    aiSolutionPageType,
     aiPricingModelType,
     aiPricingPageType,
   ],

@@ -25,10 +25,10 @@ const hiddenTypes = new Set([
   "websiteFeedback",
   "legalPage",
   "ipProtectionPage",
-  "module",
   "sectionSettings",
   "classgridVideo",
   "classgridTeamVision",
+  "faqItem",
 ]);
 
 export const structure = (S: StructureBuilder) =>
@@ -60,15 +60,6 @@ export const structure = (S: StructureBuilder) =>
         .title("Home Page")
         .id("homePageSingleton")
         .child(S.document().schemaType("homePage").documentId("homePage")),
-
-      S.listItem()
-        .title("Solution Pages (AI)")
-        .id("aiSolutionPages")
-        .child(
-          S.documentTypeList("aiSolutionPage")
-            .title("Solution Pages (AI)")
-            .defaultOrdering([{ field: "order", direction: "asc" }])
-        ),
 
       S.listItem()
         .title("Plugins Page")
@@ -148,6 +139,9 @@ export const structure = (S: StructureBuilder) =>
               S.listItem()
                 .title("Team Vision")
                 .child(S.documentTypeList("classgridTeamVision").title("Team Vision")),
+              S.listItem()
+                .title("FAQ Item")
+                .child(S.documentTypeList("faqItem").title("FAQ Item")),
             ])
         ),
 
