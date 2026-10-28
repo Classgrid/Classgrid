@@ -362,7 +362,7 @@ export function Navbar({
                       'h-9 inline-flex items-center rounded-lg px-3 text-sm font-medium tracking-tight transition-all duration-200',
                       'text-foreground/70 hover:bg-accent hover:text-foreground',
                       isActive && 'bg-accent text-foreground shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]',
-                      (item.label === 'Grids' || item.label === 'Changelog') && 'hide-when-ask-ai-open'
+                      (item.label === 'Getting Started' || item.label === 'Grids' || item.label === 'Changelog') && 'hide-when-ask-ai-open'
                     )}
                   >
                     {item.label}
