@@ -129,7 +129,7 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
             <span className="text-muted-foreground">support you need</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
-            Questions, problems or feedback about Classgrid AI at chat.classgrid.in? We&apos;re here to help.
+            Answers and help for everything Classgrid AI, from getting started to billing.
           </p>
         </motion.div>
       </section>
@@ -148,32 +148,32 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
                 <Ticket className="w-6 h-6 text-foreground" />
               </div>
 
-              <h2 className="text-3xl font-bold mb-4 text-foreground">Open a support ticket</h2>
+              <h2 className="text-3xl font-bold mb-4 text-foreground">How can we help?</h2>
               <p className="text-muted-foreground leading-relaxed mb-8 flex-1 text-lg font-light">
-                Questions, problems or feedback about Classgrid AI? Open a ticket — anyone can submit one, with or without an account. Our team will respond as soon as possible.
+                Tell us what&apos;s going on with Classgrid AI, whether it&apos;s a bug, a billing question or anything else. Our team reads every request and replies by email.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
-                  <span className="text-sm text-muted-foreground">Fast response times</span>
+                  <span className="text-sm text-muted-foreground">Quick replies from real people</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
-                  <span className="text-sm text-muted-foreground">Support for everyone</span>
+                  <span className="text-sm text-muted-foreground">Help for every user, on every plan</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
-                  <span className="text-sm text-muted-foreground">Dedicated support team</span>
+                  <span className="text-sm text-muted-foreground">Track your request until it&apos;s resolved</span>
                 </div>
               </div>
 
               <div className="mt-auto">
                 <Link href={ticketUrl} className="block w-full">
                   <Button
-                    className="w-full h-14 rounded-xl text-base font-bold border-transparent bg-foreground text-background hover:border-transparent hover:bg-foreground/90 hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-foreground/90 dark:hover:text-background transition-colors duration-300"
+                    className="w-full h-14 rounded-xl text-base font-bold border-transparent bg-foreground text-background hover:border-transparent hover:bg-zinc-700 hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-zinc-300 dark:hover:text-background transition-colors duration-300"
                   >
-                    Open a Support Ticket
+                    Submit a Request
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
