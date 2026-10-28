@@ -19,7 +19,9 @@ import {
   Globe,
   Briefcase,
   Users,
+  ChevronRight,
 } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
@@ -143,6 +145,7 @@ export function DemoRequestForm({
     register,
     handleSubmit,
     control,
+    watch,
     formState: { errors },
   } = useForm<DemoFormValues>({
     resolver: zodResolver(demoSchema),
@@ -231,19 +234,16 @@ export function DemoRequestForm({
     children: React.ReactNode;
     label: string;
   }) => (
-    <div className="space-y-1.5">
+    <div className="space-y-2">
       {label?.trim() ? (
-        <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-          {label} <span className="text-rose-500">*</span>
+        <Label className="text-sm font-medium text-foreground">
+          {label}<span className="ml-0.5 text-red-500">*</span>
         </Label>
       ) : null}
-      <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-        <div className="flex w-10 shrink-0 items-center justify-center bg-muted text-muted-foreground">
-          <Icon className="h-4 w-4" />
-        </div>
-        <div className="flex-1">{children}</div>
+      <div className="overflow-hidden rounded-md border border-border bg-background transition-colors focus-within:border-foreground">
+        {children}
       </div>
-      {fieldError && <p className="text-[10px] text-rose-500">{fieldError}</p>}
+      {fieldError && <p className="text-xs text-red-500">{fieldError}</p>}
     </div>
   );
 
@@ -255,9 +255,9 @@ export function DemoRequestForm({
     Icon: any,
     options: readonly string[],
   ) => (
-    <div className="space-y-1.5">
-      <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-        {fieldLabel} <span className="text-rose-500">*</span>
+    <div className="space-y-2">
+      <Label className="text-sm font-medium text-foreground">
+        {fieldLabel}<span className="ml-0.5 text-red-500">*</span>
       </Label>
       <Controller
         name={name}
@@ -265,11 +265,8 @@ export function DemoRequestForm({
         render={({ field }) => (
           <div className="relative">
             <Select value={field.value} onValueChange={field.onChange}>
-              <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                <div className="flex w-10 shrink-0 items-center justify-center bg-muted text-muted-foreground">
-                  <Icon className="h-4 w-4" />
-                </div>
-                <SelectTrigger className="flex h-10 flex-1 items-center justify-between rounded-none border-0 !bg-transparent px-3 text-sm text-slate-800 shadow-none ring-0 focus-visible:ring-0 dark:text-white">
+              <div className="overflow-hidden rounded-md border border-border bg-background transition-colors focus-within:border-foreground">
+                <SelectTrigger className="flex !h-12 w-full items-center justify-between rounded-none border-0 !bg-transparent px-4 text-[15px] text-foreground shadow-none ring-0 focus-visible:ring-0">
                   <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
               </div>
@@ -296,7 +293,7 @@ export function DemoRequestForm({
           </div>
         )}
       />
-      {errors[name]?.message && <p className="text-[10px] text-rose-500">{errors[name]?.message}</p>}
+      {errors[name]?.message && <p className="text-xs text-red-500">{errors[name]?.message}</p>}
     </div>
   );
 
@@ -352,7 +349,7 @@ export function DemoRequestForm({
               <IconInput icon={User} label="Full name" error={errors.name?.message}>
                 <Input
                   placeholder="Enter your full name"
-                  className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
+                  className="h-12 rounded-none border-0 bg-transparent px-4 text-[15px] text-foreground shadow-none focus-visible:ring-0"
                   {...register("name")}
                 />
               </IconInput>
@@ -361,7 +358,7 @@ export function DemoRequestForm({
                 <Input
                   type="email"
                   placeholder="you@company.com"
-                  className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
+                  className="h-12 rounded-none border-0 bg-transparent px-4 text-[15px] text-foreground shadow-none focus-visible:ring-0"
                   {...register("workEmail")}
                 />
               </IconInput>
@@ -369,7 +366,7 @@ export function DemoRequestForm({
               <IconInput icon={Phone} label="Phone" error={errors.phone?.message}>
                 <Input
                   placeholder="Enter your phone number"
-                  className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
+                  className="h-12 rounded-none border-0 bg-transparent px-4 text-[15px] text-foreground shadow-none focus-visible:ring-0"
                   {...register("phone")}
                 />
               </IconInput>
@@ -391,7 +388,7 @@ export function DemoRequestForm({
               <IconInput icon={Building2} label="Company" error={errors.company?.message}>
                 <Input
                   placeholder="Enter your company name"
-                  className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
+                  className="h-12 rounded-none border-0 bg-transparent px-4 text-[15px] text-foreground shadow-none focus-visible:ring-0"
                   {...register("company")}
                 />
               </IconInput>
@@ -399,7 +396,7 @@ export function DemoRequestForm({
               <IconInput icon={Briefcase} label="Role / job title" error={errors.role?.message}>
                 <Input
                   placeholder="e.g. Founder, Engineering Lead"
-                  className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
+                  className="h-12 rounded-none border-0 bg-transparent px-4 text-[15px] text-foreground shadow-none focus-visible:ring-0"
                   {...register("role")}
                 />
               </IconInput>
@@ -417,21 +414,18 @@ export function DemoRequestForm({
               </div>
 
               {/* Website */}
-              <div className="space-y-1.5">
-                <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-foreground">
                   Website <span className="font-normal text-muted-foreground">(Optional)</span>
                 </Label>
-                <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                  <div className="flex w-10 shrink-0 items-center justify-center bg-muted text-muted-foreground">
-                    <Globe className="h-4 w-4" />
-                  </div>
+                <div className="overflow-hidden rounded-md border border-border bg-background transition-colors focus-within:border-foreground">
                   <Input
                     placeholder="https://..."
-                    className="h-10 flex-1 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
+                    className="h-12 rounded-none border-0 bg-transparent px-4 text-[15px] text-foreground shadow-none focus-visible:ring-0"
                     {...register("website")}
                   />
                 </div>
-                {errors.website?.message && <p className="text-[10px] text-rose-500">{errors.website.message}</p>}
+                {errors.website?.message && <p className="text-xs text-red-500">{errors.website.message}</p>}
               </div>
             </div>
           </div>
@@ -447,21 +441,18 @@ export function DemoRequestForm({
               </div>
             ) : null}
 
-            <div className="space-y-1.5">
-              <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                Message <span className="font-normal text-muted-foreground">(Optional)</span>
+            <div className="space-y-2">
+              <Label className="text-sm font-medium text-foreground">
+                Tell us about your team, so we can prepare the right demo <span className="font-normal text-muted-foreground">(Optional)</span>
               </Label>
-              <div className="flex overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                <div className="flex w-10 shrink-0 items-start justify-center pt-3 bg-muted text-muted-foreground">
-                  <MessageSquare className="h-4 w-4" />
-                </div>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your team and what you want Classgrid AI to do"
-                  className="flex-1 bg-transparent p-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none dark:text-white dark:placeholder:text-slate-500"
-                  {...register("message")}
-                />
-              </div>
+              <textarea
+                rows={5}
+                maxLength={1000}
+                placeholder="Tell us about your team and what you want Classgrid AI to do"
+                className="w-full resize-y rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
+                {...register("message")}
+              />
+              <p className="text-right text-xs text-muted-foreground">{(watch("message") || "").length} / 1000</p>
             </div>
           </div>
 
@@ -510,22 +501,21 @@ export function DemoRequestForm({
           {/* ── SUBMIT ── */}
           {submitLabel?.trim() || copy?.submitLoadingLabel?.trim() ? (
             <div className="space-y-3">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                By sending this form, you agree to our{" "}
+                <Link href="/terms" className="text-foreground underline underline-offset-2">Terms of Service</Link>. We use your
+                details only to arrange your demo, as described in our{" "}
+                <Link href="/privacy" className="text-foreground underline underline-offset-2">Privacy Policy</Link>.
+              </p>
               <Button
                 type="submit"
                 disabled={submitting}
-                className="w-full text-base border-transparent bg-foreground text-background hover:border-transparent hover:bg-zinc-700 hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-zinc-300 dark:hover:text-background"
+                className="h-11 w-full gap-1.5 rounded-md border-transparent bg-foreground px-5 text-[15px] font-medium text-background hover:border-transparent hover:bg-zinc-700 hover:text-background sm:w-auto dark:bg-foreground dark:text-background dark:hover:bg-zinc-300 dark:hover:text-background"
               >
                 {submitting && <Spinner className="h-5 w-5 text-inherit" />}
                 {submitting ? copy?.submitLoadingLabel || "Submitting..." : submitLabel}
+                {!submitting && <ChevronRight className="h-4 w-4" />}
               </Button>
-              <div className="flex items-center justify-center gap-3">
-                <Chip variant="default" icon={<ShieldCheck />}>
-                  Guided Demo Review
-                </Chip>
-                <Chip variant="default">
-                  Team Will Connect
-                </Chip>
-              </div>
             </div>
           ) : null}
 

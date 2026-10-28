@@ -39,6 +39,7 @@ import {
   AlignCenter,
   AlignRight,
   AlignJustify,
+  ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -281,20 +282,13 @@ export default function RaiseTicketPage() {
   if (!knownEmail) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
-        <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl md:rounded-[2rem] border border-border bg-card shadow-2xl shadow-black/30">
-          {/* Top accent */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-foreground/80" />
-
+        <div className="relative w-full max-w-4xl overflow-hidden rounded-md border border-border bg-background">
           <div className="flex flex-col md:flex-row min-h-[400px]">
             {/* Left panel */}
-            <div className="relative flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-gradient-to-br from-foreground/5 to-transparent">
-              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+            <div className="relative flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-muted/40">
               <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-foreground/5 border border-foreground/15 flex items-center justify-center mb-8">
-                  <Shield className="w-8 h-8 text-foreground" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Classgrid AI Support</h2>
-                <div className="w-12 h-1.5 rounded-full bg-foreground mb-6" />
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Support</p>
+                <h2 className="text-4xl font-medium tracking-[-0.03em] text-foreground mb-4">Classgrid AI Support</h2>
                 <p className="text-base text-muted-foreground leading-relaxed mb-8">
                   Support for everyone using Classgrid AI. Get help directly from our team.
                 </p>
@@ -312,18 +306,15 @@ export default function RaiseTicketPage() {
             </div>
 
             {/* Right panel */}
-            <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 bg-card">
-              <div className="w-14 h-14 rounded-full bg-foreground/5 flex items-center justify-center mb-6">
-                <FileText className="w-7 h-7 text-foreground" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">Sign in to continue</h3>
+            <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 bg-background">
+              <h3 className="text-2xl font-medium tracking-[-0.02em] text-foreground mb-3">Sign in to continue</h3>
               <p className="text-base text-muted-foreground text-center mb-8 max-w-[300px]">
                 Log in so we know who you are and can track your ticket.
               </p>
               <Link href={`/login?next=${encodeURIComponent('/support/ticket')}`} className="w-full max-w-[300px]">
-                <Button className="h-14 w-full rounded-xl bg-primary font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-all text-base">
+                <Button className="h-11 w-full rounded-md border-transparent bg-foreground font-medium text-background hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors gap-1.5 text-[15px]">
                   Sign in
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ChevronRight className="w-4 h-4" />
                 </Button>
               </Link>
             </div>
@@ -380,55 +371,46 @@ export default function RaiseTicketPage() {
   if (knownEmail && isPlatformUser && !showForm) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
-        <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl md:rounded-[2rem] border border-border bg-card shadow-2xl shadow-black/30">
-          {/* Top accent */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/50" />
-
+        <div className="relative w-full max-w-4xl overflow-hidden rounded-md border border-border bg-background">
           <div className="flex flex-col md:flex-row min-h-[400px]">
             {/* Left panel */}
-            <div className="relative flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-gradient-to-br from-primary/5 to-transparent">
-              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-              <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8">
-                  <Shield className="w-8 h-8 text-primary" />
+            <div className="flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-muted/40">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Support</p>
+              <h2 className="mt-4 text-4xl font-medium tracking-[-0.03em] text-foreground">Welcome back</h2>
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+                You are signed in. Choose an action below.
+              </p>
+              <div className="mt-8 flex items-center gap-4 px-4 py-3 rounded-md border border-border bg-background">
+                <div className="w-10 h-10 shrink-0 rounded-full bg-muted flex items-center justify-center text-sm font-semibold text-foreground">
+                  {knownEmail.charAt(0).toUpperCase()}
                 </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Welcome back</h2>
-                <div className="w-12 h-1.5 rounded-full bg-primary mb-6" />
-                <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  You are signed in. Choose an action below.
-                </p>
-                <div className="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary/10 border border-primary/20">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-sm font-bold text-primary">
-                    {knownEmail.charAt(0).toUpperCase()}
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-sm font-medium text-foreground truncate max-w-[200px]">{knownEmail}</span>
-                    <span className="text-xs text-primary font-medium">Signed in</span>
-                  </div>
+                <div className="flex flex-col min-w-0">
+                  <span className="text-sm font-medium text-foreground truncate max-w-[220px]">{knownEmail}</span>
+                  <span className="text-xs text-muted-foreground">Signed in</span>
                 </div>
               </div>
             </div>
 
             {/* Right panel */}
-            <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 gap-4 bg-card">
+            <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 gap-3 bg-background">
               <Button
                 onClick={() => setShowForm(true)}
-                className="h-14 w-full max-w-[320px] rounded-xl bg-primary font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-all flex items-center justify-center gap-2 text-base"
+                className="h-11 w-full max-w-[320px] rounded-md border-transparent bg-foreground font-medium text-background hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors flex items-center justify-center gap-1.5 text-[15px]"
               >
-                <Send className="w-5 h-5" />
-                Submit a New Ticket
+                Submit a new ticket
+                <ChevronRight className="w-4 h-4" />
               </Button>
               <Link href="/support/requests" className="w-full max-w-[320px]">
-                <Button variant="outline" className="h-14 w-full rounded-xl border-border font-semibold text-foreground hover:bg-muted flex items-center justify-center gap-2 text-base">
-                  <TicketCheck className="w-5 h-5" />
-                  View My Tickets
+                <Button variant="outline" className="h-11 w-full rounded-md border-border bg-background font-medium text-foreground hover:bg-muted flex items-center justify-center gap-1.5 text-[15px]">
+                  View my tickets
+                  <ChevronRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Button
                 onClick={handleLogout}
                 variant="outline"
                 showGlow={false}
-                className="mt-4 h-12 w-full max-w-[320px] rounded-xl font-medium text-muted-foreground hover:text-foreground transition-all flex items-center justify-center gap-2"
+                className="mt-3 h-11 w-full max-w-[320px] rounded-md border-transparent bg-transparent font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors flex items-center justify-center gap-2 text-[15px]"
               >
                 <LogOut className="w-4 h-4" />
                 Sign out
@@ -482,7 +464,7 @@ export default function RaiseTicketPage() {
           {/* ── Form Card ── */}
           <form
             onSubmit={handleSubmit}
-            className="space-y-8 bg-card border border-border p-5 md:p-10 rounded-2xl shadow-sm"
+            className="space-y-6 bg-background border border-border p-5 md:p-10 rounded-md"
           >
             {/* Form Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6 -mt-2">
@@ -522,7 +504,7 @@ export default function RaiseTicketPage() {
             {/* Your Name + Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <Label className="text-sm font-semibold text-foreground">
+                <Label className="text-sm font-medium text-foreground">
                   Your name
                 </Label>
                 <input
@@ -531,15 +513,15 @@ export default function RaiseTicketPage() {
                   onChange={(e) => setName(e.target.value)}
                   readOnly={!!session?.user?.name}
                   placeholder="John Doe"
-                  className={`w-full h-11 px-4 rounded-lg border border-input text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all ${session?.user?.name
+                  className={`w-full h-12 px-4 rounded-md border border-border text-[15px] focus:outline-none focus:border-foreground transition-colors ${session?.user?.name
                     ? "bg-muted/30 text-muted-foreground cursor-not-allowed focus:ring-0 focus:border-input"
                     : "bg-background text-foreground placeholder:text-muted-foreground"
                     }`}
                 />
               </div>
               <div className="space-y-2">
-                <Label className="text-sm font-semibold text-foreground">
-                  Email address <span className="text-destructive">*</span>
+                <Label className="text-sm font-medium text-foreground">
+                  Email address<span className="ml-0.5 text-red-500">*</span>
                 </Label>
                 <input
                   type="email"
@@ -548,7 +530,7 @@ export default function RaiseTicketPage() {
                   required
                   readOnly={!!knownEmail}
                   placeholder="you@company.com"
-                  className={`w-full h-11 px-4 rounded-lg border border-input text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all ${knownEmail
+                  className={`w-full h-12 px-4 rounded-md border border-border text-[15px] focus:outline-none focus:border-foreground transition-colors ${knownEmail
                     ? "bg-muted/30 text-muted-foreground cursor-not-allowed focus:ring-0 focus:border-input"
                     : "bg-background text-foreground placeholder:text-muted-foreground"
                     }`}
@@ -558,25 +540,25 @@ export default function RaiseTicketPage() {
 
             {/* Subject */}
             <div className="space-y-2">
-              <Label className="text-sm font-semibold text-foreground">
-                Subject <span className="text-destructive">*</span>
+              <Label className="text-sm font-medium text-foreground">
+                Subject<span className="ml-0.5 text-red-500">*</span>
               </Label>
               <input
                 type="text"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 required
-                className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
+                className="w-full h-12 px-4 rounded-md border border-border bg-background text-foreground text-[15px] placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors"
               />
             </div>
 
             {/* Category + Priority */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <Label className="text-sm font-semibold text-foreground">Category</Label>
+                <Label className="text-sm font-medium text-foreground">Category</Label>
                 <div className="relative">
                   <Select value={category} onValueChange={setCategory}>
-                    <SelectTrigger className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground text-sm">
+                    <SelectTrigger className="w-full !h-12 px-4 rounded-md border border-border bg-background text-foreground text-[15px]">
                       <SelectValue placeholder="Select category">
                         {(val) => val ? CATEGORY_LABELS[val as string] || val : null}
                       </SelectValue>
@@ -637,17 +619,17 @@ export default function RaiseTicketPage() {
                       placeholder="Please specify your category..."
                       value={customCategory}
                       onChange={(e) => setCustomCategory(e.target.value)}
-                      className="w-full h-11 px-4 rounded-lg border border-input bg-background/50 text-foreground text-sm focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary transition-all duration-300"
+                      className="w-full h-12 px-4 rounded-md border border-border bg-background text-foreground text-[15px] focus-visible:ring-0 focus-visible:border-foreground transition-colors"
                       required={category === "other"}
                     />
                   </motion.div>
                 )}
               </div>
               <div className="space-y-2">
-                <Label className="text-sm font-semibold text-foreground">Priority</Label>
+                <Label className="text-sm font-medium text-foreground">Priority</Label>
                 <div className="relative">
                   <Select value={priority} onValueChange={setPriority}>
-                    <SelectTrigger className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground text-sm">
+                    <SelectTrigger className="w-full !h-12 px-4 rounded-md border border-border bg-background text-foreground text-[15px]">
                       <SelectValue placeholder="Select priority">
                         {(val) => val ? PRIORITY_LABELS[val as string] || val : null}
                       </SelectValue>
@@ -676,10 +658,10 @@ export default function RaiseTicketPage() {
 
             {/* Description with Working Rich-Text Editor */}
             <div className="space-y-2">
-              <Label className="text-sm font-semibold text-foreground">
-                Description <span className="text-destructive">*</span>
+              <Label className="text-sm font-medium text-foreground">
+                Description<span className="ml-0.5 text-red-500">*</span>
               </Label>
-              <div className="rounded-lg border border-input bg-background overflow-hidden focus-within:ring-2 focus-within:ring-primary/40 focus-within:border-primary transition-all">
+              <div className="rounded-md border border-border bg-background overflow-hidden focus-within:border-foreground transition-colors">
                 {/* Working Toolbar */}
                 <div className="flex flex-wrap items-center gap-1 px-2 py-1.5 border-b border-border bg-muted/50">
                   <Select
@@ -1071,7 +1053,7 @@ export default function RaiseTicketPage() {
 
             {/* Attachments */}
             <div className="space-y-2">
-              <Label className="text-sm font-semibold text-foreground">
+              <Label className="text-sm font-medium text-foreground">
                 Attachments (optional)
               </Label>
               <div
@@ -1080,8 +1062,8 @@ export default function RaiseTicketPage() {
                 onDragOver={handleDrag}
                 onDragLeave={handleDrag}
                 onDrop={handleDrop}
-                className={`w-full border border-dashed rounded-xl p-5 sm:p-8 text-center transition-all cursor-pointer ${dragActive
-                  ? "border-primary bg-primary/5"
+                className={`w-full border border-dashed rounded-md p-5 sm:p-8 text-center transition-colors cursor-pointer ${dragActive
+                  ? "border-foreground bg-muted/60"
                   : "border-border bg-muted/30 hover:bg-muted/60"
                   }`}
               >
@@ -1094,7 +1076,7 @@ export default function RaiseTicketPage() {
                   accept="image/*,.pdf,.doc,.docx,.txt,.csv,.xlsx"
                 />
                 <p className="text-sm text-muted-foreground">
-                  <span className="text-primary font-medium hover:underline">
+                  <span className="text-foreground font-medium underline underline-offset-2">
                     Add file
                   </span>{" "}
                   or drop files here
@@ -1152,11 +1134,17 @@ export default function RaiseTicketPage() {
             </div>
 
             {/* Submit */}
-            <div className="pt-2">
+            <div className="space-y-4 pt-2">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                By sending this request, you agree to our{" "}
+                <a href="/terms" className="text-foreground underline underline-offset-2">Terms of Service</a>. We use your
+                details only to help with your request, as described in our{" "}
+                <a href="/privacy" className="text-foreground underline underline-offset-2">Privacy Policy</a>.
+              </p>
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto font-bold rounded-lg px-8 h-11 text-sm transition-all disabled:opacity-50"
+                className="w-full sm:w-auto gap-1.5 rounded-md border-transparent bg-foreground px-5 h-11 text-[15px] font-medium text-background hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
@@ -1164,7 +1152,10 @@ export default function RaiseTicketPage() {
                     Submitting…
                   </span>
                 ) : (
-                  "Submit"
+                  <>
+                    Submit request
+                    <ChevronRight className="h-4 w-4" />
+                  </>
                 )}
               </Button>
             </div>

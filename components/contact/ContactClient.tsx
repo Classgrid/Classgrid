@@ -1,48 +1,112 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
-import { Building2, Mail, MessageSquare, Phone, Send, User, CheckCircle2 } from "lucide-react"
+import Link from "next/link"
+import { CheckCircle2, ChevronRight, LifeBuoy, Lock, MapPin, Phone, ShieldCheck } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupTextarea, InputGroupText } from "@/components/ui/input-group"
-import { Label } from "@/components/ui/label"
-import { SectionAccentBar } from "@/components/ui/section-accent-bar"
+const MESSAGE_LIMIT = 1000
 
-const fadeUpVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" }
-  })
+const inputClass =
+  "h-12 w-full rounded-md border border-border bg-background px-4 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
+
+function RequiredLabel({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
+  return (
+    <label htmlFor={htmlFor} className="mb-2 block text-sm font-medium text-foreground">
+      {children}
+      <span className="ml-0.5 text-red-500">*</span>
+    </label>
+  )
 }
 
-const scaleVariant = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
+function CardLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const external = href.startsWith("http")
+  return (
+    <Link
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="inline-flex items-center gap-1 rounded-md bg-muted px-2.5 py-1 text-[13px] font-medium text-foreground transition-colors hover:bg-slate-200 dark:hover:bg-zinc-800"
+    >
+      {children}
+      <ChevronRight className="h-3.5 w-3.5" />
+    </Link>
+  )
 }
+
+type ContactCard = {
+  icon: typeof LifeBuoy
+  title: string
+  body: React.ReactNode
+  note?: string
+  links: { label: string; href: string }[]
+}
+
+const CONTACT_CARDS: ContactCard[] = [
+  {
+    icon: LifeBuoy,
+    title: "Support",
+    body: "Find answers in the Help Center, or send us a request and track it until it's resolved.",
+    links: [
+      { label: "Go to Help Center", href: "/help-center" },
+      { label: "Submit a request", href: "/support/ticket" },
+    ],
+  },
+  {
+    icon: Phone,
+    title: "Call or email us",
+    body: (
+      <>
+        <a href="tel:+918623947038" className="block font-medium text-foreground hover:underline">+91 8623947038</a>
+        <a href="tel:+918149277038" className="block font-medium text-foreground hover:underline">+91 8149277038</a>
+        <a href="mailto:support@classgrid.in" className="mt-1 block font-medium text-foreground hover:underline">support@classgrid.in</a>
+        <span className="mt-2 block">We usually reply within 24 hours.</span>
+      </>
+    ),
+    links: [],
+  },
+  {
+    icon: Lock,
+    title: "Privacy requests",
+    body: "You have rights over your data. Email support@classgrid.in and we'll take care of your request.",
+    links: [{ label: "Read our Privacy Policy", href: "/privacy" }],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Security",
+    body: "Found a security issue in one of our products? Email support@classgrid.in with the details and we'll look into it right away.",
+    note: "General bugs should be reported through Support.",
+    links: [{ label: "Read our Security Policy", href: "/security" }],
+  },
+  {
+    icon: MapPin,
+    title: "Office",
+    body: "Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India",
+    links: [{ label: "Open in Google Maps", href: "https://www.google.com/maps?q=Akurdi+Railway+Station+Road+Nigdi" }],
+  },
+]
 
 export default function ContactClient() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState("")
+  const [messageLength, setMessageLength] = useState(0)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+    setError("")
+
     try {
       const formData = new FormData(e.currentTarget)
+      const firstName = String(formData.get("firstName") || "").trim()
+      const lastName = String(formData.get("lastName") || "").trim()
+      const role = String(formData.get("role") || "").trim()
+      const message = String(formData.get("message") || "").trim()
+      const wantsUpdates = formData.get("wantsUpdates") ? "Yes" : "No"
       const payload = {
-        fullName: formData.get("fullName") as string,
+        fullName: `${firstName} ${lastName}`.trim(),
         email: formData.get("email") as string,
-        phoneNumber: formData.get("phoneNumber") as string,
-        message: formData.get("message") as string,
+        message: `Role: ${role}\nWants product updates: ${wantsUpdates}\n\n${message}`,
       }
 
       const response = await fetch("/api/contact", {
@@ -55,263 +119,155 @@ export default function ContactClient() {
       })
       if (response.ok) {
         setIsSuccess(true)
+      } else {
+        const data = await response.json().catch(() => ({}))
+        setError(data?.message || "We couldn't send your message. Please try again.")
       }
-    } catch (error) {
-      console.error("Form submission error", error)
+    } catch (err) {
+      console.error("Form submission error", err)
+      setError("We couldn't send your message. Please try again.")
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <div className="bg-background text-foreground min-h-screen relative overflow-hidden transition-colors duration-300">
-      
-      {/* Background Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] max-h-[800px] pointer-events-none z-0"
-           style={{ background: "radial-gradient(circle, rgba(128, 128, 128, 0.05) 0%, transparent 60%)" }}
-      />
-
-      {/* Hero Section */}
-      <section className="relative z-10 pt-32 pb-16 px-6 text-center border-b border-border/50">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mx-auto w-full max-w-4xl"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 text-foreground text-sm font-medium mb-6 ring-1 ring-foreground/10">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground/60 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground"></span>
-            </span>
-            We are here to help
+    <div className="bg-background text-foreground">
+      {/* Heading */}
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1fr)_380px]">
+          <div className="px-6 pb-10 pt-28 md:px-10 md:pb-14 md:pt-36 lg:border-r lg:border-border">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Contact</p>
+            <h1 className="mt-5 text-balance text-5xl font-medium tracking-[-0.035em] md:text-7xl">
+              Get in touch with the team
+            </h1>
           </div>
-          <SectionAccentBar />
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-6">
-            Get in <span className="text-muted-foreground">Touch</span>
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Have questions about Classgrid? Our team is ready to provide you with the answers and support you need to empower your campus.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Main Content Grid */}
-      <section className="relative z-10 py-20 px-6">
-        <div className="mx-auto w-full max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Left Column: Direct Contact Info */}
-            <div className="lg:col-span-5 space-y-6">
-              <motion.div
-                custom={0}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUpVariant}
-              >
-                <Card className="group relative rounded-[2rem] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-colors duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-800/60 hover:border-zinc-400 dark:hover:border-zinc-600 overflow-hidden">
-                  
-                  <CardHeader className="space-y-4 pb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center text-foreground group-hover:scale-110 transition-all duration-300">
-                      <Phone className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-2xl font-bold transition-colors">Let's Talk</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <a className="block text-lg font-medium text-foreground hover:text-muted-foreground transition-colors" href="tel:+918623947038">
-                      +91 8623947038
-                    </a>
-                    <a className="block text-lg font-medium text-foreground hover:text-muted-foreground transition-colors" href="tel:+918149277038">
-                      +91 8149277038
-                    </a>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Call us directly or send us an email — our team is always ready to help with any questions about the platform.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div
-                custom={1}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUpVariant}
-              >
-                <Card className="group relative rounded-[2rem] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-colors duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-800/60 hover:border-zinc-400 dark:hover:border-zinc-600 overflow-hidden">
-                  
-                  <CardHeader className="space-y-4 pb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center text-foreground group-hover:scale-110 transition-all duration-300">
-                      <Mail className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-2xl font-bold transition-colors">Email Us</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <a className="block text-xl font-medium text-foreground hover:text-muted-foreground transition-colors break-all" href="mailto:support@classgrid.in">
-                      support@classgrid.in
-                    </a>
-                    <p className="text-muted-foreground transition-colors text-sm">
-                      Our team typically responds within 24 hours.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-
-            {/* Right Column: Contact Form */}
-            <motion.div 
-              custom={2}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={fadeUpVariant}
-              className="lg:col-span-7"
-            >
-              <Card className="h-full rounded-[2.5rem] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden relative">
-                <CardHeader className="px-8 pt-10 pb-6 border-b border-border/50 bg-zinc-50/50 dark:bg-zinc-900/50">
-                  <CardTitle className="text-3xl font-bold">Send Message</CardTitle>
-                  <p className="text-muted-foreground mt-2">
-                    Fill out the form below and we&apos;ll get back to you as soon as possible.
-                  </p>
-                </CardHeader>
-                <CardContent className="p-8">
-                  {isSuccess ? (
-                    <motion.div 
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="flex flex-col items-center justify-center text-center py-16 space-y-4"
-                    >
-                      <div className="w-16 h-16 bg-foreground/5 rounded-full flex items-center justify-center text-foreground mb-4">
-                        <CheckCircle2 className="w-8 h-8" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Message Sent!</h3>
-                      <p className="text-muted-foreground max-w-sm">
-                        Thank you for reaching out. Our team has received your message and will get back to you shortly.
-                      </p>
-                    </motion.div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="fullName" className="font-semibold text-muted-foreground">Full Name</Label>
-                          <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300">
-                            <InputGroupAddon>
-                              <InputGroupText className="bg-transparent border-0 pl-4">
-                                <User className="h-4 w-4 text-muted-foreground" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <InputGroupInput id="fullName" name="fullName" placeholder="John Doe" className="bg-transparent border-0 focus-visible:ring-0 px-2 placeholder:text-zinc-400 dark:placeholder:text-zinc-600" required />
-                          </InputGroup>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="phoneNumber" className="font-semibold text-muted-foreground">Phone Number</Label>
-                          <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300">
-                            <InputGroupAddon>
-                              <InputGroupText className="bg-transparent border-0 pl-4 text-zinc-500 font-medium">+91</InputGroupText>
-                            </InputGroupAddon>
-                            <InputGroupInput
-                              id="phoneNumber"
-                              name="phoneNumber"
-                              inputMode="numeric"
-                              pattern="[0-9]{10}"
-                              placeholder="9876543210"
-                              className="bg-transparent border-0 focus-visible:ring-0 px-2 placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
-                              required
-                            />
-                          </InputGroup>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="emailAddress" className="font-semibold text-muted-foreground">Email Address</Label>
-                        <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300">
-                          <InputGroupAddon>
-                            <InputGroupText className="bg-transparent border-0 pl-4">
-                              <Mail className="h-4 w-4 text-muted-foreground" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <InputGroupInput
-                            id="emailAddress"
-                            type="email"
-                            name="email"
-                            placeholder="you@institution.edu"
-                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                            title="Please enter a valid email address (e.g. name@gmail.com)"
-                            className="bg-transparent border-0 focus-visible:ring-0 px-2 placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
-                            required
-                          />
-                        </InputGroup>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="font-semibold text-muted-foreground">Your Message</Label>
-                        <InputGroup className="min-h-[140px] max-h-[300px] rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300 overflow-y-auto">
-                          <InputGroupAddon align="block-start">
-                            <InputGroupText className="bg-transparent border-0 pl-4 pt-4">
-                              <MessageSquare className="h-4 w-4 text-muted-foreground" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <InputGroupTextarea
-                            id="message"
-                            name="message"
-                            rows={5}
-                            placeholder="How can we help you?"
-                            className="bg-transparent border-0 focus-visible:ring-0 p-3 pt-4 resize-y placeholder:text-zinc-400 dark:placeholder:text-zinc-600"
-                            required
-                          />
-                        </InputGroup>
-                      </div>
-
-                      <Button disabled={isSubmitting} type="submit" className="w-full sm:w-auto h-12 rounded-xl border-transparent bg-foreground px-8 text-[15px] font-semibold text-background hover:border-transparent hover:bg-zinc-700 hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-zinc-300 dark:hover:text-background transition-colors duration-300">
-                        {isSubmitting ? "Sending..." : "Send Message"}
-                        {!isSubmitting && <Send className="ml-2 h-4 w-4" />}
-                      </Button>
-                    </form>
-                  )}
-                </CardContent>
-              </Card>
-            </motion.div>
-
+          <div className="flex items-end px-6 pb-10 md:px-10 md:pb-14">
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Questions about Classgrid AI, your account or working with us? Send us a message and we&apos;ll reply by email.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 border-t border-border/50 bg-zinc-50/50 dark:bg-zinc-900/50">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={scaleVariant}
-          className="mx-auto w-full max-w-6xl px-6"
-        >
-          <div className="flex flex-col items-center justify-center mb-12 text-center">
-            <div className="p-3 bg-foreground/5 rounded-2xl text-foreground mb-6 ring-1 ring-foreground/10">
-              <Building2 className="w-6 h-6" />
+      {/* Contact options and form */}
+      <section className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div className="bg-muted/40 px-6 py-12 md:px-10 lg:border-r lg:border-border lg:py-16">
+            <div className="divide-y divide-border border border-border bg-background">
+              {CONTACT_CARDS.map((card) => (
+                <div key={card.title} className="p-7 md:p-8">
+                  <div className="flex items-center gap-3">
+                    <card.icon className="h-6 w-6 shrink-0" />
+                    <h2 className="text-2xl font-medium tracking-[-0.02em]">{card.title}</h2>
+                  </div>
+                  <div className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{card.body}</div>
+                  {card.links.length > 0 ? (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {card.links.map((link) => (
+                        <CardLink key={link.href} href={link.href}>
+                          {link.label}
+                        </CardLink>
+                      ))}
+                    </div>
+                  ) : null}
+                  {card.note ? <p className="mt-4 text-[13px] text-muted-foreground">{card.note}</p> : null}
+                </div>
+              ))}
             </div>
-            <SectionAccentBar className="mb-4" />
-            <h2 className="text-3xl font-bold text-zinc-900 dark:text-white">
-              Headquarters
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-              Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India
-            </p>
           </div>
-          
-          <div className="rounded-[2.5rem] overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl bg-white dark:bg-zinc-900 p-2">
-            <iframe
-              src="https://www.google.com/maps?q=Akurdi+Railway+Station+Road+Nigdi&output=embed"
-              className="h-[450px] w-full rounded-[2rem] border-0 filter dark:grayscale-[0.3] dark:invert-[0.1]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Classgrid Office Map"
-            />
-          </div>
-        </motion.div>
-      </section>
 
+          <div className="px-6 py-12 md:px-10 lg:py-16">
+            <div className="mx-auto w-full max-w-xl">
+              {isSuccess ? (
+                <div className="flex flex-col items-start gap-4 py-10">
+                  <CheckCircle2 className="h-10 w-10" />
+                  <h2 className="text-3xl font-medium tracking-[-0.02em]">Message sent</h2>
+                  <p className="text-muted-foreground">
+                    Thanks for reaching out. Our team has your message and will reply by email soon.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    <div>
+                      <RequiredLabel htmlFor="firstName">First name</RequiredLabel>
+                      <input id="firstName" name="firstName" placeholder="Aarav" className={inputClass} required />
+                    </div>
+                    <div>
+                      <RequiredLabel htmlFor="lastName">Last name</RequiredLabel>
+                      <input id="lastName" name="lastName" placeholder="Sharma" className={inputClass} required />
+                    </div>
+                  </div>
+
+                  <div>
+                    <RequiredLabel htmlFor="email">Company email</RequiredLabel>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      placeholder="aarav@company.com"
+                      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                      title="Please enter a valid email address (e.g. name@company.com)"
+                      className={inputClass}
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <RequiredLabel htmlFor="role">Role</RequiredLabel>
+                    <input id="role" name="role" placeholder="Founder" className={inputClass} required />
+                  </div>
+
+                  <div>
+                    <RequiredLabel htmlFor="message">Tell us about your project, so we can connect you with the right team</RequiredLabel>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      maxLength={MESSAGE_LIMIT}
+                      onChange={(e) => setMessageLength(e.target.value.length)}
+                      placeholder="Share your goals and anything we should know, like your team size or the work you want Classgrid AI to handle."
+                      className="w-full resize-y rounded-md border border-border bg-background px-4 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-foreground"
+                      required
+                    />
+                    <p className="mt-1.5 text-right text-xs text-muted-foreground">
+                      {messageLength} / {MESSAGE_LIMIT}
+                    </p>
+                  </div>
+
+                  <label className="flex cursor-pointer items-center gap-3 text-[15px] text-foreground">
+                    <input
+                      type="checkbox"
+                      name="wantsUpdates"
+                      className="h-5 w-5 shrink-0 cursor-pointer rounded border-border accent-foreground"
+                    />
+                    I want to receive updates about new features and products from Classgrid
+                  </label>
+
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    By sending this form, you agree to our{" "}
+                    <Link href="/terms" className="text-foreground underline underline-offset-2">Terms of Service</Link>. We use your
+                    details only to reply to your message, as described in our{" "}
+                    <Link href="/privacy" className="text-foreground underline underline-offset-2">Privacy Policy</Link>.
+                  </p>
+
+                  {error ? <p className="text-sm text-red-500">{error}</p> : null}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex h-11 items-center gap-1.5 rounded-md bg-foreground px-5 text-[15px] font-medium text-background transition-colors hover:bg-zinc-700 disabled:opacity-60 dark:hover:bg-zinc-300"
+                  >
+                    {isSubmitting ? "Sending..." : "Talk with our team"}
+                    {!isSubmitting && <ChevronRight className="h-4 w-4" />}
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
