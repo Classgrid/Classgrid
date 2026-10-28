@@ -26,6 +26,9 @@ const hiddenTypes = new Set([
   "legalPage",
   "ipProtectionPage",
   "module",
+  "sectionSettings",
+  "classgridVideo",
+  "classgridTeamVision",
 ]);
 
 export const structure = (S: StructureBuilder) =>
@@ -78,11 +81,6 @@ export const structure = (S: StructureBuilder) =>
         .child(S.document().schemaType("aiPricingPage").documentId("aiPricingPage")),
 
       S.listItem()
-        .title("Circular Timeline")
-        .id("circularTimelineSingleton")
-        .child(S.document().schemaType("circularTimeline").documentId("circularTimeline")),
-
-      S.listItem()
         .title("About Us")
         .id("aboutUs")
         .child(
@@ -112,32 +110,46 @@ export const structure = (S: StructureBuilder) =>
         .child(S.document().schemaType("changelogSettings").documentId("changelogSettings")),
 
       S.listItem()
-        .title("Global Stats")
-        .id("homeStatsSingleton")
-        .child(S.document().schemaType("homeStats").documentId("homeStats")),
-
-      S.divider(),
-
-      S.listItem()
-        .title("Turbo Comparison Section")
-        .id("turboClassgridSingleton")
-        .child(S.document().schemaType("turboClassgrid").documentId("turboClassgrid")),
-
-      S.listItem()
-        .title("Isometric Stack Section")
-        .id("isometricStackSingleton")
-        .child(S.document().schemaType("isometricStack").documentId("isometricStack")),
-
-      S.listItem()
-        .title("App Ecosystem Section")
-        .id("appEcosystemSingleton")
-        .child(S.document().schemaType("appEcosystem").documentId("appEcosystem")),
-
-      S.divider(),
-
-      S.listItem()
-        .title("Institution Logos")
-        .child(S.documentTypeList("clientLogo").title("Institution Logos")),
+        .title("Legacy Home Page")
+        .id("legacyHomePage")
+        .child(
+          S.list()
+            .title("Legacy Home Page")
+            .items([
+              S.listItem()
+                .title("Circular Timeline")
+                .id("circularTimelineSingleton")
+                .child(S.document().schemaType("circularTimeline").documentId("circularTimeline")),
+              S.listItem()
+                .title("Global Stats")
+                .id("homeStatsSingleton")
+                .child(S.document().schemaType("homeStats").documentId("homeStats")),
+              S.listItem()
+                .title("Turbo Comparison Section")
+                .id("turboClassgridSingleton")
+                .child(S.document().schemaType("turboClassgrid").documentId("turboClassgrid")),
+              S.listItem()
+                .title("Isometric Stack Section")
+                .id("isometricStackSingleton")
+                .child(S.document().schemaType("isometricStack").documentId("isometricStack")),
+              S.listItem()
+                .title("App Ecosystem Section")
+                .id("appEcosystemSingleton")
+                .child(S.document().schemaType("appEcosystem").documentId("appEcosystem")),
+              S.listItem()
+                .title("Institution Logos")
+                .child(S.documentTypeList("clientLogo").title("Institution Logos")),
+              S.listItem()
+                .title("Testimonials Controls")
+                .child(S.documentTypeList("sectionSettings").title("Testimonials Controls")),
+              S.listItem()
+                .title("Classgrid Video")
+                .child(S.documentTypeList("classgridVideo").title("Classgrid Video")),
+              S.listItem()
+                .title("Team Vision")
+                .child(S.documentTypeList("classgridTeamVision").title("Team Vision")),
+            ])
+        ),
 
       S.divider(),
 
