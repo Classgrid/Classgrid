@@ -101,7 +101,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug?: str
               img: ({ src, alt, title }) => <DocsImage src={src} alt={alt} title={title} />,
               code: ({ children, className }) => {
                 if (className) return <code className={className}>{children}</code>;
-                return <code className="bg-white/10 rounded px-1.5 py-0.5 text-sm font-mono text-emerald-400">{children}</code>;
+                return <code className="bg-white/10 rounded px-1.5 py-0.5 text-sm font-mono text-foreground">{children}</code>;
               },
               callout: (props: any) => <Callout type={props.type || 'info'}>{props.children}</Callout>,
               h2: ({ node, children, ...props }) => {
@@ -109,7 +109,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug?: str
                 return (
                   <h2 {...props} className="group relative scroll-mt-24">
                     {id && (
-                      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-slate-500 dark:text-zinc-500 hover:text-emerald-400 transition-colors font-normal no-underline flex items-center justify-center w-6 h-6" aria-hidden="true">
+                      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-slate-500 dark:text-zinc-500 hover:text-foreground transition-colors font-normal no-underline flex items-center justify-center w-6 h-6" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
                       </a>
                     )}
@@ -122,7 +122,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug?: str
                 return (
                   <h3 {...props} className="group relative scroll-mt-24">
                     {id && (
-                      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-slate-500 dark:text-zinc-500 hover:text-emerald-400 transition-colors font-normal no-underline flex items-center justify-center w-6 h-6" aria-hidden="true">
+                      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-slate-500 dark:text-zinc-500 hover:text-foreground transition-colors font-normal no-underline flex items-center justify-center w-6 h-6" aria-hidden="true">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
                       </a>
                     )}
@@ -135,9 +135,19 @@ export default async function DocPage({ params }: { params: Promise<{ slug?: str
                   <table {...props} className="w-full text-left border-collapse min-w-[600px]">{children}</table>
                 </div>
               ),
-              details: ({ children, ...props }: any) => (
-                <DocsFAQItem open={props.open}>{children}</DocsFAQItem>
-              ),
+              details: ({ children, ...props }: any) => {
+                // Pick the <summary> out here on the server; its type is lost once it reaches the client accordion
+                const childArray = (Array.isArray(children) ? children : [children]).filter(
+                  (child: any) => !(typeof child === "string" && child.trim() === "")
+                );
+                const summaryChild: any = childArray.find((child: any) => child?.props?.node?.tagName === "summary");
+                const body = childArray.filter((child: any) => child !== summaryChild);
+                return (
+                  <DocsFAQItem open={props.open} summary={summaryChild?.props?.children}>
+                    {body}
+                  </DocsFAQItem>
+                );
+              },
               summary: ({ children }: any) => (
                 <DocsFAQSummary>{children}</DocsFAQSummary>
               ),

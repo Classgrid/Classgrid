@@ -195,13 +195,13 @@ function TerminalCard({ cardIndex, lines }: { cardIndex: number; lines: string[]
 // Exact brand colors from globals.css: --primary #34d399 = rgb(52,211,153) | --destructive #f43f5e = rgb(244,63,94)
 const RC_CSS = `
 .rc-pl {
-    box-shadow: 0 0 0 1px rgba(52,211,153,.20), 0 0 20px 5px rgba(52,211,153,.45), 0 0 45px 12px rgba(52,211,153,.22), 0 0 90px 30px rgba(52,211,153,.10);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--foreground) 20%, transparent), 0 0 20px 5px color-mix(in srgb, var(--foreground) 12%, transparent), 0 0 45px 12px color-mix(in srgb, var(--foreground) 6%, transparent);
 }
 .rc-pr {
     box-shadow: 0 0 0 1px rgba(236,72,153,.20), 0 0 20px 5px rgba(236,72,153,.45), 0 0 45px 12px rgba(236,72,153,.22), 0 0 90px 30px rgba(236,72,153,.10);
 }
 .rc-pi {
-    box-shadow: 0 0 0 1.5px rgba(236,72,153,.40), 0 0 24px 10px rgba(52,211,153,.80), 0 0 50px 18px rgba(236,72,153,.60), 0 0 80px 30px rgba(52,211,153,.35), 0 0 130px 50px rgba(236,72,153,.20), 0 6px 36px 10px rgba(236,72,153,.35);
+    box-shadow: 0 0 0 1.5px rgba(236,72,153,.40), 0 0 24px 10px color-mix(in srgb, var(--foreground) 20%, transparent), 0 0 50px 18px rgba(236,72,153,.60), 0 0 80px 30px color-mix(in srgb, var(--foreground) 8%, transparent), 0 0 130px 50px rgba(236,72,153,.20), 0 6px 36px 10px rgba(236,72,153,.35);
 }
 @keyframes rcAA{0%,100%{opacity:.78}50%{opacity:1}}
 @keyframes rcAB{0%,100%{opacity:.78}50%{opacity:1}}
@@ -283,17 +283,17 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
 
                 {/* ── ATMOSPHERE LAYERS — emerald + pink glow ── */}
                 <motion.div custom={D.atmL} variants={rcAtmV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                    style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 73% 71% at 46% 32%, rgba(52,211,153,0.12) 0%, transparent 65%)", pointerEvents: "none" }} />
+                    style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 73% 71% at 46% 32%, color-mix(in srgb, var(--foreground) 4%, transparent) 0%, transparent 65%)", pointerEvents: "none" }} />
                 <motion.div custom={D.atmL} variants={rcAtmV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                    style={{ position: "absolute", width: "56%", height: "68%", top: "-12%", left: "-6%", background: "radial-gradient(ellipse at 40% 42%, rgba(52,211,153,0.35) 0%, rgba(20,200,150,0.18) 32%, rgba(10,160,110,0.08) 56%, transparent 72%)", filter: "blur(50px)", pointerEvents: "none" }} />
+                    style={{ position: "absolute", width: "56%", height: "68%", top: "-12%", left: "-6%", background: "radial-gradient(ellipse at 40% 42%, color-mix(in srgb, var(--foreground) 10%, transparent) 0%, color-mix(in srgb, var(--foreground) 5%, transparent) 32%, color-mix(in srgb, var(--foreground) 2%, transparent) 56%, transparent 72%)", filter: "blur(50px)", pointerEvents: "none" }} />
                 <motion.div custom={D.atmR} variants={rcAtmV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
                     style={{ position: "absolute", width: "54%", height: "65%", top: "-9%", right: "-5%", background: "radial-gradient(ellipse at 60% 42%, rgba(236,72,153,0.35) 0%, rgba(220,40,80,0.18) 32%, rgba(180,20,50,0.08) 56%, transparent 72%)", filter: "blur(50px)", pointerEvents: "none" }} />
                 <motion.div custom={D.atmC} variants={rcAtmV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                    style={{ position: "absolute", width: "47%", height: "57%", top: "22%", left: "48.2%", transform: "translateX(-50%)", background: "radial-gradient(ellipse at 50% 38%, rgba(52,211,153,0.22) 0%, rgba(236,72,153,0.18) 36%, rgba(52,211,153,0.08) 56%, transparent 76%)", filter: "blur(36px)", pointerEvents: "none" }} />
+                    style={{ position: "absolute", width: "47%", height: "57%", top: "22%", left: "48.2%", transform: "translateX(-50%)", background: "radial-gradient(ellipse at 50% 38%, color-mix(in srgb, var(--foreground) 6%, transparent) 0%, rgba(236,72,153,0.18) 36%, color-mix(in srgb, var(--foreground) 2%, transparent) 56%, transparent 76%)", filter: "blur(36px)", pointerEvents: "none" }} />
                 <motion.div custom={D.atmIB} variants={rcAtmV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                    style={{ position: "absolute", width: "34%", height: "39%", top: "33%", left: "48.2%", transform: "translateX(-50%)", background: "radial-gradient(ellipse at 50% 40%, rgba(236,72,153,0.22) 0%, rgba(52,211,153,0.14) 35%, transparent 68%)", filter: "blur(28px)", pointerEvents: "none" }} />
+                    style={{ position: "absolute", width: "34%", height: "39%", top: "33%", left: "48.2%", transform: "translateX(-50%)", background: "radial-gradient(ellipse at 50% 40%, rgba(236,72,153,0.22) 0%, color-mix(in srgb, var(--foreground) 4%, transparent) 35%, transparent 68%)", filter: "blur(28px)", pointerEvents: "none" }} />
                 <motion.div custom={D.atmBot} variants={rcAtmV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                    style={{ position: "absolute", width: "52%", height: "27%", top: "70%", left: "48.2%", transform: "translateX(-50%)", background: "radial-gradient(ellipse at 50% 40%, rgba(52,211,153,0.16) 0%, transparent 70%)", filter: "blur(30px)", pointerEvents: "none" }} />
+                    style={{ position: "absolute", width: "52%", height: "27%", top: "70%", left: "48.2%", transform: "translateX(-50%)", background: "radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--foreground) 5%, transparent) 0%, transparent 70%)", filter: "blur(30px)", pointerEvents: "none" }} />
 
                 {/* ── SVG WIRES (viewBox matches 928×672 canvas) ── */}
                 <svg style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", overflow: "visible", pointerEvents: "none", zIndex: 10 }}
@@ -314,26 +314,26 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
                     </defs>
                     {/* Wire A: left terminal → icon — emerald */}
                     <motion.path custom={D.wA} variants={rcWireV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                        d="M 243 268 C 243 286, 330 294, 403 298" stroke="rgba(52,211,153,0.90)" strokeWidth="1.8" fill="none" filter="url(#rcFP)" />
+                        d="M 243 268 C 243 286, 330 294, 403 298" style={{ stroke: "color-mix(in srgb, var(--foreground) 90%, transparent)" }} strokeWidth="1.8" fill="none" filter="url(#rcFP)" />
                     {/* Wire B: right terminal → icon — pink */}
                     <motion.path custom={D.wB} variants={rcWireV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
                         d="M 651 268 C 651 286, 564 294, 491 298" stroke="rgba(236,72,153,0.90)" strokeWidth="1.8" fill="none" filter="url(#rcFB)" />
                     {/* Wire C: icon → left monitor — emerald */}
                     <motion.path custom={D.wC} variants={rcWireV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                        d="M 447 342 C 430 386, 348 434, 300 466" stroke="rgba(52,211,153,0.80)" strokeWidth="1.8" fill="none" filter="url(#rcFP)" />
+                        d="M 447 342 C 430 386, 348 434, 300 466" style={{ stroke: "color-mix(in srgb, var(--foreground) 80%, transparent)" }} strokeWidth="1.8" fill="none" filter="url(#rcFP)" />
                     {/* Wire D: icon → right monitor — pink */}
                     <motion.path custom={D.wD} variants={rcWireV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
                         d="M 447 342 C 464 386, 570 434, 628 466" stroke="rgba(236,72,153,0.80)" strokeWidth="1.8" fill="none" filter="url(#rcFB)" />
                     {/* Wire E: horizontal between monitors */}
                     <motion.line custom={D.wE} variants={rcWireV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                        x1="300" y1="466" x2="628" y2="466" stroke="rgba(52,211,153,0.22)" strokeWidth="1" />
+                        x1="300" y1="466" x2="628" y2="466" style={{ stroke: "color-mix(in srgb, var(--foreground) 22%, transparent)" }} strokeWidth="1" />
                     {/* Junction dots */}
                     <motion.circle custom={D.dA} variants={rcDotV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                        cx="243" cy="268" r="4.5" fill="rgba(52,211,153,0.96)" />
+                        cx="243" cy="268" r="4.5" style={{ fill: "color-mix(in srgb, var(--foreground) 96%, transparent)" }} />
                     <motion.circle custom={D.dC} variants={rcDotV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
                         cx="447" cy="342" r="5.2" fill="rgba(236,72,153,0.98)" />
                     <motion.circle custom={D.dML} variants={rcDotV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
-                        cx="300" cy="466" r="4" fill="rgba(52,211,153,0.92)" />
+                        cx="300" cy="466" r="4" style={{ fill: "color-mix(in srgb, var(--foreground) 92%, transparent)" }} />
                     <motion.circle custom={D.dMR} variants={rcDotV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
                         cx="628" cy="466" r="4" fill="rgba(236,72,153,0.92)" />
                 </svg>
@@ -341,7 +341,7 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
                 {/* ── LEFT TERMINAL — emerald green border ── */}
                 <motion.div custom={D.termL} variants={rcTermV} initial="cardHidden" whileInView="cardVisible" viewport={vp}
                     className="rc-pl bg-white dark:bg-[#04050a]"
-                    style={{ position: "absolute", left: px(88), top: py(36), width: px(310), borderRadius: 13, overflow: "hidden", border: "1.5px solid rgba(52,211,153,0.82)", zIndex: 20 }}>
+                    style={{ position: "absolute", left: px(88), top: py(36), width: px(310), borderRadius: 13, overflow: "hidden", border: "1.5px solid color-mix(in srgb, var(--foreground) 82%, transparent)", zIndex: 20 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 7, padding: "10px 14px 9px", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
                         <div style={{ width: 11, height: 11, borderRadius: "50%", background: "rgba(210,60,60,0.82)" }} />
                         <div style={{ width: 11, height: 11, borderRadius: "50%", background: "rgba(196,150,36,0.65)" }} />
@@ -349,7 +349,7 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
                     </div>
                     <div className="text-zinc-500 dark:text-[#a8a8bc]" style={{ padding: "14px 17px 18px", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, lineHeight: 1.7 }}>
                         <div className="text-zinc-400 dark:text-[#48485e]">{rightTermCmd}</div>
-                        <div style={{ marginTop: 8 }}><span className="text-emerald-500 dark:text-[#4ade80]" style={{ fontWeight: 700 }}>{rightTermLine1}</span></div>
+                        <div style={{ marginTop: 8 }}><span className="text-foreground" style={{ fontWeight: 700 }}>{rightTermLine1}</span></div>
                         <div className="text-zinc-400 dark:text-[#48485e]">{rightTermLine2}</div>
                         <div className="text-zinc-900 dark:text-[#fff]" style={{ fontWeight: 700 }}>{rightTermLine3}</div>
                     </div>
@@ -366,13 +366,13 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
                     </div>
                     <div className="text-zinc-500 dark:text-[#a8a8bc]" style={{ padding: "14px 17px 18px", fontFamily: "'JetBrains Mono', monospace", fontSize: 11, lineHeight: 1.7, letterSpacing: "-0.02em" }}>
                         <div className="text-zinc-400 dark:text-[#48485e]">{rightTermCmd}</div>
-                        <div style={{ marginTop: 8 }}><span className="text-emerald-500 dark:text-[#4ade80]" style={{ fontWeight: 700 }}>{rightTermLine1}</span></div>
+                        <div style={{ marginTop: 8 }}><span className="text-foreground" style={{ fontWeight: 700 }}>{rightTermLine1}</span></div>
                         <div><span className="text-cyan-500 dark:text-[#22d3ee]" style={{ fontWeight: 700 }}>{rightTermLine2}</span></div>
                         <div className="text-zinc-400 dark:text-[#48485e]">{rightTermLine3}</div>
                         <div style={{ display: "flex", gap: 2, flexWrap: "nowrap", marginTop: 4 }}>
-                            <span className="text-zinc-900 dark:text-[#fff]" style={{ fontWeight: 700 }}>116ms</span>
+                            <span className="text-zinc-900 dark:text-[#fff]" style={{ fontWeight: 700 }}>4m</span>
                             <span className="text-cyan-500 dark:text-[#22d3ee]" style={{ fontWeight: 700 }}>&nbsp;{">>>"}</span>
-                            <span className="text-pink-500 dark:text-[#f472b6]" style={{ fontWeight: 700 }}>&nbsp;CLASSGRID OS</span>
+                            <span className="text-pink-500 dark:text-[#f472b6]" style={{ fontWeight: 700 }}>&nbsp;CLASSGRID AI</span>
                         </div>
                     </div>
                 </motion.div>
@@ -398,7 +398,7 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
                             </filter>
                         </defs>
                         <circle cx="44" cy="44" r="38" fill="none" stroke="rgba(150,20,70,0.08)" strokeWidth="7" />
-                        <path className="rc-aa" d="M 44 6 A 38 38 0 0 0 44 82" fill="none" stroke="rgba(52,211,153,0.92)" strokeWidth="5" strokeLinecap="round" filter="url(#rcGML)" />
+                        <path className="rc-aa" d="M 44 6 A 38 38 0 0 0 44 82" fill="none" style={{ stroke: "color-mix(in srgb, var(--foreground) 92%, transparent)" }} strokeWidth="5" strokeLinecap="round" filter="url(#rcGML)" />
                         <path className="rc-ab" d="M 44 82 A 38 38 0 0 0 44 6" fill="none" stroke="rgba(236,72,153,0.92)" strokeWidth="5" strokeLinecap="round" filter="url(#rcGML)" />
                     </svg>
                     <div className="bg-white dark:bg-[#04060e] shadow-[0_2px_12px_rgba(0,0,0,0.05)] dark:shadow-none" style={{ position: "absolute", top: "10%", left: "10%", width: "80%", height: "80%", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -422,7 +422,7 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
                         </defs>
                         <circle cx="44" cy="44" r="38" fill="none" stroke="rgba(12,72,168,0.08)" strokeWidth="7" />
                         <path className="rc-ab" d="M 44 6 A 38 38 0 0 1 44 82" fill="none" stroke="rgba(236,72,153,0.92)" strokeWidth="5" strokeLinecap="round" filter="url(#rcGMR)" />
-                        <path className="rc-aa" d="M 44 82 A 38 38 0 0 1 44 6" fill="none" stroke="rgba(52,211,153,0.92)" strokeWidth="5" strokeLinecap="round" filter="url(#rcGMR)" />
+                        <path className="rc-aa" d="M 44 82 A 38 38 0 0 1 44 6" fill="none" style={{ stroke: "color-mix(in srgb, var(--foreground) 92%, transparent)" }} strokeWidth="5" strokeLinecap="round" filter="url(#rcGMR)" />
                     </svg>
                     <div className="bg-white dark:bg-[#04060e] shadow-[0_2px_12px_rgba(0,0,0,0.05)] dark:shadow-none" style={{ position: "absolute", top: "10%", left: "10%", width: "80%", height: "80%", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
@@ -527,7 +527,7 @@ export function TurboComparisonNew({
 
     return (
         <section
-            className="hidden md:block relative overflow-x-clip py-10 pb-44 md:py-24 lg:py-32 bg-muted"
+            className="hidden md:block relative overflow-x-clip py-10 pb-44 md:py-24 lg:py-32 bg-background dark:bg-black"
         >
             <div className="relative mx-auto max-w-[1400px] px-6">
 

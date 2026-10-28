@@ -17,13 +17,6 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { toast, Toaster } from "sonner";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 function DemoSuccessPageInner() {
   const searchParams = useSearchParams();
@@ -315,7 +308,7 @@ function DemoSuccessPageInner() {
                   </Button>
                   <Button
                     size="sm"
-                    className="h-8 px-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold shadow-sm transition-all duration-150 hover:scale-105 active:scale-95 hover:shadow-[0_0_14px_rgba(16,185,129,0.4)]"
+                    className="h-8 px-3 bg-foreground hover:bg-zinc-700 dark:hover:bg-zinc-300 text-background font-semibold shadow-sm transition-all duration-150 hover:scale-105 active:scale-95"
                     onClick={handleSaveEdit}
                     disabled={isSavingEdit}
                   >
@@ -345,23 +338,16 @@ function DemoSuccessPageInner() {
                   <span className="font-medium text-foreground text-base">{lead.adminName}</span>
                 </div>
                 <div>
-                  <span className="text-muted-foreground block text-xs uppercase tracking-wider mb-1 font-semibold">Institution</span>
+                  <span className="text-muted-foreground block text-xs uppercase tracking-wider mb-1 font-semibold">Company</span>
                   <span className="font-medium text-foreground text-base">{lead.institutionName}</span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <span className="text-muted-foreground block text-xs uppercase tracking-wider mb-1 font-semibold">Organization Type</span>
-                    <span className="font-medium text-foreground text-base capitalize">
-                      {lead.orgType === "engineering" && "Engineering College"}
-                      {lead.orgType === "school" && "School"}
-                      {lead.orgType === "junior_college" && "Junior College"}
-                      {lead.orgType === "coaching" && "Coaching Institute"}
-                      {lead.orgType === "diploma" && "Diploma Institute"}
-                      {lead.orgType === "tutor" && "Private Tutor"}
-                      {lead.orgType === "other" && "Other"}
-                      {!["engineering", "school", "junior_college", "coaching", "diploma", "tutor", "other"].includes(lead.orgType) && lead.orgType?.replace(/_/g, " ")}
-                    </span>
-                  </div>
+                  {lead.useCase && (
+                    <div>
+                      <span className="text-muted-foreground block text-xs uppercase tracking-wider mb-1 font-semibold">Use case</span>
+                      <span className="font-medium text-foreground text-base">{lead.useCase}</span>
+                    </div>
+                  )}
                   {lead.adminPhone && (
                     <div>
                       <span className="text-muted-foreground block text-xs uppercase tracking-wider mb-1 font-semibold">Phone Number</span>
@@ -389,7 +375,7 @@ function DemoSuccessPageInner() {
                   />
                 </div>
                 <div>
-                  <Label className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1 block">Institution</Label>
+                  <Label className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1 block">Company</Label>
                   <Input
                     value={editForm.institutionName}
                     onChange={e => setEditForm({ ...editForm, institutionName: e.target.value })}
@@ -397,24 +383,6 @@ function DemoSuccessPageInner() {
                   />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1 block">Organization Type</Label>
-                    <Select
-                      value={editForm.orgType}
-                      onValueChange={(value) => setEditForm({ ...editForm, orgType: value })}
-                    >
-                      <SelectTrigger className="h-10 w-full bg-background border-border">
-                        <SelectValue placeholder="Select organization type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="Engineering College">Engineering College</SelectItem>
-                        <SelectItem value="School">School</SelectItem>
-                        <SelectItem value="Junior College">Junior College</SelectItem>
-                        <SelectItem value="Coaching Institute">Coaching Institute</SelectItem>
-                        <SelectItem value="Diploma Institute">Diploma Institute</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
                   <div>
                     <Label className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1 block">Phone Number</Label>
                     <Input
@@ -435,7 +403,7 @@ function DemoSuccessPageInner() {
                 <Button
                   onClick={handleSendOtp}
                   disabled={isSendingOtp || cooldown > 0}
-                  className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-6 text-lg font-bold shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] disabled:opacity-50 disabled:shadow-none"
+                  className="w-full bg-foreground hover:bg-zinc-700 dark:hover:bg-zinc-300 text-background py-6 text-lg font-bold transition-all disabled:opacity-50 disabled:shadow-none"
                 >
                   {isSendingOtp ? <><Spinner className="w-5 h-5 text-inherit" /> Sending…</> : cooldown > 0 ? `Resend available in ${cooldown}s` : "Send Verification Code"}
                 </Button>
@@ -447,7 +415,7 @@ function DemoSuccessPageInner() {
                   <InputOTP maxLength={6} value={otp} onChange={(val) => setOtp(val.replace(/\D/g, ""))} className="gap-1 sm:gap-2" inputMode="numeric" pattern="[0-9]*">
                     <InputOTPGroup className="gap-1 sm:gap-2">
                       {[0, 1, 2, 3, 4, 5].map((index) => (
-                        <InputOTPSlot key={index} index={index} className="w-10 h-12 sm:w-12 sm:h-14 bg-background border-border text-foreground text-lg sm:text-xl font-bold rounded-md ring-offset-background focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:border-emerald-500 transition-all" />
+                        <InputOTPSlot key={index} index={index} className="w-10 h-12 sm:w-12 sm:h-14 bg-background border-border text-foreground text-lg sm:text-xl font-bold rounded-md ring-offset-background focus-visible:ring-2 focus-visible:ring-foreground focus-visible:border-foreground transition-all" />
                       ))}
                     </InputOTPGroup>
                   </InputOTP>
@@ -455,7 +423,7 @@ function DemoSuccessPageInner() {
                   <Button
                     onClick={handleVerifyOtp}
                     disabled={otp.length !== 6 || isVerifying}
-                    className="w-full mt-6 bg-emerald-500 hover:bg-emerald-600 text-white py-6 text-lg font-bold shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] disabled:opacity-50 disabled:shadow-none disabled:hover:shadow-none disabled:bg-zinc-800 disabled:text-zinc-500 disabled:cursor-not-allowed"
+                    className="w-full mt-6 bg-foreground hover:bg-zinc-700 dark:hover:bg-zinc-300 text-background py-6 text-lg font-bold transition-all disabled:opacity-50 disabled:shadow-none disabled:hover:shadow-none disabled:bg-zinc-800 disabled:text-zinc-500 disabled:cursor-not-allowed"
                   >
                     {isVerifying ? (
                       <><Spinner className="w-5 h-5 text-inherit" /> Verifying…</>
@@ -493,7 +461,7 @@ function DemoSuccessPageInner() {
                 <div className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center overflow-hidden">
                   <Image src="/logo.png" alt="Classgrid Logo" width={24} height={24} className="w-6 h-6 object-contain" />
                 </div>
-                <p className="text-muted-foreground font-medium">Classgrid Platform</p>
+                <p className="text-muted-foreground font-medium">Classgrid AI</p>
               </div>
 
               <h1 className="text-2xl font-bold text-foreground mb-6">30 Min Meeting</h1>
@@ -569,7 +537,7 @@ function DemoSuccessPageInner() {
               </div>
 
               <p className="mt-8 text-xs text-muted-foreground leading-relaxed">
-                Book a session to get a personalized walkthrough of the Classgrid platform.
+                Book a session to get a personalized walkthrough of Classgrid AI.
               </p>
             </div>
 
@@ -721,7 +689,7 @@ function DemoSuccessPageInner() {
                     </div>
 
                     <div className="mt-auto pt-6">
-                      <a href="/" className="text-sm font-medium text-emerald-500 hover:text-emerald-400 flex items-center gap-2">
+                      <a href="/" className="text-sm font-medium text-foreground hover:text-foreground/70 flex items-center gap-2">
                         <ArrowRight className="w-4 h-4 rotate-180" /> Return Home
                       </a>
                     </div>
@@ -734,7 +702,7 @@ function DemoSuccessPageInner() {
                     <div className="flex flex-col gap-2">
                       {isLoadingSlots ? (
                         <div className="flex items-center justify-center py-8">
-                          <Spinner className="w-6 h-6 text-emerald-500" />
+                          <Spinner className="w-6 h-6 text-foreground" />
                         </div>
                       ) : availableSlots.length === 0 ? (
                         <div className="text-center py-8 px-4 text-muted-foreground border rounded-lg bg-muted/50 border-border">
@@ -752,7 +720,7 @@ function DemoSuccessPageInner() {
                               <Button
                                 onClick={handleConfirmMeeting}
                                 disabled={isConfirming}
-                                className="w-1/2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-6 rounded-lg shadow-sm animate-in slide-in-from-right-4 duration-200"
+                                className="w-1/2 bg-foreground hover:bg-zinc-700 dark:hover:bg-zinc-300 text-background font-bold py-6 rounded-lg shadow-sm animate-in slide-in-from-right-4 duration-200"
                               >
                                 {isConfirming ? <Spinner className="w-5 h-5 text-inherit" /> : "Confirm"}
                               </Button>
@@ -788,7 +756,7 @@ function DemoSuccessPageInner() {
           >
             <div className="relative text-center py-10 px-8 rounded-2xl border border-border bg-card/80 backdrop-blur-sm overflow-hidden shadow-xl">
               {/* Subtle top glow line */}
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-foreground/40 to-transparent" />
 
               {/* Animated checkmark */}
               <motion.div
@@ -828,7 +796,7 @@ function DemoSuccessPageInner() {
               </motion.p>
 
               {/* Subtle ambient glow */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-40 h-20 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-40 h-20 bg-foreground/5 rounded-full blur-3xl pointer-events-none" />
             </div>
           </motion.div>
         )}
@@ -850,12 +818,12 @@ function DemoSuccessPageInner() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 80, opacity: 0, scale: 0.96 }}
               transition={{ type: "spring", damping: 26, stiffness: 320, mass: 0.85 }}
-              className="relative w-full sm:max-w-md overflow-hidden bg-card border border-border rounded-t-3xl sm:rounded-2xl shadow-[0_-8px_40px_rgba(16,185,129,0.08),0_30px_80px_rgba(0,0,0,0.3)] dark:shadow-[0_-8px_40px_rgba(16,185,129,0.08),0_30px_80px_rgba(0,0,0,0.8)]"
+              className="relative w-full sm:max-w-md overflow-hidden bg-card border border-border rounded-t-3xl sm:rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.3)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.8)]"
             >
-              {/* Thin emerald line at top */}
-              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
+              {/* Thin line at top */}
+              <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-foreground/60 to-transparent" />
               {/* Ambient glow blob */}
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-48 h-24 bg-emerald-500/8 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-48 h-24 bg-foreground/5 rounded-full blur-3xl pointer-events-none" />
 
               {/* Close */}
               <motion.button
@@ -885,10 +853,10 @@ function DemoSuccessPageInner() {
                     <motion.div
                       animate={{ scale: [1, 1.18, 1], opacity: [0.35, 0.12, 0.35] }}
                       transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute inset-0 rounded-xl bg-emerald-500/30 blur-lg"
+                      className="absolute inset-0 rounded-xl bg-foreground/10 blur-lg"
                     />
-                    <div className="relative w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center">
-                      <MessageCircle className="w-5 h-5 text-emerald-400" />
+                    <div className="relative w-11 h-11 rounded-xl bg-foreground/5 border border-border flex items-center justify-center">
+                      <MessageCircle className="w-5 h-5 text-foreground" />
                     </div>
                   </div>
 
@@ -901,7 +869,7 @@ function DemoSuccessPageInner() {
                   transition={{ delay: 0.15, type: "spring", stiffness: 280 }}
                   className="text-[22px] font-bold text-foreground mb-2 tracking-tight leading-snug"
                 >
-                  Classgrid Talk
+                  Questions before the meeting?
                 </motion.h3>
 
                 {/* Description */}
@@ -911,7 +879,7 @@ function DemoSuccessPageInner() {
                   transition={{ delay: 0.22, type: "spring", stiffness: 280 }}
                   className="text-sm text-muted-foreground mb-5 leading-relaxed"
                 >
-                  Have questions before our meeting? Submit an inquiry and chat directly with a product specialist — get answers tailored to your institution&apos;s needs, <span className="text-foreground font-medium">right now</span>.
+                  Open a support ticket and our team will answer your questions about Classgrid AI (chat.classgrid.in).
                 </motion.p>
 
                 {/* Feature tags */}
@@ -921,7 +889,7 @@ function DemoSuccessPageInner() {
                   transition={{ delay: 0.28 }}
                   className="flex flex-wrap gap-2 mb-6"
                 >
-                  {["Direct inquiry", "Expert response", "Within 24h"].map((tag) => (
+                  {["Support ticket", "Expert response", "Within 24h"].map((tag) => (
                     <span key={tag} className="text-[11px] text-muted-foreground bg-muted border border-border rounded-full px-3 py-1 font-medium">
                       {tag}
                     </span>
@@ -936,17 +904,15 @@ function DemoSuccessPageInner() {
                   className="flex flex-col gap-2.5"
                 >
                   <a
-                    href="/support/inquiry"
+                    href="/support/ticket"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative w-full py-3.5 px-4 bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-bold rounded-xl text-center transition-all overflow-hidden group shadow-[0_0_24px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.55)]"
+                    className="relative w-full py-3.5 px-4 bg-foreground hover:bg-zinc-700 dark:hover:bg-zinc-300 text-background text-sm font-bold rounded-xl text-center transition-colors group"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      Submit an Inquiry
+                      Open a support ticket
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                     </span>
-                    {/* Shimmer sweep */}
-                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-600" />
                   </a>
                   <button
                     onClick={() => { setShowTalkPopup(false); setShowThankYou(true); }}

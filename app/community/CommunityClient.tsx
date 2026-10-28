@@ -10,16 +10,16 @@ export function CommunityClient() {
       <div className="flex-1">
         <section className="relative isolate overflow-hidden px-6 lg:px-8 py-16 sm:py-24">
           {/* Background Effects */}
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/10 via-background to-background" />
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-foreground/5 via-background to-background" />
           
           {/* Right Glow */}
           <div className="absolute top-0 right-0 -z-10 translate-x-1/3 -translate-y-1/4 transform-gpu blur-3xl sm:translate-x-1/2" aria-hidden="true">
-            <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#10b981] to-[#0ea5e9] opacity-20" style={{ clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" }}></div>
+            <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-foreground/30 to-foreground/10 opacity-20" style={{ clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" }}></div>
           </div>
 
           {/* Left Glow */}
           <div className="absolute top-0 left-0 -z-10 -translate-x-1/3 -translate-y-1/4 transform-gpu blur-3xl sm:-translate-x-1/2" aria-hidden="true">
-            <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#10b981] to-[#0ea5e9] opacity-20" style={{ clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" }}></div>
+            <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-foreground/30 to-foreground/10 opacity-20" style={{ clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" }}></div>
           </div>
 
           <div className="mx-auto max-w-4xl text-center">
@@ -30,7 +30,7 @@ export function CommunityClient() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
             >
-              The <span className="text-emerald-500">ClassGrid</span> Forum
+              The <span className="text-foreground">ClassGrid</span> Forum
             </motion.h1>
             
             <motion.p 
@@ -50,16 +50,16 @@ export function CommunityClient() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-left shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/50"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-left shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-foreground/30"
               >
-                {/* Extremely light emerald hover gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 opacity-0 transition-opacity duration-500 group-hover:from-emerald-500/5 group-hover:to-emerald-500/10 group-hover:opacity-100" />
+                {/* Extremely light hover gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:from-foreground/[0.02] group-hover:to-foreground/5 group-hover:opacity-100" />
                 
                 <div className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-emerald-500/20 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                    <MessagesSquare className="h-6 w-6 text-emerald-500" />
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 transition-all duration-500 group-hover:scale-110 group-hover:bg-foreground/10">
+                    <MessagesSquare className="h-6 w-6 text-foreground" />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-emerald-500">Public Discussions</h3>
+                  <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-foreground">Public Discussions</h3>
                   <p className="text-sm text-muted-foreground">Participate in dedicated discussion categories, ask questions, and learn how other institutions manage academics, operations, and communication workflows.</p>
                 </div>
               </motion.div>
@@ -69,15 +69,15 @@ export function CommunityClient() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-left shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/50"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-left shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-foreground/30"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 opacity-0 transition-opacity duration-500 group-hover:from-emerald-500/5 group-hover:to-emerald-500/10 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:from-foreground/[0.02] group-hover:to-foreground/5 group-hover:opacity-100" />
                 
                 <div className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-emerald-500/20 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                    <Sparkles className="h-6 w-6 text-emerald-500" />
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 transition-all duration-500 group-hover:scale-110 group-hover:bg-foreground/10">
+                    <Sparkles className="h-6 w-6 text-foreground" />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-emerald-500">Verified Member Badges</h3>
+                  <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-foreground">Verified Member Badges</h3>
                   <p className="text-sm text-muted-foreground">Verified students, teachers, and administrators on the ClassGrid platform will receive member badges. Non-platform users will also be able to join, browse discussions, and participate in the wider ClassGrid Community.</p>
                 </div>
               </motion.div>
@@ -87,15 +87,15 @@ export function CommunityClient() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-left shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/50"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 text-left shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-foreground/30"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 opacity-0 transition-opacity duration-500 group-hover:from-emerald-500/5 group-hover:to-emerald-500/10 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:from-foreground/[0.02] group-hover:to-foreground/5 group-hover:opacity-100" />
                 
                 <div className="relative z-10">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-emerald-500/20 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                    <BookOpen className="h-6 w-6 text-emerald-500" />
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 transition-all duration-500 group-hover:scale-110 group-hover:bg-foreground/10">
+                    <BookOpen className="h-6 w-6 text-foreground" />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-emerald-500">Share Feedback & Suggestions</h3>
+                  <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-foreground">Share Feedback & Suggestions</h3>
                   <p className="text-sm text-muted-foreground">Report issues, request new features, and share suggestions directly with the ClassGrid team as we continue improving the platform.</p>
                 </div>
               </motion.div>

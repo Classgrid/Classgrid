@@ -86,7 +86,7 @@ const ptComponents = {
       <ul className="list-disc pl-6 mb-6 space-y-2 text-muted-foreground">{children}</ul>
     ),
     number: ({ children }: any) => (
-      <ol className="list-decimal pl-6 mb-6 space-y-4 text-muted-foreground marker:text-emerald-600 dark:marker:text-emerald-500 marker:font-bold">
+      <ol className="list-decimal pl-6 mb-6 space-y-4 text-muted-foreground marker:text-foreground marker:font-bold">
         {children}
       </ol>
     ),
@@ -206,7 +206,7 @@ export default function ArticlePageClient({
   }
 
   return (
-    <main className="min-h-screen bg-background pb-24 selection:bg-emerald-500/30">
+    <main className="min-h-screen bg-background pb-24 selection:bg-foreground/20">
       {/* ── Mobile Nav Bar (only visible below lg) ── */}
       <div className="sticky top-16 z-40 flex w-full items-center justify-between border-b border-border/60 bg-background/95 px-4 py-3 backdrop-blur-sm lg:hidden">
         <button
@@ -258,7 +258,7 @@ export default function ArticlePageClient({
                       className={cn(
                         "block rounded-md px-3 py-2.5 text-[13px] leading-snug transition-colors",
                         isActive
-                          ? "bg-emerald-500/10 font-semibold text-emerald-500"
+                          ? "bg-foreground/10 font-semibold text-foreground"
                           : "text-muted-foreground hover:bg-accent hover:text-foreground"
                       )}
                     >
@@ -292,12 +292,12 @@ export default function ArticlePageClient({
                     href={`#${heading.id}`}
                     className={`block pl-4 py-2 text-sm transition-colors relative ${
                       isActive
-                        ? "text-emerald-600 dark:text-emerald-400 font-semibold"
+                        ? "text-zinc-900 dark:text-white font-semibold"
                         : "text-muted-foreground hover:text-zinc-900 dark:hover:text-zinc-200"
                     }`}
                   >
                     {isActive && (
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-500 rounded-r" />
+                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-zinc-900 dark:bg-white rounded-r" />
                     )}
                     {heading.title}
                   </a>
@@ -314,7 +314,7 @@ export default function ArticlePageClient({
         {/* TODO: Add a persistent search bar on article pages (like Claude Help Center) */}
         <article className="flex-1 max-w-[800px]">
           <div className="mb-2">
-            <span className="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold border bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20">
+            <span className="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold border bg-foreground/5 text-foreground border-border">
               {article.category || "General"}
             </span>
           </div>
@@ -324,11 +324,11 @@ export default function ArticlePageClient({
 
           <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-1.5">
-              <Eye className="w-4 h-4 text-emerald-500" />
+              <Eye className="w-4 h-4 text-foreground" />
               <span>{Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 }).format(viewCount)} views</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-emerald-500" />
+              <Clock className="w-4 h-4 text-foreground" />
               <span>3 min read</span>
             </div>
             {article.showDates !== false && article.lastUpdatedAt ? (
@@ -347,7 +347,7 @@ export default function ArticlePageClient({
           </div>
 
           {article.summary && (
-            <p className="text-muted-foreground text-base leading-relaxed mb-10 font-medium border-l-4 border-emerald-500/30 pl-4">
+            <p className="text-muted-foreground text-base leading-relaxed mb-10 font-medium border-l-4 border-foreground/30 pl-4">
               {extractLocaleString(article.summary, lang)}
             </p>
           )}
@@ -390,20 +390,20 @@ export default function ArticlePageClient({
                             </button>
                           </div>
                           <pre className="!mt-0 !rounded-t-none rounded-b-xl bg-zinc-950 border border-t-0 border-zinc-700 overflow-x-auto p-4">
-                            <code className="text-[13px] leading-6 text-emerald-300 font-mono">{children}</code>
+                            <code className="text-[13px] leading-6 text-zinc-100 font-mono">{children}</code>
                           </pre>
                         </div>
                       );
                     }
-                    return <code className="px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-emerald-600 dark:text-emerald-400 text-[13px] font-mono font-medium border border-zinc-200 dark:border-zinc-700" {...props}>{children}</code>;
+                    return <code className="px-1.5 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white text-[13px] font-mono font-medium border border-zinc-200 dark:border-zinc-700" {...props}>{children}</code>;
                   },
                   pre: ({ children }) => <>{children}</>,
                   ul: ({ children }) => <ul className="list-disc pl-6 mb-5 space-y-2 text-muted-foreground">{children}</ul>,
-                  ol: ({ children }) => <ol className="list-decimal pl-6 mb-5 space-y-3 text-muted-foreground marker:text-emerald-600 dark:marker:text-emerald-500 marker:font-bold">{children}</ol>,
-                  blockquote: ({ children }) => <blockquote className="border-l-4 border-emerald-500/40 pl-4 py-1 my-6 text-muted-foreground italic bg-emerald-500/5 rounded-r-lg pr-4">{children}</blockquote>,
+                  ol: ({ children }) => <ol className="list-decimal pl-6 mb-5 space-y-3 text-muted-foreground marker:text-foreground marker:font-bold">{children}</ol>,
+                  blockquote: ({ children }) => <blockquote className="border-l-4 border-foreground/40 pl-4 py-1 my-6 text-muted-foreground italic bg-foreground/5 rounded-r-lg pr-4">{children}</blockquote>,
                   strong: ({ children }) => <strong className="font-semibold text-zinc-900 dark:text-white">{children}</strong>,
                   hr: () => <hr className="my-10 border-zinc-200 dark:border-zinc-800" />,
-                  a: ({ href, children }) => <a href={href} className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium" target={href?.startsWith("http") ? "_blank" : undefined}>{children}</a>,
+                  a: ({ href, children }) => <a href={href} className="text-zinc-900 dark:text-white hover:underline font-medium" target={href?.startsWith("http") ? "_blank" : undefined}>{children}</a>,
                 }}
               >
                 {article.markdownBody}

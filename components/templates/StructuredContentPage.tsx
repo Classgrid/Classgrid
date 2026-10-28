@@ -138,21 +138,21 @@ type StructuredContentPageProps = {
 // ─────────────────────────────────────────────
 const LEFT_NAV = [
   {
-    section: "By Industry",
+    section: "Classgrid AI",
     items: [
-      { label: "School", href: "/solutions/for-schools", icon: School },
-      { label: "College", href: "/solutions/for-colleges", icon: GraduationCap },
-      { label: "Junior College", href: "/solutions/for-jr-colleges", icon: BookOpen },
-      { label: "Coaching", href: "/solutions/for-coaching", icon: Target },
-      { label: "Engineering", href: "/solutions/for-engineering", icon: Cpu },
+      { label: "Agent mode", href: "/solutions/for-schools", icon: School },
+      { label: "Project Mode", href: "/solutions/for-engineering", icon: Cpu },
+      { label: "Grids", href: "/solutions/for-colleges", icon: GraduationCap },
+      { label: "WhatsApp calls", href: "/solutions/for-jr-colleges", icon: BookOpen },
+      { label: "Research & data", href: "/solutions/for-coaching", icon: Target },
     ],
   },
   {
-    section: "By Role",
+    section: "Use cases",
     items: [
-      { label: "For Students", href: "/solutions/for-students", icon: Users },
-      { label: "For Teachers", href: "/solutions/for-teachers", icon: Presentation },
-      { label: "For Admins", href: "/solutions/for-admins", icon: ShieldCheck },
+      { label: "Documents & files", href: "/solutions/for-students", icon: Users },
+      { label: "Reminders & automation", href: "/solutions/for-teachers", icon: Presentation },
+      { label: "Email & calendar", href: "/solutions/for-admins", icon: ShieldCheck },
     ],
   },
 ];
@@ -195,7 +195,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
     <div className="border-b border-border last:border-0">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between py-4 text-left text-sm font-medium text-foreground hover:text-emerald-500 transition-colors"
+        className="flex w-full items-center justify-between py-4 text-left text-sm font-medium text-foreground hover:text-foreground/70 transition-colors"
       >
         <span>{question}</span>
         <span
@@ -433,7 +433,7 @@ function StructuredContentPageInner({
                         className={cn(
                           "block rounded-md px-3 py-2.5 text-[13px] leading-snug transition-colors",
                           activeSection === section.id
-                            ? "bg-emerald-500/10 font-semibold text-emerald-500"
+                            ? "bg-foreground/5 font-semibold text-foreground"
                             : "text-muted-foreground hover:bg-accent hover:text-foreground"
                         )}
                       >
@@ -504,7 +504,7 @@ function StructuredContentPageInner({
                                   className={cn(
                                     "block rounded-md px-2.5 py-2 text-[13px] leading-snug transition-colors",
                                     isActive
-                                      ? "bg-emerald-500/10 font-semibold text-emerald-500"
+                                      ? "bg-foreground/5 font-semibold text-foreground"
                                       : "text-muted-foreground hover:bg-accent hover:text-foreground"
                                   )}
                                 >
@@ -533,7 +533,7 @@ function StructuredContentPageInner({
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="group flex items-center gap-2.5 rounded-md px-2.5 py-2.5 text-[13px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                               >
-                                <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground/60 group-hover:text-emerald-500 transition-colors" />
+                                <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
                                 {label}
                               </Link>
                             </li>
@@ -575,7 +575,7 @@ function StructuredContentPageInner({
                         value={sidebarSearch}
                         onChange={(e) => setSidebarSearch(e.target.value)}
                         placeholder="Search modules..."
-                        className="h-8 w-full rounded-lg border border-border bg-muted/40 pl-3 pr-3 text-[12px] text-foreground placeholder:text-muted-foreground focus:border-emerald-500/50 focus:outline-none"
+                        className="h-8 w-full rounded-lg border border-border bg-muted/40 pl-3 pr-3 text-[12px] text-foreground placeholder:text-muted-foreground focus:border-foreground/40 focus:outline-none"
                       />
                     </div>
                     {/* Module list grouped by category */}
@@ -595,7 +595,7 @@ function StructuredContentPageInner({
                                     className={cn(
                                       "block rounded-md px-2.5 py-1.5 text-[12px] leading-snug transition-colors",
                                       isActive
-                                        ? "bg-emerald-500/10 font-semibold text-emerald-500"
+                                        ? "bg-foreground/5 font-semibold text-foreground"
                                         : "text-muted-foreground hover:bg-accent hover:text-foreground"
                                     )}
                                   >
@@ -623,7 +623,7 @@ function StructuredContentPageInner({
                                 href={href}
                                 className="group flex items-center gap-2.5 rounded-md px-2.5 py-2 text-[13px] text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                               >
-                                <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground/60 group-hover:text-emerald-500 transition-colors" />
+                                <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground/60 group-hover:text-foreground transition-colors" />
                                 {label}
                               </Link>
                             </li>
@@ -710,7 +710,7 @@ function StructuredContentPageInner({
                 <p className="text-sm text-muted-foreground">
                   Detailed documentation for <span className="font-medium text-foreground">{title}</span> is being
                   prepared by the Classgrid team. Check back soon{isPlatUser ? "." : (<>, or{" "}
-                  <Link href="/#demo" className="text-emerald-500 hover:underline">book a demo</Link>{" "}
+                  <Link href="/#demo" className="text-foreground hover:underline">book a demo</Link>{" "}
                   to see it live.</>)}
                 </p>
               </div>
@@ -733,7 +733,7 @@ function StructuredContentPageInner({
                         </>
                       )}
                       {section.content && (
-                        <div className="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:tracking-tight prose-h2:mb-6 prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-emerald-500 hover:prose-a:text-emerald-400 prose-img:rounded-xl prose-img:shadow-md">
+                        <div className="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:tracking-tight prose-h2:mb-6 prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-foreground hover:prose-a:text-foreground/70 prose-img:rounded-xl prose-img:shadow-md">
                           <PortableTextBlock value={Array.isArray(section.content) ? section.content : []} showAccentBars={false} />
                         </div>
                       )}
@@ -791,7 +791,7 @@ function StructuredContentPageInner({
                           </h2>
                         </>
                       )}
-                      <div className="solution-html-content prose prose-zinc dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:tracking-tight prose-h2:mb-6 prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-emerald-500 hover:prose-a:text-emerald-400 prose-img:rounded-xl">
+                      <div className="solution-html-content prose prose-zinc dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:tracking-tight prose-h2:mb-6 prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-foreground hover:prose-a:text-foreground/70 prose-img:rounded-xl">
                         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug, rehypeRaw]}>
                           {section.content || ""}
                         </ReactMarkdown>
@@ -804,7 +804,7 @@ function StructuredContentPageInner({
 
             {/* Markdown Body (Legacy Single String Format) */}
             {!markdownSections?.length && markdownBody && (
-              <div className="solution-html-content prose prose-zinc dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:tracking-tight prose-h2:mb-6 prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-emerald-500 hover:prose-a:text-emerald-400 prose-img:rounded-xl mb-20">
+              <div className="solution-html-content prose prose-zinc dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:tracking-tight prose-h2:mb-6 prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-foreground hover:prose-a:text-foreground/70 prose-img:rounded-xl mb-20">
                 <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSlug, rehypeRaw]}>
                   {markdownBody}
                 </ReactMarkdown>
@@ -813,7 +813,7 @@ function StructuredContentPageInner({
 
             {/* Rich Text Body */}
             {!markdownSections?.length && !markdownBody && body && (
-              <div className="prose prose-zinc max-w-none dark:prose-invert mb-20 prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-emerald-500 hover:prose-a:text-emerald-600 prose-img:rounded-xl">
+              <div className="prose prose-zinc max-w-none dark:prose-invert mb-20 prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-foreground hover:prose-a:text-foreground/70 prose-img:rounded-xl">
                 <PortableTextBlock value={body && typeof body === 'object' && !Array.isArray(body) ? ((body as any)[lang] || (body as any).en || []) : body} showAccentBars={false} />
               </div>
             )}
@@ -826,7 +826,7 @@ function StructuredContentPageInner({
                   Capabilities
                 </h2>
                 <p className="mb-6 text-sm text-muted-foreground">
-                  Core features included in this module for your institution.
+                  {mode === "solution" ? "What Classgrid AI does for you here." : "Core features included in this module for your institution."}
                 </p>
                 <VercelTable
                   columns={[
@@ -892,12 +892,12 @@ function StructuredContentPageInner({
                   {testimonials.map((t, i) => (
                     <blockquote
                       key={i}
-                      className="rounded-xl border border-border bg-card p-6 text-sm leading-relaxed text-muted-foreground transition-colors hover:border-emerald-500/30"
+                      className="rounded-xl border border-border bg-card p-6 text-sm leading-relaxed text-muted-foreground transition-colors hover:border-foreground/30"
                     >
                       <p className="mb-4 before:content-['\u201c'] after:content-['\u201d'] text-foreground font-medium">
                         {t.quote}
                       </p>
-                      <footer className="text-[12px] font-semibold uppercase tracking-widest text-emerald-500">
+                      <footer className="text-[12px] font-semibold uppercase tracking-widest text-foreground">
                         {t.author}
                         {t.role && <span className="ml-2 font-normal normal-case tracking-normal text-muted-foreground">— {t.role}</span>}
                       </footer>
@@ -940,14 +940,14 @@ function StructuredContentPageInner({
                     <Link
                       key={i}
                       href={article.articleSlug ? `/support/articles/${article.articleSlug}` : "/support"}
-                      className="flex items-start gap-3 rounded-xl border border-border bg-card px-5 py-4 transition-colors hover:border-emerald-500/40 hover:bg-accent group"
+                      className="flex items-start gap-3 rounded-xl border border-border bg-card px-5 py-4 transition-colors hover:border-foreground/30 hover:bg-accent group"
                     >
-                      <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                      <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                       <div>
-                        <p className="text-sm font-semibold text-foreground group-hover:text-emerald-500 transition-colors">{article.articleTitle}</p>
+                        <p className="text-sm font-semibold text-foreground group-hover:text-foreground/70 transition-colors">{article.articleTitle}</p>
                         {article.articleSummary && <p className="text-xs text-muted-foreground mt-0.5">{article.articleSummary}</p>}
                       </div>
-                      <ArrowRight className="ml-auto mt-0.5 h-4 w-4 shrink-0 text-muted-foreground group-hover:text-emerald-500 transition-colors" />
+                      <ArrowRight className="ml-auto mt-0.5 h-4 w-4 shrink-0 text-muted-foreground group-hover:text-foreground transition-colors" />
                     </Link>
                   ))}
                 </div>
@@ -962,7 +962,7 @@ function StructuredContentPageInner({
                 <div className="space-y-3">
                   {relatedChangelogs.map((entry, i) => {
                     const typeConfig: Record<string, { label: string; color: string }> = {
-                      feature: { label: '✨ New Feature', color: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20' },
+                      feature: { label: '✨ New Feature', color: 'bg-foreground/5 text-foreground border-foreground/15' },
                       bugfix: { label: '🐛 Bug Fix', color: 'bg-red-500/10 text-red-600 border-red-500/20' },
                       improvement: { label: '⚡ Improvement', color: 'bg-blue-500/10 text-blue-600 border-blue-500/20' },
                       security: { label: '🔒 Security', color: 'bg-orange-500/10 text-orange-600 border-orange-500/20' },
@@ -1001,7 +1001,7 @@ function StructuredContentPageInner({
         <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-56 shrink-0 overflow-y-auto border-l border-border/60 px-5 py-10 lg:block">
           {sections.length > 0 && (
             <>
-              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-500/80">
+              <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground/80">
                 On this page
               </p>
               <ul className="space-y-1">
@@ -1012,7 +1012,7 @@ function StructuredContentPageInner({
                       className={cn(
                         "block rounded-md px-2.5 py-1.5 text-[13px] transition-all duration-200",
                         activeSection === section.id
-                          ? "bg-emerald-500/10 font-semibold text-emerald-500"
+                          ? "bg-foreground/5 font-semibold text-foreground"
                           : "text-muted-foreground hover:text-foreground"
                       )}
                     >
@@ -1033,14 +1033,14 @@ function StructuredContentPageInner({
           <ul className="space-y-2 text-[13px]">
             {[
               { label: "Compare Platforms", href: "/compare" },
-              mode !== "module" ? { label: "All Modules", href: "/product/modules/smart-attendance" } : null,
+              mode !== "module" ? { label: "All Plugins", href: "/plugins" } : null,
               { label: "Pricing", href: "/pricing" },
               { label: "Help Center", href: "/support" },
             ].filter(Boolean).map(({ label, href }: any) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-emerald-500"
+                  className="flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <ArrowRight className="h-3 w-3 shrink-0" />
                   {label}

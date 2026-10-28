@@ -179,7 +179,7 @@ export function FeedbackWidget({ pageTitle, pageType = 'general', className, hid
                       onChange={(e) => setFeedbackText(e.target.value)}
                       placeholder="Your feedback... (**bold**, - lists supported)"
                       aria-label="Your feedback"
-                      className="w-full min-h-[80px] bg-white dark:bg-neutral-800 text-[13px] text-slate-900 dark:text-white placeholder:text-slate-400 border border-slate-300 dark:border-white/10 rounded-b-lg rounded-tr-lg p-3 outline-none focus:border-emerald-500 transition-colors resize-none"
+                      className="w-full min-h-[80px] bg-white dark:bg-neutral-800 text-[13px] text-slate-900 dark:text-white placeholder:text-slate-400 border border-slate-300 dark:border-white/10 rounded-b-lg rounded-tr-lg p-3 outline-none focus:border-foreground/40 transition-colors resize-none"
                     />
                   ) : (
                     <div className="w-full min-h-[80px] bg-white dark:bg-neutral-800 border border-slate-300 dark:border-white/10 rounded-b-lg rounded-tr-lg p-3">

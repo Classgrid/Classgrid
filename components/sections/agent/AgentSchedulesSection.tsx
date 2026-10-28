@@ -28,7 +28,7 @@ export function AgentSchedulesSection() {
 
           {/* Visual */}
           <Reveal delay={0.1} className="lg:order-1 lg:col-span-8">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-bl from-[#4fc1b0] via-[#5e9fe0] to-[#93a9f6] p-4 sm:p-6 md:aspect-[16/10] md:p-0 lg:aspect-[16/9] dark:from-[#0d4f49] dark:via-[#1b3d78] dark:to-[#363d8c]">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-bl from-[#d4d4d8] via-[#5e9fe0] to-[#93a9f6] p-4 sm:p-6 md:aspect-[16/10] md:p-0 lg:aspect-[16/9] dark:from-[#27272a] dark:via-[#1b3d78] dark:to-[#363d8c]">
               {/* Soft light blobs */}
               <div aria-hidden className="pointer-events-none absolute -right-16 -top-24 h-80 w-80 rounded-full bg-white/35 blur-3xl dark:bg-white/10" />
               <div aria-hidden className="pointer-events-none absolute -bottom-28 left-10 h-96 w-96 rounded-full bg-[#c7d2fe]/50 blur-3xl dark:bg-[#6366f1]/20" />

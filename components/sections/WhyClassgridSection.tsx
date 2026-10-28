@@ -42,15 +42,15 @@ export function WhyClassgridSection({
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {cards.map((card, index) => (
           <Reveal key={index} delay={index * 0.1}>
-            <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-emerald-100 bg-gradient-to-br from-[#f0fdf4] to-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/[0.05] dark:from-[#0a2418] dark:to-[#05130d] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)]">
+            <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-neutral-50 to-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/[0.05] dark:from-neutral-900 dark:to-neutral-950 dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)]">
               <div>
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-950/50">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-foreground/5 dark:bg-foreground/10">
                   <IconRenderer
                     iconName={card.icon || "Shield"}
-                    className="h-7 w-7 text-emerald-600 dark:text-emerald-400"
+                    className="h-7 w-7 text-foreground"
                   />
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-emerald-900 dark:text-emerald-50">
+                <h3 className="mb-3 text-xl font-bold text-foreground">
                   {card.title}
                 </h3>
                 <p className="text-base leading-relaxed text-muted-foreground">

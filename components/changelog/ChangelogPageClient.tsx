@@ -53,7 +53,7 @@ type ChangelogPageClientProps = {
 
 const UPDATE_TYPE_META: Record<string, { label: string; icon: any; color: string }> = {
   all:         { label: "All",         icon: Bell,          color: "border-border bg-card text-muted-foreground" },
-  feature:     { label: "New Feature", icon: Rocket,        color: "border-emerald-500/40 bg-emerald-500/10 text-emerald-400" },
+  feature:     { label: "New Feature", icon: Rocket,        color: "border-foreground/20 bg-foreground/5 text-foreground" },
   improvement: { label: "Improvement", icon: WandSparkles,  color: "border-sky-500/40 bg-sky-500/10 text-sky-400" },
   bugfix:      { label: "Bug Fix",     icon: Bug,           color: "border-orange-500/40 bg-orange-500/10 text-orange-400" },
   announcement:{ label: "Announcement",icon: Megaphone,     color: "border-purple-500/40 bg-purple-500/10 text-purple-400" },
@@ -83,7 +83,7 @@ export function ChangelogPageClient({ settings, entries, lang }: ChangelogPageCl
   // Derive module list from entries
   const moduleOptions = useMemo(() => {
     const set = new Set(entries.flatMap((e) => e.modules).filter(Boolean));
-    return [{ id: "all", label: "All Modules" }, ...Array.from(set).map((m) => ({ id: m, label: prettyModule(m) }))];
+    return [{ id: "all", label: "All Features" }, ...Array.from(set).map((m) => ({ id: m, label: prettyModule(m) }))];
   }, [entries]);
 
   // ── Filtering & sorting ───────────────────────────────────────────
@@ -182,7 +182,7 @@ export function ChangelogPageClient({ settings, entries, lang }: ChangelogPageCl
             <p className="text-muted-foreground">Try changing your filters to see more results.</p>
             <Button
               variant="outline"
-              className="mt-6 border-emerald-500/20 text-emerald-500 hover:bg-emerald-500/10"
+              className="mt-6 border-foreground/15 text-foreground hover:bg-foreground/5"
               onClick={resetFilters}
             >
               Clear Filters
@@ -220,7 +220,7 @@ export function ChangelogPageClient({ settings, entries, lang }: ChangelogPageCl
                     {/* Timeline gap */}
                     <div className="relative hidden w-8 md:block">
                       {/* Timeline dot aligned to the absolute vertical line (left-[7.5rem]) */}
-                      <div className="absolute top-7 -ml-[5px] h-2.5 w-2.5 rounded-full border-2 border-emerald-500 bg-background transition-all group-hover:bg-emerald-500 group-hover:scale-125" />
+                      <div className="absolute top-7 -ml-[5px] h-2.5 w-2.5 rounded-full border-2 border-foreground bg-background transition-all group-hover:bg-foreground group-hover:scale-125" />
                     </div>
 
                     {/* RIGHT — content */}

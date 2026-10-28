@@ -17,7 +17,7 @@ type DocumentHeroProps = {
 
 export function DocumentHero({
   badgeLabel,
-  badgeDotColor = "bg-emerald-500",
+  badgeDotColor = "bg-foreground",
   title,
   authorRow,
   subtitles = [],

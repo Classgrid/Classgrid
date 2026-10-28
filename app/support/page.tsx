@@ -3,7 +3,7 @@ import SupportPageClient from "./SupportPageClient";
 
 export const metadata = {
   title: "Support | Classgrid",
-  description: "Technical assistance and operational support for institutions on Classgrid.",
+  description: "Get help with Classgrid AI at chat.classgrid.in. Open a support ticket and our team will reply.",
 };
 
 type SupportPageProps = {

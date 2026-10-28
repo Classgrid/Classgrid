@@ -1,0 +1,256 @@
+{
+  "slug": "email-and-calendar",
+  "order": 5,
+  "menuGroup": "useCase",
+  "menuLabel": "Email & calendar",
+  "menuDescription": "Inbox, meetings, proposals and notes",
+  "eyebrow": "Email and calendar",
+  "headline": "Your inbox and week, handled",
+  "subheadline": "Catch up on email, check your week, send proposals and turn meeting notes into action, all from one chat.",
+  "primaryCta": { "label": "Use Agent", "href": "https://chat.classgrid.in" },
+  "demoHeading": "Hand it the busy work. Watch it get done.",
+  "demoTabs": [
+    {
+      "label": "Morning catch-up",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Monday catch-up",
+          "userMessage": "Read my unread emails from today",
+          "workedFor": "Worked for 32s",
+          "steps": [
+            "Gmail · Read 14 unread emails",
+            "Google Calendar · Listed 3 events"
+          ],
+          "resultLines": [
+            "3 need a reply today: Riya, Arjun and Neha.",
+            "The rest are newsletters and receipts."
+          ]
+        },
+        "floating": {
+          "kind": "schedule",
+          "title": "Tomorrow",
+          "badge": "3 events",
+          "rows": [
+            { "label": "10:00", "value": "Team stand-up" },
+            { "label": "13:00", "value": "Lunch with Arjun" },
+            { "label": "16:00", "value": "Client call · Meet link" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Proposal",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Website proposal",
+          "userMessage": "Draft a proposal for a 6-week website build as a PDF and send it to riya@example.com from my Gmail",
+          "workedFor": "Worked for 48s",
+          "steps": [
+            "Wrote a 2-page proposal",
+            "Built proposal.pdf",
+            "Gmail · Sent to riya@example.com"
+          ],
+          "resultLines": [
+            "Your proposal is sent from your Gmail."
+          ]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 1 file",
+          "subtitle": "Sent from your Gmail",
+          "files": [
+            { "name": "proposal.pdf", "size": "2 pages" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Hand it off",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Email to agent@classgrid.in",
+          "userMessage": "Compare 3 CRM tools for us and send me a PDF",
+          "workedFor": "Worked for 6m 40s",
+          "steps": [
+            "Searched the web",
+            "Compared 3 tools",
+            "Built crm-comparison.pdf"
+          ],
+          "resultLines": [
+            "Result sent to your WhatsApp and the chat."
+          ]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. Your CRM comparison is ready: crm-comparison.pdf",
+          "time": "4:12 PM"
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "Email and calendar, handled",
+      "text": "Connect Gmail or Outlook and your calendar. Ask what needs a reply, get a draft, and send it from your own account. Check your week and add new meetings with a Meet or Zoom link.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Inbox check",
+          "userMessage": "Which emails need a reply today?",
+          "workedFor": "Worked for 21s",
+          "steps": [
+            "Gmail · Read 14 unread emails",
+            "Wrote 3 reply drafts"
+          ],
+          "resultLines": [
+            "Riya: invoice question",
+            "Arjun: contract",
+            "Neha: meeting time"
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Created: Client call",
+          "subtitle": "Thu 4:00 PM · Meet link",
+          "tone": "success"
+        }
+      }
+    },
+    {
+      "title": "Hand off work and walk away",
+      "text": "Email the task to agent@classgrid.in from your sign-up email, or call the agent on WhatsApp. It works in the background for up to 48 hours and asks you on WhatsApp if it needs something. When it's done, it sends you the result.",
+      "visual": {
+        "main": {
+          "kind": "list",
+          "title": "New email",
+          "rows": [
+            { "label": "From", "value": "arjun@example.com" },
+            { "label": "To", "value": "agent@classgrid.in" },
+            { "label": "Subject", "value": "Compare 3 CRM tools for us" }
+          ]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. Your CRM comparison is ready: crm-comparison.pdf",
+          "time": "4:12 PM"
+        }
+      }
+    },
+    {
+      "title": "Your team chat and shared AI chats",
+      "text": "Make a group on Grids for quick decisions and polls. Ask the agent to catch you up on what your group said today, and it asks before it posts anything. Draft the pitch together in one shared AI chat with up to 3 other people.",
+      "visual": {
+        "main": {
+          "kind": "poll",
+          "question": "Launch date?",
+          "options": [
+            { "label": "Mon 15 Nov", "votes": 3 },
+            { "label": "Mon 22 Nov", "votes": 1 }
+          ]
+        },
+        "floating": {
+          "kind": "people",
+          "title": "People · 3 of 4",
+          "people": ["Arjun", "Neha", "Riya"],
+          "note": "Agent is responding to Neha. You can send when it's done."
+        }
+      }
+    },
+    {
+      "title": "Meeting notes and proposals",
+      "text": "Turn meeting notes into a Notion page or a Slack message. Write a proposal and get it as a polished PDF. Then send it from your own email.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Weekly sync",
+          "userMessage": "Write meeting notes and action items.",
+          "workedFor": "Worked for 18s",
+          "steps": [
+            "Wrote the notes",
+            "Notion · Created a page"
+          ],
+          "resultLines": [
+            "Riya: send the new price sheet",
+            "Arjun: fix the signup bug",
+            "Neha: book the client call"
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Page created",
+          "subtitle": "Meeting notes, 27 Oct",
+          "tone": "success"
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Works with the apps you already use",
+  "plugins": [
+    { "name": "Gmail", "line": "Read, reply and send from your account" },
+    { "name": "Microsoft Outlook", "line": "Read and send email, create meetings" },
+    { "name": "Google Calendar", "line": "See your week, add events" },
+    { "name": "Google Drive", "line": "Find and read files, save new ones" },
+    { "name": "Slack", "line": "Read and post messages, create canvases" },
+    { "name": "Notion", "line": "Search, create and update pages" },
+    { "name": "Microsoft Teams", "line": "Read and post in channels and chats" },
+    { "name": "Zoom", "line": "List and create meetings" }
+  ],
+  "tasksHeading": "Try one of these",
+  "exampleTasks": [
+    "Read my unread emails from today",
+    "What's on my calendar for tomorrow?",
+    "When am I free next week?",
+    "Search my Notion for recent strategy docs",
+    "Write meeting notes and action items.",
+    "Draft a project proposal.",
+    "Create a PDF report in minutes.",
+    "Get reminders on WhatsApp."
+  ],
+  "faqs": [
+    {
+      "question": "Can people work on it together?",
+      "answer": "Each person signs up with their own email. You work together with Grids groups and Share Grid, which is one AI chat for up to 4 people. It's free to start, and you top up when you need more."
+    },
+    {
+      "question": "Does it send email as me?",
+      "answer": "Yes. When you connect Gmail or Outlook, it sends from your own account. Without them, the agent can still send you email from agent@classgrid.in."
+    },
+    {
+      "question": "Can it move or cancel my meetings?",
+      "answer": "Not yet. It can list your events and create new ones."
+    },
+    {
+      "question": "How do I give it a task by email?",
+      "answer": "Email agent@classgrid.in from the email you signed up with. It replies, works on the task and sends you the result."
+    },
+    {
+      "question": "Can it keep working when I'm offline?",
+      "answer": "Yes. Long tasks run in the background for up to 48 hours. The result is sent to your WhatsApp and to the chat."
+    },
+    {
+      "question": "Can I disconnect apps?",
+      "answer": "Yes. You can disconnect any app from Plugins and delete any chat at any time."
+    }
+  ],
+  "plainEnglishHeading": "What it can do, in plain English",
+  "plainEnglish": [
+    "Classgrid AI is like an extra helper for your email and your week. You type what you need in plain words, and the agent does the work. It can read, write, plan and send things for you. You don't need to learn any new software to use it.",
+    "Connect your Gmail or Outlook, and the agent can read your inbox for you. Ask it which emails need a reply today, and it gives you a short list. It can write a reply and send it from your own account when you say so. It can also read the files attached to an email.",
+    "Connect Google Calendar and ask what your week looks like. The agent lists your meetings and tells you when you are free. It can add a new meeting, with a Google Meet link if you want one. It can also make Zoom or Outlook meetings. It can't move or cancel a meeting yet, so you still do that yourself.",
+    "Need a proposal, a quote or a short report? Tell the agent what it is about, and it writes it and turns it into a clean PDF. It can then email that PDF from your Gmail, with the file attached. You can read it first and ask for changes before anything is sent.",
+    "After a meeting, paste your rough notes or upload a voice note. The agent turns them into clear notes with action items and a name next to each one. It can save them as a Notion page or post them in a Slack channel. Everyone sees the same notes without anyone typing them again.",
+    "You don't have to sit and watch. Email the task to agent@classgrid.in from the email you signed up with, or call the agent on WhatsApp. It keeps working in the background for up to 48 hours. If it needs something, it asks you on WhatsApp, and it sends you the result when it's done.",
+    "Want a nudge at a set time? A schedule can send you a reminder you write, by email or WhatsApp. It sends the same words you set, once or on the days you pick. It does not write a fresh summary each time.",
+    "Your team chat can live in a Grids group, with quick polls for decisions. The agent can catch you up on what your group said in the last couple of hours. It always shows you a draft and asks before it posts anything to the group. For bigger work, up to 4 people can share one AI chat and build the answer together.",
+    "Each person signs up with their own email. You can connect or disconnect apps at any time from Plugins. You can delete any chat whenever you want. It is free to start, and you top up only when you need more."
+  ],
+  "seo": {
+    "title": "AI assistant for email and calendar | Classgrid AI",
+    "description": "Catch up on email, check your week, draft proposals as PDFs and turn meeting notes into action with one AI agent. Free to start."
+  }
+}

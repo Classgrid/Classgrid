@@ -84,7 +84,7 @@ export function TeamVisionSection({
         </Reveal>
 
         {/* BlueprintBox is FIXED — only content inside slides */}
-        <BlueprintBox maxWidth="max-w-[1200px]" className="mt-12 py-4 px-2 md:px-8 bg-slate-200 dark:bg-emerald-950/25 border-slate-300">
+        <BlueprintBox maxWidth="max-w-[1200px]" className="mt-12 py-4 px-2 md:px-8 bg-slate-200 dark:bg-foreground/5 border-slate-300">
           {/* Overflow hidden clips the sliding text track */}
           <div className="overflow-hidden w-full" style={{ contain: 'layout' }}>
             {/* Spring track — same pattern as testimonial-carousel-v2 */}
@@ -105,7 +105,7 @@ export function TeamVisionSection({
                     {/* Quote SVG at top — fixed position inside card */}
                     <div className="mb-4">
                       <Quote
-                        className="h-14 w-14 rotate-180 text-emerald-500/30 dark:text-emerald-400/20"
+                        className="h-14 w-14 rotate-180 text-foreground/20"
                         fill="currentColor"
                       />
                     </div>
@@ -118,7 +118,7 @@ export function TeamVisionSection({
                     {/* Author section */}
                     <div className="mt-6 flex flex-col items-center gap-2">
                       {/* Always show avatar — photo from Sanity or initials fallback */}
-                      <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-emerald-500/30 bg-emerald-950/60">
+                      <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-foreground/20 bg-foreground/10">
                         {quote.avatarUrl ? (
                           <img
                             src={quote.avatarUrl}
@@ -126,18 +126,18 @@ export function TeamVisionSection({
                             className="h-full w-full object-cover object-center"
                           />
                         ) : (
-                          <div className="flex h-full w-full items-center justify-center text-lg font-bold text-emerald-400">
+                          <div className="flex h-full w-full items-center justify-center text-lg font-bold text-foreground">
                             {quote.name ? quote.name.charAt(0).toUpperCase() : "C"}
                           </div>
                         )}
                       </div>
                       {/* Green line divider */}
-                      <div className="h-[2px] w-10 rounded-full bg-emerald-500" />
+                      <div className="h-[2px] w-10 rounded-full bg-foreground" />
                       <div>
                         <h4 className="text-base font-bold text-foreground">
                           {quote.name}
                         </h4>
-                        <p className="text-sm text-emerald-500 dark:text-emerald-400 font-medium">
+                        <p className="text-sm text-foreground/70 font-medium">
                           {quote.role}
                         </p>
                       </div>
@@ -160,7 +160,7 @@ export function TeamVisionSection({
                 className={cn(
                   "rounded-full transition-all duration-300",
                   i === current
-                    ? "h-2.5 w-8 bg-emerald-500"
+                    ? "h-2.5 w-8 bg-foreground"
                     : "h-2.5 w-2.5 bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
                 )}
               />

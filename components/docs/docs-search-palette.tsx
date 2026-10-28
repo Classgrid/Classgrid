@@ -15,6 +15,12 @@ type SearchResult = {
 
 const CATEGORY_LABELS: Record<string, string> = {
   "getting-started": "Getting Started",
+  "agent-mode": "Agent mode",
+  "project-mode": "Project Mode",
+  "grids": "Grids",
+  "whatsapp": "WhatsApp",
+  "plugins": "Plugins",
+  "account": "Account",
   "platform-guides": "Platform Guides",
   "api-reference": "API Reference",
   "admin-setup": "Administrator Setup",
@@ -127,7 +133,7 @@ export function DocsSearchPalette({
     const parts = text.split(regex);
     return parts.map((part, i) =>
       regex.test(part) ? (
-        <mark key={i} className="bg-emerald-500/25 text-emerald-300 rounded-sm px-0.5">
+        <mark key={i} className="bg-foreground/15 text-foreground rounded-sm px-0.5">
           {part}
         </mark>
       ) : (
@@ -225,7 +231,7 @@ export function DocsSearchPalette({
                       >
                         <FileText className={cn(
                           "mt-0.5 h-4 w-4 shrink-0 transition-colors",
-                          activeIndex === index ? "text-emerald-400" : "text-slate-900 dark:text-white/30"
+                          activeIndex === index ? "text-foreground" : "text-slate-900 dark:text-white/30"
                         )} />
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-2">
@@ -250,7 +256,7 @@ export function DocsSearchPalette({
                         <ArrowRight className={cn(
                           "mt-1 h-3.5 w-3.5 shrink-0 transition-all",
                           activeIndex === index
-                            ? "text-emerald-400 translate-x-0 opacity-100"
+                            ? "text-foreground translate-x-0 opacity-100"
                             : "text-slate-900 dark:text-white/20 -translate-x-1 opacity-0"
                         )} />
                       </button>

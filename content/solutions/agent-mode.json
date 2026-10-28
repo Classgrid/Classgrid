@@ -1,0 +1,256 @@
+{
+  "slug": "agent-mode",
+  "order": 1,
+  "menuGroup": "product",
+  "menuLabel": "Agent mode",
+  "menuDescription": "One agent for everyday work",
+  "eyebrow": "Agent mode",
+  "headline": "One agent. Real work done.",
+  "subheadline": "Search the web, read your files, run code, make documents and websites, and keep working in the background, all from one chat.",
+  "primaryCta": { "label": "Use Agent", "href": "https://chat.classgrid.in" },
+  "demoHeading": "Watch the agent do the work",
+  "demoTabs": [
+    {
+      "label": "Analyse a file",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "fileChips": ["sales-q3.xlsx"],
+          "userMessage": "Analyse this and send me a PDF report with charts",
+          "workedFor": "Worked for 2m 14s",
+          "steps": ["Read sales-q3.xlsx", "Ran Python", "Drew 2 charts", "Built report.pdf"],
+          "resultLines": [
+            "Sales grew every month this quarter.",
+            "September was the best month."
+          ]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 3 files",
+          "files": [
+            { "name": "report.pdf" },
+            { "name": "charts/by_month.png" },
+            { "name": "data/clean.csv" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Build a website",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "userMessage": "Build me a simple, modern one-page personal portfolio website.",
+          "workedFor": "Worked for 1m 32s",
+          "steps": ["Wrote index.html", "Generated 1 image", "Published"],
+          "resultLines": ["Live at https://aditi.sites.classgrid.in"]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Published",
+          "subtitle": "aditi.sites.classgrid.in",
+          "tone": "success"
+        }
+      }
+    },
+    {
+      "label": "Set a reminder",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "userMessage": "Help me set up a daily WhatsApp reminder. Ask me what time and what it should say.",
+          "workedFor": "Worked for 18s",
+          "steps": [
+            "Asked: What time? You picked 9:00 PM",
+            "Asked: What should it say?",
+            "Made the reminder"
+          ],
+          "resultLines": ["Done. Every day at 9:00 PM: Drink water and plan tomorrow."]
+        },
+        "floating": {
+          "kind": "schedule",
+          "title": "Daily reminder",
+          "badge": "Active",
+          "rows": [
+            { "label": "Repeats", "value": "Every day, 9:00 PM" },
+            { "label": "Sends to", "value": "WhatsApp and email" },
+            { "label": "Message", "value": "Drink water and plan tomorrow" }
+          ]
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "Tools that actually do the work",
+      "text": "The agent searches the web with sources, reads any file, writes and runs code, makes images and PDFs, publishes websites and sends email. It picks the right tool for each step and shows you what it did.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "fileChips": ["survey.pdf"],
+          "userMessage": "Read this, make a chart and email me a PDF summary",
+          "workedFor": "Worked for 1m 48s",
+          "steps": ["Read survey.pdf", "Ran Python", "Drew a chart", "Built summary.pdf"],
+          "resultLines": ["Sent summary.pdf to aditi@example.com"]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 2 files",
+          "files": [{ "name": "summary.pdf" }, { "name": "chart.png" }]
+        }
+      }
+    },
+    {
+      "title": "Answers you can use, not just read",
+      "text": "Answers come as real cards: charts, diagrams, flashcards, quizzes you can tap, day planners, live weather, stock prices, maps and countdowns. The agent can even build small interactive tools for you, like a poll or a calculator.",
+      "visual": {
+        "main": {
+          "kind": "chart",
+          "title": "Sales by month",
+          "bars": [
+            { "label": "Jul", "value": 42 },
+            { "label": "Aug", "value": 55 },
+            { "label": "Sep", "value": 68 }
+          ]
+        },
+        "floating": {
+          "kind": "flashcard",
+          "counter": "3 / 12",
+          "question": "How do you say \"thank you\" in Spanish?",
+          "answer": "Gracias"
+        }
+      }
+    },
+    {
+      "title": "Works while you're away",
+      "text": "Give it a long job and close the tab. The agent keeps going for up to 48 hours, asks you on WhatsApp if it needs something, and sends the result when it's done. Hand off work by email to agent@classgrid.in or by a WhatsApp call, and set reminders that arrive by email and WhatsApp at the time you choose.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "userMessage": "Compare the websites of our 3 competitors and send me a PDF when it's done",
+          "workedFor": "Worked for 6m 40s",
+          "steps": [
+            "Opened 3 websites",
+            "Asked you a question on WhatsApp",
+            "Built comparison.pdf"
+          ],
+          "resultLines": ["Task completed. Sent to your WhatsApp."]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. Your competitor comparison is ready: chat.classgrid.in/…",
+          "time": "9:12"
+        }
+      }
+    },
+    {
+      "title": "Your apps and your choice of model",
+      "text": "Connect 21 apps from the AI Hub and the agent works inside them as you. Let Auto pick the model for each message, or choose from Claude, DeepSeek and more.",
+      "visual": {
+        "main": {
+          "kind": "list",
+          "title": "Choose a model",
+          "rows": [
+            { "label": "Auto", "value": "Picks the best model for each message" },
+            { "label": "Claude Sonnet 5.5" },
+            { "label": "Claude Opus 5.5" },
+            { "label": "DeepSeek V4 Pro" }
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Gmail connected",
+          "subtitle": "The agent can read and send your email",
+          "tone": "success"
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Works inside 21 apps",
+  "plugins": [
+    { "name": "Gmail", "line": "Search, read and send your emails" },
+    { "name": "Google Drive", "line": "Find, read and upload your files" },
+    { "name": "Google Calendar", "line": "See your day and add events" },
+    { "name": "Notion", "line": "Search, read, create and update pages" },
+    { "name": "Slack", "line": "Read and send messages in channels" },
+    { "name": "GitHub", "line": "Read code, open issues and pull requests" },
+    { "name": "Google Classroom", "line": "Read courses and post announcements" },
+    { "name": "Google Meet", "line": "Create meetings with a Meet link" },
+    { "name": "Google Forms", "line": "Make forms and read the responses" },
+    { "name": "Microsoft Outlook", "line": "Read and send email, create meetings" },
+    { "name": "Microsoft Teams", "line": "Read and send channel messages" },
+    { "name": "Zoom", "line": "List and create Zoom meetings" },
+    { "name": "WhatsApp Business", "line": "Send texts from your Business account" },
+    { "name": "Vercel", "line": "Create projects and deploy branches" },
+    { "name": "Canva", "line": "Create new designs and export them" },
+    { "name": "Spotify", "line": "Search music and control playback" },
+    { "name": "YouTube", "line": "Search videos and read comments" },
+    { "name": "Supabase", "line": "Run SQL queries on your projects" },
+    { "name": "Sanity CMS", "line": "Query, create and update documents" },
+    { "name": "Facebook Pages", "line": "Publish posts and reply to comments" },
+    { "name": "Instagram Business", "line": "Publish image posts and read insights" }
+  ],
+  "tasksHeading": "Try one of these",
+  "exampleTasks": [
+    "Analyse a file in seconds.",
+    "Search the web with sources.",
+    "Draw a chart from your data.",
+    "Create a PDF report in minutes.",
+    "Build and host a website.",
+    "Get reminders on WhatsApp.",
+    "Turn a voice note into text.",
+    "Write Python and run it for you."
+  ],
+  "faqs": [
+    {
+      "question": "What can the agent do?",
+      "answer": "Search the web with sources, read your files, run Python, make charts, images, PDFs and websites, work in your connected apps, and keep working in the background on long tasks."
+    },
+    {
+      "question": "Which models can I use?",
+      "answer": "Auto picks one for each message. Or choose Claude Haiku, Sonnet, Opus or Fable, DeepSeek V4, or open models like Kimi, GLM, Qwen and Llama."
+    },
+    {
+      "question": "How do reminders work?",
+      "answer": "You set the time and the message. At that time it's sent to your email, and to WhatsApp if you verified your number. It can be once, daily, weekly or on the days you choose."
+    },
+    {
+      "question": "Can it keep working after I close the tab?",
+      "answer": "Yes. Long tasks run for up to 48 hours and send the result to WhatsApp and the chat."
+    },
+    {
+      "question": "Can I keep a chat private?",
+      "answer": "Yes. Incognito chats aren't saved to your history, and they're deleted when you close them."
+    },
+    {
+      "question": "Is it free to start?",
+      "answer": "Yes. Sign up with your email. Top up only when you need more."
+    }
+  ],
+  "plainEnglishHeading": "What Agent mode can do, in plain English",
+  "plainEnglish": [
+    "Agent mode is the main chat in Classgrid AI at chat.classgrid.in. You open it, type what you want in normal words, and the agent does the work for you. It is not only a chatbot that answers questions. It can search, read, write, make files, build small websites, send emails and keep working on a job in the background, and it comes back to you when the job is done.",
+    "It can look things up on the internet for you. When it answers from the web, it puts small numbers next to its sentences, and each number links to the page it read, so you can check where every fact came from. If you give it a link, it can open that page and read the whole thing, even a long one, and then explain it, summarise it or pull out what you need.",
+    "It can read your files. You can drop in a PDF, a Word file, a PowerPoint (it also reads the speaker notes), an Excel sheet, a CSV, a plain text file, a photo or a voice recording, up to six files in one message. It understands what is inside, so you can ask it to turn a long document into notes, find the important numbers in a report, explain a chart in a photo, or turn a voice note into written text.",
+    "It can make things for you, not just talk about them. It can draw an image from your idea, like a poster or a thumbnail. It can write and run real Python or JavaScript code on its own safe computer, so it can clean a messy spreadsheet, do the maths, draw charts and build files. It can hand you back finished files you can download: a PDF report, a Word document, a PowerPoint deck, an Excel sheet, or even a trimmed video or an audio clip.",
+    "It can build a simple website and put it live for you. You describe the site, the agent writes it, and it publishes it at your own address like yourname.sites.classgrid.in, all inside one chat. This is great for a portfolio, a landing page for an idea, or a small event page.",
+    "Its answers are not only plain text. When it helps, it shows proper cards inside the chat: charts and diagrams, flashcards you can flip, quizzes you can tap to answer, a day-by-day planner with tick-boxes, a countdown to a date, live weather, a live stock price, a map with a pin, star ratings and score bars, and even small interactive cards it builds itself, like a poll, a calculator or a quick game. Maths is shown with proper symbols, the way it looks in print.",
+    "It can work for you in the background, for a long time. If a job needs waiting, like waiting for your reply or for a later time, the agent can pause, wake up later and carry on, for up to two days. When it finishes, it tells you \"Task completed\" and gives you the link to the chat. You can also email your work to its own address, agent@classgrid.in, and it will pick it up and work on it.",
+    "It can send you reminders. You can ask it to remind you once, every day, every week or on the days you pick. At that time you get the reminder by email, and on WhatsApp too if you have verified your number. The reminder text is written when you set it up, so it is perfect for \"pay the electricity bill tonight\" or \"call the client at 4\", not for fresh news every morning.",
+    "It can work inside the apps you already use, once you connect them from the AI Hub. With Gmail it can read and send your emails. With Google Drive it can find and read your files. With Google Calendar it can tell you your day and add events. It also connects to Notion, Slack, GitHub, Google Classroom, Google Meet, Google Forms, Outlook, Microsoft Teams, Zoom, Canva, Spotify, YouTube, Supabase, Sanity, Facebook Pages, Instagram Business, Vercel and WhatsApp Business. You can see all of them on the Plugins page.",
+    "You choose how smart or how fast it should be. \"Auto\" picks the best model for each message by itself, or you can pick one yourself: Claude (Haiku, Sonnet, Opus and the most powerful one, Fable), DeepSeek, and more than ten other well-known models. You can switch any time, even in the middle of a chat.",
+    "It keeps your work tidy and private. Every file you upload or the agent makes is saved in your Library, where you can search and sort them. You can teach the agent about yourself, like your name, your job and how you like answers, and it will remember that in every chat. If you want a chat that is not saved at all, you can open an Incognito chat, and it disappears when you close it. You can delete any chat and disconnect any app whenever you want.",
+    "You can also reach the agent on WhatsApp. After you verify your number, you can call the Classgrid number on WhatsApp, tell it what you need, hang up, and get the result back on WhatsApp. You can share any chat as a read-only link, or invite up to three other people into the same chat so you all work with the agent together.",
+    "In short: Agent mode is like having a smart helper who can research, read, write, calculate, design, build and remind, all from one chat box, and who keeps going even after you close the tab. It is free to start, and you top up only when you need more."
+  ],
+  "seo": {
+    "title": "Agent mode: an AI agent that does real work | Classgrid AI",
+    "description": "Search with sources, read files, run code, make charts, PDFs and websites, use your apps and keep working for up to 48 hours. Free to start."
+  }
+}

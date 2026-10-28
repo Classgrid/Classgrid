@@ -143,7 +143,7 @@ export default function MyRequestsPage() {
   const isCheckingSession = status === "loading";
 
   return (
-    <main className="min-h-screen bg-background py-24 px-4 md:px-12 selection:bg-emerald-500/30 transition-colors duration-300">
+    <main className="min-h-screen bg-background py-24 px-4 md:px-12 selection:bg-foreground/20 transition-colors duration-300">
       <div className="max-w-[960px] mx-auto">
         
         {isCheckingSession || !isAuthenticated ? (
@@ -162,7 +162,7 @@ export default function MyRequestsPage() {
           >
             {/* ── Support ID Card (Brevo-style) ── */}
             <div className="relative mb-10 overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent" />
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
               <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <div className="min-w-0">
                   <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -175,7 +175,7 @@ export default function MyRequestsPage() {
                     ) : (
                       <div className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase text-orange-600 dark:text-orange-400">
                         <MessageSquare className="h-3 w-3" />
-                        Classgrid Talk
+                        Not a user
                       </div>
                     )}
                   </div>
@@ -183,7 +183,7 @@ export default function MyRequestsPage() {
                     My requests
                   </h1>
                   <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                    Tracking conversations for <span className="font-mono font-semibold text-emerald-600 dark:text-emerald-400">{email}</span>
+                    Tracking conversations for <span className="font-mono font-semibold text-foreground">{email}</span>
                   </p>
                   <Button 
                     onClick={handleLogout} 
@@ -198,12 +198,12 @@ export default function MyRequestsPage() {
                 </div>
 
                 <Link
-                  href={isPlatformUser ? "/support/ticket" : "/support/inquiry"}
-                  className="group relative inline-flex h-12 shrink-0 items-center justify-center gap-2 overflow-hidden rounded-xl bg-emerald-500 px-5 text-sm font-bold text-zinc-950 shadow-lg shadow-emerald-500/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-400 hover:shadow-emerald-500/25"
+                  href={"/support/ticket"}
+                  className="group relative inline-flex h-12 shrink-0 items-center justify-center gap-2 overflow-hidden rounded-xl bg-foreground px-5 text-sm font-bold text-background shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-zinc-700 dark:hover:bg-zinc-300"
                 >
                   <span className="absolute inset-y-0 -left-full w-1/2 skew-x-[-18deg] bg-white/30 transition-all duration-700 group-hover:left-[130%]" />
                   <PlusCircle className="relative h-4 w-4 transition-transform duration-300 group-hover:rotate-90" />
-                  <span className="relative">{isPlatformUser ? "New Support Ticket" : "New Inquiry"}</span>
+                  <span className="relative">New Support Ticket</span>
                   <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -235,7 +235,7 @@ export default function MyRequestsPage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CircleCheck className="h-5 w-5 text-emerald-500" />
+                  <CircleCheck className="h-5 w-5 text-foreground" />
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Last activity</p>
                     <p className="text-sm font-semibold text-foreground">{formatDate(latestActivity)}</p>
@@ -265,7 +265,7 @@ export default function MyRequestsPage() {
                   placeholder="Search requests"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-10 pl-10 pr-4 rounded-lg border border-border bg-muted text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 transition-all"
+                  className="w-full h-10 pl-10 pr-4 rounded-lg border border-border bg-muted text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-foreground/15 focus:border-foreground/40 transition-all"
                 />
               </div>
               <div className="flex items-center gap-2 md:ml-auto shrink-0">
@@ -274,7 +274,7 @@ export default function MyRequestsPage() {
                 </span>
                 <div className="relative">
                   <Select value={statusFilter} onValueChange={setStatusFilter}>
-                    <SelectTrigger className="h-10 px-3 rounded-lg border border-border bg-muted text-sm font-medium text-foreground focus:ring-2 focus:ring-emerald-500/40 w-fit min-w-[130px]">
+                    <SelectTrigger className="h-10 px-3 rounded-lg border border-border bg-muted text-sm font-medium text-foreground focus:ring-2 focus:ring-foreground/15 w-fit min-w-[130px]">
                       <SelectValue placeholder="Any">
                         {statusFilter === "Any" ? "Any" : statusLabel(statusFilter)}
                       </SelectValue>
@@ -347,7 +347,7 @@ export default function MyRequestsPage() {
                     ) : filteredRequests.length === 0 ? (
                       <tr>
                         <td colSpan={5} className="p-12 text-center">
-                          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
+                          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 text-foreground">
                             <Ticket className="h-6 w-6" />
                           </div>
                           <p className="mt-4 text-sm font-semibold text-foreground">No matching requests</p>
@@ -355,11 +355,11 @@ export default function MyRequestsPage() {
                             Start a new support ticket or adjust your filters.
                           </p>
                           <Link
-                            href={isPlatformUser ? "/support/ticket" : "/support/inquiry"}
-                            className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:border-emerald-500 hover:text-emerald-600 dark:border-[#2a2a2a] dark:text-white dark:hover:border-emerald-500 dark:hover:text-emerald-400"
+                            href={"/support/ticket"}
+                            className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-zinc-950 transition-colors hover:border-foreground/40 hover:text-foreground dark:border-[#2a2a2a] dark:text-white dark:hover:border-foreground/40 dark:hover:text-foreground"
                           >
                             <PlusCircle className="h-4 w-4" />
-                            {isPlatformUser ? "New Support Ticket" : "New Inquiry"}
+                            New Support Ticket
                           </Link>
                         </td>
                       </tr>
@@ -372,7 +372,7 @@ export default function MyRequestsPage() {
                           <td className="p-4">
                             <Link
                               href={`/support/requests/${req._id}`}
-                              className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 underline decoration-emerald-500/40 underline-offset-2 hover:decoration-emerald-500 inline-flex items-center gap-1.5"
+                              className="text-sm font-semibold text-foreground underline decoration-foreground/40 underline-offset-2 hover:decoration-foreground inline-flex items-center gap-1.5"
                             >
                               {req.subject}
                               <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -424,7 +424,7 @@ export default function MyRequestsPage() {
                   </div>
                 ) : filteredRequests.length === 0 ? (
                   <div className="p-12 text-center">
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 text-foreground">
                       <Ticket className="h-6 w-6" />
                     </div>
                     <p className="mt-4 text-sm font-semibold text-foreground">No matching requests</p>
@@ -432,11 +432,11 @@ export default function MyRequestsPage() {
                       Start a new support ticket or adjust your filters.
                     </p>
                     <Link
-                      href={isPlatformUser ? "/support/ticket" : "/support/inquiry"}
-                      className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-emerald-500 hover:text-emerald-600"
+                      href={"/support/ticket"}
+                      className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
                     >
                       <PlusCircle className="h-4 w-4" />
-                      {isPlatformUser ? "New Support Ticket" : "New Inquiry"}
+                      New Support Ticket
                     </Link>
                   </div>
                 ) : (
@@ -445,7 +445,7 @@ export default function MyRequestsPage() {
                       <div className="flex items-start justify-between gap-4">
                         <Link
                           href={`/support/requests/${req._id}`}
-                          className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 underline decoration-emerald-500/40 underline-offset-2 hover:decoration-emerald-500"
+                          className="text-sm font-semibold text-foreground underline decoration-foreground/40 underline-offset-2 hover:decoration-foreground"
                         >
                           {req.subject}
                         </Link>

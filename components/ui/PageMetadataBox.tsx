@@ -24,7 +24,7 @@ export function PageMetadataBox({
       <CardContent className="grid gap-6 p-6 sm:grid-cols-2">
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <Badge variant="outline" className="border-emerald-500/20 bg-emerald-500/10 text-emerald-500 text-[10px] uppercase tracking-wider font-bold">
+            <Badge variant="outline" className="border-foreground/15 bg-foreground/5 text-foreground text-[10px] uppercase tracking-wider font-bold">
               <Info className="mr-1.5 h-3 w-3" />
               Page Metadata
             </Badge>
@@ -33,7 +33,7 @@ export function PageMetadataBox({
           <div className="space-y-2.5">
             {category && (
               <div className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                <Target className="h-4 w-4 text-emerald-500/70" />
+                <Target className="h-4 w-4 text-foreground/70" />
                 <span className="font-medium text-foreground/80">Category:</span>
                 <span className="text-foreground capitalize">{category}</span>
               </div>
@@ -44,7 +44,7 @@ export function PageMetadataBox({
         {availableFor && availableFor.length > 0 && (
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="border-emerald-500/20 bg-emerald-500/10 text-emerald-500 text-[10px] uppercase tracking-wider font-bold">
+              <Badge variant="outline" className="border-foreground/15 bg-foreground/5 text-foreground text-[10px] uppercase tracking-wider font-bold">
                 <ShieldCheck className="mr-1.5 h-3 w-3" />
                 Availability
               </Badge>

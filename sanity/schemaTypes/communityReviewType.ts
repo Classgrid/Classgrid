@@ -15,7 +15,7 @@ export const communityReviewType = defineType({
     }),
     defineField({
       name: 'institution',
-      title: 'Institution / College',
+      title: 'Company / Organization',
       type: 'string',
     }),
     defineField({
@@ -67,28 +67,23 @@ export const communityReviewType = defineType({
       initialValue: 'general',
     }),
 
-    // ── Module Context (inline) ───────────────────
+    // ── Feature Context (inline) ──────────────────
     defineField({
       name: 'moduleName',
-      title: 'Related Module',
-      description: 'Which Classgrid module is this review about?',
+      title: 'Related Feature',
+      description: 'Which Classgrid AI feature is this review about?',
       type: 'string',
       options: {
         list: [
-          { title: 'Overall Platform', value: 'Overall' },
-          { title: 'Attendance', value: 'Attendance' },
-          { title: 'Fees', value: 'Fees' },
-          { title: 'Exams', value: 'Exams' },
-          { title: 'Timetable', value: 'Timetable' },
-          { title: 'Admissions', value: 'Admissions' },
-          { title: 'Digital Classroom', value: 'Digital Classroom' },
-          { title: 'AI Assistant', value: 'AI Assistant' },
-          { title: 'Library', value: 'Library' },
-          { title: 'Canteen', value: 'Canteen' },
-          { title: 'Leave & Payroll', value: 'Leave & Payroll' },
-          { title: 'Analytics', value: 'Analytics' },
-          { title: 'Certificates', value: 'Certificates' },
-          { title: 'Events', value: 'Events' },
+          { title: 'Overall Experience', value: 'Overall' },
+          { title: 'Agent Mode', value: 'Agent Mode' },
+          { title: 'Project Mode', value: 'Project Mode' },
+          { title: 'WhatsApp & Calls', value: 'WhatsApp' },
+          { title: 'Connected Apps', value: 'Connected Apps' },
+          { title: 'Schedules & Background Tasks', value: 'Schedules' },
+          { title: 'Files & Reports', value: 'Files & Reports' },
+          { title: 'Web Research', value: 'Research' },
+          { title: 'AI Models', value: 'AI Models' },
         ],
       },
       initialValue: 'Overall',
@@ -219,7 +214,7 @@ export const communityReviewType = defineType({
       const pin = isFeatured ? '📌 ' : '';
       return {
         title: `${pin}${title} (${rating}⭐) ${categoryLabel}`,
-        subtitle: `${statusEmoji} ${subtitle || 'No institution'}`,
+        subtitle: `${statusEmoji} ${subtitle || 'No organization'}`,
       };
     },
   },

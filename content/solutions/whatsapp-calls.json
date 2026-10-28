@@ -1,0 +1,237 @@
+{
+  "slug": "whatsapp-calls",
+  "order": 4,
+  "menuGroup": "product",
+  "menuLabel": "WhatsApp calls",
+  "menuDescription": "Call the agent, get results",
+  "eyebrow": "WhatsApp calls",
+  "headline": "Call your AI agent on WhatsApp",
+  "subheadline": "Say what you need, hang up, and get the result on WhatsApp.",
+  "primaryCta": { "label": "Call on WhatsApp", "href": "https://wa.me/918149277038" },
+  "demoHeading": "Talk on the call, get it done on WhatsApp",
+  "demoTabs": [
+    {
+      "label": "Call to PDF",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "WhatsApp call · 1:42",
+          "userMessage": "Make a one-page PDF plan for a 3-day trip to Goa and send it to me here.",
+          "workedFor": "Worked for 1m 20s",
+          "steps": [
+            "Saved your task on the call",
+            "Wrote the 3-day plan",
+            "Built goa-3-day-plan.pdf"
+          ],
+          "resultLines": ["Sent goa-3-day-plan.pdf on WhatsApp"]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. goa-3-day-plan.pdf · 1 page",
+          "time": "10:24"
+        }
+      }
+    },
+    {
+      "label": "Morning plan",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "WhatsApp call · 0:48",
+          "userMessage": "What's on my calendar today?",
+          "workedFor": "Worked for 6s",
+          "steps": ["Checked Google Calendar", "Answered on the call"],
+          "resultLines": [
+            "Stand-up at 10",
+            "Lunch with Arjun at 1",
+            "Client call at 4"
+          ]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "📞 Your call with Classgrid AI: 3 things today. Stand-up at 10, lunch with Arjun at 1, client call at 4.",
+          "time": "8:05"
+        }
+      }
+    },
+    {
+      "label": "Send an email",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "WhatsApp call · 0:35",
+          "userMessage": "Email Mr. Rao that the quote is approved.",
+          "workedFor": "Worked for 40s",
+          "steps": ["Saved your task on the call", "Wrote the email", "Sent from your Gmail"],
+          "resultLines": ["Sent to rao@example.com"]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. Sent from your Gmail to rao@example.com.",
+          "time": "6:12"
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "Talk, don't type",
+      "text": "Call the number on WhatsApp and just say what you need. You can interrupt any time. Ask a quick question and get the answer on the call, using your connected apps.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "WhatsApp call · 2:14",
+          "userMessage": "Do I have anything this afternoon?",
+          "workedFor": "Worked for 5s",
+          "steps": ["Checked Google Calendar", "Answered on the call"],
+          "resultLines": ["Lunch with Arjun at 1", "Client call at 4"]
+        },
+        "floating": {
+          "kind": "schedule",
+          "title": "Answered on the call",
+          "badge": "Google Calendar",
+          "rows": [
+            { "label": "10:00 AM", "value": "Stand-up" },
+            { "label": "1:00 PM", "value": "Lunch with Arjun" },
+            { "label": "4:00 PM", "value": "Client call" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Hang up. It keeps working.",
+      "text": "Everything you asked for becomes one job. The agent does it in a new chat and sends the result to your WhatsApp: text, links and real files like PDFs. Coding work goes to your Project Mode project.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "New chat from your call",
+          "userMessage": "Make a one-page PDF of what I just told you and send it here.",
+          "workedFor": "Worked for 1m 05s",
+          "steps": [
+            "Read your call notes",
+            "Wrote the page",
+            "Built call-notes.pdf",
+            "Sent it on WhatsApp"
+          ],
+          "resultLines": ["call-notes.pdf is ready"]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. call-notes.pdf · chat.classgrid.in/…",
+          "time": "11:40"
+        }
+      }
+    },
+    {
+      "title": "Add more after the call",
+      "text": "Forgot something? Send a photo, a PDF or a few more details on WhatsApp while the task is running, and the agent adds it to the job. You can also email agent@classgrid.in.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "WhatsApp · Classgrid AI",
+          "fileChips": ["receipt.jpg"],
+          "userMessage": "Add this too",
+          "resultLines": ["Got it, added to your task."]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Task still running",
+          "subtitle": "1 new file added · receipt.jpg",
+          "tone": "info"
+        }
+      }
+    },
+    {
+      "title": "Works with your apps",
+      "text": "Connect Gmail, Calendar, Drive, Notion, GitHub or Vercel once, and use them by voice. Send an email, check your day, find a file or fix your site.",
+      "visual": {
+        "main": {
+          "kind": "list",
+          "title": "Your connected apps",
+          "rows": [
+            { "label": "Gmail", "value": "Connected" },
+            { "label": "Google Calendar", "value": "Connected" },
+            { "label": "Google Drive", "value": "Connected" },
+            { "label": "Notion", "value": "Connected" },
+            { "label": "GitHub", "value": "Connected" },
+            { "label": "Vercel", "value": "Connected" }
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Sent from your Gmail",
+          "subtitle": "To rao@example.com · Quote approved",
+          "tone": "success"
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Use your apps by voice",
+  "plugins": [
+    { "name": "Gmail", "line": "Send an email just by saying it" },
+    { "name": "Google Calendar", "line": "Hear your day and add events" },
+    { "name": "Google Drive", "line": "Find and read files in your Drive" },
+    { "name": "Notion", "line": "Save notes from your call to a page" },
+    { "name": "GitHub", "line": "Fix your site with a pull request" },
+    { "name": "Vercel", "line": "Deploy your site's branch as a preview" }
+  ],
+  "tasksHeading": "Things to say on a call",
+  "exampleTasks": [
+    "Email Mr. Rao that the quote is approved.",
+    "What's on my calendar today?",
+    "Find last week's invoice in my Drive.",
+    "Fix the contact form on my site.",
+    "Make a one-page PDF of what I just told you and send it here.",
+    "Write a short report on our three biggest customers and send me the PDF.",
+    "Add lunch with Arjun to my calendar tomorrow at 1.",
+    "Save notes from this call to a new Notion page."
+  ],
+  "faqs": [
+    {
+      "question": "Is this a normal phone call?",
+      "answer": "No. It's a WhatsApp voice call to +91 81492 77038. A normal phone call won't reach the AI."
+    },
+    {
+      "question": "Who can call?",
+      "answer": "Anyone with a Classgrid AI account who has verified their WhatsApp number in the app first. The number must be on only one account."
+    },
+    {
+      "question": "What language does it speak?",
+      "answer": "English only."
+    },
+    {
+      "question": "How long can a call be?",
+      "answer": "Up to 15 minutes. The agent keeps working on your task after you hang up."
+    },
+    {
+      "question": "Can I just text the number instead?",
+      "answer": "Texts add details to a task that's already running. To start a new task, call the number on WhatsApp or email agent@classgrid.in."
+    },
+    {
+      "question": "Does it cost extra?",
+      "answer": "Calls and tasks use your Classgrid AI credits. It's free to start, and you top up when you need more."
+    }
+  ],
+  "plainEnglishHeading": "What WhatsApp calls can do, in plain English",
+  "plainEnglish": [
+    "With Classgrid AI you can give work to your AI agent just by talking to it on a WhatsApp call. You do not need to open the app or type anything. You call the Classgrid number, +91 81492 77038, on WhatsApp, say what you need in your own words, hang up, and the agent does the work and sends you the result on WhatsApp. It is like calling a smart assistant who then goes away and gets the job done for you.",
+    "Getting ready takes a minute and you only do it once. You sign up on chat.classgrid.in with your email, then verify your WhatsApp number in the app with a six-digit code that arrives on WhatsApp. After that, your number is linked to your account and the AI knows it is you whenever you call.",
+    "When you call, the AI picks up and greets you by your first name: \"Hi, this is Classgrid AI. What can I do for you?\" You talk normally, like on any phone call. You can interrupt it at any time and it will stop and listen. It speaks in English. Each call can last up to fifteen minutes, which is plenty of time to explain a few jobs.",
+    "While you are on the call, the AI can answer you live. It can look things up, check your connected apps like Gmail, Google Calendar, Google Drive, Notion or GitHub, and tell you the answer right there on the call. If the answer takes a bit longer to find, it does not keep you waiting, it simply sends the answer to you on WhatsApp a little later.",
+    "For bigger jobs, the AI notes down what you asked and starts working as soon as you hang up. It sends you \"Got it\" on WhatsApp so you know it has your request. Then your agent does the work in the background, with all its normal powers: searching the web, writing emails, making reports and PDFs, building or fixing a website, and using your connected apps. Coding jobs go into Project Mode by themselves. When it is done, you get the result on WhatsApp with a link to the full chat, and files like PDFs arrive as real files you can open straight away.",
+    "You can add more after you hang up. If you forgot something, just send a WhatsApp message, a photo or a document while the job is still running, and the agent will use it. You can also email extra files to agent@classgrid.in. The agent can keep working on a job for up to two days, waiting for your replies when it needs them.",
+    "This is useful in many everyday moments. You can call while driving and ask it to email a client that the quote is approved. You can call in the morning to hear what is on your calendar today. You can describe a report out loud, hang up, and get the finished PDF on WhatsApp. You can ask it to find last week's invoice in your Drive. You can even ask it to fix the contact form on your website while you are away from your laptop.",
+    "It is safe and personal. Only a verified WhatsApp number that belongs to one Classgrid account can use the calls, so nobody else can talk to your agent. If an unknown number calls, it gets a message explaining how to sign up and verify first. There is a fair daily limit on calls for each number, and calls use your normal Classgrid AI credits.",
+    "A few things to know. It is a WhatsApp voice call, so a normal phone call to the number will not reach the AI. It speaks in English. A WhatsApp text on its own does not start a new job; you start a job by calling or by emailing agent@classgrid.in, and then your messages are added to that job.",
+    "How it compares, as of October 2026: most big AI assistants cannot be called on WhatsApp in India today. Grok Bot can make calls to other people for you, but you cannot call it. OpenAI's Dots works inside ChatGPT, Slack and Teams, not on WhatsApp or calls. Meta's Muse is only in the US. Classgrid AI lets you call it on WhatsApp in India, and it does real work after the call and sends the results back to you.",
+    "In short: call +91 81492 77038 on WhatsApp, say what you need, hang up, and your Classgrid AI agent gets it done and sends you the result on WhatsApp."
+  ],
+  "seo": {
+    "title": "Call Classgrid AI on WhatsApp | AI agent you can call",
+    "description": "WhatsApp-call Classgrid AI on +91 81492 77038, say what you need, hang up, and get the result on WhatsApp: emails sent, PDFs made, sites fixed."
+  }
+}

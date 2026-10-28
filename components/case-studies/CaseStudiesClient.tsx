@@ -28,11 +28,11 @@ import { cn } from "@/lib/utils";
 
 const CATEGORY_META: Record<string, { label: string; badgeColor: string }> = {
   // Colors taken directly from globals.css design system
-  "fee-recovery": { label: "Fee Recovery",  badgeColor: "bg-[#34d399] text-[#022c22]" },   // --primary green
+  productivity:   { label: "Productivity",   badgeColor: "bg-foreground text-background" },   // --foreground
   compliance:     { label: "Compliance",     badgeColor: "bg-[#4a90f5] text-white" },        // --ring / plyr blue
   automation:     { label: "Automation",     badgeColor: "bg-[#f43f5e] text-white" },        // --destructive pink
-  attendance:     { label: "Attendance",     badgeColor: "bg-[#a855f7] text-white" },        // chart-4 purple
-  results:        { label: "Results",        badgeColor: "bg-[#ff0080] text-white" },        // grid neon pink
+  research:       { label: "Research",       badgeColor: "bg-[#a855f7] text-white" },        // chart-4 purple
+  coding:         { label: "Coding",         badgeColor: "bg-[#ff0080] text-white" },        // grid neon pink
   all:            { label: "All",            badgeColor: "bg-zinc-600 text-white" },
 };
 
@@ -127,7 +127,7 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
   const moduleOptions = useMemo(() => {
     if (!mounted) return [];
     const set = new Set(caseStudies.flatMap((c) => c.modules ?? []).filter(Boolean));
-    return [{ id: "all", label: "All Modules" }, ...Array.from(set).map((v) => ({ id: v, label: prettyLabel(v) }))];
+    return [{ id: "all", label: "All Features" }, ...Array.from(set).map((v) => ({ id: v, label: prettyLabel(v) }))];
   }, [caseStudies, mounted]);
 
   // Filter logic
@@ -167,11 +167,11 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
         {/* ── HERO ── */}
         <section className="pt-16 pb-12 text-center flex flex-col items-center">
           <SectionAccentBar className="mb-4" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500 mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground mb-4">
             Case Study
           </p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.05] max-w-3xl mb-6">
-            Classgrid <em className="not-italic text-emerald-400">Impact</em>
+            Classgrid <em className="not-italic text-foreground">Impact</em>
           </h1>
           {heroSubtitle && (
             <p className="max-w-lg text-base text-muted-foreground leading-relaxed">
@@ -206,8 +206,8 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
 
           <div className="relative">
             <Select value={institutionFilter} onValueChange={(v) => { setInstitutionFilter(v); setCurrentPage(1); }}>
-              <SelectTrigger aria-label="Institution Type" className="h-11 w-[160px] rounded-xl border border-border bg-card shadow-sm">
-                <SelectValue placeholder="Institution Type" />
+              <SelectTrigger aria-label="Customer Type" className="h-11 w-[160px] rounded-xl border border-border bg-card shadow-sm">
+                <SelectValue placeholder="Customer Type" />
               </SelectTrigger>
               <SelectContent className="rounded-xl border-border bg-card">
                 {institutionOptions.map((o) => <SelectItem key={o.id} value={o.id}>{o.label}</SelectItem>)}
@@ -220,7 +220,7 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
               onPointerDown={(e) => e.stopPropagation()}
               className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
             >
-              <option value="" disabled>Institution Type</option>
+              <option value="" disabled>Customer Type</option>
               {institutionOptions.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
             </select>
           </div>
@@ -248,8 +248,8 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
 
           <div className="relative">
             <Select value={moduleFilter} onValueChange={(v) => { setModuleFilter(v); setCurrentPage(1); }}>
-              <SelectTrigger aria-label="Module" className="h-11 w-[150px] rounded-xl border border-border bg-card shadow-sm">
-                <SelectValue placeholder="Module" />
+              <SelectTrigger aria-label="Feature" className="h-11 w-[150px] rounded-xl border border-border bg-card shadow-sm">
+                <SelectValue placeholder="Feature" />
               </SelectTrigger>
               <SelectContent className="rounded-xl border-border bg-card">
                 {moduleOptions.map((o) => <SelectItem key={o.id} value={o.id}>{o.label}</SelectItem>)}
@@ -262,7 +262,7 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
               onPointerDown={(e) => e.stopPropagation()}
               className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
             >
-              <option value="" disabled>Module</option>
+              <option value="" disabled>Feature</option>
               {moduleOptions.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
             </select>
           </div>
@@ -299,7 +299,7 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
                                  shadow-sm border border-border dark:border-transparent dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08),_0_2px_8px_rgba(0,0,0,0.3)]
                                  transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)]
                                  group-hover:-translate-y-1.5
-                                 group-hover:border-emerald-500 dark:group-hover:shadow-[0_0_0_2px_#10b981,_0_16px_48px_rgba(16,185,129,0.18)]"
+                                 group-hover:border-foreground dark:group-hover:shadow-[0_0_0_2px_var(--foreground),_0_16px_48px_rgba(255,255,255,0.1)]"
                     >
                       {/* Image */}
                       <div className="relative h-[220px] w-full bg-muted overflow-hidden shrink-0">
@@ -346,8 +346,8 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
                         <div className="mt-auto pt-4 border-t border-border grid grid-cols-3 gap-4">
                           {study.metrics?.slice(0, 3).map((metric, i) => (
                             <div key={metric._key || i} className="flex flex-col gap-0.5">
-                              <span className="text-xl font-serif text-emerald-400">
-                                {metric.value}<span className="text-emerald-500/70">{metric.suffix}</span>
+                              <span className="text-xl font-serif text-foreground">
+                                {metric.value}<span className="text-foreground/70">{metric.suffix}</span>
                               </span>
                               <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                                 {metric.label}

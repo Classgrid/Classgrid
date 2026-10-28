@@ -360,22 +360,22 @@ export function HeroVideoSlider({
                   max="100"
                   value={progress}
                   onChange={handleSeek}
-                  className="w-full h-1.5 cursor-pointer appearance-none rounded-full bg-white/30 accent-emerald-500"
-                  style={{ background: `linear-gradient(to right, #10b981 ${progress}%, rgba(255,255,255,0.3) ${progress}%)` }}
+                  className="w-full h-1.5 cursor-pointer appearance-none rounded-full bg-white/30 accent-white"
+                  style={{ background: `linear-gradient(to right, #ffffff ${progress}%, rgba(255,255,255,0.3) ${progress}%)` }}
                 />
                 <div className="flex items-center justify-between text-white mt-1">
                   <div className="flex items-center gap-4">
-                    <button onClick={togglePlayPause} className="hover:text-emerald-400">
+                    <button onClick={togglePlayPause} className="hover:text-white/70">
                       {isPlaying ? <Pause className="h-5 w-5" fill="currentColor" /> : <Play className="h-5 w-5" fill="currentColor" />}
                     </button>
-                    <button onClick={toggleMute} className="hover:text-emerald-400">
+                    <button onClick={toggleMute} className="hover:text-white/70">
                       {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
                     </button>
                     <div className="text-xs font-medium tracking-wide">
                       {formatTime(currentTime)} / {formatTime(duration)}
                     </div>
                   </div>
-                  <button onClick={toggleFullscreen} className="hover:text-emerald-400">
+                  <button onClick={toggleFullscreen} className="hover:text-white/70">
                     {isFullscreen ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
                   </button>
                 </div>
@@ -409,7 +409,7 @@ export function HeroVideoSlider({
             <motion.div variants={headingVariant}>
               <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
               {label?.trim() ? (
-                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
                   {label}
                 </p>
               ) : null}
@@ -564,7 +564,7 @@ export function HeroVideoSlider({
                         </p>
                       ) : null}
                       {activeVideo.role?.trim() ? (
-                        <p className="text-[10px] font-medium uppercase tracking-wide text-emerald-300 opacity-90 drop-shadow-sm sm:text-xs md:text-sm">
+                        <p className="text-[10px] font-medium uppercase tracking-wide text-white/80 opacity-90 drop-shadow-sm sm:text-xs md:text-sm">
                           {activeVideo.role}
                         </p>
                       ) : null}
@@ -597,20 +597,20 @@ export function HeroVideoSlider({
                   max="100"
                   value={progress}
                   onChange={handleSeek}
-                  className="w-full h-1.5 cursor-pointer appearance-none rounded-full bg-white/30 accent-emerald-500"
+                  className="w-full h-1.5 cursor-pointer appearance-none rounded-full bg-white/30 accent-white"
                   style={{
-                    background: `linear-gradient(to right, #10b981 ${progress}%, rgba(255,255,255,0.3) ${progress}%)`
+                    background: `linear-gradient(to right, #ffffff ${progress}%, rgba(255,255,255,0.3) ${progress}%)`
                   }}
                 />
                 
                 {/* Bottom Control Buttons */}
                 <div className="flex items-center justify-between text-white mt-1">
                   <div className="flex items-center gap-4">
-                    <button onClick={togglePlayPause} className="hover:text-emerald-400">
+                    <button onClick={togglePlayPause} className="hover:text-white/70">
                       {isPlaying ? <Pause className="h-5 w-5" fill="currentColor" /> : <Play className="h-5 w-5" fill="currentColor" />}
                     </button>
-                    
-                    <button onClick={toggleMute} className="hover:text-emerald-400">
+
+                    <button onClick={toggleMute} className="hover:text-white/70">
                       {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
                     </button>
 
@@ -646,7 +646,7 @@ export function HeroVideoSlider({
                       </button>
                     ) : null}
 
-                    <button onClick={toggleFullscreen} className="hover:text-emerald-400">
+                    <button onClick={toggleFullscreen} className="hover:text-white/70">
                       {isFullscreen ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
                     </button>
                   </div>
@@ -700,7 +700,7 @@ export function HeroVideoSlider({
                   className={cn(
                     "h-2 w-2 rounded-full",
                     i === current
-                      ? "bg-emerald-500 w-8 shadow-[0_0_10px_rgba(16,185,129,0.5)]"
+                      ? "bg-foreground w-8"
                       : "bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600"
                   )}
                   aria-label={`Go to slide ${i + 1}`}

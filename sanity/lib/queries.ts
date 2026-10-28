@@ -1274,6 +1274,35 @@ export const classgridVideoQuery = `*[_type == "classgridVideo"][0]{
   highlights[]{text}, ctaLabel, ctaHref
 }`;
 
+export const aiSolutionPageBySlugQuery = `*[_type == "aiSolutionPage" && slug.current == $slug][0]{
+  "slug": slug.current,
+  order, menuGroup, menuLabel, menuDescription,
+  eyebrow, headline, subheadline, primaryCta{ label, href },
+  demoHeading, demoTabs[]{ label, visualJson },
+  features[]{ title, text, visualJson },
+  pluginsHeading, plugins[]{ name, line },
+  tasksHeading, exampleTasks,
+  faqs[]{ question, answer },
+  plainEnglishHeading, plainEnglish,
+  seo{ title, description }
+}`;
+
+export const aiSolutionPagesListQuery = `*[_type == "aiSolutionPage" && defined(slug.current)] | order(order asc){
+  "slug": slug.current, order, menuGroup, menuLabel, menuDescription, headline, subheadline
+}`;
+
+export const pluginsPageQuery = `*[_type == "pluginsPage"][0]{
+  heading,
+  subheading,
+  "plugins": plugins[defined(logo.asset)]{
+    _key,
+    name,
+    "logoUrl": logo.asset->url,
+    brandColor,
+    invertInDark
+  }
+}`;
+
 export const classgridTeamVisionQuery = `*[_type == "classgridTeamVision"][0]{
   isVisible, label, title, description,
   quotes[]{name, role, "text": coalesce(text, quote), "avatarUrl": avatar.asset->url}

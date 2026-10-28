@@ -123,8 +123,8 @@ export function EmpowerSliderSection({ sectionHeadline, slides }: EmpowerSliderS
                   />
                 ) : (
                   <div className="flex flex-col items-center gap-2 text-center">
-                    <div className="h-10 w-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                      <ChevronRight className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                    <div className="h-10 w-10 rounded-full bg-foreground/5 flex items-center justify-center">
+                      <ChevronRight className="h-5 w-5 text-foreground" />
                     </div>
                     <p className="text-xs font-medium text-slate-500 dark:text-white/30">
                       Upload image in Sanity Studio
@@ -164,7 +164,7 @@ export function EmpowerSliderSection({ sectionHeadline, slides }: EmpowerSliderS
                   variants={textFadeUp}
                   initial="hidden"
                   animate="visible"
-                  className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-emerald-600 dark:text-emerald-400"
+                  className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-foreground"
                 >
                   {active.label || "All-in-One Platform"}
                 </motion.p>
@@ -189,7 +189,7 @@ export function EmpowerSliderSection({ sectionHeadline, slides }: EmpowerSliderS
                       variants={textFadeUp}
                       initial="hidden"
                       animate="visible"
-                      className="text-[15px] leading-[1.6] text-slate-600 dark:text-[#B0B7C3] md:text-base border-l-2 border-emerald-500/30 pl-3 md:border-none md:pl-0 block"
+                      className="text-[15px] leading-[1.6] text-slate-600 dark:text-[#B0B7C3] md:text-base border-l-2 border-foreground/15 pl-3 md:border-none md:pl-0 block"
                     >
                       {para}
                     </motion.p>
@@ -215,7 +215,7 @@ export function EmpowerSliderSection({ sectionHeadline, slides }: EmpowerSliderS
                         className={cn(
                           "h-2 rounded-full transition-all duration-300",
                           idx === current
-                            ? "bg-emerald-500 w-7 shadow-[0_0_8px_rgba(16,185,129,0.4)]"
+                            ? "bg-foreground w-7"
                             : "bg-slate-300 dark:bg-white/15 w-2 hover:bg-slate-400 dark:hover:bg-white/30"
                         )}
                         aria-label={`Go to slide ${idx + 1}`}

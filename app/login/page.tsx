@@ -80,6 +80,9 @@ function LoginContent() {
     }
   }
 
+  // Support login accepts everyone; the normal Log In needs a chat.classgrid.in account
+  const isSupportLogin = (explicitNext || "").includes("/support");
+
   const intent = searchParams.get("intent");
   const unsubscribeType = searchParams.get("type");
   const targetShortCode = searchParams.get("c");
@@ -158,7 +161,7 @@ function LoginContent() {
       router.replace("/support/ticket");
     } else {
       // Non-platform (community) users → Classgrid Talk
-      router.replace("/support/inquiry");
+      router.replace("/support/ticket");
     }
   }, [status, session, router, ssoReturnTo, explicitNext, unsubscribeReturnTo]);
 
@@ -242,16 +245,15 @@ function LoginContent() {
       const res = await fetch("/api/forum/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, mode }),
+        body: JSON.stringify({ email, mode, forSupport: isSupportLogin }),
       });
 
       const data = await res.json();
 
       if (!res.ok) {
-        if (data.error === "Account not found. Please sign up instead.") {
-          setMode("signup");
-          setError("Account not found. Please enter your name to create an account.");
-          setLoading(false);
+        if (data.code === "NO_PLATFORM_ACCOUNT") {
+          // No account yet: accounts are made on chat.classgrid.in
+          window.location.href = data.signupUrl || "https://chat.classgrid.in/login";
           return;
         }
         throw new Error(data.error || "Failed to send OTP");
@@ -332,7 +334,7 @@ function LoginContent() {
           
           <div className="mb-8 text-center space-y-1">
             <h1 className="text-3xl font-medium tracking-tight text-slate-900 dark:text-[#f1f1f1]">Welcome to Classgrid</h1>
-            <p className="text-[15px] text-slate-500 dark:text-[#888888]">Unified ERP infrastructure for modern institutions</p>
+            <p className="text-[15px] text-slate-500 dark:text-[#888888]">Sign in with your Classgrid AI account</p>
           </div>
 
           {/* Show OAuth error from URL (e.g. OAuthCallback) */}
@@ -474,7 +476,7 @@ function LoginContent() {
                         const res = await fetch("/api/forum/send-otp", {
                           method: "POST",
                           headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ email, mode }),
+                          body: JSON.stringify({ email, mode, forSupport: isSupportLogin }),
                         });
                         const data = await res.json();
                         if (!res.ok) throw new Error(data.error || "Failed to resend");
@@ -515,21 +517,12 @@ function LoginContent() {
 
           {step === "email" && searchParams.get("next") !== "/support/ticket" && intent !== "unsubscribe" && (
             <div className="mt-8 text-center text-[13px]">
-              {mode === "signin" ? (
-                <span className="text-slate-500 dark:text-[#888888]">
-                  Don't have an account?{" "}
-                  <button onClick={() => setMode("signup")} className="font-medium text-slate-900 transition-colors hover:underline dark:text-[#f1f1f1]">
-                    Sign up
-                  </button>
-                </span>
-              ) : (
-                <span className="text-slate-500 dark:text-[#888888]">
-                  Already have an account?{" "}
-                  <button onClick={() => setMode("signin")} className="font-medium text-slate-900 transition-colors hover:underline dark:text-[#f1f1f1]">
-                    Sign in
-                  </button>
-                </span>
-              )}
+              <span className="text-slate-500 dark:text-[#888888]">
+                Don't have an account?{" "}
+                <a href="https://chat.classgrid.in/login" className="font-medium text-slate-900 transition-colors hover:underline dark:text-[#f1f1f1]">
+                  Sign up
+                </a>
+              </span>
             </div>
           )}
         </div>

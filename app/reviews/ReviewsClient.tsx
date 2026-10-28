@@ -12,9 +12,12 @@ import Masonry from "react-masonry-css";
 import { fetchReviewsData } from "./actions";
 import { Button } from "@/components/ui/button";
 import { SectionAccentBar } from "@/components/ui/section-accent-bar";
-import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue, SelectGroup, SelectLabel } from "@/components/ui/select";
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
 
 const MotionDiv = motion.div as any;
+
+// Classgrid AI features a review can be about (old reviews with other values show no tag)
+const FEATURE_NAMES = ["Overall", "Agent Mode", "Project Mode", "WhatsApp", "Connected Apps", "Schedules", "Files & Reports", "Research", "AI Models"];
 
 // Define the Review Type
 type Review = {
@@ -91,7 +94,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.institution || !formData.reviewText || formData.rating === 0 || !formData.moduleName) {
       setFormStatus("error");
-      setErrorMessage("Please fill all required fields, select a module, and give a star rating.");
+      setErrorMessage("Please fill all required fields, select a feature, and give a star rating.");
       return;
     }
 
@@ -126,7 +129,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
   };
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-24 pb-24 overflow-hidden selection:bg-emerald-500/30 transition-colors duration-300">
+    <main className="relative min-h-screen bg-background text-foreground pt-24 pb-24 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
 
       {/* ── LAYER 1: MARQUEE STRIP (TOP) ── */}
       <MotionDiv
@@ -137,20 +140,20 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
       >
         <Marquee pauseOnHover speed={45} gradient={false} className="dark:!bg-transparent !bg-transparent">
           {featuredReviews.map((rev) => {
-            const palette = ['bg-emerald-500', 'bg-teal-500', 'bg-emerald-600', 'bg-teal-600', 'bg-emerald-400'];
+            const palette = ['bg-neutral-900 dark:bg-neutral-100', 'bg-neutral-800 dark:bg-neutral-200', 'bg-neutral-700 dark:bg-neutral-300', 'bg-neutral-600 dark:bg-neutral-400', 'bg-neutral-500 dark:bg-neutral-500'];
             const colorClass = palette[rev.name.charCodeAt(0) % palette.length];
             return (
               <div key={rev._id} className="flex items-center gap-6 px-12 border-r border-white/[0.05]">
                 {rev.photoUrl ? (
                   <img src={rev.photoUrl} alt={rev.name} className="w-8 h-8 rounded-full object-cover shrink-0 border border-border" />
                 ) : (
-                  <div className={`w-8 h-8 rounded-full ${colorClass} flex items-center justify-center text-white text-xs font-bold shrink-0`}>
+                  <div className={`w-8 h-8 rounded-full ${colorClass} flex items-center justify-center text-background text-xs font-bold shrink-0`}>
                     {rev.name.charAt(0).toUpperCase()}
                   </div>
                 )}
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className={`w-3 h-3 ${i < rev.rating ? "fill-emerald-400 text-emerald-400" : "text-neutral-800"}`} />
+                    <Star key={i} className={`w-3 h-3 ${i < rev.rating ? "fill-foreground text-foreground" : "text-neutral-800"}`} />
                   ))}
                 </div>
                 <p className="text-xs font-medium text-muted-foreground italic max-w-xs truncate">
@@ -158,7 +161,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                 </p>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-bold text-foreground">{rev.name}</span>
-                  <span title="User's Organization or Institution" className="text-[9px] font-medium text-muted-foreground uppercase tracking-tighter cursor-default">{rev.institution}</span>
+                  <span title="User's Organization" className="text-[9px] font-medium text-muted-foreground uppercase tracking-tighter cursor-default">{rev.institution}</span>
                 </div>
               </div>
             );
@@ -170,7 +173,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
       <section className="max-w-7xl mx-auto px-6 mb-20">
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 py-10 bg-card/50 dark:bg-white/[0.02] border border-border rounded-3xl backdrop-blur-sm shadow-sm">
           <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 text-emerald-500 dark:text-emerald-400 mb-1">
+            <div className="flex items-center gap-2 text-foreground mb-1">
               <MessageSquareQuote className="w-5 h-5" />
               <span className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground">{stats.total}</span>
             </div>
@@ -178,7 +181,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
           </div>
           <div className="hidden md:block w-px h-12 bg-border/50" />
           <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 text-emerald-500 dark:text-emerald-400 mb-1">
+            <div className="flex items-center gap-2 text-foreground mb-1">
               <Star className="w-5 h-5 fill-current" />
               <span className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground">{stats.average}/5</span>
             </div>
@@ -186,7 +189,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
           </div>
           <div className="hidden md:block w-px h-12 bg-border/50" />
           <div className="flex flex-col items-center">
-            <div className="flex items-center gap-2 text-emerald-500 dark:text-emerald-400 mb-1">
+            <div className="flex items-center gap-2 text-foreground mb-1">
               <Users className="w-5 h-5" />
               <span className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground">{stats.verified}</span>
             </div>
@@ -204,36 +207,36 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
           className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center bg-card dark:bg-[#171717] border border-border dark:border-white/[0.05] rounded-[2.5rem] p-8 md:p-10 lg:p-14 shadow-2xl dark:shadow-black/50 relative overflow-hidden"
         >
           {/* Decorative background glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 blur-[100px] -z-10 rounded-full" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-foreground/5 blur-[100px] -z-10 rounded-full" />
 
           <div className="space-y-8">
 
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
               Share Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600 dark:from-emerald-400 dark:to-teal-500">Classgrid Story</span>
+              <span className="text-foreground">Classgrid Story</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
-              Your feedback fuels our innovation. Help us shape the future of institutional management by sharing your experience.
+              Your feedback fuels our innovation. Help us shape the future of Classgrid AI by sharing your experience.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5 bg-background/50 dark:bg-black/40 p-8 md:p-10 lg:px-12 rounded-[2rem] border border-border dark:border-white/[0.05] backdrop-blur-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <input
-                type="text" required placeholder="Full Name"
+                type="text" required placeholder="Full Name *"
                 value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-emerald-500/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
+                className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
               />
               <input
-                type="text" required placeholder="Institution / College"
+                type="text" required placeholder="Company / Organization *"
                 value={formData.institution} onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
-                className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-emerald-500/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
+                className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
               />
             </div>
             <input
-              type="email" required placeholder="Email Address"
+              type="email" required placeholder="Email Address *"
               value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-emerald-500/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
+              className="w-full h-14 bg-background border border-border rounded-xl px-5 text-sm focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -247,9 +250,10 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                       onMouseLeave={() => setHoveredStar(0)}
                       className="focus:outline-none group"
                     >
-                      <Star className={`w-6 h-6 transition-all ${star <= (hoveredStar || formData.rating) ? "fill-emerald-500 dark:fill-emerald-400 text-emerald-500 dark:text-emerald-400 scale-110" : "text-neutral-300 dark:text-neutral-800 scale-100"}`} />
+                      <Star className={`w-6 h-6 transition-all ${star <= (hoveredStar || formData.rating) ? "fill-foreground text-foreground scale-110" : "text-neutral-300 dark:text-neutral-800 scale-100"}`} />
                     </button>
                   ))}
+                  <span className="self-start text-sm text-muted-foreground" aria-hidden="true">*</span>
                 </div>
               </div>
 
@@ -258,73 +262,37 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                 onValueChange={(val) => setFormData({ ...formData, moduleName: val })}
               >
                 <SelectTrigger
-                  className={`bg-background border border-border text-sm font-normal shadow-none focus:border-emerald-500/50 transition-all outline-none flex items-center justify-between gap-3 text-left ${!formData.moduleName ? 'text-muted-foreground' : 'text-foreground'}`}
+                  className={`bg-background border border-border text-sm font-normal shadow-none focus:border-foreground/50 transition-all outline-none flex items-center justify-between gap-3 text-left ${!formData.moduleName ? 'text-muted-foreground' : 'text-foreground'}`}
                   style={{ width: '100%', height: '56px', borderRadius: '0.75rem', paddingLeft: '1.25rem', paddingRight: '1.25rem' }}
                 >
                   <span style={{ whiteSpace: 'normal', overflow: 'visible', textOverflow: 'clip', display: 'block' }}>
-                    <SelectValue placeholder="Which module did you like most?" />
+                    <SelectValue placeholder="Which feature did you like most? *" />
                   </span>
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Academic</SelectLabel>
-                    <SelectItem value="Attendance">Attendance System</SelectItem>
-                    <SelectItem value="Digital Classroom">Digital Classroom</SelectItem>
-                    <SelectItem value="Timetable">Automated Timetable</SelectItem>
-                    <SelectItem value="Academic Planning">Academic Planning Tools</SelectItem>
-                    <SelectItem value="Homework">Homework & Assignments</SelectItem>
-                    <SelectItem value="Notes Sharing">Student Notes Sharing</SelectItem>
-                    <SelectItem value="Teacher Planner">Teacher Planner</SelectItem>
-                    <SelectItem value="Subject Management">Subject Management</SelectItem>
-                    <SelectItem value="Course Management">Course Management</SelectItem>
-                  </SelectGroup>
-                  <SelectGroup>
-                    <SelectLabel>Assessment</SelectLabel>
-                    <SelectItem value="Online Exams">Online Exam Platform</SelectItem>
-                    <SelectItem value="Exam Management">Examination Management</SelectItem>
-                    <SelectItem value="Quiz Systems">Interactive Quiz Systems</SelectItem>
-                    <SelectItem value="Results & Grades">Grade Entry & Results</SelectItem>
-                    <SelectItem value="Internal Assessment">Internal Assessment Tools</SelectItem>
-                    <SelectItem value="CET/JEE/NEET">CET/JEE/NEET Exam Conduction</SelectItem>
-                    <SelectItem value="Mock Tests">Past Paper & Mock Tests</SelectItem>
-                    <SelectItem value="AI Viva">AI-Powered Viva</SelectItem>
-                    <SelectItem value="Test Series">Test Series Management</SelectItem>
-                  </SelectGroup>
-                  <SelectGroup>
-                    <SelectLabel>Management</SelectLabel>
-                    <SelectItem value="Admissions">Admission Management</SelectItem>
-                    <SelectItem value="Fees">Fee Collection System</SelectItem>
-                    <SelectItem value="Leave & Payroll">Staff Leave & Payroll</SelectItem>
-                    <SelectItem value="Canteen">Canteen Management</SelectItem>
-                    <SelectItem value="Library">Digital Library</SelectItem>
-                    <SelectItem value="Alumni">Alumni Network</SelectItem>
-                  </SelectGroup>
-                  <SelectGroup>
-                    <SelectLabel>Advanced</SelectLabel>
-                    <SelectItem value="AI Assistant">AI Assistant</SelectItem>
-                    <SelectItem value="Analytics">Advanced Analytics</SelectItem>
-                    <SelectItem value="Compliance">Compliance & Audit Trails</SelectItem>
-                    <SelectItem value="Certificates">Digital Certificates</SelectItem>
-                    <SelectItem value="Holidays">Holiday Management</SelectItem>
-                    <SelectItem value="ID Cards">Digital ID Cards</SelectItem>
-                    <SelectItem value="Events">Events Management</SelectItem>
-                    <SelectItem value="Feedback">Feedback System</SelectItem>
-                    <SelectItem value="Website Builder">Institution Website</SelectItem>
-                  </SelectGroup>
+                  <SelectItem value="Overall">Overall Experience</SelectItem>
+                  <SelectItem value="Agent Mode">Agent Mode</SelectItem>
+                  <SelectItem value="Project Mode">Project Mode</SelectItem>
+                  <SelectItem value="WhatsApp">WhatsApp & Calls</SelectItem>
+                  <SelectItem value="Connected Apps">Connected Apps</SelectItem>
+                  <SelectItem value="Schedules">Schedules & Background Tasks</SelectItem>
+                  <SelectItem value="Files & Reports">Files & Reports</SelectItem>
+                  <SelectItem value="Research">Web Research</SelectItem>
+                  <SelectItem value="AI Models">AI Models</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <textarea
-              required maxLength={2000} placeholder="How did Classgrid help your daily workflow?"
+              required maxLength={2000} placeholder="How did Classgrid help your daily workflow? *"
               value={formData.reviewText} onChange={(e) => setFormData({ ...formData, reviewText: e.target.value })}
-              className="w-full bg-background border border-border rounded-xl px-5 py-4 text-sm min-h-[140px] resize-none focus:border-emerald-500/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
+              className="w-full bg-background border border-border rounded-xl px-5 py-4 text-sm min-h-[140px] resize-none focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
             />
 
             <textarea
               maxLength={1000} placeholder="Any suggestions for us? (Optional)"
               value={formData.suggestion} onChange={(e) => setFormData({ ...formData, suggestion: e.target.value })}
-              className="w-full bg-background border border-border rounded-xl px-5 py-4 text-sm min-h-[100px] resize-none focus:border-emerald-500/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
+              className="w-full bg-background border border-border rounded-xl px-5 py-4 text-sm min-h-[100px] resize-none focus:border-foreground/50 transition-all outline-none text-foreground placeholder:text-muted-foreground"
             />
 
             <Button
@@ -349,8 +317,8 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
       <section className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>
-            <h3 className="text-2xl font-bold tracking-tight mb-1 text-foreground">What Institutions Say</h3>
-            <p className="text-muted-foreground text-sm font-medium">Verified feedback from students, faculty, and admins across India.</p>
+            <h3 className="text-2xl font-bold tracking-tight mb-1 text-foreground">What Our Users Say</h3>
+            <p className="text-muted-foreground text-sm font-medium">Verified feedback from people using Classgrid AI.</p>
           </div>
 
           {/* Star Filter Bar */}
@@ -361,13 +329,13 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                 onClick={() => setActiveFilter(cat)}
                 className="relative px-5 py-2 rounded-full text-[10px] font-bold transition-all whitespace-nowrap"
               >
-                <span className={`relative z-10 ${activeFilter === cat ? "text-emerald-950 dark:text-black" : "text-muted-foreground"}`}>
+                <span className={`relative z-10 ${activeFilter === cat ? "text-background" : "text-muted-foreground"}`}>
                   {cat}
                 </span>
                 {activeFilter === cat && (
                   <MotionDiv
                     layoutId="activeFilter"
-                    className="absolute inset-0 bg-emerald-400 rounded-full"
+                    className="absolute inset-0 bg-foreground rounded-full"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -397,19 +365,19 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                   transition={{ duration: 0.5, delay: index * 0.07 }}
                 >
                   <MotionDiv
-                    className="group p-8 rounded-[2rem] bg-card dark:bg-[#171717] border border-border dark:border-white/[0.05] hover:border-emerald-500/40 transition-all shadow-xl dark:shadow-2xl relative overflow-hidden"
+                    className="group p-8 rounded-[2rem] bg-card dark:bg-[#171717] border border-border dark:border-white/[0.05] hover:border-foreground/30 transition-all shadow-xl dark:shadow-2xl relative overflow-hidden"
                   >
                     {/* Header: Avatar, Name, Stats */}
                     <div className="flex items-start justify-between gap-4 mb-8">
                       <div className="flex items-center gap-4 min-w-0 flex-1">
-                        {/* System-color Avatar (Emerald/Teal variants only) */}
+                        {/* System-color Avatar (neutral variants only) */}
                         {rev.photoUrl ? (
                           <img src={rev.photoUrl} alt={rev.name} className="w-12 h-12 rounded-full object-cover shrink-0 shadow-lg border border-border" />
                         ) : (() => {
-                          const palette = ['bg-emerald-500', 'bg-teal-500', 'bg-emerald-600', 'bg-teal-600', 'bg-emerald-400'];
+                          const palette = ['bg-neutral-900 dark:bg-neutral-100', 'bg-neutral-800 dark:bg-neutral-200', 'bg-neutral-700 dark:bg-neutral-300', 'bg-neutral-600 dark:bg-neutral-400', 'bg-neutral-500 dark:bg-neutral-500'];
                           const colorClass = palette[rev.name.charCodeAt(0) % palette.length];
                           return (
-                            <div className={`w-12 h-12 rounded-full ${colorClass} flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg`}>
+                            <div className={`w-12 h-12 rounded-full ${colorClass} flex items-center justify-center text-background font-bold text-lg shrink-0 shadow-lg`}>
                               {rev.name.charAt(0).toUpperCase()}
                             </div>
                           );
@@ -419,11 +387,11 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                             <h4 className="font-bold text-base text-foreground truncate">{rev.name}</h4>
                             {rev.isVerified && <span title="Verified Classgrid User" className="cursor-default"><BadgeCheck className="w-5 h-5 fill-[#1D9BF0] text-background shrink-0 -ml-0.5" /></span>}
                           </div>
-                          <p title="User's Organization or Institution" className="text-[11px] text-muted-foreground font-bold truncate tracking-tight w-fit cursor-default">{rev.institution}</p>
+                          <p title="User's Organization" className="text-[11px] text-muted-foreground font-bold truncate tracking-tight w-fit cursor-default">{rev.institution}</p>
                           <p className="text-[11px] text-foreground/70 dark:text-foreground/80 font-semibold tracking-wide mt-1">{new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(rev._createdAt))}</p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-center bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20 gap-1 shrink-0">
+                      <div className="flex items-center justify-center bg-foreground/5 text-foreground px-3 py-1 rounded-full border border-border gap-1 shrink-0">
                         <span className="font-bold text-sm leading-none">{rev.rating}</span>
                         <Star className="w-3.5 h-3.5 fill-current leading-none mb-[1px]" />
                       </div>
@@ -434,10 +402,10 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                       <p className="text-[15px] text-muted-foreground text-muted-foreground leading-relaxed font-medium">"{rev.reviewText}"</p>
 
                       {/* Tags (System Colors) */}
-                      {(rev.positives?.length || rev.moduleName) && (
+                      {(!!rev.positives?.length || (rev.moduleName && FEATURE_NAMES.includes(rev.moduleName))) && (
                         <div className="flex flex-wrap gap-2 pt-4">
-                          {rev.moduleName && rev.moduleName !== 'Overall' && (
-                            <span title={`This user specifically reviewed our ${rev.moduleName} module.`} className="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold tracking-wider uppercase cursor-default">Module: {rev.moduleName}</span>
+                          {rev.moduleName && rev.moduleName !== 'Overall' && FEATURE_NAMES.includes(rev.moduleName) && (
+                            <span title={`This user specifically reviewed ${rev.moduleName}.`} className="px-3 py-1 rounded-lg bg-foreground/5 border border-border text-foreground text-[10px] font-bold tracking-wider uppercase cursor-default">Feature: {rev.moduleName}</span>
                           )}
                           {rev.positives?.filter(p => p && p.trim() !== '').map((p, i) => (
                             <span key={i} title="A key positive point mentioned by the user" className="px-3 py-1 rounded-lg bg-muted/30 dark:bg-white/[0.03] border border-border dark:border-white/5 text-muted-foreground text-[10px] font-bold tracking-wider uppercase cursor-default">{p}</span>
@@ -461,7 +429,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                               <img src="/logo.png" alt="CG" className="w-6 h-6 object-contain" />
                             </div>
                             <div className="flex-1">
-                              <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest block mb-2">Team Response</span>
+                              <span className="text-[10px] font-bold text-foreground uppercase tracking-widest block mb-2">Team Response</span>
                               <p className="text-sm text-muted-foreground text-muted-foreground leading-relaxed bg-muted/30 dark:bg-black/40 p-4 rounded-2xl rounded-tl-none border border-border dark:border-white/[0.03] shadow-inner">
                                 {rev.adminReply}
                               </p>
@@ -480,8 +448,8 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
 
       {/* Decorative Gradients */}
       <div className="fixed inset-0 pointer-events-none -z-20">
-        <div className="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-b from-emerald-500/[0.03] to-transparent" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-emerald-600/[0.02] blur-[150px] rounded-full" />
+        <div className="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-b from-foreground/[0.03] to-transparent" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-foreground/[0.02] blur-[150px] rounded-full" />
       </div>
 
     </main>

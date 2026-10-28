@@ -8,6 +8,9 @@ import { normalizePageSlug, normalizeText, type PageContext } from "@/lib/ai/rag
 import { connectMongo } from "@/lib/mongodb";
 import { RagChunk } from "@/lib/models/RagChunk";
 
+// Old school-product words: memory pieces or page text containing them are never shown to the AI.
+export const OLD_PRODUCT_WORDS = /\bERP\b|\bNAAC\b|\binstitutions?\b|\binstitutional\b|\bschools?\b|\bcolleges?\b|\bcoaching\b|\badmissions?\b|\battendance\b|\btimetables?\b|\bexaminations?\b|\bstudents?\b|\bfaculty\b|\bprincipals?\b|\bcampus(es)?\b|\bmarksheets?\b|\bhostel\b/i;
+
 export type RetrievedRagChunk = {
   id: string;
   documentId: string;
@@ -485,7 +488,11 @@ export async function retrieveClassgridContext(
   
   rows.push(...vectorRows);
 
-  const filtered = rows.filter((chunk) => chunk.score >= minScore && chunk.chunkText.trim());
+  const filtered = rows.filter((chunk) =>
+    chunk.score >= minScore &&
+    chunk.chunkText.trim() &&
+    !OLD_PRODUCT_WORDS.test(`${chunk.pageTitle || ""} ${chunk.chunkText}`)
+  );
   const ranked = rerankWithPageBoost(dedupeChunks(filtered), options.pageContext).slice(0, topK);
 
   const ragElapsed = Date.now() - ragStartTime;

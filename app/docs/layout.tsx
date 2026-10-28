@@ -5,20 +5,23 @@ import './docs.css';
 export const revalidate = 0; // disabled caching for development
 
 async function getSidebarSections() {
-  const query = `*[_type == "apiDoc"] | order(title asc) {
+  const query = `*[_type == "apiDoc" && docsVersion == "ai"] | order(coalesce(order, 999) asc, title asc) {
     title,
     "slug": slug.current,
     category
   }`;
-  
+
   const docs = await client.fetch(query);
-  
+
   // Define the desired order of categories and their display names
   const categoryOrder = [
     { id: 'getting-started', label: 'Getting Started' },
-    { id: 'platform-guides', label: 'Platform Guides' },
-    { id: 'admin-setup', label: 'Admin Setup' },
-    { id: 'api-reference', label: 'API Reference' },
+    { id: 'agent-mode', label: 'Agent mode' },
+    { id: 'project-mode', label: 'Project Mode' },
+    { id: 'grids', label: 'Grids' },
+    { id: 'whatsapp', label: 'WhatsApp' },
+    { id: 'plugins', label: 'Plugins' },
+    { id: 'account', label: 'Account' },
   ];
   
   const sectionsMap = new Map();

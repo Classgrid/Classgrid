@@ -17,9 +17,11 @@ import { ChevronDown } from "lucide-react";
 export function DocsFAQItem({
   children,
   open: controlledOpen,
+  summary,
 }: {
   children: ReactNode;
   open?: boolean;
+  summary?: ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(controlledOpen ?? false);
 
@@ -35,12 +37,13 @@ export function DocsFAQItem({
       bodyContent.push(child);
     }
   });
+  if (summary) summaryContent = summary;
 
   return (
     <div className="border-b border-slate-200 dark:border-white/10">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-medium leading-snug text-slate-900 dark:text-white transition-colors hover:text-emerald-400 focus-visible:outline-none"
+        className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-medium leading-snug text-slate-900 dark:text-white transition-colors hover:text-foreground/70 focus-visible:outline-none"
         aria-expanded={isOpen}
       >
         <span>{summaryContent}</span>

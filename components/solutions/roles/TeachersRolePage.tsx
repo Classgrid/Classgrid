@@ -52,12 +52,12 @@ const DEEP_DIVES = [
 
 export function TeachersRolePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-emerald-500/30">
+    <main className="min-h-screen bg-background text-foreground selection:bg-foreground/20">
       {/* ── HERO ── */}
       <section className="relative overflow-hidden border-b border-border pt-28 pb-16 dark:bg-[#0d0d0d]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08),transparent_65%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,var(--foreground)_8%,transparent),transparent_65%)] pointer-events-none" />
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-          <Badge variant="outline" className="mb-6 border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+          <Badge variant="outline" className="mb-6 border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-foreground">
             For Faculty & Teachers
           </Badge>
           <SectionAccentBar />
@@ -74,10 +74,10 @@ export function TeachersRolePage() {
       <section className="border-b border-border bg-card/30 py-6 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-sm font-medium text-muted-foreground text-center">
-            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500"/> One-Click Attendance</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500"/> AI Question Papers</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500"/> Bulk Grade Assignments</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500"/> Google Sheets Sync</span>
+            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-foreground"/> One-Click Attendance</span>
+            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-foreground"/> AI Question Papers</span>
+            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-foreground"/> Bulk Grade Assignments</span>
+            <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-foreground"/> Google Sheets Sync</span>
           </div>
         </div>
       </section>
@@ -92,8 +92,8 @@ export function TeachersRolePage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {MODULES.map((mod) => (
-              <div key={mod.name} className="flex flex-col items-center justify-center p-6 rounded-2xl border border-border bg-card hover:border-emerald-500/30 transition-colors">
-                <mod.icon className="h-8 w-8 text-emerald-500 mb-3" />
+              <div key={mod.name} className="flex flex-col items-center justify-center p-6 rounded-2xl border border-border bg-card hover:border-foreground/30 transition-colors">
+                <mod.icon className="h-8 w-8 text-foreground mb-3" />
                 <span className="text-sm font-semibold text-center">{mod.name}</span>
               </div>
             ))}
@@ -107,13 +107,13 @@ export function TeachersRolePage() {
           {DEEP_DIVES.map((dive, i) => (
             <div key={dive.title} className={`flex flex-col gap-10 lg:gap-16 items-center ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
               <div className="flex-1 space-y-5">
-                <span className="text-emerald-500 font-bold tracking-wider text-sm uppercase">{dive.eyebrow}</span>
+                <span className="text-foreground font-bold tracking-wider text-sm uppercase">{dive.eyebrow}</span>
                 <h3 className="text-3xl font-extrabold tracking-tight">{dive.title}</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">{dive.body}</p>
               </div>
               <div className="flex-1 w-full aspect-video bg-muted/40 rounded-2xl border border-border flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_70%)]" />
-                <ShieldCheck className="h-16 w-16 text-emerald-500/20" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,color-mix(in_srgb,var(--foreground)_10%,transparent),transparent_70%)]" />
+                <ShieldCheck className="h-16 w-16 text-foreground/20" />
                 <div className="absolute bottom-4 right-4 text-xs font-mono text-muted-foreground/40">Classgrid Native</div>
               </div>
             </div>
@@ -124,14 +124,14 @@ export function TeachersRolePage() {
       {/* ── CTA / TRUST ── */}
       <section className="pt-24 pb-12 border-t border-border bg-slate-50 text-center dark:bg-[#0a0a0a]">
         <div className="mx-auto max-w-3xl px-6">
-          <ShieldCheck className="h-12 w-12 text-emerald-500 mx-auto mb-6" />
+          <ShieldCheck className="h-12 w-12 text-foreground mx-auto mb-6" />
           <SectionAccentBar />
           <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Privacy-first. Institution-scoped</h2>
           <p className="mb-10 text-lg text-muted-foreground">Your students' data is secure and strictly scoped to your institution. Your institution's Classgrid account is waiting.</p>
           <div className="flex items-center justify-center gap-4">
              <Link
                 href="/support/ticket"
-                className="inline-flex h-11 items-center gap-2 rounded-full border border-border bg-card px-8 text-sm font-semibold text-foreground transition-colors hover:border-emerald-500/40 hover:text-emerald-500"
+                className="inline-flex h-11 items-center gap-2 rounded-full border border-border bg-card px-8 text-sm font-semibold text-foreground transition-colors hover:border-foreground/40 hover:text-foreground/70"
               >
                 Ask Your Admin
               </Link>

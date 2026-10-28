@@ -8,7 +8,7 @@ export default function IntegrationHero() {
     <section className="relative overflow-hidden bg-transparent py-32 flex flex-col items-center justify-center">
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 text-center z-20">
-        <span className="inline-block mb-4 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-sm font-semibold tracking-wider text-emerald-500 backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/50 dark:text-emerald-400">
+        <span className="inline-block mb-4 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-sm font-semibold tracking-wider text-foreground backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/50">
           INTEGRATIONS
         </span>
         <SectionAccentBar />
@@ -54,7 +54,7 @@ export default function IntegrationHero() {
         </div>
 
         {/* Center Logo */}
-        <div className="absolute z-20 w-32 h-32 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_80px_-10px_rgba(16, 185, 129)),1)] backdrop-blur-xl border border-white/20">
+        <div className="absolute z-20 w-32 h-32 rounded-full bg-foreground flex items-center justify-center text-background font-bold text-2xl backdrop-blur-xl border border-white/20">
           Classgrid
         </div>
       </div>

@@ -118,7 +118,7 @@ export function ViewPlatformPreview() {
           <button 
             type="submit" 
             disabled={!input.trim()}
-            className="h-8 w-8 shrink-0 rounded-full bg-foreground text-background hover:bg-foreground/90 disabled:opacity-50 transition-all shadow-sm flex items-center justify-center ml-1"
+            className="h-8 w-8 shrink-0 rounded-full bg-foreground text-background hover:bg-zinc-700 dark:hover:bg-zinc-300 disabled:opacity-50 transition-all shadow-sm flex items-center justify-center ml-1"
           >
             <ArrowUp className="h-4 w-4" />
           </button>
@@ -252,7 +252,7 @@ export function ViewPlatformPreview() {
                                  <p className="mb-2">This is a preview version of the Classgrid AI Agent.</p>
                                  <p className="mb-4">To continue this conversation and explore powerful AI workflows, please create a free account on Classgrid Agent!</p>
                                  
-                                 <a href="https://chat.classgrid.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium text-[14px] hover:bg-primary/90 transition-colors shadow-sm">
+                                 <a href="https://chat.classgrid.in" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium text-[14px] hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors shadow-sm">
                                    Open Agent Chat <ArrowUp className="w-4 h-4 rotate-45" />
                                  </a>
                                  

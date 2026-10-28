@@ -18,7 +18,7 @@ const LIGHT_BASE_COLOR: [number, number, number] = [0.95, 0.95, 0.95];
 // Dark glow for contrast on light backgrounds
 const LIGHT_GLOW_COLOR: [number, number, number] = [0.35, 0.35, 0.35];
 // Emerald-ish marker color
-const LIGHT_MARKER_COLOR: [number, number, number] = [0.2, 0.72, 0.53];
+const LIGHT_MARKER_COLOR: [number, number, number] = [0.1, 0.1, 0.1];
 
 const projectLocation = (lat: number, lon: number, phi: number, theta: number) => {
   const latRad = lat * (Math.PI / 180);

@@ -452,7 +452,7 @@ const RichReplyEditor = forwardRef<RichReplyEditorRef, RichReplyEditorProps>(
 
     return (
       <>
-        <div className="rounded-xl border border-border bg-background focus-within:ring-2 focus-within:ring-emerald-500/40 focus-within:border-emerald-500 transition-all overflow-hidden">
+        <div className="rounded-xl border border-border bg-background focus-within:ring-2 focus-within:ring-foreground/15 focus-within:border-foreground/40 transition-all overflow-hidden">
           {/* Hidden file input for images */}
           <input
             ref={imageInputRef}
@@ -535,9 +535,9 @@ const RichReplyEditor = forwardRef<RichReplyEditorRef, RichReplyEditorProps>(
             <div className="ml-auto flex items-center gap-3">
               {uploadingImage && (
                 <div className="flex items-center gap-2">
-                  <div className="text-[10px] font-bold text-emerald-500">Uploading {uploadProgress}%</div>
+                  <div className="text-[10px] font-bold text-foreground">Uploading {uploadProgress}%</div>
                   <div className="w-16 h-1.5 bg-border rounded-full overflow-hidden">
-                    <div className="h-full bg-emerald-500 transition-all duration-200" style={{ width: `${uploadProgress}%` }} />
+                    <div className="h-full bg-foreground transition-all duration-200" style={{ width: `${uploadProgress}%` }} />
                   </div>
                 </div>
               )}
@@ -557,7 +557,7 @@ const RichReplyEditor = forwardRef<RichReplyEditorRef, RichReplyEditorProps>(
                   }
                   syncContent();
                 }}
-                className={`text-[10px] font-semibold px-2 py-0.5 rounded transition-colors ${isPlainText ? "bg-emerald-600 text-white hover:bg-emerald-700" : "bg-muted text-muted-foreground hover:bg-zinc-300 dark:hover:bg-zinc-700 hover:text-accent-foreground"}`}
+                className={`text-[10px] font-semibold px-2 py-0.5 rounded transition-colors ${isPlainText ? "bg-foreground text-background hover:bg-zinc-700 dark:hover:bg-zinc-300" : "bg-muted text-muted-foreground hover:bg-zinc-300 dark:hover:bg-zinc-700 hover:text-accent-foreground"}`}
               >
                 {isPlainText ? "Rich text" : "Plain text"}
               </button>
@@ -576,7 +576,7 @@ const RichReplyEditor = forwardRef<RichReplyEditorRef, RichReplyEditorProps>(
               onClick={handleEditorClick}
               onMouseOver={handleMouseOver}
               onMouseOut={handleMouseOut}
-              className="caret-primary p-4 bg-transparent text-sm text-foreground outline-none prose prose-sm dark:prose-invert max-w-none break-words [&_p]:mb-3 [&_p]:leading-relaxed empty:before:content-[attr(data-placeholder)] empty:before:text-zinc-400 dark:empty:before:text-zinc-600 empty:before:pointer-events-none [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4 [&_li]:!mb-0 [&_li]:!py-0.5 [&_li_*]:!mb-0 [&_li_*]:!mt-0 [&_li_p]:!leading-relaxed [&_li_div]:!leading-relaxed [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-4 [&_blockquote]:italic [&_a]:!text-blue-500 [&_a]:!no-underline [&_a]:cursor-pointer [&_u]:!decoration-emerald-500 [&_u]:underline-offset-4 [&_u]:decoration-2 [&_span[style*='underline']]:!decoration-emerald-500 [&_span[style*='underline']]:underline-offset-4 [&_span[style*='underline']]:decoration-2 [&_img]:max-w-[150px] [&_img]:max-h-[150px] [&_img]:object-cover [&_img]:rounded-lg [&_img]:cursor-pointer [&_img]:border [&_img]:border-border [&_img]:shadow-sm [&_img]:inline-block [&_img]:m-2 hover:[&_img]:opacity-80"
+              className="caret-primary p-4 bg-transparent text-sm text-foreground outline-none prose prose-sm dark:prose-invert max-w-none break-words [&_p]:mb-3 [&_p]:leading-relaxed empty:before:content-[attr(data-placeholder)] empty:before:text-zinc-400 dark:empty:before:text-zinc-600 empty:before:pointer-events-none [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4 [&_li]:!mb-0 [&_li]:!py-0.5 [&_li_*]:!mb-0 [&_li_*]:!mt-0 [&_li_p]:!leading-relaxed [&_li_div]:!leading-relaxed [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-4 [&_blockquote]:italic [&_a]:!text-blue-500 [&_a]:!no-underline [&_a]:cursor-pointer [&_u]:!decoration-foreground [&_u]:underline-offset-4 [&_u]:decoration-2 [&_span[style*='underline']]:!decoration-foreground [&_span[style*='underline']]:underline-offset-4 [&_span[style*='underline']]:decoration-2 [&_img]:max-w-[150px] [&_img]:max-h-[150px] [&_img]:object-cover [&_img]:rounded-lg [&_img]:cursor-pointer [&_img]:border [&_img]:border-border [&_img]:shadow-sm [&_img]:inline-block [&_img]:m-2 hover:[&_img]:opacity-80"
               style={{ minHeight, maxHeight, overflowY: "auto", overflowX: "hidden" }}
             />
 
@@ -595,7 +595,7 @@ const RichReplyEditor = forwardRef<RichReplyEditorRef, RichReplyEditorProps>(
                   href={linkTooltip.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 px-2 py-1 bg-emerald-600 text-white rounded font-semibold hover:bg-emerald-700 transition-colors"
+                  className="flex items-center gap-1 px-2 py-1 bg-foreground text-background rounded font-semibold hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors"
                 >
                   <ExternalLink className="w-3 h-3" />
                   Open
@@ -629,7 +629,7 @@ const RichReplyEditor = forwardRef<RichReplyEditorRef, RichReplyEditorProps>(
                     const url = URL.createObjectURL(file);
                     setFilePreview({ url, name: file.name, type: file.type });
                   }}
-                  className="w-5 h-5 flex items-center justify-center rounded-full hover:bg-emerald-500/10 text-muted-foreground hover:text-emerald-500 transition-colors"
+                  className="w-5 h-5 flex items-center justify-center rounded-full hover:bg-foreground/10 text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Eye className="w-3 h-3" />
                 </button>
@@ -751,7 +751,7 @@ const RichReplyEditor = forwardRef<RichReplyEditorRef, RichReplyEditorProps>(
             {/* File name */}
             <div className="absolute top-5 left-5 z-10 px-4 py-2 bg-card/90 backdrop-blur-sm border border-border rounded-lg shadow-lg">
               <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4 text-emerald-500" />
+                <Eye className="w-4 h-4 text-foreground" />
                 <span className="text-sm font-medium text-foreground">{filePreview.name}</span>
               </div>
             </div>

@@ -197,7 +197,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
       {/* <GoogleOneTap /> */}
       {/* Progress Reading Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-emerald-500 origin-left z-[100]"
+        className="fixed top-0 left-0 right-0 h-1 bg-foreground origin-left z-[100]"
         style={{ scaleX }}
       />
 
@@ -223,11 +223,11 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                   <div className="flex flex-wrap items-center justify-center text-sm text-muted-foreground gap-4 md:gap-6 w-full">
                     <div className="flex flex-wrap items-center justify-center gap-x-4 md:gap-x-5 gap-y-2 text-xs md:text-sm">
                       <div className="flex items-center" title="Approximate Views">
-                        <Eye className="w-4 h-4 mr-1.5 text-emerald-500 shrink-0" />
+                        <Eye className="w-4 h-4 mr-1.5 text-foreground shrink-0" />
                         <span>{Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 }).format(viewCount)} views</span>
                       </div>
                       <div className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1.5 text-emerald-500 shrink-0" />
+                        <Clock className="w-4 h-4 mr-1.5 text-foreground shrink-0" />
                         <span>{getReadingTime(post, lang)}</span>
                       </div>
                       <div className="flex items-center">
@@ -235,7 +235,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                       </div>
                       <button
                         onClick={() => { navigator.clipboard.writeText(canonicalUrl); setIsCopied(true); }}
-                        className={`flex items-center transition-colors ${isCopied ? 'text-emerald-500' : 'hover:text-emerald-500'}`}
+                        className={`flex items-center transition-colors ${isCopied ? 'text-emerald-500' : 'hover:text-foreground'}`}
                       >
                         <Link2 className="w-4 h-4 mr-1.5 shrink-0" />
                         <span className="min-w-[75px] whitespace-nowrap text-left block">{isCopied ? "Copied" : "Copy Link"}</span>
@@ -247,7 +247,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                 {post.excerpt && (
                   <div className="mt-8 mb-8">
                     <div className="relative px-6 py-5 sm:px-8 sm:py-6 bg-slate-50/50 dark:bg-white/[0.02] border border-slate-300 dark:border-white/[0.05] rounded-3xl shadow-sm backdrop-blur-md text-left">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-gradient-to-r from-emerald-400/0 via-emerald-500 to-emerald-400/0 rounded-full" />
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-gradient-to-r from-foreground/0 via-foreground to-foreground/0 rounded-full" />
                       <p className="text-[1.05rem] sm:text-[1.1rem] leading-relaxed text-foreground/80 font-medium">
                         {extractLocaleString(post.excerpt, lang)}
                       </p>
@@ -377,7 +377,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
             <MotionDiv id="blog-references" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="mt-10 rounded-xl border border-slate-300 dark:border-border bg-slate-50 dark:bg-card/50 overflow-hidden">
               <div className="px-6 py-4 border-b border-slate-300 dark:border-white/10">
                 <h3 className="text-base font-semibold text-foreground flex items-center">
-                  <Link2 className="w-4 h-4 mr-2 text-emerald-500" /> References & Sources
+                  <Link2 className="w-4 h-4 mr-2 text-foreground" /> References & Sources
                 </h3>
               </div>
               <div className="divide-y divide-slate-300 dark:divide-white/10">
@@ -393,27 +393,27 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
 
                   let IconComponent = ExternalLink;
                   let platformLabel = 'Visit Website';
-                  let platformColor = 'text-emerald-500';
+                  let platformColor = 'text-foreground';
 
                   if (isYouTube) { IconComponent = Youtube; platformLabel = 'Watch on YouTube'; platformColor = 'text-red-400'; }
                   else if (isInstagram) { IconComponent = Instagram; platformLabel = 'View on Instagram'; platformColor = 'text-pink-400'; }
                   else if (isFacebook) { IconComponent = Facebook; platformLabel = 'View on Facebook'; platformColor = 'text-blue-400'; }
                   else if (isTwitter) { IconComponent = Twitter; platformLabel = 'View on X'; platformColor = 'text-slate-300'; }
-                  else if (isWhatsApp) { IconComponent = MessageCircle; platformLabel = 'Open in WhatsApp'; platformColor = 'text-green-400'; }
+                  else if (isWhatsApp) { IconComponent = MessageCircle; platformLabel = 'Open in WhatsApp'; platformColor = 'text-foreground'; }
                   else if (isLinkedIn) { IconComponent = ExternalLink; platformLabel = 'View on LinkedIn'; platformColor = 'text-sky-400'; }
                   else if (isGitHub) { IconComponent = ExternalLink; platformLabel = 'View on GitHub'; platformColor = 'text-neutral-300'; }
 
                   return (
-                    <a key={idx} href={url} target="_blank" rel="noreferrer" className="flex items-center gap-4 px-6 py-4 hover:bg-emerald-500/5 transition-colors group">
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:bg-emerald-500/10 transition-colors`}>
+                    <a key={idx} href={url} target="_blank" rel="noreferrer" className="flex items-center gap-4 px-6 py-4 hover:bg-foreground/5 transition-colors group">
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:bg-foreground/10 transition-colors`}>
                         <IconComponent className={`w-5 h-5 ${platformColor}`} />
                       </div>
                       <div className="flex-grow min-w-0">
-                        <p className="text-sm font-medium text-foreground truncate group-hover:text-emerald-500 transition-colors">{ref.title || platformLabel}</p>
+                        <p className="text-sm font-medium text-foreground truncate group-hover:text-foreground/70 transition-colors">{ref.title || platformLabel}</p>
                         <p className={`text-xs ${platformColor}`}>{platformLabel}</p>
                         {ref.description && <p className="text-xs text-muted-foreground/70 mt-0.5 line-clamp-1">{ref.description}</p>}
                       </div>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground/50 flex-shrink-0 group-hover:text-emerald-500 transition-colors" />
+                      <ExternalLink className="w-4 h-4 text-muted-foreground/50 flex-shrink-0 group-hover:text-foreground transition-colors" />
                     </a>
                   );
                 })}
@@ -425,7 +425,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
           {post.tags && post.tags.length > 0 && (
             <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="mt-12 flex flex-wrap gap-2">
               {post.tags.map((tag: string, i: number) => (
-                <span key={i} className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-semibold tracking-wide text-emerald-500 hover:bg-emerald-500/20 transition-colors cursor-default">
+                <span key={i} className="px-3 py-1 bg-foreground/5 border border-border rounded-full text-xs font-semibold tracking-wide text-foreground hover:bg-foreground/10 transition-colors cursor-default">
                   #{tag}
                 </span>
               ))}
@@ -447,7 +447,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                 <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-sky-300 bg-sky-50 hover:bg-sky-100 dark:border-sky-600/30 dark:bg-sky-600/10 dark:hover:bg-sky-600/20 px-4 py-2 text-sm font-medium transition-colors text-sky-700 dark:text-sky-500 flex-1 sm:flex-auto justify-center">
                   <Linkedin className="w-4 h-4" /> <span className="hidden xs:inline">LinkedIn</span>
                 </a>
-                <a href={`https://wa.me/?text=${encodeURIComponent(`Check out this blog post from Classgrid:\n${canonicalUrl}`)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 dark:border-emerald-600/30 dark:bg-emerald-600/10 dark:hover:bg-emerald-600/20 px-4 py-2 text-sm font-medium transition-colors text-emerald-700 dark:text-emerald-500 flex-1 sm:flex-auto justify-center">
+                <a href={`https://wa.me/?text=${encodeURIComponent(`Check out this blog post from Classgrid:\n${canonicalUrl}`)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-slate-700/50 dark:bg-slate-800/20 dark:hover:bg-slate-800/40 px-4 py-2 text-sm font-medium transition-colors text-slate-700 dark:text-slate-300 flex-1 sm:flex-auto justify-center">
                   <WhatsappIcon className="w-4 h-4" /> <span className="hidden xs:inline">WhatsApp</span>
                 </a>
               </div>
@@ -469,7 +469,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
             return (
               <MotionDiv id="blog-author" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="mt-12 border-t border-border pt-10 pb-6">
                 <div className="text-center mb-8">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-foreground bg-foreground/5 px-3 py-1 rounded-full">
                     {authorsList.length > 1 ? 'Content Writers' : 'Content Writer'}
                   </span>
                 </div>
@@ -481,9 +481,9 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                     const aBio = authorItem.bio;
 
                     const avatarEl = (
-                      <Avatar className="h-20 w-20 ring-2 ring-emerald-500/20 hover:ring-emerald-500 hover:scale-105 transition-all duration-300 cursor-pointer">
+                      <Avatar className="h-20 w-20 ring-2 ring-foreground/20 hover:ring-foreground hover:scale-105 transition-all duration-300 cursor-pointer">
                         {aImage && <AvatarImage src={urlFor(aImage).url()} alt={aName} className="object-cover" />}
-                        <AvatarFallback className="bg-emerald-500/10 text-emerald-500 text-2xl font-bold">{aName.charAt(0)}</AvatarFallback>
+                        <AvatarFallback className="bg-foreground/5 text-foreground text-2xl font-bold">{aName.charAt(0)}</AvatarFallback>
                       </Avatar>
                     );
 
@@ -539,7 +539,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                   className={cn(
                     "block px-3 py-2.5 rounded-lg text-[14px] transition-colors",
                     activeSection === item.id
-                      ? "bg-emerald-500/15 text-emerald-400 font-medium"
+                      ? "bg-foreground/10 text-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   )}
                 >
@@ -552,10 +552,10 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
         )}
         <button
           onClick={() => setMobileTocOpen((v) => !v)}
-          className="fixed bottom-5 right-4 z-40 flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2.5 text-[13px] font-medium text-foreground shadow-[0_4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all hover:border-emerald-500/40 hover:bg-accent active:scale-95"
+          className="fixed bottom-5 right-4 z-40 flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2.5 text-[13px] font-medium text-foreground shadow-[0_4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all hover:border-foreground/40 hover:bg-accent active:scale-95"
           aria-label="Open table of contents"
         >
-          <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-3.5 h-3.5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h10M4 18h7" />
           </svg>
           On this page
@@ -582,7 +582,7 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                   </div>
                 )}
                 <Link href={buildLangHref("/blog", lang)}>
-                  <Button variant="outline" className="hidden md:flex rounded-full border-emerald-500/20 text-emerald-500 hover:bg-emerald-500/10">View All Blogs</Button>
+                  <Button variant="outline" className="hidden md:flex rounded-full border-border text-foreground hover:bg-foreground/5">View All Blogs</Button>
                 </Link>
               </div>
             </MotionDiv>
@@ -594,22 +594,22 @@ export function BlogDetailClient({ post, relatedPosts, lang }: BlogDetailClientP
                 <MotionDiv key={relatedPage} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.4, ease: "easeInOut" }} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full">
                   {relatedPosts.slice(relatedPage * RELATED_PAGE_SIZE, (relatedPage + 1) * RELATED_PAGE_SIZE).map((relatedPost: any, i: number) => (
                     <Link key={relatedPost._id || i} href={buildLangHref(`/blog/${getSlug(relatedPost.slug)}`, lang)}>
-                      <MotionDiv variants={slideUp} className="group h-full rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-300 dark:border-white/10 hover:border-emerald-500/30 flex flex-col isolate">
+                      <MotionDiv variants={slideUp} className="group h-full rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-300 dark:border-white/10 hover:border-foreground/30 flex flex-col isolate">
                         <div className="w-full h-56 bg-surface-container-lowest relative overflow-hidden rounded-t-2xl">
                           {relatedPost.coverImage ? (
                             <Image src={urlFor(relatedPost.coverImage).url()} alt={extractLocaleString(relatedPost.title, lang)} fill className="object-cover" />
                           ) : (
-                            <div className="w-full h-full bg-emerald-500/5 flex items-center justify-center group-hover:bg-emerald-500/10 transition-colors duration-500"><span className="text-emerald-500/30 text-3xl font-bold">BLOG</span></div>
+                            <div className="w-full h-full bg-foreground/5 flex items-center justify-center group-hover:bg-foreground/10 transition-colors duration-500"><span className="text-foreground/30 text-3xl font-bold">BLOG</span></div>
                           )}
                         </div>
                         <div className="p-6 flex flex-col flex-grow">
                           <div className="flex justify-between items-center mb-4">
-                            <span className="text-xs font-semibold tracking-wider text-emerald-500 uppercase">{extractLocaleString(relatedPost.category, lang) || "Insight"}</span>
+                            <span className="text-xs font-semibold tracking-wider text-foreground uppercase">{extractLocaleString(relatedPost.category, lang) || "Insight"}</span>
                             <span className="text-xs text-muted-foreground">{relatedPost.publishedAt ? formatDate(new Date(relatedPost.publishedAt), "MMM dd, yyyy") : "Mar 2024"}</span>
                           </div>
-                          <h3 className="text-xl font-bold text-foreground mb-3 leading-snug group-hover:text-emerald-500 transition-colors line-clamp-2">{(extractLocaleString(relatedPost.title, lang) || "").replace(/\.\s*$/, "")}</h3>
+                          <h3 className="text-xl font-bold text-foreground mb-3 leading-snug group-hover:text-foreground/70 transition-colors line-clamp-2">{(extractLocaleString(relatedPost.title, lang) || "").replace(/\.\s*$/, "")}</h3>
                           {relatedPost.excerpt && <p className="text-muted-foreground text-base line-clamp-2 mb-6 flex-grow">{extractLocaleString(relatedPost.excerpt, lang)}</p>}
-                          <div className="flex items-center text-sm font-medium text-emerald-500 group-hover:translate-x-1 transition-transform mt-auto">Read <ArrowRight className="w-4 h-4 ml-1.5" /></div>
+                          <div className="flex items-center text-sm font-medium text-foreground group-hover:translate-x-1 transition-transform mt-auto">Read <ArrowRight className="w-4 h-4 ml-1.5" /></div>
                         </div>
                       </MotionDiv>
                     </Link>

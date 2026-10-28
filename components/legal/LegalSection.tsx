@@ -24,7 +24,7 @@ export function LegalSection({
       <Card className="mb-8 rounded-xl border border-border bg-transparent transition-colors duration-200 hover:bg-muted/20">
         <CardContent className="px-6 py-6 sm:px-8 sm:py-7">
           <div>
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-emerald-500">{number}</p>
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-foreground">{number}</p>
             <h2 className="mt-2 text-[1.25rem] font-semibold tracking-tight text-foreground">{title}</h2>
             {meta && meta.length > 0 ? (
               <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">

@@ -120,12 +120,12 @@ function getInitials(name: string) {
 }
 
 const avatarColors = [
-  "bg-emerald-500", "bg-emerald-600", "bg-green-500", 
-  "bg-green-600", "bg-teal-500", "bg-teal-600"
+  "bg-zinc-500", "bg-zinc-600", "bg-zinc-700",
+  "bg-neutral-500", "bg-neutral-600", "bg-neutral-700"
 ];
 
 function getAvatarColor(name: string) {
-  if (!name) return "bg-emerald-500";
+  if (!name) return "bg-zinc-600";
   let hash = 0;
   for (let i = 0; i < name.length; i++) {
     hash = name.charCodeAt(i) + ((hash << 5) - hash);
@@ -144,8 +144,8 @@ function TicketDetailPageInner() {
   const ticketId = params?.id as string;
   const queryEmail = searchParams?.get("email") || "";
   const isPlatformUser = (session?.user as any)?.isPlatformUser === true;
-  const entityName = isPlatformUser ? "ticket" : "inquiry";
-  const entityNameCapitalized = isPlatformUser ? "Ticket" : "Inquiry";
+  const entityName = "ticket";
+  const entityNameCapitalized = "Ticket";
 
   const [ticket, setTicket] = useState<TicketData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -376,7 +376,7 @@ function TicketDetailPageInner() {
           </p>
           <Link
             href="/support/requests"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to My Requests
@@ -397,7 +397,7 @@ function TicketDetailPageInner() {
           <p className="text-sm text-muted-foreground mb-6">The requested ticket does not exist.</p>
           <Link
             href="/support/requests"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to My Requests
@@ -413,7 +413,7 @@ function TicketDetailPageInner() {
   const isClosed = ticket.status === "closed";
 
   return (
-    <main className="min-h-screen bg-background pt-8 pb-24 px-4 md:px-12 selection:bg-emerald-500/30 transition-colors duration-300">
+    <main className="min-h-screen bg-background pt-8 pb-24 px-4 md:px-12 selection:bg-foreground/20 transition-colors duration-300">
       <div className="max-w-[960px] mx-auto">
 
         {/* ── Title + Status Badge ── */}
@@ -434,7 +434,7 @@ function TicketDetailPageInner() {
           <button
             onClick={handleManualRefresh}
             disabled={isRefreshing}
-            className="ml-auto inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 rounded-full transition-colors disabled:opacity-50"
+            className="ml-auto inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-foreground bg-foreground/5 hover:bg-foreground/10 rounded-full transition-colors disabled:opacity-50"
           >
             <Spinner className={`w-3.5 h-3.5 ${isRefreshing ? "" : "opacity-0"}`} />
             {isRefreshing ? "Refreshing..." : "Refresh"}
@@ -519,7 +519,7 @@ function TicketDetailPageInner() {
                         )}
                       </div>
                       <div
-                        className="whitespace-pre-wrap break-words text-base text-foreground leading-relaxed [&_*]:!text-foreground [&>p]:mb-4 last:[&>p]:mb-0 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:mb-4 [&>li]:mb-1.5 [&>strong]:!font-bold [&>h1]:text-xl [&>h1]:!font-bold [&>h1]:mb-3 [&>h2]:text-lg [&>h2]:!font-bold [&>h2]:mb-3 [&>h3]:text-base [&>h3]:!font-bold [&>h3]:mb-2 [&>blockquote]:border-l-4 [&>blockquote]:border-primary/50 [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:my-3 [&>pre]:bg-muted [&>pre]:p-3 [&>pre]:rounded-md [&>pre]:overflow-x-auto [&>code]:bg-muted [&>code]:px-1 [&>code]:rounded [&_a]:!text-blue-500 [&_a]:!no-underline hover:[&_a]:!text-blue-400 [&_u]:!decoration-emerald-500 [&_u]:underline-offset-4 [&_u]:decoration-2 [&_span[style*='underline']]:!decoration-emerald-500 [&_span[style*='underline']]:underline-offset-4 [&_span[style*='underline']]:decoration-2 [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg [&_img]:border [&_img]:border-border [&_img]:my-4 [&_img]:max-h-[500px] [&_img]:object-contain overflow-hidden"
+                        className="whitespace-pre-wrap break-words text-base text-foreground leading-relaxed [&_*]:!text-foreground [&>p]:mb-4 last:[&>p]:mb-0 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:mb-4 [&>li]:mb-1.5 [&>strong]:!font-bold [&>h1]:text-xl [&>h1]:!font-bold [&>h1]:mb-3 [&>h2]:text-lg [&>h2]:!font-bold [&>h2]:mb-3 [&>h3]:text-base [&>h3]:!font-bold [&>h3]:mb-2 [&>blockquote]:border-l-4 [&>blockquote]:border-primary/50 [&>blockquote]:pl-4 [&>blockquote]:italic [&>blockquote]:my-3 [&>pre]:bg-muted [&>pre]:p-3 [&>pre]:rounded-md [&>pre]:overflow-x-auto [&>code]:bg-muted [&>code]:px-1 [&>code]:rounded [&_a]:!text-blue-500 [&_a]:!no-underline hover:[&_a]:!text-blue-400 [&_u]:!decoration-foreground [&_u]:underline-offset-4 [&_u]:decoration-2 [&_span[style*='underline']]:!decoration-foreground [&_span[style*='underline']]:underline-offset-4 [&_span[style*='underline']]:decoration-2 [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg [&_img]:border [&_img]:border-border [&_img]:my-4 [&_img]:max-h-[500px] [&_img]:object-contain overflow-hidden"
                         dangerouslySetInnerHTML={{ __html: msg.body }}
                         onClick={(e) => {
                           const target = e.target as HTMLElement;
@@ -584,7 +584,7 @@ function TicketDetailPageInner() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-foreground/5 border border-foreground/10 backdrop-blur-sm"
                       >
                         <motion.div
                           initial={{ scale: 0 }}
@@ -593,7 +593,7 @@ function TicketDetailPageInner() {
                         >
                           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                         </motion.div>
-                        <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                        <span className="text-sm font-medium text-foreground">
                           Reply sent
                         </span>
                       </motion.div>
@@ -605,10 +605,10 @@ function TicketDetailPageInner() {
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="mb-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex gap-3"
+                        className="mb-4 p-4 bg-foreground/5 border border-foreground/10 rounded-xl flex gap-3"
                       >
                         <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                        <div className="text-sm text-emerald-800 dark:text-emerald-300 leading-relaxed">
+                        <div className="text-sm text-foreground leading-relaxed">
                           <p className="font-semibold mb-1">This {entityName} has been marked as resolved.</p>
                           <p>
                             If you are satisfied with the support team's reply, you can close this {entityName}. 
@@ -704,7 +704,7 @@ function TicketDetailPageInner() {
               <div className="mt-8 pt-8 border-t border-border text-center py-6">
                 <p className="text-sm text-muted-foreground">
                   This {entityName} has been <strong>{ticket.status}</strong>. If you need further help,{" "}
-                  <Link href={isPlatformUser ? "/support/ticket" : "/support/inquiry"} className="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">
+                  <Link href={"/support/ticket"} className="text-foreground font-semibold hover:underline">
                     submit a new {entityName}
                   </Link>.
                 </p>

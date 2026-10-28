@@ -64,7 +64,7 @@ export function ClassgridVideoSection({
               <ul className="mt-2 flex flex-col gap-4">
                 {highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 text-xs font-bold text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400">
+                    <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-foreground/5 text-xs font-bold text-foreground dark:bg-foreground/10">
                       {index + 1}
                     </span>
                     <span className="text-base md:text-lg font-medium leading-relaxed text-slate-800 dark:text-slate-200">

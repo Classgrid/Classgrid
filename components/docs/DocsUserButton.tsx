@@ -19,9 +19,8 @@ const DEFAULT_AVATAR_URL =
  * DocsUserButton — shows Login/Profile/Dashboard in the docs navbar.
  *
  * States:
- * - Not logged in: [Login] button
+ * - No chat.classgrid.in account / not logged in: [Log In] button
  * - Platform user logged in: [Dashboard] button + [Profile Photo]
- * - Non-platform user logged in: [Name (non-clickable)] + [Profile Photo/Initials]
  *
  * Desktop only.
  */
@@ -33,7 +32,8 @@ export function DocsUserButton() {
 
   const user = session?.user as any;
   const isPlatformUser = !!user?.isPlatformUser;
-  const isLoggedIn = status === "authenticated" && !!user;
+  // Only people with a chat.classgrid.in account count as logged in here
+  const isLoggedIn = status === "authenticated" && !!user && isPlatformUser;
 
   // Trigger SSO token minting when a platform user logs in
   useEffect(() => {
@@ -105,7 +105,7 @@ export function DocsUserButton() {
         }}
         className="hidden md:inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 dark:border-white/[0.1] bg-slate-100 dark:bg-white/[0.04] px-3 text-sm font-medium tracking-tight text-slate-900 dark:text-white/90 shadow-sm dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)] transition-all duration-200 hover:bg-slate-200 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.2] hover:text-slate-900 dark:hover:text-white cursor-pointer"
       >
-        Sign up
+        Log In
       </button>
     );
   }
@@ -136,21 +136,15 @@ export function DocsUserButton() {
 
   return (
     <div className="hidden md:flex items-center gap-2">
-      {/* Dashboard button OR Name */}
-      {isPlatformUser ? (
-        <a
-          href={dashboardUrl || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 dark:border-white/[0.1] bg-slate-100 dark:bg-white/[0.04] px-4 text-sm font-medium tracking-tight text-slate-900 dark:text-white/90 shadow-sm dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)] transition-all duration-200 hover:bg-slate-200 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.2] hover:text-slate-900 dark:hover:text-white cursor-pointer"
-        >
-          <span>Dashboard</span>
-        </a>
-      ) : (
-        <span className="inline-flex h-9 items-center px-3 text-sm font-medium tracking-tight text-slate-900 dark:text-white/70 select-none">
-          {userName}
-        </span>
-      )}
+      {/* Dashboard button */}
+      <a
+        href={dashboardUrl || "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 dark:border-white/[0.1] bg-slate-100 dark:bg-white/[0.04] px-4 text-sm font-medium tracking-tight text-slate-900 dark:text-white/90 shadow-sm dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)] transition-all duration-200 hover:bg-slate-200 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.2] hover:text-slate-900 dark:hover:text-white cursor-pointer"
+      >
+        <span>Dashboard</span>
+      </a>
 
       {/* Profile photo with dropdown */}
       <div className="relative" ref={dropdownRef}>

@@ -27,7 +27,7 @@ export function PhoneMockup({
         <div className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-[#f4f7fb]">
           <div className="absolute left-1/2 top-0 z-20 h-7 w-36 -translate-x-1/2 rounded-b-[1.2rem] bg-[#0b0b0b] shadow-[0_10px_24px_rgba(0,0,0,0.35)]">
             <div className="absolute left-1/2 top-2 h-2 w-16 -translate-x-1/2 rounded-full bg-white/10" />
-            <div className="absolute right-4 top-2.5 h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
+            <div className="absolute right-4 top-2.5 h-2.5 w-2.5 rounded-full bg-white/40" />
           </div>
 
           <div className={cn("relative min-h-[620px] overflow-hidden rounded-[2.05rem]", screenClassName)}>

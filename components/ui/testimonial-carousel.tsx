@@ -78,13 +78,13 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
   return (
     <article
       className={cn(
-        "group w-[290px] rounded-2xl bg-[linear-gradient(180deg,rgba(6,57,45,0.96),rgba(3,31,25,0.98))] p-6 ring-1 ring-emerald-900/45 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:bg-[linear-gradient(180deg,rgba(8,70,55,0.98),rgba(4,38,30,0.98))] hover:shadow-[0_16px_36px_rgba(16,185,129,0.12)] sm:w-[330px]",
+        "group w-[290px] rounded-2xl bg-foreground p-6 ring-1 ring-foreground/10 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:bg-foreground/90 hover:shadow-[0_16px_36px_rgba(0,0,0,0.12)] sm:w-[330px]",
         cardHeightClasses[index % cardHeightClasses.length]
       )}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full bg-emerald-950/70 ring-1 ring-emerald-800/70">
+          <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full bg-background/10 ring-1 ring-background/20">
             {testimonial.avatarUrl ? (
               <img
                 src={testimonial.avatarUrl}
@@ -92,25 +92,25 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
                 className="h-full w-full object-cover"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center text-sm font-semibold text-emerald-100">
+              <div className="flex h-full w-full items-center justify-center text-sm font-semibold text-background">
                 {getInitials(safeName || roleLine || "")}
               </div>
             )}
           </div>
           <div className="space-y-1">
             {safeName ? (
-              <p className="text-base font-semibold text-white">{safeName}</p>
+              <p className="text-base font-semibold text-background">{safeName}</p>
             ) : null}
             {roleLine ? (
-              <p className="text-sm text-emerald-100/70">{roleLine}</p>
+              <p className="text-sm text-background/70">{roleLine}</p>
             ) : null}
           </div>
         </div>
-        <Quote className="h-5 w-5 text-emerald-200/35" />
+        <Quote className="h-5 w-5 text-background/35" />
       </div>
 
       {quote ? (
-        <div className="mt-4 text-base leading-7 text-emerald-50/85">
+        <div className="mt-4 text-base leading-7 text-background/85">
           {Array.isArray(quote) ? <PortableText value={quote} /> : <p>{String(quote).trim()}</p>}
         </div>
       ) : null}
@@ -118,7 +118,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
       <div className="mt-5 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {renderStars(rating)}
-          <Chip variant="emerald" icon={<BadgeCheck />}>
+          <Chip variant="emerald" icon={<BadgeCheck />} className="border-background/15 bg-background/10 text-background">
             Verified
           </Chip>
         </div>
@@ -185,7 +185,7 @@ export default function TestimonialCarousel({
 
   return (
     // outer - rounded corners + overflow hidden (clips the scrolling track)
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 py-10 dark:border-emerald-800/30 dark:bg-[linear-gradient(180deg,rgba(4,25,20,0.6),rgba(2,15,12,0.8))]">
+    <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 py-10 dark:border-white/10 dark:bg-[linear-gradient(180deg,rgba(23,23,23,0.6),rgba(10,10,10,0.8))]">
       <div className="space-y-6">
         <TestimonialMarqueeRow testimonials={laneA} duration={32} />
         <TestimonialMarqueeRow testimonials={laneB} duration={36} />

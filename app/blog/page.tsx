@@ -29,10 +29,10 @@ export default async function Page({ searchParams }: BlogPageProps) {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="absolute left-[30%] top-[-5%] h-[400px] w-[600px] rounded-full bg-emerald-500/5 blur-[120px]" />
+        <div className="absolute left-[30%] top-[-5%] h-[400px] w-[600px] rounded-full bg-foreground/[0.03] blur-[120px]" />
       </div>
 
-      <div className="fixed top-0 left-0 w-full h-[2px] z-50 bg-gradient-to-r from-emerald-400 via-[#00dfd8] to-pink-500 rounded-full" />
+      <div className="fixed top-0 left-0 w-full h-[2px] z-50 bg-foreground rounded-full" />
 
       <div className="relative z-10 pt-16 pb-12">
         <BlogClient posts={posts as any} title={title} subtitle={subtitle} lang={lang} />

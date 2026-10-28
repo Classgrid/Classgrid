@@ -1,0 +1,225 @@
+{
+  "slug": "project-mode",
+  "order": 2,
+  "menuGroup": "product",
+  "menuLabel": "Project Mode",
+  "menuDescription": "AI code editor with GitHub PRs",
+  "eyebrow": "Project Mode",
+  "headline": "Code with an agent. Ship by PR.",
+  "subheadline": "A full code editor in your browser. The agent edits your files, runs your build and opens a pull request on your GitHub.",
+  "primaryCta": { "label": "Open Project Mode", "href": "https://chat.classgrid.in/c/project" },
+  "demoHeading": "Watch the agent work on real code",
+  "demoTabs": [
+    {
+      "label": "Fix the build",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Fix the build",
+          "userMessage": "The build is failing. Fix it and open a PR.",
+          "workedFor": "Worked for 1m 36s",
+          "steps": ["Started in background npm run build", "Explored 3 files, 1 search", "Edited src/App.tsx +26 -4", "0 problems in the editor"],
+          "resultLines": ["Build passed.", "2 files changed +31 -6"]
+        },
+        "floating": {
+          "kind": "pullRequest",
+          "title": "Pull request opened",
+          "branch": "classgrid/20261027-1430 → main",
+          "status": "Waiting for review on GitHub"
+        }
+      }
+    },
+    {
+      "label": "Explain the repo",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "How auth works",
+          "userMessage": "Explain how auth works in this repo",
+          "workedFor": "Worked for 54s",
+          "steps": ["Sending 3 helpers", "Searched by meaning"],
+          "resultLines": ["Login starts in client/src/pages/Login.tsx", "Sessions are checked in server/src/auth/session.ts:42"]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "3 helpers",
+          "rows": [
+            { "label": "Read server/auth", "value": "Done" },
+            { "label": "Read middleware", "value": "Done" },
+            { "label": "Read client login", "value": "Done" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "New landing page",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Bakery site",
+          "userMessage": "Build a landing page for my bakery",
+          "workedFor": "Worked for 2m 10s",
+          "steps": ["Plan approved", "Created index.html", "Created styles.css", "Created private repo bakery-site"],
+          "resultLines": ["Your landing page is ready.", "The code is saved on your GitHub."]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 6 files",
+          "subtitle": "In private repo bakery-site",
+          "files": [{ "name": "index.html" }, { "name": "styles.css" }, { "name": "script.js" }]
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "A real editor in your browser",
+      "text": "Full VS Code in a browser tab, with a terminal, a Run button, auto-save, Prettier and ESLint. Your packages install on their own when you open a project. Nothing to set up on your computer.",
+      "visual": {
+        "main": {
+          "kind": "list",
+          "title": "Classgrid Code",
+          "rows": [
+            { "label": "Terminal", "value": "Built in" },
+            { "label": "Run button", "value": "▷ Run" },
+            { "label": "Auto-save", "value": "On" },
+            { "label": "Prettier + ESLint", "value": "On" },
+            { "label": "Languages", "value": "Python, Node, TS" }
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Installing packages",
+          "subtitle": "Installing the project's packages in the background…",
+          "tone": "info"
+        }
+      }
+    },
+    {
+      "title": "It knows your code",
+      "text": "The agent sees the file you have open, what you selected and the red squiggles. It follows your repo's rules files. It can send helpers to read different parts of the code at the same time.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "fileChips": ["src/utils/user.ts"],
+          "userMessage": "Why is this undefined?",
+          "workedFor": "Worked for 21s",
+          "steps": ["Read the selected lines", "Checked 1 problem in the editor", "Edited src/utils/user.ts +3 -1"],
+          "resultLines": ["user was read before it loaded.", "Added a check before line 18."]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Rules it follows",
+          "rows": [
+            { "label": "AGENTS.md" },
+            { "label": "CLAUDE.md" },
+            { "label": ".cursorrules" },
+            { "label": "copilot-instructions.md" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Review every change",
+      "text": "After each answer you see exactly what changed. Look at the diff file by file and reject what you don't want. Or undo the whole answer in one click.",
+      "visual": {
+        "main": {
+          "kind": "list",
+          "title": "Review changes",
+          "rows": [
+            { "label": "src/App.tsx", "value": "+26 -4" },
+            { "label": "src/api/client.ts", "value": "+5 -2" }
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Changes undone",
+          "subtitle": "The project is back to how it was before this answer.",
+          "tone": "info"
+        }
+      }
+    },
+    {
+      "title": "Pull requests only, previews on your Vercel",
+      "text": "Nothing goes straight to main. Every push is a new branch and a pull request you review and merge on GitHub. Connect Vercel and the agent can deploy that branch as a preview on your own account.",
+      "visual": {
+        "main": {
+          "kind": "pullRequest",
+          "title": "Add bakery landing page",
+          "branch": "classgrid/20261027-1512 → main",
+          "status": "Classgrid AI with you as co-author"
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Preview ready",
+          "subtitle": "bakery-site-git-classgrid-demo.vercel.app",
+          "tone": "success"
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Works with the tools you build with",
+  "plugins": [
+    { "name": "GitHub", "line": "Repos, files, issues, pull requests and code search" },
+    { "name": "Vercel", "line": "Create projects, add env variables, deploy a branch" },
+    { "name": "Supabase", "line": "List projects, run SQL, see storage buckets" },
+    { "name": "Sanity CMS", "line": "Query, create and update documents" },
+    { "name": "Slack", "line": "Read and send messages, create canvases" },
+    { "name": "Notion", "line": "Search, create and update pages" }
+  ],
+  "tasksHeading": "Try one of these",
+  "exampleTasks": [
+    "You can ask it to write, fix or explain code",
+    "You can ask it to make a GitHub repo and push your code",
+    "Debug an error in your code.",
+    "Explain how auth works in this repo",
+    "Build a landing page for your idea.",
+    "Write SQL queries from plain English.",
+    "Write Python and run it for you.",
+    "List all my Supabase projects"
+  ],
+  "faqs": [
+    {
+      "question": "Do I need GitHub?",
+      "answer": "Yes. Project Mode needs your GitHub account. You also install the Classgrid GitHub app on the repos you work on."
+    },
+    {
+      "question": "Where is my code kept?",
+      "answer": "On GitHub. While you work, a copy sits in your private editor box. It's removed after you close the editor, and anything not pushed is saved to a backup branch first."
+    },
+    {
+      "question": "Will it push to main?",
+      "answer": "No. Every change goes to a classgrid/ branch and a pull request. You review and merge it on GitHub."
+    },
+    {
+      "question": "Can I see my app running?",
+      "answer": "There's no live preview link from the editor. Connect Vercel and the agent can deploy your branch as a preview on your Vercel account."
+    },
+    {
+      "question": "Which languages work?",
+      "answer": "Python and Node.js / TypeScript, with npm packages installed for you."
+    },
+    {
+      "question": "Can it host a simple site for me?",
+      "answer": "In Agent mode (not Project Mode) the agent can publish a site to yourname.sites.classgrid.in. In Project Mode, use Vercel."
+    }
+  ],
+  "plainEnglishHeading": "What Project Mode can do, in plain English",
+  "plainEnglish": [
+    "Project Mode is the coding side of Classgrid AI. You switch from \"Agent\" to \"Project\" in the app, and you get a full code editor right inside your browser, with an AI agent sitting next to it. It is VS Code, one of the most used code editors, so you do not need to install anything on your computer. You open a tab and start building websites and apps.",
+    "To use it you connect your GitHub account, because your code is kept on GitHub, with only a temporary copy while you work. You install the small Classgrid app on the GitHub repos you want to work on, and then you can open any of your projects in one click. If you do not have a project yet, you can start an empty one and ask the agent to build something from nothing, like a website or a small app. When you are ready, the agent can even create a new GitHub repo for you and save the work there.",
+    "The editor has everything you expect. There is a file list, a code area, a terminal where you can type commands, a Run button, auto-save, and tools that tidy your code and point out mistakes. When you open a project, it installs the project's packages by itself in the background, so you can start working straight away. Python and Node.js / TypeScript work out of the box.",
+    "The agent can really work on your code, not just give advice. You can ask it to fix a bug, add a feature, explain how something works, or build a new page. It reads your files, searches through the code, makes the changes, runs your build or tests, and checks for errors after every change. For big questions, like \"how does login work in this project?\", it can send up to five small helpers to read different parts of the code at the same time, so you get an answer much faster.",
+    "It understands what you are looking at. It knows which file you have open, which lines you have selected and which red error lines the editor is showing. So you can simply select a piece of code and ask \"why is this not working?\" If your project has a rules file for AI tools, the agent reads it and follows your rules. For bigger jobs it can write a plan first, show it to you, and only start building after you approve it.",
+    "You are always in control of every change. After each answer you see a small box that says how many files changed and how many lines were added or removed. You can open \"Review\" to see every change file by file, in colour, and reject the parts you do not want. Or you can press \"Undo\" and the whole project goes back to exactly how it was before that answer.",
+    "Nothing ever goes straight into your main code. When you save your work, by pressing \"Push to GitHub\" or by asking the agent, it goes to a new branch and opens a pull request on GitHub. You or the repo owner look at it and decide to merge it. The work is signed by Classgrid AI with you as co-author, so your name is on it too. If someone else changed the same branch in the meantime, it joins their work with yours carefully, and if the same lines clash it stops instead of overwriting anything. If you close the editor and forget to save, your unsaved work is backed up to a separate branch on GitHub, so nothing is lost.",
+    "You can put your work online through Vercel. If you connect your Vercel account, the agent can create the Vercel project, add the secret settings your app needs, and deploy your branch as a preview link or as the live site, all on your own Vercel account. Your project cards in Classgrid then show the live address next to the project.",
+    "Your projects stay organised. Each project has its own card with a logo, the last change, the branch and the time, plus its own chats, so you can keep one project per client or per idea. You can also move a normal chat into a project if a conversation turns into real coding work.",
+    "In short: Project Mode is a full code editor in your browser with an AI that edits, runs and fixes your code, while you stay in charge. Every change can be reviewed or undone, everything is saved safely as a pull request on your GitHub, and you can ship it to your own Vercel when it is ready."
+  ],
+  "seo": {
+    "title": "AI coding agent with GitHub pull requests | Classgrid Project Mode",
+    "description": "Code in a browser editor with an AI agent that edits files, runs your build and opens pull requests on your GitHub. Review every change. Free to start."
+  }
+}

@@ -92,19 +92,21 @@ export const placeholderChromeContent: ChromeContent = {
       label: "Solutions",
       sections: [
         {
+          heading: "Classgrid AI",
           links: [
-            { label: "For Schools", href: "/solutions/for-schools" },
-            { label: "For Colleges", href: "/solutions/for-colleges" },
-            { label: "For Jr Colleges", href: "/solutions/for-jr-colleges" },
-            { label: "For Coaching", href: "/solutions/for-coaching" },
-            { label: "For Engineering", href: "/solutions/for-engineering" },
+            { label: "Agent mode", href: "/solutions/for-schools" },
+            { label: "Project Mode", href: "/solutions/for-engineering" },
+            { label: "Grids", href: "/solutions/for-colleges" },
+            { label: "WhatsApp calls", href: "/solutions/for-jr-colleges" },
+            { label: "Research & data", href: "/solutions/for-coaching" },
           ],
         },
         {
+          heading: "Use cases",
           links: [
-            { label: "For Students", href: "/solutions/for-students" },
-            { label: "For Teachers", href: "/solutions/for-teachers" },
-            { label: "For Admins", href: "/solutions/for-admins" },
+            { label: "Documents & files", href: "/solutions/for-students" },
+            { label: "Reminders & automation", href: "/solutions/for-teachers" },
+            { label: "Email & calendar", href: "/solutions/for-admins" },
           ],
         },
       ],
@@ -129,8 +131,8 @@ export const placeholderChromeContent: ChromeContent = {
     { label: "About Us", href: "/about" },
     { label: "Blog", href: "/blog" },
   ],
-  navbarSecondaryLinkLabel: "Our Institutions",
-  navbarSecondaryLinkHref: "/institutions",
+  navbarSecondaryLinkLabel: "Log In",
+  navbarSecondaryLinkHref: "/login",
   navbarPrimaryCtaLabel: "Book a Demo",
   navbarPrimaryCtaHref: "/#demo",
   mobileMenuTitle: "Explore Classgrid",
@@ -140,7 +142,6 @@ export const placeholderChromeContent: ChromeContent = {
       links: [
         { label: "Contact Us", href: "/contact" },
         { label: "Integrations", href: "/integrations" },
-        { label: "Community Forum", href: "https://forum.classgrid.in" },
         { label: "Security", href: "/security" },
       ],
     },
@@ -361,18 +362,18 @@ export const placeholderHomePage = {
       },
       "Google Meet": {
         imageUrl: "https://cdn.simpleicons.org/googlemeet/00897B",
-        accentColor: "from-teal-500/20",
+        accentColor: "from-zinc-500/20",
       },
       Agora: {
         accentColor: "from-sky-500/20",
       },
       MongoDB: {
         imageUrl: "https://cdn.simpleicons.org/mongodb/47A248",
-        accentColor: "from-green-500/20",
+        accentColor: "from-zinc-500/20",
       },
       Supabase: {
         imageUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
-        accentColor: "from-emerald-500/20",
+        accentColor: "from-zinc-500/20",
       },
       Firebase: {
         imageUrl: "https://cdn.simpleicons.org/firebase/DD2C00",
@@ -384,7 +385,7 @@ export const placeholderHomePage = {
       },
       Brevo: {
         imageUrl: "https://cdn.simpleicons.org/brevo/0B996E",
-        accentColor: "from-emerald-600/20",
+        accentColor: "from-zinc-600/20",
       },
       OpenAI: {
         imageUrl: "/integrations/openai.svg",
@@ -402,7 +403,7 @@ export const placeholderHomePage = {
 
     return {
       name,
-      ...(iconMap[name] ?? { accentColor: "from-emerald-500/20" }),
+      ...(iconMap[name] ?? { accentColor: "from-zinc-500/20" }),
     };
   }),
   faqTitle: "Frequently Asked Questions",
@@ -416,49 +417,38 @@ export const placeholderHomePage = {
   faqButtonLabel: "Explore Help Center",
   faqButtonHref: "/help-center",
   faqEntries: faqContent,
-  ctaFormTitle: demoCopy.title,
-  ctaFormSubtitle: demoCopy.body,
+  ctaFormTitle: "Talk to our team",
+  ctaFormSubtitle: "See how Classgrid AI can work for your team.",
   ctaFormSubmitLabel: "Submit Demo Request",
   ctaFormDetailsHeading: "Your Details",
-  ctaFormInstituteHeading: "Institute Details",
+  ctaFormInstituteHeading: "Company Details",
   ctaFormMessageHeading: "Message",
   ctaFormSuccessTitle: "Demo request received",
   ctaFormSuccessBody:
     "The Classgrid team will review your request and connect with you to schedule the demo discussion.",
   ctaFormCopy: {
-    fullNameLabel: "Full Name",
+    fullNameLabel: "Full name",
     fullNamePlaceholder: "Enter your full name",
-    emailLabel: "Work Email",
-    emailPlaceholder: "you@institution.edu",
-    phoneLabel: "Phone Number",
+    emailLabel: "Work email",
+    emailPlaceholder: "you@company.com",
+    phoneLabel: "Phone",
     phonePlaceholder: "Enter your phone number",
-    instituteNameLabel: "Institute Name",
-    instituteNamePlaceholder: "Enter institution name",
-    stateLabel: "State",
-    statePlaceholder: "Enter state",
-    cityLabel: "City",
-    cityPlaceholder: "Enter city",
-    solutionLabel: "Institution Type",
     messageLabel: "Message",
-    messagePlaceholder: "Tell us about your institution and what you want to see in the demo",
+    messagePlaceholder: "Tell us about your team and what you want Classgrid AI to do",
     captchaPlaceholder: "Enter captcha",
     captchaMismatchMessage: "Captcha did not match. Please try again.",
     securityCheckRequiredMessage: "Please complete the security check.",
     submitLoadingLabel: "Submitting...",
     genericErrorMessage: "Something went wrong. Please try again.",
-    validationInstitutionNameRequired: "Institute name is required.",
-    validationOrgTypeRequired: "Please select an institution type.",
     validationFullNameRequired: "Full name is required.",
     validationEmailInvalid: "Please enter a valid email address.",
     validationPhoneInvalid: "Please enter a valid phone number.",
-    validationStateRequired: "State is required.",
-    validationCityRequired: "City is required.",
     solutionOptions: [
-      { value: "Engineering College", label: "Engineering College" },
-      { value: "School", label: "School" },
-      { value: "Junior College", label: "Junior College" },
-      { value: "Coaching Institute", label: "Coaching Institute" },
-      { value: "Diploma Institute", label: "Diploma Institute" },
+      { value: "Agent for everyday work", label: "Agent for everyday work" },
+      { value: "Project Mode for code", label: "Project Mode for code" },
+      { value: "WhatsApp automation", label: "WhatsApp automation" },
+      { value: "Connected apps & automation", label: "Connected apps & automation" },
+      { value: "Something else", label: "Something else" },
     ],
   },
   seo: placeholderChromeContent.seo,
@@ -504,28 +494,34 @@ function normalizeValue(value?: string) {
   return value?.trim().toLowerCase() ?? "";
 }
 
+function isViewPlatformLink(link?: { label?: string }) {
+  return Boolean(link?.label?.toLowerCase().includes("view platform"));
+}
+
 function ensureCorrectViewPlatformLink(menuItems?: ChromeMenuItem[]): ChromeMenuItem[] {
   if (!Array.isArray(menuItems)) return [];
-  return menuItems.map(item => {
-    if (item.sections) {
-      return {
-        ...item,
-        sections: item.sections.map(section => ({
-          ...section,
-          links: section.links?.map(link => {
-            if (link.label?.toLowerCase().includes("view platform")) {
-              return { ...link, href: "/agent" };
-            }
-            return link;
-          })
-        }))
-      };
-    }
-    if (item.label?.toLowerCase().includes("view platform")) {
-      return { ...item, href: "/agent" };
-    }
-    return item;
-  });
+  return menuItems
+    .filter((item) => !isViewPlatformLink(item))
+    .map((item) => {
+      if (item.sections) {
+        return {
+          ...item,
+          sections: item.sections.map((section) => ({
+            ...section,
+            links: section.links?.filter((link) => !isViewPlatformLink(link)),
+          })),
+        };
+      }
+      return item;
+    });
+}
+
+function removeViewPlatformFromFooter(columns?: ChromeColumn[]): ChromeColumn[] {
+  if (!Array.isArray(columns)) return [];
+  return columns.map((column) => ({
+    ...column,
+    links: Array.isArray(column.links) ? column.links.filter((link) => !isViewPlatformLink(link)) : [],
+  }));
 }
 
 function ensureBlogInNavbar(menuItems?: ChromeMenuItem[]): ChromeMenuItem[] {
@@ -644,11 +640,11 @@ export function resolveChromeContent(input?: ChromeContent | null): ChromeConten
         ? chrome.navbarMenuItems
         : placeholderChromeContent.navbarMenuItems
     )),
-    footerColumns: fixCompareLinksInFooter(removeBlogFromFooter(
+    footerColumns: removeViewPlatformFromFooter(fixCompareLinksInFooter(removeBlogFromFooter(
       hasFooterColumns
         ? chrome.footerColumns
         : placeholderChromeContent.footerColumns
-    )),
+    ))),
     footerSocialLinks: hasSocialLinks
       ? chrome.footerSocialLinks
       : placeholderChromeContent.footerSocialLinks,

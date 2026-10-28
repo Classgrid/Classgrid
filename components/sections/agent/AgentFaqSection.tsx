@@ -99,20 +99,25 @@ function FaqItem({ question, answer, index }: { question: string; answer: ReactN
   );
 }
 
-export function AgentFaqSection() {
+type AgentFaqSectionProps = {
+  title?: string;
+  faqs?: { question: string; answer: ReactNode }[];
+};
+
+export function AgentFaqSection({ title = "Frequently asked questions", faqs = FAQS }: AgentFaqSectionProps = {}) {
   return (
     <section className="bg-background text-[#0d0d0d] dark:bg-black dark:text-white">
       <div className="mx-auto max-w-[1520px] px-5 pb-24 md:px-10 md:pb-32 lg:pb-40">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <Reveal className="lg:col-span-4">
             <h2 className="text-balance text-4xl font-medium leading-[1.08] tracking-[-0.035em] md:text-5xl lg:sticky lg:top-28 lg:text-[56px]">
-              Frequently asked questions
+              {title}
             </h2>
           </Reveal>
 
           <Reveal delay={0.1} className="lg:col-span-8">
             <ul className="border-t border-black/10 dark:border-white/10">
-              {FAQS.map((faq, i) => (
+              {faqs.map((faq, i) => (
                 <FaqItem key={faq.question} question={faq.question} answer={faq.answer} index={i} />
               ))}
             </ul>

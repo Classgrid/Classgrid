@@ -58,21 +58,15 @@ function normalizeSupportEmail(value?: string | null) {
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
-  login: "Login & Authentication Issues",
-  dashboard: "Dashboard Not Loading",
+  login: "Login & Account",
+  ai: "Agent Mode",
+  "project-mode": "Project Mode & GitHub",
+  billing: "Billing & Credits",
+  whatsapp: "WhatsApp & Calls",
+  "connected-apps": "Connected Apps",
+  schedules: "Schedules & Background Tasks",
+  documents: "Files & Uploads",
   profile: "Profile & Settings",
-  attendance: "Attendance & Biometric",
-  fee: "Fee Payment & Receipts",
-  examination: "Examination & Results",
-  timetable: "Timetable & Scheduling",
-  assignments: "Assignments & Submissions",
-  "live-classes": "Live Classes & Video",
-  chat: "Chat & Notifications",
-  admission: "Admission & Enrollment",
-  library: "Library & Resources",
-  documents: "Documents & Uploads",
-  erp: "ERP Module Issues",
-  ai: "AI Assistant",
   bug: "Bug Report",
   feature: "Feature Request",
   other: "Other"
@@ -228,12 +222,6 @@ export default function RaiseTicketPage() {
 
       const data = await res.json();
       if (!res.ok) {
-        // Specific guard: account exists but has no linked institution
-        if (data.code === "NO_ORG") {
-          throw new Error(
-            "Your account is not linked to a registered institution. Support tickets are only available to active platform users. Please contact your institution administrator."
-          );
-        }
         throw new Error(data.message || "Failed to submit ticket.");
       }
       localStorage.setItem("support_email", email.trim());
@@ -277,29 +265,29 @@ export default function RaiseTicketPage() {
       <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
         <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl md:rounded-[2rem] border border-border bg-card shadow-2xl shadow-black/30">
           {/* Top accent */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/50" />
+          <div className="absolute inset-x-0 top-0 h-1 bg-foreground/80" />
 
           <div className="flex flex-col md:flex-row min-h-[400px]">
             {/* Left panel */}
-            <div className="relative flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-gradient-to-br from-primary/5 to-transparent">
+            <div className="relative flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-gradient-to-br from-foreground/5 to-transparent">
               <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }} />
               <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8">
-                  <Shield className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 rounded-2xl bg-foreground/5 border border-foreground/15 flex items-center justify-center mb-8">
+                  <Shield className="w-8 h-8 text-foreground" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Platform Support</h2>
-                <div className="w-12 h-1.5 rounded-full bg-primary mb-6" />
+                <h2 className="text-3xl font-bold text-foreground mb-4">Classgrid AI Support</h2>
+                <div className="w-12 h-1.5 rounded-full bg-foreground mb-6" />
                 <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  Dedicated support portal for active Classgrid institutions. Get help directly from our technical team.
+                  Support for everyone using Classgrid AI. Get help directly from our team.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Lock className="w-4 h-4 text-primary shrink-0" />
-                    <span>Institution-verified access for students & faculty</span>
+                    <Lock className="w-4 h-4 text-foreground shrink-0" />
+                    <span>Sign in with your chat.classgrid.in account</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Headphones className="w-4 h-4 text-primary shrink-0" />
-                    <span>Direct ERP & LMS technical support</span>
+                    <Headphones className="w-4 h-4 text-foreground shrink-0" />
+                    <span>Track every reply on your ticket</span>
                   </div>
                 </div>
               </div>
@@ -307,15 +295,15 @@ export default function RaiseTicketPage() {
 
             {/* Right panel */}
             <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 bg-card">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                <FileText className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 rounded-full bg-foreground/5 flex items-center justify-center mb-6">
+                <FileText className="w-7 h-7 text-foreground" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">Sign in to continue</h3>
               <p className="text-base text-muted-foreground text-center mb-8 max-w-[300px]">
-                Log in so we can verify your institution and track your ticket.
+                Log in so we know who you are and can track your ticket.
               </p>
               <Link href={`/login?next=${encodeURIComponent('/support/ticket')}`} className="w-full max-w-[300px]">
-                <Button className="h-14 w-full rounded-xl bg-primary font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all text-base">
+                <Button className="h-14 w-full rounded-xl bg-primary font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-all text-base">
                   Sign in
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -370,69 +358,6 @@ export default function RaiseTicketPage() {
     );
   }
 
-  // ── STATE 3: Logged in but NOT a platform user (no org) ──
-  if (knownEmail && !isPlatformUser && !showForm) {
-    return (
-      <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
-        <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl md:rounded-[2rem] border border-amber-500/30 bg-card shadow-2xl shadow-black/30">
-          {/* Top accent - amber/warning */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-500 via-orange-400 to-amber-500" />
-
-          <div className="flex flex-col md:flex-row min-h-[400px]">
-            {/* Left panel */}
-            <div className="relative flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-gradient-to-br from-amber-500/5 to-transparent">
-              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-              <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-8">
-                  <Building2 className="w-8 h-8 text-amber-500" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Institution Not Found</h2>
-                <div className="w-12 h-1.5 rounded-full bg-amber-500 mb-6" />
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Your account <span className="font-medium text-foreground">{knownEmail}</span> is not linked to any Classgrid institution. Support ticketing is reserved for verified students, faculty, and admins.
-                </p>
-              </div>
-            </div>
-
-            {/* Right panel */}
-            <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 bg-card">
-              <h3 className="text-xl font-semibold text-foreground mb-6 text-center">What you can do</h3>
-              <div className="space-y-4 w-full max-w-[320px] mb-8">
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-muted/50 border border-border">
-                  <Building2 className="w-5 h-5 text-amber-500 shrink-0" />
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Contact your institute admin to add your email to the platform.
-                  </p>
-                </div>
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-muted/50 border border-border">
-                  <Mail className="w-5 h-5 text-amber-500 shrink-0" />
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Email us directly at <a href="mailto:support@classgrid.in" className="font-semibold text-amber-600 dark:text-amber-400 hover:underline">support@classgrid.in</a>
-                  </p>
-                </div>
-              </div>
-              <Link href="/support/inquiry" className="w-full max-w-[320px]">
-                <Button className="h-14 w-full rounded-xl bg-amber-600 font-semibold text-white shadow-lg shadow-amber-600/20 hover:bg-amber-700 transition-all text-base">
-                  Speak with Classgrid
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-              <Button
-                onClick={handleLogout}
-                variant="outline"
-                showGlow={false}
-                className="mt-4 h-12 w-full max-w-[320px] rounded-xl font-medium text-muted-foreground hover:text-foreground transition-all flex items-center justify-center gap-2"
-              >
-                <LogOut className="w-4 h-4" />
-                Sign out
-              </Button>
-            </div>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
   // ── STATE 3: Logged in platform user — choice card ──
   if (knownEmail && isPlatformUser && !showForm) {
     return (
@@ -452,7 +377,7 @@ export default function RaiseTicketPage() {
                 <h2 className="text-3xl font-bold text-foreground mb-4">Welcome back</h2>
                 <div className="w-12 h-1.5 rounded-full bg-primary mb-6" />
                 <p className="text-base text-muted-foreground leading-relaxed mb-8">
-                  You are verified as a member of{orgName ? <span className="font-semibold text-foreground"> {orgName}</span> : " your institution"}. Choose an action below.
+                  You are signed in. Choose an action below.
                 </p>
                 <div className="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary/10 border border-primary/20">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-sm font-bold text-primary">
@@ -460,7 +385,7 @@ export default function RaiseTicketPage() {
                   </div>
                   <div className="flex flex-col min-w-0">
                     <span className="text-sm font-medium text-foreground truncate max-w-[200px]">{knownEmail}</span>
-                    <span className="text-xs text-primary font-medium">Institution verified</span>
+                    <span className="text-xs text-primary font-medium">Signed in</span>
                   </div>
                 </div>
               </div>
@@ -470,7 +395,7 @@ export default function RaiseTicketPage() {
             <div className="flex flex-col items-center justify-center p-6 sm:p-10 md:p-14 md:w-1/2 gap-4 bg-card">
               <Button
                 onClick={() => setShowForm(true)}
-                className="h-14 w-full max-w-[320px] rounded-xl bg-primary font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-2 text-base"
+                className="h-14 w-full max-w-[320px] rounded-xl bg-primary font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-all flex items-center justify-center gap-2 text-base"
               >
                 <Send className="w-5 h-5" />
                 Submit a New Ticket
@@ -547,7 +472,7 @@ export default function RaiseTicketPage() {
                 <h2 className="text-2xl font-bold text-foreground">Submit a request</h2>
                 <p className="text-muted-foreground text-sm mt-1">Please provide the details of your issue.</p>
               </div>
-              {displayEmail && (
+              {knownEmail && displayEmail && (
                 <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-3 py-2">
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
                     {displayEmail.charAt(0).toUpperCase()}
@@ -639,21 +564,15 @@ export default function RaiseTicketPage() {
                       </SelectValue>
                     </SelectTrigger>
                     <SelectContent side="bottom" className="max-h-[280px] overflow-y-auto">
-                      <SelectItem value="login">Login &amp; Authentication Issues</SelectItem>
-                      <SelectItem value="dashboard">Dashboard Not Loading</SelectItem>
+                      <SelectItem value="login">Login &amp; Account</SelectItem>
+                      <SelectItem value="ai">Agent Mode</SelectItem>
+                      <SelectItem value="project-mode">Project Mode &amp; GitHub</SelectItem>
+                      <SelectItem value="billing">Billing &amp; Credits</SelectItem>
+                      <SelectItem value="whatsapp">WhatsApp &amp; Calls</SelectItem>
+                      <SelectItem value="connected-apps">Connected Apps</SelectItem>
+                      <SelectItem value="schedules">Schedules &amp; Background Tasks</SelectItem>
+                      <SelectItem value="documents">Files &amp; Uploads</SelectItem>
                       <SelectItem value="profile">Profile &amp; Settings</SelectItem>
-                      <SelectItem value="attendance">Attendance &amp; Biometric</SelectItem>
-                      <SelectItem value="fee">Fee Payment &amp; Receipts</SelectItem>
-                      <SelectItem value="examination">Examination &amp; Results</SelectItem>
-                      <SelectItem value="timetable">Timetable &amp; Scheduling</SelectItem>
-                      <SelectItem value="assignments">Assignments &amp; Submissions</SelectItem>
-                      <SelectItem value="live-classes">Live Classes &amp; Video</SelectItem>
-                      <SelectItem value="chat">Chat &amp; Notifications</SelectItem>
-                      <SelectItem value="admission">Admission &amp; Enrollment</SelectItem>
-                      <SelectItem value="library">Library &amp; Resources</SelectItem>
-                      <SelectItem value="documents">Documents &amp; Uploads</SelectItem>
-                      <SelectItem value="erp">ERP Module Issues</SelectItem>
-                      <SelectItem value="ai">AI Assistant</SelectItem>
                       <SelectItem value="bug">Bug Report</SelectItem>
                       <SelectItem value="feature">Feature Request</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
@@ -667,21 +586,15 @@ export default function RaiseTicketPage() {
                     className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
                   >
                     <option value="" disabled>Select category</option>
-                    <option value="login">Login &amp; Authentication Issues</option>
-                    <option value="dashboard">Dashboard Not Loading</option>
+                    <option value="login">Login &amp; Account</option>
+                    <option value="ai">Agent Mode</option>
+                    <option value="project-mode">Project Mode &amp; GitHub</option>
+                    <option value="billing">Billing &amp; Credits</option>
+                    <option value="whatsapp">WhatsApp &amp; Calls</option>
+                    <option value="connected-apps">Connected Apps</option>
+                    <option value="schedules">Schedules &amp; Background Tasks</option>
+                    <option value="documents">Files &amp; Uploads</option>
                     <option value="profile">Profile &amp; Settings</option>
-                    <option value="attendance">Attendance &amp; Biometric</option>
-                    <option value="fee">Fee Payment &amp; Receipts</option>
-                    <option value="examination">Examination &amp; Results</option>
-                    <option value="timetable">Timetable &amp; Scheduling</option>
-                    <option value="assignments">Assignments &amp; Submissions</option>
-                    <option value="live-classes">Live Classes &amp; Video</option>
-                    <option value="chat">Chat &amp; Notifications</option>
-                    <option value="admission">Admission &amp; Enrollment</option>
-                    <option value="library">Library &amp; Resources</option>
-                    <option value="documents">Documents &amp; Uploads</option>
-                    <option value="erp">ERP Module Issues</option>
-                    <option value="ai">AI Assistant</option>
                     <option value="bug">Bug Report</option>
                     <option value="feature">Feature Request</option>
                     <option value="other">Other</option>
@@ -909,7 +822,7 @@ export default function RaiseTicketPage() {
                           }
                           setDescription(editor.innerHTML);
                         }}
-                        className={`text-[10px] font-semibold px-2 py-0.5 rounded transition-colors ${isPlainText ? "bg-primary text-primary-foreground hover:opacity-90" : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"}`}
+                        className={`text-[10px] font-semibold px-2 py-0.5 rounded transition-colors ${isPlainText ? "bg-primary text-primary-foreground hover:bg-zinc-700 dark:hover:bg-zinc-300" : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"}`}
                       >
                         {isPlainText ? "Rich text" : "Plain text"}
                       </button>
@@ -1079,7 +992,7 @@ export default function RaiseTicketPage() {
                       if (related?.closest?.(".link-tooltip-popup")) return;
                       tooltipTimeoutRef.current = setTimeout(() => setLinkTooltip(null), 300);
                     }}
-                    className="caret-primary p-4 bg-transparent text-sm text-foreground outline-none prose prose-sm dark:prose-invert max-w-none [&_p]:mb-3 [&_p]:leading-relaxed [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-4 [&_blockquote]:italic [&_a]:!text-blue-500 [&_a]:!no-underline [&_a]:cursor-pointer [&_u]:!decoration-emerald-500 [&_u]:underline-offset-4 [&_u]:decoration-2 [&_span[style*='underline']]:!decoration-emerald-500 [&_span[style*='underline']]:underline-offset-4 [&_span[style*='underline']]:decoration-2 [&_img]:max-w-[150px] [&_img]:max-h-[150px] [&_img]:object-cover [&_img]:rounded-md [&_img]:cursor-pointer [&_img]:border [&_img]:border-border [&_img]:shadow-sm [&_img]:inline-block [&_img]:m-2 hover:[&_img]:opacity-80 transition-opacity"
+                    className="caret-primary p-4 bg-transparent text-sm text-foreground outline-none prose prose-sm dark:prose-invert max-w-none [&_p]:mb-3 [&_p]:leading-relaxed [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-4 [&_blockquote]:italic [&_a]:!text-blue-500 [&_a]:!no-underline [&_a]:cursor-pointer [&_u]:!decoration-foreground [&_u]:underline-offset-4 [&_u]:decoration-2 [&_span[style*='underline']]:!decoration-foreground [&_span[style*='underline']]:underline-offset-4 [&_span[style*='underline']]:decoration-2 [&_img]:max-w-[150px] [&_img]:max-h-[150px] [&_img]:object-cover [&_img]:rounded-md [&_img]:cursor-pointer [&_img]:border [&_img]:border-border [&_img]:shadow-sm [&_img]:inline-block [&_img]:m-2 hover:[&_img]:opacity-80 transition-opacity"
                     style={{ minHeight: 200, maxHeight: 400, overflowY: 'auto' }}
                   />
                   {/* Link Hover Tooltip */}
@@ -1097,7 +1010,7 @@ export default function RaiseTicketPage() {
                         href={linkTooltip.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 px-2 py-1 bg-primary text-primary-foreground rounded font-semibold hover:opacity-90 transition-opacity"
+                        className="flex items-center gap-1 px-2 py-1 bg-primary text-primary-foreground rounded font-semibold hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors"
                       >
                         <ExternalLink className="w-3 h-3" />
                         Open

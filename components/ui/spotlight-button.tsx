@@ -43,14 +43,14 @@ export const SpotlightButton = React.forwardRef<HTMLButtonElement, SpotlightButt
       setOpacity(0);
     };
 
-    const primaryClasses = "bg-emerald-500 text-white border-emerald-400";
-    const secondaryClasses = "bg-white text-slate-900 border-white";
-    
+    const primaryClasses = "bg-primary text-primary-foreground border-primary hover:bg-zinc-700 dark:hover:bg-zinc-300";
+    const secondaryClasses = "bg-white text-slate-900 border-white hover:bg-slate-200";
+
     const spotlightColorPrimary = "rgba(255, 255, 255, 0.35)"; // Soft white glow
-    const spotlightColorSecondary = "rgba(16, 185, 129, 0.15)"; // Soft emerald glow
+    const spotlightColorSecondary = "rgba(0, 0, 0, 0.06)";
 
     const baseClasses = cn(
-      "relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border px-8 font-bold transition-all duration-300 hover:scale-[1.05] active:scale-[0.95] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)]",
+      "relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border px-8 font-bold transition-all duration-300 hover:scale-[1.05] active:scale-[0.95]",
       variant === "primary" ? primaryClasses : secondaryClasses,
       className
     );

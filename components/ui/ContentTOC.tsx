@@ -98,7 +98,7 @@ export function ContentTOC({
       {/* Scroll progress bar */}
       <div className="fixed inset-x-0 top-0 z-50 h-0.5 bg-border/70">
         <div
-          className="h-full bg-emerald-500 transition-[width] duration-150 ease-out"
+          className="h-full bg-foreground transition-[width] duration-150 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -140,12 +140,12 @@ export function ContentTOC({
                 className={cn(
                   "relative block overflow-hidden rounded-md px-2 py-2 text-sm leading-6 transition-colors duration-200",
                   activeSectionId === section.id
-                    ? "font-semibold text-emerald-500"
+                    ? "font-semibold text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {activeSectionId === section.id && (
-                  <span className="pointer-events-none absolute inset-0 rounded-md border-l-2 border-emerald-500 bg-emerald-500/6" />
+                  <span className="pointer-events-none absolute inset-0 rounded-md border-l-2 border-foreground bg-foreground/5" />
                 )}
                 <span className="relative mr-2 inline-block w-7 text-[11px] font-bold text-muted-foreground/50">
                   {String(index + 1).padStart(2, "0")}

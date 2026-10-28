@@ -61,7 +61,7 @@ function FAQRow({
     >
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between gap-4 min-h-[72px] py-5 text-left text-[18px] font-medium leading-snug text-slate-900 transition-colors hover:text-emerald-500 focus-visible:outline-none dark:text-white dark:hover:text-emerald-400"
+        className="flex w-full items-center justify-between gap-4 min-h-[72px] py-5 text-left text-[18px] font-medium leading-snug text-slate-900 transition-colors hover:text-foreground/70 focus-visible:outline-none dark:text-white dark:hover:text-foreground/70"
         aria-expanded={open}
       >
         <span>{resolveLocalizedString(faq.question)}</span>
@@ -138,7 +138,7 @@ export function FAQSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
-              className="mb-3 text-sm font-semibold uppercase tracking-widest text-emerald-500"
+              className="mb-3 text-sm font-semibold uppercase tracking-widest text-foreground"
             >
               {subtitle}
             </motion.p>

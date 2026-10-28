@@ -303,7 +303,7 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
           </section>
 
           {/* Body Content Sections */}
-          <div className="relative px-4 md:px-12 py-16 [&_a:not(.toc-link)]:text-emerald-600 [&_a:not(.toc-link)]:dark:text-emerald-400 [&_a:not(.toc-link)]:underline [&_a:not(.toc-link)]:underline-offset-4 [&_a:not(.toc-link)]:decoration-emerald-500/40 [&_a:not(.toc-link)]:hover:decoration-emerald-500">
+          <div className="relative px-4 md:px-12 py-16 [&_a:not(.toc-link)]:text-foreground [&_a:not(.toc-link)]:underline [&_a:not(.toc-link)]:underline-offset-4 [&_a:not(.toc-link)]:decoration-foreground/40 [&_a:not(.toc-link)]:hover:decoration-foreground">
             {/* Top Border Line for Content */}
             <div className="absolute top-0 left-0 w-full border-t border-dashed border-slate-300 dark:border-white/10" />
             <Crosshair className="-top-[8px] -left-[8px]" />
@@ -319,7 +319,7 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
                     <li key={`toc-body-${item.id}`}>
                       <a
                         href={`#${item.id}`}
-                        className="text-[15px] font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors hover:underline underline-offset-4"
+                        className="text-[15px] font-medium text-foreground hover:text-foreground/70 transition-colors hover:underline underline-offset-4"
                       >
                         {item.label}
                       </a>
@@ -518,7 +518,7 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
                   className={cn(
                     "block px-3 py-2.5 rounded-lg text-[14px] transition-colors",
                     activeSection === item.id
-                      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-medium"
+                      ? "bg-foreground/10 text-foreground font-medium"
                       : "text-slate-500 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
                   )}
                 >
@@ -533,10 +533,10 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
         {/* Floating pill trigger button */}
         <button
           onClick={() => setMobileTocOpen((v) => !v)}
-          className="fixed bottom-5 right-4 z-40 flex items-center gap-2 rounded-full bg-white dark:bg-[#111] border border-slate-200 dark:border-white/15 px-4 py-2.5 text-[13px] font-medium text-slate-900 dark:text-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all hover:border-emerald-500/40 hover:bg-slate-50 dark:hover:bg-[#1a1a1a] active:scale-95"
+          className="fixed bottom-5 right-4 z-40 flex items-center gap-2 rounded-full bg-white dark:bg-[#111] border border-slate-200 dark:border-white/15 px-4 py-2.5 text-[13px] font-medium text-slate-900 dark:text-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all hover:border-foreground/40 hover:bg-slate-50 dark:hover:bg-[#1a1a1a] active:scale-95"
           aria-label="Open table of contents"
         >
-          <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-3.5 h-3.5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h10M4 18h7" />
           </svg>
           On this page

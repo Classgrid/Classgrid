@@ -28,7 +28,7 @@ export const BOOK_DEMO_INTENT_TERMS = [
   "how to use",
   "process",
   "what happens after",
-  "institution registration",
+  "account registration",
   "schedule",
   "meeting",
   "walkthrough",
@@ -51,7 +51,7 @@ export const FORBIDDEN_ONBOARDING_PHRASES = [
 export const PREFERRED_ONBOARDING_PHRASES = [
   "Book a Demo",
   "schedule discussion",
-  "institution consultation",
+  "business consultation",
   "platform walkthrough",
   "demo session",
   "Classgrid team will connect",

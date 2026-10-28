@@ -151,7 +151,7 @@ export default function FilePreviewModal({ file, onClose, onDelete }: FilePrevie
           {/* File info */}
           <div className="flex items-center gap-3 min-w-0">
             {isImage(mime) ? (
-              <FileImage className="w-5 h-5 text-emerald-400 shrink-0" />
+              <FileImage className="w-5 h-5 text-foreground shrink-0" />
             ) : isPDF(mime) ? (
               <FileText className="w-5 h-5 text-red-400 shrink-0" />
             ) : (
@@ -200,7 +200,7 @@ export default function FilePreviewModal({ file, onClose, onDelete }: FilePrevie
             <button
               onClick={handleDownload}
               title="Download"
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-emerald-600 hover:text-white transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-foreground hover:text-background transition-colors"
             >
               <Download className="w-4 h-4" />
             </button>
@@ -300,7 +300,7 @@ export default function FilePreviewModal({ file, onClose, onDelete }: FilePrevie
               </div>
               <button
                 onClick={handleDownload}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-foreground text-background font-semibold hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors"
               >
                 <Download className="w-4 h-4" />
                 Download file

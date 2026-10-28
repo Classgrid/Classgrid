@@ -186,7 +186,7 @@ export function ClassgridRoleShowcase({
     <section className="hidden md:block relative overflow-hidden bg-muted py-24 md:py-32">
       {/* Ambient background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-60 top-0 h-[600px] w-[600px] rounded-full bg-emerald-500/8 blur-[120px]" />
+        <div className="absolute -left-60 top-0 h-[600px] w-[600px] rounded-full bg-foreground/5 blur-[120px]" />
         <div className="absolute -right-60 bottom-0 h-[500px] w-[500px] rounded-full bg-cyan-500/6 blur-[120px]" />
         <div
           className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
@@ -202,10 +202,10 @@ export function ClassgridRoleShowcase({
         {/* ── Section header ── */}
         <div className="mb-16 text-center">
           <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500"></div>
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-emerald-400">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-foreground">
             <span className="relative inline-flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-foreground/70" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-foreground" />
             </span>
             {kicker}
           </span>
@@ -228,13 +228,13 @@ export function ClassgridRoleShowcase({
                   onClick={() => handleTabChange(role.id)}
                   className={cn(
                     "relative flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold transition-colors outline-none",
-                    isActive ? "text-white" : "text-muted-foreground hover:text-foreground"
+                    isActive ? "text-background" : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="active-role-pill"
-                      className="absolute inset-0 rounded-full bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.35)]"
+                      className="absolute inset-0 rounded-full bg-foreground"
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -269,7 +269,7 @@ export function ClassgridRoleShowcase({
                     className={cn(
                       "group relative flex items-center gap-3 rounded-2xl border p-4 text-left transition-all duration-200 outline-none",
                       isActiveFeature
-                        ? "border-emerald-500/50 bg-emerald-500/10 shadow-[0_0_24px_rgba(16,185,129,0.12)]"
+                        ? "border-foreground/50 bg-foreground/5"
                         : "border-border bg-card hover:border-border/80 hover:bg-muted/50"
                     )}
                   >
@@ -278,7 +278,7 @@ export function ClassgridRoleShowcase({
                       className={cn(
                         "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-colors",
                         isActiveFeature
-                          ? "bg-emerald-500/20 text-emerald-500 dark:text-emerald-400"
+                          ? "bg-foreground/10 text-foreground"
                           : "bg-muted text-muted-foreground group-hover:bg-muted/80 group-hover:text-foreground"
                       )}
                     >
@@ -299,7 +299,7 @@ export function ClassgridRoleShowcase({
                     {isActiveFeature && (
                       <motion.div
                         layoutId="feature-ring"
-                        className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-emerald-400/30"
+                        className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-foreground/20"
                       />
                     )}
                   </motion.button>
@@ -312,7 +312,7 @@ export function ClassgridRoleShowcase({
               <div className="flex flex-col items-center gap-3">
                 <div className="relative">
                   {/* Glow orb behind phone */}
-                  <div className="absolute inset-0 -m-12 rounded-full bg-emerald-400/12 blur-3xl" />
+                  <div className="absolute inset-0 -m-12 rounded-full bg-foreground/5 blur-3xl" />
                   <IPhone15Pro className="relative w-[240px] shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.7)] md:w-[280px]">
                     <div className="flex h-full flex-col overflow-hidden bg-background">
                       <div

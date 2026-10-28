@@ -10,6 +10,7 @@ import {
   Menu, X, ArrowRight, Bot, ChevronDown, Search,
   School, Building2, GraduationCap, BookOpen, Cpu, User, UserCog,
   ShieldCheck, Sun, Moon, Laptop,
+  Code2, MessagesSquare, Phone, Mail, FileText, Megaphone, AlarmClock, BarChart3,
   type LucideIcon
 } from "lucide-react";
 import { DocsUserButton } from "@/components/docs/DocsUserButton";
@@ -113,6 +114,13 @@ function isNavItemActive(pathname: string, item: NavItem): boolean {
 }
 
 const ICON_MAP: Record<string, any> = {
+  "Agent Mode": Bot,
+  "Project Mode": Cpu,
+  "Connected Apps": Building2,
+  "Docs": BookOpen,
+  "For Individuals": User,
+  "For Developers": UserCog,
+  "For Teams": ShieldCheck,
   "For Schools": School,
   "For Colleges": Building2,
   "For Jr Colleges": GraduationCap,
@@ -122,6 +130,14 @@ const ICON_MAP: Record<string, any> = {
   "For Teachers": UserCog,
   "For Admins": ShieldCheck,
   "For Institutes": ShieldCheck,  // fallback alias
+  "Agent mode": Bot,
+  "Grids": MessagesSquare,
+  "WhatsApp calls": Phone,
+  "Email & calendar": Mail,
+  "Documents & files": FileText,
+  "Content & social": Megaphone,
+  "Reminders & automation": AlarmClock,
+  "Research & data": BarChart3,
 };
 
 /** Runtime label renames - catches stale Sanity / cached placeholder data */
@@ -222,21 +238,21 @@ export function Navbar({
       label: "Solutions",
       sections: [
         {
-          heading: "By Institution",
+          heading: "Classgrid AI",
           links: [
-            { label: "For Schools",      href: "/solutions/for-schools",      description: "K-12 ERP and LMS combined",            icon: School       },
-            { label: "For Colleges",     href: "/solutions/for-colleges",     description: "Scale your campus digitally",           icon: Building2    },
-            { label: "For Jr Colleges",  href: "/solutions/for-jr-colleges",  description: "Specialized workflows for juniors",     icon: GraduationCap },
-            { label: "For Coaching",     href: "/solutions/for-coaching",     description: "Batch and lead management",             icon: BookOpen     },
-            { label: "For Engineering",  href: "/solutions/for-engineering",  description: "Complex curriculum tracking",           icon: Cpu          },
+            { label: "Agent mode",      href: "/solutions/for-schools",     icon: Bot            },
+            { label: "Project Mode",    href: "/solutions/for-engineering", icon: Cpu            },
+            { label: "Grids",           href: "/solutions/for-colleges",    icon: MessagesSquare },
+            { label: "WhatsApp calls",  href: "/solutions/for-jr-colleges", icon: Phone          },
+            { label: "Research & data", href: "/solutions/for-coaching",    icon: BarChart3      },
           ],
         },
         {
-          heading: "By Role",
+          heading: "Use cases",
           links: [
-            { label: "For Students", href: "/solutions/for-students", description: "Learn better and faster",          icon: User    },
-            { label: "For Teachers", href: "/solutions/for-teachers", description: "Automate grading & attendance",    icon: UserCog },
-            { label: "For Admins",   href: "/solutions/for-admins",   description: "Complete operational oversight",  icon: ShieldCheck },
+            { label: "Documents & files",      href: "/solutions/for-students", icon: FileText   },
+            { label: "Reminders & automation", href: "/solutions/for-teachers", icon: AlarmClock },
+            { label: "Email & calendar",       href: "/solutions/for-admins",   icon: Mail       },
           ],
         },
       ],
@@ -265,15 +281,15 @@ export function Navbar({
 
   const docsNavItems: NavItem[] = [
     { label: "Getting Started", href: "/docs" },
-    { label: "Platform Guides", href: "/docs/platform" },
-    { label: "Admin Setup", href: "/docs/admin" },
-    { label: "API Reference", href: "/docs/api" }
+    { label: "Agent mode", href: "/docs/agent-mode" },
+    { label: "Project Mode", href: "/docs/project-mode" },
+    { label: "Grids", href: "/docs/grids" }
   ];
 
   const navItems = docsMode ? docsNavItems : normalNavItems;
 
   return (
-    <header className="sticky top-0 z-[100] w-full border-b border-border bg-[#F7F7F7]/90 dark:bg-[rgba(0,0,0,0.72)] shadow-[0_1px_3px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.32)] backdrop-blur-[14px] backdrop-saturate-150 transition-colors duration-300">
+    <header className="sticky top-0 z-[100] w-full border-b border-border bg-[#F7F7F7]/90 dark:bg-[#0A0A0A]/90 shadow-[0_1px_3px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.32)] backdrop-blur-[14px] backdrop-saturate-150 transition-colors duration-300">
       <div className="container mx-auto flex h-16 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
           {(logoUrl || brandName) && (
@@ -331,8 +347,9 @@ export function Navbar({
             <nav className="hidden md:flex items-center gap-0.5">
               {[
                 { label: 'Getting Started', href: '/docs/introduction' },
-                { label: 'Platform Guides', href: '/docs/attendance-system' },
-                { label: 'API Reference',   href: '/docs/authentication-api' },
+                { label: 'Agent mode',      href: '/docs/agent-mode' },
+                { label: 'Project Mode',    href: '/docs/project-mode' },
+                { label: 'Grids',           href: '/docs/grids' },
                 { label: 'Changelog',       href: '/changelog' },
               ].map((item) => {
                 const isActive = pathname === item.href || (item.href !== '/changelog' && pathname.startsWith('/docs') && pathname.includes(item.href.split('/docs/')[1] || '___'));
@@ -345,7 +362,7 @@ export function Navbar({
                       'h-9 inline-flex items-center rounded-lg px-3 text-sm font-medium tracking-tight transition-all duration-200',
                       'text-foreground/70 hover:bg-accent hover:text-foreground',
                       isActive && 'bg-accent text-foreground shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]',
-                      (item.label === 'API Reference' || item.label === 'Changelog') && 'hide-when-ask-ai-open'
+                      (item.label === 'Grids' || item.label === 'Changelog') && 'hide-when-ask-ai-open'
                     )}
                   >
                     {item.label}
@@ -496,7 +513,7 @@ export function Navbar({
               >
                 {dict.changelog}
                 {showNewBadge && (
-                  <span className="ml-2 flex h-[18px] items-center rounded-full bg-emerald-500/10 px-1.5 text-[10px] font-bold uppercase tracking-wider text-emerald-500 ring-1 ring-inset ring-emerald-500/20 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.2)]">
+                  <span className="ml-2 flex h-[18px] items-center rounded-full bg-foreground/5 px-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground ring-1 ring-inset ring-foreground/20 animate-pulse">
                     {dict.newBadge}
                   </span>
                 )}
@@ -544,7 +561,7 @@ export function Navbar({
           ) : (
             <>
               {!isPlatformUser && secondaryLinkLabel?.trim() && secondaryLinkHref?.trim() ? (
-                <Button asChild variant="outline" className="hidden h-9 rounded-lg border-border bg-accent px-4 text-[13px] font-medium tracking-tight text-foreground/90 shadow-sm transition-all duration-200 hover:border-border hover:bg-accent/80 hover:text-foreground lg:inline-flex hide-when-ask-ai-open">
+                <Button asChild variant="outline" className="hidden h-9 rounded-lg border-border bg-accent px-4 text-[13px] font-medium tracking-tight text-foreground/90 shadow-sm transition-all duration-200 hover:border-border hover:bg-slate-200 dark:hover:bg-accent/80 hover:text-foreground lg:inline-flex hide-when-ask-ai-open">
                   <Link
                     href={secondaryLinkHref}
                     prefetch={false}
@@ -557,7 +574,7 @@ export function Navbar({
               ) : null}
 
               {!isPlatformUser && primaryCtaLabel?.trim() && primaryCtaHref?.trim() ? (
-                <Button asChild className="hidden h-9 rounded-lg px-4 text-xs font-semibold tracking-tight shadow-[0_8px_22px_rgba(16,185,129,0.18)] transition-all duration-200 hover:brightness-110 md:inline-flex">
+                <Button asChild className="hidden h-9 rounded-lg px-4 text-xs font-semibold tracking-tight transition-all duration-200 hover:bg-zinc-700 dark:hover:bg-zinc-300 md:inline-flex">
                   <Link
                     href={resolveCtaHref(primaryCtaLabel, primaryCtaHref)}
                     prefetch={false}
@@ -624,8 +641,9 @@ export function Navbar({
                       <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">Documentation</p>
                       {[
                         { label: 'Getting Started', href: '/docs/introduction' },
-                        { label: 'Platform Guides', href: '/docs/attendance-system' },
-                        { label: 'API Reference',   href: '/docs/authentication-api' },
+                        { label: 'Agent mode',      href: '/docs/agent-mode' },
+                        { label: 'Project Mode',    href: '/docs/project-mode' },
+                        { label: 'Grids',           href: '/docs/grids' },
                         { label: 'Changelog',       href: '/changelog' },
                       ].map((item, idx, arr) => (
                         <Link
@@ -795,7 +813,7 @@ export function Navbar({
                       <div className="flex items-center gap-2">
                         {dict.changelog}
                         {showNewBadge && (
-                          <span className="flex h-[18px] items-center rounded-full bg-emerald-500/10 px-1.5 text-[10px] font-bold uppercase tracking-wider text-emerald-500 ring-1 ring-inset ring-emerald-500/20 animate-pulse">
+                          <span className="flex h-[18px] items-center rounded-full bg-foreground/5 px-1.5 text-[10px] font-bold uppercase tracking-wider text-foreground ring-1 ring-inset ring-foreground/20 animate-pulse">
                             {dict.newBadge}
                           </span>
                         )}

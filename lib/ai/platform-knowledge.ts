@@ -202,7 +202,7 @@ function buildResourceDirectoryDocument() {
     pageSlug: "platform/resources",
     sourceUrl: toAbsoluteResourceUrl("/"),
     contentType: "platformResource",
-    pagePurpose: "Clickable Classgrid resource directory for support, sales, legal, product, and community links.",
+    pagePurpose: "Clickable Classgrid resource directory for support, sales, legal, and product links.",
     sections: [
       section(
         "Public resources and links",
@@ -508,7 +508,7 @@ async function buildContentSourceDocuments() {
       sourceUrl: sourceUrlFromHref(publicHref),
       contentType: "codebaseContent",
       pagePurpose:
-        "Codebase-defined Classgrid website/platform content, route metadata, forms, copy, module data, or navigation data.",
+        "Codebase-defined Classgrid website/platform content, route metadata, forms, copy, product data, or navigation data.",
       sourceUpdatedAt: stats?.mtime ? stats.mtime.toISOString() : undefined,
       sections: [
         section("Source file", `Source file: ${relative}\nPublic context link: ${publicHref}`),
@@ -542,7 +542,7 @@ async function buildAppPageSourceDocuments() {
       sourceUrl: sourceUrlFromHref(publicHref),
       contentType: "appPageSourceContent",
       pagePurpose:
-        "Codebase-defined public App Router page content, labels, CTAs, local module matrices, and route-specific UI copy.",
+        "Codebase-defined public App Router page content, labels, CTAs, local feature lists, and route-specific UI copy.",
       sourceUpdatedAt: stats?.mtime ? stats.mtime.toISOString() : undefined,
       sections: [
         section(

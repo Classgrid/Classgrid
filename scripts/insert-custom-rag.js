@@ -3,20 +3,13 @@ const mongoose = require('mongoose');
 // ==========================================
 // 🎯 1. ENTER A UNIQUE ID FOR THIS DATA
 // ==========================================
-const DOCUMENT_ID = "integrations-link-correction";
+const DOCUMENT_ID = "sanket-bondre-dob";
 
 // ==========================================
 // 🎯 2. PASTE ANY TEXT YOU WANT TO TEACH THE AI
 // ==========================================
 const CUSTOM_KNOWLEDGE = `
-CLASSGRID INTEGRATIONS LINK:
-If a user asks about integrations or you need to provide a link to the Classgrid integrations page, you MUST use the exact URL:
-https://classgrid.in/#integrations (or simply /#integrations)
-
-CRITICAL RULE:
-The '#' symbol is strictly required because the integrations section is an anchor on the homepage.
-DO NOT use the link /integrations or https://classgrid.in/integrations. That page does not exist.
-Always use /#integrations.
+sanket bondre was born on 30 july 2007
 `;
 // ==========================================
 

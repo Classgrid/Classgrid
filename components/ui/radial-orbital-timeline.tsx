@@ -297,7 +297,7 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
   const CY = 275;
 
   return (
-    <div className="relative w-full rounded-[40px] border border-emerald-500/30 bg-white/50 py-10 px-2 lg:px-4 shadow-xl backdrop-blur-sm dark:bg-[#071a16]/95">
+    <div className="relative w-full rounded-[40px] border border-foreground/15 bg-white/50 py-10 px-2 lg:px-4 shadow-xl backdrop-blur-sm dark:bg-background/95">
 
       {/* Dynamic styles */}
       <style suppressHydrationWarning>
@@ -320,9 +320,9 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
       </style>
       {/* Background ambient glows */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-3xl">
-        <div className="absolute left-[-5%] top-[0%] h-[400px] w-[400px] rounded-full bg-emerald-500/5 blur-[120px] dark:bg-emerald-500/15" />
-        <div className="absolute right-[-5%] top-[10%] h-[350px] w-[350px] rounded-full bg-teal-400/5 blur-[110px] dark:bg-teal-400/10" />
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400/5 blur-[150px] dark:bg-emerald-400/10" />
+        <div className="absolute left-[-5%] top-[0%] h-[400px] w-[400px] rounded-full bg-foreground/5 blur-[120px] dark:bg-foreground/10" />
+        <div className="absolute right-[-5%] top-[10%] h-[350px] w-[350px] rounded-full bg-foreground/5 blur-[110px] dark:bg-foreground/10" />
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/5 blur-[150px] dark:bg-foreground/10" />
       </div>
 
       {/* ─── FOCUS MODE LAYER ─── */}
@@ -333,7 +333,7 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="pointer-events-none absolute inset-0 z-10 rounded-3xl bg-slate-200/40 dark:bg-[#020a08]/60"
+            className="pointer-events-none absolute inset-0 z-10 rounded-3xl bg-slate-200/40 dark:bg-black/60"
           />
         )}
       </AnimatePresence>
@@ -347,7 +347,7 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
           <AnimatePresence mode="wait">
             {selectedNode && animStep >= 4 && activeData && (
               <motion.div key={`left-${selectedNode}`} initial={{ opacity: 0, scale: 0.95, filter: "blur(5px)" }} animate={isClosing ? { opacity: 0, scale: 0.85, filter: "blur(8px)", y: 20 } : { opacity: 1, scale: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, scale: 0.85, filter: "blur(8px)" }} transition={{ duration: isClosing ? 0.5 : 0.4, ease: "easeOut" }}
-                className={`pointer-events-auto relative overflow-hidden rounded-2xl border bg-white/95 p-5 shadow-2xl backdrop-blur-xl dark:bg-[#071a16]/95 map-val-${activeColorIdx}`}>
+                className={`pointer-events-auto relative overflow-hidden rounded-2xl border bg-white/95 p-5 shadow-2xl backdrop-blur-xl dark:bg-background/95 map-val-${activeColorIdx}`}>
                 <div className={`absolute inset-x-0 top-0 h-1 map-solid-${activeColorIdx}`} />
                 <button onClick={resetSelection} className={`absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full border bg-opacity-20 transition-colors hover:bg-opacity-40 map-val-${activeColorIdx} map-text-${activeColorIdx}`}>
                   <X className="h-3.5 w-3.5" />
@@ -374,7 +374,7 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
           <AnimatePresence mode="wait">
             {selectedNode && animStep >= 4 && activeData && (
               <motion.div key={`right-${selectedNode}`} initial={{ opacity: 0, scale: 0.95, filter: "blur(5px)" }} animate={isClosing ? { opacity: 0, scale: 0.85, filter: "blur(8px)", y: 20 } : { opacity: 1, scale: 1, filter: "blur(0px)", y: 0 }} exit={{ opacity: 0, scale: 0.85, filter: "blur(8px)" }} transition={{ duration: isClosing ? 0.5 : 0.4, ease: "easeOut", delay: isClosing ? 0 : 0.1 }}
-                className={`pointer-events-auto relative overflow-hidden rounded-2xl border bg-white/95 p-5 shadow-2xl backdrop-blur-xl dark:bg-[#071a16]/95 map-val-${activeColorIdx}`}>
+                className={`pointer-events-auto relative overflow-hidden rounded-2xl border bg-white/95 p-5 shadow-2xl backdrop-blur-xl dark:bg-background/95 map-val-${activeColorIdx}`}>
                 <div className={`absolute inset-x-0 top-0 h-1 map-solid-${activeColorIdx}`} style={{ opacity: 0.8 }} />
                 <button onClick={resetSelection} className={`absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full border bg-opacity-20 transition-colors hover:bg-opacity-40 map-val-${activeColorIdx} map-text-${activeColorIdx}`}>
                   <X className="h-3.5 w-3.5" />
@@ -410,11 +410,11 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
 
               {/* Animated Gradients for Data Flow */}
               <linearGradient id="grad-emerald" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="550" y2="550">
-                <stop offset="0%" stopColor="#10b981" stopOpacity="0.2">
+                <stop offset="0%" stopColor="#737373" stopOpacity="0.2">
                   <animate attributeName="offset" values="0;1;0" dur="2s" repeatCount="indefinite" />
                 </stop>
-                <stop offset="50%" stopColor="#34d399" stopOpacity="1" />
-                <stop offset="100%" stopColor="#059669" stopOpacity="0.2">
+                <stop offset="50%" stopColor="#a3a3a3" stopOpacity="1" />
+                <stop offset="100%" stopColor="#525252" stopOpacity="0.2">
                   <animate attributeName="offset" values="0;1;0" dur="2s" repeatCount="indefinite" />
                 </stop>
               </linearGradient>
@@ -441,10 +441,10 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
             {/* Orbit rings — crystal clear, fully visible, keeps rotating */}
             {RADII.map((r, i) => (
               <circle key={`track-${r}`} cx={CX} cy={CY} r={r} fill="none" strokeWidth={2 - i * 0.3} strokeDasharray="8 5"
-                className="stroke-emerald-500/70 dark:stroke-emerald-400/60 transition-all duration-1000"
+                className="stroke-foreground/40 transition-all duration-1000"
                 style={{ transformOrigin: `${CX}px ${CY}px`, animation: `orbitSpin ${40 + i * 10}s linear infinite` }} />
             ))}
-            <circle cx={CX} cy={CY} r={50} fill="none" strokeWidth="1.5" className="stroke-emerald-500/70 dark:stroke-emerald-400/60 transition-all duration-1000" />
+            <circle cx={CX} cy={CY} r={50} fill="none" strokeWidth="1.5" className="stroke-foreground/40 transition-all duration-1000" />
 
             {/* ─── PERMANENT ROTATING SVG GROUP FOR INNER CONNECTION ─── */}
             {/* Shared mathematical source of truth via Framer Motion */}
@@ -556,9 +556,9 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
                           className={cn(
                             "relative flex min-w-[90px] items-center justify-center whitespace-nowrap rounded-full border px-4 py-2 text-[13px] font-semibold shadow-lg transition-all duration-500 cursor-pointer backdrop-blur-md",
                             // Base style (colorful idle): explicitly 24-color hue-mapped natively
-                            `bg-white/85 dark:bg-[#071a16]/80 map-val-${node.colorIndex}`,
+                            `bg-white/85 dark:bg-background/80 map-val-${node.colorIndex}`,
                             // Hover interaction
-                            !isFocused && `hover:shadow-xl hover:scale-105 hover:bg-white dark:hover:bg-[#071a16]`,
+                            !isFocused && `hover:shadow-xl hover:scale-105 hover:bg-white dark:hover:bg-background`,
                             // Selected state 
                             // High-contrast filled mode overrules text color
                             isSelected && `scale-[1.15] border-transparent bg-white dark:bg-slate-900 !text-slate-900 dark:!text-white shadow-2xl map-glow-${node.colorIndex}`,
@@ -582,14 +582,14 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
           </AnimatePresence>
 
           {/* ─── CENTER LOGO (System Brain) ─── */}
-          <div className="absolute z-40 flex h-[100px] w-[100px] items-center justify-center rounded-full border border-white bg-white shadow-2xl dark:border-emerald-900/50 dark:bg-[#071a16]"
+          <div className="absolute z-40 flex h-[100px] w-[100px] items-center justify-center rounded-full border border-white bg-white shadow-2xl dark:border-white/10 dark:bg-background"
             style={{ left: CX, top: CY, transform: "translate(-50%, -50%) scaleX(0.909)" }}>
 
             {/* Ambient Pulse (Idle) / Reaction Pulse (Active) */}
             <motion.div
               animate={animStep >= 1 ? { scale: [1, 1.2, 1.05], opacity: [0.1, 0.4, 0.2] } : { scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
               transition={animStep >= 1 ? { duration: 1.5, ease: "easeOut" } : { duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className={cn("absolute inset-[-8px] rounded-full border transition-colors duration-1000", selectedNode ? `map-val-${activeColorIdx}` : "border-emerald-400/30 dark:border-emerald-500/20")}
+              className={cn("absolute inset-[-8px] rounded-full border transition-colors duration-1000", selectedNode ? `map-val-${activeColorIdx}` : "border-foreground/20")}
             />
             {/* Second expanding ripple when center reacts */}
             <AnimatePresence>
@@ -599,7 +599,7 @@ export default function RadialOrbitalTimeline({ activeTab, rings, roleDataMap = 
               )}
             </AnimatePresence>
 
-            <div className={cn("relative flex h-full w-full items-center justify-center rounded-full transition-colors duration-1000", selectedNode ? `map-border-${activeColorIdx}` : "bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/50 dark:to-teal-950/30")}>
+            <div className={cn("relative flex h-full w-full items-center justify-center rounded-full transition-colors duration-1000", selectedNode ? `map-border-${activeColorIdx}` : "bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900/50 dark:to-neutral-800/30")}>
               <Image src="/logo.png" alt="Classgrid core" width={60} height={60} className="h-[60px] w-[60px] object-contain relative z-10" priority />
 
               <AnimatePresence>

@@ -19,13 +19,13 @@ type Module = {
 };
 
 const CATEGORY_ACCENT: Record<string, { dot: string; badge: string; border: string }> = {
-  Academics:    { dot: "bg-emerald-400", badge: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20", border: "hover:border-emerald-400/40" },
+  Academics:    { dot: "bg-foreground", badge: "text-foreground bg-foreground/5 border-border", border: "hover:border-foreground/30" },
   Assessment:   { dot: "bg-blue-400",    badge: "text-blue-400 bg-blue-400/10 border-blue-400/20",         border: "hover:border-blue-400/40" },
   Management:   { dot: "bg-violet-400",  badge: "text-violet-400 bg-violet-400/10 border-violet-400/20",   border: "hover:border-violet-400/40" },
   Advanced:     { dot: "bg-amber-400",   badge: "text-amber-400 bg-amber-400/10 border-amber-400/20",      border: "hover:border-amber-400/40" },
   Dashboards:   { dot: "bg-rose-400",    badge: "text-rose-400 bg-rose-400/10 border-rose-400/20",         border: "hover:border-rose-400/40" },
 };
-const DEFAULT_ACCENT = { dot: "bg-emerald-400", badge: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20", border: "hover:border-emerald-400/40" };
+const DEFAULT_ACCENT = { dot: "bg-foreground", badge: "text-foreground bg-foreground/5 border-border", border: "hover:border-foreground/30" };
 
 function cleanTitle(t: string) {
   return t
@@ -78,15 +78,15 @@ export default function ModulesPageClient({ modules }: { modules: Module[] }) {
         {/* Grid bg */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)", backgroundSize: "28px 28px" }} />
-        {/* Green glow */}
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-[120px]" />
+        {/* Glow */}
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-foreground/5 blur-[120px]" />
 
         <div className="relative mx-auto max-w-4xl text-center">
 
 
           <h1 className="text-5xl font-black tracking-tight text-foreground md:text-7xl">
             {modules.length} Modules.{" "}
-            <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
+            <span className="text-foreground">
               One Platform.
             </span>
           </h1>
@@ -95,7 +95,7 @@ export default function ModulesPageClient({ modules }: { modules: Module[] }) {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link href="#modules-library"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-bold text-primary-foreground shadow-lg shadow-emerald-500/25 transition hover:opacity-90">
+              className="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-bold text-primary-foreground shadow-lg shadow-foreground/10 transition hover:bg-zinc-700 dark:hover:bg-zinc-300">
               Browse Modules <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/pricing"

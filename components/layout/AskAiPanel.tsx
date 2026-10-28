@@ -108,8 +108,8 @@ type StructuredBlock =
 
 const SUGGESTED_QUESTIONS = [
   "What is Classgrid?",
-  "How can my school use Classgrid?",
-  "Does Classgrid provide websites?",
+  "What can the Classgrid AI agent do?",
+  "How does Project Mode work?",
   "How do I get started?",
 ];
 
@@ -460,7 +460,7 @@ function TypingDots({ reducedMotion }: { reducedMotion: boolean }) {
 
 function SearchingSpinner({ reducedMotion }: { reducedMotion: boolean }) {
   if (reducedMotion) {
-    return <Search className="h-3.5 w-3.5 text-emerald-400" />;
+    return <Search className="h-3.5 w-3.5 text-foreground" />;
   }
 
   return (
@@ -468,7 +468,7 @@ function SearchingSpinner({ reducedMotion }: { reducedMotion: boolean }) {
       animate={{ rotate: 360 }}
       transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
     >
-      <Globe2 className="h-3.5 w-3.5 text-emerald-400" />
+      <Globe2 className="h-3.5 w-3.5 text-foreground" />
     </motion.div>
   );
 }
@@ -507,14 +507,14 @@ function renderInlineText(rawText: string) {
           href={href}
           target={external ? "_blank" : undefined}
           rel={external ? "noreferrer" : undefined}
-          className="font-semibold text-emerald-600 underline underline-offset-4 transition-colors hover:text-emerald-500 dark:text-emerald-400"
+          className="font-semibold text-foreground underline underline-offset-4 transition-colors hover:text-muted-foreground"
         >
           {cleanLabel}
         </a>
       );
     } else if (boldText) {
       nodes.push(
-        <strong key={`bold-${match.index}`} className="font-semibold text-emerald-600 dark:text-emerald-400">
+        <strong key={`bold-${match.index}`} className="font-semibold text-foreground">
           {boldText}
         </strong>
       );
@@ -653,7 +653,7 @@ const AssistantMessageContent = memo(({ content, isTyping }: { content: string, 
             <ul key={`l-${index}`} className="space-y-2">
               {block.items.map((item, itemIndex) => (
                 <li key={`li-${index}-${itemIndex}`} className="flex gap-2 text-slate-700 dark:text-white">
-                  <span className="min-w-5 font-medium text-emerald-400">
+                  <span className="min-w-5 font-medium text-foreground">
                     {item.indexLabel ?? "\u2022"}
                   </span>
                   <span>{renderInlineText(item.text)}</span>
@@ -736,14 +736,14 @@ const AssistantMessageContent = memo(({ content, isTyping }: { content: string, 
         return (
           <div key={`s-${index}`} className="space-y-2">
             <div className="flex items-center gap-2">
-              <Icon className="h-4 w-4 text-emerald-400" />
+              <Icon className="h-4 w-4 text-foreground" />
               <h3 className="font-semibold text-slate-900 dark:text-white">{block.title.replace(/\*\*/g, "")}</h3>
             </div>
             {block.items && block.items.length > 0 ? (
               <ul className="space-y-2">
                 {block.items.map((item, itemIndex) => (
                   <li key={`sli-${index}-${itemIndex}`} className="flex gap-2 text-slate-700 dark:text-white">
-                    <span className="min-w-5 font-medium text-emerald-400">
+                    <span className="min-w-5 font-medium text-foreground">
                       {item.indexLabel ?? "\u2022"}
                     </span>
                     <span>{renderInlineText(item.text)}</span>
@@ -1608,7 +1608,7 @@ export function AskAiPanel({ open, onOpenChange, pageContext, variant = "in-flow
   const panelHeader = (
     <div className="flex items-center justify-between border-b border-border px-4 py-4">
       <div className="flex items-center gap-2">
-        <Bot className="h-4 w-4 text-emerald-500" />
+        <Bot className="h-4 w-4 text-foreground" />
         <p className="text-sm font-semibold text-foreground">Ask AI</p>
       </div>
       <div className="flex items-center gap-1">
@@ -1659,25 +1659,8 @@ export function AskAiPanel({ open, onOpenChange, pageContext, variant = "in-flow
                     Hi, {session.user.name.split(" ")[0]} 👋
                   </span>
                 ) : null}
-                {pageContext?.title
-                  ? `Ask about ${pageContext.title}, Classgrid features, pricing, demos, or support.`
-                  : "Ask anything about Classgrid features, pricing, website capabilities, demo process, or support."}
+                Ask anything.
               </p>
-            </div>
-
-            <div className="space-y-2">
-              {suggestedQuestions.map((question) => (
-                <Button
-                  key={question}
-                  type="button"
-                  variant="outline"
-                  className="w-full justify-start rounded-2xl border-border bg-card/40 px-4 py-3 text-left text-sm text-muted-foreground hover:text-foreground"
-                  onClick={() => void askQuestion(question)}
-                >
-                  <Sparkles className="mr-2 h-4 w-4 text-emerald-500" />
-                  {question}
-                </Button>
-              ))}
             </div>
           </>
         ) : (
@@ -1807,7 +1790,7 @@ export function AskAiPanel({ open, onOpenChange, pageContext, variant = "in-flow
                                     onClick={(e) => openImage(img, e)}
                                     title={img.alt}
                                     className={cn(
-                                      "relative group overflow-hidden flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 hover:border-emerald-500/50 transition-all shadow-sm cursor-pointer",
+                                      "relative group overflow-hidden flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 hover:border-foreground/40 transition-all shadow-sm cursor-pointer",
                                       images.length === 1 && !message.content ? "rounded-2xl rounded-tr-none h-auto w-[180px] sm:w-[220px]" : "rounded-xl h-20 w-20 sm:h-[88px] sm:w-[88px]"
                                     )}
                                   >
@@ -1836,9 +1819,9 @@ export function AskAiPanel({ open, onOpenChange, pageContext, variant = "in-flow
                                   type="button"
                                   onClick={() => setPreviewFile({ name: att.name, src: att.url, mimeType: att.mimeType })}
                                   title={att.name}
-                                  className="relative group overflow-hidden flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 hover:border-emerald-500/50 transition-all shadow-sm rounded-xl h-20 w-20 sm:h-[88px] sm:w-[88px]"
+                                  className="relative group overflow-hidden flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 hover:border-foreground/40 transition-all shadow-sm rounded-xl h-20 w-20 sm:h-[88px] sm:w-[88px]"
                                 >
-                                  <div className="flex flex-col items-center justify-center gap-1 text-foreground/70 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                  <div className="flex flex-col items-center justify-center gap-1 text-foreground/70 group-hover:text-foreground transition-colors">
                                     <Icon className="h-7 w-7" strokeWidth={1.5} />
                                     <span className="text-[9px] uppercase tracking-wider font-bold">
                                       {att.name.split('.').pop()?.substring(0, 4)}
@@ -1972,7 +1955,7 @@ export function AskAiPanel({ open, onOpenChange, pageContext, variant = "in-flow
                               initial={{ width: "0%" }}
                               animate={{ width: "85%" }}
                               transition={{ duration: 2.5, ease: "easeOut" }}
-                              className="h-full bg-emerald-500 rounded-full"
+                              className="h-full bg-foreground rounded-full"
                             />
                           </div>
                         ) : (

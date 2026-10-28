@@ -37,7 +37,7 @@ function OnboardingContent() {
     } else if (nextUrl) {
       window.location.replace(nextUrl);
     } else {
-      router.replace("/support/inquiry");
+      router.replace("/support/ticket");
     }
   };
 
@@ -189,7 +189,7 @@ function OnboardingContent() {
       } else if (next) {
         window.location.href = next;
       } else {
-        router.push("/support/inquiry"); // Default fallback
+        router.push("/support/ticket"); // Default fallback
       }
     } catch (err) {
       console.error(err);

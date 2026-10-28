@@ -574,7 +574,7 @@ export function CareersForm({
                         type="button"
                         onClick={handleSendOtp}
                         disabled={otpLoading || otpCooldown > 0 || phoneValue.replace(/^\+91/, "").replace(/\s+/g, "").length < 10}
-                        className="flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:bg-zinc-700 dark:hover:bg-zinc-300 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <MessageSquare className="w-4 h-4" />
                         {otpLoading ? "Sending..." : otpCooldown > 0 ? `Resend (${otpCooldown}s)` : otpSent ? "Resend OTP" : "Send OTP"}
@@ -644,7 +644,7 @@ export function CareersForm({
                       value="Yes" 
                       required 
                       onChange={() => setIsUnder18(false)}
-                      className="accent-emerald-500 w-4 h-4" 
+                      className="accent-foreground w-4 h-4"
                     />
                     <span className="text-slate-900 dark:text-white">Yes</span>
                   </label>
@@ -655,7 +655,7 @@ export function CareersForm({
                       value="No" 
                       required 
                       onChange={() => setIsUnder18(true)}
-                      className="accent-emerald-500 w-4 h-4" 
+                      className="accent-foreground w-4 h-4"
                     />
                     <span className="text-slate-900 dark:text-white">No</span>
                   </label>
@@ -1001,7 +1001,7 @@ export function CareersForm({
                     <>
                       {githubProfile && (
                         <div className="text-sm font-medium text-muted-foreground">
-                          Handle: <a href={githubProfile.url} target="_blank" rel="noreferrer" className="text-emerald-500 hover:underline font-semibold">@{githubProfile.username}</a>
+                          Handle: <a href={githubProfile.url} target="_blank" rel="noreferrer" className="text-foreground hover:underline font-semibold">@{githubProfile.username}</a>
                         </div>
                       )}
                       <div className="flex flex-col gap-3">
@@ -1080,7 +1080,7 @@ export function CareersForm({
                     {selectedStacks.map((stack) => (
                       <span
                         key={stack}
-                        className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400"
+                        className="inline-flex items-center gap-1 rounded-full border border-foreground/15 bg-foreground/5 px-2.5 py-1 text-xs font-medium text-foreground"
                       >
                         {stack}
                         <button
@@ -1123,7 +1123,7 @@ export function CareersForm({
                                 disabled={isDisabled}
                                 onClick={() => toggleStack(stack)}
                                 className={`rounded-md border px-2.5 py-1.5 text-xs font-medium transition-all ${isSelected
-                                    ? "border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                                    ? "border-foreground bg-foreground/10 text-foreground"
                                     : "border-slate-200 bg-white text-muted-foreground hover:border-slate-300 dark:border-zinc-700 dark:bg-[#0A0A0A] dark:hover:border-zinc-600"
                                   } ${isDisabled ? "cursor-not-allowed opacity-40" : ""}`}
                               >
@@ -1255,9 +1255,9 @@ export function CareersForm({
             </motion.label>
 
             <motion.label variants={itemVariants} className="flex items-start gap-3 text-sm cursor-pointer mt-6 mb-2">
-              <input type="checkbox" name="termsConsent" required className="accent-emerald-500 w-4 h-4 mt-1" />
+              <input type="checkbox" name="termsConsent" required className="accent-foreground w-4 h-4 mt-1" />
               <span className="text-muted-foreground leading-relaxed">
-                I agree to the <a href="/terms" className="text-emerald-500 hover:underline">Terms & Conditions</a> and <a href="/privacy" className="text-emerald-500 hover:underline">Privacy Policy</a>, and I consent to my data being processed for recruitment purposes.
+                I agree to the <a href="/terms" className="text-foreground hover:underline">Terms & Conditions</a> and <a href="/privacy" className="text-foreground hover:underline">Privacy Policy</a>, and I consent to my data being processed for recruitment purposes.
               </span>
             </motion.label>
 
@@ -1265,7 +1265,7 @@ export function CareersForm({
               variants={itemVariants}
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-transparent bg-emerald-500 px-4 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all hover:bg-emerald-600 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed mt-4"
+              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-transparent bg-foreground px-4 text-sm font-semibold text-background shadow-lg shadow-black/10 dark:shadow-white/10 transition-all hover:bg-zinc-700 dark:hover:bg-zinc-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed mt-4"
             >
               {isSubmitting ? (
                 <>

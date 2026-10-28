@@ -41,7 +41,7 @@ export default function IntegrationHero() {
         <p className="mt-4 text-lg text-gray-500 dark:text-white max-w-xl mx-auto">
           250+ top apps are available to integrate seamlessly with your workflow.
         </p>
-        <Button variant="default" className="mt-8 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition hover:opacity-90">
+        <Button variant="default" className="mt-8 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition hover:bg-zinc-700 dark:hover:bg-zinc-300">
           Get started
         </Button>
 

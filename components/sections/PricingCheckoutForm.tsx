@@ -155,7 +155,7 @@ export function PricingCheckoutForm() {
       </div>
 
       {checkoutUrl ? (
-        <p className="mt-3 text-xs text-emerald-200">
+        <p className="mt-3 text-xs text-foreground/70">
           {pricingCopy.checkoutFallback}{" "}
           <a href={checkoutUrl} className="underline">
             Secure checkout

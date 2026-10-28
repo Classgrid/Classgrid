@@ -48,9 +48,9 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   const rating = Math.max(1, Math.min(5, testimonial.rating ?? 5));
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-full rounded-3xl bg-gradient-to-br from-[#f0fdf4] to-white dark:from-[#0a2418] dark:to-[#05130d] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] md:min-h-[420px] overflow-hidden border border-emerald-100 dark:border-white/[0.05]">
+    <div className="flex flex-col md:flex-row w-full h-full rounded-3xl bg-gradient-to-br from-neutral-100 to-white dark:from-neutral-900 dark:to-neutral-950 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] md:min-h-[420px] overflow-hidden border border-border dark:border-white/[0.05]">
       {/* Left side – large avatar */}
-      <div className="w-full md:w-[35%] shrink-0 h-[340px] md:h-auto flex relative bg-emerald-100 dark:bg-emerald-950/50">
+      <div className="w-full md:w-[35%] shrink-0 h-[340px] md:h-auto flex relative bg-foreground/5 dark:bg-foreground/10">
         {testimonial.avatarUrl ? (
           <img
             src={testimonial.avatarUrl}
@@ -58,7 +58,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             className="w-full h-full object-cover object-[center_15%] md:object-center absolute inset-0"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-5xl font-bold text-white bg-gradient-to-br from-emerald-400 to-emerald-600 dark:from-emerald-800 dark:to-emerald-950">
+          <div className="flex h-full w-full items-center justify-center text-5xl font-bold text-background bg-gradient-to-br from-foreground/80 to-foreground">
             {safeName ? safeName.charAt(0).toUpperCase() : "U"}
           </div>
         )}
@@ -78,7 +78,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                 />
               )}
               {companyLine && (
-                <span className="text-lg md:text-xl font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide leading-tight line-clamp-2">
+                <span className="text-lg md:text-xl font-bold text-foreground uppercase tracking-wide leading-tight line-clamp-2">
                   {companyLine}
                 </span>
               )}
@@ -87,7 +87,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
               )}
             </div>
             <Quote
-              className="h-10 w-10 md:h-12 md:w-12 text-emerald-500/30 dark:text-emerald-400/20 rotate-180 shrink-0"
+              className="h-10 w-10 md:h-12 md:w-12 text-foreground/20 rotate-180 shrink-0"
               fill="currentColor"
             />
           </div>
@@ -115,7 +115,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         {/* Footer: name & role */}
         <div className="mt-6 flex flex-col gap-1">
           {safeName ? (
-            <p className="text-xl font-bold text-emerald-700 dark:text-emerald-400">
+            <p className="text-xl font-bold text-foreground">
               - {safeName}
             </p>
           ) : null}
@@ -205,14 +205,14 @@ export default function TestimonialCarouselV2({
           <button
             onClick={goPrev}
             aria-label="Previous testimonial"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-emerald-700 shadow-lg backdrop-blur-sm border border-emerald-200 transition-all duration-200 hover:scale-105 hover:bg-white dark:bg-[#0a1f16]/90 dark:text-emerald-300 dark:border-emerald-800 dark:hover:bg-[#0d2a1c]"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-foreground shadow-lg backdrop-blur-sm border border-border transition-all duration-200 hover:scale-105 hover:bg-white dark:bg-neutral-900/90 dark:border-white/10 dark:hover:bg-neutral-800"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={goNext}
             aria-label="Next testimonial"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-emerald-700 shadow-lg backdrop-blur-sm border border-emerald-200 transition-all duration-200 hover:scale-105 hover:bg-white dark:bg-[#0a1f16]/90 dark:text-emerald-300 dark:border-emerald-800 dark:hover:bg-[#0d2a1c]"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-foreground shadow-lg backdrop-blur-sm border border-border transition-all duration-200 hover:scale-105 hover:bg-white dark:bg-neutral-900/90 dark:border-white/10 dark:hover:bg-neutral-800"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -230,7 +230,7 @@ export default function TestimonialCarouselV2({
               className={cn(
                 "rounded-full transition-all duration-300",
                 i === current
-                  ? "h-3 w-3 bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                  ? "h-3 w-3 bg-foreground"
                   : "h-2.5 w-2.5 bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
               )}
             />

@@ -162,7 +162,7 @@ export function DocsLayoutShell({ children, sidebarSections = [] }: { children: 
                         }
                       }, 50);
                     }}
-                    className={`block px-4 py-1.5 text-[13px] text-slate-600 dark:text-zinc-400 hover:text-emerald-400 transition-colors ${heading.level === 3 ? 'pl-8' : ''}`}
+                    className={`block px-4 py-1.5 text-[13px] text-slate-600 dark:text-zinc-400 hover:text-foreground transition-colors ${heading.level === 3 ? 'pl-8' : ''}`}
                   >
                     {heading.text}
                   </a>

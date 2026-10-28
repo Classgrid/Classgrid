@@ -29,7 +29,7 @@ export const faqItemType = defineType({
           { title: 'Comparison Pages', value: 'compare' },
           { title: 'Pricing Page', value: 'pricing' },
           { title: 'Features Page', value: 'features' },
-          { title: 'Institution Pages', value: 'institution' },
+          { title: 'Agent Page', value: 'agent' },
         ],
       },
     }),

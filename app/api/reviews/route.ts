@@ -62,8 +62,8 @@ export async function POST(req: Request) {
         <p>A new review has just been submitted on classgrid.in/reviews.</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Institution:</strong> ${institution}</p>
-        <p><strong>Module:</strong> ${moduleName || 'Overall'}</p>
+        <p><strong>Organization:</strong> ${institution}</p>
+        <p><strong>Feature:</strong> ${moduleName || 'Overall'}</p>
         <p><strong>Rating:</strong> ${rating} Stars</p>
         <br/>
         <p><strong>Review:</strong></p>

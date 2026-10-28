@@ -212,7 +212,7 @@ export default function IntroAnimation({ slides }: { slides?: ShowcaseSlide[] })
           >
             {currentCard.highlights.map((highlight, idx) => (
               <div key={idx} className="flex items-start">
-                <svg className="mt-0.5 mr-3 h-5 w-5 shrink-0 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="mt-0.5 mr-3 h-5 w-5 shrink-0 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="font-medium text-muted-foreground">

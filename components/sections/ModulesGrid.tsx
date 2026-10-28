@@ -310,7 +310,7 @@ export function ModulesGrid({
                   <span className="relative z-10 flex h-full w-full items-center justify-center transition-transform group-hover:-translate-y-full">
                     Load {Math.min(LOAD_STEP, remaining)} More
                   </span>
-                  <div className="absolute inset-0 flex h-full w-full translate-y-full items-center justify-center bg-emerald-500 text-white transition-transform group-hover:translate-y-0">
+                  <div className="absolute inset-0 flex h-full w-full translate-y-full items-center justify-center bg-foreground/80 text-background transition-transform group-hover:translate-y-0">
                     {remaining} remaining
                   </div>
                 </button>
@@ -321,12 +321,12 @@ export function ModulesGrid({
       ) : null}
 
       {showCallout ? (
-        <div className="mx-auto mt-16 max-w-4xl rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center shadow-xl backdrop-blur-sm dark:bg-emerald-950/40">
+        <div className="mx-auto mt-16 max-w-4xl rounded-2xl border border-foreground/15 bg-foreground/5 p-10 text-center shadow-xl backdrop-blur-sm dark:bg-foreground/10">
           {calloutTitle?.trim() ? (
             <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">{calloutTitle}</h3>
           ) : null}
           {calloutBody?.trim() ? (
-            <p className="mx-auto mb-8 max-w-2xl text-slate-600 dark:text-emerald-100/70">{calloutBody}</p>
+            <p className="mx-auto mb-8 max-w-2xl text-slate-600 dark:text-foreground/70">{calloutBody}</p>
           ) : null}
           {calloutCtaLabel?.trim() && calloutCtaHref?.trim() ? (
             <Button asChild size="lg" className="h-14 rounded-full px-10 text-base font-bold">

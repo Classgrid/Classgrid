@@ -27,12 +27,12 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
   return (
     <div className="relative isolate overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.12),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,color-mix(in_srgb,var(--foreground)_8%,transparent),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.12),transparent_45%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:42px_42px] [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_95%)]" />
       </div>
 
       <section className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
-        <div className="rounded-3xl border border-border/70 bg-background/90 p-6 shadow-[0_20px_70px_-35px_rgba(16,185,129,0.35)] backdrop-blur-md sm:p-10">
+        <div className="rounded-3xl border border-border/70 bg-background/90 p-6 shadow-[0_20px_70px_-35px_rgba(0,0,0,0.25)] backdrop-blur-md sm:p-10">
           
           <style dangerouslySetInnerHTML={{ __html: `
             .animate-spin-once {
@@ -84,7 +84,7 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
               <div className="animate-fade-up">
                 <Badge
                   variant="outline"
-                  className="mb-4 inline-flex items-center gap-1.5 border-emerald-500/35 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-emerald-500"
+                  className="mb-4 inline-flex items-center gap-1.5 border-border bg-foreground/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-foreground"
                 >
                   <Sparkles className="h-3.5 w-3.5" />
                   Unsubscribed
@@ -101,7 +101,7 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
               <p className="text-sm font-semibold text-foreground">What Happens Next</p>
               <div className="mt-4 space-y-4 text-sm text-muted-foreground">
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                   <p>
                     {type === "legal" 
                       ? "No more legal and security policy updates will be sent to your inbox." 
@@ -111,7 +111,7 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                   <p>
                     {type === "legal" 
                       ? "You can re-subscribe anytime from your profile settings." 
@@ -121,7 +121,7 @@ export default async function UnsubscribedPage(props: { searchParams: Promise<{ 
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                   <p>Your unsubscribe preference remains protected and respected by default.</p>
                 </div>
               </div>

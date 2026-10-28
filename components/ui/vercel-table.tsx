@@ -75,7 +75,7 @@ export function VercelTable({ columns, rows, className }: VercelTableProps) {
                     col.width,
                     colIdx > 0 && "border-l border-slate-300 dark:border-white/10",
                     col.accent
-                      ? "font-medium text-emerald-600 dark:text-emerald-400"
+                      ? "font-medium text-foreground"
                       : "text-slate-900 dark:text-slate-300 font-medium"
                   )}
                 >

@@ -128,7 +128,7 @@ export function DemoMeetingCaptureForm({ requestId }: DemoMeetingCaptureFormProp
       <button
         type="submit"
         disabled={submitting}
-        className="mt-4 inline-flex h-10 items-center justify-center rounded-lg bg-emerald-500 px-4 text-sm font-semibold text-black transition hover:bg-emerald-400 disabled:opacity-60"
+        className="mt-4 inline-flex h-10 items-center justify-center rounded-lg bg-foreground px-4 text-sm font-semibold text-background transition hover:bg-zinc-700 dark:hover:bg-zinc-300 disabled:opacity-60"
       >
         {submitting ? "Saving..." : "Confirm Scheduled Meeting"}
       </button>

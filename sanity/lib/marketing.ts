@@ -51,6 +51,9 @@ import {
   isometricStackQuery,
   classgridVideoQuery,
   classgridTeamVisionQuery,
+  pluginsPageQuery,
+  aiSolutionPageBySlugQuery,
+  aiSolutionPagesListQuery,
 } from './queries'
 
 const SANITY_REVALIDATE_SECONDS = 300
@@ -164,6 +167,8 @@ export const getLegalPageBySlug = async (slug: string) => {
 
   return null
 }
+export const getLegalPageDates = () =>
+  safeFetch(`*[_type == "legalPage" && !(_id in path("drafts.**"))]{ "slug": slug.current, lastUpdated, _updatedAt }`)
 export const getStatusPage = () => safeFetch(statusPageQuery)
 export const getPageSettings = (slug: string) => safeFetch(pageSettingsBySlugQuery, { slug })
 
@@ -197,3 +202,7 @@ export const getAppEcosystem = () => safeFetch(appEcosystemQuery)
 export const getCaseStudySettings = () => safeFetch(caseStudySettingsQuery)
 export const getClassgridVideo = () => safeFetch(classgridVideoQuery)
 export const getClassgridTeamVision = () => safeFetch(classgridTeamVisionQuery)
+export const getPluginsPage = () => safeFetch(pluginsPageQuery, undefined, { disableInMemoryCache: true })
+export const getAiSolutionPage = (slug: string) =>
+  safeFetch(aiSolutionPageBySlugQuery, { slug }, { disableInMemoryCache: true })
+export const getAiSolutionPages = () => safeFetch(aiSolutionPagesListQuery, undefined, { disableInMemoryCache: true })

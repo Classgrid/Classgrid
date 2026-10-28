@@ -117,7 +117,7 @@ function Calendar({
           defaultClassNames.range_end
         ),
         today: cn(
-          "font-semibold text-emerald-600 dark:text-emerald-400 [&>button]:after:absolute [&>button]:after:bottom-1 [&>button]:after:left-1/2 [&>button]:after:-translate-x-1/2 [&>button]:after:h-1 [&>button]:after:w-1 [&>button]:after:rounded-full [&>button]:after:bg-emerald-500 [&>button[data-selected-single=true]]:after:bg-white dark:[&>button[data-selected-single=true]]:after:bg-black",
+          "font-semibold text-foreground [&>button]:after:absolute [&>button]:after:bottom-1 [&>button]:after:left-1/2 [&>button]:after:-translate-x-1/2 [&>button]:after:h-1 [&>button]:after:w-1 [&>button]:after:rounded-full [&>button]:after:bg-foreground[&>button[data-selected-single=true]]:after:bg-white dark:[&>button[data-selected-single=true]]:after:bg-black",
           defaultClassNames.today
         ),
         outside: cn(

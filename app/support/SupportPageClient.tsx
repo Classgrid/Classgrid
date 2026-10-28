@@ -7,10 +7,7 @@ import {
   ArrowRight,
   Headphones,
   Terminal,
-  Database,
   CreditCard,
-  Fingerprint,
-  ClipboardList,
   ShieldCheck,
   Plug,
   Bot,
@@ -19,16 +16,10 @@ import {
   Clock,
   CheckCircle2,
   ExternalLink,
-  Users,
   CalendarDays,
-  Library,
-  Briefcase,
   Key,
   UserCog,
-  Smartphone,
   FileUp,
-  Video,
-  BookOpen,
   MessageCircle,
   Globe
 } from "lucide-react";
@@ -40,124 +31,70 @@ import { buildLangHref, type SupportedLang } from "@/lib/locale";
 
 const CATEGORIES = [
   {
-    title: "Technical Support",
-    description: "Troubleshoot software errors and platform bugs.",
-    icon: Terminal,
+    title: "Agent Mode",
+    description: "Answers, tool steps, research, or a task that stopped midway.",
+    icon: Bot,
     delay: 0.1,
   },
   {
-    title: "ERP Assistance",
-    description: "Help with admission, fee, and student data modules.",
-    icon: Database,
+    title: "Project Mode",
+    description: "Your repo, the code editor, pull requests, and deploys.",
+    icon: Terminal,
     delay: 0.15,
   },
   {
-    title: "Billing & Subscription",
-    description: "Manage your invoices, plans, and payments.",
+    title: "Billing & Credits",
+    description: "Plans, top-ups, invoices, and payments.",
     icon: CreditCard,
     delay: 0.2,
   },
   {
-    title: "Attendance & Biometric",
-    description: "Hardware integration and sync issues.",
-    icon: Fingerprint,
+    title: "WhatsApp & Calls",
+    description: "Messaging or calling the agent on WhatsApp.",
+    icon: MessageCircle,
     delay: 0.25,
   },
   {
-    title: "Examination Systems",
-    description: "Admit cards, marksheets, and grading setups.",
-    icon: ClipboardList,
+    title: "Connected Apps",
+    description: "Gmail, Drive, Calendar, Notion, Slack, GitHub, Vercel and more.",
+    icon: Plug,
     delay: 0.3,
   },
   {
-    title: "Compliance & NAAC/NBA",
-    description: "Report generation and data formatting.",
-    icon: ShieldCheck,
+    title: "Schedules & Background Tasks",
+    description: "Daily briefs, reminders, and long tasks that report back.",
+    icon: CalendarDays,
     delay: 0.35,
   },
   {
-    title: "API & Integrations",
-    description: "Webhooks, custom endpoints, and 3rd party sync.",
-    icon: Plug,
+    title: "Files & Uploads",
+    description: "PDFs, spreadsheets, images, and files the agent made.",
+    icon: FileUp,
     delay: 0.4,
   },
   {
-    title: "AI Assistant Issues",
-    description: "Queries regarding the intelligent platform assistant.",
-    icon: Bot,
+    title: "Account & Login",
+    description: "Sign-in codes, passwords, and login errors.",
+    icon: Key,
     delay: 0.45,
   },
   {
-    title: "Admissions & CRM",
-    description: "Lead tracking, applications, and enrollment queries.",
-    icon: Users,
+    title: "Profile & Settings",
+    description: "Personal info, notification preferences, and display issues.",
+    icon: UserCog,
     delay: 0.5,
   },
   {
-    title: "Timetable & Scheduling",
-    description: "Class scheduling, faculty allocation, and conflicts.",
-    icon: CalendarDays,
+    title: "Privacy & Security",
+    description: "Your data, connected access, and account safety.",
+    icon: ShieldCheck,
     delay: 0.55,
   },
   {
-    title: "Library & Resources",
-    description: "Book inventory, issue/return, and digital assets.",
-    icon: Library,
-    delay: 0.6,
-  },
-  {
-    title: "HR & Payroll",
-    description: "Staff attendance, salary slips, and leave management.",
-    icon: Briefcase,
-    delay: 0.65,
-  },
-  {
-    title: "Account & Login",
-    description: "Password resets, multi-factor authentication, and login errors.",
-    icon: Key,
-    delay: 0.7,
-  },
-  {
-    title: "Profile & Settings",
-    description: "Updating personal info, notification preferences, and display issues.",
-    icon: UserCog,
-    delay: 0.75,
-  },
-  {
-    title: "Mobile App Issues",
-    description: "Sync errors, push notifications, and app crashes on iOS/Android.",
-    icon: Smartphone,
-    delay: 0.8,
-  },
-  {
-    title: "Document Uploads",
-    description: "File format errors, size limits, and document viewing problems.",
-    icon: FileUp,
-    delay: 0.85,
-  },
-  {
-    title: "Live Classes & Video",
-    description: "Camera/mic permissions, screen sharing, and connection drops.",
-    icon: Video,
-    delay: 0.9,
-  },
-  {
-    title: "Assignments & Grading",
-    description: "Late submissions, file attachments, and grade visibility.",
-    icon: BookOpen,
-    delay: 0.95,
-  },
-  {
-    title: "Chat & Messaging",
-    description: "Message delivery failures, group chats, and read receipts.",
-    icon: MessageCircle,
-    delay: 1.0,
-  },
-  {
-    title: "Browser & Performance",
-    description: "Slow loading times, caching issues, and browser compatibility.",
+    title: "Mobile & Browser",
+    description: "Slow loading, phone layout, and browser issues.",
     icon: Globe,
-    delay: 1.05,
+    delay: 0.6,
   },
 ];
 
@@ -168,11 +105,11 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
   const ticketUrl = buildLangHref("/support/ticket", lang);
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-24 pb-16 overflow-hidden selection:bg-emerald-500/30 transition-colors duration-300 font-sans">
+    <main className="relative min-h-screen bg-background text-foreground pt-24 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300 font-sans">
       {/* Premium Background Effects */}
       <div className="absolute top-0 left-0 w-full h-[800px] overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[100vw] h-[60vw] rounded-full bg-emerald-600/10 blur-[120px] opacity-70" />
-        <div className="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-teal-600/10 blur-[100px] opacity-50" />
+        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[100vw] h-[60vw] rounded-full bg-foreground/5 blur-[120px] opacity-70" />
+        <div className="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-foreground/5 blur-[100px] opacity-50" />
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay" />
         {/* Subtle grid pattern for light and dark */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -189,109 +126,59 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
           <SectionAccentBar />
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-foreground">
             Get the answers, guidance and <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-400">support you need</span>
+            <span className="text-muted-foreground">support you need</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
-            Whether you&apos;re an existing institution needing technical assistance or a prospective partner with questions, we&apos;re here to help.
+            Questions, problems or feedback about Classgrid AI at chat.classgrid.in? We&apos;re here to help.
           </p>
         </motion.div>
       </section>
 
-      {/* Unified Support Options Card */}
-      <section className="px-6 max-w-5xl mx-auto mb-16 relative z-20">
+      {/* Support Ticket Card */}
+      <section className="px-6 max-w-3xl mx-auto mb-16 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="group relative p-[1px] rounded-[32px] overflow-hidden transition-all duration-500 bg-border hover:bg-gradient-to-br hover:from-emerald-500/50 hover:to-teal-500/50 shadow-xl"
+          className="group relative p-[1px] rounded-[32px] overflow-hidden transition-all duration-500 bg-border hover:bg-foreground/20 shadow-xl"
         >
           <div className="relative h-full bg-card border-none rounded-[31px] p-8 md:p-12 flex flex-col backdrop-blur-xl transition-colors z-10 overflow-hidden">
-            {/* Combined Internal Glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[80px] -z-10 group-hover:bg-emerald-500/15 transition-colors duration-500" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/10 rounded-full blur-[80px] -z-10 group-hover:bg-teal-500/15 transition-colors duration-500" />
+            <div className="flex flex-col">
+              <div className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center mb-8">
+                <Ticket className="w-6 h-6 text-foreground" />
+              </div>
 
-            {/* Grid inside the single card */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0 md:divide-x divide-border">
+              <h2 className="text-3xl font-bold mb-4 text-foreground">Open a support ticket</h2>
+              <p className="text-muted-foreground leading-relaxed mb-8 flex-1 text-lg font-light">
+                Questions, problems or feedback about Classgrid AI? Open a ticket — anyone can submit one, with or without an account. Our team will respond as soon as possible.
+              </p>
 
-              {/* Option 1: Raise a Ticket */}
-              <div className="flex flex-col md:pr-10">
-                <div className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center mb-8">
-                  <Ticket className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
+                  <span className="text-sm text-muted-foreground">Fast response times</span>
                 </div>
-
-                <h2 className="text-3xl font-bold mb-4 text-foreground">Get Support</h2>
-                <p className="text-muted-foreground leading-relaxed mb-8 flex-1 text-lg font-light">
-                  Submit a ticket for technical issues, academic queries, or any other support needs. Our team will respond as soon as possible.
-                </p>
-
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                    <span className="text-sm text-muted-foreground">Fast response times</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                    <span className="text-sm text-muted-foreground">Support for all users</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
-                    <span className="text-sm text-muted-foreground">Dedicated support team</span>
-                  </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
+                  <span className="text-sm text-muted-foreground">Support for everyone</span>
                 </div>
-
-                <div className="mt-auto">
-                  <Link href={ticketUrl} className="block w-full">
-                    <Button
-                      className="w-full h-14 rounded-xl text-base font-bold shadow-md transition-all duration-300"
-                    >
-                      Submit a Ticket
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-foreground shrink-0" />
+                  <span className="text-sm text-muted-foreground">Dedicated support team</span>
                 </div>
               </div>
 
-              {/* Option 2: Speak with Classgrid */}
-              <div className="flex flex-col pt-10 border-t border-border md:border-t-0 md:pt-0 md:pl-10">
-                <div className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center mb-8">
-                  <MessageSquare className="w-6 h-6 text-teal-600 dark:text-teal-400" />
-                </div>
-
-                <h2 className="text-3xl font-bold mb-4 text-foreground">Chat with Classgrid</h2>
-                <p className="text-muted-foreground leading-relaxed mb-8 flex-1 text-lg font-light">
-                  Have questions before your demo? Talk to our experts and see how Classgrid fits your institution&apos;s unique needs.
-                </p>
-
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0" />
-                    <span className="text-sm text-muted-foreground">Talk to product specialists</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0" />
-                    <span className="text-sm text-muted-foreground">Get instant answers</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-teal-500 shrink-0" />
-                    <span className="text-sm text-muted-foreground">Personalized consultation</span>
-                  </div>
-                </div>
-
-                <div className="mt-auto">
-                  <Link href={buildLangHref("/support/inquiry", lang)} className="block w-full">
-                    <Button
-                      variant="outline"
-                      className="w-full h-14 rounded-xl border-border bg-transparent hover:bg-accent text-foreground text-base font-bold transition-all duration-300"
-                    >
-                      Start a Conversation
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-teal-600 dark:text-teal-400" />
-                    </Button>
-                  </Link>
-                </div>
+              <div className="mt-auto">
+                <Link href={ticketUrl} className="block w-full">
+                  <Button
+                    className="w-full h-14 rounded-xl text-base font-bold border-transparent bg-foreground text-background hover:border-transparent hover:bg-foreground/90 hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-foreground/90 dark:hover:text-background transition-colors duration-300"
+                  >
+                    Open a Support Ticket
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
-
             </div>
-
           </div>
         </motion.div>
       </section>
@@ -313,13 +200,13 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: category.delay }}
-                  className="group relative flex flex-col items-start p-6 rounded-2xl bg-card border border-border hover:border-emerald-500/50 hover:shadow-lg transition-all duration-300 text-left overflow-hidden h-full"
+                  className="group relative flex flex-col items-start p-6 rounded-2xl bg-card border border-border hover:border-foreground/30 hover:shadow-lg transition-all duration-300 text-left overflow-hidden h-full"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-emerald-500/30 transition-all duration-300 shadow-sm">
-                    <IconComp className="w-5 h-5 text-muted-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-foreground/30 transition-all duration-300 shadow-sm">
+                    <IconComp className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </div>
-                  <h4 className="text-base font-bold text-foreground mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  <h4 className="text-base font-bold text-foreground mb-2 group-hover:text-foreground transition-colors">
                     {category.title}
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">

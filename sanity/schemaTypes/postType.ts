@@ -183,7 +183,7 @@ export const postType = defineType({
     defineField({
       name: 'tags',
       title: '🏷️ Tags',
-      description: 'Add specific keywords (e.g. #EdTech, #AI). Press Enter to add a tag.',
+      description: 'Add specific keywords (e.g. #AI, #Productivity). Press Enter to add a tag.',
       type: 'array',
       of: [{ type: 'string' }],
       options: {

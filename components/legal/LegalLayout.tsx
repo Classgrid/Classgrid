@@ -87,7 +87,7 @@ function LegalContactCard() {
       <CardContent className="space-y-5 py-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="space-y-2">
-            <Badge className="bg-emerald-500/15 text-emerald-500 hover:bg-emerald-500/20">
+            <Badge className="bg-foreground/10 text-foreground hover:bg-foreground/15">
               <ShieldCheck className="mr-1.5 h-3.5 w-3.5" />
               {title}
             </Badge>
@@ -97,7 +97,7 @@ function LegalContactCard() {
 
         <div className="grid gap-2 rounded-lg border border-border bg-background/40 p-4">
           <p className="flex items-center gap-2 text-sm text-foreground">
-            <UserRound className="h-4 w-4 text-emerald-500" />
+            <UserRound className="h-4 w-4 text-foreground" />
             <span className="font-semibold">Name:</span>
             <span>Nikhil Shinde</span>
           </p>
@@ -130,7 +130,7 @@ function LegalContactCard() {
               Call +91 8623947038
             </a>
           </Button>
-          <Button asChild variant="outline" className="border-emerald-500/40 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20">
+          <Button asChild variant="outline" className="border-foreground/15 bg-foreground/5 text-foreground hover:bg-foreground/10">
             <a href="https://wa.me/918623947038" target="_blank" rel="noreferrer">
               <MessageCircle className="mr-2 h-4 w-4" />
               WhatsApp +91 8623947038
@@ -145,8 +145,8 @@ function LegalContactCard() {
 const portableTextComponents = {
   block: {
     normal: ({ children }: any) => <p className="text-[0.95rem] font-medium leading-8 text-muted-foreground">{children}</p>,
-    h2: ({ children }: any) => <h3 className="mt-8 text-[1.1rem] font-bold text-emerald-500">{children}</h3>,
-    h3: ({ children }: any) => <h4 className="mt-6 text-base font-semibold text-emerald-500">{children}</h4>,
+    h2: ({ children }: any) => <h3 className="mt-8 text-[1.1rem] font-bold text-foreground">{children}</h3>,
+    h3: ({ children }: any) => <h4 className="mt-6 text-base font-semibold text-foreground">{children}</h4>,
   },
   types: {
     legalTable: ({ value }: any) => (
@@ -185,7 +185,7 @@ const portableTextComponents = {
       return (
         <a
           href={href}
-          className="font-medium text-emerald-500 underline underline-offset-2 hover:text-emerald-500/90"
+          className="font-medium text-foreground underline underline-offset-2 hover:text-foreground/90"
           rel={isHttp ? "noreferrer" : undefined}
           target={isHttp ? "_blank" : undefined}
         >
@@ -291,7 +291,7 @@ export function LegalLayout({
             ))}
           </div>
 
-          <Card className="mt-6 border-border bg-card transition-colors duration-300 hover:border-emerald-500/40">
+          <Card className="mt-6 border-border bg-card transition-colors duration-300 hover:border-foreground/40">
             <CardContent className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-foreground">Need legal help?</p>
@@ -299,7 +299,7 @@ export function LegalLayout({
                   Contact our team for policy, security, or compliance clarifications.
                 </p>
               </div>
-              <Button asChild className="bg-emerald-500 transition-transform duration-200 hover:scale-[1.02] hover:bg-emerald-500/90">
+              <Button asChild className="bg-foreground text-background transition-transform duration-200 hover:scale-[1.02] hover:bg-zinc-700 dark:hover:bg-zinc-300">
                 <Link href="/contact">
                   Contact Support
                   <ArrowRight className="ml-2 h-4 w-4" />

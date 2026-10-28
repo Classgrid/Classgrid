@@ -142,8 +142,8 @@ export default async function SolutionPage({ params }: PageProps) {
           Array.isArray(page?.roleExperiences) ? page.roleExperiences : []
         }
         faqs={Array.isArray(page?.faqs) ? page.faqs : []}
-        primaryCtaLabel="View Platform"
-        primaryCtaHref="/agent"
+        primaryCtaLabel="Use Agent"
+        primaryCtaHref="https://chat.classgrid.in"
         trustBadges={solutionTrustBadges}
         clientLogos={solutionClientLogos}
         impactMetrics={solutionImpactMetrics}

@@ -297,7 +297,7 @@ export function YouTubeStylePlayer({
           <motion.div variants={headingVariant}>
             <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
             {label?.trim() ? (
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
                 {label}
               </p>
             ) : null}
@@ -404,12 +404,12 @@ export function YouTubeStylePlayer({
                           />
                           {/* Progress */}
                           <div
-                            className="absolute inset-y-0 left-0 rounded-full bg-emerald-500"
+                            className="absolute inset-y-0 left-0 rounded-full bg-white"
                             style={{ width: `${progress}%` }}
                           />
                           {/* Scrubber dot */}
                           <div
-                            className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-emerald-500 opacity-0 group-hover/bar:opacity-100 transition-opacity shadow-md"
+                            className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-white opacity-0 group-hover/bar:opacity-100 transition-opacity shadow-md"
                             style={{ left: `${progress}%`, transform: `translate(-50%, -50%)` }}
                           />
                         </div>
@@ -546,7 +546,7 @@ export function YouTubeStylePlayer({
                   className={cn(
                     "h-1.5 rounded-full transition-all duration-300",
                     i === idx
-                      ? "w-8 bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]"
+                      ? "w-8 bg-foreground"
                       : "w-1.5 bg-slate-400 dark:bg-slate-600 hover:bg-slate-500"
                   )}
                   aria-label={`Go to video ${i + 1}`}

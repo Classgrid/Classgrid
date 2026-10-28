@@ -1,0 +1,265 @@
+{
+  "slug": "content-and-social",
+  "order": 7,
+  "menuGroup": "useCase",
+  "menuLabel": "Content & social",
+  "menuDescription": "Content plans, captions and posts",
+  "eyebrow": "Content and social",
+  "headline": "Make more. Post more.",
+  "subheadline": "Plan a week of content, write captions, make thumbnails and post to your Facebook Page or Instagram, from one chat.",
+  "primaryCta": { "label": "Use Agent", "href": "https://chat.classgrid.in" },
+  "demoHeading": "From idea to post in one chat",
+  "demoTabs": [
+    {
+      "label": "Content week",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Goa travel series",
+          "userMessage": "Plan content for the whole week. I post budget travel videos about Goa.",
+          "workedFor": "Worked for 54s",
+          "steps": [
+            "Planned 7 days",
+            "Wrote 7 captions",
+            "Added hashtags"
+          ],
+          "resultLines": [
+            "Mon · Reel: 5 free beaches",
+            "Tue · Post: Where to eat for cheap",
+            "Wed · Short: Packing list"
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Caption · Monday",
+          "subtitle": "5 beaches in Goa you can visit for free 🌊 Save this for your next trip.",
+          "tone": "info"
+        }
+      }
+    },
+    {
+      "label": "Thumbnail",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Goa on a budget",
+          "userMessage": "Make a bright thumbnail image for my video 'Goa on a budget'",
+          "workedFor": "Worked for 22s",
+          "steps": [
+            "Created image"
+          ],
+          "resultLines": [
+            "Your 16:9 thumbnail is ready."
+          ]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created image",
+          "subtitle": "Ready to download",
+          "files": [
+            { "name": "goa-thumbnail.png" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Post it",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Festival post",
+          "userMessage": "Post 'Happy Diwali' to my Facebook Page",
+          "workedFor": "Worked for 12s",
+          "steps": [
+            "Showed the post to confirm",
+            "Facebook Pages · Published post"
+          ],
+          "resultLines": [
+            "Posted to FreshBox Foods."
+          ]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Posted to FreshBox Foods",
+          "rows": [
+            { "label": "Reach", "value": "1,240" },
+            { "label": "Reactions", "value": "86" },
+            { "label": "Comments", "value": "12" }
+          ]
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "From idea to content calendar",
+      "text": "Tell the agent what you make. It plans a week of posts and writes hooks and captions in your voice. Each caption comes ready to copy.",
+      "visual": {
+        "main": {
+          "kind": "planner",
+          "title": "Goa travel week",
+          "chip": "7 days",
+          "items": [
+            { "label": "Mon · Reel: 5 free beaches", "done": true },
+            { "label": "Tue · Post: Where to eat for cheap", "done": true },
+            { "label": "Wed · Short: Packing list", "done": false },
+            { "label": "Thu · Reel: Best sunset spots", "done": false }
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Caption · Monday",
+          "subtitle": "5 beaches in Goa you can visit for free 🌊 Save this for your next trip.",
+          "tone": "info"
+        }
+      }
+    },
+    {
+      "title": "Images, video and audio tools",
+      "text": "Make thumbnails and posters from a prompt. Trim a video, change its format, or pull the audio out of it. No software to install.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Clip and audio",
+          "fileChips": ["goa-vlog.mp4"],
+          "userMessage": "Trim this video to the first 30 seconds and give me the audio as MP3",
+          "workedFor": "Worked for 41s",
+          "steps": [
+            "Trimmed to 30 seconds",
+            "Pulled out the audio"
+          ],
+          "resultLines": [
+            "Your clip and audio are ready."
+          ]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 3 files",
+          "files": [
+            { "name": "clip-30s.mp4" },
+            { "name": "audio.mp3" },
+            { "name": "thumbnail.png" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Post and check your pages",
+      "text": "Connect your Facebook Page or Instagram Business account. The agent publishes posts when you ask, replies to comments and pulls your insights. It can also find and export your Canva designs and check your YouTube stats and comments.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Comment replies",
+          "userMessage": "Reply to the top 3 comments on my last post",
+          "workedFor": "Worked for 19s",
+          "steps": [
+            "Instagram Business · Read comments",
+            "Wrote 3 replies"
+          ],
+          "resultLines": [
+            "Thank you! Part 2 is coming Friday.",
+            "Yes, it's a free beach.",
+            "Glad it helped, save it for later!"
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Replied to 3 comments",
+          "subtitle": "Instagram Business",
+          "tone": "success"
+        }
+      }
+    },
+    {
+      "title": "Make it together on Grids",
+      "text": "Brainstorm with the people you make content with in one shared AI chat, with each person's messages tagged. Share a finished chat as a read-only link on LinkedIn or WhatsApp. Ask the agent to send the latest draft file to your group.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Shared with Aisha and Rohan",
+          "userMessage": "Aisha: Give us 5 hook ideas for the Goa reel",
+          "workedFor": "Worked for 14s",
+          "steps": [
+            "Wrote 5 hooks"
+          ],
+          "resultLines": [
+            "1. Goa without spending much? Watch this.",
+            "2. 5 beaches nobody told you about."
+          ]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Share chat",
+          "rows": [
+            { "label": "Copy link" },
+            { "label": "WhatsApp" },
+            { "label": "LinkedIn" },
+            { "label": "Email" }
+          ]
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Connect the apps you post and design with",
+  "plugins": [
+    { "name": "Instagram Business", "line": "Post with an image, reply, see insights" },
+    { "name": "Facebook Pages", "line": "Publish posts, reply to comments, see insights" },
+    { "name": "YouTube", "line": "Search videos, check channel stats, read comments" },
+    { "name": "Canva", "line": "Find and export designs, fill brand templates" },
+    { "name": "Google Drive", "line": "Find and save your files" },
+    { "name": "Notion", "line": "Keep your content plans in pages" }
+  ],
+  "tasksHeading": "Try one of these",
+  "exampleTasks": [
+    "Plan content for the whole week.",
+    "Write captions for your posts.",
+    "Post 'Happy Diwali' to my Facebook Page",
+    "Turn a voice note into text.",
+    "Build a landing page for your idea.",
+    "Make a portfolio site in one chat.",
+    "Get reminders on WhatsApp.",
+    "Create a PDF report in minutes."
+  ],
+  "faqs": [
+    {
+      "question": "Can it post for me?",
+      "answer": "Yes, to your connected Facebook Page or Instagram Business account, when you ask it to. Instagram posts need an image."
+    },
+    {
+      "question": "Can it schedule my posts?",
+      "answer": "No. It posts when you ask. A schedule can send you a reminder, like \"Post the Tuesday reel\", by email or WhatsApp."
+    },
+    {
+      "question": "Can it design inside Canva?",
+      "answer": "No. It can find your designs, export them, upload images and fill your brand templates. It can't edit inside a design."
+    },
+    {
+      "question": "Can it make videos?",
+      "answer": "It can trim and convert your videos and pull the audio out of them. It doesn't make new videos from text."
+    },
+    {
+      "question": "Can someone work on it with me?",
+      "answer": "Yes. Share one AI chat with up to 3 people using Share Grid, or send them a read-only link."
+    },
+    {
+      "question": "Is it free to start?",
+      "answer": "Yes. Sign up with your email. Top up only when you need more."
+    }
+  ],
+  "plainEnglishHeading": "What it can do, in plain English",
+  "plainEnglish": [
+    "Classgrid AI helps you make content faster. You tell it what you make and who it is for, and it helps with the rest. It plans, writes, makes images and posts for you. Everything happens in one chat.",
+    "Ask it to plan your content for the week. It gives you a day-by-day plan with a topic and a format for each day, like a reel, a post or a short. It also writes the hook and the caption for each one. Each caption comes in a box you can copy with one click.",
+    "You can teach it how you talk. In Skills, tell it how you want it to write, like fun and short, or simple and friendly. It uses that style every time it writes for you. If you say \"remember this\", it can save it for next time.",
+    "Need a thumbnail or a poster? Describe it, and the agent makes the image for you. You can download it and use it right away. Text inside a made image can come out wrong, so it's best to add your title yourself.",
+    "The agent can work with your video files too. It can cut a clip down to the part you want, change it to another format, or pull the sound out as an MP3. It can also turn a voice note into text. You don't need to install any editing software.",
+    "Connect your Facebook Page or Instagram Business account. When you ask, the agent publishes a post for you. Instagram posts need an image. It does not post on its own or at a set time, but a schedule can send you a reminder to post.",
+    "It can read the comments on your posts and help you reply to them. It can also read your Page messages and pull your insights, like reach and reactions. On YouTube it can search videos, check your channel stats and read comments. This helps you see what your audience likes.",
+    "If you use Canva, the agent can find your designs and export them as PNG, PDF or MP4. It can upload images and fill your brand templates, but it can't edit inside a design. It can also find and save files in Google Drive and keep your plans in Notion.",
+    "Making content with someone else? Share one AI chat with up to 3 other people using Share Grid, and each person's messages are tagged with their name. You can also share a finished chat as a read-only link on WhatsApp or LinkedIn. It is free to start, and you top up only when you need more."
+  ],
+  "seo": {
+    "title": "AI for content and social media | Classgrid AI",
+    "description": "Plan a week of content, write captions, make thumbnails, trim videos and post to Facebook and Instagram with one AI agent. Free to start."
+  }
+}

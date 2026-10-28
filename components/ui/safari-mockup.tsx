@@ -33,7 +33,7 @@ export function SafariMockup({
         
         {/* Address Bar */}
         <div className="flex flex-1 items-center gap-2 rounded-md border border-border bg-background px-3 py-1.5 text-[11px] text-muted-foreground">
-          <ShieldCheck className="h-3 w-3 text-emerald-500" />
+          <ShieldCheck className="h-3 w-3 text-foreground/70" />
           <span className="truncate">{url}</span>
         </div>
 

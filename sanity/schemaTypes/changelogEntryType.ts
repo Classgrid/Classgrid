@@ -145,7 +145,8 @@ export const changelogEntryType = defineType({
     }),
     defineField({
       name: "modules",
-      title: "Related Modules",
+      title: "Related Features",
+      description: "Example: Agent Mode, Project Mode, WhatsApp, Connected Apps",
       type: "array",
       of: [defineArrayMember({ type: "string" })],
       options: {

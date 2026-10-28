@@ -271,7 +271,7 @@ export function DocsToc() {
                 ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-400 scale-110'
                 : hasVoted
                   ? 'border-slate-200 dark:border-white/5 text-slate-400 dark:text-zinc-600 cursor-not-allowed opacity-50'
-                  : 'border-slate-200 dark:border-white/10 hover:bg-emerald-500/10 hover:text-emerald-400 hover:border-emerald-500/50 hover:scale-110 text-slate-600 dark:text-zinc-400 cursor-pointer'
+                  : 'border-slate-200 dark:border-white/10 hover:bg-foreground/5 hover:text-foreground hover:border-foreground/40 hover:scale-110 text-slate-600 dark:text-zinc-400 cursor-pointer'
                 }`}
               onClick={() => handleFeedback(true)}
             >
@@ -344,7 +344,7 @@ export function DocsToc() {
               <div className="absolute right-0 top-full mt-1 w-[260px] rounded-[10px] border border-slate-200 dark:border-white/10 bg-white dark:bg-[#111] shadow-xl opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-200 p-1.5 text-left flex flex-col z-[110]">
                 <button onClick={handleCopyMarkdown} className="flex flex-col text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group/btn">
                   <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-900 dark:text-white mb-0.5">
-                    {copiedMarkdown ? <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg> : <Copy className="w-4 h-4 text-slate-400 group-hover/btn:text-emerald-500" />}
+                    {copiedMarkdown ? <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg> : <Copy className="w-4 h-4 text-slate-400 group-hover/btn:text-foreground" />}
                     Copy page
                   </div>
                   <div className="text-[13px] text-slate-500 pl-6 leading-relaxed">Copy page as Markdown for LLMs</div>
@@ -357,7 +357,7 @@ export function DocsToc() {
                   window.open(url, '_blank');
                 }} className="flex flex-col text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group/btn mt-1">
                   <div className="flex items-center gap-2 text-[13px] font-semibold text-slate-900 dark:text-white mb-0.5">
-                    <div className="w-4 h-4 rounded-[3px] border border-slate-400 group-hover/btn:border-emerald-500 flex items-center justify-center text-[8px] font-bold text-slate-400 group-hover/btn:text-emerald-500">M↓</div>
+                    <div className="w-4 h-4 rounded-[3px] border border-slate-400 group-hover/btn:border-foreground flex items-center justify-center text-[8px] font-bold text-slate-400 group-hover/btn:text-foreground">M↓</div>
                     View as Markdown
                   </div>
                   <div className="text-[13px] text-slate-500 pl-6 leading-relaxed">Open this page as plain text</div>
@@ -437,7 +437,7 @@ export function DocsToc() {
                   type="text"
                   value={commentTitle}
                   onChange={(e) => setCommentTitle(e.target.value)}
-                  className="w-full bg-white dark:bg-[#141414] border border-slate-300 dark:border-white/10 rounded-md p-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 transition-all"
+                  className="w-full bg-white dark:bg-[#141414] border border-slate-300 dark:border-white/10 rounded-md p-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-foreground/40 transition-all"
                   autoFocus
                 />
               </div>
@@ -453,7 +453,7 @@ export function DocsToc() {
                 <textarea
                   value={commentText}
                   onChange={(e) => setCommentText(e.target.value)}
-                  className="w-full h-24 bg-white dark:bg-[#141414] border border-slate-300 dark:border-white/10 rounded-md p-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-emerald-500 transition-all resize-none"
+                  className="w-full h-24 bg-white dark:bg-[#141414] border border-slate-300 dark:border-white/10 rounded-md p-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-foreground/40 transition-all resize-none"
                 />
               </div>
 
@@ -461,7 +461,7 @@ export function DocsToc() {
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-yellow-500 shrink-0 mt-0.5 text-lg leading-none">💡</span>
                 <p className="text-[13px] text-slate-600 dark:text-zinc-400 leading-relaxed">
-                  <strong className="text-slate-900 dark:text-white font-medium">Need help or support?</strong> This feedback form is for documentation improvements only. For technical support, please submit a <a href="/support" className="text-emerald-500 hover:text-emerald-400 transition-colors">support request</a>.
+                  <strong className="text-slate-900 dark:text-white font-medium">Need help or support?</strong> This feedback form is for documentation improvements only. For technical support, please submit a <a href="/support" className="text-foreground hover:text-foreground/70 transition-colors">support request</a>.
                 </p>
               </div>
 

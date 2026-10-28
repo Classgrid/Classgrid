@@ -281,8 +281,8 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
             logoUrl={chromeContent?.logoUrl}
             logoAlt={chromeContent?.logoAlt}
             menuItems={chromeContent?.navbarMenuItems}
-            secondaryLinkLabel={chromeContent?.navbarSecondaryLinkLabel}
-            secondaryLinkHref={chromeContent?.navbarSecondaryLinkHref}
+            secondaryLinkLabel="Log In"
+            secondaryLinkHref="/login"
             primaryCtaLabel={chromeContent?.navbarPrimaryCtaLabel}
             primaryCtaHref={chromeContent?.navbarPrimaryCtaHref}
             mobileMenuTitle={chromeContent?.mobileMenuTitle}
@@ -297,7 +297,7 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
             sessionStatus={status}
           />
         </Suspense>
-        {pathname !== "/blog/unsubscribed" && pathname !== "/careers" && pathname !== "/brand" && pathname !== "/reviews" && !pathname.startsWith("/agent") && <RouteBreadcrumb />}
+        {pathname !== "/blog/unsubscribed" && pathname !== "/careers" && pathname !== "/brand" && pathname !== "/reviews" && !pathname.startsWith("/agent") && !pathname.startsWith("/plugins") && <RouteBreadcrumb />}
         <SmoothScrollHandler />
         <main className={`flex-1 ${isDocsRoute ? '' : 'overflow-x-clip'}`}>{children}</main>
         {(

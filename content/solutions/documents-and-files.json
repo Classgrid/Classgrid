@@ -1,0 +1,230 @@
+{
+  "slug": "documents-and-files",
+  "order": 6,
+  "menuGroup": "useCase",
+  "menuLabel": "Documents & files",
+  "menuDescription": "Read, summarise and make files",
+  "eyebrow": "Documents & files",
+  "headline": "Drop in a file. Get it done.",
+  "subheadline": "Read any PDF, Word, PowerPoint, Excel or audio file, and turn it into notes, charts, plans or new files you can download.",
+  "primaryCta": { "label": "Use Agent", "href": "https://chat.classgrid.in" },
+  "demoHeading": "See what one file can turn into",
+  "demoTabs": [
+    {
+      "label": "File to notes",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Report notes",
+          "fileChips": ["annual-report.pdf"],
+          "userMessage": "Turn annual-report.pdf into short notes with the key numbers",
+          "workedFor": "Worked for 42s",
+          "steps": ["Read annual-report.pdf", "Wrote notes under 5 headings", "Pulled out 8 key numbers"],
+          "resultLines": ["Main points", "Costs went down in the second half."]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 1 file",
+          "subtitle": "Ready to download",
+          "files": [{ "name": "annual-report-notes.pdf" }]
+        }
+      }
+    },
+    {
+      "label": "Sheet to chart",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Orders by month",
+          "fileChips": ["orders-2026.csv"],
+          "userMessage": "Clean this up and draw a chart of orders by month",
+          "workedFor": "Worked for 1m 38s",
+          "steps": ["Read 1,240 rows", "Removed 37 repeated rows", "Ran Python", "Drew 1 chart"],
+          "resultLines": ["Clean file saved as orders-clean.csv.", "March had the most orders."]
+        },
+        "floating": {
+          "kind": "chart",
+          "title": "Orders by month",
+          "bars": [
+            { "label": "Jan", "value": 180 },
+            { "label": "Feb", "value": 210 },
+            { "label": "Mar", "value": 265 },
+            { "label": "Apr", "value": 230 }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Learn anything",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Spanish flashcards",
+          "fileChips": ["spanish-basics.pdf"],
+          "userMessage": "Make 10 flashcards from spanish-basics.pdf",
+          "workedFor": "Worked for 35s",
+          "steps": ["Read spanish-basics.pdf", "Picked 10 key words", "Made 10 flashcards"],
+          "resultLines": ["10 flashcards are ready.", "Tap a card to see the answer."]
+        },
+        "floating": {
+          "kind": "flashcard",
+          "counter": "1 / 10",
+          "question": "What does \"gracias\" mean?",
+          "answer": "Thank you."
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "Reads almost any file",
+      "text": "Drop in a PDF, Word file, slides, an Excel sheet, a CSV, a photo or a voice recording. You can add up to 6 files in one message. Slides include their speaker notes, and voice notes are turned into text first.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Three files",
+          "fileChips": ["contract.pdf", "pitch.pptx", "meeting.m4a"],
+          "userMessage": "What are the main points in these?",
+          "workedFor": "Worked for 1m 04s",
+          "steps": ["Read contract.pdf", "Read pitch.pptx with speaker notes", "Turned meeting.m4a into text"],
+          "resultLines": ["One short summary per file", "5 things to follow up on"]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Follow up",
+          "rows": [
+            { "label": "Contract ends", "value": "31 Mar" },
+            { "label": "Pitch review", "value": "Friday" },
+            { "label": "Send meeting notes", "value": "Today" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Makes files you can use",
+      "text": "Ask for a report, a letter, slides or a sheet. The agent writes it and gives you a file to download: PDF, Word, PowerPoint or Excel. It can also email the file to you.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Proposal",
+          "fileChips": ["notes.docx"],
+          "userMessage": "Turn these notes into a 5-slide deck and a one-page PDF",
+          "workedFor": "Worked for 1m 22s",
+          "steps": ["Read notes.docx", "Built proposal.pptx", "Built summary.pdf"],
+          "resultLines": ["5 slides with one idea each.", "The PDF fits on one page."]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 2 files",
+          "subtitle": "Ready to download",
+          "files": [{ "name": "proposal.pptx" }, { "name": "summary.pdf" }]
+        }
+      }
+    },
+    {
+      "title": "Charts from your spreadsheets",
+      "text": "Upload an Excel or CSV file. The agent cleans it up, works out the numbers with Python and draws clear charts. You get a short report you can download.",
+      "visual": {
+        "main": {
+          "kind": "chart",
+          "title": "Sales by month",
+          "bars": [
+            { "label": "Jul", "value": 42 },
+            { "label": "Aug", "value": 55 },
+            { "label": "Sep", "value": 71 }
+          ]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 3 files",
+          "subtitle": "Ready to download",
+          "files": [{ "name": "report.pdf" }, { "name": "by_month.png" }, { "name": "clean.csv" }]
+        }
+      }
+    },
+    {
+      "title": "Learn it, plan it, remember it",
+      "text": "Turn any file into flashcards and quick quizzes you tap to answer, so you remember what matters. Tell it a goal and a date, and it makes a day-by-day plan with a countdown. It works for a new language, a new skill or a big project.",
+      "visual": {
+        "main": {
+          "kind": "planner",
+          "title": "Spanish basics plan",
+          "items": [
+            { "label": "Day 1 · Greetings", "done": true },
+            { "label": "Day 2 · Numbers", "done": true },
+            { "label": "Day 3 · Review day", "done": false },
+            { "label": "Day 4 · Food words", "done": false }
+          ],
+          "chip": "18 days left"
+        },
+        "floating": {
+          "kind": "flashcard",
+          "counter": "3 / 10",
+          "question": "How do you say \"good morning\"?",
+          "answer": "Buenos días."
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Works with the apps your files live in",
+  "plugins": [
+    { "name": "Google Drive", "line": "Find and read your files, save new ones" },
+    { "name": "Gmail", "line": "Read emails and attachments, send emails" },
+    { "name": "Microsoft Outlook", "line": "Read and send emails" },
+    { "name": "Notion", "line": "Search, read, create and update pages" },
+    { "name": "Google Forms", "line": "Read a form and list its responses" }
+  ],
+  "tasksHeading": "Try one of these",
+  "exampleTasks": [
+    "Analyse a file in seconds.",
+    "Turn a PDF into clear notes.",
+    "Summarize the product roadmap presentation",
+    "Create a PDF report in minutes.",
+    "Draw a chart from your data.",
+    "Clean up messy spreadsheet data.",
+    "Turn a voice note into text.",
+    "Create a quiz from a PDF."
+  ],
+  "faqs": [
+    {
+      "question": "Which files can it read?",
+      "answer": "PDF, Word, PowerPoint (with speaker notes), Excel, CSV and text files, plus photos and audio. You can add up to 6 files in one message."
+    },
+    {
+      "question": "Can it make Word, PowerPoint or Excel files?",
+      "answer": "Yes. It can give you PDF, Word, PowerPoint and Excel files to download, and it can email them to you."
+    },
+    {
+      "question": "Can it read a photo of a page?",
+      "answer": "Yes. Send a photo and it reads what is in it, like a printed page, a receipt or a chart."
+    },
+    {
+      "question": "How does it work out the numbers?",
+      "answer": "It runs Python on its own safe computer to clean data, do the maths and draw charts. You can see each step it took."
+    },
+    {
+      "question": "Where are my files kept?",
+      "answer": "Every file you upload or the agent makes is saved in your Library, where you can search and sort them. For chats you don't want saved, use Incognito."
+    },
+    {
+      "question": "Is it free to start?",
+      "answer": "Yes. Sign up with your email and start for free. Top up only when you need more."
+    }
+  ],
+  "plainEnglishHeading": "What it can do with your files, in plain English",
+  "plainEnglish": [
+    "Classgrid AI can read your files and do real work with them. You open chat.classgrid.in, drop in a file and say what you want in normal words. It does not just describe the file. It can pull out what matters, change it into something new and hand you back a finished file. It is free to start, and you top up only when you need more.",
+    "It reads almost any everyday file. You can give it a PDF, a Word file, a PowerPoint, an Excel sheet, a CSV, a plain text file, a photo or a voice recording. You can add up to 6 files in one message. For slides, it reads the speaker notes too. For voice recordings, it first turns the speech into text.",
+    "It can turn a long file into something short. Ask for clear notes, a summary, the key numbers or a list of things to follow up on. You can ask questions about the file, like \"when does this contract end?\", and it answers from what is inside. If you give it a few files at once, it can compare them for you.",
+    "It can make new files you can use straight away. Ask for a report, a letter, a proposal, a slide deck or a sheet. You get a file to download as PDF, Word, PowerPoint or Excel. It can also email the file to you. If something is not right, just ask for a change and it makes a new version.",
+    "It is good with spreadsheets. Upload an Excel or CSV file, and it can remove repeated rows, fix messy columns and work out totals and averages. It does the maths by running Python on its own safe computer, so you can see each step. Then it draws clear charts and can put everything into a short PDF report.",
+    "It can help you learn or remember anything. From any file, it can make flashcards you flip with a tap, and quick quizzes where you tap an answer and see your score. This works for a new language, a manual at work, a recipe book or any topic you want to know better.",
+    "It can plan big goals day by day. Tell it what you want to finish and by when, and it makes a plan with a task for each day, review days and short breaks. You can tick off each day as you go, and a countdown shows how much time is left. If you fall behind, ask it to make a new plan from today.",
+    "It works with the places your files already live. Connect Google Drive and it can find and read your files and save new ones there. Connect Gmail or Outlook and it can read your emails, and with Gmail it can read their attachments too. It also works with Notion pages and Google Forms responses.",
+    "Your files stay easy to find. Everything you upload and everything the agent makes is saved in your Library, where you can search and sort it. If you don't want a chat saved, open an Incognito chat. In short: drop in a file, and get notes, answers, charts, plans or a brand new file back."
+  ],
+  "seo": {
+    "title": "AI for documents and files: PDF, Word, Excel | Classgrid AI",
+    "description": "Read PDFs, Word, PowerPoint, Excel and audio files. Get notes, summaries, charts, flashcards and new files to download. Free to start."
+  }
+}

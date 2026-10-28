@@ -56,7 +56,7 @@ function SectionDivider() {
       whileInView={{ opacity: 1, scaleX: 1 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.9, ease: "easeOut" }}
-      className="text-center text-emerald-500/30 text-xl tracking-[0.5em] my-16 origin-center"
+      className="text-center text-foreground/30 text-xl tracking-[0.5em] my-16 origin-center"
     >
       · · ·
     </motion.div>
@@ -70,7 +70,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   return (
-    <div className="min-h-screen bg-[#faf8f4] dark:bg-[#0d0e12] text-[#0d0e12] dark:text-[#f5f2ec] relative overflow-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-background text-[#0d0e12] dark:text-[#f5f2ec] relative overflow-hidden transition-colors duration-300">
       
       {/* Grain overlay */}
       <div className="absolute inset-0 pointer-events-none z-50 opacity-60"
@@ -79,7 +79,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
 
       {/* Radial ambient green glow */}
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] pointer-events-none z-0"
-           style={{ background: "radial-gradient(ellipse, rgba(16, 185, 129, 0.07) 0%, transparent 70%)" }}
+           style={{ background: "radial-gradient(ellipse, color-mix(in srgb, var(--foreground) 7%, transparent) 0%, transparent 70%)" }}
       />
 
       {/* Hero with Parallax */}
@@ -92,7 +92,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-          className="font-mono text-xs tracking-[0.25em] uppercase text-emerald-700 dark:text-emerald-500 mb-8"
+          className="font-mono text-xs tracking-[0.25em] uppercase text-foreground/70 mb-8"
         >
           — with gratitude —
         </motion.p>
@@ -102,14 +102,14 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="font-serif text-[clamp(2rem,8vw,7rem)] font-light italic leading-[0.9] text-[#0d0e12] dark:text-[#f5f2ec] mb-12 break-words"
         >
-          Acknowl<em className="not-italic text-emerald-600 dark:text-emerald-500">edg</em>ement
+          Acknowl<em className="not-italic text-foreground">edg</em>ement
         </motion.h1>
         <motion.div 
           initial={{ opacity: 0, scaleY: 0 }}
           animate={{ opacity: 1, scaleY: 1 }}
           transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           style={{ height: 80, transformOrigin: "top" }}
-          className="w-[1px] mx-auto bg-gradient-to-b from-emerald-500 to-transparent"
+          className="w-[1px] mx-auto bg-gradient-to-b from-foreground to-transparent"
         />
       </motion.section>
 
@@ -138,7 +138,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
               variants={slideInLeft}
               className="flex items-center gap-6 mb-10"
             >
-              <p className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-emerald-600 dark:text-emerald-500 whitespace-nowrap">
+              <p className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-foreground/70 whitespace-nowrap">
                 Those who stood with us
               </p>
               <motion.div
@@ -146,7 +146,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="flex-1 h-[1px] bg-emerald-500/10 dark:bg-emerald-500/20 origin-left"
+                className="flex-1 h-[1px] bg-foreground/10 dark:bg-foreground/20 origin-left"
               />
             </motion.div>
             
@@ -163,9 +163,9 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                   key={person._id}
                   variants={fadeUpVariant}
                   custom={index}
-                  className="group border border-emerald-500/20 dark:border-emerald-500/15 p-6 text-center relative transition-all duration-400 hover:-translate-y-1 hover:border-emerald-500/40 hover:bg-emerald-500/5 overflow-hidden"
+                  className="group border border-foreground/15 p-6 text-center relative transition-all duration-400 hover:-translate-y-1 hover:border-foreground/40 hover:bg-foreground/5 overflow-hidden"
                 >
-                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
+                  <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-foreground to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
                   <div className="font-mono text-[0.6rem] text-[#8a8278] mb-4 tracking-[0.1em]">
                     {String(index + 1).padStart(2, '0')}
                   </div>
@@ -201,7 +201,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
               variants={slideInRight}
               className="flex items-center gap-6 mb-10"
             >
-              <p className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-emerald-600 dark:text-emerald-500 whitespace-nowrap">
+              <p className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-foreground/70 whitespace-nowrap">
                 Academic guidance
               </p>
               <motion.div
@@ -209,7 +209,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="flex-1 h-[1px] bg-emerald-500/10 dark:bg-emerald-500/20 origin-left"
+                className="flex-1 h-[1px] bg-foreground/10 dark:bg-foreground/20 origin-left"
               />
             </motion.div>
 
@@ -218,9 +218,9 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={scaleIn}
-              className="border border-emerald-500/30 p-10 md:p-14 relative overflow-hidden transition-all duration-400 hover:border-emerald-500/50 hover:bg-emerald-500/5 shadow-sm"
+              className="border border-foreground/20 p-10 md:p-14 relative overflow-hidden transition-all duration-400 hover:border-foreground/40 hover:bg-foreground/5 shadow-sm"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-emerald-500 to-emerald-300" />
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-foreground to-foreground/40" />
               
               {mentors.map((mentor: any, idx: number) => (
                 <motion.div
@@ -229,9 +229,9 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.2 + 0.3, duration: 0.7 }}
-                  className={idx > 0 ? "mt-12 pt-12 border-t border-emerald-500/20" : ""}
+                  className={idx > 0 ? "mt-12 pt-12 border-t border-foreground/15" : ""}
                 >
-                  <p className="font-mono text-[0.65rem] tracking-[0.2em] text-emerald-700 dark:text-emerald-500 uppercase mb-4 font-semibold">
+                  <p className="font-mono text-[0.65rem] tracking-[0.2em] text-foreground/70 uppercase mb-4 font-semibold">
                     {mentor.role || 'mentor'}
                   </p>
                   <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-light text-[#0d0e12] dark:text-[#f5f2ec] mb-2">
@@ -246,7 +246,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                         <span key={i}>
                           {part}
                           {i < arr.length - 1 && (
-                            <span className="text-emerald-600 dark:text-emerald-400 not-italic font-medium">
+                            <span className="text-foreground not-italic font-medium">
                               {mentor.name}
                             </span>
                           )}
@@ -272,7 +272,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
               variants={slideInLeft}
               className="flex items-center gap-6 mb-10"
             >
-              <p className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-emerald-600 dark:text-emerald-500 whitespace-nowrap">
+              <p className="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-foreground/70 whitespace-nowrap">
                 Above all
               </p>
               <motion.div
@@ -280,7 +280,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="flex-1 h-[1px] bg-emerald-500/10 dark:bg-emerald-500/20 origin-left"
+                className="flex-1 h-[1px] bg-foreground/10 dark:bg-foreground/20 origin-left"
               />
             </motion.div>
 
@@ -289,9 +289,9 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={scaleIn}
-              className="text-center p-12 md:p-16 border border-emerald-500/20 dark:border-emerald-500/15 relative overflow-hidden shadow-sm"
+              className="text-center p-12 md:p-16 border border-foreground/15 relative overflow-hidden shadow-sm"
             >
-              <Heart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 text-emerald-500/5 pointer-events-none" />
+              <Heart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 text-foreground/5 pointer-events-none" />
               
               {family.map((f: any, idx: number) => (
                 <motion.div
@@ -300,7 +300,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.2 + 0.2, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className={idx > 0 ? "mt-12 pt-12 border-t border-emerald-500/20" : "relative z-10"}
+                  className={idx > 0 ? "mt-12 pt-12 border-t border-foreground/15" : "relative z-10"}
                 >
                   <motion.div
                     initial={{ scale: 0 }}
@@ -308,7 +308,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.2 + 0.4, duration: 0.5, type: "spring" }}
                   >
-                    <Heart className="w-6 h-6 mx-auto text-emerald-500 mb-6" />
+                    <Heart className="w-6 h-6 mx-auto text-foreground mb-6" />
                   </motion.div>
                   <p className="font-serif text-[clamp(1.3rem,3vw,1.9rem)] font-light italic text-[#0d0e12] dark:text-[#f5f2ec] leading-[1.7] max-w-2xl mx-auto">
                     "{f.message}"

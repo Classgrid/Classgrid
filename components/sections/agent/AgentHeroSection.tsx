@@ -47,7 +47,21 @@ const HERO_CSS = `
 }
 `;
 
-export function AgentHeroSection() {
+type AgentHeroSectionProps = {
+  eyebrow?: string;
+  headline?: string;
+  subheadline?: string;
+  primaryCta?: { label: string; href: string };
+  showModelStrip?: boolean;
+};
+
+export function AgentHeroSection({
+  eyebrow,
+  headline = "Do anything with Classgrid AI",
+  subheadline = "Ask, research, analyse your files and automate your everyday work.",
+  primaryCta = { label: "Use Agent", href: CHAT_APP_URL },
+  showModelStrip = true,
+}: AgentHeroSectionProps = {}) {
   return (
     // Same bright Codex-style hero in light and dark mode (black text on the silk); it melts into the page below.
     <section className="relative isolate overflow-hidden text-[#0d0d0d]">
@@ -90,26 +104,38 @@ export function AgentHeroSection() {
           style={{ animationDelay: "0.05s" }}
         />
 
+        {eyebrow ? (
+          <p
+            className="cgh-rise mt-10 rounded-full bg-white/45 px-4 py-1.5 text-[14px] font-medium text-black/80 backdrop-blur-md md:mt-12 md:text-[15px]"
+            style={{ animationDelay: "0.1s" }}
+          >
+            {eyebrow}
+          </p>
+        ) : null}
+
         <h1
-          className="cgh-rise mt-12 max-w-[72rem] text-balance text-[44px] font-medium leading-[1.05] tracking-[-0.035em] sm:text-6xl md:mt-16 lg:whitespace-nowrap lg:text-[78px]"
+          className={cn(
+            "cgh-rise max-w-[72rem] text-balance text-[44px] font-medium leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:whitespace-nowrap lg:text-[78px]",
+            eyebrow ? "mt-6 md:mt-8" : "mt-12 md:mt-16"
+          )}
           style={{ animationDelay: "0.15s" }}
         >
-          Do anything with Classgrid AI
+          {headline}
         </h1>
 
         <p
           className="cgh-rise mt-6 max-w-3xl text-pretty text-lg leading-8 text-black/85 md:mt-8 md:text-[22px]"
           style={{ animationDelay: "0.28s" }}
         >
-          Ask, research, analyse your files and automate your everyday work.
+          {subheadline}
         </p>
 
         <div className="cgh-rise mt-10 flex flex-wrap items-center justify-center gap-3 md:mt-12" style={{ animationDelay: "0.4s" }}>
           <a
-            href={CHAT_APP_URL}
+            href={primaryCta.href}
             className="inline-flex h-12 items-center gap-1.5 rounded-full bg-[#0d0d0d] px-7 text-[16px] font-medium text-white transition-opacity hover:opacity-85 md:h-14 md:px-8 md:text-[17px]"
           >
-            Use Agent
+            {primaryCta.label}
             <ArrowUpRight className="h-4 w-4" />
           </a>
           <Link
@@ -121,6 +147,7 @@ export function AgentHeroSection() {
         </div>
 
         {/* "Trusted by top teams" strip */}
+        {showModelStrip ? (
         <div className="cgh-rise mt-24 w-full md:mt-[110px]" style={{ animationDelay: "0.55s" }}>
           <p className="text-lg text-black/85 md:text-[22px]">Powered by leading AI models</p>
           <ul className="mx-auto mt-10 flex max-w-[1600px] flex-wrap items-center justify-center gap-x-5 gap-y-5 sm:gap-x-12 sm:gap-y-8 md:mt-14 lg:justify-between lg:px-6">
@@ -138,6 +165,7 @@ export function AgentHeroSection() {
             ))}
           </ul>
         </div>
+        ) : null}
       </div>
     </section>
   );

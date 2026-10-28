@@ -92,8 +92,8 @@ export default async function ProductModuleDetailPage({ params }: PageProps) {
           faqs={Array.isArray(mod?.faqs) ? mod.faqs : []}
           relatedHelpArticles={Array.isArray(mod?.relatedHelpArticles) ? mod.relatedHelpArticles : []}
           relatedChangelogs={Array.isArray(mod?.relatedChangelogs) ? mod.relatedChangelogs : []}
-          primaryCtaLabel="View Platform"
-          primaryCtaHref="/agent"
+          primaryCtaLabel="Use Agent"
+          primaryCtaHref="https://chat.classgrid.in"
           allModules={allModules}
           currentSlug={slug}
         />

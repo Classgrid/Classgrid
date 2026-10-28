@@ -57,7 +57,7 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
         </h4>
       ),
       blockquote: ({ children }) => (
-        <blockquote className="my-8 mx-auto max-w-[750px] rounded-r-xl border-l-2 border-emerald-500 bg-emerald-500/10 py-4 pl-5 pr-4 text-base leading-7 text-[#171717] dark:text-[#ededed] antialiased">
+        <blockquote className="my-8 mx-auto max-w-[750px] rounded-r-xl border-l-2 border-foreground bg-foreground/5 py-4 pl-5 pr-4 text-base leading-7 text-[#171717] dark:text-[#ededed] antialiased">
           {children}
         </blockquote>
       ),
@@ -77,7 +77,7 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
     listItem: {
       bullet: ({ children }) => (
         <li className="relative pl-6 text-base leading-7 text-[#171717] dark:text-[#ededed]">
-          <span className="absolute left-0 top-[0.6em] h-2 w-2 rounded-full bg-emerald-500 block" />
+          <span className="absolute left-0 top-[0.6em] h-2 w-2 rounded-full bg-foreground block" />
           {children}
         </li>
       ),
@@ -91,7 +91,7 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
       strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
       em: ({ children }) => <em className="italic text-muted-foreground">{children}</em>,
       code: ({ children }) => (
-        <code className="rounded-md border border-border bg-muted px-1.5 py-0.5 text-[13px] font-medium text-emerald-600 dark:text-emerald-300">
+        <code className="rounded-md border border-border bg-muted px-1.5 py-0.5 text-[13px] font-medium text-foreground">
           {children}
         </code>
       ),
@@ -100,7 +100,7 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
         const isExternal = href.startsWith("http") || href.startsWith("//");
         return (
           <a
-            className="font-medium text-emerald-600 dark:text-emerald-400 underline decoration-emerald-500/30 underline-offset-4 hover:decoration-emerald-500/80 transition-colors"
+            className="font-medium text-foreground underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground/80 transition-colors"
             href={href}
             {...(isExternal ? { target: "_blank", rel: "noreferrer" } : {})}
           >

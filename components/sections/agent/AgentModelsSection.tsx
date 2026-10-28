@@ -69,7 +69,7 @@ export function AgentModelsSection() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14 md:mt-20">
-          <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#4fc1b0] via-[#5e9fe0] to-[#93a9f6] px-4 py-10 sm:px-8 md:py-16 dark:from-[#0d4f49] dark:via-[#1b3d78] dark:to-[#363d8c]">
+          <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#d4d4d8] via-[#5e9fe0] to-[#93a9f6] px-4 py-10 sm:px-8 md:py-16 dark:from-[#27272a] dark:via-[#1b3d78] dark:to-[#363d8c]">
             <div aria-hidden className="pointer-events-none absolute -left-20 top-0 h-96 w-96 rounded-full bg-white/35 blur-3xl dark:bg-white/10" />
             <div aria-hidden className="pointer-events-none absolute -bottom-32 -right-10 h-[28rem] w-[28rem] rounded-full bg-[#c7d2fe]/50 blur-3xl dark:bg-[#6366f1]/20" />
 

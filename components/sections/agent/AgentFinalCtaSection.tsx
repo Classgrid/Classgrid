@@ -11,7 +11,7 @@ export function AgentFinalCtaSection() {
     <section className="bg-background text-[#0d0d0d] dark:bg-black dark:text-white">
       <div className="mx-auto max-w-[1728px] px-5 pb-24 md:px-10 md:pb-32">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#4fc1b0] via-[#5e9fe0] to-[#93a9f6] px-6 py-20 text-center md:py-28 lg:py-36 dark:from-[#0d4f49] dark:via-[#1b3d78] dark:to-[#363d8c]">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#d4d4d8] via-[#5e9fe0] to-[#93a9f6] px-6 py-20 text-center md:py-28 lg:py-36 dark:from-[#27272a] dark:via-[#1b3d78] dark:to-[#363d8c]">
             <div aria-hidden className="pointer-events-none absolute -left-24 -top-32 h-[26rem] w-[26rem] rounded-full bg-white/40 blur-3xl dark:bg-white/10" />
             <div aria-hidden className="pointer-events-none absolute -bottom-40 -right-16 h-[30rem] w-[30rem] rounded-full bg-[#c7d2fe]/55 blur-3xl dark:bg-[#6366f1]/20" />
 

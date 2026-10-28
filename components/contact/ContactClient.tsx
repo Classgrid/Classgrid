@@ -68,7 +68,7 @@ export default function ContactClient() {
       
       {/* Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] max-h-[800px] pointer-events-none z-0"
-           style={{ background: "radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 60%)" }}
+           style={{ background: "radial-gradient(circle, rgba(128, 128, 128, 0.05) 0%, transparent 60%)" }}
       />
 
       {/* Hero Section */}
@@ -79,16 +79,16 @@ export default function ContactClient() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="mx-auto w-full max-w-4xl"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-sm font-medium mb-6 ring-1 ring-emerald-500/20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 text-foreground text-sm font-medium mb-6 ring-1 ring-foreground/10">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground/60 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground"></span>
             </span>
             We are here to help
           </div>
           <SectionAccentBar />
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-6">
-            Get in <span className="text-emerald-500">Touch</span>
+            Get in <span className="text-muted-foreground">Touch</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Have questions about Classgrid? Our team is ready to provide you with the answers and support you need to empower your campus.
@@ -110,19 +110,19 @@ export default function ContactClient() {
                 viewport={{ once: true, margin: "-50px" }}
                 variants={fadeUpVariant}
               >
-                <Card className="group relative rounded-[2rem] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-colors duration-300 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:border-emerald-500 overflow-hidden">
+                <Card className="group relative rounded-[2rem] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-colors duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-800/60 hover:border-zinc-400 dark:hover:border-zinc-600 overflow-hidden">
                   
                   <CardHeader className="space-y-4 pb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center text-foreground group-hover:scale-110 transition-all duration-300">
                       <Phone className="w-6 h-6" />
                     </div>
                     <CardTitle className="text-2xl font-bold transition-colors">Let's Talk</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <a className="block text-lg font-medium text-foreground hover:text-emerald-500 transition-colors" href="tel:+918623947038">
+                    <a className="block text-lg font-medium text-foreground hover:text-muted-foreground transition-colors" href="tel:+918623947038">
                       +91 8623947038
                     </a>
-                    <a className="block text-lg font-medium text-foreground hover:text-emerald-500 transition-colors" href="tel:+918149277038">
+                    <a className="block text-lg font-medium text-foreground hover:text-muted-foreground transition-colors" href="tel:+918149277038">
                       +91 8149277038
                     </a>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -139,16 +139,16 @@ export default function ContactClient() {
                 viewport={{ once: true, margin: "-50px" }}
                 variants={fadeUpVariant}
               >
-                <Card className="group relative rounded-[2rem] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-colors duration-300 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:border-emerald-500 overflow-hidden">
+                <Card className="group relative rounded-[2rem] border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-colors duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-800/60 hover:border-zinc-400 dark:hover:border-zinc-600 overflow-hidden">
                   
                   <CardHeader className="space-y-4 pb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center text-foreground group-hover:scale-110 transition-all duration-300">
                       <Mail className="w-6 h-6" />
                     </div>
                     <CardTitle className="text-2xl font-bold transition-colors">Email Us</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <a className="block text-xl font-medium text-foreground hover:text-emerald-500 transition-colors break-all" href="mailto:support@classgrid.in">
+                    <a className="block text-xl font-medium text-foreground hover:text-muted-foreground transition-colors break-all" href="mailto:support@classgrid.in">
                       support@classgrid.in
                     </a>
                     <p className="text-muted-foreground transition-colors text-sm">
@@ -182,7 +182,7 @@ export default function ContactClient() {
                       animate={{ opacity: 1, scale: 1 }}
                       className="flex flex-col items-center justify-center text-center py-16 space-y-4"
                     >
-                      <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-500 mb-4">
+                      <div className="w-16 h-16 bg-foreground/5 rounded-full flex items-center justify-center text-foreground mb-4">
                         <CheckCircle2 className="w-8 h-8" />
                       </div>
                       <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Message Sent!</h3>
@@ -195,10 +195,10 @@ export default function ContactClient() {
                       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <div className="space-y-2">
                           <Label htmlFor="fullName" className="font-semibold text-muted-foreground">Full Name</Label>
-                          <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 transition-all duration-300">
+                          <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300">
                             <InputGroupAddon>
                               <InputGroupText className="bg-transparent border-0 pl-4">
-                                <User className="h-4 w-4 text-emerald-500" />
+                                <User className="h-4 w-4 text-muted-foreground" />
                               </InputGroupText>
                             </InputGroupAddon>
                             <InputGroupInput id="fullName" name="fullName" placeholder="John Doe" className="bg-transparent border-0 focus-visible:ring-0 px-2 placeholder:text-zinc-400 dark:placeholder:text-zinc-600" required />
@@ -207,7 +207,7 @@ export default function ContactClient() {
 
                         <div className="space-y-2">
                           <Label htmlFor="phoneNumber" className="font-semibold text-muted-foreground">Phone Number</Label>
-                          <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 transition-all duration-300">
+                          <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300">
                             <InputGroupAddon>
                               <InputGroupText className="bg-transparent border-0 pl-4 text-zinc-500 font-medium">+91</InputGroupText>
                             </InputGroupAddon>
@@ -226,10 +226,10 @@ export default function ContactClient() {
 
                       <div className="space-y-2">
                         <Label htmlFor="emailAddress" className="font-semibold text-muted-foreground">Email Address</Label>
-                        <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 transition-all duration-300">
+                        <InputGroup className="h-12 rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300">
                           <InputGroupAddon>
                             <InputGroupText className="bg-transparent border-0 pl-4">
-                              <Mail className="h-4 w-4 text-emerald-500" />
+                              <Mail className="h-4 w-4 text-muted-foreground" />
                             </InputGroupText>
                           </InputGroupAddon>
                           <InputGroupInput
@@ -247,10 +247,10 @@ export default function ContactClient() {
 
                       <div className="space-y-2">
                         <Label htmlFor="message" className="font-semibold text-muted-foreground">Your Message</Label>
-                        <InputGroup className="min-h-[140px] max-h-[300px] rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-emerald-500/20 focus-within:border-emerald-500 transition-all duration-300 overflow-y-auto">
+                        <InputGroup className="min-h-[140px] max-h-[300px] rounded-xl border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus-within:ring-2 focus-within:ring-foreground/10 focus-within:border-foreground/40 transition-all duration-300 overflow-y-auto">
                           <InputGroupAddon align="block-start">
                             <InputGroupText className="bg-transparent border-0 pl-4 pt-4">
-                              <MessageSquare className="h-4 w-4 text-emerald-500" />
+                              <MessageSquare className="h-4 w-4 text-muted-foreground" />
                             </InputGroupText>
                           </InputGroupAddon>
                           <InputGroupTextarea
@@ -264,7 +264,7 @@ export default function ContactClient() {
                         </InputGroup>
                       </div>
 
-                      <Button disabled={isSubmitting} type="submit" className="w-full sm:w-auto h-12 rounded-xl bg-emerald-500 px-8 text-[15px] font-semibold text-white shadow-lg shadow-emerald-500/25 hover:bg-emerald-600 hover:shadow-emerald-500/40 transition-all duration-300">
+                      <Button disabled={isSubmitting} type="submit" className="w-full sm:w-auto h-12 rounded-xl border-transparent bg-foreground px-8 text-[15px] font-semibold text-background hover:border-transparent hover:bg-zinc-700 hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-zinc-300 dark:hover:text-background transition-colors duration-300">
                         {isSubmitting ? "Sending..." : "Send Message"}
                         {!isSubmitting && <Send className="ml-2 h-4 w-4" />}
                       </Button>
@@ -288,7 +288,7 @@ export default function ContactClient() {
           className="mx-auto w-full max-w-6xl px-6"
         >
           <div className="flex flex-col items-center justify-center mb-12 text-center">
-            <div className="p-3 bg-emerald-500/10 rounded-2xl text-emerald-500 mb-6 ring-1 ring-emerald-500/20">
+            <div className="p-3 bg-foreground/5 rounded-2xl text-foreground mb-6 ring-1 ring-foreground/10">
               <Building2 className="w-6 h-6" />
             </div>
             <SectionAccentBar className="mb-4" />

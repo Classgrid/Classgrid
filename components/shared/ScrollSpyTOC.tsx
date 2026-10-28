@@ -30,7 +30,7 @@ export function ScrollSpyTOC({ tocItems, activeSection }: ScrollSpyTOCProps) {
             {tocItems.map(item => (
               <a key={`dropdown-${item.id}`} href={`#${item.id}`} className={cn(
                 "block px-2 py-1.5 text-[13px] rounded hover:bg-slate-100 dark:hover:bg-white/5",
-                activeSection === item.id ? "text-emerald-500 font-medium" : "text-muted-foreground"
+                activeSection === item.id ? "text-foreground font-medium" : "text-muted-foreground"
               )}>
                 {item.label}
               </a>
@@ -54,7 +54,7 @@ export function ScrollSpyTOC({ tocItems, activeSection }: ScrollSpyTOCProps) {
                   className={cn(
                     "h-[1px] transition-all duration-300 ease-in-out",
                     isActive
-                      ? "w-10 bg-emerald-600 dark:bg-emerald-400"
+                      ? "w-10 bg-foreground"
                       : "w-5 bg-slate-500 dark:bg-white/40 group-hover:w-7 group-hover:bg-slate-700 dark:group-hover:bg-white/60"
                   )}
                 />

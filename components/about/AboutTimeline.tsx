@@ -108,7 +108,7 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                 onClick={() => scroll("left")}
                 disabled={!canScrollLeft}
                 aria-label="Scroll timeline left"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-emerald-500/30 text-emerald-400 transition-all hover:bg-emerald-500/10 disabled:cursor-not-allowed disabled:opacity-30"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/20 text-foreground transition-all hover:bg-foreground/5 disabled:cursor-not-allowed disabled:opacity-30"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -116,7 +116,7 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                 onClick={() => scroll("right")}
                 disabled={!canScrollRight}
                 aria-label="Scroll timeline right"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-emerald-500/30 text-emerald-400 transition-all hover:bg-emerald-500/10 disabled:cursor-not-allowed disabled:opacity-30"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-foreground/20 text-foreground transition-all hover:bg-foreground/5 disabled:cursor-not-allowed disabled:opacity-30"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -146,13 +146,13 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute bottom-[8px] left-0 hidden md:block overflow-visible"
-              style={{ borderTop: "2px dashed rgba(16,185,129,0.42)" }}
+              style={{ borderTop: "2px dashed color-mix(in srgb, var(--foreground) 42%, transparent)" }}
             >
               <svg
                 className="absolute -right-3 top-[1px] h-6 w-6 -translate-y-1/2"
                 viewBox="0 0 24 24"
                 fill="var(--background)"
-                stroke="rgba(16,185,129,0.42)"
+                stroke="color-mix(in srgb, var(--foreground) 42%, transparent)"
                 strokeWidth="2"
                 strokeLinejoin="round"
               >
@@ -180,7 +180,7 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, ease: "easeInOut", delay: index * 0.15 }}
                       className="absolute top-0 right-0"
-                      style={{ borderRight: "2px dashed rgba(16,185,129,0.42)" }}
+                      style={{ borderRight: "2px dashed color-mix(in srgb, var(--foreground) 42%, transparent)" }}
                     />
                     {/* Left vertical divider (first item only) */}
                     {index === 0 && (
@@ -190,13 +190,13 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeInOut" }}
                         className="absolute top-0 left-0"
-                        style={{ borderLeft: "2px dashed rgba(16,185,129,0.42)" }}
+                        style={{ borderLeft: "2px dashed color-mix(in srgb, var(--foreground) 42%, transparent)" }}
                       />
                     )}
 
                     <div className="flex h-full flex-col items-center">
                       {/* Icon */}
-                      <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/5 text-emerald-400 transition-colors group-hover:bg-emerald-500/15">
+                      <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-foreground/5 text-foreground transition-colors group-hover:bg-foreground/10">
                         <Icon className="h-5 w-5" strokeWidth={1.5} />
                       </div>
 
@@ -207,11 +207,11 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.15 + 0.4 }}
                         className="mb-3 w-px"
-                        style={{ borderLeft: "2px dashed rgba(16,185,129,0.42)" }}
+                        style={{ borderLeft: "2px dashed color-mix(in srgb, var(--foreground) 42%, transparent)" }}
                       />
 
                       {/* Year */}
-                      <div className="mb-2 text-sm font-bold tracking-widest text-emerald-500">
+                      <div className="mb-2 text-sm font-bold tracking-widest text-foreground/70">
                         {item.year}
                       </div>
 
@@ -223,7 +223,7 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                               href={item.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="underline decoration-emerald-500/40 decoration-1 underline-offset-4 transition-colors hover:text-emerald-400 hover:decoration-emerald-400"
+                              className="underline decoration-foreground/40 decoration-1 underline-offset-4 transition-colors hover:text-foreground/70 hover:decoration-foreground/70"
                             >
                               {item.title}
                             </a>
@@ -243,7 +243,7 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.15 + 0.6 }}
                         className="mt-auto w-px"
-                        style={{ borderLeft: "2px dashed rgba(16,185,129,0.42)" }}
+                        style={{ borderLeft: "2px dashed color-mix(in srgb, var(--foreground) 42%, transparent)" }}
                       />
 
                       {/* Dot */}
@@ -254,8 +254,8 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                         transition={{ type: "spring", stiffness: 300, damping: 20, delay: index * 0.15 + 0.8 }}
                         className="relative z-10 flex h-4 w-4 items-center justify-center -mt-2"
                       >
-                        <div className="absolute inset-0 rounded-full bg-emerald-500 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-40" />
-                        <div className="relative z-10 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-background" />
+                        <div className="absolute inset-0 rounded-full bg-foreground opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-20" />
+                        <div className="relative z-10 h-2.5 w-2.5 rounded-full bg-foreground ring-2 ring-background" />
                       </MotionDiv>
                     </div>
                   </MotionDiv>
@@ -269,17 +269,17 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                 const Icon = icons[index % icons.length];
                 return (
                   <div key={index} className="group flex flex-col items-center text-center py-4">
-                    <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/5 text-emerald-400">
+                    <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-foreground/5 text-foreground">
                       <Icon className="h-5 w-5" strokeWidth={1.5} />
                     </div>
-                    <div className="mb-1 text-sm font-bold tracking-widest text-emerald-500">{item.year}</div>
+                    <div className="mb-1 text-sm font-bold tracking-widest text-foreground/70">{item.year}</div>
                     <h3 className="mb-1 text-base font-semibold text-foreground">
                       {item.link ? (
                         <a
                           href={item.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="underline decoration-emerald-500/40 decoration-1 underline-offset-4 transition-colors hover:text-emerald-400 hover:decoration-emerald-400"
+                          className="underline decoration-foreground/40 decoration-1 underline-offset-4 transition-colors hover:text-foreground/70 hover:decoration-foreground/70"
                         >
                           {item.title}
                         </a>
@@ -290,8 +290,8 @@ export function AboutTimeline({ timeline = defaultTimeline }: AboutTimelineProps
                     <p className="mx-auto max-w-[260px] text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                     {index < items.length - 1 && (
                       <div className="mt-4 flex flex-col items-center">
-                        <div className="h-8 w-px bg-emerald-500/70" />
-                        <svg width="12" height="8" viewBox="0 0 12 8" className="text-emerald-500/70 -mt-px">
+                        <div className="h-8 w-px bg-foreground/40" />
+                        <svg width="12" height="8" viewBox="0 0 12 8" className="text-foreground/40 -mt-px">
                           <polygon points="6,8 0,0 12,0" fill="currentColor" />
                         </svg>
                       </div>

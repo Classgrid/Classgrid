@@ -4,7 +4,16 @@ import dynamic from "next/dynamic";
 import { DemoRequestForm } from "@/components/sections/DemoRequestForm";
 import { PlatformUserGate } from "@/components/shared/PlatformUserGate";
 import { HomeDevScrollReset } from "@/components/layout/HomeDevScrollReset";
-import { HeroSection } from "@/components/sections/HeroSection";
+import { AgentHeroSection } from "@/components/sections/agent/AgentHeroSection";
+import { ViewPlatformPreview } from "@/components/sections/ViewPlatformPreview";
+import { AgentWorkflowsSection } from "@/components/sections/agent/AgentWorkflowsSection";
+import { AgentRealWorkSection } from "@/components/sections/agent/AgentRealWorkSection";
+import { AgentSchedulesSection } from "@/components/sections/agent/AgentSchedulesSection";
+import { AgentGetStartedSection } from "@/components/sections/agent/AgentGetStartedSection";
+import { AgentModelsSection } from "@/components/sections/agent/AgentModelsSection";
+import { AgentFaqSection } from "@/components/sections/agent/AgentFaqSection";
+import { AgentFinalCtaSection } from "@/components/sections/agent/AgentFinalCtaSection";
+import { AgentPluginsSection } from "@/components/sections/agent/AgentPluginsSection";
 import { MobileStatsBridge } from "@/components/sections/MobileStatsBridge";
 import { Reveal } from "@/components/sections/Reveal";
 import { StatsStrip } from "@/components/sections/StatsStrip";
@@ -903,22 +912,11 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
     faqsRight = placeholderFaqs.slice(splitIndex).slice(0, 6);
   }
 
-  const demoSectionLabel = withFallbackString(
-    home?.demoSectionLabel,
-    'Get a Demo'
-  );
-  const demoSectionHeading = withFallbackString(
-    home?.demoSectionHeading,
-    'See how Classgrid transforms your institution'
-  );
-  const demoSectionSubtext = withFallbackString(
-    home?.demoSectionSubtext,
-    'Discover how Classgrid simplifies operations, automates workflows, and connects every part of your institution in one unified system.\nFrom admissions to academics, finance to compliance — everything works seamlessly together.\nOur platform is built for scale, speed, and complete visibility across your campus.\nGet started in minutes and see how institutions are eliminating complexity with Classgrid.'
-  );
-  const demoSectionCtaLine = withFallbackString(
-    home?.demoSectionCtaLine,
-    "Start your 30-day free trial — no setup complexity."
-  );
+  const demoSectionLabel = 'Book a Demo';
+  const demoSectionHeading = 'Talk to our team';
+  const demoSectionSubtext =
+    'See how Classgrid AI can work for your team.\nAgent Mode for everyday work, Project Mode for code, WhatsApp and your connected apps — all in one place at chat.classgrid.in.';
+  const demoSectionCtaLine = 'Tell us about your team and we will get in touch.';
 
   const ctaFormTitle = withFallbackString(
     home?.ctaFormTitle,
@@ -936,10 +934,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
     home?.ctaFormDetailsHeading,
     placeholderHomePage.ctaFormDetailsHeading
   );
-  const ctaFormInstituteHeading = withFallbackString(
-    home?.ctaFormInstituteHeading,
-    placeholderHomePage.ctaFormInstituteHeading
-  );
+  const ctaFormInstituteHeading = placeholderHomePage.ctaFormInstituteHeading;
   const ctaFormMessageHeading = withFallbackString(
     home?.ctaFormMessageHeading,
     placeholderHomePage.ctaFormMessageHeading
@@ -1020,7 +1015,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
   );
 
   return (
-    <div className="relative overflow-x-clip bg-muted text-foreground selection:bg-[#ff0080]/30">
+    <div className="relative overflow-x-clip bg-background text-foreground selection:bg-[#ff0080]/30 dark:bg-black">
       <ScrollToTop />
       <HomeDevScrollReset />
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -1031,162 +1026,51 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
             backgroundSize: `40px 40px`,
           }}
         />
-        <div className="absolute left-[-5%] top-[15%] h-[500px] w-[500px] animate-pulse rounded-full bg-emerald-500/10 blur-[120px]" />
+        <div className="absolute left-[-5%] top-[15%] h-[500px] w-[500px] animate-pulse rounded-full bg-foreground/5 blur-[120px]" />
         <div className="absolute right-[-5%] top-[40%] h-[600px] w-[600px] rounded-full bg-blue-500/5 blur-[150px]" />
       </div>
 
       {showHero ? (
-        <HeroSection
-          badge={badge}
-          headline={headline}
-          subtext={subtext}
-          heroPrimaryHref={heroPrimaryHref}
-          heroPrimaryLabel={heroPrimaryLabel}
-          heroSecondaryHref={heroSecondaryHref}
-          heroSecondaryLabel={heroSecondaryLabel}
-        />
+        <AgentHeroSection />
       ) : null}
       <MobileStatsBridge />
 
       {showShowcase ? (
-        <Reveal>
-          <div className="relative z-10 w-full bg-transparent">
-            {(showcaseKicker || normalizedShowcaseTitle || normalizedShowcaseSubtitle) ? (
-              <div className="mx-auto max-w-[1400px] px-6 md:px-12 lg:px-16">
-                <SectionHeader
-                  label={showcaseKicker}
-                  title={normalizedShowcaseTitle}
-                  description={normalizedShowcaseSubtitle}
-                  titleClassName="mx-auto max-w-5xl"
-                  descriptionClassName="max-w-3xl"
-                />
-              </div>
-            ) : null}
-            <EmpowerSliderSection
-              slides={showcaseSlides.map((s) => ({
-                id: s.id,
-                label: s.label,
-                headline: s.headline,
-                body: s.body,
-                imageUrl: s.src,
-                imageAlt: s.alt,
-              }))}
-            />
-          </div>
-        </Reveal>
+        <div className="relative z-10 w-full dark:[&>main]:bg-black">
+          <ViewPlatformPreview />
+        </div>
       ) : null}
 
-      <PlatformAnimatedBeam
-        kicker={platformKicker}
-        title={platformTitle}
-        body={platformBody}
-        connectionHint={platformConnectionHint}
-        systemLabel={platformSystemLabel}
-        inputLabels={platformInputLabels}
-        audienceCards={platformAudienceCards}
-        useFallbackContent={false}
-      />
 
-      <ClassgridRoleShowcase sanityEcosystem={cmsAppEcosystem} />
+      <AgentRealWorkSection />
+      <AgentSchedulesSection />
+      <AgentGetStartedSection />
+      <AgentModelsSection />
 
-      {showTrust ? (
-        <Reveal>
-          <section className="px-6 py-16 md:px-12 md:py-24 lg:px-16">
-            <div className="mx-auto max-w-[1400px]">
-              {(trustedBy || trustSectionDescription) && (
-                <SectionHeader title={trustedBy} description={trustSectionDescription} />
-              )}
-
-              {stats.length > 0 ? <StatsStrip stats={stats} /> : null}
-              {trustedInstitutionsEnabled ? (
-                <TrustedInstitutionsShowcase title="Our Prestigious Clients" institutions={trustedLogos} />
-              ) : null}
-            </div>
-          </section>
-        </Reveal>
-      ) : null}
-
-      {showOrganization ? (
-        <Reveal>
-          <section className="mx-auto w-full max-w-[1400px] px-6 py-16 md:px-12 md:py-24 lg:px-16">
-            <SectionHeader title={organizationSectionTitle} />
-            <BentoGrid className="auto-rows-auto gap-6 md:grid-cols-4 lg:grid-cols-4">
-              {organizationCards.map((org, index: number) => {
-                const colors = [
-                  { color: "from-emerald-400/20", iconColor: "#34d399", icon: "School" },
-                  { color: "from-indigo-500/20", iconColor: "#4f46e5", icon: "GraduationCap" },
-                  { color: "from-cyan-500/20", iconColor: "#0891b2", icon: "Building2" },
-                  { color: "from-violet-500/20", iconColor: "#8b5cf6", icon: "BookOpen" },
-                ];
-                const style = colors[index % colors.length];
-
-                return (
-                  <BentoCard
-                    key={`${org.title}-${index}`}
-                    name={org.title}
-                    cta={organizationCardCtaLabel}
-                    href={org.href}
-                    Icon={hasNonEmptyString(org.icon) ? org.icon : style.icon}
-                    color={hasNonEmptyString(org.color) ? org.color : style.color}
-                    iconColor={hasNonEmptyString(org.iconColor) ? org.iconColor : style.iconColor}
-                    className="min-h-[200px]"
-                  />
-                );
-              })}
-            </BentoGrid>
-          </section>
-        </Reveal>
-      ) : null}
-
-      {showModules ? (
-        <Reveal>
-          <section className="mx-auto w-full max-w-[1400px] border-t border-black/5 px-6 py-16 dark:border-white/10 md:px-12 md:py-24 lg:px-16">
-            {(normalizedModulesTitle || normalizedModulesSubtitle) && (
-              <SectionHeader
-                title={normalizedModulesTitle}
-                description={normalizedModulesSubtitle}
-                titleClassName="mx-auto max-w-5xl"
-                descriptionClassName="max-w-3xl"
-              />
-            )}
-
-            <ModulesGrid
-              modules={modules}
-              audienceTabs={modulesAudienceTabs}
-              allTabLabel={modulesAllTabLabel}
-              moduleCardCtaLabel={modulesCardCtaLabel}
-              showMoreLabel={modulesShowMoreLabel}
-              viewAllLabel={modulesViewAllLabel}
-              calloutTitle={modulesCalloutTitle}
-              calloutBody={modulesCalloutBody}
-              calloutCtaLabel={modulesCalloutCtaLabel}
-              calloutCtaHref={modulesCalloutCtaHref}
-              useFallbackContent={false}
-            />
-          </section>
-        </Reveal>
-      ) : null}
+      <AgentPluginsSection />
 
       {showTurboComparison ? (
         <Reveal>
           <TurboComparisonNew 
             headline={cmsTurboClassgrid?.headline}
             subheadline={cmsTurboClassgrid?.subheadline}
+            leftBox1Line0={cmsTurboClassgrid?.leftBox1Line0}
+            leftBox1Line1={cmsTurboClassgrid?.leftBox1Line1}
+            leftBox1Line2={cmsTurboClassgrid?.leftBox1Line2}
+            leftBox1Line3={cmsTurboClassgrid?.leftBox1Line3}
+            leftBox2Line0={cmsTurboClassgrid?.leftBox2Line0}
+            leftBox2Line1={cmsTurboClassgrid?.leftBox2Line1}
+            leftBox2Line2={cmsTurboClassgrid?.leftBox2Line2}
+            leftBox2Line3={cmsTurboClassgrid?.leftBox2Line3}
+            leftLabel={cmsTurboClassgrid?.leftLabel}
+            leftTime={cmsTurboClassgrid?.leftTime}
+            rightTermCmd={cmsTurboClassgrid?.rightTermCmd}
+            rightTermLine1={cmsTurboClassgrid?.rightTermLine1}
+            rightTermLine2={cmsTurboClassgrid?.rightTermLine2}
+            rightTermLine3={cmsTurboClassgrid?.rightTermLine3}
+            rightLabel={cmsTurboClassgrid?.rightLabel}
+            rightTime={cmsTurboClassgrid?.rightTime}
           />
-        </Reveal>
-      ) : null}
-
-      {showTimeline ? (
-        <Reveal>
-          <div className="hidden sm:block">
-            <TimelineSection
-              title={timelineSectionTitle}
-              subtitle={timelineSectionSubtitle}
-              tabs={timelineTabs}
-              defaultTab={defaultTimelineTab}
-              roleDataMap={timelineRoleDataMap}
-            />
-          </div>
         </Reveal>
       ) : null}
 
@@ -1216,30 +1100,6 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
         </Reveal>
       ) : null}
 
-      {showClassgridVideo ? (
-        <ClassgridVideoSection
-          label={(cmsClassgridVideo as any)?.label ?? "Your Campus, All Day"}
-          title={(cmsClassgridVideo as any)?.title ?? "With Every Role, From Morning to Night"}
-          description={(cmsClassgridVideo as any)?.description ?? "Classgrid works silently behind every role on your campus — from the first attendance bell at sunrise to the last report reviewed at midnight. One platform, every stakeholder, every hour."}
-          videos={
-            Array.isArray((cmsClassgridVideo as any)?.videoPlaylist) &&
-            (cmsClassgridVideo as any).videoPlaylist.length > 0
-              ? (cmsClassgridVideo as any).videoPlaylist
-                  .map((v: any) => v?.videoUrl)
-                  .filter(Boolean)
-              : ["https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"]
-          }
-          highlights={(cmsClassgridVideo as any)?.highlights ?? [
-            { text: "Students, faculty, admins, accountants, librarians — every role, one login" },
-            { text: "Admissions at dawn, attendance by noon, fee reports by evening" },
-            { text: "Real-time sync across 25+ modules — nothing falls through the cracks" },
-            { text: "From small coaching centres to multi-campus universities, it just scales" },
-          ]}
-          ctaLabel={(cmsClassgridVideo as any)?.ctaLabel ?? "Book a Free Demo"}
-          ctaHref={(cmsClassgridVideo as any)?.ctaHref ?? "/#demo"}
-        />
-      ) : null}
-
       {showTestimonials ? (
         <Reveal>
           <section className="mx-auto w-full max-w-[1400px] px-6 py-16 md:px-12 md:py-24 lg:px-16">
@@ -1265,44 +1125,13 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
         </Reveal>
       ) : null}
 
-      {showTeamVision ? (
-        <TeamVisionSection
-          quotes={
-            Array.isArray((cmsClassgridTeamVision as any)?.quotes) &&
-            (cmsClassgridTeamVision as any).quotes.length > 0
-              ? (cmsClassgridTeamVision as any).quotes
-              : [
-                  {
-                    name: "David T.",
-                    role: "Operations Director",
-                    quote: "Classgrid completely transformed how our multi-campus administration works. We went from fighting data silos to having one unified operating layer.",
-                  },
-                  {
-                    name: "Sarah M.",
-                    role: "Academic Dean",
-                    quote: "Finally, a platform that understands real academic workflows. The level of visibility we have into both student progress and faculty delivery is unprecedented.",
-                  }
-                ]
-          }
-        />
-      ) : null}
-
-      {showIsometricStack ? (
-        <IsometricStackSection
-          kicker={cmsIsometricStack?.kicker}
-          headline={cmsIsometricStack?.headline}
-          subheadline={cmsIsometricStack?.subheadline}
-          phases={cmsIsometricStack?.phases}
-        />
-      ) : null}
-
       {showIntegrations ? (
         <Reveal>
           <div id="integrations">
             <IntegrationsMarquee
               kicker={integrationsKicker}
-              title={integrationsTitle}
-              subtitle={integrationsSubtitle}
+              title="The services that power Classgrid"
+              subtitle="Classgrid is built on trusted services like AWS, Google, Agora and Brevo."
               logos={integrationLogos}
               useFallbackContent={false}
             />
@@ -1310,22 +1139,9 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
         </Reveal>
       ) : null}
 
-      {showFaq ? (
-        <Reveal>
-          <div id="faq">
-            <FAQSection
-              title={faqSectionTitle}
-              subtitle={faqTitle}
-              description={faqSectionDescription}
-              buttonLabel={faqButtonLabel}
-              buttonHref={faqButtonHref}
-              faqsLeft={faqsLeft}
-              faqsRight={faqsRight}
-              className="border-t border-black/5 dark:border-white/10"
-            />
-          </div>
-        </Reveal>
-      ) : null}
+      <div id="faq">
+        <AgentFaqSection />
+      </div>
 
       {showDemoForm ? (
         <PlatformUserGate>
@@ -1355,6 +1171,8 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
           </Reveal>
         </PlatformUserGate>
       ) : null}
+
+      <AgentFinalCtaSection />
     </div>
   );
 }

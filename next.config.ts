@@ -50,6 +50,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // /agent is now the home page
+      { source: "/agent", destination: "/", permanent: true },
       // Legacy comparison links
       { source: "/compare/vs-competitors", destination: "/compare", permanent: true },
       // Legacy institution → new solutions/industries

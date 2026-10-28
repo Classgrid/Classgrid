@@ -255,7 +255,7 @@ export default async function ChangelogDetailPage({
         <div className="mx-auto w-full max-w-4xl px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 text-center">
           <DocumentHero
             badgeLabel={`Update / ${updateMeta.label}`}
-            badgeDotColor="bg-emerald-500"
+            badgeDotColor="bg-foreground"
             title={entry.title}
             authorRow={
               entry.authors && entry.authors.length > 0 ? (
@@ -271,7 +271,7 @@ export default async function ChangelogDetailPage({
                           className="h-7 w-7 rounded-full object-cover ring-2 ring-background hover:scale-105 transition-transform cursor-pointer"
                         />
                       ) : (
-                        <div className="h-7 w-7 rounded-full bg-emerald-500/20 flex items-center justify-center text-[11px] font-bold text-emerald-500 ring-2 ring-background hover:scale-105 transition-transform cursor-pointer">
+                        <div className="h-7 w-7 rounded-full bg-foreground/10 flex items-center justify-center text-[11px] font-bold text-foreground ring-2 ring-background hover:scale-105 transition-transform cursor-pointer">
                           {(author.name || 'C').charAt(0)}
                         </div>
                       );
@@ -352,7 +352,7 @@ export default async function ChangelogDetailPage({
         </div>
 
         <div className="mt-12 sm:mt-20 rounded-2xl border border-border bg-card p-6 sm:p-8">
-          <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-500">Next step</p>
+          <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">Next step</p>
           <h3 className="mb-3 text-xl sm:text-2xl font-extrabold tracking-tight text-foreground">See it in action</h3>
           <p className="mb-6 text-sm leading-relaxed text-muted-foreground max-w-lg">
             Book a demo to see how this update works in your institution&apos;s workflow.
@@ -367,7 +367,7 @@ export default async function ChangelogDetailPage({
             </Link>
             <Link
               href={buildLangHref("/changelog", lang)}
-              className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border px-6 text-sm font-semibold text-foreground transition-colors hover:border-emerald-500/40 hover:text-emerald-500"
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border px-6 text-sm font-semibold text-foreground transition-colors hover:border-foreground/40 hover:bg-foreground/5"
             >
               View All Updates
             </Link>

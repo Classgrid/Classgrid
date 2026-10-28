@@ -34,15 +34,15 @@ const ICON_MAP: Record<string, any> = {
 };
 
 const CATEGORY_ACCENT: Record<string, { iconBg: string; iconColor: string }> = {
-  "Getting Started": { iconBg: "bg-emerald-500/10", iconColor: "text-emerald-500" },
-  "Guides": { iconBg: "bg-teal-500/10", iconColor: "text-teal-500" },
+  "Getting Started": { iconBg: "bg-foreground/5", iconColor: "text-foreground" },
+  "Guides": { iconBg: "bg-foreground/5", iconColor: "text-foreground" },
   "API Reference": { iconBg: "bg-indigo-500/10", iconColor: "text-indigo-500" },
   "I am a Student": { iconBg: "bg-sky-500/10", iconColor: "text-sky-500" },
   "I am a Teacher": { iconBg: "bg-blue-500/10", iconColor: "text-blue-500" },
   "I am an Admin": { iconBg: "bg-purple-500/10", iconColor: "text-purple-500" },
 };
 
-const DEFAULT_ACCENT = { iconBg: "bg-emerald-500/10", iconColor: "text-emerald-500" };
+const DEFAULT_ACCENT = { iconBg: "bg-foreground/5", iconColor: "text-foreground" };
 
 export default function CategoryPageClient({ slug, lang, initialData }: { slug: string; lang: SupportedLang; initialData: any }) {
   const [categoryData, setCategoryData] = useState<any>(initialData.category);
@@ -61,9 +61,9 @@ export default function CategoryPageClient({ slug, lang, initialData }: { slug: 
   const groupNames = Object.keys(grouped);
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-8 pb-16 overflow-hidden selection:bg-emerald-500/30 transition-colors duration-300">
+    <main className="relative min-h-screen bg-background text-foreground pt-8 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
       <div className="absolute top-0 left-0 w-full h-[600px] overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full bg-emerald-600/5 blur-[120px]" />
+        <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full bg-foreground/[0.03] blur-[120px]" />
       </div>
 
       <div className="px-6 max-w-4xl mx-auto">
@@ -116,10 +116,10 @@ export default function CategoryPageClient({ slug, lang, initialData }: { slug: 
                       href={buildLangHref(`/help-center/article/${article.slug}`, lang)}
                       className="group flex items-center justify-between p-4 md:p-5 border-b border-border last:border-0 hover:bg-muted/50 transition-colors"
                     >
-                      <h3 className="text-[15px] font-medium text-foreground group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors pr-4 line-clamp-1 leading-relaxed">
+                      <h3 className="text-[15px] font-medium text-foreground group-hover:text-foreground/70 transition-colors pr-4 line-clamp-1 leading-relaxed">
                         {extractLocaleString(article.title, lang)}
                       </h3>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-emerald-500 transition-colors shrink-0" />
+                      <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors shrink-0" />
                     </Link>
                   ))}
                 </div>

@@ -102,9 +102,9 @@ export function SubscribeForm({ type = "blog" }: { type?: "blog" | "changelog" }
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Your name"
-          className="rounded-full bg-slate-100 dark:bg-white/5 border border-slate-300 dark:border-white/10 focus-visible:ring-2 focus-visible:ring-emerald-500/50 focus-visible:border-emerald-500/50 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-white/40 h-11 px-5 sm:w-44 shrink-0 transition-all"
+          className="rounded-full bg-slate-100 dark:bg-white/5 border border-slate-300 dark:border-white/10 focus-visible:ring-2 focus-visible:ring-foreground/20 focus-visible:border-foreground/40 text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-white/40 h-11 px-5 sm:w-44 shrink-0 transition-all"
         />
-        <div className="relative flex items-center flex-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-300 dark:border-white/10 p-1.5 focus-within:ring-2 focus-within:ring-emerald-500/50 focus-within:border-emerald-500/50 transition-all">
+        <div className="relative flex items-center flex-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-300 dark:border-white/10 p-1.5 focus-within:ring-2 focus-within:ring-foreground/20 focus-within:border-foreground/40 transition-all">
           <Input
             type="email"
             required

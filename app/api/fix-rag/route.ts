@@ -17,35 +17,35 @@ export async function GET(req: Request) {
     // 2. Add real about-us chunks
     const realContent = `
 About Us
-We build the infrastructure that lets educators focus on education.
+We build an AI agent that does real work for you, so you can focus on what matters.
 
 Our Story
-The journey started during my first semester of engineering college when I experienced how difficult and outdated educational management systems still were in many institutions. Assignments were submitted completely offline, attendance tracking was unclear, and there was no proper all-in-one platform for students, teachers, and administration. Different departments worked separately without a connected system, making communication and management inefficient. Seeing these everyday problems inspired me to build a better digital solution for educational institutions.
+The journey started during my first semester of engineering college when I saw how much everyday work was still slow, manual, and spread across too many separate tools. Seeing these everyday problems inspired me to build a better digital solution.
 
-What began as a simple idea to improve classroom management gradually evolved into a complete platform for schools, colleges, coaching institutes, and engineering campuses. The goal is to create a secure and modern ecosystem where attendance, assignments, communication, and administration can all be managed in one place through an AI-integrated ERP and CMS platform.
+What began as a simple idea gradually evolved into Classgrid AI, an AI agent at https://chat.classgrid.in. The goal is to create a secure and modern AI agent that can research, read files, run code, make documents and reports, and work inside the apps people already use, all in one place.
 
 — Nikhil Shinde, Founder of Classgrid
 
 What is ClassGrid?
-ClassGrid is a complete management software (ERP) for schools, junior colleges, and coaching centers. Instead of using paper, ClassGrid puts your entire institution on one easy website and mobile app. We offer many powerful modules to handle everything from student attendance and fees to exams, parent messages, and managing staff hierarchy across different branches.
+ClassGrid makes Classgrid AI, an AI agent available at https://chat.classgrid.in. In Agent mode it researches the web with sources, reads files (PDF, Word, Excel, PowerPoint, CSV, images, audio), runs Python and Node code in a private sandbox, and makes reports, PDFs, documents, images, and websites. It also has a Library of saved files, Schedules for daily briefs, reminders and reports by email and WhatsApp, memory, shareable chats, and long background tasks of up to 48 hours that report back on WhatsApp.
 
 What We Do
-We make running a school, coaching center, or junior college very easy. Our software and mobile apps automatically do the hard work for you. We collect fees online, track who came to class, send instant messages to parents, and create beautiful report cards. If you have multiple branches, our smart hierarchy system lets you manage them all from a single dashboard.
+We make everyday work easier with an AI agent that works as you inside connected apps like Gmail, Google Drive, Calendar, Classroom, Microsoft, Slack, Notion, GitHub, Vercel, Canva, Zoom, Spotify and more. You can message or call the Classgrid WhatsApp number, and an AI answers, takes your task, and the agent works in the background before replying on WhatsApp. For developers, Project Mode lets the agent work inside your GitHub repo in a private browser code editor, save work as pull requests through the Classgrid GitHub app, and deploy to Vercel with your own account.
 
 Why Choose Us?
-Most educational software is old, slow, and hard to use. ClassGrid is different. It is super fast, has dedicated mobile apps for parents and teachers, and is as easy to use as your favorite social media app. Whether you run a single coaching center, a junior college, or a massive network of 25 branches, ClassGrid works perfectly for you and keeps all your data safe.
+Classgrid AI does not just answer questions; it does the work. You can choose from models like DeepSeek, Claude, GLM, Kimi, Qwen, Mistral, NVIDIA Nemotron and more. Pricing is simple: free usage that refills, then pay-as-you-go top-ups. Anyone can create an account at https://chat.classgrid.in, and businesses can book a demo to talk to our team.
 
 Mission & Vision
 Our Mission
-To help schools, colleges, coaching institutes, and engineering institutions transition from outdated manual systems to smart digital management through secure, AI-powered technology.
+To help people get real work done faster through a secure, AI-powered agent that works across the apps and tools they already use.
 
 Our Vision
-To make modern digital education management accessible to every institution in India, especially in Maharashtra, by creating intelligent, secure, and connected systems for the future of education.
+To make a capable AI agent accessible to everyone in India and beyond, by creating intelligent, secure, and connected systems for the future of work.
 
 Core Values
 What We Stand For
 Trust Before Everything
-Student data, institutional workflows, and operational reliability are handled with security, responsibility, and long-term trust at the core of every system.
+User data, connected apps, and operational reliability are handled with security, responsibility, and long-term trust at the core of every system.
     `.trim();
 
     const chunk1 = realContent.substring(0, realContent.indexOf("Mission & Vision")).trim();
@@ -87,8 +87,8 @@ Student data, institutional workflows, and operational reliability are handled w
     const forumChunks = await RagChunk.find({ chunkText: { $regex: /forum is not yet launched/i } });
     let updatedForumChunks = 0;
     for (const chunk of forumChunks) {
-      chunk.chunkText = chunk.chunkText.replace(/The ClassGrid Forum is not yet launched.*?\./gi, "The ClassGrid Forum is officially launched and live at https://forum.classgrid.in!");
-      chunk.chunkText = chunk.chunkText.replace(/ClassGrid Forum is not yet launched/gi, "ClassGrid Forum is officially launched and live at https://forum.classgrid.in!");
+      chunk.chunkText = chunk.chunkText.replace(/The ClassGrid Forum is not yet launched.*?\./gi, "The old ClassGrid Forum is no longer available. For help, use Support Tickets at https://classgrid.in/support/ticket.");
+      chunk.chunkText = chunk.chunkText.replace(/ClassGrid Forum is not yet launched/gi, "old ClassGrid Forum is no longer available. For help, use Support Tickets at https://classgrid.in/support/ticket.");
       await chunk.save();
       updatedForumChunks++;
     }
@@ -96,20 +96,20 @@ Student data, institutional workflows, and operational reliability are handled w
     // Also try finding it by just 'upcoming community forum'
     const forumChunks2 = await RagChunk.find({ chunkText: { $regex: /upcoming community forum/i } });
     for (const chunk of forumChunks2) {
-      chunk.chunkText = chunk.chunkText.replace(/not yet launched.*?\./gi, "officially launched and live at https://forum.classgrid.in!");
-      chunk.chunkText = chunk.chunkText.replace(/upcoming community forum/gi, "live community forum");
+      chunk.chunkText = chunk.chunkText.replace(/not yet launched.*?\./gi, "no longer available. For help, use Support Tickets at https://classgrid.in/support/ticket.");
+      chunk.chunkText = chunk.chunkText.replace(/upcoming community forum/gi, "old community forum (no longer available)");
       await chunk.save();
       updatedForumChunks++;
     }
 
     // 3. Inject dedicated Classgrid Forum chunk
     const forumContent = `
-The ClassGrid Forum is the official, live community platform for educators and administrators from schools, junior colleges, engineering institutes, and coaching centers. 
-It is a dedicated space to:
-1. Host Public Discussions: Ask questions and share best practices on managing academics, operations, and communications.
-2. Earn Verified Badges: Verified students, teachers, and administrators get official member badges (though non-platform users can also join).
-3. Share Feedback: Report issues, request new features, and collaborate directly with the ClassGrid team.
-The forum is officially launched and live right now at https://forum.classgrid.in
+The old ClassGrid Forum (community platform) is no longer available.
+For everything the forum was used for, use Support Tickets instead:
+1. Ask Questions: Ask the Classgrid team about Classgrid AI and how to use it.
+2. Anyone Can Use It: People with or without a chat.classgrid.in account can use Support Tickets; they just log in on the website with an email code.
+3. Share Feedback: Report issues, request new features, and talk directly with the ClassGrid team.
+Support Tickets are available right now at https://classgrid.in/support/ticket
     `.trim();
 
     // Delete any old forum chunks we might have injected to avoid duplicates

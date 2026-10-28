@@ -124,13 +124,13 @@ export default function AboutPageClient({
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="max-w-2xl"
           >
-            <h2 className="text-2xl font-bold tracking-tight text-emerald-600 dark:text-emerald-400 sm:text-3xl mb-6">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-6">
               {storyTitle || "Our Story"}
             </h2>
             <div className="space-y-6 text-base leading-8 text-slate-700 dark:text-slate-300 sm:text-lg">
               {paragraphs.map((p, i) =>
                 p.startsWith("—") ? (
-                  <p key={i} className="mt-2 text-sm font-semibold italic text-emerald-600 dark:text-emerald-400 tracking-wide">
+                  <p key={i} className="mt-2 text-sm font-semibold italic text-foreground tracking-wide">
                     {p}
                   </p>
                 ) : (
@@ -154,13 +154,13 @@ export default function AboutPageClient({
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <Card className="h-full border border-border bg-card/50 backdrop-blur-sm transition-colors hover:border-emerald-500/30 hover:bg-card">
+                  <Card className="h-full border border-border bg-card/50 backdrop-blur-sm transition-colors hover:border-foreground/30 hover:bg-card">
                     <CardContent className="p-8">
-                      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 text-foreground">
                         <LayoutGrid className="h-6 w-6" />
                       </div>
                       <h3 className="mb-4 text-2xl font-bold tracking-tight text-foreground">What is ClassGrid?</h3>
-                      <div className="prose prose-sm dark:prose-invert prose-emerald text-muted-foreground leading-relaxed">
+                      <div className="prose prose-sm dark:prose-invert prose-neutral text-muted-foreground leading-relaxed">
                         <PortableTextBlock value={whatIsClassgrid} showAccentBars={false} />
                       </div>
                     </CardContent>
@@ -181,7 +181,7 @@ export default function AboutPageClient({
                         <Rocket className="h-6 w-6" />
                       </div>
                       <h3 className="mb-4 text-2xl font-bold tracking-tight text-foreground">What We Do</h3>
-                      <div className="prose prose-sm dark:prose-invert prose-emerald text-muted-foreground leading-relaxed">
+                      <div className="prose prose-sm dark:prose-invert prose-neutral text-muted-foreground leading-relaxed">
                         <PortableTextBlock value={whatWeDo} showAccentBars={false} />
                       </div>
                     </CardContent>
@@ -202,7 +202,7 @@ export default function AboutPageClient({
                         <Gem className="h-6 w-6" />
                       </div>
                       <h3 className="mb-4 text-2xl font-bold tracking-tight text-foreground">Why Choose Us?</h3>
-                      <div className="prose prose-sm dark:prose-invert prose-emerald text-muted-foreground leading-relaxed">
+                      <div className="prose prose-sm dark:prose-invert prose-neutral text-muted-foreground leading-relaxed">
                         <PortableTextBlock value={whyChooseClassgrid} showAccentBars={false} />
                       </div>
                     </CardContent>
@@ -250,7 +250,7 @@ export default function AboutPageClient({
               </div>
               <Link
                 href="/changelog"
-                className="inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-muted-foreground transition hover:border-emerald-500/40 hover:bg-emerald-500/8 hover:text-emerald-600 dark:hover:text-emerald-400"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-muted-foreground transition hover:border-foreground/30 hover:bg-foreground/5 hover:text-foreground"
               >
                 View all updates
                 <ArrowRight className="h-4 w-4" />
@@ -266,14 +266,14 @@ export default function AboutPageClient({
                 return (
                   <Card
                     key={entry.slug}
-                    className="border border-border bg-card transition hover:border-emerald-500/20 hover:bg-accent"
+                    className="border border-border bg-card transition hover:border-foreground/20 hover:bg-accent"
                   >
                     <CardContent className="p-6">
                       {/* Meta row */}
                       <div className="flex flex-wrap items-center gap-3">
                         <Badge
                           variant="outline"
-                          className="rounded-full border-emerald-500/25 bg-emerald-500/8 text-emerald-400"
+                          className="rounded-full border-border bg-foreground/5 text-foreground"
                         >
                           <UpdateIcon className="mr-1.5 h-3.5 w-3.5" />
                           {updateMeta.label}
@@ -292,7 +292,7 @@ export default function AboutPageClient({
                       <h3 className="mt-4 text-xl font-semibold tracking-tight text-foreground">
                         <Link
                           href={`/changelog/${entry.slug}`}
-                          className="transition-colors hover:text-emerald-400"
+                          className="transition-colors hover:text-foreground/70"
                         >
                           {entry.title}
                         </Link>
@@ -319,7 +319,7 @@ export default function AboutPageClient({
                       <div className="mt-5">
                         <Link
                           href={`/changelog/${entry.slug}`}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-emerald-600 dark:hover:text-emerald-400"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
                         >
                           Read full update
                           <ArrowRight className="h-4 w-4" />

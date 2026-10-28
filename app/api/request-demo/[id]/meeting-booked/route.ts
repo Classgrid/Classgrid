@@ -96,8 +96,8 @@ export async function POST(
         const endDate = new Date(startDate.getTime() + 30 * 60000); // 30 min duration
 
         const event = {
-          summary: `Classgrid Demo: ${lead.institutionName} (${lead.adminName})`,
-          description: `Demo request from ${lead.adminName} (${lead.orgType})\n\nDetails: ${lead.message || "No additional message."}`,
+          summary: `Classgrid AI Demo: ${lead.institutionName} (${lead.adminName})`,
+          description: `Demo request from ${lead.adminName}${lead.role ? ` (${lead.role})` : ""}\n\nDetails: ${lead.message || "No additional message."}`,
           start: { dateTime: startDate.toISOString(), timeZone: "Asia/Kolkata" },
           end: { dateTime: endDate.toISOString(), timeZone: "Asia/Kolkata" },
           attendees: [{ email: lead.adminEmail }],
@@ -137,7 +137,7 @@ export async function POST(
     lead.meetingUrl = meetingUrl;
     lead.timezone = "Asia/Kolkata";
     
-    await lead.save();
+    await lead.save({ validateBeforeSave: false });
 
     // Send custom Classgrid confirmation email
     if (process.env.AWS_SES_SMTP_HOST) {

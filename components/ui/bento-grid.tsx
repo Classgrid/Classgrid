@@ -35,6 +35,7 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   iconColor?: string;
   tag?: string;
   tagVariant?: "emerald" | "cyan" | "amber" | "rose" | "violet" | "blue" | "orange" | "default";
+  centered?: boolean;
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -59,10 +60,11 @@ const BentoCard = ({
   description,
   href,
   cta,
-  color = "from-emerald-400/20",
-  iconColor = "#34d399",
+  color = "from-foreground/20",
+  iconColor = "#737373",
   tag,
   tagVariant = "emerald",
+  centered = false,
   ...props
 }: BentoCardProps) => {
   const mouseX = useMotionValue(0);
@@ -149,7 +151,7 @@ const BentoCard = ({
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${springX}px ${springY}px,
-              rgba(16, 185, 129, 0.02),
+              rgba(0, 0, 0, 0.02),
               transparent 80%
             )
           `,
@@ -162,7 +164,7 @@ const BentoCard = ({
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${springX}px ${springY}px,
-              rgba(16, 185, 129, 0.06),
+              rgba(255, 255, 255, 0.06),
               transparent 80%
             )
           `,
@@ -189,12 +191,12 @@ const BentoCard = ({
       <div className={cn("absolute inset-0 bg-gradient-to-br to-transparent opacity-10 pointer-events-none -z-10", color)} />
       {background && <div className="absolute inset-0 opacity-10 pointer-events-none -z-10">{background}</div>}
 
-      <div className="p-6 relative z-20 flex flex-col h-full bg-transparent">
-        <div className="flex transform-gpu flex-col gap-2 transition-all duration-300 lg:group-hover:-translate-y-4">
-          <div className="flex h-10 w-10 items-center justify-center mb-1" style={{ color: iconColor, filter: `drop-shadow(0 0 6px ${iconColor}99)` }}>
-            {typeof Icon === "string" ? <IconRenderer name={Icon} className="h-7 w-7" /> : <Icon className="h-7 w-7" />}
+      <div className={cn("p-6 relative z-20 flex flex-col h-full bg-transparent", centered && "justify-center")}>
+        <div className={cn("flex transform-gpu flex-col gap-2 transition-all duration-300 lg:group-hover:-translate-y-4", centered && "items-center text-center")}>
+          <div className={cn("flex items-center justify-center", centered ? "h-14 w-14 mb-2" : "h-10 w-10 mb-1")} style={{ color: iconColor, filter: `drop-shadow(0 0 6px ${iconColor}99)` }}>
+            {typeof Icon === "string" ? <IconRenderer name={Icon} className={centered ? "h-11 w-11" : "h-7 w-7"} /> : <Icon className={centered ? "h-11 w-11" : "h-7 w-7"} />}
           </div>
-          <div className="flex items-center gap-2">
+          <div className={cn("flex items-center gap-2", centered && "justify-center")}>
             <h3 className="text-xl font-bold text-foreground tracking-tight">
               {name}
             </h3>
@@ -204,20 +206,22 @@ const BentoCard = ({
               </Chip>
             ) : null}
           </div>
-          <p className="text-muted-foreground text-sm line-clamp-2 leading-relaxed font-medium">{description}</p>
+          {description ? (
+            <p className="text-muted-foreground text-sm line-clamp-2 leading-relaxed font-medium">{description}</p>
+          ) : null}
         </div>
 
         {showCta ? (
-          <div className="mt-auto pt-4 flex w-full flex-row items-center transition-all duration-300 lg:hidden">
-            <Button variant="link" size="sm" className="pointer-events-auto p-0 text-emerald-400 hover:text-emerald-300" asChild>
+          <div className={cn("mt-auto pt-4 flex w-full flex-row items-center transition-all duration-300 lg:hidden", centered && "justify-center")}>
+            <Button variant="link" size="sm" className="pointer-events-auto p-0 text-foreground hover:text-foreground/70" asChild>
               <a href={href}>{cta}<ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" /></a>
             </Button>
           </div>
         ) : null}
 
         {showCta ? (
-          <div className="absolute bottom-6 hidden w-[calc(100%-3rem)] translate-y-10 transform-gpu flex-row items-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex">
-            <Button variant="link" size="sm" className="pointer-events-auto p-0 text-emerald-400 hover:text-emerald-300" asChild>
+          <div className={cn("absolute bottom-6 hidden w-[calc(100%-3rem)] translate-y-10 transform-gpu flex-row items-center opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex", centered && "justify-center")}>
+            <Button variant="link" size="sm" className="pointer-events-auto p-0 text-foreground hover:text-foreground/70" asChild>
               <a href={href}>{cta}<ArrowRightIcon className="ms-2 h-4 w-4 rtl:rotate-180" /></a>
             </Button>
           </div>

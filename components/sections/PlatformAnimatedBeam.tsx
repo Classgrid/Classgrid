@@ -227,7 +227,7 @@ export function PlatformAnimatedBeam({
               variants={fadeInRight}
             >
               {kicker?.trim() ? (
-                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-emerald-400">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-foreground">
                   {kicker}
                 </p>
               ) : null}

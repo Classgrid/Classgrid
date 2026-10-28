@@ -104,7 +104,7 @@ export function ArticleQuestionBox({ articleSlug, articleTitle }: ArticleQuestio
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="What's confusing you?"
-          className="w-full text-sm resize-none rounded-xl bg-muted/50 border border-border px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all placeholder:text-muted-foreground/70"
+          className="w-full text-sm resize-none rounded-xl bg-muted/50 border border-border px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:border-foreground transition-all placeholder:text-muted-foreground/70"
           rows={3}
           required
           autoFocus

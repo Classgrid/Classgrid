@@ -152,14 +152,13 @@ export function Footer({
     }
   }
 
-  // Force 'NEW' badge on Community/Forum links since Discourse just launched
-  footerColumns.forEach(col => {
+  // No forum link in the footer
+  footerColumns.forEach((col, i) => {
     if (col.links) {
-      col.links.forEach(l => {
-        if (l.label && (/community/i.test(l.label) || /forum/i.test(l.label))) {
-          l.isNew = true;
-        }
-      });
+      footerColumns[i] = {
+        ...col,
+        links: col.links.filter(l => !/forum/i.test(l.label || "") && !/forum\.classgrid\.in/i.test(l.href || "")),
+      };
     }
   });
 
@@ -205,7 +204,7 @@ export function Footer({
   const dict = getDictionary(lang);
 
   return (
-    <footer className="w-full border-t border-border/40 bg-[#F7F7F7] dark:bg-black">
+    <footer className="w-full border-t border-border/40 bg-[#F7F7F7] dark:bg-[#0A0A0A]">
 
       {/* ══════════════════════════════════════
           SECTION 1 — 3-Column Link Grid
@@ -240,12 +239,12 @@ export function Footer({
                         prefetch={false}
                         target={isExternal(link.href!) ? "_blank" : undefined}
                         rel={isExternal(link.href!) ? "noopener noreferrer" : undefined}
-                        className="text-sm text-muted-foreground transition-colors hover:text-emerald-500"
+                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                       >
                         {link.label}
                       </Link>
                       {link.isNew && (
-                        <span className="rounded-md border border-emerald-400/30 bg-emerald-500/10 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-emerald-500">
+                        <span className="rounded-md border border-foreground/20 bg-foreground/5 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-foreground">
                           NEW
                         </span>
                       )}
@@ -270,7 +269,7 @@ export function Footer({
                     <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 opacity-50" />
                     {mapHref?.trim() ? (
                       <a href={mapHref} target="_blank" rel="noopener noreferrer"
-                        className="leading-relaxed transition-colors hover:text-emerald-500">
+                        className="leading-relaxed transition-colors hover:text-foreground">
                         {address.map((line) => (
                           <React.Fragment key={line}>{line}<br /></React.Fragment>
                         ))}
@@ -284,14 +283,14 @@ export function Footer({
                 )}
                 {phones.map((phone) => (
                   <a key={phone} href={`tel:${phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-2 transition-colors hover:text-emerald-500">
+                    className="flex items-center gap-2 transition-colors hover:text-foreground">
                     <Phone className="h-3.5 w-3.5 shrink-0 opacity-50" />
                     <span>{phone}</span>
                   </a>
                 ))}
                 {emails.map((email) => (
                   <a key={email} href={`mailto:${email}`}
-                    className="flex items-center gap-2 transition-colors hover:text-emerald-500">
+                    className="flex items-center gap-2 transition-colors hover:text-foreground">
                     <Mail className="h-3.5 w-3.5 shrink-0 opacity-50" />
                     <span>{email}</span>
                   </a>
@@ -329,7 +328,7 @@ export function Footer({
                       target="_blank"
                       rel="noopener noreferrer"
                       title={link.platform}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all duration-200 hover:border-emerald-500 hover:text-emerald-500 hover:scale-105"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all duration-200 hover:border-foreground hover:text-foreground hover:scale-105"
                     >
                       {icon}
                     </a>
@@ -364,7 +363,7 @@ export function Footer({
                         prefetch={false}
                         target={isExternal(link.href!) ? "_blank" : undefined}
                         rel={isExternal(link.href!) ? "nofollow noopener noreferrer" : (isSitemap ? undefined : "nofollow")}
-                        className={`block w-full sm:inline sm:w-auto whitespace-nowrap transition-colors hover:text-emerald-500 ${isSitemap ? "hidden sm:inline" : ""}`}
+                        className={`block w-full sm:inline sm:w-auto whitespace-nowrap transition-colors hover:text-foreground ${isSitemap ? "hidden sm:inline" : ""}`}
                       >
                         {link.label}
                       </Link>

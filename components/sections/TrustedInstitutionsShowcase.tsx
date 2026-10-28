@@ -193,7 +193,7 @@ export function TrustedInstitutionsShowcase({
                     href={inst.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`shrink-0 outline-none transition-opacity hover:opacity-80 focus-visible:rounded-lg focus-visible:ring-2 focus-visible:ring-emerald-400/60 ${inst.hideInDarkMode ? "dark:hidden" : ""}`}
+                    className={`shrink-0 outline-none transition-opacity hover:opacity-80 focus-visible:rounded-lg focus-visible:ring-2 focus-visible:ring-foreground/40 ${inst.hideInDarkMode ? "dark:hidden" : ""}`}
                   >
                     {content}
                   </a>
@@ -203,7 +203,7 @@ export function TrustedInstitutionsShowcase({
                 <Link
                   key={`${inst.name}-${i}`}
                   href={inst.href}
-                  className={`shrink-0 outline-none transition-opacity hover:opacity-80 focus-visible:rounded-lg focus-visible:ring-2 focus-visible:ring-emerald-400/60 ${inst.hideInDarkMode ? "dark:hidden" : ""}`}
+                  className={`shrink-0 outline-none transition-opacity hover:opacity-80 focus-visible:rounded-lg focus-visible:ring-2 focus-visible:ring-foreground/40 ${inst.hideInDarkMode ? "dark:hidden" : ""}`}
                 >
                   {content}
                 </Link>

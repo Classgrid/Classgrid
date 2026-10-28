@@ -1,0 +1,221 @@
+{
+  "slug": "reminders-and-automation",
+  "order": 8,
+  "menuGroup": "useCase",
+  "menuLabel": "Reminders & automation",
+  "menuDescription": "Reminders and long background tasks",
+  "eyebrow": "Reminders & automation",
+  "headline": "Close the tab. The work keeps going.",
+  "subheadline": "Set reminders that arrive by email and WhatsApp, and give the agent long jobs that keep running for up to 48 hours.",
+  "primaryCta": { "label": "Use Agent", "href": "https://chat.classgrid.in" },
+  "demoHeading": "Set it up once, get it on time",
+  "demoTabs": [
+    {
+      "label": "Daily reminder",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Daily reminder",
+          "userMessage": "Help me set up a daily WhatsApp reminder. Ask me what time and what it should say.",
+          "workedFor": "Worked for 12s",
+          "steps": ["Asked: What time?", "You picked 9:00 PM", "Asked: What should it say?", "Made the schedule"],
+          "resultLines": ["Every day at 9:00 PM:", "\"Drink water and plan tomorrow\""]
+        },
+        "floating": {
+          "kind": "schedule",
+          "title": "Daily reminder",
+          "badge": "Active",
+          "rows": [
+            { "label": "Repeats", "value": "Every day, 9:00 PM" },
+            { "label": "Send to", "value": "WhatsApp and email" },
+            { "label": "Ends", "value": "20 Jan" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Long task",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Tool comparison",
+          "userMessage": "Compare 5 project tools and send me a PDF on WhatsApp",
+          "workedFor": "Worked for 14m",
+          "steps": ["Searched the web", "Opened 12 pages", "Built comparison.pdf", "Sent it on WhatsApp"],
+          "resultLines": ["Task completed.", "The PDF is in your WhatsApp."]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. Your comparison is ready: chat.classgrid.in/…",
+          "time": "4:12 PM"
+        }
+      }
+    },
+    {
+      "label": "Email the agent",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Email to agent@classgrid.in",
+          "fileChips": ["notes.docx"],
+          "userMessage": "Turn the attached notes into a one-page PDF and send it back",
+          "workedFor": "Worked for 1m 20s",
+          "steps": ["Got your email", "Read notes.docx", "Built summary.pdf", "Emailed you summary.pdf"],
+          "resultLines": ["summary.pdf is in your inbox."]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Task completed",
+          "subtitle": "summary.pdf sent to your email",
+          "tone": "success"
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "Reminders by email and WhatsApp",
+      "text": "Set a reminder once, daily, weekly or on the days you choose, for up to 90 days. It comes to your email, and to WhatsApp after you verify your number. The words are set when you make it, so write exactly what you want to see.",
+      "visual": {
+        "main": {
+          "kind": "schedule",
+          "title": "Call the client",
+          "badge": "Active",
+          "rows": [
+            { "label": "Repeats", "value": "Mon, Wed, Fri · 4:00 PM" },
+            { "label": "Send to", "value": "WhatsApp and email" },
+            { "label": "Ends", "value": "15 Dec" }
+          ]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "Reminder: call the client at 4 and share the new quote.",
+          "time": "4:00 PM"
+        }
+      }
+    },
+    {
+      "title": "Long jobs that keep going",
+      "text": "Give the agent a big job and close the tab. It keeps working for up to 48 hours. If it needs something, it asks you on WhatsApp, waits for your reply, then carries on.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Cafe list",
+          "userMessage": "Find 20 cafes near me with good reviews and make a sheet",
+          "workedFor": "Worked for 22m",
+          "steps": ["Searched the web", "Asked you on WhatsApp: Open on Sundays only?", "You replied: Yes", "Built cafes.xlsx"],
+          "resultLines": ["Task completed.", "20 cafes, all open on Sundays."]
+        },
+        "floating": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "✅ Task completed. Your cafe list is ready: chat.classgrid.in/…",
+          "time": "6:40 PM"
+        }
+      }
+    },
+    {
+      "title": "Hand off work by email",
+      "text": "Email your work to agent@classgrid.in from the email you signed up with. The agent picks it up and starts the task, and you can follow it in the app. Emails from other addresses don't start a task.",
+      "visual": {
+        "main": {
+          "kind": "list",
+          "title": "To: agent@classgrid.in",
+          "rows": [
+            { "label": "From", "value": "aditi@example.com" },
+            { "label": "Subject", "value": "Make a PDF from this" },
+            { "label": "Attached", "value": "notes.docx" }
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Task started",
+          "subtitle": "The agent is working on it",
+          "tone": "info"
+        }
+      }
+    },
+    {
+      "title": "Results on WhatsApp",
+      "text": "When a job is done, the agent sends the result to your WhatsApp with a link to the chat. PDFs come as real files you can open and forward. You can also start a task with a WhatsApp call to +91 81492 77038.",
+      "visual": {
+        "main": {
+          "kind": "whatsapp",
+          "sender": "Classgrid AI",
+          "text": "Here is your report. Open the full chat: chat.classgrid.in/…",
+          "time": "11:05 AM"
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Sent on WhatsApp",
+          "subtitle": "Tap to open",
+          "files": [{ "name": "report.pdf" }]
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Works with the apps you use every day",
+  "plugins": [
+    { "name": "Gmail", "line": "Read and send emails" },
+    { "name": "Google Calendar", "line": "See your day and add events" },
+    { "name": "Google Drive", "line": "Find and read files, save new ones" },
+    { "name": "Notion", "line": "Search, create and update pages" },
+    { "name": "Slack", "line": "Read and send messages" },
+    { "name": "WhatsApp Business", "line": "Send texts from your own business account" }
+  ],
+  "tasksHeading": "Try one of these",
+  "exampleTasks": [
+    "Get reminders on WhatsApp.",
+    "Help me set up a daily WhatsApp reminder. Ask me what time and what it should say.",
+    "Create a PDF report in minutes.",
+    "Research a topic with real sources.",
+    "Search the web with sources.",
+    "Read my unread emails from today",
+    "What's on my calendar for tomorrow?",
+    "Draft a project proposal."
+  ],
+  "faqs": [
+    {
+      "question": "How do reminders work?",
+      "answer": "You set the time and the message. At that time it's sent to your email, and to WhatsApp if you verified your number. It can be once, daily, weekly or on the days you choose, for up to 90 days."
+    },
+    {
+      "question": "Can a reminder send me fresh news or a new summary each day?",
+      "answer": "No. The message is written when you set up the reminder, and the AI doesn't run again at that time. For a fresh answer, ask the agent in the chat."
+    },
+    {
+      "question": "Can reminders go to other people?",
+      "answer": "No. Reminders go only to you, by email and WhatsApp."
+    },
+    {
+      "question": "How long can a task run?",
+      "answer": "Up to 48 hours. The agent can pause, wait for your WhatsApp reply or a set time, and then carry on. When it's done you get \"Task completed\" with a link to the chat."
+    },
+    {
+      "question": "Can I start a task by texting on WhatsApp?",
+      "answer": "No. Start a task with a WhatsApp call to +91 81492 77038, or by emailing agent@classgrid.in from your sign-up email. While a task is open, you can send extra texts or files on WhatsApp."
+    },
+    {
+      "question": "Is it free to start?",
+      "answer": "Yes. Sign up with your email and start for free. Top up only when you need more."
+    }
+  ],
+  "plainEnglishHeading": "What it can do for you, in plain English",
+  "plainEnglish": [
+    "Classgrid AI can keep working for you when you are not looking. You can set reminders that come at the right time, and you can give the agent long jobs that keep going after you close the tab. You set it all up by typing in normal words at chat.classgrid.in. It is free to start, and you top up only when you need more.",
+    "You can ask it to remind you about anything. It can be one time, every day, every week or only on the days you pick, for up to 90 days. At that time the reminder comes to your email. After you verify your WhatsApp number with a code, it comes on WhatsApp too.",
+    "There is one thing to know about reminders. The words are written when you set the reminder up, and the AI does not run again when it is sent. So it is perfect for \"call the client at 4\" or \"drink water and plan tomorrow\". It is not for fresh news or a new summary every morning. For a fresh answer, just ask the agent in the chat.",
+    "Reminders go only to you, by email and WhatsApp. They can't message other people. You can see all your reminders on the Schedule page in the app.",
+    "The agent can also work on long jobs in the background. Give it a big task, like comparing a few products, making a long report or building a list from the web, and close the tab. It keeps going for up to 48 hours. If it needs to wait for a later time or for your answer, it pauses and wakes up again to carry on.",
+    "If the agent needs something from you, it can ask you on WhatsApp and wait for your reply. You answer in WhatsApp like a normal message, and it picks up where it left off. When the job is done, you get \"Task completed\" with a link to the full chat.",
+    "Results can come straight to your WhatsApp. If the agent makes a PDF, it sends it as a real file you can open, save and forward. You also get the link to the chat, so you can see everything it did and ask for changes.",
+    "You can hand off work without opening the app. Send an email to agent@classgrid.in from the email you signed up with, and the agent starts the task. You can also start a task with a WhatsApp call to +91 81492 77038, say what you need and hang up. Plain WhatsApp texts don't start a new task, but while a task is open you can send extra texts or files to add to it.",
+    "In short: set a reminder once and get it on time, or give the agent a long job and walk away. It keeps working, asks you when it needs to, and sends the result to your WhatsApp or email when it is done."
+  ],
+  "seo": {
+    "title": "Reminders and background AI tasks on WhatsApp | Classgrid AI",
+    "description": "Set reminders by email and WhatsApp, and let the AI agent work on long tasks for up to 48 hours, then send results and PDFs on WhatsApp. Free to start."
+  }
+}

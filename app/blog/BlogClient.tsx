@@ -114,14 +114,14 @@ export function LoadingDots() {
   return (
     <div className="relative flex w-full min-h-[50vh] items-center justify-center space-x-2 overflow-hidden bg-background py-10">
       <div className="pointer-events-none absolute inset-0 opacity-20">
-        <div className="absolute left-[20%] top-[30%] h-[300px] w-[300px] rounded-[50px] border-[1px] border-emerald-500/20 mix-blend-screen" />
+        <div className="absolute left-[20%] top-[30%] h-[300px] w-[300px] rounded-[50px] border-[1px] border-foreground/20 mix-blend-screen" />
         <div className="absolute bottom-[10%] right-[15%] h-[400px] w-[400px] rounded-[60px] border-[1px] border-cyan-500/20 mix-blend-screen" />
       </div>
 
       {dots.map((i) => (
         <MotionSpan
           key={i}
-          className="h-3 w-3 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400"
+          className="h-3 w-3 rounded-full bg-foreground"
           animate={{
             y: [0, -8, 0],
             opacity: [0.4, 1, 0.4],
@@ -313,7 +313,7 @@ export function BlogClient({
               placeholder="Search a blog..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-12 rounded-xl border border-border bg-card pl-10 text-card-foreground shadow-sm placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-0"
+              className="h-12 rounded-xl border border-border bg-card pl-10 text-card-foreground shadow-sm placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-foreground/30 focus-visible:ring-offset-0"
             />
           </div>
         </div>
@@ -434,8 +434,8 @@ export function BlogClient({
               variant="outline"
               onClick={() => setActiveTab(cat)}
               className={`rounded-full border px-4 py-2 font-medium shadow-none transition ${activeTab === cat
-                  ? "border-emerald-500 bg-emerald-500 text-black hover:bg-emerald-500 hover:text-black"
-                  : "border-border bg-card text-muted-foreground hover:border-emerald-400 hover:bg-emerald-500/10 hover:text-foreground"
+                  ? "border-foreground bg-foreground text-background hover:bg-foreground hover:text-background"
+                  : "border-border bg-card text-muted-foreground hover:border-foreground/40 hover:bg-foreground/5 hover:text-foreground"
                 }`}
             >
               {cat}
@@ -464,7 +464,7 @@ export function BlogClient({
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
                   }}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_8px_32px_rgba(16,185,129,0.12)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:border-foreground/30 hover:shadow-md"
                 >
                   {/* Card Image */}
                   <div className="relative h-48 w-full flex-shrink-0 overflow-hidden bg-muted">
@@ -476,12 +476,12 @@ export function BlogClient({
                         className="object-cover"
                       />
                     ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-emerald-500/5">
-                        <span className="text-3xl font-bold text-emerald-500/30">BLOG</span>
+                      <div className="flex h-full w-full items-center justify-center bg-foreground/5">
+                        <span className="text-3xl font-bold text-foreground/30">BLOG</span>
                       </div>
                     )}
                     {/* Category pill floating on image */}
-                    <span className="absolute left-3 top-3 rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white shadow">
+                    <span className="absolute left-3 top-3 rounded-full bg-foreground px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-background shadow">
                       {extractLocaleString(post.category, lang) || "Education"}
                     </span>
                   </div>
@@ -491,7 +491,7 @@ export function BlogClient({
                     <div className="mb-2 text-xs text-muted-foreground">
                       {formatPubDate(post.publishedAt)}
                     </div>
-                    <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-snug text-foreground transition-colors group-hover:text-emerald-500">
+                    <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-snug text-foreground transition-colors group-hover:text-foreground/70">
                       {extractLocaleString(post.title, lang)}
                     </h3>
                     {post.excerpt && (
@@ -533,7 +533,7 @@ export function BlogClient({
                                 ) : (
                                   <div
                                     key={idx}
-                                    className="h-6 w-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-[10px] font-bold text-emerald-500 ring-2 ring-card"
+                                    className="h-6 w-6 rounded-full bg-foreground/10 flex items-center justify-center text-[10px] font-bold text-foreground ring-2 ring-card"
                                     style={{ zIndex: authorsList.length - idx }}
                                   >
                                     {(a.name || 'C').charAt(0)}
@@ -549,12 +549,12 @@ export function BlogClient({
                         <div className="flex items-center gap-3 text-xs text-muted-foreground">
                           {metrics && (
                             <span className="flex items-center gap-1">
-                              <Eye className="h-3.5 w-3.5 text-emerald-500" />
+                              <Eye className="h-3.5 w-3.5 text-foreground" />
                               {metrics.views}
                             </span>
                           )}
                         </div>
-                        <span className="flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-500 transition-all group-hover:bg-emerald-500 group-hover:text-white">
+                        <span className="flex items-center gap-1 rounded-full border border-border bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground transition-all group-hover:bg-foreground group-hover:text-background">
                           Read →
                         </span>
                       </div>
@@ -574,7 +574,7 @@ export function BlogClient({
           <p className="text-muted-foreground">Try changing your filters or searching for something else.</p>
           <Button
             variant="outline"
-            className="mt-6 border-emerald-500/20 text-emerald-500 hover:bg-emerald-500/10"
+            className="mt-6 border-border text-foreground hover:bg-foreground/5"
             onClick={() => {
               setActiveTab("All");
               setSearchQuery("");
@@ -617,7 +617,7 @@ export function BlogClient({
                       setCurrentPage(token);
                     }}
                     className={`h-10 min-w-10 rounded-lg ${token === activePage
-                        ? "border-emerald-500 bg-emerald-500 text-black hover:bg-emerald-500"
+                        ? "border-foreground bg-foreground text-background hover:bg-foreground"
                         : "text-muted-foreground hover:bg-accent"
                       }`}
                   >

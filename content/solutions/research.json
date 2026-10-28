@@ -1,0 +1,291 @@
+{
+  "slug": "research",
+  "order": 9,
+  "menuGroup": "useCase",
+  "menuLabel": "Research & data",
+  "menuDescription": "Cited answers, clean data, charts",
+  "eyebrow": "Research and data",
+  "headline": "Real sources. Real numbers.",
+  "subheadline": "Search the web with citations, read long PDFs, clean messy spreadsheets, and get charts and PDF reports.",
+  "primaryCta": { "label": "Use Agent", "href": "https://chat.classgrid.in" },
+  "demoHeading": "Ask a question. Get answers you can check.",
+  "demoTabs": [
+    {
+      "label": "Cited answer",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Screen time and sleep",
+          "userMessage": "What does recent research say about screen time and sleep? Give me sources.",
+          "workedFor": "Worked for 1m 20s",
+          "steps": [
+            "Searched the web",
+            "Opened 6 pages",
+            "Wrote the answer"
+          ],
+          "resultLines": [
+            "Late screen use is linked to less sleep [1] [2]",
+            "Phones in the bedroom delay sleep [3]",
+            "Cutting evening use can help [4]"
+          ]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Sources",
+          "rows": [
+            { "label": "Screen use and sleep", "value": "example-journal.org" },
+            { "label": "Phones and bedtime", "value": "sleep-study.example.com" },
+            { "label": "Blue light and sleep", "value": "health-review.example.org" },
+            { "label": "Night-time phone use", "value": "wellbeing.example.net" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Clean my data",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Survey results",
+          "fileChips": ["survey-responses.csv"],
+          "userMessage": "Clean up messy spreadsheet data. Then chart the results.",
+          "workedFor": "Worked for 2m 31s",
+          "steps": [
+            "Ran Python",
+            "Fixed 214 dates, removed 37 duplicate rows",
+            "Drew 2 charts",
+            "Built report.pdf"
+          ],
+          "resultLines": [
+            "Your data is clean and charted."
+          ]
+        },
+        "floating": {
+          "kind": "files",
+          "title": "Created 3 files",
+          "files": [
+            { "name": "cleaned.xlsx" },
+            { "name": "charts/answers.png" },
+            { "name": "report.pdf" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Live market",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Monthly share price",
+          "userMessage": "How did Infosys shares do this month? Show a chart.",
+          "workedFor": "Worked for 26s",
+          "steps": [
+            "Got the live price",
+            "Ran Python",
+            "Drew a chart"
+          ],
+          "resultLines": [
+            "Sample numbers shown.",
+            "Not financial advice."
+          ]
+        },
+        "floating": {
+          "kind": "chart",
+          "title": "Price by week (sample)",
+          "bars": [
+            { "label": "Wk 1", "value": 62 },
+            { "label": "Wk 2", "value": 58 },
+            { "label": "Wk 3", "value": 66 },
+            { "label": "Wk 4", "value": 71 }
+          ]
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "Answers with sources you can check",
+      "text": "The agent searches the web, opens the pages and reads them. Then it answers with numbered sources you can click. Long pages are read in parts, so nothing important gets skipped.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Screen time and sleep",
+          "userMessage": "Search the web with sources: how does screen time affect sleep?",
+          "workedFor": "Worked for 58s",
+          "steps": [
+            "Searched the web",
+            "Opened 6 pages"
+          ],
+          "resultLines": [
+            "Late screen use means less sleep [1] [2]",
+            "Phones in the bedroom delay sleep [3]"
+          ]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Sources",
+          "rows": [
+            { "label": "[1] Screen use and sleep", "value": "example-journal.org" },
+            { "label": "[2] Phones and bedtime", "value": "sleep-study.example.com" },
+            { "label": "[3] Phones at night", "value": "wellbeing.example.net" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Read any file",
+      "text": "Upload PDFs, Word files, slides, Excel sheets, CSVs, images and audio. Ask questions about them, compare them, or pull out tables and quotes. Your files stay in your Library to find later.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Compare two papers",
+          "fileChips": ["paper-1.pdf", "paper-2.pdf", "data.xlsx"],
+          "userMessage": "Compare the methods in these two papers",
+          "workedFor": "Worked for 44s",
+          "steps": [
+            "Read 3 files",
+            "Compared the methods"
+          ],
+          "resultLines": [
+            "Sample: 120 vs 340 people",
+            "Method: survey vs sleep tracker",
+            "Length: 2 weeks vs 3 months"
+          ]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Library",
+          "rows": [
+            { "label": "paper-1.pdf", "value": "Uploaded" },
+            { "label": "paper-2.pdf", "value": "Uploaded" },
+            { "label": "data.xlsx", "value": "Uploaded" },
+            { "label": "comparison.pdf", "value": "AI made" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Real Python for real data",
+      "text": "The agent writes and runs Python for you: cleaning, statistics, charts and models. You get the files back. That means a clean Excel sheet, charts and a PDF report.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Clean and chart",
+          "fileChips": ["survey-responses.csv"],
+          "userMessage": "Draw a chart from your data.",
+          "workedFor": "Worked for 1m 12s",
+          "steps": [
+            "Ran Python",
+            "df.drop_duplicates()",
+            "Drew a chart"
+          ],
+          "resultLines": [
+            "Removed 37 duplicate rows.",
+            "Most people shop online every week."
+          ]
+        },
+        "floating": {
+          "kind": "chart",
+          "title": "How often do you shop online?",
+          "bars": [
+            { "label": "Daily", "value": 18 },
+            { "label": "Weekly", "value": 44 },
+            { "label": "Monthly", "value": 29 },
+            { "label": "Never", "value": 9 }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Live cards in the answer",
+      "text": "Ask about a stock, the weather, a place or a deadline. You get a live card right in the answer: a price chart, a 5-day forecast, a map pin or a countdown.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Weather check",
+          "userMessage": "What's the weather in Pune this week?",
+          "workedFor": "Worked for 6s",
+          "steps": [
+            "Got the live weather"
+          ],
+          "resultLines": [
+            "Warm and dry most days.",
+            "Light rain on Friday."
+          ]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Pune · next 5 days",
+          "rows": [
+            { "label": "Mon", "value": "31° Sunny" },
+            { "label": "Tue", "value": "30° Sunny" },
+            { "label": "Wed", "value": "29° Cloudy" },
+            { "label": "Thu", "value": "30° Cloudy" },
+            { "label": "Fri", "value": "27° Light rain" }
+          ]
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Bring in your files, forms and data",
+  "plugins": [
+    { "name": "Google Drive", "line": "Find and read your files, save results" },
+    { "name": "Google Forms", "line": "Read survey responses, create a new form" },
+    { "name": "Notion", "line": "Search your notes, save findings to a page" },
+    { "name": "Supabase", "line": "Run SQL on your project's database" },
+    { "name": "Gmail", "line": "Read emails and attachments" }
+  ],
+  "tasksHeading": "Try one of these",
+  "exampleTasks": [
+    "Research a topic with real sources.",
+    "Search the web with sources.",
+    "Outline a literature review.",
+    "Analyse a file in seconds.",
+    "Clean up messy spreadsheet data.",
+    "Draw a chart from your data.",
+    "Create a PDF report in minutes.",
+    "Write SQL queries from plain English."
+  ],
+  "faqs": [
+    {
+      "question": "Are the sources real?",
+      "answer": "Yes. Every number links to a page the agent opened. Always click through and check what matters."
+    },
+    {
+      "question": "Is there a \"deep research\" mode?",
+      "answer": "No separate mode is needed. Ask your question, and the agent searches, opens pages and reads them itself."
+    },
+    {
+      "question": "Which files can it read?",
+      "answer": "PDF, Word, PowerPoint, Excel, CSV and text files, plus images and audio. You can add up to 6 files in one message."
+    },
+    {
+      "question": "Does it really run code?",
+      "answer": "Yes. It writes Python and runs it in a safe sandbox. Then it gives you the files it made."
+    },
+    {
+      "question": "Can it read my survey results?",
+      "answer": "Yes. Upload the CSV or Excel export, or connect Google Forms and it can read the responses."
+    },
+    {
+      "question": "Can I keep a chat private?",
+      "answer": "Use Incognito. Incognito chats aren't saved to your history."
+    }
+  ],
+  "plainEnglishHeading": "What it can do, in plain English",
+  "plainEnglish": [
+    "Classgrid AI helps you find facts and make sense of data. You ask a question in plain words. The agent searches, reads and works things out for you. Then it gives you an answer you can check.",
+    "When you ask a research question, the agent searches the web and opens the pages it finds. It reads them, even long ones, in parts so nothing important is missed. Then it writes an answer with numbered sources. Click any number to see the page it came from.",
+    "The sources are real pages the agent opened. Still, always click through and check the facts that matter most. It does not search paid journal databases. There is no special mode to turn on, you just ask your question.",
+    "You can upload PDFs, Word files, slides, Excel sheets, CSV files, images and audio. Up to 6 files fit in one message. Ask questions about them, compare two papers, or pull out tables and quotes. Your files stay in your Library, where you can search for them later.",
+    "For numbers, the agent writes real Python code and runs it in a safe sandbox. It can clean messy data, remove repeated rows, fix dates and work out statistics. It shows you each step it took. You get the files back, like a clean Excel sheet.",
+    "Ask for a chart and the agent draws one from your data, like a bar, line or pie chart. It can also draw a simple flow diagram. When you're done, ask for a PDF report with your charts and findings. You can download it or share it.",
+    "Some answers come as live cards. Ask about a stock and you get its price and a small chart. Ask about the weather and you get today plus the next 5 days. You can also get a map pin, a route or a countdown to a deadline. The market card only shows data and is not financial advice.",
+    "Connect Google Drive to find and read your files and save results there. Connect Google Forms to read survey answers, or make a new form. You can also save findings to Notion, read email attachments in Gmail, or run SQL on your Supabase database. Not sure how to write SQL? Ask in plain English and the agent writes it for you.",
+    "Want to keep a chat private? Use Incognito, and that chat is not saved to your history. Want to share your findings? Send a read-only link, or share them in a Grids group. It is free to start, and you top up only when you need more."
+  ],
+  "seo": {
+    "title": "AI research and data analysis agent | Classgrid AI",
+    "description": "Search the web with real citations, read long PDFs, clean messy spreadsheets and turn data into charts and PDF reports. Free to start."
+  }
+}

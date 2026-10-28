@@ -52,7 +52,7 @@ type CaseStudyData = {
 export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
 
   return (
-    <article className="min-h-screen bg-background text-foreground selection:bg-emerald-500/30">
+    <article className="min-h-screen bg-background text-foreground selection:bg-foreground/20">
 
 
       {/* 2. HERO */}
@@ -89,15 +89,15 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
               className="max-w-4xl"
             >
               <div className="flex flex-wrap items-center gap-2 mb-6">
-                <span className="bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
+                <span className="bg-white/10 text-white border border-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
                   {data.institutionType}
                 </span>
                 <span className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">·</span>
-                <span className="bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
+                <span className="bg-white/10 text-white border border-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
                   {data.category.replace(/-/g, ' ')}
                 </span>
                 <span className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">·</span>
-                <span className="bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
+                <span className="bg-white/10 text-white border border-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase">
                   {data.year}
                 </span>
               </div>
@@ -137,7 +137,7 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
                   <span className="text-muted-foreground font-medium uppercase tracking-widest text-xs">Modules</span>
                   <div className="flex flex-wrap gap-1.5">
                     {data.modules.map(m => (
-                      <span key={m} className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-medium capitalize border border-emerald-500/20">
+                      <span key={m} className="px-2.5 py-0.5 rounded-full bg-foreground/5 text-foreground text-xs font-medium capitalize border border-foreground/15">
                         {m.replace(/-/g, ' ')}
                       </span>
                     ))}
@@ -159,7 +159,7 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="w-12 h-1 bg-emerald-500 mb-8"></div>
+              <div className="w-12 h-1 bg-foreground mb-8"></div>
               <p className="text-xl md:text-2xl text-muted-foreground leading-9 font-light antialiased">
                 {data.overview}
               </p>
@@ -228,12 +228,12 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
           strong: ({ children }: any) => <strong className="font-semibold text-foreground dark:text-white">{children}</strong>,
           em: ({ children }: any) => <em className="italic text-slate-700 dark:text-zinc-200">{children}</em>,
           code: ({ children }: any) => (
-            <code className="rounded-md border border-border bg-muted px-1.5 py-0.5 text-[14px] font-medium text-emerald-600 dark:text-emerald-400">
+            <code className="rounded-md border border-border bg-muted px-1.5 py-0.5 text-[14px] font-medium text-foreground">
               {children}
             </code>
           ),
           link: ({ children, value }: any) => (
-            <a className="font-medium text-emerald-600 dark:text-emerald-400 underline-offset-4 hover:underline transition-colors" href={value?.href} target="_blank" rel="noreferrer">
+            <a className="font-medium text-foreground underline-offset-4 hover:underline transition-colors" href={value?.href} target="_blank" rel="noreferrer">
               {children}
             </a>
           ),
@@ -245,16 +245,16 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
             return (
               <div className="my-8 w-full overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
                 <table className="w-full border-collapse text-left text-sm">
-                  <thead className="border-b-2 border-emerald-500/40 bg-emerald-500/10">
+                  <thead className="border-b-2 border-foreground/20 bg-foreground/5">
                     <tr>
                       {value.rows[0].cells.map((cell: any, i: number) => (
-                        <th key={i} className="px-5 py-3.5 font-semibold text-emerald-700 dark:text-emerald-400 border-r border-border last:border-r-0">{cell}</th>
+                        <th key={i} className="px-5 py-3.5 font-semibold text-foreground border-r border-border last:border-r-0">{cell}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/60">
                     {value.rows.slice(1).map((row: any, i: number) => (
-                      <tr key={i} className="transition-colors hover:bg-emerald-500/5">
+                      <tr key={i} className="transition-colors hover:bg-foreground/5">
                         {row.cells.map((cell: any, j: number) => (
                           <td key={j} className="px-5 py-3.5 text-muted-foreground leading-relaxed border-r border-border/40 last:border-r-0">{cell}</td>
                         ))}
@@ -284,7 +284,7 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
             h4: ({ children }: any) => <h4 className="text-lg font-medium mb-2 text-foreground dark:text-white first:mt-0">{children}</h4>,
             normal: ({ children }: any) => <p className="text-base text-muted-foreground mb-5 leading-7 antialiased">{children}</p>,
             blockquote: ({ children }: any) => (
-              <blockquote className="my-6 border-l-2 border-emerald-500 pl-4 text-base leading-7 text-slate-700 dark:text-zinc-200 italic">{children}</blockquote>
+              <blockquote className="my-6 border-l-2 border-foreground pl-4 text-base leading-7 text-slate-700 dark:text-zinc-200 italic">{children}</blockquote>
             ),
           },
           marks: sharedMarks,
@@ -295,7 +295,7 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
           listItem: {
             bullet: ({ children }: any) => (
               <li className="relative pl-5 text-base leading-7 text-muted-foreground">
-                <span className="absolute left-0 top-[0.6em] h-1.5 w-1.5 rounded-full bg-emerald-500 block" />
+                <span className="absolute left-0 top-[0.6em] h-1.5 w-1.5 rounded-full bg-foreground block" />
                 {children}
               </li>
             ),
@@ -312,7 +312,7 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
             h4: ({ children }: any) => <h4 className="text-xl font-semibold mt-8 mb-4 text-foreground dark:text-white first:mt-0">{children}</h4>,
             normal: ({ children }: any) => <p className="text-base md:text-lg text-muted-foreground mb-5 leading-7 md:leading-9 antialiased">{children}</p>,
             blockquote: ({ children }: any) => (
-              <blockquote className="my-10 rounded-r-xl border-l-2 border-emerald-500 bg-emerald-500/5 py-5 pl-6 pr-5 text-lg leading-8 text-slate-700 dark:text-zinc-200 italic">{children}</blockquote>
+              <blockquote className="my-10 rounded-r-xl border-l-2 border-foreground bg-foreground/5 py-5 pl-6 pr-5 text-lg leading-8 text-slate-700 dark:text-zinc-200 italic">{children}</blockquote>
             ),
           },
           marks: sharedMarks,
@@ -323,7 +323,7 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
           listItem: {
             bullet: ({ children }: any) => (
               <li className="relative pl-7 text-lg leading-8 text-muted-foreground">
-                <span className="absolute left-0 top-[0.65em] h-2 w-2 rounded-full bg-emerald-500 block" />
+                <span className="absolute left-0 top-[0.65em] h-2 w-2 rounded-full bg-foreground block" />
                 {children}
               </li>
             ),
@@ -540,17 +540,17 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <p className="text-emerald-500 font-semibold uppercase tracking-widest text-sm mb-3">Team</p>
+              <p className="text-foreground font-semibold uppercase tracking-widest text-sm mb-3">Team</p>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground">Case Study Done By</h2>
             </motion.div>
             <div className={`grid gap-8 justify-items-center ${data.champions.length <= 3 ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3' : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-5'}`}>
               {data.champions.slice(0, 5).map((member, idx) => {
                 const headshot = member.headshotUrl ? (
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden ring-2 ring-emerald-500/20 hover:ring-emerald-500 transition-all duration-300 hover:scale-105 mx-auto mb-3">
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden ring-2 ring-foreground/20 hover:ring-foreground transition-all duration-300 hover:scale-105 mx-auto mb-3">
                     <Image src={member.headshotUrl} alt={member.name} fill className="object-cover" />
                   </div>
                 ) : (
-                  <div className="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center text-2xl font-bold text-emerald-500 ring-2 ring-emerald-500/20 mx-auto mb-3">
+                  <div className="w-20 h-20 rounded-full bg-foreground/5 flex items-center justify-center text-2xl font-bold text-foreground ring-2 ring-foreground/20 mx-auto mb-3">
                     {member.name.charAt(0)}
                   </div>
                 );
@@ -581,10 +581,10 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
 
       {/* CHAMPION QUOTE */}
       {data.championQuote && (
-        <section className="py-32 border-y border-border relative overflow-hidden bg-emerald-950/20 dark:bg-emerald-950/25">
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900 via-transparent to-transparent"></div>
+        <section className="py-32 border-y border-border relative overflow-hidden bg-foreground/5 dark:bg-foreground/5">
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-foreground/40 via-transparent to-transparent"></div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-            <svg className="w-12 h-12 text-emerald-500/30 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-12 h-12 text-foreground/30 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-foreground leading-tight mb-12">
@@ -593,11 +593,11 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
             <div className="flex flex-col items-center">
               {data.championHeadshotUrl && (
                 data.championSocialLink ? (
-                  <a href={data.championSocialLink} target="_blank" rel="noopener noreferrer" className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-2 ring-emerald-500/20 hover:ring-emerald-500 transition-all duration-300 hover:scale-105 block cursor-pointer">
+                  <a href={data.championSocialLink} target="_blank" rel="noopener noreferrer" className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-2 ring-foreground/20 hover:ring-foreground transition-all duration-300 hover:scale-105 block cursor-pointer">
                     <Image src={data.championHeadshotUrl} alt={data.championName || "Champion"} fill className="object-cover" />
                   </a>
                 ) : (
-                  <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-2 ring-emerald-500/20">
+                  <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 ring-2 ring-foreground/20">
                     <Image src={data.championHeadshotUrl} alt={data.championName || "Champion"} fill className="object-cover" />
                   </div>
                 )
@@ -650,8 +650,8 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
           <Link href={`/case-studies/${data.nextCaseStudy.slug}`} className="block group">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="flex-1">
-                <p className="text-emerald-500 font-semibold uppercase tracking-widest text-sm mb-4">Next Case Study</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground group-hover:text-emerald-500 transition-colors mb-2">
+                <p className="text-foreground font-semibold uppercase tracking-widest text-sm mb-4">Next Case Study</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground group-hover:text-foreground/70 transition-colors mb-2">
                   {data.nextCaseStudy.title}
                 </h2>
                 <p className="text-muted-foreground">{data.nextCaseStudy.clientName} · <span className="capitalize">{data.nextCaseStudy.category.replace(/-/g, ' ')}</span></p>
@@ -663,7 +663,7 @@ export function CaseStudyDetailClient({ data }: { data: CaseStudyData }) {
                     <Image src={data.nextCaseStudy.thumbnailUrl} alt="Thumbnail" fill className="object-cover" />
                   </div>
                 )}
-                <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center group-hover:bg-emerald-500 group-hover:border-emerald-500 group-hover:text-black transition-all">
+                <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground group-hover:text-background transition-all">
                   <ArrowRight className="w-6 h-6" />
                 </div>
               </div>

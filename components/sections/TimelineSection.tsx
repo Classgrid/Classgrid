@@ -47,14 +47,14 @@ export function TimelineSection({ title, subtitle, tabs, defaultTab, roleDataMap
               className={cn(
                 "relative z-10 px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-300 outline-none",
                 activeTab === tab.id
-                  ? "text-slate-900 dark:text-white"
+                  ? "text-background"
                   : "text-zinc-600 hover:bg-zinc-200/50 hover:text-zinc-900 dark:text-white/60 dark:hover:bg-white/5 dark:hover:text-white"
               )}
             >
               {activeTab === tab.id && (
                 <motion.div
                   layoutId="timeline-active-pill"
-                  className="absolute inset-0 -z-10 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]"
+                  className="absolute inset-0 -z-10 rounded-full bg-foreground"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}

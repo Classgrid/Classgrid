@@ -5,14 +5,14 @@ import { SectionAccentBar } from '@/components/ui/section-accent-bar';
 export default function BrandGuidelinesPage() {
   const brandColors = [
     { name: 'Dark Background', hex: '#0f0f0f', text: 'text-white' },
-    { name: 'Primary Emerald', hex: '#34d399', text: 'text-black' },
+    { name: 'Primary Black', hex: '#000000', text: 'text-white' },
     { name: 'Warning Orange', hex: '#f97316', text: 'text-white' },
     { name: 'Card Surface', hex: '#111111', text: 'text-white' },
     { name: 'Muted Accent', hex: '#141414', text: 'text-white' },
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-12 font-sans selection:bg-[#34d399] selection:text-black flex flex-col items-center">
+    <div className="min-h-screen bg-background text-foreground p-12 font-sans selection:bg-foreground selection:text-background flex flex-col items-center">
       <div className="max-w-4xl mx-auto space-y-16 flex flex-col items-center text-center w-full">
         {/* Header */}
         <header className="space-y-6 flex flex-col items-center">
@@ -51,7 +51,7 @@ export default function BrandGuidelinesPage() {
                 <div className="p-4 bg-muted space-y-1">
                   <h3 className="font-medium text-foreground dark:text-gray-200">{color.name}</h3>
                   <div className="flex items-center justify-between">
-                    <code className="text-[#34d399] font-mono text-sm">{color.hex}</code>
+                    <code className="text-foreground font-mono text-sm">{color.hex}</code>
                   </div>
                 </div>
               </div>

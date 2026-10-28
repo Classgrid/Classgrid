@@ -63,7 +63,7 @@ export function AboutCoreValues({ values = defaultValues }: AboutCoreValuesProps
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <MotionDiv variants={itemVariant}>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-emerald-400">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-foreground/70">
               Core Values
             </h2>
             <h3 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
@@ -80,9 +80,9 @@ export function AboutCoreValues({ values = defaultValues }: AboutCoreValuesProps
             <MotionDiv
               key={value.title || index}
               variants={itemVariant}
-              className="group relative rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:border-emerald-500/30 hover:bg-accent hover:shadow-[0_8px_30px_rgba(16,185,129,0.1)]"
+              className="group relative rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:border-foreground/30 hover:bg-accent hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.06)]"
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 transition-colors group-hover:bg-emerald-500/15">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 text-foreground transition-colors group-hover:bg-foreground/10">
                 <IconRenderer name={value.icon || "Star"} className="h-6 w-6" />
               </div>
               <h4 className="mb-3 text-xl font-bold text-foreground">
@@ -93,7 +93,7 @@ export function AboutCoreValues({ values = defaultValues }: AboutCoreValuesProps
               </p>
               
               {/* Top card number index styling */}
-              <div className="absolute right-6 top-6 text-5xl font-extrabold text-foreground/[0.04] transition-colors group-hover:text-emerald-500/10">
+              <div className="absolute right-6 top-6 text-5xl font-extrabold text-foreground/[0.04] transition-colors group-hover:text-foreground/10">
                 0{index + 1}
               </div>
             </MotionDiv>

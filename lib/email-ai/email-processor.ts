@@ -565,7 +565,7 @@ export async function processIncomingEmail(
               <p><strong>Is Registered Platform User:</strong> ${isPlatformUser ? "Yes" : "No"}</p>
               ${isPlatformUser ? `<p><strong>Platform Role:</strong> ${platformUserDetails.role}</p>
               <p><strong>Account Status:</strong> <span style="text-transform:capitalize;">${platformUserDetails.status}</span></p>
-              <p><strong>Institution:</strong> ${platformUserDetails.orgName} (${platformUserDetails.orgId})</p>` : ""}
+              <p><strong>Organization:</strong> ${platformUserDetails.orgName} (${platformUserDetails.orgId})</p>` : ""}
               ${followUpSummary !== "Follow-up reply" ? `<div style="background:#f3f4f6; padding:15px; margin: 15px 0;">
                 <h3 style="margin-top:0;">Summary of Follow-up</h3>
                 <p>${followUpSummary}</p>

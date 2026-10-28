@@ -1,25 +1,24 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
-import locationData from "@/data/india-locations.json";
 import {
   User,
   Mail,
   Phone,
   Building2,
-  MapPin,
   Search,
   MessageSquare,
   RefreshCw,
   AlertCircle,
   ShieldCheck,
   Globe,
-  Briefcase
+  Briefcase,
+  Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -43,13 +42,6 @@ type DemoRequestFormCopy = {
   emailPlaceholder?: string;
   phoneLabel?: string;
   phonePlaceholder?: string;
-  instituteNameLabel?: string;
-  instituteNamePlaceholder?: string;
-  stateLabel?: string;
-  statePlaceholder?: string;
-  cityLabel?: string;
-  cityPlaceholder?: string;
-  solutionLabel?: string;
   messageLabel?: string;
   messagePlaceholder?: string;
   captchaPlaceholder?: string;
@@ -57,72 +49,40 @@ type DemoRequestFormCopy = {
   securityCheckRequiredMessage?: string;
   submitLoadingLabel?: string;
   genericErrorMessage?: string;
-  validationInstitutionNameRequired?: string;
-  validationOrgTypeRequired?: string;
   validationFullNameRequired?: string;
   validationEmailInvalid?: string;
   validationPhoneInvalid?: string;
-  validationStateRequired?: string;
-  validationCityRequired?: string;
-  solutionOptions?: Array<{
-    value?: string;
-    label?: string;
-  }>;
 };
 
-const FALLBACK_ORG_TYPES = [
-  "engineering",
-  "school",
-  "junior_college",
-  "coaching",
-  "diploma",
-  "other",
+const TEAM_SIZE_OPTIONS = ["1-10", "11-50", "51-200", "201-1000", "1000+"] as const;
+
+const USE_CASE_OPTIONS = [
+  "Agent for everyday work",
+  "Project Mode for code",
+  "WhatsApp automation",
+  "Connected apps & automation",
+  "Something else",
 ] as const;
 
-function getSolutionOptions(copy?: DemoRequestFormCopy) {
-  const options = Array.isArray(copy?.solutionOptions)
-    ? copy.solutionOptions.filter((option) => option?.value?.trim() && option?.label?.trim())
-    : [];
-
-  return options.length
-    ? options.map((option) => ({
-        value: option.value!.trim(),
-        label: option.label!.trim(),
-      }))
-    : FALLBACK_ORG_TYPES.map((value) => ({
-        value,
-        label: value
-          .replace(/_/g, " ")
-          .replace(/\b\w/g, (char) => char.toUpperCase()),
-      }));
-}
-
 function createDemoSchema(copy?: DemoRequestFormCopy) {
-  const validOrgTypes = getSolutionOptions(copy).map((option) => option.value);
-
   return z.object({
-    institutionName: z
-      .string()
-      .min(2, copy?.validationInstitutionNameRequired || ""),
-    orgType: z.string().refine((value) => validOrgTypes.includes(value), {
-      message: copy?.validationOrgTypeRequired || "",
+    name: z.string().trim().min(2, copy?.validationFullNameRequired || "Full name is required."),
+    workEmail: z.string().trim().email(copy?.validationEmailInvalid || "Please enter a valid email address."),
+    company: z.string().trim().min(2, "Company is required."),
+    role: z.string().trim().min(2, "Role / job title is required."),
+    teamSize: z.string().refine((value) => (TEAM_SIZE_OPTIONS as readonly string[]).includes(value), {
+      message: "Please select your team size.",
     }),
-    adminName: z.string().min(2, copy?.validationFullNameRequired || ""),
-    adminEmail: z.string().email(copy?.validationEmailInvalid || ""),
-    adminPhone: z
+    phone: z
       .string()
-      .regex(/^[0-9]{10,15}$/, copy?.validationPhoneInvalid || ""),
-    state: z.string().min(2, copy?.validationStateRequired || ""),
-    district: z.string().min(2, "District is required"),
-    taluka: z.string().min(2, "Taluka is required"),
-    customTaluka: z.string().optional(),
-    customDistrict: z.string().optional(),
-    cityVillage: z.string().min(2, "Institution City/Village is required"),
+      .regex(/^[0-9]{10,15}$/, copy?.validationPhoneInvalid || "Please enter a valid phone number."),
+    useCase: z.string().refine((value) => (USE_CASE_OPTIONS as readonly string[]).includes(value), {
+      message: "Please select what you want to use Classgrid AI for.",
+    }),
+    message: z.string().optional(),
     website: z.string().optional().refine(val => !val || /^(https?:\/\/)/.test(val), {
       message: "Please include http:// or https://"
     }),
-    role: z.string().min(2, "Role is required"),
-    message: z.string().optional(),
   });
 }
 
@@ -158,10 +118,6 @@ export function DemoRequestForm({
   title,
   subtitle,
   ctaLine,
-  successTitle,
-  successBody,
-  formTitle,
-  formSubtitle,
   submitLabel,
   detailsSectionTitle,
   instituteSectionTitle,
@@ -169,9 +125,6 @@ export function DemoRequestForm({
   copy,
 }: DemoRequestFormProps) {
   const router = useRouter();
-  const resolvedFormTitle = title ?? formTitle;
-  const resolvedFormSubtitle = subtitle ?? formSubtitle;
-  const solutionOptions = getSolutionOptions(copy);
   const demoSchema = createDemoSchema(copy);
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() || "";
 
@@ -190,87 +143,21 @@ export function DemoRequestForm({
     register,
     handleSubmit,
     control,
-    watch,
-    setValue,
     formState: { errors },
   } = useForm<DemoFormValues>({
     resolver: zodResolver(demoSchema),
     defaultValues: {
-      institutionName: "",
-      orgType: "",
-      adminName: "",
-      adminEmail: "",
-      adminPhone: "",
-      state: "",
-      district: "",
-      taluka: "",
-      customTaluka: "",
-      customDistrict: "",
-      cityVillage: "",
-      website: "",
+      name: "",
+      workEmail: "",
+      company: "",
       role: "",
+      teamSize: "",
+      phone: "",
+      useCase: "",
       message: "",
+      website: "",
     },
   });
-
-  const selectedState = watch("state");
-  const selectedDistrict = watch("district");
-  const selectedTaluka = watch("taluka");
-  const selectedOrgType = watch("orgType");
-
-  const roleOptions = useMemo(() => {
-    switch (selectedOrgType) {
-      case "school":
-        return ["Principal", "Teacher", "Administrator", "IT Staff", "Other"];
-      case "engineering":
-      case "diploma":
-        return ["Director / Principal", "HOD", "Faculty", "Administrator", "IT Staff", "Other"];
-      case "junior_college":
-        return ["Principal", "Teacher / Faculty", "Administrator", "IT Staff", "Other"];
-      case "coaching":
-        return ["Owner / Director", "Faculty", "Administrator", "Other"];
-      default:
-        return ["Principal / Director", "Administrator", "Teacher / Faculty", "IT Staff", "Other"];
-    }
-  }, [selectedOrgType]);
-
-  const allStates = useMemo(() => {
-    return [
-      ...Object.keys(locationData.states),
-      ...Object.keys(locationData.unionTerritories),
-    ].sort();
-  }, []);
-
-  const districts = useMemo(() => {
-    if (!selectedState) return [];
-    const stateData =
-      (locationData.states as Record<string, Record<string, string[]>>)[selectedState] ||
-      (locationData.unionTerritories as Record<string, Record<string, string[]>>)[selectedState] ||
-      {};
-    return Object.keys(stateData).sort();
-  }, [selectedState]);
-
-  const talukas = useMemo(() => {
-    if (!selectedState || !selectedDistrict) return [];
-    const stateData =
-      (locationData.states as Record<string, Record<string, string[]>>)[selectedState] ||
-      (locationData.unionTerritories as Record<string, Record<string, string[]>>)[selectedState] ||
-      {};
-    return (stateData[selectedDistrict] || []).sort();
-  }, [selectedState, selectedDistrict]);
-
-  const handleStateChange = (val: string) => {
-    setValue("district", "");
-    setValue("customDistrict", "");
-    setValue("taluka", "");
-    setValue("customTaluka", "");
-  };
-
-  const handleDistrictChange = (val: string) => {
-    setValue("customDistrict", "");
-    setValue("taluka", val === "Other" ? "Other" : "");
-    setValue("customTaluka", "");
-  };
 
   const refreshCaptcha = () => {
     setCaptchaCode(generateCaptcha());
@@ -296,24 +183,34 @@ export function DemoRequestForm({
     setError("");
 
     try {
-      const finalTaluka = payload.taluka === "Other" ? payload.customTaluka : payload.taluka;
-      const finalDistrict = payload.district === "Other" ? payload.customDistrict : payload.district;
-      const apiPayload = { ...payload, district: finalDistrict, taluka: finalTaluka, turnstileToken };
-
-      const response = await fetch(
-        "/api/request-demo",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(apiPayload),
-        }
-      );
+      const backendUrl = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
+      const response = await fetch(`${backendUrl}/api/public/request-demo`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: payload.name.trim(),
+          workEmail: payload.workEmail.trim(),
+          company: payload.company.trim(),
+          role: payload.role.trim(),
+          teamSize: payload.teamSize,
+          phone: payload.phone.trim(),
+          useCase: payload.useCase,
+          message: payload.message?.trim() || "",
+          website: payload.website?.trim() || "",
+          turnstileToken,
+        }),
+      });
       const data = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(data.message || copy?.genericErrorMessage || "");
+      if (!response.ok || data?.success === false) {
+        throw new Error(data?.message || copy?.genericErrorMessage || "Something went wrong. Please try again.");
+      }
       const requestId =
-        typeof data?.requestId === "string" && data.requestId.trim().length > 0
-          ? data.requestId.trim()
+        typeof data?.id === "string" && data.id.trim().length > 0
+          ? data.id.trim()
           : null;
+      if (requestId) {
+        await fetch(`/api/request-demo/${encodeURIComponent(requestId)}`, { method: "POST" }).catch(() => null);
+      }
       router.push(requestId ? `/demo/success?requestId=${encodeURIComponent(requestId)}` : "/demo/success");
     } catch (err: any) {
       setError(err.message || copy?.genericErrorMessage || "");
@@ -341,12 +238,65 @@ export function DemoRequestForm({
         </Label>
       ) : null}
       <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-        <div className="flex w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
+        <div className="flex w-10 shrink-0 items-center justify-center bg-muted text-muted-foreground">
           <Icon className="h-4 w-4" />
         </div>
         <div className="flex-1">{children}</div>
       </div>
       {fieldError && <p className="text-[10px] text-rose-500">{fieldError}</p>}
+    </div>
+  );
+
+  /* ── Reusable icon-box select ── */
+  const renderIconSelect = (
+    name: "teamSize" | "useCase",
+    fieldLabel: string,
+    placeholder: string,
+    Icon: any,
+    options: readonly string[],
+  ) => (
+    <div className="space-y-1.5">
+      <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+        {fieldLabel} <span className="text-rose-500">*</span>
+      </Label>
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <div className="relative">
+            <Select value={field.value} onValueChange={field.onChange}>
+              <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
+                <div className="flex w-10 shrink-0 items-center justify-center bg-muted text-muted-foreground">
+                  <Icon className="h-4 w-4" />
+                </div>
+                <SelectTrigger className="flex h-10 flex-1 items-center justify-between rounded-none border-0 !bg-transparent px-3 text-sm text-slate-800 shadow-none ring-0 focus-visible:ring-0 dark:text-white">
+                  <SelectValue placeholder={placeholder} />
+                </SelectTrigger>
+              </div>
+              <SelectContent>
+                {options.map((option) => (
+                  <SelectItem key={option} value={option}>
+                    {option}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <select
+              value={field.value}
+              onChange={(e) => field.onChange(e.target.value)}
+              onClick={(e) => e.stopPropagation()}
+              onPointerDown={(e) => e.stopPropagation()}
+              className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
+            >
+              <option value="" disabled>{placeholder}</option>
+              {options.map((option) => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </select>
+          </div>
+        )}
+      />
+      {errors[name]?.message && <p className="text-[10px] text-rose-500">{errors[name]?.message}</p>}
     </div>
   );
 
@@ -356,21 +306,21 @@ export function DemoRequestForm({
         <div className="mx-auto mb-6 h-1.5 w-24 rounded-full bg-orange-500" />
         {label ? (
           <div className="mb-6 flex justify-center">
-            <Chip variant="emerald">{label}</Chip>
+            <Chip variant="default">{label}</Chip>
           </div>
         ) : null}
-        
+
         {title?.trim() ? (
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-5xl">
             {title}
           </h2>
         ) : null}
-        
+
         {subtitle?.trim() ? (
           <div className="mx-auto mt-6 max-w-[90%] md:max-w-2xl text-center text-[15px] md:text-base leading-[1.75] text-muted-foreground space-y-4">
             {subtitle.split('\n').map((line, i) => (
-              <p 
-                key={i} 
+              <p
+                key={i}
                 className="text-balance"
               >
                 {line}
@@ -397,326 +347,88 @@ export function DemoRequestForm({
           <div>
             {detailsSectionTitle?.trim() ? (
               <div className="mb-5 flex items-center gap-2">
-                <User className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-                <h3 className="text-[13px] font-bold uppercase tracking-widest text-emerald-500 dark:text-emerald-400">
+                <User className="h-4 w-4 text-foreground" />
+                <h3 className="text-[13px] font-bold uppercase tracking-widest text-foreground">
                   {detailsSectionTitle}
                 </h3>
               </div>
             ) : null}
 
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-              <IconInput icon={User} label={copy?.fullNameLabel || ""} error={errors.adminName?.message}>
+              <IconInput icon={User} label="Full name" error={errors.name?.message}>
                 <Input
-                  placeholder={copy?.fullNamePlaceholder}
+                  placeholder="Enter your full name"
                   className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
-                  {...register("adminName")}
+                  {...register("name")}
                 />
               </IconInput>
 
-              <IconInput icon={Mail} label={copy?.emailLabel || ""} error={errors.adminEmail?.message}>
+              <IconInput icon={Mail} label="Work email" error={errors.workEmail?.message}>
                 <Input
                   type="email"
-                  placeholder={copy?.emailPlaceholder}
+                  placeholder="you@company.com"
                   className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
-                  {...register("adminEmail")}
+                  {...register("workEmail")}
                 />
               </IconInput>
 
-              <IconInput icon={Phone} label={copy?.phoneLabel || ""} error={errors.adminPhone?.message}>
+              <IconInput icon={Phone} label="Phone" error={errors.phone?.message}>
                 <Input
-                  placeholder={copy?.phonePlaceholder}
+                  placeholder="Enter your phone number"
                   className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
-                  {...register("adminPhone")}
+                  {...register("phone")}
                 />
               </IconInput>
             </div>
           </div>
 
-          {/* ── SECTION 2: INSTITUTE DETAILS ── */}
+          {/* ── SECTION 2: COMPANY DETAILS ── */}
           <div>
             {instituteSectionTitle?.trim() ? (
               <div className="mb-5 flex items-center gap-2">
-                <Building2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-                <h3 className="text-[13px] font-bold uppercase tracking-widest text-emerald-500 dark:text-emerald-400">
+                <Building2 className="h-4 w-4 text-foreground" />
+                <h3 className="text-[13px] font-bold uppercase tracking-widest text-foreground">
                   {instituteSectionTitle}
                 </h3>
               </div>
             ) : null}
 
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-              <IconInput icon={Building2} label={copy?.instituteNameLabel || ""} error={errors.institutionName?.message}>
+              <IconInput icon={Building2} label="Company" error={errors.company?.message}>
                 <Input
-                  placeholder={copy?.instituteNamePlaceholder}
+                  placeholder="Enter your company name"
                   className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
-                  {...register("institutionName")}
+                  {...register("company")}
                 />
               </IconInput>
 
-              {/* State */}
-              <div className="space-y-1.5">
-                <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                  State / UT <span className="text-rose-500">*</span>
-                </Label>
-                <Controller
-                  name="state"
-                  control={control}
-                  render={({ field }) => (
-                    <div className="relative">
-                      <Select value={field.value} onValueChange={(val) => { field.onChange(val); handleStateChange(val); }}>
-                        <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                          <div className="flex w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
-                            <MapPin className="h-4 w-4" />
-                          </div>
-                          <SelectTrigger className="flex h-10 flex-1 items-center justify-between rounded-none border-0 !bg-transparent px-3 text-sm text-slate-800 shadow-none ring-0 focus-visible:ring-0 dark:text-white">
-                            <SelectValue placeholder="Select State" />
-                          </SelectTrigger>
-                        </div>
-                        <SelectContent>
-                          {allStates.map((s) => (
-                            <SelectItem key={s} value={s}>{s}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <select
-                        value={field.value}
-                        onChange={(e) => { field.onChange(e.target.value); handleStateChange(e.target.value); }}
-                        onClick={(e) => e.stopPropagation()}
-                        onPointerDown={(e) => e.stopPropagation()}
-                        className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
-                      >
-                        <option value="" disabled>Select State</option>
-                        {allStates.map((s) => (
-                          <option key={s} value={s}>{s}</option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
-                />
-                {errors.state?.message && <p className="text-[10px] text-rose-500">{errors.state.message}</p>}
-              </div>
-
-              {/* District */}
-              <div className="space-y-1.5">
-                <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                  District <span className="text-rose-500">*</span>
-                </Label>
-                <Controller
-                  name="district"
-                  control={control}
-                  render={({ field }) => (
-                    <div className="relative">
-                      <Select value={field.value} onValueChange={(val) => { field.onChange(val); handleDistrictChange(val); }} disabled={!selectedState}>
-                        <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 opacity-disabled">
-                          <div className="flex w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
-                            <MapPin className="h-4 w-4" />
-                          </div>
-                          <SelectTrigger className="flex h-10 flex-1 items-center justify-between rounded-none border-0 !bg-transparent px-3 text-sm text-slate-800 shadow-none ring-0 focus-visible:ring-0 dark:text-white disabled:cursor-not-allowed">
-                            <SelectValue placeholder="Select District" />
-                          </SelectTrigger>
-                        </div>
-                        <SelectContent>
-                          {districts.map((d) => (
-                            <SelectItem key={d} value={d}>{d}</SelectItem>
-                          ))}
-                          <SelectItem value="Other">Other (Please specify)</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <select
-                        value={field.value}
-                        onChange={(e) => { field.onChange(e.target.value); handleDistrictChange(e.target.value); }}
-                        onClick={(e) => e.stopPropagation()}
-                        onPointerDown={(e) => e.stopPropagation()}
-                        disabled={!selectedState}
-                        className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none disabled:cursor-not-allowed"
-                      >
-                        <option value="" disabled>Select District</option>
-                        {districts.map((d) => (
-                          <option key={d} value={d}>{d}</option>
-                        ))}
-                        <option value="Other">Other (Please specify)</option>
-                      </select>
-                    </div>
-                  )}
-                />
-                {errors.district?.message && <p className="text-[10px] text-rose-500">{errors.district.message}</p>}
-              </div>
-
-              {selectedDistrict === "Other" && (
-                <IconInput icon={MapPin} label="Enter your District" error={errors.customDistrict?.message}>
-                  <Input
-                    placeholder="Your District name"
-                    className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
-                    {...register("customDistrict")}
-                  />
-                </IconInput>
-              )}
-
-              {/* Taluka */}
-              {selectedDistrict !== "Other" && (
-                <div className="space-y-1.5">
-                  <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                    Taluka <span className="text-rose-500">*</span>
-                  </Label>
-                  <Controller
-                    name="taluka"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="relative">
-                        <Select value={field.value} onValueChange={field.onChange} disabled={!selectedDistrict}>
-                          <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 opacity-disabled">
-                            <div className="flex w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
-                              <MapPin className="h-4 w-4" />
-                            </div>
-                            <SelectTrigger className="flex h-10 flex-1 items-center justify-between rounded-none border-0 !bg-transparent px-3 text-sm text-slate-800 shadow-none ring-0 focus-visible:ring-0 dark:text-white disabled:cursor-not-allowed">
-                              <SelectValue placeholder="Select Taluka" />
-                            </SelectTrigger>
-                          </div>
-                          <SelectContent>
-                            {talukas.map((t) => (
-                              <SelectItem key={t} value={t}>{t}</SelectItem>
-                            ))}
-                            <SelectItem value="Other">Other (Please specify)</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <select
-                          value={field.value}
-                          onChange={(e) => field.onChange(e.target.value)}
-                          onClick={(e) => e.stopPropagation()}
-                          onPointerDown={(e) => e.stopPropagation()}
-                          disabled={!selectedDistrict}
-                          className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none disabled:cursor-not-allowed"
-                        >
-                          <option value="" disabled>Select Taluka</option>
-                          {talukas.map((t) => (
-                            <option key={t} value={t}>{t}</option>
-                          ))}
-                          <option value="Other">Other (Please specify)</option>
-                        </select>
-                      </div>
-                    )}
-                  />
-                  {errors.taluka?.message && <p className="text-[10px] text-rose-500">{errors.taluka.message}</p>}
-                </div>
-              )}
-
-              {selectedTaluka === "Other" && (
-                <IconInput icon={MapPin} label="Enter your Taluka" error={errors.customTaluka?.message}>
-                  <Input
-                    placeholder="Your Taluka name"
-                    className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
-                    {...register("customTaluka")}
-                  />
-                </IconInput>
-              )}
-
-              {/* City/Village */}
-              <IconInput icon={MapPin} label="Institution City / Village" error={errors.cityVillage?.message}>
+              <IconInput icon={Briefcase} label="Role / job title" error={errors.role?.message}>
                 <Input
-                  placeholder="Institution City or Village"
+                  placeholder="e.g. Founder, Engineering Lead"
                   className="h-10 rounded-none border-0 bg-transparent text-slate-800 shadow-none focus-visible:ring-0 dark:text-white"
-                  {...register("cityVillage")}
+                  {...register("role")}
                 />
               </IconInput>
 
-              {/* OrgType */}
-              <div className="space-y-1.5">
-                {(copy?.solutionLabel || "").trim() ? (
-                  <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                    {copy?.solutionLabel} <span className="text-rose-500">*</span>
-                  </Label>
-                ) : null}
-                <Controller
-                  name="orgType"
-                  control={control}
-                  render={({ field }) => (
-                    <div className="relative">
-                      <Select value={field.value} onValueChange={field.onChange}>
-                        <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                          <div className="flex w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
-                            <Search className="h-4 w-4" />
-                          </div>
-                          <SelectTrigger className="flex h-10 flex-1 items-center justify-between rounded-none border-0 !bg-transparent px-3 text-sm text-slate-800 shadow-none ring-0 focus-visible:ring-0 dark:text-white">
-                            <SelectValue placeholder="Select type" />
-                          </SelectTrigger>
-                        </div>
-                        <SelectContent>
-                          {solutionOptions.map((option) => (
-                            <SelectItem key={option.value} value={option.value}>
-                              {option.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <select
-                        value={field.value}
-                        onChange={(e) => field.onChange(e.target.value)}
-                        onClick={(e) => e.stopPropagation()}
-                        onPointerDown={(e) => e.stopPropagation()}
-                        className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
-                      >
-                        <option value="" disabled>Select type</option>
-                        {solutionOptions.map((option) => (
-                          <option key={option.value} value={option.value}>{option.label}</option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
-                />
-                {errors.orgType?.message && <p className="text-[10px] text-rose-500">{errors.orgType.message}</p>}
+              {renderIconSelect("teamSize", "Team size", "Select team size", Users, TEAM_SIZE_OPTIONS)}
+
+              <div className="md:col-span-2">
+                {renderIconSelect(
+                  "useCase",
+                  "What do you want to use Classgrid AI for?",
+                  "Select an option",
+                  Search,
+                  USE_CASE_OPTIONS,
+                )}
               </div>
 
-              {/* Role */}
+              {/* Website */}
               <div className="space-y-1.5">
                 <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                  Role <span className="text-rose-500">*</span>
-                </Label>
-                <Controller
-                  name="role"
-                  control={control}
-                  render={({ field }) => (
-                    <div className="relative">
-                      <Select value={field.value} onValueChange={field.onChange}>
-                        <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                          <div className="flex w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
-                            <Briefcase className="h-4 w-4" />
-                          </div>
-                          <SelectTrigger className="flex h-10 flex-1 items-center justify-between rounded-none border-0 !bg-transparent px-3 text-sm text-slate-800 shadow-none ring-0 focus-visible:ring-0 dark:text-white">
-                            <SelectValue placeholder="Select your role" />
-                          </SelectTrigger>
-                        </div>
-                        <SelectContent>
-                          {roleOptions.map((role) => (
-                            <SelectItem key={role} value={role}>
-                              {role}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <select
-                        value={field.value}
-                        onChange={(e) => field.onChange(e.target.value)}
-                        onClick={(e) => e.stopPropagation()}
-                        onPointerDown={(e) => e.stopPropagation()}
-                        className="absolute inset-0 w-full h-full opacity-0 sm:hidden z-10 appearance-none"
-                      >
-                        <option value="" disabled>Select your role</option>
-                        {roleOptions.map((role) => (
-                          <option key={role} value={role}>{role}</option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
-                />
-                {errors.role?.message && <p className="text-[10px] text-rose-500">{errors.role.message}</p>}
-              </div>
-
-              {/* Institute Website */}
-              <div className="space-y-1.5">
-                <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                  Institute Website <span className="font-normal text-muted-foreground">(Optional)</span>
+                  Website <span className="font-normal text-muted-foreground">(Optional)</span>
                 </Label>
                 <div className="flex items-stretch overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                  <div className="flex w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
+                  <div className="flex w-10 shrink-0 items-center justify-center bg-muted text-muted-foreground">
                     <Globe className="h-4 w-4" />
                   </div>
                   <Input
@@ -734,26 +446,24 @@ export function DemoRequestForm({
           <div>
             {messageSectionTitle?.trim() ? (
               <div className="mb-5 flex items-center gap-2">
-                <MessageSquare className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-                <h3 className="text-[13px] font-bold uppercase tracking-widest text-emerald-500 dark:text-emerald-400">
+                <MessageSquare className="h-4 w-4 text-foreground" />
+                <h3 className="text-[13px] font-bold uppercase tracking-widest text-foreground">
                   {messageSectionTitle}
                 </h3>
               </div>
             ) : null}
 
             <div className="space-y-1.5">
-              {copy?.messageLabel?.trim() ? (
-                <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
-                  {copy?.messageLabel}
-                </Label>
-              ) : null}
+              <Label className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+                Message <span className="font-normal text-muted-foreground">(Optional)</span>
+              </Label>
               <div className="flex overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
-                <div className="flex w-10 shrink-0 items-start justify-center pt-3 bg-emerald-50 text-emerald-500 dark:bg-emerald-950/40 dark:text-emerald-400">
+                <div className="flex w-10 shrink-0 items-start justify-center pt-3 bg-muted text-muted-foreground">
                   <MessageSquare className="h-4 w-4" />
                 </div>
                 <textarea
                   rows={4}
-                  placeholder={copy?.messagePlaceholder}
+                  placeholder="Tell us about your team and what you want Classgrid AI to do"
                   className="flex-1 bg-transparent p-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none dark:text-white dark:placeholder:text-slate-500"
                   {...register("message")}
                 />
@@ -799,7 +509,7 @@ export function DemoRequestForm({
                 </p>
               )}
             </div>
-            
+
             {captchaError && <p className="text-[11px] text-rose-500">{captchaError}</p>}
           </div>
 
@@ -809,13 +519,13 @@ export function DemoRequestForm({
               <Button
                 type="submit"
                 disabled={submitting}
-                className="w-full text-base"
+                className="w-full text-base border-transparent bg-foreground text-background hover:border-transparent hover:bg-zinc-700 hover:text-background dark:bg-foreground dark:text-background dark:hover:bg-zinc-300 dark:hover:text-background"
               >
                 {submitting && <Spinner className="h-5 w-5 text-inherit" />}
                 {submitting ? copy?.submitLoadingLabel || "Submitting..." : submitLabel}
               </Button>
               <div className="flex items-center justify-center gap-3">
-                <Chip variant="emerald" icon={<ShieldCheck />}>
+                <Chip variant="default" icon={<ShieldCheck />}>
                   Guided Demo Review
                 </Chip>
                 <Chip variant="default">
@@ -827,9 +537,9 @@ export function DemoRequestForm({
 
           <AnimatePresence>
             {error && (
-              <motion.div 
-                initial={{ opacity: 0, height: 0, y: -10 }} 
-                animate={{ opacity: 1, height: 'auto', y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, height: 0, y: -10 }}
+                animate={{ opacity: 1, height: 'auto', y: 0 }}
                 exit={{ opacity: 0, height: 0, y: -10 }}
                 className="overflow-hidden"
               >

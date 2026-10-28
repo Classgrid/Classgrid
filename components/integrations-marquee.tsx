@@ -71,7 +71,7 @@ export default function IntegrationsMarquee({
                 className="group mx-6 flex flex-col items-center justify-center gap-4 opacity-80 transition-all duration-300 hover:opacity-100"
               >
                 <div
-                  className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white/90 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#00d084] group-hover:shadow-[0_0_20px_rgba(0,208,132,0.15)] dark:border-[#00d084]/30 dark:bg-[#0f0f0f] dark:shadow-[0_0_15px_rgba(0,208,132,0.05)] dark:group-hover:border-[#00d084] dark:group-hover:shadow-[0_0_25px_rgba(0,208,132,0.25)] md:h-28 md:w-28"
+                  className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white/90 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-foreground/40 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.08)] dark:border-white/15 dark:bg-[#0f0f0f] dark:shadow-none dark:group-hover:border-white/50 dark:group-hover:shadow-[0_0_25px_rgba(255,255,255,0.08)] md:h-28 md:w-28"
                 >
                   <div className="absolute inset-[6px] rounded-[16px] border border-slate-200/90 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(248,250,252,0.96)_55%,rgba(226,232,240,0.92))] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] dark:border-white/10 dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(248,250,252,0.97)_62%,rgba(226,232,240,0.94))]" />
                   <div className="relative z-10 flex h-full w-full items-center justify-center p-[7px] md:p-[8px]">
@@ -92,7 +92,7 @@ export default function IntegrationsMarquee({
                     )}
                   </div>
                 </div>
-                <span className="whitespace-nowrap text-center text-sm font-semibold text-gray-600 dark:text-white/80 group-hover:text-[#00d084] dark:group-hover:text-[#00d084] transition-colors">
+                <span className="whitespace-nowrap text-center text-sm font-semibold text-gray-600 dark:text-white/80 group-hover:text-foreground transition-colors">
                   {logo.name}
                 </span>
               </div>

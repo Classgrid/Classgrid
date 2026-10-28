@@ -145,12 +145,12 @@ export function LegalTOC({ sections }: LegalTOCProps) {
                       className={cn(
                         "relative block overflow-hidden rounded-md bg-transparent px-2 py-2 text-sm leading-7 transition-colors duration-200",
                         activeSectionId === section.id
-                          ? "font-semibold text-emerald-500"
+                          ? "font-semibold text-foreground"
                           : "text-muted-foreground hover:text-foreground"
                       )}
                     >
                       {activeSectionId === section.id ? (
-                        <span className="pointer-events-none absolute inset-0 rounded-md border-l-2 border-emerald-500 bg-emerald-500/6" />
+                        <span className="pointer-events-none absolute inset-0 rounded-md border-l-2 border-foreground bg-foreground/5" />
                       ) : null}
                       <span className="relative inline-block w-8 text-sm font-semibold">{String(index + 1).padStart(2, "0")}</span>
                       <span className="relative inline text-sm">{formatSectionTitle(section.title)}</span>
@@ -189,12 +189,12 @@ export function LegalTOC({ sections }: LegalTOCProps) {
                   className={cn(
                     "relative block overflow-hidden rounded-md bg-transparent px-2 py-2 text-sm leading-7 transition-colors duration-200",
                     activeSectionId === section.id
-                      ? "text-emerald-500 font-semibold"
+                      ? "text-foreground font-semibold"
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {activeSectionId === section.id ? (
-                    <span className="pointer-events-none absolute inset-0 rounded-md border-l-2 border-emerald-500 bg-emerald-500/6" />
+                    <span className="pointer-events-none absolute inset-0 rounded-md border-l-2 border-foreground bg-foreground/5" />
                   ) : null}
                   <span className="relative inline-block w-8 text-sm font-semibold">{String(index + 1).padStart(2, "0")}</span>
                   <span className="relative inline text-sm">{formatSectionTitle(section.title)}</span>

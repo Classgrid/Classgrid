@@ -79,11 +79,11 @@ const CATEGORY_ACCENT: Record<
   },
   // New categories
   "Getting Started": {
-    border: "border-emerald-500",
-    ring: "ring-emerald-500",
-    gradient: "from-emerald-500/8",
-    iconColor: "text-emerald-400",
-    badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+    border: "border-foreground",
+    ring: "ring-foreground",
+    gradient: "from-foreground/5",
+    iconColor: "text-foreground",
+    badgeColor: "bg-foreground/5 text-foreground border-border",
   },
 
   "API Reference": {
@@ -94,11 +94,11 @@ const CATEGORY_ACCENT: Record<
     badgeColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
   },
   "Guides": {
-    border: "border-teal-500",
-    ring: "ring-teal-500",
-    gradient: "from-teal-500/8",
-    iconColor: "text-teal-400",
-    badgeColor: "bg-teal-500/10 text-teal-400 border-teal-500/20",
+    border: "border-foreground",
+    ring: "ring-foreground",
+    gradient: "from-foreground/5",
+    iconColor: "text-foreground",
+    badgeColor: "bg-foreground/5 text-foreground border-border",
   },
   "Release Notes": {
     border: "border-rose-500",
@@ -110,11 +110,11 @@ const CATEGORY_ACCENT: Record<
 };
 
 const DEFAULT_ACCENT = {
-  border: "border-emerald-500",
-  ring: "ring-emerald-500",
-  gradient: "from-emerald-500/8",
-  iconColor: "text-emerald-400",
-  badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  border: "border-foreground",
+  ring: "ring-foreground",
+  gradient: "from-foreground/5",
+  iconColor: "text-foreground",
+  badgeColor: "bg-foreground/5 text-foreground border-border",
 };
 
 export default function HelpCenterClient({ lang, initialData }: { lang: SupportedLang; initialData: any }) {
@@ -181,9 +181,9 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
   const sortedCategories = [...categories].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-32 pb-16 overflow-hidden selection:bg-emerald-500/30 transition-colors duration-300">
+    <main className="relative min-h-screen bg-background text-foreground pt-32 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
       <div className="absolute top-0 left-0 w-full h-[600px] overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full bg-emerald-600/5 blur-[120px]" />
+        <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full bg-foreground/[0.03] blur-[120px]" />
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay" />
       </div>
 
@@ -192,7 +192,7 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <SectionAccentBar />
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-            Search for answers or browse by <span className="text-emerald-500 dark:text-emerald-400">topic</span>
+            Search for answers or browse by <span className="text-foreground">topic</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg md:text-xl">
             Everything you need — guides and support articles.
@@ -208,9 +208,7 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative group"
         >
-          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 via-teal-500/30 to-emerald-500/30 rounded-2xl blur-lg opacity-0 group-focus-within:opacity-100 transition-opacity duration-500" />
-
-          <div className="relative flex items-center bg-card border border-border rounded-2xl shadow-xl overflow-hidden focus-within:border-emerald-500/50 transition-colors">
+          <div className="relative flex items-center bg-card border border-border rounded-2xl shadow-xl overflow-hidden focus-within:border-foreground/50 transition-colors">
             <Search className="w-5 h-5 text-muted-foreground ml-5 shrink-0" />
             <input
               type="text"
@@ -243,7 +241,7 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
               >
                 {isSearchLoading ? (
                   <div className="p-6 text-center">
-                    <Spinner className="w-5 h-5 text-emerald-500 mx-auto" />
+                    <Spinner className="w-5 h-5 text-foreground mx-auto" />
                   </div>
                 ) : searchResults.length > 0 ? (
                   <div className="p-2">
@@ -254,7 +252,7 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
                       <Link
                         key={`${result.slug}-${index}`}
                         href={buildLangHref(`/help-center/article/${result.slug}`, lang)}
-                        className="w-full text-left px-4 py-3 hover:bg-emerald-500/10 rounded-xl transition-colors flex items-center justify-between group block"
+                        className="w-full text-left px-4 py-3 hover:bg-foreground/5 rounded-xl transition-colors flex items-center justify-between group block"
                       >
                         <div>
                           <span className="font-medium text-foreground block">
@@ -262,7 +260,7 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
                           </span>
                           <span className="text-xs text-muted-foreground">{result.category}</span>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+                        <ArrowRight className="w-4 h-4 text-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -297,7 +295,7 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.08 * index }}
-                className={`group relative p-6 rounded-2xl bg-card border hover:border-emerald-500/50 transition-all text-left overflow-hidden cursor-pointer shadow-sm ${
+                className={`group relative p-6 rounded-2xl bg-card border hover:border-foreground/30 transition-all text-left overflow-hidden cursor-pointer shadow-sm ${
                   isActive ? `${accent.border} ring-1 ${accent.ring}` : "border-border"
                 }`}
               >

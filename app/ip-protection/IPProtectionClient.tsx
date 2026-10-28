@@ -128,7 +128,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
   const [mobileTocOpen, setMobileTocOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#fafbfc] text-slate-800 dark:bg-[#0a0a0b] dark:text-slate-200">
+    <div className="min-h-screen bg-background text-slate-800 dark:text-slate-200">
       {/* Top Bar */}
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl dark:border-white/5 dark:bg-[#111113]/80 print:hidden">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
@@ -142,7 +142,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
             </Link>
             <span className="hidden text-slate-300 dark:text-slate-600 sm:inline shrink-0">|</span>
             <div className="flex items-center gap-2 min-w-0">
-              <Shield className="h-4 w-4 shrink-0 text-emerald-500" />
+              <Shield className="h-4 w-4 shrink-0 text-slate-900 dark:text-white" />
               <span className="text-sm font-semibold text-slate-900 dark:text-white truncate">
                 IP Protection Policy
               </span>
@@ -239,7 +239,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
                         className={cn(
                           "block rounded-md px-3 py-2.5 text-[13px] leading-snug transition-colors",
                           activeSection === section.id
-                            ? "bg-emerald-500/10 font-semibold text-emerald-600 dark:text-emerald-400"
+                            ? "bg-slate-100 font-semibold text-slate-900 dark:bg-white/10 dark:text-white"
                             : "text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-white"
                         )}
                       >
@@ -271,7 +271,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
                     onClick={() => scrollToSection(section.id)}
                     className={`flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm transition-all ${
                       isActive
-                        ? "bg-emerald-50 font-medium text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"
+                        ? "bg-slate-100 font-medium text-slate-900 dark:bg-white/10 dark:text-white"
                         : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                     }`}
                   >
@@ -287,10 +287,10 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
         {/* Main Content */}
         <main className="min-w-0 flex-1">
           {/* Hero */}
-          <div className="mb-12 rounded-2xl border border-slate-200/80 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 dark:border-white/5 dark:from-emerald-500/5 dark:via-[#111113] dark:to-teal-500/5 sm:p-10">
+          <div className="mb-12 rounded-2xl border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-slate-50 p-6 dark:border-white/5 dark:from-white/[0.03] dark:via-[#111113] dark:to-white/[0.03] sm:p-10">
             <div className="flex flex-col sm:flex-row items-start gap-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10">
-                <Shield className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-slate-900/5 dark:bg-white/10">
+                <Shield className="h-6 w-6 text-slate-900 dark:text-white" />
               </div>
               <div className="min-w-0 flex-1">
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl leading-tight">
@@ -300,7 +300,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
                 <div className="mt-5 flex flex-col gap-2.5 text-sm text-slate-600 dark:text-slate-300">
                   {s.subtitle.split(' • ').map((part: string, idx: number) => (
                     <div key={idx} className="flex items-start gap-2.5">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500/60" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-900/60 dark:bg-white/60" />
                       <span className="leading-relaxed">{part}</span>
                     </div>
                   ))}
@@ -332,8 +332,8 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
             <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-200">
               {s.p2}
             </p>
-            <div className="mt-4 rounded-xl border border-emerald-200/60 bg-emerald-50/50 p-4 dark:border-emerald-500/10 dark:bg-emerald-500/5">
-              <p className="text-sm font-medium text-emerald-800 dark:text-emerald-300">
+            <div className="mt-4 rounded-xl border border-slate-200/80 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/[0.03]">
+              <p className="text-sm font-medium text-slate-900 dark:text-white">
                 <strong>{s.p2_highlight}</strong>
               </p>
             </div>
@@ -483,11 +483,11 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
               icon={Landmark}
               title={sections[4]?.title ?? ""}
             />
-            <div className="rounded-xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-teal-50 p-6 dark:border-emerald-500/10 dark:from-emerald-500/5 dark:to-teal-500/5">
-              <p className="text-sm font-medium leading-relaxed text-emerald-900 dark:text-emerald-100">
+            <div className="rounded-xl border border-slate-200/80 bg-slate-50 p-6 dark:border-white/10 dark:bg-white/[0.03]">
+              <p className="text-sm font-medium leading-relaxed text-slate-900 dark:text-white">
                 {s.p5_desc}
               </p>
-              <blockquote className="mt-4 border-l-4 border-emerald-400 pl-4 text-[15px] leading-relaxed text-slate-700 dark:border-emerald-500 dark:text-slate-200">
+              <blockquote className="mt-4 border-l-4 border-slate-900 pl-4 text-[15px] leading-relaxed text-slate-700 dark:border-white dark:text-slate-200">
                 &ldquo;{s.p5_quote}&rdquo;
               </blockquote>
             </div>
@@ -550,14 +550,14 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
             <div className="mt-4 flex flex-col gap-3">
               <a 
                 href="mailto:support@classgrid.in"
-                className="inline-flex w-fit items-center gap-2 text-sm font-medium text-emerald-600 hover:underline dark:text-emerald-400"
+                className="inline-flex w-fit items-center gap-2 text-sm font-medium text-slate-900 hover:underline dark:text-white"
               >
                 <ExternalLink className="h-4 w-4" />
                 support@classgrid.in
               </a>
               <Link 
                 href="/"
-                className="inline-flex w-fit items-center gap-2 text-sm font-medium text-emerald-600 hover:underline dark:text-emerald-400"
+                className="inline-flex w-fit items-center gap-2 text-sm font-medium text-slate-900 hover:underline dark:text-white"
               >
                 <Globe className="h-4 w-4" />
                 classgrid.in
@@ -569,7 +569,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
           <div className="border-t border-slate-200/80 pt-6 dark:border-white/5">
             <p className="text-xs text-slate-500 dark:text-slate-400">
               {s.footerNote1}
-              <Link href="/ip-protection" className="text-emerald-500 hover:underline">
+              <Link href="/ip-protection" className="text-slate-900 hover:underline dark:text-white">
                 classgrid.in/ip-protection
               </Link>
               .
@@ -587,8 +587,8 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
 function SectionHeading({ icon: Icon, title }: { icon: React.ElementType; title: string }) {
   return (
     <div className="mb-4 flex items-center gap-3">
-      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-500/10">
-        <Icon className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-100 dark:bg-white/10">
+        <Icon className="h-4 w-4 text-slate-900 dark:text-white" />
       </div>
       <h2 className="text-lg font-bold text-slate-900 dark:text-white">{title}</h2>
     </div>

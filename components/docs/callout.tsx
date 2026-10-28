@@ -4,7 +4,7 @@ export function Callout({ type = 'info', children }: { type?: 'info' | 'warning'
   const Icon = type === 'warning' ? AlertTriangle : type === 'error' ? XCircle : Info;
   
   const colorClasses = {
-    info: 'bg-emerald-50 dark:bg-emerald-500/10 border-emerald-200 dark:border-emerald-500/50 text-emerald-900 dark:text-emerald-200',
+    info: 'bg-foreground/5 border-foreground/15 text-foreground',
     warning: 'bg-yellow-50 dark:bg-yellow-500/10 border-yellow-200 dark:border-yellow-500/50 text-yellow-900 dark:text-yellow-200',
     error: 'bg-red-50 dark:bg-red-500/10 border-red-200 dark:border-red-500/50 text-red-900 dark:text-red-200'
   };

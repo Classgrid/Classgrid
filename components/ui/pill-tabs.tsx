@@ -53,14 +53,14 @@ export function PillTabs({
             className={cn(
               "relative z-10 inline-flex whitespace-nowrap shrink-0 items-center gap-2 rounded-full px-5 sm:px-6 py-2 text-sm font-semibold transition-colors duration-300 outline-none",
               isActive
-                ? "text-slate-900 dark:text-white"
+                ? "text-background"
                 : "text-zinc-600 hover:bg-zinc-200/50 hover:text-zinc-900 dark:text-white/60 dark:hover:bg-white/5 dark:hover:text-white"
             )}
           >
             {isActive && (
               <motion.div
                 layoutId={layoutId}
-                className="absolute inset-0 -z-10 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]"
+                className="absolute inset-0 -z-10 rounded-full bg-foreground"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}

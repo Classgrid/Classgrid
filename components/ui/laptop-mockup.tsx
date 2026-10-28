@@ -93,7 +93,7 @@ export function LaptopMockup({
 
         <div className="absolute top-0 left-1/2 flex h-5 w-48 -translate-x-1/2 items-center justify-center space-x-2 rounded-b-xl bg-zinc-200 transition-colors dark:bg-zinc-950">
           <div className="h-2 w-2 rounded-full border border-zinc-400 bg-zinc-800/80 dark:border-zinc-700/50 dark:bg-zinc-800/80" />
-          <div className="h-1.5 w-1.5 rounded-full bg-emerald-400/50" />
+          <div className="h-1.5 w-1.5 rounded-full bg-foreground/50" />
         </div>
       </div>
 

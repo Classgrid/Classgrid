@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { siteMeta } from "@/content/siteMeta";
-import { getChangelogEntries, getComparisonPages, getCaseStudies, getAllSolutionModules } from "@/sanity/lib/marketing";
+import { getChangelogEntries, getComparisonPages, getCaseStudies, getAllSolutionModules, getLegalPageDates } from "@/sanity/lib/marketing";
 
 const staticRoutes = [
   "/",
@@ -12,7 +12,6 @@ const staticRoutes = [
   "/compare",
   "/contact",
   "/contact/sales",
-  "/agent",
   "/pricing",
   "/reviews",
   "/support",
@@ -40,6 +39,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const cmsChangelogEntries = ((await getChangelogEntries()) as Array<{ slug?: string }> | null) ?? [];
   const cmsCaseStudies = ((await getCaseStudies()) as Array<{ slug?: { current?: string } }> | null) ?? [];
   const cmsModules = ((await getAllSolutionModules()) as Array<{ slug?: { current?: string } }> | null) ?? [];
+  const cmsLegalPages = ((await getLegalPageDates()) as Array<{ slug?: string; lastUpdated?: string; _updatedAt?: string }> | null) ?? [];
+
+  // Legal pages show their "last updated" date from Sanity (/cookies is stored as slug "cookies" or "cookie")
+  const legalLastModified = new Map<string, Date>();
+  for (const page of cmsLegalPages) {
+    const date = page.lastUpdated || page._updatedAt;
+    if (!page.slug || !date) continue;
+    const route = page.slug === "cookie" ? "/cookies" : `/${page.slug}`;
+    legalLastModified.set(route, new Date(date));
+  }
 
   const dynamicCompareSlugs = Array.from(
     new Set([
@@ -67,6 +76,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticRoutes.map((route) => ({
       url: `${siteMeta.domain}${route}`,
+      ...(legalLastModified.has(route) ? { lastModified: legalLastModified.get(route) } : {}),
       changeFrequency: (route === "/compare" || route === "/changelog" ? "weekly" : "monthly") as
         | "weekly"
         | "monthly",

@@ -26,7 +26,7 @@ const chipVariants = cva(
         default:
           "border-foreground/10 bg-foreground/5 text-muted-foreground",
         emerald:
-          "border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+          "border-foreground/15 bg-foreground/5 text-foreground",
         cyan:
           "border-cyan-500/20 bg-cyan-500/10 text-cyan-600 dark:text-cyan-400",
         amber:

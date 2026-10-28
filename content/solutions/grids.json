@@ -1,0 +1,236 @@
+{
+  "slug": "grids",
+  "order": 3,
+  "menuGroup": "product",
+  "menuLabel": "Grids",
+  "menuDescription": "Chats, groups, polls, shared AI chats",
+  "eyebrow": "Grids",
+  "headline": "Chat, plan and decide together",
+  "subheadline": "Chats, groups and polls inside Classgrid AI, plus shared AI chats for up to 4 people.",
+  "primaryCta": { "label": "Use Agent", "href": "https://chat.classgrid.in" },
+  "demoHeading": "Your groups and your agent, side by side",
+  "demoTabs": [
+    {
+      "label": "Catch me up",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "userMessage": "Read my Grid and tell me what the Trip plan group agreed tonight",
+          "workedFor": "Worked for 14s",
+          "steps": ["Read 32 recent messages in Trip plan"],
+          "resultLines": [
+            "1. Leave on Friday morning.",
+            "2. Meera books the stay.",
+            "3. The trip spot is still open."
+          ]
+        },
+        "floating": {
+          "kind": "list",
+          "title": "Trip plan",
+          "rows": [
+            { "label": "Priya", "value": "Leave Friday morning?" },
+            { "label": "Kabir", "value": "Works for me" },
+            { "label": "Meera", "value": "I'll book the stay" }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Make a poll",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "userMessage": "Make a poll in the Product launch group: which day for the launch call? Tuesday or Wednesday.",
+          "workedFor": "Worked for 9s",
+          "steps": [
+            "Drafted the poll",
+            "Asked: Should I send this to the group?",
+            "You said Send. Poll posted"
+          ],
+          "resultLines": ["Tuesday won, 4 votes to 2."]
+        },
+        "floating": {
+          "kind": "poll",
+          "question": "Which day for the launch call?",
+          "options": [
+            { "label": "Tuesday", "votes": 4 },
+            { "label": "Wednesday", "votes": 2 }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Share an AI chat",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Launch ideas · Share Grid",
+          "userMessage": "Priya: Give us 5 name ideas for the new app",
+          "workedFor": "Worked for 11s",
+          "steps": [
+            "Agent is responding to Priya",
+            "Kabir can send when it's done"
+          ],
+          "resultLines": ["Here are 5 name ideas for the new app."]
+        },
+        "floating": {
+          "kind": "people",
+          "title": "People · 3 of 4",
+          "people": ["You", "priya@example.com", "kabir@example.com"],
+          "note": "Copy invite link · Add from Grids"
+        }
+      }
+    }
+  ],
+  "features": [
+    {
+      "title": "Chats and groups that feel familiar",
+      "text": "Message anyone on Classgrid AI, one to one or in groups. Choose who can join, who can post and who can add people. Send voice notes, photos, files and GIFs, pin what matters and see who has read it.",
+      "visual": {
+        "main": {
+          "kind": "list",
+          "title": "Group settings",
+          "rows": [
+            { "label": "Who can send messages?", "value": "Only Admins" },
+            { "label": "Who can add members?", "value": "Only Admins" },
+            { "label": "Privacy", "value": "Approval Required" }
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Message Info",
+          "subtitle": "Read by 12 · Delivered to 14",
+          "tone": "info"
+        }
+      }
+    },
+    {
+      "title": "Polls, priority and scheduled messages",
+      "text": "Ask the group with a poll. Mark a message Urgent so it stands out. Write it now and schedule it for later, or let it delete itself after a while.",
+      "visual": {
+        "main": {
+          "kind": "poll",
+          "question": "Where should the trip go?",
+          "options": [
+            { "label": "Goa", "votes": 6 },
+            { "label": "Manali", "votes": 9 },
+            { "label": "Ooty", "votes": 3 }
+          ]
+        },
+        "floating": {
+          "kind": "schedule",
+          "title": "Message Options",
+          "rows": [
+            { "label": "Priority", "value": "Urgent" },
+            { "label": "Schedule For", "value": "Fri 8:00 AM" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Share Grid: one AI chat, up to 4 people",
+      "text": "Bring friends or teammates into your AI chat. Everyone can read it, send messages and ask the AI together, and every message shows who sent it. Invite by link, by email, or pick people from your Grids.",
+      "visual": {
+        "main": {
+          "kind": "people",
+          "title": "People · 3 of 4",
+          "people": ["You", "priya@example.com", "kabir@example.com"],
+          "note": "Invite people · Copy invite link · Add from Grids"
+        },
+        "floating": {
+          "kind": "status",
+          "title": "You're invited to a Classgrid AI chat",
+          "subtitle": "Join chat",
+          "tone": "success"
+        }
+      }
+    },
+    {
+      "title": "Your agent helps, with your OK",
+      "text": "Ask your agent to catch you up on a group, make a poll and tell you the result, or draft an announcement. It always shows you the message first and posts only when you say yes. It asks before reading your private chats.",
+      "visual": {
+        "main": {
+          "kind": "chat",
+          "title": "Agent",
+          "userMessage": "Draft an announcement for the Product launch group about Friday's demo",
+          "workedFor": "Worked for 8s",
+          "steps": ["Wrote a draft", "Asked: Should I send this to the group?"],
+          "resultLines": [
+            "Demo on Friday at 10 AM. Please try the app before.",
+            "Should I send this to the group?"
+          ]
+        },
+        "floating": {
+          "kind": "status",
+          "title": "Posted in Product launch",
+          "subtitle": "Demo on Friday at 10 AM. Please try the app before.",
+          "tone": "success"
+        }
+      }
+    }
+  ],
+  "pluginsHeading": "Bring in work from your apps",
+  "plugins": [
+    { "name": "Google Calendar", "line": "Check free days before you make a poll" },
+    { "name": "Google Meet", "line": "Create a Meet link for group calls" },
+    { "name": "Google Drive", "line": "Read a file, share a summary" },
+    { "name": "Notion", "line": "Pull page notes into a group update" },
+    { "name": "Gmail", "line": "Turn an email into a group announcement" }
+  ],
+  "tasksHeading": "Things to ask your agent",
+  "exampleTasks": [
+    "Read my Grid",
+    "Catch me up on the team group",
+    "Make a poll: Which day for the launch call?",
+    "Make a poll in the trip group: Goa, Manali or Ooty?",
+    "Who voted in the poll?",
+    "Draft an announcement for the Product launch group about Friday's demo",
+    "Send the launch plan PDF to the Product launch group",
+    "Who is in the Trip plan group?"
+  ],
+  "faqs": [
+    {
+      "question": "Who can I chat with?",
+      "answer": "Anyone with a Classgrid AI account. Find them under \"Contacts on Classgrid\"."
+    },
+    {
+      "question": "Is there an AI inside my group chats?",
+      "answer": "No AI replies inside groups. Your own agent can read recent group messages, make polls and post for you after you say yes. To chat with the AI together, use Share Grid."
+    },
+    {
+      "question": "How many people can share one AI chat?",
+      "answer": "Up to 4, including you. Incognito and Project Mode chats can't be shared."
+    },
+    {
+      "question": "Can the agent post on a schedule?",
+      "answer": "No. You can schedule your own messages with \"Schedule For\"."
+    },
+    {
+      "question": "Can it summarise the whole group?",
+      "answer": "It reads the recent messages (about the last couple of hours), so it's best for \"what did I miss today\"."
+    },
+    {
+      "question": "Where do I find Grids?",
+      "answer": "In the main menu. If you're inside Agent, tap Back in the sidebar to see Grids."
+    }
+  ],
+  "plainEnglishHeading": "What Grids can do, in plain English",
+  "plainEnglish": [
+    "Grids is the messaging part of Classgrid AI. You find it as \"Grids\" in the side menu of the app. It works a lot like the chat apps you already know: you can talk one-to-one with anyone who has a Classgrid AI account, or make groups with many people. The big difference is that your own AI agent lives right next to your chats and can help you with them.",
+    "You can start a chat with any person on Classgrid AI by searching their name and pressing \"Start Chat\". You can also make a group and give it a name and a short subject. A group can be a general group, a team, a department, or an official announcement group. You decide who can see it and join it: it can be private and invite-only, visible but people must ask to join, or open so anyone can join straight away. People can also explore open groups and send requests to join.",
+    "Group owners have real control. You choose who can send messages, who can change the group name and picture, who can add new members and who can send files. If you set \"Only Admins\" for messages, your group becomes a clean notice board where only you post and everyone else reads. You can make other people admins too. Every change in the group is recorded in an audit log, and you can download that log as a sheet.",
+    "Messages can do much more than text. You can send voice notes, photos, videos, documents and GIFs. You can mention one person or everyone in the group, react to messages, reply to a message, forward it, pin important ones for a day, a week or a month, and star messages to find them later. You can search inside a chat. You can mark a message as high priority or urgent so it stands out, set it to delete itself at a certain time, or schedule it to be sent later. You can also turn on disappearing messages for chats you do not want to keep.",
+    "You always know what is happening. You can see who is online, who is typing or recording, and for every message you can see who has received it and who has read it. New messages pop up even when you are on another page, and you get a badge with the number of unread messages.",
+    "You can make polls. Ask a question, add between two and ten options, and choose if people can pick more than one answer. Everyone votes in the group and you can see the results live. This is perfect for picking a day for a meeting, a place for a trip or an idea for a project.",
+    "Your AI agent can help with your groups. You can ask it to catch you up on what a group talked about recently, list the members, check a poll's results, write a message or an announcement, make a new poll, or send a file to the group. The agent always shows you its draft first and asks \"Should I send this to the group?\", and it only sends after you say yes. It looks at groups by default and asks before it reads your private one-to-one chats.",
+    "You can share one AI chat with friends using Share Grid. Open any chat with the agent, press the share button, and invite up to three other people by email, from your Grids contacts or with an invite link you can send on WhatsApp. Then all four of you can read the chat, send messages and ask the AI together. Each message shows who sent it, and the agent knows who asked what. It answers one person at a time, so nothing gets mixed up. If the owner leaves, the chat passes to the next person.",
+    "You can also share a finished chat as a link. This makes a read-only copy of the chat that anyone can open, and you can post it straight to WhatsApp or LinkedIn or copy the link. Great for showing a good answer, a plan or a piece of research to people who do not use Classgrid yet.",
+    "In short: Grids lets you chat, run groups, take votes and post notices, with your AI agent helping you catch up and write, but only posting when you say yes. And with Share Grid, up to four people can work with the same AI chat together."
+  ],
+  "seo": {
+    "title": "Grids: group chats, polls and shared AI chats | Classgrid AI",
+    "description": "Chat one to one or in groups, run polls, schedule messages and share one AI chat with up to 4 people. Your agent catches you up and posts with your OK."
+  }
+}
