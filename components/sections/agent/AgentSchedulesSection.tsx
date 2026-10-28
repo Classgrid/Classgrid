@@ -36,7 +36,7 @@ export function AgentSchedulesSection() {
               {/* Schedule card */}
               <div className="relative rounded-2xl bg-white/60 p-5 shadow-sm ring-1 ring-white/60 backdrop-blur-xl md:absolute md:right-[7%] md:top-[9%] md:w-[60%] md:p-7 dark:bg-black/45 dark:ring-white/10">
                 <div className="flex items-center gap-3">
-                  <span className="text-[15px] font-medium">Weekly attendance summary</span>
+                  <span className="text-[15px] font-medium">Weekly news brief</span>
                   <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[12px] font-medium text-emerald-700 dark:text-emerald-300">
                     Active
                   </span>
@@ -44,7 +44,7 @@ export function AgentSchedulesSection() {
                 </div>
 
                 <p className="mt-4 text-[14px] leading-6 text-black/60 md:text-[15px] dark:text-white/60">
-                  Summarise last week&apos;s attendance and list students who missed 3 or more days.
+                  Find the top AI and tech news from last week and sum it up in 3 short points.
                 </p>
 
                 <ul className="mt-5 divide-y divide-black/5 dark:divide-white/10">
@@ -75,8 +75,8 @@ export function AgentSchedulesSection() {
 
                   <div className="mt-4 rounded-2xl rounded-tl-md bg-[#e7f8ee] px-4 py-3 text-[14px] leading-6 md:text-[15px] dark:bg-[#12291c]">
                     <p>
-                      Good morning! Last week&apos;s attendance was 94.2%. 3 students missed 3 or more days: Aarav
-                      (Class 8B), Meera (Class 9A), Kabir (Class 10C).
+                      Good morning! Your weekly news brief is ready: the 3 biggest AI and tech stories from last
+                      week, each in one line, with links to read more.
                     </p>
                     <p className="mt-1.5 flex items-center justify-end gap-1 text-[12px] text-black/45 dark:text-white/45">
                       8:00 AM
