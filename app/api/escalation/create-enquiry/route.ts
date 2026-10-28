@@ -169,7 +169,7 @@ export async function GET(req: NextRequest) {
     // 4. Generate AI Draft response using Gemini (primary) + Mistral (fallback)
     const formattedTranscript = doc.chatTranscript?.map((t: any) => `${t.role}: ${t.content}`).join("\n") || "";
     const draftPrompt = `
-      You are an expert customer success manager and support specialist for Classgrid (an educational SaaS platform for schools, colleges, and coaching institutes).
+      You are an expert customer success manager and support specialist for Classgrid (makers of Classgrid AI at chat.classgrid.in: an AI agent with Agent Mode, Project Mode, WhatsApp messages and calls, and connected apps like Gmail, Drive, Calendar, Notion, Slack and GitHub).
       A user was just chatting with our AI Support Agent, and their conversation has now been assigned to YOU to officially solve as a human specialist.
       
       User Email: ${doc.userEmail}

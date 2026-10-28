@@ -25,7 +25,7 @@ export function ReviewEmailPreview(props: any) {
 
         <p>I personally wanted to reach out and say — thank you so much for sharing your honest experience with Classgrid. It genuinely made our day at the team when we read your review.</p>
 
-        <p>Feedback like yours is exactly what keeps us motivated to build something truly great for institutions across India. We are so glad to have you as part of the Classgrid community!</p>
+        <p>Feedback like yours is exactly what keeps us motivated to build something truly great for everyone who uses Classgrid AI. We are so glad to have you as part of the Classgrid community!</p>
 
         <p>Your review is now live on our community page for everyone to see:</p>
 

@@ -189,7 +189,7 @@ export function getForumWelcomeEmailHtml(userName: string, dashboardUrl: string)
 <td style="padding:30px;border-bottom:1px solid #eaeaea;text-align:center;">
 <img src="${PLATFORM_LOGO_URL}" alt="Classgrid" height="42" style="display:block;margin:0 auto 16px;height:42px;width:auto;border:none;" />
 <p style="color:#6b7280;margin-top:8px;font-size:13px;">
-Ready to start your academic journey
+Welcome to the Classgrid Community
 </p>
 </td>
 </tr>
@@ -203,9 +203,9 @@ Ready to start your academic journey
 
 <h3 style="color:#111111;">What You Can Do</h3>
 <ul style="padding-left:20px;">
-<li style="margin-bottom:6px;">Join academic discussions with educators and students globally</li>
+<li style="margin-bottom:6px;">Share tips and ideas with people who use Classgrid AI</li>
 <li style="margin-bottom:6px;">Ask questions and get real answers from the community</li>
-<li style="margin-bottom:6px;">Connect directly with verified Classgrid Platform users</li>
+<li style="margin-bottom:6px;">Learn how others use Agent Mode, Project Mode and WhatsApp</li>
 <li style="margin-bottom:6px;">Track the latest product updates and announcements</li>
 </ul>
 
@@ -293,7 +293,7 @@ export function getDemoOtpEmailHtml(name: string, otp: string): string {
   const firstName = name.trim().split(/\s+/)[0] || 'there';
   const content = `
     <p>Hi ${firstName},</p>
-    <p>Use the following verification code to unlock the calendar and schedule your Classgrid demo. This code expires in <strong>60 seconds</strong>.</p>
+    <p>Use the following verification code to unlock the calendar and schedule your Classgrid AI demo. This code expires in <strong>60 seconds</strong>.</p>
     
     <div class="box">
       <div class="meta">Verification Code</div>
@@ -316,7 +316,7 @@ export function getDemoConfirmationEmailHtml(name: string, dateStr: string, meet
   const firstName = name.trim().split(/\s+/)[0] || 'there';
   const content = `
     <p>Hi ${firstName},</p>
-    <p>Your 30-minute Classgrid Platform demo has been successfully scheduled.</p>
+    <p>Your 30-minute Classgrid AI demo has been successfully scheduled.</p>
     
     <div class="box">
       <div class="meta">Date & Time</div>
@@ -337,11 +337,11 @@ export function getDemoConfirmationEmailHtml(name: string, dateStr: string, meet
     
     <div style="margin-top: 32px; padding: 24px; background-color: #f0fdf4; border-left: 4px solid #10b981; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
       <div style="margin-bottom: 12px;">
-        <span style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; font-size: 11px; font-weight: bold; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Premium Support</span>
+        <span style="background-color: rgba(17, 17, 17, 0.06); color: #111111; font-size: 11px; font-weight: bold; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Support</span>
       </div>
-      <p style="margin: 0 0 8px 0; font-size: 18px; font-weight: bold; color: #111111;">Introducing Classgrid Talk</p>
-      <p style="margin: 0 0 20px 0; font-size: 14px; color: #374151; line-height: 1.6;">Have questions before our meeting? <strong style="color: #111111;">Classgrid Talk</strong> is our dedicated direct-messaging portal. Connect with your personal product specialist today to get answers tailored specifically to your institution's unique needs.</p>
-      <a href="https://classgrid.in/support/inquiry" style="display: inline-block; background-color: transparent; color: #10b981 !important; border: 1px solid #10b981; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none;">Start a Chat &rarr;</a>
+      <p style="margin: 0 0 8px 0; font-size: 18px; font-weight: bold; color: #111111;">Questions before our meeting?</p>
+      <p style="margin: 0 0 20px 0; font-size: 14px; color: #374151; line-height: 1.6;">Send us a message anytime. A real person on our team will get back to you, with answers that fit how your company works.</p>
+      <a href="https://classgrid.in/support/ticket" style="display: inline-block; background-color: transparent; color: #111111 !important; border: 1px solid #111111; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: bold; text-decoration: none;">Contact Support &rarr;</a>
     </div>
     
     <p style="margin-top: 24px;">If you need to reschedule, simply reply to this email.</p>
@@ -367,7 +367,7 @@ export function getAdminDemoNotificationHtml(lead: any, dateStr: string, meetUrl
       <p><strong>Name:</strong> ${lead.adminName}</p>
       <p><strong>Email:</strong> ${lead.adminEmail}</p>
       <p><strong>Phone:</strong> ${lead.adminPhone || "N/A"}</p>
-      <p><strong>Institution:</strong> ${lead.institutionName}</p>
+      <p><strong>Company:</strong> ${lead.institutionName}</p>
       <p><strong>Organization Type:</strong> ${lead.orgType}</p>
       <p><strong>Role:</strong> ${lead.role || "N/A"}</p>
       <p><strong>State:</strong> ${lead.state || "N/A"}</p>
@@ -408,10 +408,10 @@ export function getNoAccountSignInAttemptHtml(email: string, location: NoAccount
   const orgUrl = location.orgSlug ? `${location.orgSlug}.classgrid.in` : "Classgrid";
   const orgNameText = location.orgSlug
     ? `<strong>${location.orgSlug.toUpperCase()}</strong> (${orgUrl})`
-    : "any Classgrid registered organization";
+    : "Classgrid";
 
   const content = `
-    <p>We received a login attempt for <strong>${email}</strong>, but no account was found for this email in ${orgNameText}. If this was you, please ensure you are using the correct email address provided by your institution.</p>
+    <p>Someone tried to sign in with <strong>${email}</strong>, but we couldn't find an account for this email on ${orgNameText}. If this was you, check that you're using the email you signed up with.</p>
 
     <div class="box">
       <div class="meta">Attempt Details</div>
@@ -421,12 +421,12 @@ export function getNoAccountSignInAttemptHtml(email: string, location: NoAccount
 
     <h3 style="color:#111111; margin-top:24px;">Why did this happen?</h3>
     <ul style="color:#374151; padding-left:20px; line-height:1.6; margin-bottom:24px;">
-      <li>You may have used a personal email instead of your official institution email.</li>
-      <li>Your institution administrator may not have created your account yet.</li>
+      <li>You may have signed up with a different email address.</li>
+      <li>You may not have created a Classgrid AI account yet.</li>
     </ul>
 
     <h3 style="color:#111111;">Next Steps</h3>
-    <p>If you believe you should have access, please reach out to your institution administrator directly.</p>
+    <p>Try again with the email you signed up with, or create a free account at <a href="https://chat.classgrid.in">chat.classgrid.in</a>.</p>
   `;
 
   return baseTemplate({
@@ -439,21 +439,21 @@ export function getNoAccountSignInAttemptHtml(email: string, location: NoAccount
 export function getNoAccountSignInAttemptPlainText(email: string, location: NoAccountLocation = {}): string {
   const device = location.device || "Unknown device";
   const orgUrl = location.orgSlug ? `${location.orgSlug}.classgrid.in` : "Classgrid";
-  const orgNameText = location.orgSlug ? `${location.orgSlug.toUpperCase()} (${orgUrl})` : "any Classgrid registered organization";
+  const orgNameText = location.orgSlug ? `${location.orgSlug.toUpperCase()} (${orgUrl})` : "Classgrid";
 
   return `Login attempt
 
-We received a login attempt for ${email}, but no account was found for this email in ${orgNameText}. If this was you, please ensure you are using the correct email address provided by your institution.
+Someone tried to sign in with ${email}, but we couldn't find an account for this email on ${orgNameText}. If this was you, check that you're using the email you signed up with.
 
 Device: ${device}
 Time: ${formatDate(new Date())}
 
 Why did this happen?
-• You may have used a personal email instead of your official institution email.
-• Your institution administrator may not have created your account yet.
+• You may have signed up with a different email address.
+• You may not have created a Classgrid AI account yet.
 
 Next Steps
-If you believe you should have access, please reach out to your institution administrator directly.
+Try again with the email you signed up with, or create a free account at https://chat.classgrid.in
 
 © ${new Date().getFullYear()} Classgrid. All rights reserved.`;
 }
@@ -475,7 +475,7 @@ export function getCareerApplicationConfirmationEmailHtml(firstName: string, rol
       <p>If your profile is shortlisted, a member of our team will reach out to schedule a brief introductory conversation.</p>
     </div>
 
-    <p style="margin-top: 24px;">We appreciate your interest in joining Classgrid and helping us build the future of education technology.</p>
+    <p style="margin-top: 24px;">We're glad you want to join Classgrid and help us build Classgrid AI.</p>
     <p>Thank you for taking the time to apply. We wish you the very best!</p>
     <p style="margin-top: 20px;"><strong>The Classgrid Team</strong></p>
   `;

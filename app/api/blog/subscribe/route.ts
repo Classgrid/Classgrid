@@ -419,7 +419,7 @@ export async function POST(req: Request) {
       ? "You're now subscribed to the <strong style=\"color:#111111;\">Classgrid Blog</strong>." 
       : "You're now subscribed to the <strong style=\"color:#111111;\">Classgrid Changelog</strong>.";
     const contentIntro2 = isBlog
-      ? "We'll keep you in the loop whenever we publish new insights, practical guides, company news, and perspectives on building better technology for modern educational institutions."
+      ? "We'll keep you in the loop whenever we publish new insights, practical guides, company news, and tips on getting more done with Classgrid AI."
       : "We'll let you know whenever we release new features, improvements, fixes, platform changes, and other important product updates across Classgrid.";
     
     const legalNotice = "You'll also receive <strong style=\"color:#111111;\">important Legal and Security notices</strong> when we need to communicate changes that may affect your account, privacy, security, or use of Classgrid.";
@@ -522,7 +522,7 @@ export async function POST(req: Request) {
 ${contentBlockHtml}
 
 <div style="margin-top:40px;padding-top:30px;border-top:1px solid #eaeaea;">
-  <p style="color:#374151;font-size:14px;margin:0 0 8px;">Build smarter academic workflows</p>
+  <p style="color:#374151;font-size:14px;margin:0 0 8px;">Get more done with Classgrid AI</p>
   <a href="${siteUrl}" style="color:#6b7280;text-decoration:underline;font-size:13px;margin-bottom:24px;display:inline-block;">classgrid.in &rarr;</a>
 
   <div style="margin-bottom:24px;">
@@ -568,7 +568,7 @@ ${contentBlockHtml}
       "",
       `${contentBlockText}`,
       "",
-      "Build smarter academic workflows",
+      "Get more done with Classgrid AI",
       `${siteUrl} ->`,
     ].join("\n");
 

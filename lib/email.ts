@@ -51,7 +51,7 @@ export async function sendSafetyEmail(
       </div>
 
       <p><strong>Why did I receive this?</strong><br/>
-      Classgrid maintains strict safety filters to ensure a professional and safe environment for all educational institutions. Language containing profanity, harassment, or inappropriate content is strictly prohibited.</p>
+      Classgrid AI has safety filters to keep it a safe, respectful place for everyone who uses it. Language containing profanity, harassment, or inappropriate content is strictly prohibited.</p>
 
       <p><strong>What happens next?</strong><br/>
       ${actionText}</p>
@@ -183,7 +183,7 @@ export async function sendFailedEscalationEmail(
          style="display: inline-block; background-color: #4f46e5; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; border: 1px solid #4338ca;">
         🎫 Assign Me & Create Enquiry
       </a>
-      <p style="margin-top: 10px; font-size: 13px; color: #6b7280;">Clicking this will create a Classgrid Talk inquiry and draft an AI response.</p>
+      <p style="margin-top: 10px; font-size: 13px; color: #6b7280;">Clicking this will create a support ticket and draft an AI response.</p>
     </div>
 
     <h3 style="margin-top: 25px; color: #4b5563;">AI Summary of Issue</h3>

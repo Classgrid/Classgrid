@@ -17,7 +17,7 @@ const getTransporter = () => nodemailer.createTransport({
 export async function GET() {
   try {
     const reviewsUrl = 'https://classgrid.in/reviews';
-    const adminReply = "Hi Nikhil! We're so happy to hear that Classgrid has made a real difference at PCCOE. Thank you for taking the time to share your experience with us. Your feedback means a lot to our entire team and helps us continue building Classgrid better.";
+    const adminReply = "Hi Nikhil! We're so happy to hear that Classgrid AI has made a real difference to your work. Thank you for taking the time to share your experience with us. Your feedback means a lot to our entire team and helps us continue building Classgrid better.";
 
     const content = `
       <p>Hi <strong>Nikhil (Test)</strong>,</p>

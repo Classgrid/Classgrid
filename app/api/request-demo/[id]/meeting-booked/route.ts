@@ -62,7 +62,7 @@ export async function POST(
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            topic: `Classgrid Demo: ${lead.institutionName} (${lead.adminName})`,
+            topic: `Classgrid AI Demo: ${lead.institutionName} (${lead.adminName})`,
             type: 2, // Scheduled meeting
             start_time: startDate.toISOString(),
             duration: 30,
@@ -161,7 +161,7 @@ export async function POST(
           from: getNoReplyAddress(),
           replyTo: getSupportEmail(),
           to: lead.adminEmail,
-          subject: "Classgrid Demo Confirmed - Meeting Details Inside",
+          subject: "Your Classgrid AI demo is confirmed",
           html: getDemoConfirmationEmailHtml(lead.adminName, dateStr, meetingUrl, platform),
         });
         console.log(`[meeting-booked] Sent confirmation email to customer ${lead.adminEmail}`);
