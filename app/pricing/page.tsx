@@ -184,7 +184,7 @@ export default async function PricingPage() {
   const tokens = liveTokens(live);
   const lastUpdated = formatDate(page?.lastUpdated);
 
-  const heroTitle = page?.hero?.title?.trim() || "Simple pricing. Start free.";
+  const heroTitle = page?.hero?.title?.trim() || "Simple pricing, start free";
   const heroSubtitle = fillLive(page?.hero?.subtitle, tokens);
   const heroCtaLabel = page?.hero?.primaryCtaLabel?.trim() || "Start for free";
   const heroCtaHref = page?.hero?.primaryCtaHref?.trim() || CHAT_APP_URL;
