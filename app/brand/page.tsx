@@ -29,7 +29,7 @@ export default function BrandGuidelinesPage() {
             <h1 className="text-5xl font-bold tracking-tight">Visual Identity</h1>
           </div>
           <p className="text-muted-foreground dark:text-zinc-200 text-lg max-w-3xl leading-relaxed mt-2">
-            Classgrid is the next-generation operating system for education. Our visual language is engineered for speed, focus, and seamless user experiences. By pairing deep, immersive dark-mode aesthetics with vibrant, energetic accents, our brand identity feels premium, enterprise-ready, and effortlessly intuitive.
+            Classgrid is the agentic platform for everyday work. Our visual language is engineered for speed, focus, and seamless user experiences. By pairing deep, immersive dark-mode aesthetics with vibrant, energetic accents, our brand identity feels premium, enterprise-ready, and effortlessly intuitive.
           </p>
         </header>
 
