@@ -248,7 +248,7 @@ export function Navbar({
           ],
         },
         {
-          heading: "Use cases",
+          heading: "Everyday work",
           links: [
             { label: "Documents & files",      href: "/solutions/documents-and-files", icon: FileText   },
             { label: "Reminders & automation", href: "/solutions/reminders-and-automation", icon: AlarmClock },

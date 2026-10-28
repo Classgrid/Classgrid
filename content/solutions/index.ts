@@ -26,7 +26,7 @@ export const LOCAL_SOLUTIONS: SolutionPageContent[] = (
 
 export const SOLUTIONS_MENU_SECTIONS = [
   { heading: "Products", group: "product" as const },
-  { heading: "Use cases", group: "useCase" as const },
+  { heading: "Everyday work", group: "useCase" as const },
 ].map(({ heading, group }) => ({
   heading,
   links: LOCAL_SOLUTIONS.filter((page) => page.menuGroup === group).map((page) => ({

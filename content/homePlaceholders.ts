@@ -102,7 +102,7 @@ export const placeholderChromeContent: ChromeContent = {
           ],
         },
         {
-          heading: "Use cases",
+          heading: "Everyday work",
           links: [
             { label: "Documents & files", href: "/solutions/documents-and-files" },
             { label: "Reminders & automation", href: "/solutions/reminders-and-automation" },
@@ -148,6 +148,7 @@ export const placeholderChromeContent: ChromeContent = {
     {
       heading: "Resources",
       links: [
+        { label: "Use Cases", href: "/use-cases" },
         { label: "Case Studies", href: "/case-studies" },
         { label: "FAQ", href: "/#faq" },
         { label: "Support", href: "/support" },

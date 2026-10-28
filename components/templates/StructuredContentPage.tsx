@@ -148,7 +148,7 @@ const LEFT_NAV = [
     ],
   },
   {
-    section: "Use cases",
+    section: "Everyday work",
     items: [
       { label: "Documents & files", href: "/solutions/documents-and-files", icon: Users },
       { label: "Reminders & automation", href: "/solutions/reminders-and-automation", icon: Presentation },

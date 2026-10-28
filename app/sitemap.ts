@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { siteMeta } from "@/content/siteMeta";
 import { getChangelogEntries, getComparisonPages, getDocPageDates, getLegalPageDates, getPosts } from "@/sanity/lib/marketing";
 import { SOLUTION_SLUGS } from "@/lib/solutions";
+import { LOCAL_USE_CASES } from "@/content/useCases";
 
 const staticRoutes = [
   "/",
@@ -66,6 +67,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteMeta.domain}/solutions/${slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    { url: `${siteMeta.domain}/use-cases`, changeFrequency: "monthly" as const, priority: 0.8 },
+    ...LOCAL_USE_CASES.map((item) => ({
+      url: `${siteMeta.domain}/use-cases/${item.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     ...dynamicPostSlugs.map((slug) => ({
       url: `${siteMeta.domain}/blog/${slug}`,

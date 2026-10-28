@@ -1,0 +1,83 @@
+import { defineField, defineType } from 'sanity'
+
+const CAPABILITIES = [
+  'Research',
+  'Documents',
+  'Data',
+  'Coding',
+  'Websites',
+  'Images',
+  'WhatsApp',
+  'Automation',
+  'Email & calendar',
+  'Teamwork',
+]
+
+const ICONS = [
+  'Search',
+  'FileText',
+  'BarChart3',
+  'Presentation',
+  'GitPullRequest',
+  'Rocket',
+  'Globe',
+  'Image',
+  'Phone',
+  'Send',
+  'Inbox',
+  'CalendarDays',
+  'AlarmClock',
+  'Users',
+  'Sparkles',
+]
+
+export const aiUseCaseType = defineType({
+  name: 'aiUseCase',
+  title: 'Use Case',
+  type: 'document',
+  fields: [
+    defineField({ name: 'title', title: 'Title', type: 'string', validation: (rule) => rule.required() }),
+    defineField({
+      name: 'slug',
+      title: 'Address',
+      type: 'slug',
+      description: 'The page address: classgrid.in/use-cases/<this>',
+      options: { source: 'title', maxLength: 80 },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({ name: 'summary', title: 'Short line', type: 'text', rows: 2, validation: (rule) => rule.required() }),
+    defineField({
+      name: 'capabilities',
+      title: 'Type of work',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: { list: CAPABILITIES.map((value) => ({ title: value, value })) },
+      validation: (rule) => rule.required().min(1),
+    }),
+    defineField({
+      name: 'icon',
+      title: 'Icon',
+      type: 'string',
+      options: { list: ICONS.map((value) => ({ title: value, value })) },
+    }),
+    defineField({ name: 'challenge', title: 'Challenge', type: 'text', rows: 4, validation: (rule) => rule.required() }),
+    defineField({ name: 'solution', title: 'Solution', type: 'text', rows: 4, validation: (rule) => rule.required() }),
+    defineField({ name: 'result', title: 'Result', type: 'text', rows: 3, validation: (rule) => rule.required() }),
+    defineField({ name: 'steps', title: 'How to do it', type: 'array', of: [{ type: 'string' }] }),
+    defineField({ name: 'tryPrompt', title: 'Try asking', type: 'string' }),
+    defineField({
+      name: 'relatedSolution',
+      title: 'Related solution page',
+      type: 'object',
+      fields: [
+        defineField({ name: 'label', title: 'Label', type: 'string' }),
+        defineField({ name: 'href', title: 'Link', type: 'string', description: 'For example /solutions/agent-mode' }),
+      ],
+    }),
+    defineField({ name: 'order', title: 'Order', type: 'number' }),
+  ],
+  orderings: [{ title: 'Order', name: 'orderAsc', by: [{ field: 'order', direction: 'asc' }] }],
+  preview: {
+    select: { title: 'title', subtitle: 'summary' },
+  },
+})

@@ -59,7 +59,7 @@ const nextConfig: NextConfig = {
       // Old ERP pages → Classgrid AI pages (permanent, so Google moves them over)
       { source: "/solutions", destination: "/solutions/agent-mode", permanent: true },
       { source: "/institutions/:path*", destination: "/solutions/agent-mode", permanent: true },
-      { source: "/use-cases/:path*", destination: "/solutions/agent-mode", permanent: true },
+      { source: "/use-cases/:old(coaching|college|institutes|junior-college|school|students|teachers)", destination: "/use-cases", permanent: true },
       { source: "/solutions/for-schools", destination: "/solutions/agent-mode", permanent: true },
       { source: "/solutions/for-engineering", destination: "/solutions/project-mode", permanent: true },
       { source: "/solutions/for-colleges", destination: "/solutions/grids", permanent: true },

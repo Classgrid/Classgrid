@@ -1325,3 +1325,22 @@ export const aiPricingPageQuery = `*[_type == "aiPricingPage" && _id == "aiPrici
   faqs[]{ _key, question, answer },
   seo{ title, description }
 }`;
+
+const aiUseCaseFields = `{
+  "slug": slug.current,
+  title,
+  summary,
+  capabilities,
+  icon,
+  challenge,
+  solution,
+  result,
+  steps,
+  tryPrompt,
+  relatedSolution,
+  order
+}`
+
+export const aiUseCasesQuery = `*[_type == "aiUseCase" && defined(slug.current)] | order(coalesce(order, 999) asc) ${aiUseCaseFields}`
+
+export const aiUseCaseBySlugQuery = `*[_type == "aiUseCase" && slug.current == $slug][0] ${aiUseCaseFields}`

@@ -29,6 +29,7 @@ const hiddenTypes = new Set([
   "classgridVideo",
   "classgridTeamVision",
   "faqItem",
+  "aiUseCase",
   "testimonial",
   "classgrid_talk",
   "testimonialVideo",
@@ -68,6 +69,15 @@ export const structure = (S: StructureBuilder) =>
         .title("Plugins Page")
         .id("pluginsPageSingleton")
         .child(S.document().schemaType("pluginsPage").documentId("pluginsPage")),
+
+      S.listItem()
+        .title("Use Cases")
+        .id("aiUseCases")
+        .child(
+          S.documentTypeList("aiUseCase")
+            .title("Use Cases")
+            .defaultOrdering([{ field: "order", direction: "asc" }])
+        ),
 
       S.listItem()
         .title("AI Pricing")

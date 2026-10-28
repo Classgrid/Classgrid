@@ -1,7 +1,6 @@
 const LEGACY_EXACT_ROUTE_MAP: Record<string, string> = {
   "/modules": "/product/modules",
   "/institutions": "/solutions",
-  "/use-cases": "/solutions",
   "/institutions/school": "/solutions/industries/school",
   "/institutions/college": "/solutions/industries/college",
   "/institutions/junior-college": "/solutions/industries/junior-college",

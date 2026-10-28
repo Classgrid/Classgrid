@@ -52,6 +52,8 @@ import {
   classgridVideoQuery,
   classgridTeamVisionQuery,
   pluginsPageQuery,
+  aiUseCasesQuery,
+  aiUseCaseBySlugQuery,
   aiSolutionPageBySlugQuery,
   aiSolutionPagesListQuery,
   aiPricingPageQuery,
@@ -206,6 +208,8 @@ export const getCaseStudySettings = () => safeFetch(caseStudySettingsQuery)
 export const getClassgridVideo = () => safeFetch(classgridVideoQuery)
 export const getClassgridTeamVision = () => safeFetch(classgridTeamVisionQuery)
 export const getPluginsPage = () => safeFetch(pluginsPageQuery, undefined, { disableInMemoryCache: true })
+export const getAiUseCases = () => safeFetch(aiUseCasesQuery, undefined, { disableInMemoryCache: true })
+export const getAiUseCase = (slug: string) => safeFetch(aiUseCaseBySlugQuery, { slug }, { disableInMemoryCache: true })
 export const getAiSolutionPage = (slug: string) =>
   safeFetch(aiSolutionPageBySlugQuery, { slug }, { disableInMemoryCache: true })
 export const getAiSolutionPages = () => safeFetch(aiSolutionPagesListQuery, undefined, { disableInMemoryCache: true })
