@@ -175,7 +175,7 @@ export function DocsToc() {
 
   useEffect(() => {
     const shouldOpenComment = searchParams.get('openComment') === 'true';
-    if (!shouldOpenComment || sessionStatus !== 'authenticated' || !(session?.user as any)?.isPlatformUser) return;
+    if (!shouldOpenComment || sessionStatus !== 'authenticated' || !session?.user) return;
 
     let slug = pathname?.replace(/^\/docs\/?/, '');
     if (!slug) slug = 'introduction';
@@ -301,22 +301,12 @@ export function DocsToc() {
               )}
               <button 
                 onClick={() => {
-                  // Logged in on the website but no chat.classgrid.in account: accounts are made there
-                  if (session?.user && !(session.user as any).isPlatformUser) {
-                    window.location.href = 'https://chat.classgrid.in/login';
-                    return;
-                  }
                   // Require login before allowing comments
                   if (!session?.user) {
                     // Redirect to login, and after login redirect back with ?openComment=true so the form auto-opens
                     const currentPath = pathname || '/docs';
                     const voteParam = votedValue === true ? 'up' : 'down';
                     const returnUrl = `${currentPath}?openComment=true&vote=${voteParam}`;
-                    // Also kept in the browser: if a Google retry drops the callbackUrl, the login page still comes back here
-                    try {
-                      localStorage.setItem('classgrid:login-callback', returnUrl);
-                      localStorage.setItem('classgrid:login-callback-at', String(Date.now()));
-                    } catch {}
                     window.location.href = `/login?callbackUrl=${encodeURIComponent(returnUrl)}`;
                     return;
                   }
