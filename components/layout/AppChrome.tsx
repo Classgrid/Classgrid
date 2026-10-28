@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, Suspense, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 import { AskAiPanel } from "@/components/layout/AskAiPanel";
 import { Footer } from "@/components/layout/Footer";
@@ -111,7 +111,34 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
   const [showPromptBubble, setShowPromptBubble] = useState(false);
   const [promptStorageKey, setPromptStorageKey] = useState("");
   const [currentHash, setCurrentHash] = useState("");
-  const { data: session, status } = useSession();
+  const { data: session, status, update } = useSession();
+
+  // Logged in on chat.classgrid.in but not here yet: sign in with that login so the header shows Dashboard.
+  // Checked again when the tab gets focus, e.g. after logging in on chat.classgrid.in in another tab.
+  const skipPlatformLogin = pathname === "/login" || pathname === "/logout";
+  useEffect(() => {
+    if (status !== "unauthenticated" || skipPlatformLogin) return;
+    let busy = false;
+    const syncPlatformLogin = async () => {
+      if (busy) return;
+      busy = true;
+      try {
+        const res = await fetch("/api/auth/platform-check", { cache: "no-store" });
+        const data = await res.json();
+        if (data?.loggedIn) {
+          const result = await signIn("platform-token", { redirect: false });
+          if (result?.ok) await update();
+        }
+      } catch {
+        // stay logged out
+      } finally {
+        busy = false;
+      }
+    };
+    syncPlatformLogin();
+    window.addEventListener("focus", syncPlatformLogin);
+    return () => window.removeEventListener("focus", syncPlatformLogin);
+  }, [status, skipPlatformLogin, update]);
 
   // Auto-open Ask AI panel on mount if the user has an unsent draft OR if it was open before refresh
   useEffect(() => {

@@ -139,6 +139,49 @@ export const authOptions: NextAuthOptions = {
         return { id: user._id.toString(), email: user.email, name: user.name, image: user.avatar };
       },
     }),
+    // Already logged in on chat.classgrid.in: its "token" cookie is shared on .classgrid.in, so sign in here with it
+    CredentialsProvider({
+      id: "platform-token",
+      name: "Classgrid AI",
+      credentials: {},
+      async authorize() {
+        const platformToken = (await cookies()).get("token")?.value;
+        const secret = process.env.PLATFORM_JWT_SECRET || process.env.JWT_SECRET;
+        if (!platformToken || !secret) return null;
+
+        let platformUserId: string;
+        try {
+          const { payload } = await jwtVerify(platformToken, new TextEncoder().encode(secret));
+          platformUserId = String(payload.id || "");
+        } catch {
+          return null;
+        }
+        if (!mongoose.Types.ObjectId.isValid(platformUserId)) return null;
+
+        await connectMongo();
+        const db = mongoose.connection.db;
+        if (!db) return null;
+        const platformUser = await db.collection("users").findOne({
+          _id: new mongoose.Types.ObjectId(platformUserId),
+          mustResetPassword: { $ne: true },
+        });
+        if (!platformUser?.email) return null;
+
+        let user = await ForumUser.findOne({
+          email: { $regex: new RegExp(`^${platformUser.email.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i") },
+        });
+        if (!user) {
+          user = await ForumUser.create({
+            email: platformUser.email,
+            name: platformUser.name || undefined,
+            provider: "email",
+            emailVerified: true,
+          });
+        }
+
+        return { id: user._id.toString(), email: user.email, name: user.name, image: user.avatar };
+      },
+    }),
   ],
   session: {
     strategy: "jwt",
