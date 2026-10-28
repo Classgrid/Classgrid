@@ -42,6 +42,11 @@ export async function GET(req: NextRequest) {
       .eq(shortCode ? "short_code" : "unsubscribe_token", shortCode || token)
       .maybeSingle();
     if (!shortCode && subscriberData?.short_code) shortCode = subscriberData.short_code;
+    // New subscribers are saved without a short_code (only the email blasts used to add one): add it now
+    if (!shortCode && subscriberData?.email) {
+      shortCode = crypto.randomBytes(6).toString("base64url").slice(0, 8);
+      await supabaseAdmin.from("blog_subscribers").update({ short_code: shortCode }).eq("email", subscriberData.email);
+    }
 
     if (lookupError || !subscriberData?.email) {
       return createErrorPage("Expired or Invalid Link", "This unsubscribe link is no longer valid or the code is incorrect. Please use the latest email you received.");
