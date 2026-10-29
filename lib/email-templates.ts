@@ -368,12 +368,7 @@ export function getAdminDemoNotificationHtml(lead: any, dateStr: string, meetUrl
       <p><strong>Email:</strong> ${lead.adminEmail}</p>
       <p><strong>Phone:</strong> ${lead.adminPhone || "N/A"}</p>
       <p><strong>Company:</strong> ${lead.institutionName}</p>
-      <p><strong>Organization Type:</strong> ${lead.orgType}</p>
       <p><strong>Role:</strong> ${lead.role || "N/A"}</p>
-      <p><strong>State:</strong> ${lead.state || "N/A"}</p>
-      <p><strong>District:</strong> ${lead.district || "N/A"}</p>
-      <p><strong>Taluka:</strong> ${lead.taluka || "N/A"}</p>
-      <p><strong>City/Village:</strong> ${lead.cityVillage || "N/A"}</p>
       <p><strong>Website:</strong> ${lead.website ? `<a href="${lead.website.startsWith('http') ? lead.website : `https://${lead.website}`}" style="color: #10b981;">${lead.website}</a>` : "N/A"}</p>
     </div>
 
