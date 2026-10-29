@@ -1127,8 +1127,8 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
           <div id="integrations">
             <IntegrationsMarquee
               kicker={integrationsKicker}
-              title="The services that power Classgrid"
-              subtitle="Classgrid is built on trusted services like AWS, Google, Agora and Brevo."
+              title="Built on"
+              subtitle="The cloud, AI and app services Classgrid runs on. These are the tools we use, not partners or endorsements."
               logos={integrationLogos}
               useFallbackContent={false}
             />

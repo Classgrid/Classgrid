@@ -11,7 +11,6 @@ import {
   fetchLiveStatus,
   getFooterStatusDotClass,
   getFooterStatusTextClass,
-  getFooterStatusLabel,
   resolveFooterCopyrightText,
   type FooterStatusState,
 } from "@/lib/footer-status";
@@ -37,9 +36,8 @@ type FooterProps = {
   legalLinks?: FooterLink[];
   socialLinks?: SocialLink[];
   copyrightText?: string;
-  statusLabel?: string;
-  statusState?: FooterStatusState;
-  statusHref?: string;
+  /** Status from incident.io read by the server, so the first page already shows it */
+  initialStatus?: { state: FooterStatusState; label: string } | null;
   /** When true, hides demo/sales links (e.g. "Book a Demo") */
   isPlatformUser?: boolean;
 };
@@ -73,13 +71,12 @@ export function Footer({
   legalLinks,
   socialLinks,
   copyrightText,
-  statusLabel,
-  statusState,
-  statusHref,
+  initialStatus,
   isPlatformUser,
 }: FooterProps) {
   const [mounted, setMounted] = useState(false);
-  const [liveStatus, setLiveStatus] = useState<{ state: FooterStatusState; label: string } | null>(null);
+  // Status comes only from incident.io: read by the server for the first page (initialStatus), then every 30 s here
+  const [liveStatus, setLiveStatus] = useState<{ state: FooterStatusState; label: string } | null>(initialStatus ?? null);
 
   useEffect(() => {
     setMounted(true);
@@ -179,22 +176,11 @@ export function Footer({
   const hasContact = contactHeading?.trim() || address.length > 0 || phones.length > 0 || emails.length > 0;
 
   const resolvedCopyrightText = resolveFooterCopyrightText(copyrightText, brandName);
-  const resolvedStatusHref = statusHref?.trim();
+  const resolvedStatusHref = "https://status.classgrid.in";
 
-  // "Automatic" Logic:
-  // 1. If state is "automatic", always use liveStatus if available.
-  // 2. If state is NOT "automatic", use liveStatus only if Sanity label is empty.
-  // 3. If Sanity label has text, it acts as a manual override.
-  const isAutomatic = statusState === 'automatic';
-  const hasManualLabel = !!statusLabel?.trim();
-
-  const finalStatusState = (isAutomatic || !hasManualLabel)
-    ? (liveStatus?.state ?? (isAutomatic ? 'operational' : statusState))
-    : statusState;
-
-  const finalStatusLabel = (isAutomatic || !hasManualLabel)
-    ? (liveStatus?.label ?? getFooterStatusLabel(statusState, statusLabel))
-    : statusLabel;
+  // Only incident.io decides the status (no Sanity text). Until it answers, a placeholder bar is shown.
+  const finalStatusState = liveStatus?.state ?? "operational";
+  const finalStatusLabel = liveStatus?.label ?? "";
 
   const statusDotClass = getFooterStatusDotClass(finalStatusState);
   const statusTextClass = getFooterStatusTextClass(finalStatusState);
@@ -392,7 +378,7 @@ export function Footer({
             <div className={`text-[13px] font-medium tracking-wide ${statusTextClass}`}>
               <span className="flex items-center gap-2">
                 <span className={`h-2 w-2 animate-pulse rounded-full ${statusDotClass}`} />
-                {!liveStatus && !statusLabel ? (
+                {!liveStatus ? (
                   // Skeleton placeholder
                   <span className={`inline-block h-3.5 w-40 animate-pulse rounded ${statusDotClass} opacity-20`} />
                 ) : resolvedStatusHref ? (

@@ -7,6 +7,7 @@ import { headers } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
 
 import { AppChrome } from "@/components/layout/AppChrome";
+import { fetchLiveStatus } from "@/lib/footer-status";
 import { changelogFallbackEntries } from "@/content/changelog";
 import { resolveChromeContent } from "@/content/homePlaceholders";
 import { getHomeChrome, getLatestChangelogEntry } from "@/sanity/lib/marketing";
@@ -103,6 +104,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const latestReleaseDate =
     latestChangelogEntry?.releaseDate ?? changelogFallbackEntries[0]?.releaseDate;
   // We now pass latestReleaseDate to AppChrome to handle client-side 10-day NEW badge logic
+  // Footer status comes only from incident.io (status.classgrid.in); read here too so the first HTML already shows it
+  const initialStatus = await fetchLiveStatus("status.classgrid.in", { next: { revalidate: 60 } });
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -175,7 +178,12 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         >
           <PostHogProvider>
             <NextAuthProvider>
-              <AppChrome chromeContent={homeChrome} latestReleaseDate={latestReleaseDate}>
+              <AppChrome
+                // The Sanity footer status text is not used (status is incident.io only), so it is not sent to the page
+                chromeContent={{ ...homeChrome, footerStatusLabel: undefined, footerStatusState: undefined, footerStatusHref: undefined }}
+                latestReleaseDate={latestReleaseDate}
+                initialStatus={initialStatus}
+              >
                 {children}
               </AppChrome>
             </NextAuthProvider>

@@ -73,6 +73,7 @@ type AppChromeProps = {
   children: ReactNode;
   chromeContent?: ChromeContent | null;
   latestReleaseDate?: string;
+  initialStatus?: { state: FooterStatusState; label: string } | null;
 };
 
 function normalizeSlugFromPath(pathname: string) {
@@ -100,7 +101,7 @@ function pagePromptForPath(pathname: string, hash?: string) {
   return "How can I help with this page?";
 }
 
-export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChromeProps) {
+export function AppChrome({ children, chromeContent, latestReleaseDate, initialStatus }: AppChromeProps) {
   const pathname = usePathname();
   const isStudioRoute = pathname.startsWith("/studio");
   const isAuthRoute = pathname === "/login" || pathname === "/logout" || pathname === "/onboarding" || pathname === "/ip-protection";
@@ -373,9 +374,7 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
             legalLinks={chromeContent?.footerLegalLinks}
             socialLinks={chromeContent?.footerSocialLinks}
             copyrightText={chromeContent?.footerCopyrightText}
-            statusLabel={chromeContent?.footerStatusLabel}
-            statusState={chromeContent?.footerStatusState}
-            statusHref={chromeContent?.footerStatusHref}
+            initialStatus={initialStatus}
             isPlatformUser={!!(session?.user as any)?.isPlatformUser}
           />
         </Suspense>

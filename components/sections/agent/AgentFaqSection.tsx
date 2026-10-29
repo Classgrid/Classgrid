@@ -2,7 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { Reveal } from "@/components/sections/Reveal";
 
@@ -78,23 +78,19 @@ function FaqItem({ question, answer, index }: { question: string; answer: ReactN
         </motion.span>
       </button>
 
-      <AnimatePresence initial={false}>
-        {open ? (
-          <motion.div
-            id={panelId}
-            key="answer"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ height: { duration: 0.35, ease: [0.33, 1, 0.68, 1] }, opacity: { duration: 0.2 } }}
-            style={{ overflow: "hidden" }}
-          >
-            <p className="max-w-3xl pb-7 pr-10 text-base leading-7 text-black/70 md:text-lg md:leading-8 dark:text-white/65">
-              {answer}
-            </p>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      {/* The answer is always in the page (only folded away while closed), so Google and AI tools can read it */}
+      <motion.div
+        id={panelId}
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        transition={{ height: { duration: 0.35, ease: [0.33, 1, 0.68, 1] }, opacity: { duration: 0.2 } }}
+        style={{ overflow: "hidden" }}
+        inert={!open}
+      >
+        <p className="max-w-3xl pb-7 pr-10 text-base leading-7 text-black/70 md:text-lg md:leading-8 dark:text-white/65">
+          {answer}
+        </p>
+      </motion.div>
     </li>
   );
 }
@@ -104,9 +100,29 @@ type AgentFaqSectionProps = {
   faqs?: { question: string; answer: ReactNode }[];
 };
 
+// Plain-text answers for the FAQ data Google reads (homepage FAQ only; the pricing page has its own)
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text:
+        typeof faq.answer === "string"
+          ? faq.answer
+          : "Yes. You can delete any chat, and disconnect any connected app at any time from Plugins. Read our Privacy Policy at https://classgrid.in/privacy.",
+    },
+  })),
+};
+
 export function AgentFaqSection({ title = "Frequently asked questions", faqs = FAQS }: AgentFaqSectionProps = {}) {
   return (
     <section className="bg-background text-[#0d0d0d] dark:bg-black dark:text-white">
+      {faqs === FAQS ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
+      ) : null}
       <div className="mx-auto max-w-[1520px] px-5 pb-24 md:px-10 md:pb-32 lg:pb-40">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <Reveal className="lg:col-span-4">

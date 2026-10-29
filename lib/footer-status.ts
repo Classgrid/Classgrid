@@ -94,7 +94,10 @@ export function resolveFooterCopyrightText(
 
   return `© ${currentYear} ${normalizedBody}`;
 }
-export async function fetchLiveStatus(pageId: string): Promise<{ state: FooterStatusState; label: string } | null> {
+export async function fetchLiveStatus(
+  pageId: string,
+  init?: RequestInit & { next?: { revalidate?: number } }
+): Promise<{ state: FooterStatusState; label: string } | null> {
   try {
     // We use summary.json to get both the overall status and any active maintenances
     let url = `https://${pageId}.statuspage.io/api/v2/summary.json`;
@@ -103,7 +106,7 @@ export async function fetchLiveStatus(pageId: string): Promise<{ state: FooterSt
       url = `https://${pageId}/api/v2/summary.json`;
     }
     
-    const response = await fetch(url);
+    const response = await fetch(url, init);
     if (!response.ok) return null;
     const data = await response.json();
 
