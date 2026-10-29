@@ -4,7 +4,7 @@ import { SectionAccentBar } from "@/components/ui/section-accent-bar";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[60vh] flex-col items-center justify-center bg-background px-4 text-center">
+    <div className="flex min-h-[60vh] flex-col items-center justify-center bg-background px-4 text-center">
       <h1 className="text-8xl font-black text-foreground/20">404</h1>
       <SectionAccentBar className="mt-4 mb-0" />
       <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground md:text-3xl">Page Not Found</h2>
@@ -15,6 +15,6 @@ export default function NotFound() {
       >
         <ArrowLeft className="h-4 w-4" /> Go back home
       </Link>
-    </main>
+    </div>
   );
 }

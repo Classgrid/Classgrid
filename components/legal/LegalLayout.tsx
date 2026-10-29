@@ -216,7 +216,7 @@ export function LegalLayout({
       <div className="flex flex-col lg:flex-row min-h-screen">
         <LegalTOC sections={sections} />
 
-        <main className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
         <section className="border-b border-border bg-background">
           <div className="w-full max-w-[780px] px-4 pb-8 pt-8 sm:px-6 sm:pb-10 sm:pt-9">
             <DocumentHero 
@@ -308,7 +308,7 @@ export function LegalLayout({
             </CardContent>
           </Card>
         </section>
-      </main>
+      </div>
       </div>{/* end flex row */}
     </div>
   );

@@ -73,7 +73,7 @@ export default function CategoryPageClient({ slug, lang, initialData }: { slug: 
   const groupNames = Object.keys(grouped);
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-8 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
+    <div className="relative min-h-screen bg-background text-foreground pt-8 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
       <div className="absolute top-0 left-0 w-full h-[600px] overflow-hidden -z-10 pointer-events-none">
         <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full bg-foreground/[0.03] blur-[120px]" />
       </div>
@@ -145,6 +145,6 @@ export default function CategoryPageClient({ slug, lang, initialData }: { slug: 
           </div>
         )}
       </div>
-    </main>
+    </div>
   );
 }

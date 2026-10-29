@@ -116,7 +116,7 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
   const ticketUrl = buildLangHref("/support/ticket", lang);
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-24 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300 font-sans">
+    <div className="relative min-h-screen bg-background text-foreground pt-24 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300 font-sans">
       {/* Premium Background Effects */}
       <div className="absolute top-0 left-0 w-full h-[800px] overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[100vw] h-[60vw] rounded-full bg-foreground/5 blur-[120px] opacity-70" />
@@ -230,6 +230,6 @@ export default function SupportPageClient({ lang }: { lang: SupportedLang }) {
         </div>
       </section>
 
-    </main>
+    </div>
   );
 }

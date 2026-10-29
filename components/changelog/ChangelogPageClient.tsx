@@ -136,7 +136,7 @@ export function ChangelogPageClient({ settings, entries, lang }: ChangelogPageCl
 
   // ── Render ────────────────────────────────────────────────────────
   return (
-    <main className="bg-background text-foreground pb-10">
+    <div className="bg-background text-foreground pb-10">
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
 
         {/* ── HERO — identical structure to Blog hero ── */}
@@ -268,6 +268,6 @@ export function ChangelogPageClient({ settings, entries, lang }: ChangelogPageCl
         heading="Never miss a product update"
         subtext="Get the latest Classgrid feature releases, improvements and bug fixes delivered to your inbox. No spam. Unsubscribe anytime."
       />
-    </main>
+    </div>
   );
 }

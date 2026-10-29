@@ -354,18 +354,18 @@ function TicketDetailPageInner() {
   // Still waiting for session to resolve
   if (sessionStatus === "loading" || (sessionStatus === "authenticated" && loading)) {
     return (
-      <main className="min-h-screen bg-background py-24 px-4 md:px-12 transition-colors duration-300">
+      <div className="min-h-screen bg-background py-24 px-4 md:px-12 transition-colors duration-300">
         <div className="max-w-[960px] mx-auto flex flex-col items-center justify-center py-20">
           <Spinner className="w-8 h-8 text-muted-foreground" />
         </div>
-      </main>
+      </div>
     );
   }
 
   // Logged in but this ticket belongs to a different account
   if (accessDenied) {
     return (
-      <main className="min-h-screen bg-background py-24 px-4 md:px-12 transition-colors duration-300">
+      <div className="min-h-screen bg-background py-24 px-4 md:px-12 transition-colors duration-300">
         <div className="max-w-md mx-auto mt-10 bg-card border border-border rounded-2xl p-8 shadow-sm text-center">
           <div className="w-12 h-12 bg-red-100 dark:bg-red-900/40 rounded-full flex items-center justify-center mx-auto mb-6">
             <AlertCircle className="w-6 h-6 text-red-600 dark:text-red-400" />
@@ -382,13 +382,13 @@ function TicketDetailPageInner() {
             Back to My Requests
           </Link>
         </div>
-      </main>
+      </div>
     );
   }
 
   if (error || !ticket) {
     return (
-      <main className="min-h-screen bg-background py-24 px-4 md:px-12 transition-colors duration-300">
+      <div className="min-h-screen bg-background py-24 px-4 md:px-12 transition-colors duration-300">
         <div className="max-w-md mx-auto mt-10 bg-card border border-border rounded-2xl p-8 shadow-sm text-center">
           <div className="w-12 h-12 bg-red-100 dark:bg-red-900/40 rounded-full flex items-center justify-center mx-auto mb-6">
             <AlertCircle className="w-6 h-6 text-red-600 dark:text-red-400" />
@@ -403,7 +403,7 @@ function TicketDetailPageInner() {
             Back to My Requests
           </Link>
         </div>
-      </main>
+      </div>
     );
   }
 
@@ -413,7 +413,7 @@ function TicketDetailPageInner() {
   const isClosed = ticket.status === "closed";
 
   return (
-    <main className="min-h-screen bg-background pt-8 pb-24 px-4 md:px-12 selection:bg-foreground/20 transition-colors duration-300">
+    <div className="min-h-screen bg-background pt-8 pb-24 px-4 md:px-12 selection:bg-foreground/20 transition-colors duration-300">
       <div className="max-w-[960px] mx-auto">
 
         {/* ── Title + Status Badge ── */}
@@ -807,7 +807,7 @@ function TicketDetailPageInner() {
         file={previewFile}
         onClose={() => setPreviewFile(null)}
       />
-    </main>
+    </div>
   );
 }
 

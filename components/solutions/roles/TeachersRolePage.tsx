@@ -52,7 +52,7 @@ const DEEP_DIVES = [
 
 export function TeachersRolePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-foreground/20">
+    <div className="min-h-screen bg-background text-foreground selection:bg-foreground/20">
       {/* ── HERO ── */}
       <section className="relative overflow-hidden border-b border-border pt-28 pb-16 dark:bg-[#0d0d0d]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,color-mix(in_srgb,var(--foreground)_8%,transparent),transparent_65%)] pointer-events-none" />
@@ -138,6 +138,6 @@ export function TeachersRolePage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

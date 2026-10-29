@@ -235,7 +235,7 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
   const featureMatrix = comparison.featureMatrix ?? [];
 
   return (
-    <main className="min-h-screen bg-background text-foreground pt-24 pb-16 relative">
+    <div className="min-h-screen bg-background text-foreground pt-24 pb-16 relative">
 
 
       <ScrollSpyTOC tocItems={tocItems} activeSection={activeSection} />
@@ -545,6 +545,6 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
         </button>
       </div>
 
-    </main>
+    </div>
   );
 }

@@ -92,31 +92,32 @@ export function ViewPlatformPreview() {
             }
           }}
           placeholder="Ask a question..."
+          aria-label="Ask Classgrid AI a question"
           className="w-full resize-none bg-transparent pt-4 pb-12 pl-4 pr-4 sm:pl-24 sm:pr-60 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none overflow-y-auto min-h-[56px] max-h-[180px] leading-relaxed"
         />
 
         {/* Bottom Left actions */}
         <div className="absolute bottom-3 left-4 flex items-center gap-1">
-          <button type="button" onClick={handleSubmit} className="h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
+          <button type="button" aria-label="Attach a file" onClick={handleSubmit} className="h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
             <Paperclip className="h-4 w-4 -rotate-45" />
           </button>
-          <button type="button" onClick={handleSubmit} className="h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
+          <button type="button" aria-label="Plugins and settings" onClick={handleSubmit} className="h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
             <CustomSlidersIcon className="h-4 w-4" />
           </button>
         </div>
 
         {/* Bottom Right actions */}
         <div className="absolute bottom-3 right-3 flex items-center gap-0.5">
-          <button type="button" onClick={handleSubmit} className="h-8 shrink-0 rounded-full flex items-center gap-1.5 px-2.5 text-[13px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
+          <button type="button" aria-label="Choose a model" onClick={handleSubmit} className="h-8 shrink-0 rounded-full flex items-center gap-1.5 px-2.5 text-[13px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
             <span className="hidden sm:inline">Auto</span>
             <span className="sm:hidden">Auto</span>
             <ChevronDown className="h-3.5 w-3.5 shrink-0 opacity-60" />
           </button>
-          <button type="button" onClick={handleSubmit} className="h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
+          <button type="button" aria-label="Dictate" onClick={handleSubmit} className="h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all cursor-pointer">
             <Mic className="h-4 w-4" />
           </button>
           <button 
-            type="submit" 
+            type="submit" aria-label="Send" 
             disabled={!input.trim()}
             className="h-8 w-8 shrink-0 rounded-full bg-foreground text-background hover:bg-zinc-700 dark:hover:bg-zinc-300 disabled:opacity-50 transition-all shadow-sm flex items-center justify-center ml-1"
           >
@@ -128,7 +129,7 @@ export function ViewPlatformPreview() {
   );
 
   return (
-    <main className="bg-background text-foreground pb-20 overflow-x-hidden">
+    <div className="bg-background text-foreground pb-20 overflow-x-hidden">
       {/* ─── Main Interactive Preview ─── */}
       <section className="relative pt-8 pb-12 md:pb-16">
         <div className="relative z-10 mx-auto max-w-[1400px] px-6">
@@ -156,15 +157,15 @@ export function ViewPlatformPreview() {
                     </div>
 
                     <nav className="px-2 mt-2 space-y-0.5">
-                      <a href="#" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-muted/60 text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-muted/60 text-foreground text-[13px] font-medium transition-colors">
                         <SquarePen className="w-4 h-4" />
                         New Chat
                       </a>
-                      <a href="#" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
                         <Calendar className="w-4 h-4" />
                         Schedule
                       </a>
-                      <a href="#" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
                         <Library className="w-4 h-4" />
                         Library
                       </a>
@@ -176,11 +177,11 @@ export function ViewPlatformPreview() {
                     <div className="mt-1 px-2 space-y-0.5">
                       <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate flex items-center gap-2">
                         <CustomChatIcon className="w-[15px] h-[15px] opacity-80 shrink-0" />
-                        ClassGrid Cloud Website
+                        Weekly sales report
                       </div>
                       <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate flex items-center gap-2">
                         <CustomChatIcon className="w-[15px] h-[15px] opacity-80 shrink-0" />
-                        Testing Sending
+                        Launch email draft
                       </div>
                     </div>
 
@@ -188,9 +189,9 @@ export function ViewPlatformPreview() {
                       <Clock className="w-3 h-3" /> Today
                     </div>
                     <div className="mt-1 px-2 space-y-0.5">
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Now What?</div>
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Ticket Check</div>
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Chart Drawing</div>
+                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Competitor research</div>
+                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Trip plan for Goa</div>
+                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Chart from sales.xlsx</div>
                     </div>
 
                     <div className="mt-auto border-t border-border p-3 flex items-center gap-2">
@@ -282,6 +283,6 @@ export function ViewPlatformPreview() {
             </div>
           </div>
       </section>
-    </main>
+    </div>
   );
 }

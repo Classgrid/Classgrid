@@ -143,7 +143,7 @@ export default function MyRequestsPage() {
   const isCheckingSession = status === "loading";
 
   return (
-    <main className="min-h-screen bg-background py-24 px-4 md:px-12 selection:bg-foreground/20 transition-colors duration-300">
+    <div className="min-h-screen bg-background py-24 px-4 md:px-12 selection:bg-foreground/20 transition-colors duration-300">
       <div className="max-w-[960px] mx-auto">
         
         {isCheckingSession || !isAuthenticated ? (
@@ -483,6 +483,6 @@ export default function MyRequestsPage() {
           </motion.div>
         )}
       </div>
-    </main>
+    </div>
   );
 }

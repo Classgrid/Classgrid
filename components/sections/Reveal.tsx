@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useAnimationControls, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
@@ -13,6 +13,9 @@ type RevealProps = {
   distance?: number;
 };
 
+// Fade-in on scroll. The page HTML is sent fully visible (so Google and AI tools that do not run the page's
+// code can read every section); only in the browser, a section still below the screen is hidden and then
+// fades in when it scrolls into view, the same as before.
 export function Reveal({
   children,
   className,
@@ -21,7 +24,9 @@ export function Reveal({
   distance = 36,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const controls = useAnimationControls();
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [armed, setArmed] = useState(false);
 
   const dirMap = {
     up:    { y: distance, x: 0 },
@@ -36,14 +41,26 @@ export function Reveal({
     visible: { opacity: 1, x: 0, y: 0 }
   };
 
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    // Already on screen when the page opens: it stays as it is (no flash)
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) return;
+    controls.set("hidden");
+    setArmed(true);
+  }, [controls]);
+
+  useEffect(() => {
+    if (armed && isInView) controls.start("visible");
+  }, [armed, isInView, controls]);
+
   return (
     <motion.div
       ref={ref}
       className={cn(className)}
       variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      initial={false}
+      animate={controls}
       transition={{ duration: 0.6, ease: "easeOut", delay }}
     >
       {children}

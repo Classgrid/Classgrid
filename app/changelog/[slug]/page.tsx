@@ -245,7 +245,7 @@ export default async function ChangelogDetailPage({
   };
 
   return (
-    <main className="bg-background text-foreground">
+    <div className="bg-background text-foreground">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareUpdateJsonLd) }}
@@ -379,6 +379,6 @@ export default async function ChangelogDetailPage({
         />
         </div>
       </section>
-    </main>
+    </div>
   );
 }

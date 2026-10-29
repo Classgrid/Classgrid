@@ -52,8 +52,8 @@ export async function generateMetadata(): Promise<Metadata> {
       : defaultTitle,
     description,
     icons: {
+      // app/favicon.ico is already added by Next.js, so it is not listed again here
       icon: [
-        { url: "/favicon.ico?v=2", sizes: "any" },
         { url: "/favicon-32x32.png?v=2", sizes: "32x32", type: "image/png" },
         { url: "/favicon-16x16.png?v=2", sizes: "16x16", type: "image/png" },
       ],
@@ -89,9 +89,6 @@ export async function generateMetadata(): Promise<Metadata> {
       : undefined,
     alternates: {
       canonical: siteUrl || "https://classgrid.in",
-    },
-    verification: {
-      google: "google-site-verification-code",
     },
   };
 }

@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function LoginLoading() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="px-6 pt-6 sm:px-8 sm:pt-8">
         <Skeleton className="h-7 w-36 rounded-md bg-card" />
       </div>
@@ -30,6 +30,6 @@ export default function LoginLoading() {
           <Skeleton className="h-12 w-full rounded-xl bg-primary/40" />
         </div>
       </div>
-    </main>
+    </div>
   );
 }

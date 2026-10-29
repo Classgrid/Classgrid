@@ -272,16 +272,16 @@ export default function RaiseTicketPage() {
   // ─── Auth / Choice Gate ───
   if (!identityReady && status === "loading") {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <Spinner className="w-6 h-6" />
-      </main>
+      </div>
     );
   }
 
   // ── STATE 1: Not logged in ──
   if (!knownEmail) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
+      <div className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
         <div className="relative w-full max-w-4xl overflow-hidden rounded-md border border-border bg-background">
           <div className="flex flex-col md:flex-row min-h-[400px]">
             {/* Left panel */}
@@ -320,14 +320,14 @@ export default function RaiseTicketPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     );
   }
 
   // ── STATE 2: Logged in but is Super Admin ──
   if (knownEmail && platformRole === "super_admin") {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
+      <div className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
         <div className="relative w-full max-w-4xl overflow-hidden rounded-md border border-border bg-background">
           <div className="flex flex-col md:flex-row min-h-[400px]">
             <div className="flex flex-col justify-center p-6 sm:p-10 md:p-14 md:w-1/2 border-b md:border-b-0 md:border-r border-border bg-muted/40">
@@ -366,14 +366,14 @@ export default function RaiseTicketPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     );
   }
 
   // ── STATE 3: Logged in platform user — choice card ──
   if (knownEmail && isPlatformUser && !showForm) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
+      <div className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
         <div className="relative w-full max-w-4xl overflow-hidden rounded-md border border-border bg-background">
           <div className="flex flex-col md:flex-row min-h-[400px]">
             {/* Left panel */}
@@ -421,14 +421,14 @@ export default function RaiseTicketPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     );
   }
 
   // ─── Success ───
   if (isSuccess) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background p-6 transition-colors">
+      <div className="min-h-screen flex items-center justify-center bg-background p-6 transition-colors">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -451,13 +451,13 @@ export default function RaiseTicketPage() {
             Opening your requests...
           </div>
         </motion.div>
-      </main>
+      </div>
     );
   }
 
   // ─── Form ───
   return (
-    <main className="min-h-screen bg-background py-24 px-4 md:px-12 selection:bg-primary/30 transition-colors duration-300">
+    <div className="min-h-screen bg-background py-24 px-4 md:px-12 selection:bg-primary/30 transition-colors duration-300">
       <div className="max-w-[780px] mx-auto">
 
         <motion.div
@@ -1245,7 +1245,7 @@ export default function RaiseTicketPage() {
           setSavedSelection(null);
         }}
       />
-    </main>
+    </div>
   );
 }
 

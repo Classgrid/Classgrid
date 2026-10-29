@@ -72,7 +72,7 @@ export default function ModulesPageClient({ modules }: { modules: Module[] }) {
   const sortedCats = Object.keys(grouped).sort();
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* ── HERO ── */}
       <section className="relative overflow-hidden border-b border-border px-4 pb-20 pt-32">
         {/* Grid bg */}
@@ -211,6 +211,6 @@ export default function ModulesPageClient({ modules }: { modules: Module[] }) {
         )}
       </section>
 
-    </main>
+    </div>
   );
 }

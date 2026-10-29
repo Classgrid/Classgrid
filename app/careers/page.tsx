@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 // trigger rebuild
 import { CareersForm } from "@/components/careers/CareersForm";
 
-export const metadata = buildPageMetadata({ title: "Careers | Classgrid", description: "Join the Classgrid team. Apply for internships and full-time roles." });
+export const metadata = buildPageMetadata({ title: "Careers", description: "Join the Classgrid team. Apply for internships and full-time roles.", path: "/careers" });
 
 type SalesMetric = {
   label: string;

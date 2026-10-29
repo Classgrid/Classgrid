@@ -265,9 +265,9 @@ function DemoSuccessPageInner() {
 
   if (loading) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-background text-foreground">
+      <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
         <Spinner className="w-8 h-8 text-muted-foreground" />
-      </main>
+      </div>
     );
   }
 
@@ -276,7 +276,7 @@ function DemoSuccessPageInner() {
   }
 
   return (
-    <main className="min-h-screen pt-12 pb-16 flex flex-col items-center justify-start px-4 bg-background">
+    <div className="min-h-screen pt-12 pb-16 flex flex-col items-center justify-start px-4 bg-background">
 
       {!isVerified ? (
         /* OTP COVER PAGE */
@@ -926,7 +926,7 @@ function DemoSuccessPageInner() {
           </motion.div>
         )}
       </AnimatePresence>
-    </main>
+    </div>
   );
 }
 

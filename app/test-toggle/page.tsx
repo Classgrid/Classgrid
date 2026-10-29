@@ -31,7 +31,7 @@ export default function TestToggle() {
   }, [date]);
 
   return (
-    <main className="min-h-screen pt-12 pb-16 flex flex-col items-center justify-start px-4 bg-background">
+    <div className="min-h-screen pt-12 pb-16 flex flex-col items-center justify-start px-4 bg-background">
       
       {/* Calendar Scheduler */}
       <div className="w-full max-w-[1000px] mx-auto mt-10">
@@ -273,6 +273,6 @@ export default function TestToggle() {
 
         </div>
       </div>
-    </main>
+    </div>
   );
 }

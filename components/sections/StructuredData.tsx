@@ -38,29 +38,11 @@ export function StructuredData({
     setPageDescription(description ?? "");
   }, [pathname, siteName]);
 
-  const sameAs = Array.isArray(socialLinks)
-    ? socialLinks.map((link) => link?.href).filter(Boolean)
-    : [];
-
-  if (!siteName?.trim() || !normalizedSiteUrl) {
+  // The Organization and WebSite data are already in the root layout's JSON-LD (@graph), so only this
+  // page's WebPage entry is added here, and only once its description is known (never an empty one).
+  if (!siteName?.trim() || !normalizedSiteUrl || !pageDescription) {
     return null;
   }
-
-  const organization = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteName,
-    url: normalizedSiteUrl,
-    email: contactEmail,
-    sameAs,
-  };
-
-  const website = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteName,
-    url: normalizedSiteUrl,
-  };
 
   const webpage = {
     "@context": "https://schema.org",
@@ -68,14 +50,8 @@ export function StructuredData({
     url: pageUrl,
     name: pageTitle,
     description: pageDescription,
-    isPartOf: normalizedSiteUrl,
+    isPartOf: { "@id": `${normalizedSiteUrl}/#website` },
   };
 
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpage) }} />
-    </>
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpage) }} />;
 }

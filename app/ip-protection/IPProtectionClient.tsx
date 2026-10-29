@@ -285,7 +285,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
         </nav>
 
         {/* Main Content */}
-        <main className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1">
           {/* Hero */}
           <div className="mb-12 rounded-md border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-slate-50 p-6 dark:border-white/5 dark:from-white/[0.03] dark:via-[#111113] dark:to-white/[0.03] sm:p-10">
             <div className="flex flex-col sm:flex-row items-start gap-5">
@@ -578,7 +578,7 @@ export function IPProtectionClient({ dataByLang }: IPProtectionClientProps) {
               {s.footerNote2}
             </p>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );

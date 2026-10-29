@@ -441,7 +441,7 @@ function RightColumn({ rightTermCmd, rightTermLine1, rightTermLine2, rightTermLi
                 style={{ marginTop: 24, textAlign: "center" }}
                 className="hidden sm:block">
                 <div style={{ fontSize: "9.5px", letterSpacing: "5.5px", color: "#a855f7", textTransform: "uppercase", marginBottom: 10, fontWeight: 500, fontFamily: "Inter, sans-serif" }}>
-                    {rightLabel || "With ClassGrid OS"}
+                    {rightLabel || "With Classgrid AI"}
                 </div>
                 <div style={{ fontSize: 28, fontWeight: 700, background: "linear-gradient(92deg,#c47dff 0%,#9878fa 50%,#be80fc 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", fontFamily: "Inter, sans-serif" }}>
                     {rightTime || "116ms instant sync"}
@@ -545,7 +545,7 @@ export function TurboComparisonNew({
                 {mounted ? (
                 <div className="cg-turbo-grid grid grid-cols-1 gap-16 lg:grid-cols-[45%_55%]">
 
-                    {/* ── LEFT COLUMN — Without ClassGrid ── */}
+                    {/* ── LEFT COLUMN — Without Classgrid ── */}
                     <div className="flex flex-col items-center">
                         {/* Cards row — stacked on mobile, side-by-side on sm+ */}
                         <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-6 sm:gap-12 w-full">
@@ -566,7 +566,7 @@ export function TurboComparisonNew({
                                 className="text-[11.5px] font-medium text-muted-foreground dark:text-white/40 tracking-[0.21em] uppercase"
                                 style={{ fontFamily: "-apple-system, 'Helvetica Neue', Arial, sans-serif" }}
                             >
-                                {leftLabel || "Without ClassGrid"}
+                                {leftLabel || "Without Classgrid AI"}
                             </span>
                             <span
                                 className="text-[32px] font-bold text-foreground dark:text-white tracking-[-0.015em] leading-[1.1]"

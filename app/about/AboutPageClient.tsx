@@ -80,7 +80,7 @@ export default function AboutPageClient({
   }
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* 1. HERO */}
       <section className="relative overflow-hidden px-4 pb-6 pt-12 sm:px-6 lg:px-8 text-center flex flex-col items-center bg-background">
         <SectionAccentBar align="center" />
@@ -158,7 +158,7 @@ export default function AboutPageClient({
                       <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-foreground/5 text-foreground">
                         <LayoutGrid className="h-6 w-6" />
                       </div>
-                      <h3 className="mb-4 text-2xl font-bold tracking-tight text-foreground">What is ClassGrid?</h3>
+                      <h3 className="mb-4 text-2xl font-bold tracking-tight text-foreground">What is Classgrid?</h3>
                       <div className="prose prose-sm dark:prose-invert prose-neutral text-muted-foreground leading-relaxed">
                         <PortableTextBlock value={whatIsClassgrid} showAccentBars={false} />
                       </div>
@@ -330,6 +330,6 @@ export default function AboutPageClient({
         </section>
       )}
 
-    </main>
+    </div>
   );
 }

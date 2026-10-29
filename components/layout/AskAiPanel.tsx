@@ -1892,6 +1892,7 @@ export function AskAiPanel({ open, onOpenChange, pageContext, variant = "in-flow
               multiple
               accept={ACCEPTED_FILE_TYPES}
               onChange={handleFileSelect}
+              aria-label="Attach files"
               className="hidden"
             />
 
@@ -1992,6 +1993,7 @@ export function AskAiPanel({ open, onOpenChange, pageContext, variant = "in-flow
             <textarea
               id="ask-ai-input"
               name="askAiQuestion"
+              aria-label="Ask a question about Classgrid"
               suppressHydrationWarning
               ref={inputRef as any}
               value={input}

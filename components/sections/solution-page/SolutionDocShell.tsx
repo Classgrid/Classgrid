@@ -160,9 +160,9 @@ export function SolutionDocShell({
         </aside>
 
         {/* Reading column */}
-        <main className="flex min-w-0 flex-1 justify-center px-5 py-10 md:px-10 lg:px-14 xl:px-16">
+        <div className="flex min-w-0 flex-1 justify-center px-5 py-10 md:px-10 lg:px-14 xl:px-16">
           <div className="w-full max-w-[760px]">{children}</div>
-        </main>
+        </div>
 
         {/* On this page */}
         <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-56 shrink-0 overflow-y-auto border-l border-border/60 px-5 py-10 xl:block">

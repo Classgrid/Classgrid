@@ -172,7 +172,7 @@ export default function TeamClient({ leadership, engineering, sales, support }: 
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/5 text-foreground text-sm font-medium mb-6 ring-1 ring-foreground/15"
           >
             <Users className="w-4 h-4" />
-            <span>The People Behind ClassGrid</span>
+            <span>The People Behind Classgrid</span>
           </motion.div>
           <SectionAccentBar />
           <motion.h1 

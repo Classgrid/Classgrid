@@ -114,7 +114,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
       </motion.section>
 
       {/* Main Content */}
-      <main className="relative z-10 max-w-4xl mx-auto px-6 pb-40">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pb-40">
         
         <motion.p 
           initial={{ opacity: 0, y: 16 }}
@@ -322,7 +322,7 @@ export default function AcknowledgementClient({ contributors, mentors, family }:
           </div>
         )}
 
-      </main>
+      </div>
     </div>
   )
 }

@@ -30,7 +30,7 @@ export function CommunityClient() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
             >
-              The <span className="text-foreground">ClassGrid</span> Forum
+              The <span className="text-foreground">Classgrid</span> Forum
             </motion.h1>
             
             <motion.p 
@@ -39,7 +39,7 @@ export function CommunityClient() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
             >
-              We are building a dedicated community forum where Classgrid AI users can connect, share ideas, exchange tips and prompts, and collaborate directly with the ClassGrid team.
+              We are building a dedicated community forum where Classgrid AI users can connect, share ideas, exchange tips and prompts, and collaborate directly with the Classgrid team.
             </motion.p>
 
             {/* Feature Cards */}
@@ -78,7 +78,7 @@ export function CommunityClient() {
                     <Sparkles className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-foreground">Verified Member Badges</h3>
-                  <p className="text-sm text-muted-foreground">Verified Classgrid AI users will receive member badges. Non-platform users will also be able to join, browse discussions, and participate in the wider ClassGrid Community.</p>
+                  <p className="text-sm text-muted-foreground">Verified Classgrid AI users will receive member badges. Non-platform users will also be able to join, browse discussions, and participate in the wider Classgrid Community.</p>
                 </div>
               </motion.div>
 
@@ -96,7 +96,7 @@ export function CommunityClient() {
                     <BookOpen className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-card-foreground transition-colors duration-300 group-hover:text-foreground">Share Feedback & Suggestions</h3>
-                  <p className="text-sm text-muted-foreground">Report issues, request new features, and share suggestions directly with the ClassGrid team as we continue improving the platform.</p>
+                  <p className="text-sm text-muted-foreground">Report issues, request new features, and share suggestions directly with the Classgrid team as we continue improving the platform.</p>
                 </div>
               </motion.div>
 

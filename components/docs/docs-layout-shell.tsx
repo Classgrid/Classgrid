@@ -198,7 +198,7 @@ export function DocsLayoutShell({ children, sidebarSections = [] }: { children: 
         </AnimatePresence>
 
         {/* Main Content + Toggle */}
-        <main className="flex-1 min-w-0 docs-content pt-4 pb-8">
+        <div className="flex-1 min-w-0 docs-content pt-4 pb-8">
           {/* Toggle + Breadcrumb row — Vercel style (Desktop) */}
           <div className="mb-6 hidden lg:flex items-center gap-3">
             {/* Sidebar toggle button */}
@@ -243,7 +243,7 @@ export function DocsLayoutShell({ children, sidebarSections = [] }: { children: 
               pageTitle={breadcrumb?.title || 'Documentation'} 
             />
           </div>
-        </main>
+        </div>
 
         {/* Desktop TOC */}
         <DocsToc />

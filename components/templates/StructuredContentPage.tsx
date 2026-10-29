@@ -639,7 +639,7 @@ function StructuredContentPageInner({
         </AnimatePresence>
 
         {/* ── Center Content ── */}
-        <main
+        <div
           className="min-w-0 flex-1 px-5 py-10 md:px-10 lg:px-14 xl:px-16 flex justify-center xl:justify-start transition-all duration-300 ease-in-out"
         >
           <div
@@ -995,7 +995,7 @@ function StructuredContentPageInner({
             </div>
 
           </div>
-        </main>
+        </div>
 
         {/* ── Right Sidebar: Table of Contents ── */}
         <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-56 shrink-0 overflow-y-auto border-l border-border/60 px-5 py-10 lg:block">

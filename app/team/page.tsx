@@ -4,7 +4,7 @@ import TeamClient from "@/components/team/TeamClient"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Meet Our Team | ClassGrid",
+  title: "Meet Our Team",
   description: "Meet the engineers, designers, and builders behind Classgrid AI.",
 }
 

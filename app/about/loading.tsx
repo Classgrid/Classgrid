@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* 1. Hero skeleton */}
       <section className="relative overflow-hidden px-4 pb-6 pt-12 sm:px-6 lg:px-8 text-center flex flex-col items-center space-y-6">
         <Skeleton className="h-1 w-14 rounded-full bg-muted" />
@@ -58,6 +58,6 @@ export default function Loading() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

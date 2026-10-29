@@ -193,7 +193,7 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
   const sortedCategories = [...categories].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground pt-32 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
+    <div className="relative min-h-screen bg-background text-foreground pt-32 pb-16 overflow-hidden selection:bg-foreground/20 transition-colors duration-300">
       <div className="absolute top-0 left-0 w-full h-[600px] overflow-hidden -z-10 pointer-events-none">
         <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] rounded-full bg-foreground/[0.03] blur-[120px]" />
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay" />
@@ -348,6 +348,6 @@ export default function HelpCenterClient({ lang, initialData }: { lang: Supporte
       </section>
       )}
 
-    </main>
+    </div>
   );
 }

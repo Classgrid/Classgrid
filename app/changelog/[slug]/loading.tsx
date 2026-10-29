@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function ChangelogDetailLoading() {
   return (
-    <main className="bg-background text-foreground">
+    <div className="bg-background text-foreground">
 
       {/* Hero section skeleton — matches DocumentHero centered layout */}
       <section className="border-b border-border bg-background">
@@ -85,6 +85,6 @@ export default function ChangelogDetailLoading() {
           </aside>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

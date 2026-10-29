@@ -162,7 +162,7 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
   })();
 
   return (
-    <main className="bg-background text-foreground pb-20">
+    <div className="bg-background text-foreground pb-20">
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         
         {/* ── HERO ── */}
@@ -419,6 +419,6 @@ export function CaseStudiesClient({ caseStudies: initialCaseStudies, heroSubtitl
         )}
 
       </div>
-    </main>
+    </div>
   );
 }

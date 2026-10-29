@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function ComparisonDetailLoading() {
   return (
-    <main className="min-h-screen bg-background text-foreground pt-24 pb-16 relative">
+    <div className="min-h-screen bg-background text-foreground pt-24 pb-16 relative">
       <div className="relative mx-auto w-full max-w-[900px]">
         <div className="relative border-l border-r border-slate-200 dark:border-white/10">
 
@@ -71,6 +71,6 @@ export default function ComparisonDetailLoading() {
 
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -141,7 +141,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
   ];
 
   return (
-    <main className="bg-background text-foreground">
+    <div className="bg-background text-foreground">
       {/* Heading */}
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-7xl lg:grid-cols-[minmax(0,1fr)_380px]">
@@ -416,6 +416,6 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
           </AnimatePresence>
         )}
       </section>
-    </main>
+    </div>
   );
 }

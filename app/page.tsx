@@ -326,6 +326,7 @@ export async function generateMetadata(): Promise<Metadata> {
         url: pageUrl,
         siteName,
         type: "website",
+        images: [{ url: "/android-chrome-512x512.png", width: 512, height: 512, alt: "Classgrid" }],
       }
       : undefined,
     twitter: resolvedTitle || metaDescription
@@ -333,6 +334,7 @@ export async function generateMetadata(): Promise<Metadata> {
         card: "summary_large_image",
         title: resolvedTitle,
         description: metaDescription,
+        images: ["/android-chrome-512x512.png"],
       }
       : undefined,
   };

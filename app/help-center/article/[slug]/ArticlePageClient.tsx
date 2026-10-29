@@ -206,7 +206,7 @@ export default function ArticlePageClient({
   }
 
   return (
-    <main className="min-h-screen bg-background pb-24 selection:bg-foreground/20">
+    <div className="min-h-screen bg-background pb-24 selection:bg-foreground/20">
       {/* ── Mobile Nav Bar (only visible below lg) ── */}
       <div className="sticky top-16 z-40 flex w-full items-center justify-between border-b border-border/60 bg-background/95 px-4 py-3 backdrop-blur-sm lg:hidden">
         <button
@@ -433,6 +433,6 @@ export default function ArticlePageClient({
           </div>
         </article>
       </div>
-    </main>
+    </div>
   );
 }

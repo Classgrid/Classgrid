@@ -23,11 +23,9 @@ export function buildPageMetadata({
 }: MetadataInput): Metadata {
   const url = `${siteMeta.domain}${path}`;
   const fullTitle = `${title} | ${siteMeta.siteName}`;
-  const imageUrl = ogImage
-    ? ogImage.startsWith("http")
-      ? ogImage
-      : `${siteMeta.domain}${ogImage}`
-    : undefined;
+  // Every page has a share image (WhatsApp, LinkedIn, X previews); the logo when the page has none of its own
+  const image = ogImage || "/android-chrome-512x512.png";
+  const imageUrl = image.startsWith("http") ? image : `${siteMeta.domain}${image}`;
 
   return {
     title,
@@ -41,13 +39,13 @@ export function buildPageMetadata({
       url,
       siteName: siteMeta.siteName,
       type,
-      images: imageUrl ? [{ url: imageUrl }] : undefined,
+      images: [{ url: imageUrl }],
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: imageUrl ? [imageUrl] : undefined,
+      images: [imageUrl],
     },
     robots: noIndex
       ? {

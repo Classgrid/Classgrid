@@ -4,8 +4,8 @@ import AcknowledgementClient from "@/components/acknowledgement/AcknowledgementC
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Acknowledgements | ClassGrid – With Gratitude",
-  description: "Recognizing the mentors, contributors, and supporters who made ClassGrid possible.",
+  title: "Acknowledgements – With Gratitude",
+  description: "Recognizing the mentors, contributors, and supporters who made Classgrid possible.",
 }
 
 export const revalidate = 60; // Revalidate every minute

@@ -38,7 +38,7 @@ export function CmsFallback({
   const router = useRouter();
 
   return (
-    <main className="min-h-[60vh] bg-background text-foreground flex items-center justify-center px-6 py-24">
+    <div className="min-h-[60vh] bg-background text-foreground flex items-center justify-center px-6 py-24">
       <div className="max-w-md w-full text-center space-y-6">
 
         {/* Icon */}
@@ -81,6 +81,6 @@ export function CmsFallback({
           If this keeps happening, please contact support.
         </p>
       </div>
-    </main>
+    </div>
   );
 }
