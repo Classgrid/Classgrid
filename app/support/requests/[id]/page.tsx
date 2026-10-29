@@ -498,7 +498,7 @@ function TicketDetailPageInner() {
                               {((msg.orgLogo && msg.orgLogo !== "null") || msg.orgName === "Classgrid") ? (
                                 // eslint-disable-next-line @next/next/no-img-element
                                 <img
-                                  src={(msg.orgLogo && msg.orgLogo !== "null") ? msg.orgLogo : "/logo.png"}
+                                  src={msg.orgName === "Classgrid" ? "/logo.png" : msg.orgLogo!}
                                   alt="" 
                                   className="w-4 h-4 rounded-none object-contain" 
                                   referrerPolicy="no-referrer" 
