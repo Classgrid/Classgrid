@@ -75,7 +75,7 @@ export function UseCasesHub({ useCases }: { useCases: UseCase[] }) {
         {shown.length === 0 ? (
           <p className="py-20 text-center text-[15px] text-black/55 dark:text-white/55">No use cases match your search.</p>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="cg-usecase-cards grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {shown.map((item) => (
               <Link
                 key={item.slug}

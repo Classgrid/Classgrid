@@ -20,7 +20,7 @@ export function AgentRealWorkSection() {
 
         <div className="mt-14 grid gap-10 md:mt-20 lg:grid-cols-12 lg:items-end lg:gap-12">
           {/* Text */}
-          <Reveal className="lg:col-span-4 lg:pb-8">
+          <Reveal className="cg-split-text lg:col-span-4 lg:pb-8">
             <h3 className="text-balance text-3xl font-medium leading-[1.12] tracking-[-0.03em] md:text-[44px]">
               Built to do your real work
             </h3>
@@ -31,7 +31,7 @@ export function AgentRealWorkSection() {
           </Reveal>
 
           {/* Visual */}
-          <Reveal delay={0.1} className="lg:col-span-8">
+          <Reveal delay={0.1} className="cg-split-visual lg:col-span-8">
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#d4d4d8] via-[#5e9fe0] to-[#93a9f6] p-4 sm:p-6 md:aspect-[16/10] md:p-0 lg:aspect-[16/9] dark:from-[#27272a] dark:via-[#1b3d78] dark:to-[#363d8c]">
               {/* Soft light blobs */}
               <div aria-hidden className="pointer-events-none absolute -left-16 -top-24 h-80 w-80 rounded-full bg-white/35 blur-3xl dark:bg-white/10" />

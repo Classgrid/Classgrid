@@ -246,6 +246,8 @@ export function DocsToc() {
         window.open(`https://chatgpt.com/?q=${encodeURIComponent(prompt)}`, '_blank');
       } else if (aiName === 'Claude') {
         window.open(`https://claude.ai/new?q=${encodeURIComponent(prompt)}`, '_blank');
+      } else if (aiName === 'Classgrid') {
+        window.open(`https://chat.classgrid.in/?q=${encodeURIComponent(prompt)}`, '_blank');
       }
     }, 1000);
   };
@@ -374,6 +376,12 @@ export function DocsToc() {
               <button onClick={() => handleCopyAI('Claude')} className="flex items-center gap-2.5 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white transition-colors w-full text-left px-2 py-1.5 rounded-md -ml-2 text-slate-600 cursor-pointer">
                 <img src="https://bumxgscngzjadyozdpce.supabase.co/storage/v1/object/public/LOGO%20AND%20%20SVG/claude-color.svg" alt="Claude" className="w-4 h-4" />
                 <span>Ask Claude</span>
+              </button>
+            </li>
+            <li>
+              <button onClick={() => handleCopyAI('Classgrid')} className="flex items-center gap-2.5 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white transition-colors w-full text-left px-2 py-1.5 rounded-md -ml-2 text-slate-600 cursor-pointer">
+                <img src="/logo.png" alt="Classgrid" className="w-4 h-4 object-contain" />
+                <span>Ask Classgrid</span>
               </button>
             </li>
           </ul>

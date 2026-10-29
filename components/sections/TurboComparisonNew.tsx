@@ -543,7 +543,7 @@ export function TurboComparisonNew({
 
                 {/* Two Column Layout — only render after client mount to enable animations */}
                 {mounted ? (
-                <div className="grid grid-cols-1 gap-16 lg:grid-cols-[45%_55%]">
+                <div className="cg-turbo-grid grid grid-cols-1 gap-16 lg:grid-cols-[45%_55%]">
 
                     {/* ── LEFT COLUMN — Without ClassGrid ── */}
                     <div className="flex flex-col items-center">

@@ -1173,6 +1173,29 @@ code.hljs {
   
 }
 
+/* ── Ask AI panel open (desktop): the page column is 400px narrower, so these sections make room ── */
+@media (min-width: 640px) {
+  /* Home hero title: one line at 78px no longer fits, so it shrinks with the column (and may wrap) */
+  body[data-ask-ai-open="true"] .cg-hero-title {
+    white-space: normal;
+    font-size: min(78px, calc((100vw - 480px) / 15));
+  }
+}
+@media (min-width: 1024px) and (max-width: 1699px) {
+  /* Home text + picture sections (real work, schedules, plugins): more room for the text, and the picture box
+     is drawn a little smaller so its floating cards keep their shape */
+  body[data-ask-ai-open="true"] .cg-split-text { grid-column: span 5 / span 5; }
+  body[data-ask-ai-open="true"] .cg-split-visual { grid-column: span 7 / span 7; zoom: 0.78; }
+}
+@media (min-width: 1024px) and (max-width: 1599px) {
+  /* Home "Without / With Classgrid AI": the two halves stay side by side, drawn a little smaller to fit */
+  body[data-ask-ai-open="true"] .cg-turbo-grid { zoom: 0.8; }
+}
+@media (min-width: 1280px) and (max-width: 1699px) {
+  /* Use cases: 2 cards per row instead of 3 narrow ones */
+  body[data-ask-ai-open="true"] .cg-usecase-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 /* ── Hide docs right sidebar (TOC, AI Tools, Feedback) when Ask AI panel is open ── */
 body[data-ask-ai-open="true"] .docs-content ~ aside {
   display: none !important;

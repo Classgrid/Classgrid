@@ -115,7 +115,7 @@ export function AgentHeroSection({
 
         <h1
           className={cn(
-            "cgh-rise max-w-[72rem] text-balance text-[44px] font-medium leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:whitespace-nowrap lg:text-[78px]",
+            "cgh-rise cg-hero-title max-w-[72rem] text-balance text-[44px] font-medium leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:whitespace-nowrap lg:text-[78px]",
             eyebrow ? "mt-6 md:mt-8" : "mt-12 md:mt-16"
           )}
           style={{ animationDelay: "0.15s" }}

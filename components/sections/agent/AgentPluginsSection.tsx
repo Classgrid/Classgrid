@@ -14,7 +14,7 @@ export function AgentPluginsSection() {
       <div className="mx-auto max-w-[1728px] px-5 pb-24 md:px-10 md:pb-32 lg:pb-40">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-12">
           {/* Text */}
-          <Reveal className="lg:col-span-4 lg:pb-8">
+          <Reveal className="cg-split-text lg:col-span-4 lg:pb-8">
             <h3 className="text-balance text-3xl font-medium leading-[1.12] tracking-[-0.03em] md:text-[44px]">
               A plugin for every app you use
             </h3>
@@ -31,7 +31,7 @@ export function AgentPluginsSection() {
           </Reveal>
 
           {/* Visual */}
-          <Reveal delay={0.1} className="lg:col-span-8">
+          <Reveal delay={0.1} className="cg-split-visual lg:col-span-8">
             <Link
               href="/plugins"
               aria-label="See all plugins"

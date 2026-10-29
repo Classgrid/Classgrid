@@ -38,6 +38,8 @@ export function ChangelogSidebar({ readingTime }: ChangelogSidebarProps) {
         window.open(`https://chatgpt.com/?q=${encodeURIComponent(prompt)}`, '_blank');
       } else if (name === 'Claude') {
         window.open(`https://claude.ai/new?q=${encodeURIComponent(prompt)}`, '_blank');
+      } else if (name === 'Classgrid') {
+        window.open(`https://chat.classgrid.in/?q=${encodeURIComponent(prompt)}`, '_blank');
       }
     }, 800);
   };
@@ -105,6 +107,15 @@ export function ChangelogSidebar({ readingTime }: ChangelogSidebarProps) {
               >
                 <img src="https://bumxgscngzjadyozdpce.supabase.co/storage/v1/object/public/LOGO%20AND%20%20SVG/claude-color.svg" alt="Claude" className="w-3.5 h-3.5 shrink-0" />
                 <span>Ask Claude</span>
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleAI('Classgrid')}
+                className="flex items-center gap-2 text-[13px] text-muted-foreground hover:text-foreground transition-colors w-full text-left px-2 py-1.5 rounded-md -ml-2 cursor-pointer hover:bg-muted/50"
+              >
+                <img src="/logo.png" alt="Classgrid" className="w-3.5 h-3.5 object-contain shrink-0" />
+                <span>Ask Classgrid</span>
               </button>
             </li>
           </ul>
