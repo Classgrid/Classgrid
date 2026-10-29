@@ -175,7 +175,7 @@ export default function MyRequestsPage() {
                     ) : (
                       <div className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase text-orange-600 dark:text-orange-400">
                         <MessageSquare className="h-3 w-3" />
-                        Not a user
+                        Guest
                       </div>
                     )}
                   </div>
@@ -214,7 +214,7 @@ export default function MyRequestsPage() {
               <div className="mt-6 rounded-xl border border-blue-500/20 bg-blue-500/5 p-4 flex gap-3 text-sm text-blue-800 dark:text-blue-300">
                 <Info className="h-5 w-5 shrink-0 text-blue-500" />
                 <p>
-                  <strong>Note on Replies:</strong> You will receive an automated email notification whenever the Classgrid Support Team replies to your {isPlatformUser ? "ticket" : "request"}. 
+                  <strong>Note on Replies:</strong> You will receive an automated email notification whenever the Classgrid Support Team replies to your ticket. 
                   Please check back on this dashboard to view updates or continue the conversation.
                 </p>
               </div>

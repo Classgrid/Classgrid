@@ -265,7 +265,6 @@ export default function RaiseTicketPage() {
   const displayEmail = email || knownEmail;
 
   // ─── Derive org status from session ───
-  const isPlatformUser = (session?.user as any)?.isPlatformUser === true;
   const orgName = (session?.user as any)?.orgName || null;
   const platformRole = (session?.user as any)?.platformRole || null;
 
@@ -370,8 +369,8 @@ export default function RaiseTicketPage() {
     );
   }
 
-  // ── STATE 3: Logged in platform user — choice card ──
-  if (knownEmail && isPlatformUser && !showForm) {
+  // ── STATE 3: Logged in (with or without a Classgrid account) — choice card ──
+  if (knownEmail && !showForm) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background p-4 md:p-12">
         <div className="relative w-full max-w-4xl overflow-hidden rounded-md border border-border bg-background">
