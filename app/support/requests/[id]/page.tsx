@@ -495,10 +495,10 @@ function TicketDetailPageInner() {
                         {msg.orgName && (
                           <div className="mt-1.5">
                             <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-muted/60 border border-border text-xs font-medium text-muted-foreground">
-                              {(msg.orgLogo && msg.orgLogo !== "null") ? (
+                              {((msg.orgLogo && msg.orgLogo !== "null") || msg.orgName === "Classgrid") ? (
                                 // eslint-disable-next-line @next/next/no-img-element
-                                <img 
-                                  src={msg.orgLogo} 
+                                <img
+                                  src={(msg.orgLogo && msg.orgLogo !== "null") ? msg.orgLogo : "/logo.png"}
                                   alt="" 
                                   className="w-4 h-4 rounded-none object-contain" 
                                   referrerPolicy="no-referrer" 
