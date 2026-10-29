@@ -50,6 +50,8 @@ const SKIP_SENDERS = [
   "postmaster@",
   "noreply@",
   "no-reply@",
+  // Banned by the owner: never reply to these
+  "security@merx.help",
 ];
 
 const SKIP_SUBJECT_PATTERNS = [
