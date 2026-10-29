@@ -475,7 +475,7 @@ export async function processIncomingEmail(
         }
         
         // ── APPEND FOLLOW-UP TO EXISTING TICKET (Platform Users) ──────────────
-        if (conversation.escalatedTicketId && isPlatformUser) {
+        if (conversation.escalatedTicketId) {
           try {
             const backendUrl = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
             const replyFormData = new FormData();
@@ -564,7 +564,7 @@ export async function processIncomingEmail(
               <h2>User provided more details on an escalated ticket</h2>
               <p><strong>Customer:</strong> ${parsed.senderName || parsed.senderEmail} (${parsed.senderEmail})</p>
               ${conversation.escalatedTicketId ? `<p><strong>Platform Ticket ID:</strong> ${conversation.escalatedTicketId}</p>` : ""}
-              <p><strong>Is Registered Platform User:</strong> ${isPlatformUser ? "Yes" : "No"}</p>
+              <p><strong>Has a Classgrid account:</strong> ${isPlatformUser ? "Yes" : "No"}</p>
               ${isPlatformUser ? `<p><strong>Platform Role:</strong> ${platformUserDetails.role}</p>
               <p><strong>Account Status:</strong> <span style="text-transform:capitalize;">${platformUserDetails.status}</span></p>
               <p><strong>Organization:</strong> ${platformUserDetails.orgName} (${platformUserDetails.orgId})</p>` : ""}
@@ -586,8 +586,8 @@ export async function processIncomingEmail(
       }
 
     if (isEscalation) {
-      if (isPlatformUser) {
-        // Create support ticket via Platform API for registered users only
+      // Create support ticket via Platform API for everyone (with or without a Classgrid account)
+      {
         try {
           const formData = new FormData();
           formData.append("name", parsed.senderName || "Email Support User");
@@ -661,7 +661,7 @@ export async function processIncomingEmail(
       await conversation.save();
       console.log(`💾 [email-ai] Conversation saved before admin email (${conversation._id})`);
 
-      // Send the failed escalation email if ticket was not created (Non-Platform Users)
+      // Send the failed escalation email only if the ticket could not be created
       if (!isRealTicket) {
         await sendFailedEscalationEmail(
           parsed.senderEmail,
@@ -672,7 +672,7 @@ export async function processIncomingEmail(
           conversation._id.toString()
         );
       } else {
-        // Send success escalation email for platform users
+        // Send success escalation email
         await sendTicketCreatedEscalationEmail(
           parsed.senderEmail,
           parsed.senderName || "Unknown",

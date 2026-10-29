@@ -99,7 +99,7 @@ export async function sendTicketCreatedEscalationEmail(
 
   const subject = `🎫 Support Ticket Auto-Created via ${isChat ? 'Chat' : 'Email'} — ${customerEmail}`;
   const content = `
-    <p>The <strong>${agentName}</strong> handled an inbound customer ${channelType} and determined it requires human follow-up. A formal Support Ticket (ID: ${ticketId}) was successfully auto-created for this registered platform user.</p>
+    <p>The <strong>${agentName}</strong> handled an inbound customer ${channelType} and determined it requires human follow-up. A formal Support Ticket (ID: ${ticketId}) was successfully auto-created for this customer.</p>
     
     <div style="background-color: #f0fdf4; border-left: 4px solid #16a34a; padding: 12px 16px; margin: 20px 0; border-radius: 4px;">
       <p style="margin: 0 0 10px 0;"><strong>Customer:</strong> ${displayName}</p>
@@ -294,7 +294,7 @@ export async function sendFollowUpAlertEmail({
     <div style="background-color: #eff6ff; border-left: 4px solid #2563eb; padding: 12px 16px; margin: 20px 0; border-radius: 4px;">
       <p style="margin: 0 0 10px 0;"><strong>Customer:</strong> ${displayName}</p>
       <p style="margin: 0 0 10px 0;"><strong>Email:</strong> <a href="mailto:${customerEmail}" style="color: #2563eb; text-decoration: none;">${customerEmail}</a></p>
-      <p style="margin: 0 0 10px 0;"><strong>Registered Platform User:</strong> ${isPlatformUser ? "Yes ✅" : "No (Non-Platform User)"}</p>
+      <p style="margin: 0 0 10px 0;"><strong>Has a Classgrid account:</strong> ${isPlatformUser ? "Yes ✅" : "No"}</p>
       ${ticketId ? `<p style="margin: 0 0 10px 0;"><strong>Platform Ticket ID:</strong> ${ticketId}</p>` : ""}
       ${escalationId && !ticketId ? `<p style="margin: 0 0 10px 0;"><strong>Sanity Enquiry ID:</strong> ${escalationId}</p>` : ""}
       <p style="margin: 0 0 0 0;"><strong>Date &amp; Time:</strong> ${now} (IST)</p>
