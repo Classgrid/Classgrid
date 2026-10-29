@@ -1,0 +1,1666 @@
+{
+  "_id": "legal-security",
+  "_type": "legalPage",
+  "title": "SECURITY POLICY",
+  "slug": {
+    "_type": "slug",
+    "current": "security"
+  },
+  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "effectiveDate": "2026-10-27T00:00:00.000Z",
+  "intro": {
+    "introductionHeading": "Introduction",
+    "introductionBody": "",
+    "scopeHeading": "Scope",
+    "scopeBody": "Governs all public-facing artificial intelligence services, cloud development environments, and APIs operated by Classgrid Technologies."
+  },
+  "sections": [
+    {
+      "_key": "9a469defe962038e",
+      "id": "1-our-security-commitment-architecture-overview",
+      "title": "1. OUR SECURITY COMMITMENT & ARCHITECTURE OVERVIEW",
+      "content": [
+        {
+          "_key": "002dd46c5936b41c",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "b5d4f287a82a560f",
+              "_type": "span",
+              "text": "At Classgrid Technologies (\"**Company**\", \"**Classgrid**\", \"**We**\", \"**Us**\", or \"**Our**\"), security is embedded into the core architecture of Our public artificial intelligence platform ([https://chat.classgrid.in](https://chat.classgrid.in)). Because Classgrid runs autonomous AI engineering agents, ephemeral Linux development sandboxes, real-time multi-user collaborative Grids, and voice telephony gateways, Our security posture is built upon a strict **Zero-Trust** and **Defense-in-Depth** model.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a857f4213d834f9d",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "33bda59359966fd9",
+              "_type": "span",
+              "text": "**Scope Clarification:** This Security Policy governs the public-facing AI developer platform, APIs, sandboxes, and cloud infrastructure. All legacy institutional ERP systems have been decommissioned. This document outlines the technical and organizational safeguards actively enforced across Our modern distributed cloud environment.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1e004bf58d1a1296",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "3854c55ba3f7cd02",
+              "_type": "span",
+              "text": "Every layer of Our infrastructure—from client-side device authentication to containerized cloud sandboxes, model inference gateways, and edge telemetry—is designed to isolate workloads, protect developer IP, and mitigate automated attacks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "7571787dd4851344",
+      "id": "2-authentication-session-security",
+      "title": "2. AUTHENTICATION & SESSION SECURITY",
+      "content": [
+        {
+          "_key": "749e20d78cb86b80",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "d344d43bd8631ec9",
+              "_type": "span",
+              "text": "2.1 Passwordless Authentication & Federated Identity",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9c7d5439ca68b4a4",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "4783d5215f3d32d5",
+              "_type": "span",
+              "text": "To eliminate credential stuffing and password reuse attacks, Classgrid enforces modern federated authentication:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "388c9514093bf7a8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7bd96f940d9abf10",
+              "_type": "span",
+              "text": "**Federated OAuth 2.0 / OIDC:** Secure sign-in through verified identity providers (Google OAuth and GitHub OAuth).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "6de096ed46767f7c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "9741c75983839879",
+              "_type": "span",
+              "text": "**Cryptographic Email OTP:** Passwordless magic links and time-limited, single-use One-Time Passwords (OTPs) hashed using SHA-256 before database storage.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8366ab9fdb9f9d04",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "727d0ab82200ffc3",
+              "_type": "span",
+              "text": "**Strict Anti-Timing Attack Verification:** All session tokens, passwordless verification secrets, and API keys are validated using constant-time cryptographic algorithms (`crypto.timingSafeEqual`) to prevent side-channel timing attacks that infer secret lengths.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "42f8b1e5a02ed278",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "933f7e5626d24782",
+              "_type": "span",
+              "text": "2.2 Client-Side Device Fingerprinting & Anti-Abuse",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5979240c825a003e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "8ab1c9c5c3c73f20",
+              "_type": "span",
+              "text": "Our client applications generate non-reversible hardware environment fingerprints to protect account integrity and block botnets:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1ecf6a3ed38ee23f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "9472508f4e2f0261",
+              "_type": "span",
+              "text": "**Hardware Canvas & WebGL Hash:** Mathematical hashes computed from client GPU rendering output and color bit depth.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "326050f6620e25a0",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5f8f4a7c647ee9d9",
+              "_type": "span",
+              "text": "**Session Anomaly Detection:** Real-time correlation of device signatures with IP geolocations, blocking hijacked session tokens attempting cross-region access without re-authentication.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "02c6453cb107b229",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "30777d2dbf5db3b4",
+              "_type": "span",
+              "text": "2.3 Session Token Architecture",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "52d4ad4fdd2bd92a",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e3446b06f0758d42",
+              "_type": "span",
+              "text": "**HttpOnly & Secure Cookies:** Web sessions are secured with cryptographically signed JSON Web Tokens (JWTs) marked `HttpOnly`, `Secure`, and `SameSite=Lax` or `Strict` to prevent Cross-Site Scripting (XSS) extraction.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "390fe9807a448db9",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e330d2b5161f36ca",
+              "_type": "span",
+              "text": "**Bearer Token Security:** API bearer tokens are strictly forbidden in URL query parameters and must be transmitted in the `Authorization: Bearer <token>` header.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "dedfec91ef71460f",
+      "id": "3-project-mode-cloud-development-sandbox-security",
+      "title": "3. PROJECT MODE & CLOUD DEVELOPMENT SANDBOX SECURITY",
+      "content": [
+        {
+          "_key": "c65bfd586f43df8a",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "494be3212bd0059e",
+              "_type": "span",
+              "text": "3.1 Ephemeral Container Isolation",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d8bd7de67d14c9c9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "b85ddba400a485ff",
+              "_type": "span",
+              "text": "Project Mode provides developers with dynamic Linux cloud development environments. Security controls include:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a364136cba4e229e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "798cf6fe23df29f9",
+              "_type": "span",
+              "text": "**Isolated Linux Sandboxes:** Workspaces run inside isolated virtual containers or VMs managed via NodeSSH over private VPC networks. Sandboxes have zero access to the underlying hypervisor or adjacent tenant environments.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "da961d1d1d0bc2f8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "926837e59ed8fd4b",
+              "_type": "span",
+              "text": "**Ephemeral Storage Lifecycle:** Cloud containers are provisioned on demand. When a development session ends or times out, the container is safely terminated, and the file system is zeroed out.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "61a9e633885d1119",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "720989f63b497a58",
+              "_type": "span",
+              "text": "**Network Egress Safeguards:** Outbound network connections from sandboxes are monitored and rate-limited. Cloud sandboxes cannot be used to scan internal AWS/cloud metadata services (`169.254.169.254`), execute DDoS attacks, or interact with prohibited botnet command-and-control infrastructure.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7048898034a6e1d4",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "defdbf9be8ba4a1a",
+              "_type": "span",
+              "text": "3.2 2MB File Cap (`MAX_FILE_BYTES = 2MB`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "6662bd222dfad4fc",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "8c437718d80ecb12",
+              "_type": "span",
+              "text": "Individual file uploads into Project Mode sandboxes are subject to a strict 2-Megabyte limit (`MAX_FILE_BYTES = 2 * 1024 * 1024`). This rule prevents:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "26cd7b6f4ae0406b",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "6ca01110a80ebeeb",
+              "_type": "span",
+              "text": "Denial-of-Service attacks attempting to exhaust container disk space or memory;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "aaae874d24f72980",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "bf781b10b3198e00",
+              "_type": "span",
+              "text": "Decompression bombs (\"zip bombs\") engineered to crash containerized file system daemons;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "766291fc5202333c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a05c12707cc851df",
+              "_type": "span",
+              "text": "Accidental ingestion of massive uncompiled binary blobs into AI model prompt contexts.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "24f1bbbaeef11e80",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "23474c1f996f2080",
+              "_type": "span",
+              "text": "3.3 Dynamic GitHub App Installation Tokens",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7abbe725462ea2d0",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "cf0dbf8742428cfa",
+              "_type": "span",
+              "text": "When connecting private repositories:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "716def7a637f1030",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0aa137bafe917429",
+              "_type": "span",
+              "text": "Classgrid generates short-lived, narrowly scoped GitHub App installation tokens (`repoAppToken`).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "879cee9e259e6a17",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "655932802f6ca080",
+              "_type": "span",
+              "text": "Tokens expire automatically after 60 minutes and carry permissions restricted strictly to the user-selected repository.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "69553844b54d13e4",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "6be8d55096bf3747",
+              "_type": "span",
+              "text": "Automated commits generated by the platform include verified co-authorship metadata (`Co-authored-by: Classgrid AI <noreply@classgrid.in>`), preserving audit transparency in Your git history.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "bbff3390403aea7b",
+      "id": "4-autonomous-ai-agent-safeguards",
+      "title": "4. AUTONOMOUS AI AGENT SAFEGUARDS",
+      "content": [
+        {
+          "_key": "d3876dfb252921fe",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "87e0650dcaa92ade",
+              "_type": "span",
+              "text": "4.1 Bounded Execution Windows (`MAX_WORK_MS = 48 Hours`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "59432a82ce1b00c9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "40695cc5d83a3c76",
+              "_type": "span",
+              "text": "Autonomous agents execute multi-step engineering directives. To prevent runaway background processes, orphaned cloud jobs, and infinite billing loops:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b8c4b6639bb5bf82",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e65a95ab8b5e843f",
+              "_type": "span",
+              "text": "Every background agent task is governed by a hard-coded execution ceiling of **48 hours (`MAX_WORK_MS`)**.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "99d46771434ffb3f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "69954c63c9d8567b",
+              "_type": "span",
+              "text": "The agent task daemon automatically terminates and archives any task exceeding this threshold.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "67ab32a32a377ce3",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "2637d2e425af3b4a",
+              "_type": "span",
+              "text": "4.2 Automated Circuit Breaker (`NO_PROGRESS_LIMIT = 5`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "ecf1a5455c29db14",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "8b1c6ff60b612940",
+              "_type": "span",
+              "text": "To protect User credit balances from repetitive execution failures:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f90eb594cc62e4e8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "8c0bc069d9e08052",
+              "_type": "span",
+              "text": "The system monitors consecutive tool execution outcomes.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5d75e7f186c93a4b",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e640588740da66b9",
+              "_type": "span",
+              "text": "If an agent incurs **five (5) consecutive tool failures** (e.g., repeating syntax errors, failed HTTP requests, or unresolvable compilation flags without state improvement), the circuit breaker trips.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d5275eba97cefe6c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "371c1676690b07b4",
+              "_type": "span",
+              "text": "The task is immediately transitioned to a paused state (`failed_circuit_breaker`), firing diagnostic alerts and preventing unnecessary credit burn.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "923647e54c74252f",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "3f51f5ca712e861f",
+              "_type": "span",
+              "text": "4.3 Secure Tool Invocation",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "45dba64ed06ac0c2",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "06095fb06113804d",
+              "_type": "span",
+              "text": "Agents invoke tools within sandboxed runtime environments.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "420368ada7c76674",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5dfb40d41d73ffe8",
+              "_type": "span",
+              "text": "System commands, shell executions, and file operations are logged in real-time task audit logs (`models/TaskLog.js`).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8006d34640cbea76",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "8dc16df83a651af2",
+              "_type": "span",
+              "text": "Agents are technically restricted from accessing system-level operating system files or environment configuration variables outside the provisioned workspace directory.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "220481c9e061b0e6",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "0d5cb3033028f175",
+              "_type": "span",
+              "text": "4.4 Agent Email Safeguards (`agent-mail.service.js`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "58fb3d31f64d02d7",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1c2adb53a3fb838f",
+              "_type": "span",
+              "text": "Outbound emails initiated by autonomous agents require prior User configuration.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "374f827aa62e0ba5",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "3c401e9ecd7a5b98",
+              "_type": "span",
+              "text": "Outbound relays enforce strict rate limiting, SPF, DKIM, and DMARC alignments to prevent spoofing or unauthorized relay usage.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "1f1513e4217cb712",
+      "id": "5-real-time-collaborative-grids-security",
+      "title": "5. REAL-TIME COLLABORATIVE GRIDS SECURITY",
+      "content": [
+        {
+          "_key": "c5f38a461111856c",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "68ed67bb9f981320",
+              "_type": "span",
+              "text": "5.1 Multi-User Room Architecture (`GRID_MAX_PEOPLE = 4`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "47bb301342fc2a16",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "46d06594410127d8",
+              "_type": "span",
+              "text": "Grids enable real-time collaboration between developers and AI agents. Security controls include:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f0b7f99148482e48",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "00e666ef0fdda73b",
+              "_type": "span",
+              "text": "**Hard-Capped Room Membership:** Rooms are restricted to a maximum of **four (4) concurrent users** to maintain low-latency WebSocket synchronization and eliminate room-flooding attacks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "583686789ca217ee",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "dc4a8daac1d79363",
+              "_type": "span",
+              "text": "**Cryptographic Invite Tokens:** Grids use 12-byte cryptographically secure, random base64url tokens. Tokens are non-sequential and resistant to brute-force discovery.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c170dc7bf982fe25",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "aa02091b95eef4ac",
+              "_type": "span",
+              "text": "**Email Masking Privacy (`hideEmail`):** The Platform provides a privacy toggle allowing collaborators to mask their personal email address from room peers, preventing PII harvesting in public or team-shared Grids.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "22e16e7f81b1c9ba",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "7bc318a760984d32",
+              "_type": "span",
+              "text": "5.2 WebSocket Transport Security",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "508a2ef58e443170",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1b1478967bda1cbb",
+              "_type": "span",
+              "text": "All real-time communication is encrypted in transit using **WSS (WebSocket Secure)** over TLS 1.3.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a976b3bd38971204",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "cfc14110ada03ca4",
+              "_type": "span",
+              "text": "WebSocket handshakes validate session JWTs before granting access to Redis pub/sub room channels.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d41b0f339dbc4607",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a67d5fa14f2e0315",
+              "_type": "span",
+              "text": "Connection throttling prevents socket exhaustion attacks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "6c65a6c58c985c19",
+      "id": "6-whatsapp-ai-voice-telephony-security",
+      "title": "6. WHATSAPP AI VOICE TELEPHONY SECURITY",
+      "content": [
+        {
+          "_key": "466f48648392e65f",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "7363bb87513eafdf",
+              "_type": "span",
+              "text": "6.1 End-to-End Voice Transport",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7da47c5ab8419242",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f346e3c39d39243d",
+              "_type": "span",
+              "text": "Voice telephony is integrated using the official Meta WhatsApp Calling Cloud API.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d672394e3775972e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "906ce2478a4e5f70",
+              "_type": "span",
+              "text": "Audio packets are streamed over **WebRTC** utilizing the **48 kHz Opus codec**, ensuring carrier-grade encryption and low latency.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a8f85acbb41c4905",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "8b23941f6f715ca0",
+              "_type": "span",
+              "text": "Telephone numbers are validated and mapped 1-to-1 to authenticated Classgrid accounts via signed Meta webhook payloads.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "be6e798c16110179",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "de615728acb95443",
+              "_type": "span",
+              "text": "6.2 Transient Audio Processing & Zero Long-Term Storage",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "193fa652d53a4bc8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e9ceb70f31aa9845",
+              "_type": "span",
+              "text": "Incoming audio streams are ingested in memory and immediately passed through speech-to-text (Whisper STT).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f26d5000a2c0bb47",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c9062714807486a5",
+              "_type": "span",
+              "text": "Audio buffers are cleared from server RAM immediately following transcription. Classgrid does **not** maintain long-term audio recordings on disk unless specifically requested and authorized by the user for session archiving.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2e0206d281ab7500",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "90b2f43920ff3751",
+              "_type": "span",
+              "text": "6.3 Hard Call Duration Caps",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4332f0dedeb4f69d",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2439ee3255c5e279",
+              "_type": "span",
+              "text": "To prevent accidental dangling voice connections or toll abuse, voice calls are programmatically terminated at **fifteen (15) minutes**.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a571b7f38b4c4491",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "6cfd0a9f6331e04f",
+              "_type": "span",
+              "text": "An automated verbal warning sounds 15 seconds prior, followed by an immutable 30-second disconnect sequence.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8dec2ea08d488a66",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1e8d340ab91980af",
+              "_type": "span",
+              "text": "Voice call volume is throttled to fifty (50) calls per 24 hours per account.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "a01ace054a9f8e50",
+      "id": "7-infrastructure-network-security",
+      "title": "7. INFRASTRUCTURE & NETWORK SECURITY",
+      "content": [
+        {
+          "_key": "4dc359ce011571da",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "a9d5a0d60f3f6905",
+              "_type": "span",
+              "text": "7.1 Perimeter Defense & DDoS Protection",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "fa516c99e60c7961",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f5c3cf2e7b6de380",
+              "_type": "span",
+              "text": "**Cloudflare Edge Shielding:** The entire Platform sits behind Cloudflare's enterprise edge network, providing automatic Layer 3, Layer 4, and Layer 7 DDoS mitigation.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "fe1e951dc68a5249",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "07975ff2c8c5d559",
+              "_type": "span",
+              "text": "**Web Application Firewall (WAF):** Real-time inspection of HTTP requests blocks SQL injection, cross-site scripting (XSS), server-side request forgery (SSRF), and known vulnerability payloads.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f460a6331041aa4b",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "e420709cd951aa15",
+              "_type": "span",
+              "text": "7.2 Cryptographic Standards",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "85f5feb407e6173f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1aa4c7d760bb2f0a",
+              "_type": "span",
+              "text": "**In-Transit Encryption:** All external and internal service-to-service communication requires **TLS 1.3** (or TLS 1.2 minimum) with modern, forward-secret cipher suites.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "18cf1871cc331282",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "ba13da7c564e59ef",
+              "_type": "span",
+              "text": "**At-Rest Encryption:** Databases (PostgreSQL/Supabase), Redis clusters, and cloud backup snapshots are encrypted using **AES-256**. Sensitive configuration keys and external service credentials are encrypted using envelope encryption with dedicated cloud key management systems.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "afbddae0c7045465",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "c9337d8e9dfeec5f",
+              "_type": "span",
+              "text": "7.3 Database Security & Multi-Tenancy",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "eb6f618c62b1e013",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7d0c6f8fd38605a3",
+              "_type": "span",
+              "text": "Database tables implement Row-Level Security (RLS) policies where applicable, ensuring that queries are strictly isolated to the authenticated user's scope.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4099d365236640db",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2dbe8de6bbc87157",
+              "_type": "span",
+              "text": "Database access is permitted only from private VPC subnets; public internet exposure of database ports is prohibited.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "7c842619effe3774",
+      "id": "8-usage-metering-billing-security",
+      "title": "8. USAGE METERING & BILLING SECURITY",
+      "content": [
+        {
+          "_key": "758d8fed393d97e2",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "98d831ca806d62d8",
+              "_type": "span",
+              "text": "8.1 Atomic Credit Accounting",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4a4f595b0029efd2",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0870bc6ec0a9ee9a",
+              "_type": "span",
+              "text": "Credit balances are managed via atomic transactions in high-performance Redis and relational PostgreSQL clusters.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "0afec428f51470ba",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e7b375078c3556b1",
+              "_type": "span",
+              "text": "Token consumption updates use atomic conditional operations to eliminate race conditions, double-spending, or negative balance vulnerabilities during concurrent agent invocations.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "32e2c86caf2d5a72",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "68a04aa92a9b849f",
+              "_type": "span",
+              "text": "8.2 Payment Gateway Signature Verification",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b9db93156f903019",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a6bea9b6c5533c70",
+              "_type": "span",
+              "text": "Top-up payments are processed through Razorpay.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5dd3ae46ace8d278",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f625ef371d3a3f57",
+              "_type": "span",
+              "text": "Every payment notification received via webhooks is validated using HMAC-SHA256 signature verification before compute credits are credited to an account. Unsigned or invalid webhook calls are rejected and logged as security anomalies.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "534db9d668f38c8d",
+      "id": "9-vulnerability-management-incident-response",
+      "title": "9. VULNERABILITY MANAGEMENT & INCIDENT RESPONSE",
+      "content": [
+        {
+          "_key": "8da635261001e39c",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "ec482b9a70b28ffb",
+              "_type": "span",
+              "text": "9.1 Continuous Security Auditing",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "86e3b95a3f6588f9",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "8681cc397bcb6ebf",
+              "_type": "span",
+              "text": "Dependencies are automatically audited for known vulnerabilities (CVEs) using automated software composition analysis (SCA) tools in CI/CD pipelines.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c2dcfc9e44f962d5",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "ee034799b12ad312",
+              "_type": "span",
+              "text": "Security patch updates for base container images and Linux sandbox runtimes are deployed on a continuous schedule.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d0d89eb2be80a592",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "24d5b14f29be9bb1",
+              "_type": "span",
+              "text": "9.2 Incident Response Protocol",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "40827a4f1093294e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "9b8f51721a07b01e",
+              "_type": "span",
+              "text": "Classgrid maintains a dedicated Incident Response Plan structured around five stages:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "01637a3ce2723663",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "05d2cabf5a8a9837",
+              "_type": "span",
+              "text": "**Detection & Triage:** Automated alerting triggers triage within 15 minutes of an anomaly.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4a25e2c962b7c0b5",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e7e3dbb20fb69b3d",
+              "_type": "span",
+              "text": "**Containment:** Dynamic isolation of affected containers, sandbox clusters, or accounts.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f4f4617512355ab6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "6f218ff56ff880f5",
+              "_type": "span",
+              "text": "**Eradication:** Neutralization of root causes and deployment of targeted code patches.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "23377015d779fbd1",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "89e7d2ba80b240a7",
+              "_type": "span",
+              "text": "**Recovery:** Safe restoration of affected systems with validated data integrity.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "787da8a9d7af2b80",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "080cd3298cd17913",
+              "_type": "span",
+              "text": "**Post-Mortem & Notification:** Transparent root-cause analysis and timely notification to impacted users and regulatory authorities under the DPDP Act 2023.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "f181b209af16f676",
+      "id": "10-responsible-disclosure-vulnerability-reporting",
+      "title": "10. RESPONSIBLE DISCLOSURE & VULNERABILITY REPORTING",
+      "content": [
+        {
+          "_key": "e57f408ec3a329d4",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "511d63a21387e82e",
+              "_type": "span",
+              "text": "We welcome security researchers and developers to inspect Our public platform responsibly. If You discover a security vulnerability in the Classgrid Platform, We ask that You report it promptly to enable remediation.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3c620b9c72689860",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "5d8fe37a06117ac7",
+              "_type": "span",
+              "text": "10.1 Ground Rules for Responsible Disclosure",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "87c16f3ff0d458ba",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "678934bc471f5ee9",
+              "_type": "span",
+              "text": "Report vulnerabilities privately to `security@classgrid.in`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2c6a6d6381354d7b",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "17ebace39a61e0e2",
+              "_type": "span",
+              "text": "Do **not** exploit the vulnerability to view, modify, or exfiltrate data belonging to other users.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c12388f2fc0ba7d8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "82a24dbe8cbc8fa7",
+              "_type": "span",
+              "text": "Do **not** execute volumetric denial-of-service (DDoS) attacks or disrupt production services.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2d2a9125742d4a3e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c8368234a47f9bee",
+              "_type": "span",
+              "text": "Give Us a reasonable period of thirty (30) days to address the issue before making any public disclosure.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9a8325e367a88c88",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "5cf2a1873aa46e57",
+              "_type": "span",
+              "text": "10.2 Safe Harbor",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f17978ab250ac94e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "872d47529ade9552",
+              "_type": "span",
+              "text": "If You conduct Your research in good faith, in compliance with these guidelines, and without harming Users or platform uptime, Classgrid will not pursue legal action against You.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "29ee03159f76e08f",
+      "id": "11-security-contact",
+      "title": "11. SECURITY CONTACT",
+      "content": [
+        {
+          "_key": "f50edce204f52ad8",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "0af3f3fdee714a91",
+              "_type": "span",
+              "text": "For vulnerability submissions, security audit requests, or technical inquiries regarding Our security posture:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "fb93147a5dce5b41",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e337c6c4af16022c",
+              "_type": "span",
+              "text": "**Security Engineering Team:** `security@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "de066dca8dcbd444",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e0c0d119a8f27012",
+              "_type": "span",
+              "text": "**Operational Headquarters:** Classgrid Technologies, Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e9e76095c74698ac",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "74c1ee27ff4fa1ff",
+              "_type": "span",
+              "text": "**Public Platform:** [https://chat.classgrid.in](https://chat.classgrid.in)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    }
+  ]
+}

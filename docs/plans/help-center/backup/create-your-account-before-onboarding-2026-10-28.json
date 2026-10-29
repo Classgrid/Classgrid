@@ -1,0 +1,27 @@
+{
+  "_createdAt": "2026-10-28T05:10:50Z",
+  "_id": "help-article-create-your-account",
+  "_rev": "s0mjsvMLcxDn6CvMzArUSI",
+  "_type": "helpArticle",
+  "_updatedAt": "2026-10-28T05:10:50Z",
+  "category": {
+    "_ref": "help-cat-getting-started",
+    "_type": "reference"
+  },
+  "lastUpdatedAt": "2026-10-28T05:10:49.675Z",
+  "markdownBody": "Classgrid AI runs in your web browser, so there is nothing to install. You can start for free.\n\n## Steps\n\n1. Go to [chat.classgrid.in](https://chat.classgrid.in).\n2. Create your account and sign in.\n3. You land on the **Agent mode** home screen. You'll see a greeting and a message box that says \"Ask anything, analyse a file, or schedule a task…\".\n\n![The Classgrid AI home screen with the greeting and the message box](https://cdn.sanity.io/images/a4wk6kp5/production/77c2d335209fa254214a101086de4f95b6348456-1600x1000.png)\nThat's it. You can type your first request right away.\n\n## It's free to start\n\nYou don't need to pay anything to try Classgrid AI. Using the AI uses credits. When you need more, you can top up from **Upgrade** in the **AI Hub** (the sliders icon in the message box). See [Credits and top-ups](/help-center/article/credits-and-top-ups).\n\n## Use an email you check\n\nThe email on your account matters. It is where:\n\n- Your [reminders](/help-center/article/set-a-reminder) are sent.\n- [Share Grid](/help-center/article/share-an-ai-chat) invites for you arrive.\n- You send tasks from when you [email the agent](/help-center/article/email-a-task-to-the-agent) at agent@classgrid.in.\n\n## What to do next\n\n1. [Start your first chat](/help-center/article/start-your-first-chat).\n2. [Verify your WhatsApp number](/help-center/article/verify-your-whatsapp-number). You only need this for WhatsApp calls, results on WhatsApp and WhatsApp reminders. The web chat works without it.\n3. [Choose a model](/help-center/article/choose-a-model), or just leave it on **Auto**.\n\n## If it doesn't work\n\n- Check that you typed your email correctly.\n- Reload the page, or open chat.classgrid.in in another browser.\n- Still stuck? Contact us from the [support page](/support).\n\nFor the full walk-through, read the [Quickstart](/docs/quickstart).\n",
+  "publishedAt": "2026-10-28T05:10:49.675Z",
+  "showDates": true,
+  "slug": {
+    "_type": "slug",
+    "current": "create-your-account"
+  },
+  "summary": {
+    "_type": "localeText",
+    "en": "Sign up at chat.classgrid.in and reach the home screen in about a minute."
+  },
+  "title": {
+    "_type": "localeString",
+    "en": "Create your account"
+  }
+}

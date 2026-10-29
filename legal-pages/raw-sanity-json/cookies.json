@@ -1,0 +1,1224 @@
+{
+  "_createdAt": "2026-04-20T20:08:19Z",
+  "_id": "legal-cookies",
+  "_rev": "TfCTWRVWaf57WPtn5716XZ",
+  "_system": {
+    "base": {
+      "id": "legal-cookies",
+      "rev": "Tm9bje1VDdpU3lIfzJosOM"
+    }
+  },
+  "_type": "legalPage",
+  "_updatedAt": "2026-10-11T10:41:13Z",
+  "effectiveDate": "2026-04-20T00:00:00.000Z",
+  "intro": {
+    "introductionBody": "Classgrid — Educational Management Platform Operated by: Classgrid Technologies, Pune, Maharashtra, India Registered Address: Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India\n\nThis Cookie Policy explains how Classgrid Technologies (\"Company\", \"We\", \"Us\", \"Our\") uses cookies and similar technologies on the Classgrid website (classgrid.in), its sub-domain tenant websites (*.classgrid.in), and the Classgrid ERP Platform (collectively, the \"Platform\").\n\nThis Cookie Policy should be read together with Our Privacy Policy and Terms of Service.",
+    "introductionHeading": "Introduction",
+    "scopeBody": "",
+    "scopeHeading": "Scope"
+  },
+  "lastUpdated": "2026-10-11T07:22:00.000Z",
+  "sections": [
+    {
+      "_key": "cookie-section-1",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-1-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-1-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Cookies are small text files stored by a website in Your browser. Classgrid also uses Local Storage and Session Storage for application state and preferences."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-1-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-1-2-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Authentication may use an HttpOnly cookie named token set by the server. In some browser flows, the client may store a signed token under the token key in Local Storage as a bearer-token fallback for API requests. A signed token is an authentication credential, not a link or URL, and it must not be placed in a URL."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-1-3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-1-3-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Storage technologies used"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cookie-block-1-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-1-4-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Cookies"
+            },
+            {
+              "_key": "cookie-span-1-4-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": Small text files stored in Your browser."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-1-5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-1-5-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Local Storage"
+            },
+            {
+              "_key": "cookie-span-1-5-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": Browser storage that persists until it is cleared."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-1-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-1-6-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Session Storage"
+            },
+            {
+              "_key": "cookie-span-1-6-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": Browser storage that is cleared when the browser tab is closed."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "what-are-cookies",
+      "title": "1. WHAT ARE COOKIES?"
+    },
+    {
+      "_key": "cookie-section-2",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "044e81ef5843",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "00524468d28c",
+              "_type": "span",
+              "marks": [],
+              "text": "We use cookies and similar technologies only to provide authentication, security, tenant experience, and user-interface functionality."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3d8eb431d4a3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "270f0ed39d4b",
+              "_type": "span",
+              "marks": [],
+              "text": "2.1 Strictly Necessary"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "236a456c0ba1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "50cc988095b2",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "token:"
+            },
+            {
+              "_key": "3b817d444a86",
+              "_type": "span",
+              "marks": [],
+              "text": " The server sets the authentication cookie named token. It is HttpOnly, Secure in production, and protected by SameSite. Its default lifetime is 24 hours on desktop, 7 days when Remember Me is selected, and up to 365 days for mobile-app requests. The browser sends the HttpOnly cookie automatically with requests. In some browser flows, the client may store a signed token under the token key in Local Storage as a fallback for API requests."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "53a32067d9d3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "128a7a35bc71",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "parent_token:"
+            },
+            {
+              "_key": "d10d5c00db37",
+              "_type": "span",
+              "marks": [],
+              "text": " A Local Storage token used by the parent portal workflow."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e6bab1bff99f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ef2182ec2592",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "admission_token:"
+            },
+            {
+              "_key": "49f26c4e73c5",
+              "_type": "span",
+              "marks": [],
+              "text": " A Local Storage token used by the admission candidate portal workflow."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ca9df64c55b7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ec4935ce7de5",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "rescue_token:"
+            },
+            {
+              "_key": "b1413a775420",
+              "_type": "span",
+              "marks": [],
+              "text": " A temporary Local Storage token used for a restricted security workflow."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2940924be08d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8b6e2cb8a02a",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "client_device_fp:"
+            },
+            {
+              "_key": "73264a3c3289",
+              "_type": "span",
+              "marks": [],
+              "text": " An HttpOnly security cookie used for trusted-device verification after device verification. The implementation sets a one-year lifetime."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "76a40c12fb5a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cddc5f06e404",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "sidebar_state:"
+            },
+            {
+              "_key": "228030ab5a42",
+              "_type": "span",
+              "marks": [],
+              "text": " A first-party cookie that remembers whether the dashboard sidebar is open or collapsed. The implementation sets a seven-day lifetime."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4c238b3da598",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ce3e439d3485",
+              "_type": "span",
+              "marks": [],
+              "text": "2.2 Functional"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "3a012519a36b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f04a317868c1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "org_title and org_favicon:"
+            },
+            {
+              "_key": "bd8ed1bb0a8c",
+              "_type": "span",
+              "marks": [],
+              "text": " Organization branding preferences that may be stored in Local Storage."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c908fffdaf02",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "5158b62d5f90",
+              "_type": "span",
+              "marks": [],
+              "text": "The selected theme and last selected authentication role may be stored in browser storage."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0674792e1a60",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "edab61356542",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "push_banner_dismissed:"
+            },
+            {
+              "_key": "62e56877ac83",
+              "_type": "span",
+              "marks": [],
+              "text": " Remembers whether a notification prompt was dismissed."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "4564b5e8f269",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b82c97de6745",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "chat_draft_[id]:"
+            },
+            {
+              "_key": "c3b70cbc7278",
+              "_type": "span",
+              "marks": [],
+              "text": " Stores an unsent chat draft until the message is sent, removed, or cleared."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "05f28598bee8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "eff451b3de64",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "reset_success_[token]:"
+            },
+            {
+              "_key": "8eec04036b34",
+              "_type": "span",
+              "marks": [],
+              "text": " A short-lived Local Storage entry used by the relevant password-reset workflow."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0b07a4b55582",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "68c8970d3720",
+              "_type": "span",
+              "marks": [],
+              "text": "Other temporary authenticated workflows may use short-lived browser-storage entries."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6c754b96a5f2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8fbd38278413",
+              "_type": "span",
+              "marks": [],
+              "text": "2.3 Performance and Analytics"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "f128d76e9ef0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7ccfdd04fecf",
+              "_type": "span",
+              "marks": [],
+              "text": "The reviewed platform runtime does not set third-party analytics or advertising cookies. Server-side operational logs and analytics are not browser cookies."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "140fde89b9a5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "36590fcc7116",
+              "_type": "span",
+              "marks": [],
+              "text": "2.4 What We Do Not Use"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "6ed87917f72a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6f0740b00239",
+              "_type": "span",
+              "marks": [],
+              "text": "Advertising cookies or behavioral retargeting cookies."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "736a8c499c2d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ed9742ced1ac",
+              "_type": "span",
+              "marks": [],
+              "text": "Social-media tracking pixels in the reviewed platform runtime."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6edb7350ac80",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "16106e257146",
+              "_type": "span",
+              "marks": [],
+              "text": "Cross-site advertising or browsing-history tracking."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7eb19a749243",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "06452327ec95",
+              "_type": "span",
+              "marks": [],
+              "text": "A limited trusted-device security cookie may be used for authentication protection. This Policy does not claim that no device-security metadata is ever processed."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "17d050d0a2d9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e513d447086a",
+              "_type": "span",
+              "marks": [],
+              "text": "2.5 Your Choices and Controls"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "4c4783228c48",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "082211f6d822",
+              "_type": "span",
+              "marks": [],
+              "text": "You may configure your browser to block or delete cookies at any time. Please note that disabling strictly necessary cookies will prevent you from logging in and using the platform. Clearing Local Storage entries such as token, parent_token, or admission_token will end your active session and require you to sign in again. Functional storage entries such as org_title, org_favicon, sidebar preferences, and chat drafts will be restored automatically on your next session. Where consent is required under applicable law, non-essential cookies will be used only after the applicable consent is  obtained ."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "how-we-use-cookies-and-similar-technologies",
+      "title": "2. HOW WE USE COOKIES AND SIMILAR TECHNOLOGIES"
+    },
+    {
+      "_key": "cookie-section-3",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-3-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-3-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Tenant websites may use first-party cookies or browser storage required by the deployed website template, such as session handling, branding, accessibility, or basic preferences. The exact storage keys can vary by tenant configuration and deployment."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-3-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-3-2-1",
+              "_type": "span",
+              "marks": [],
+              "text": "The reviewed platform repository does not implement universal fixed keys named tenant_theme or visitor_session. They are not described as universal Classgrid cookies in this Policy."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-3-3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-3-3-1",
+              "_type": "span",
+              "marks": [],
+              "text": "A Tenant Organization may independently add an external service or embed. Those third-party services may set their own cookies, and their privacy and cookie policies apply to that activity."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "cookies-on-tenant-websites",
+      "title": "3. COOKIES ON TENANT WEBSITES"
+    },
+    {
+      "_key": "cookie-section-4",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-4-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-4-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "A native mobile application does not use browser cookies in the same way as a web browser. Where a native client is used, authentication and preferences are managed by that application's storage implementation. This browser Cookie Policy does not replace the mobile application's own privacy disclosures."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "cookies-on-the-mobile-app",
+      "title": "4. COOKIES ON THE MOBILE APP"
+    },
+    {
+      "_key": "cookie-section-5",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-5-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "5.1 Browser Settings"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cookie-block-5-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-2-1",
+              "_type": "span",
+              "marks": [],
+              "text": "You can view, delete, or block first-party cookies through Your browser settings. Blocking the authentication cookie may prevent You from signing in or using protected features."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-5-3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-3-1",
+              "_type": "span",
+              "marks": [],
+              "text": "5.2 Impact of Disabling Storage"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cookie-block-5-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-4-1",
+              "_type": "span",
+              "marks": [],
+              "text": "You may be unable to log in or remain authenticated."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-5-5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-5-1",
+              "_type": "span",
+              "marks": [],
+              "text": "The dashboard may not remember the selected theme, branding, sidebar state, or dismissed prompts."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-5-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-6-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Unsaved chat drafts may be lost when browser storage is cleared."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-5-7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-7-1",
+              "_type": "span",
+              "marks": [],
+              "text": "5.3 Local Storage and Session Storage"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cookie-block-5-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-5-8-1",
+              "_type": "span",
+              "marks": [],
+              "text": "To clear Local Storage or Session Storage, open browser Developer Tools, select Application or Storage, choose the relevant origin, and delete the stored entries. Clearing Local Storage may sign You out and remove saved preferences or drafts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "managing-your-cookie-preferences",
+      "title": "5. MANAGING YOUR COOKIE PREFERENCES"
+    },
+    {
+      "_key": "cookie-section-6",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-6-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "6.1 What We Collect"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cookie-block-6-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-2-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Depending on the feature and authentication flow, browser storage may process:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-6-3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-3-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Authentication status and signed authentication-token data."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-6-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-4-1",
+              "_type": "span",
+              "marks": [],
+              "text": "User, role, or organization identifiers needed to authorize a request."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-6-5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-5-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Trusted-device verification metadata."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-6-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-6-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Theme, sidebar, branding, notification, and draft preferences."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-6-7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-7-1",
+              "_type": "span",
+              "marks": [],
+              "text": "6.2 How We Use It"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cookie-block-6-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-6-8-1",
+              "_type": "span",
+              "marks": [],
+              "text": "The reviewed platform runtime does not use this browser storage for advertising, sale of personal information, or cross-site behavioral profiling."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "data-collected-through-cookies",
+      "title": "6. DATA COLLECTED THROUGH COOKIES"
+    },
+    {
+      "_key": "cookie-section-7",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-7-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-7-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Essential authentication and security storage may be used by Users, including minor students, when an institution provides access to the Platform."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-7-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-7-2-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Classgrid does not use browser storage for behavioral advertising or profiling of minor students. Tenant Organizations remain responsible for obtaining required consent and providing appropriate notices for their Users."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "children-and-cookies",
+      "title": "7. CHILDREN AND COOKIES"
+    },
+    {
+      "_key": "cookie-section-8",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-8-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-8-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "8.1 Current Third-Party Cookies"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "19f71dd846d8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e74593656b62",
+              "_type": "span",
+              "marks": [],
+              "text": "The Classgrid core platform does not set any third-party advertising or analytics cookies"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-8-3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-8-3-1",
+              "_type": "span",
+              "marks": [],
+              "text": "8.2 Embedded Content"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "cookie-block-8-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-8-4-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Third-party cookies may be set by content embedded or independently configured on a tenant website, such as a video player, map, analytics tool, or other external service. Classgrid does not control those third-party cookies. Please refer to the applicable third party's policy for details."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "third-party-cookies",
+      "title": "8. THIRD-PARTY COOKIES"
+    },
+    {
+      "_key": "cookie-section-9",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-9-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-9-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "We may update this Cookie Policy when storage behavior, security controls, or applicable legal requirements change. When material changes are made, We will update the Last Updated date and provide notice through the Platform or email where appropriate."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "changes-to-this-cookie-policy",
+      "title": "9. CHANGES TO THIS COOKIE POLICY"
+    },
+    {
+      "_key": "cookie-section-10",
+      "_type": "section",
+      "content": [
+        {
+          "_key": "cookie-block-10-1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-1-1",
+              "_type": "span",
+              "marks": [],
+              "text": "For questions about this Cookie Policy or Our use of cookies, please contact:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-2-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Classgrid Technologies"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-3-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Email"
+            },
+            {
+              "_key": "cookie-span-10-3-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": privacy@classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-4-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Support"
+            },
+            {
+              "_key": "cookie-span-10-4-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": support@classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-5-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Phone"
+            },
+            {
+              "_key": "cookie-span-10-5-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": +91 8623947038 / +91 8149277038"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-6-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Website"
+            },
+            {
+              "_key": "cookie-span-10-6-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": "
+            },
+            {
+              "_key": "cookie-span-10-6-3",
+              "_type": "span",
+              "marks": [
+                "cookie-site-link"
+              ],
+              "text": "https://classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [
+            {
+              "_key": "cookie-site-link",
+              "_type": "link",
+              "href": "https://classgrid.in"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-7-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Address"
+            },
+            {
+              "_key": "cookie-span-10-7-2",
+              "_type": "span",
+              "marks": [],
+              "text": ": Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-8-1",
+              "_type": "span",
+              "marks": [],
+              "text": "This Cookie Policy is an electronic record within the meaning of the Information Technology Act, 2000, and the rules made thereunder."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "cookie-block-10-9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "cookie-span-10-9-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Copyright 2026 Classgrid Technologies. All rights reserved."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "contact-us",
+      "title": "10. CONTACT US"
+    }
+  ],
+  "sendSubscriberNotification": false,
+  "slug": {
+    "_type": "slug",
+    "current": "cookies"
+  },
+  "summary": "Legal Update: Cookie Policy Clarification\n\nWe have updated Section 8 of our Cookie Policy to make it clearer how cookies are used on Classgrid.\n\nThe Classgrid core platform does not set any third-party advertising or analytics cookies.\n\nSome tenant websites may include third-party content, such as video players, maps or analytics tools. These services may set their own cookies, which Classgrid does not control. Please review the privacy and cookie policy of the relevant third party for details.\n\nThank you for staying informed with Classgrid.",
+  "title": "Cookie Policy"
+}

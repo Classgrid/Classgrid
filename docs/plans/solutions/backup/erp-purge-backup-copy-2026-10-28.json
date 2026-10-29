@@ -1,0 +1,4288 @@
+[
+  {
+    "_createdAt": "2026-04-26T07:11:13Z",
+    "_id": "8e4ec2ac-7bf9-4ea2-b7da-36f1343194d4",
+    "_rev": "7wQCO4M3t9edSa4TG9tCre",
+    "_type": "classgrid_talk",
+    "_updatedAt": "2026-04-26T07:16:38Z",
+    "avatar": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-407f8e28e64b7cfd8c631ad0c157051f0cff50da-600x900-jpg",
+        "_type": "reference"
+      }
+    },
+    "college": " Vellore Institute of Technology ( VIT) ",
+    "name": "Rhea  Sharma  ",
+    "order": 10,
+    "quote": [
+      {
+        "_key": "8bd3a64f56af",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6708d202cf8a",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "“Ever had an idea for a website or tool? With Hostinger Horizons, you explain it, and the AI just builds it.”"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "rating": 5,
+    "role": "principal"
+  },
+  {
+    "_createdAt": "2026-05-16T06:51:27Z",
+    "_id": "appEcosystem",
+    "_rev": "iVtRkesY710xK44DxGrYHy",
+    "_system": {
+      "base": {
+        "id": "appEcosystem",
+        "rev": "h25KgYv1nz0Cr8uXffcyBw"
+      }
+    },
+    "_type": "appEcosystem",
+    "_updatedAt": "2026-05-22T06:54:31Z",
+    "faculty": [
+      {
+        "_key": "f1",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Attendance card. Backend supports starting sessions, quick marking, reports, and appeals.",
+        "icon": "CheckSquare",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-43c4cd68b73f8b0d7e183711aeafc877815750c7-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Attendance"
+      },
+      {
+        "_key": "f2",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Assignments card. Backend supports creating assignments, viewing submissions, grading, and bulk grading.",
+        "icon": "ClipboardList",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-8e2223bc27665f73d9d8e37bdb42da6866a4b9a7-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Assignments"
+      },
+      {
+        "_key": "f3",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Academic Planning card. Maps to Teacher Planner APIs for lesson planning and goals.",
+        "icon": "BookOpen",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-a77c97f45949a5dc830cff6a7f47c105b5672e16-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Academic Planning"
+      },
+      {
+        "_key": "f4",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → My Time Table card, with timetable APIs for today’s schedule and slots.",
+        "icon": "Calendar",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-98c5ad7a09233acf0db29bb64918985f35ed04cc-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "My Time Table"
+      },
+      {
+        "_key": "f5",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Online Exam Builder card. Backend supports exam creation, AI/OCR questions, grading, analytics, and proctor reports.",
+        "icon": "Classroom ",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-be3adf7477e38a41cd1241b88dba42245b430f4d-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "My  Classroom "
+      },
+      {
+        "_key": "f6",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Manage Leaves card. Backend supports teacher leave queues, approvals, rejections, and calendars.",
+        "icon": "CalendarX",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6f7f210123ca720ad5f196ff7d2e0e2da39dc7a4-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Manage Leaves"
+      }
+    ],
+    "parent": [
+      {
+        "_key": "p1",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker /parent/:orgId after login → Application Progress pipeline.",
+        "icon": "Route",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-2c69640408bb1f1a7d38244bd791b848c2495ad8-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Track Application"
+      },
+      {
+        "_key": "p2",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker initial screen → phone number verification.",
+        "icon": "Phone",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6f551dcf208eecbacaf6ccac59b098d818e54570-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Parent   Dashboard "
+      },
+      {
+        "_key": "p3",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view → student info and application status badge.",
+        "icon": "UserCheck",
+        "label": "Student Status Card"
+      },
+      {
+        "_key": "p4",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view → document checklist with verified/rejected/pending states.",
+        "icon": "FileCheck2",
+        "label": "Document Status"
+      },
+      {
+        "_key": "p5",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view when status is fee pending → fee deadline/action alert.",
+        "icon": "CreditCard",
+        "label": "Fee Payment Alert"
+      },
+      {
+        "_key": "p6",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker enrolled state → downloadable admission letter and fee receipt.",
+        "icon": "Download",
+        "label": "Attendance "
+      }
+    ],
+    "student": [
+      {
+        "_key": "s1",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Assignments card. Backend supports viewing, submitting, and unsubmitting assignments.",
+        "icon": "UploadCloud",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-16d9da680c72fd2a11af42330aeb420a169aaf21-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Assignments"
+      },
+      {
+        "_key": "s2",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Attendance card. Backend supports overview, detailed records, class attendance, and appeals.",
+        "icon": "ClipboardCheck",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-9021015d9c43eb696fad319f89e6cac0994bd03e-863x1823-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Attendance"
+      },
+      {
+        "_key": "s3",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → My Time Table card, backed by /me/today timetable APIs.",
+        "icon": "Calendar",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6263c8cd887627610d566f3ab9b9f14613075dd3-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "My Time Table"
+      },
+      {
+        "_key": "s4",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Examination card. Backend supports student exam dashboard, start exam, autosave, submit, proctoring, and hall ticket.",
+        "icon": "MonitorCheck",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-97005023e84630de0894768f5cb93890dd998365-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Examination"
+      },
+      {
+        "_key": "s5",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Result card. Backend supports student result view, SGPA/CGPA, ranks, and published marks.",
+        "icon": "Trophy",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-80c88a67bb70800915dda4e3b21a80a7c709937d-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Result"
+      },
+      {
+        "_key": "s6",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Fees card. Backend supports student fee summary, ledger/records, Razorpay order, and payment verification.",
+        "icon": "CreditCard",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-9ab9bdc95e919924408b351e64e033e6a750a9bc-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Fees"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-05-21T11:54:42Z",
+    "_id": "cUE7lVEkhbisdWhNl4JtdA",
+    "_rev": "WhwuZEsCwMqdGxJHW1yL1k",
+    "_system": {
+      "base": {
+        "id": "cUE7lVEkhbisdWhNl4JtdA",
+        "rev": "fTHDemlZVuar9XG8wJu65U"
+      }
+    },
+    "_type": "classgridTeamVision",
+    "_updatedAt": "2026-08-12T02:26:16Z",
+    "isVisible": true,
+    "quotes": [
+      {
+        "_key": "fe707adc-4cf3-4cf6-acd9-eb4920f87f74",
+        "avatar": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-7173da701662b4489a19356b0100caa746bd4689-460x460-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Nikhil Shinde",
+        "role": "Founder & CEO",
+        "text": "Education should never run in fragments. From schools to colleges, coaching centers to junior colleges — Classgrid was built to connect everything, so institutions can operate as one seamless ecosystem."
+      },
+      {
+        "_key": "fc29fc74-815d-4da1-a312-57ef1ad2cf22",
+        "avatar": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-69f10f50d469946f704d1ee17e803f92564c4b04-1121x1280-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Swaroop Ghorpade ",
+        "role": "Product Designer",
+        "text": "Every feature we ship is obsessively designed around one question: does this make someone's job easier today?"
+      },
+      {
+        "_key": "ac0617b1-bae2-4da2-b80d-36c5ebb8cc34",
+        "avatar": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-cb619b8bbc8ef7e649d6d2e77693dda8170d2bd2-791x1020-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Subhash   Shinde  ",
+        "role": "Mentor & Advisor",
+        "text": "Behind every strong vision is someone who quietly guided every step, solved every challenge, and never let the mission fail."
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-05-16T18:10:28Z",
+    "_id": "circularTimeline",
+    "_rev": "Bx4XY85DZiUPiPe8LOybtF",
+    "_type": "circularTimeline",
+    "_updatedAt": "2026-06-09T08:48:08Z",
+    "roles": [
+      {
+        "_key": "students",
+        "badge": "System Connected",
+        "desc": "Personal academics, services, fees, exams, and updates.",
+        "features": [
+          "Timetable, attendance, assignments",
+          "Results, fees, certificates, ID",
+          "Library, notes, exams, feedback"
+        ],
+        "metric": "Result: clearer student accountability",
+        "roleKey": "Students",
+        "stats": [
+          "Own-record visibility",
+          "Mobile-first academic flow",
+          "No cross-student data exposure"
+        ],
+        "theme": "blue",
+        "title": "Student Workspace",
+        "tooltip": "View learning, fees, exams"
+      },
+      {
+        "_key": "parents",
+        "badge": "System Connected",
+        "desc": "Child-specific visibility for admissions, attendance, fees, and updates.",
+        "features": [
+          "Admission status and documents",
+          "Attendance and fee alerts",
+          "Parent-scoped child visibility"
+        ],
+        "metric": "Result: stronger parent trust",
+        "roleKey": "Parents",
+        "stats": [
+          "Child-only data boundary",
+          "Fewer office follow-ups",
+          "Clearer family communication"
+        ],
+        "theme": "blue",
+        "title": "Parent Tracker",
+        "tooltip": "Track child progress"
+      },
+      {
+        "_key": "teachers",
+        "badge": "System Connected",
+        "desc": "Classroom delivery for teachers and class teachers without manual follow-up.",
+        "features": [
+          "Attendance, homework, assignments",
+          "Class teacher coordination",
+          "Student and parent communication"
+        ],
+        "metric": "Result: less manual teaching admin",
+        "roleKey": "Teachers",
+        "stats": [
+          "Assigned-class access",
+          "Faster daily updates",
+          "Better homework visibility"
+        ],
+        "theme": "emerald",
+        "title": "Teacher Workspace",
+        "tooltip": "Run daily classroom work"
+      },
+      {
+        "_key": "operations-admins",
+        "badge": "System Connected",
+        "desc": "A shared operating layer for admission, attendance, HR, transport, library, canteen, and support teams.",
+        "features": [
+          "Admission officers, front office, HR",
+          "Attendance, transport, library, canteen",
+          "Announcements, records, follow-ups"
+        ],
+        "metric": "Result: smoother daily administration",
+        "roleKey": "Admins",
+        "stats": [
+          "Less department switching",
+          "Cleaner operational handoffs",
+          "Role-aware access control"
+        ],
+        "theme": "emerald",
+        "title": "Operations Admin Workspace",
+        "tooltip": "Coordinate campus operations"
+      },
+      {
+        "_key": "finance-and-exams",
+        "badge": "System Connected",
+        "desc": "Critical fee, payment, examination, marks, hall ticket, and result workflows in one controlled layer.",
+        "features": [
+          "Accountants and fees clerks",
+          "Exam controllers and result teams",
+          "Receipts, hall tickets, marks, reports"
+        ],
+        "metric": "Result: trusted finance and exam operations",
+        "roleKey": "Finance & Exams",
+        "stats": [
+          "Stronger collection visibility",
+          "Cleaner result cycles",
+          "Fewer manual spreadsheets"
+        ],
+        "theme": "fuchsia",
+        "title": "Finance & Exams Workspace",
+        "tooltip": "Control fees and exams"
+      },
+      {
+        "_key": "academic-leaders",
+        "badge": "System Connected",
+        "desc": "Principals, vice principals, headmasters, deans, and senior academic leaders get decision-ready visibility.",
+        "features": [
+          "Attendance and academic progress",
+          "Faculty, syllabus, and department signals",
+          "Admissions, results, and compliance view"
+        ],
+        "metric": "Result: sharper academic governance",
+        "roleKey": "Academic Leaders",
+        "stats": [
+          "Earlier intervention",
+          "Leadership-ready reporting",
+          "Clear academic accountability"
+        ],
+        "theme": "fuchsia",
+        "title": "Academic Leadership Console",
+        "tooltip": "Monitor academic health"
+      },
+      {
+        "_key": "trustees",
+        "badge": "System Connected",
+        "desc": "High-level institution performance and investment visibility.",
+        "features": [
+          "Admissions and fees overview",
+          "Growth and operations signals",
+          "Institution-level dashboards"
+        ],
+        "metric": "Result: informed oversight",
+        "roleKey": "Trustees",
+        "stats": [
+          "Better fiscal visibility",
+          "Leadership-ready metrics",
+          "Less dependency on manual reports"
+        ],
+        "theme": "amber",
+        "title": "Trustee Board",
+        "tooltip": "Review leadership metrics"
+      },
+      {
+        "_key": "lecturers",
+        "badge": "System Connected",
+        "desc": "Teaching, attendance, assignments, tests, notes, and student support for junior college.",
+        "features": [
+          "Stream and division teaching",
+          "Internal tests and notes",
+          "Attendance and grading"
+        ],
+        "metric": "Result: structured FYJC/SYJC teaching",
+        "roleKey": "Lecturers",
+        "stats": [
+          "Assigned-class focus",
+          "Board-prep support",
+          "Clear student updates"
+        ],
+        "theme": "emerald",
+        "title": "Lecturer Workspace",
+        "tooltip": "Teach FYJC/SYJC classes"
+      },
+      {
+        "_key": "department-heads",
+        "badge": "System Connected",
+        "desc": "HODs and department leads monitor academic health across teams, branches, streams, and programs.",
+        "features": [
+          "HOD and department oversight",
+          "Faculty activity and syllabus progress",
+          "Internal assessment and student risk signals"
+        ],
+        "metric": "Result: stronger department control",
+        "roleKey": "HODs",
+        "stats": [
+          "Branch-wise visibility",
+          "Earlier intervention",
+          "Cleaner department reporting"
+        ],
+        "theme": "fuchsia",
+        "title": "Department Head Console",
+        "tooltip": "Monitor departments"
+      },
+      {
+        "_key": "institution-admins",
+        "badge": "System Connected",
+        "desc": "Org admins and senior administrators manage users, modules, hierarchy, reporting, and operating permissions.",
+        "features": [
+          "Organization configuration",
+          "User and role management",
+          "Dashboards, exports, and audit visibility"
+        ],
+        "metric": "Result: one admin surface",
+        "roleKey": "Institution Admins",
+        "stats": [
+          "Unified operating layer",
+          "Tenant-level control",
+          "Role-based governance"
+        ],
+        "theme": "fuchsia",
+        "title": "Institution Admin Command",
+        "tooltip": "Control tenant operations"
+      },
+      {
+        "_key": "faculty",
+        "badge": "System Connected",
+        "desc": "Academic delivery for classes, labs, assignments, attendance, and grading.",
+        "features": [
+          "Session attendance",
+          "Assignments and internal tests",
+          "Notes and academic planning"
+        ],
+        "metric": "Result: more teaching time",
+        "roleKey": "Faculty",
+        "stats": [
+          "Assigned-work access",
+          "Faster student feedback",
+          "Less manual consolidation"
+        ],
+        "theme": "emerald",
+        "title": "Faculty Console",
+        "tooltip": "Manage academic delivery"
+      },
+      {
+        "_key": "placements-and-compliance",
+        "badge": "System Connected",
+        "desc": "Placement officers, alumni teams, and NBA/NAAC coordinators manage career and evidence workflows.",
+        "features": [
+          "TPO and placement activity",
+          "Alumni and career communication",
+          "NBA/NAAC evidence and audit trails"
+        ],
+        "metric": "Result: stronger outcomes and compliance",
+        "roleKey": "Placements & Compliance",
+        "stats": [
+          "Placement-ready visibility",
+          "Cleaner accreditation evidence",
+          "Better department coordination"
+        ],
+        "theme": "amber",
+        "title": "Placements & Compliance Hub",
+        "tooltip": "Coordinate outcomes and evidence"
+      },
+      {
+        "_key": "executive-leadership",
+        "badge": "System Connected",
+        "desc": "Directors, deans, principals, and institutional leaders see performance across academics, finance, admissions, and operations.",
+        "features": [
+          "Institution dashboards",
+          "Admissions and revenue view",
+          "Academic and compliance signals"
+        ],
+        "metric": "Result: sharper institutional control",
+        "roleKey": "Executive Leadership",
+        "stats": [
+          "Top-level clarity",
+          "Cross-department trends",
+          "Decision-ready data"
+        ],
+        "theme": "amber",
+        "title": "Executive Leadership Console",
+        "tooltip": "Review institution health"
+      },
+      {
+        "_key": "mentors",
+        "badge": "System Connected",
+        "desc": "Coaching mentors, tutors, and instructors manage batches, learning support, practice, and progress.",
+        "features": [
+          "Batch teaching workflows",
+          "Practice sets and doubt support",
+          "Student progress and reminders"
+        ],
+        "metric": "Result: more guided learning",
+        "roleKey": "Mentors",
+        "stats": [
+          "Better student follow-through",
+          "Focused mentoring",
+          "Earlier support signals"
+        ],
+        "theme": "emerald",
+        "title": "Mentor Workspace",
+        "tooltip": "Guide student progress"
+      },
+      {
+        "_key": "test-series-team",
+        "badge": "System Connected",
+        "desc": "Mock tests, quiz calendars, attempts, scores, and exam practice cycles for coaching teams.",
+        "features": [
+          "Test scheduling",
+          "Online exam coordination",
+          "Results and rank analytics"
+        ],
+        "metric": "Result: disciplined test culture",
+        "roleKey": "Test Series Team",
+        "stats": [
+          "Frequent practice cycles",
+          "Faster score release",
+          "Batch-wise performance insight"
+        ],
+        "theme": "fuchsia",
+        "title": "Test Series Workspace",
+        "tooltip": "Run test series cycles"
+      },
+      {
+        "_key": "center-leadership",
+        "badge": "System Connected",
+        "desc": "Center heads, directors, and coordinators run branch-level admissions, batches, fees, and academics.",
+        "features": [
+          "Center performance view",
+          "Admissions and fee follow-up",
+          "Mentor and batch oversight"
+        ],
+        "metric": "Result: better center execution",
+        "roleKey": "Center Leadership",
+        "stats": [
+          "Local operating control",
+          "Faster issue response",
+          "Growth clarity"
+        ],
+        "theme": "amber",
+        "title": "Center Leadership Command",
+        "tooltip": "Run center operations"
+      },
+      {
+        "_key": "owners",
+        "badge": "System Connected",
+        "desc": "Owners and org admins track institute growth, revenue, leads, students, fees, tests, and engagement.",
+        "features": [
+          "Lead and admission analytics",
+          "Fee and revenue visibility",
+          "Student engagement signals"
+        ],
+        "metric": "Result: sharper owner visibility",
+        "roleKey": "Owners",
+        "stats": [
+          "Growth dashboard",
+          "Collection health",
+          "Active student trends"
+        ],
+        "theme": "amber",
+        "title": "Owner Growth Dashboard",
+        "tooltip": "Track institute growth"
+      }
+    ],
+    "subtitle": "Homepage orbital stakeholder timeline. Edit tabs, rings, role names, and popup content here.",
+    "tabs": [
+      {
+        "_key": "school",
+        "description": "Classgrid connects K-12 students, parents, teachers, office teams, finance, exams, and school leadership into one operating view.",
+        "features": [],
+        "heading": "For Schools",
+        "id": "school",
+        "label": "School",
+        "rings": [
+          {
+            "_key": "school-ring-0",
+            "nodes": [
+              "Students"
+            ]
+          },
+          {
+            "_key": "school-ring-1",
+            "nodes": [
+              "Parents",
+              "Teachers",
+              "Admins",
+              "Finance & Exams"
+            ]
+          },
+          {
+            "_key": "school-ring-2",
+            "nodes": [
+              "Academic Leaders",
+              "Trustees"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "college",
+        "description": "For FYJC/SYJC junior colleges, Classgrid supports students, parents, lecturers, departments, exams, finance teams, and institutional leadership.",
+        "features": [],
+        "heading": "For Junior Colleges",
+        "id": "college",
+        "label": "Junior College",
+        "rings": [
+          {
+            "_key": "college-ring-0",
+            "nodes": [
+              "Students"
+            ]
+          },
+          {
+            "_key": "college-ring-1",
+            "nodes": [
+              "Parents",
+              "Lecturers",
+              "HODs",
+              "Finance & Exams"
+            ]
+          },
+          {
+            "_key": "college-ring-2",
+            "nodes": [
+              "Academic Leaders",
+              "Institution Admins"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "engineering",
+        "description": "For technical institutions, Classgrid connects students, faculty, departments, placements, compliance, academic leadership, and executive oversight.",
+        "features": [],
+        "heading": "For Engineering",
+        "id": "engineering",
+        "label": "Engineering",
+        "rings": [
+          {
+            "_key": "engineering-ring-0",
+            "nodes": [
+              "Students"
+            ]
+          },
+          {
+            "_key": "engineering-ring-1",
+            "nodes": [
+              "Parents",
+              "Faculty",
+              "HODs",
+              "Placements & Compliance"
+            ]
+          },
+          {
+            "_key": "engineering-ring-2",
+            "nodes": [
+              "Academic Leaders",
+              "Executive Leadership"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "coaching",
+        "description": "For coaching institutes, Classgrid brings students, parents, mentors, operations, test series teams, center leadership, and owners into one system.",
+        "features": [],
+        "heading": "For Coaching",
+        "id": "coaching",
+        "label": "Coaching",
+        "rings": [
+          {
+            "_key": "coaching-ring-0",
+            "nodes": [
+              "Students"
+            ]
+          },
+          {
+            "_key": "coaching-ring-1",
+            "nodes": [
+              "Parents",
+              "Mentors",
+              "Admins",
+              "Test Series Team"
+            ]
+          },
+          {
+            "_key": "coaching-ring-2",
+            "nodes": [
+              "Center Leadership",
+              "Owners"
+            ]
+          }
+        ]
+      }
+    ],
+    "title": "Circular Timeline"
+  },
+  {
+    "_createdAt": "2026-05-16T06:51:27Z",
+    "_id": "drafts.appEcosystem",
+    "_rev": "45035481-dbe1-4f4d-abe3-861bdfb9d318",
+    "_system": {
+      "base": {
+        "id": "appEcosystem",
+        "rev": "iVtRkesY710xK44DxGrYHy"
+      }
+    },
+    "_type": "appEcosystem",
+    "_updatedAt": "2026-05-22T07:07:48Z",
+    "faculty": [
+      {
+        "_key": "f1",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Attendance card. Backend supports starting sessions, quick marking, reports, and appeals.",
+        "icon": "CheckSquare",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-43c4cd68b73f8b0d7e183711aeafc877815750c7-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Attendance"
+      },
+      {
+        "_key": "f2",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Assignments card. Backend supports creating assignments, viewing submissions, grading, and bulk grading.",
+        "icon": "ClipboardList",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-8e2223bc27665f73d9d8e37bdb42da6866a4b9a7-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Assignments"
+      },
+      {
+        "_key": "f3",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Academic Planning card. Maps to Teacher Planner APIs for lesson planning and goals.",
+        "icon": "BookOpen",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-a77c97f45949a5dc830cff6a7f47c105b5672e16-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Academic Planning"
+      },
+      {
+        "_key": "f4",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → My Time Table card, with timetable APIs for today’s schedule and slots.",
+        "icon": "Calendar",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-98c5ad7a09233acf0db29bb64918985f35ed04cc-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "My Time Table"
+      },
+      {
+        "_key": "f5",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Online Exam Builder card. Backend supports exam creation, AI/OCR questions, grading, analytics, and proctor reports.",
+        "icon": "Classroom ",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-be3adf7477e38a41cd1241b88dba42245b430f4d-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "My  Classroom "
+      },
+      {
+        "_key": "f6",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Manage Leaves card. Backend supports teacher leave queues, approvals, rejections, and calendars.",
+        "icon": "CalendarX",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6f7f210123ca720ad5f196ff7d2e0e2da39dc7a4-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Manage Leaves"
+      }
+    ],
+    "parent": [
+      {
+        "_key": "p1",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker /parent/:orgId after login → Application Progress pipeline.",
+        "icon": "Route",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-2c69640408bb1f1a7d38244bd791b848c2495ad8-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Track Application"
+      },
+      {
+        "_key": "p2",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker initial screen → phone number verification.",
+        "icon": "Phone",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6f551dcf208eecbacaf6ccac59b098d818e54570-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Parent   Dashboard "
+      },
+      {
+        "_key": "p3",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view → student info and application status badge.",
+        "icon": "UserCheck",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-07b0f89996616fa66f65d7766cc92a4bcdc2dfb0-1024x1536-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Student Status Card"
+      },
+      {
+        "_key": "p4",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view → document checklist with verified/rejected/pending states.",
+        "icon": "FileCheck2"
+      },
+      {
+        "_key": "p5",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view when status is fee pending → fee deadline/action alert.",
+        "icon": "CreditCard",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-99c7ab942cec59abebedf5581564ce1eacd47778-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Fee Payment Alert"
+      },
+      {
+        "_key": "p6",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker enrolled state → downloadable admission letter and fee receipt.",
+        "icon": "Download",
+        "label": "Attendance "
+      }
+    ],
+    "student": [
+      {
+        "_key": "s1",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Assignments card. Backend supports viewing, submitting, and unsubmitting assignments.",
+        "icon": "UploadCloud",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-16d9da680c72fd2a11af42330aeb420a169aaf21-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Assignments"
+      },
+      {
+        "_key": "s2",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Attendance card. Backend supports overview, detailed records, class attendance, and appeals.",
+        "icon": "ClipboardCheck",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-9021015d9c43eb696fad319f89e6cac0994bd03e-863x1823-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Attendance"
+      },
+      {
+        "_key": "s3",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → My Time Table card, backed by /me/today timetable APIs.",
+        "icon": "Calendar",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-6263c8cd887627610d566f3ab9b9f14613075dd3-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "My Time Table"
+      },
+      {
+        "_key": "s4",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Examination card. Backend supports student exam dashboard, start exam, autosave, submit, proctoring, and hall ticket.",
+        "icon": "MonitorCheck",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-97005023e84630de0894768f5cb93890dd998365-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Examination"
+      },
+      {
+        "_key": "s5",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Result card. Backend supports student result view, SGPA/CGPA, ranks, and published marks.",
+        "icon": "Trophy",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-80c88a67bb70800915dda4e3b21a80a7c709937d-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Result"
+      },
+      {
+        "_key": "s6",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Fees card. Backend supports student fee summary, ledger/records, Razorpay order, and payment verification.",
+        "icon": "CreditCard",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-9ab9bdc95e919924408b351e64e033e6a750a9bc-853x1844-png",
+            "_type": "reference"
+          }
+        },
+        "label": "Fees"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-05-16T06:47:18Z",
+    "_id": "drafts.appEcosystemSingleton",
+    "_rev": "F7UTJs143qSd27cb9XKWem",
+    "_type": "appEcosystem",
+    "_updatedAt": "2026-05-16T06:54:13Z",
+    "faculty": [
+      {
+        "_key": "f1",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Attendance card. Backend supports starting sessions, quick marking, reports, and appeals.",
+        "icon": "CheckSquare",
+        "label": "Attendance"
+      },
+      {
+        "_key": "f2",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Assignments card. Backend supports creating assignments, viewing submissions, grading, and bulk grading.",
+        "icon": "ClipboardList",
+        "label": "Assignments"
+      },
+      {
+        "_key": "f3",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Academic Planning card. Maps to Teacher Planner APIs for lesson planning and goals.",
+        "icon": "BookOpen",
+        "label": "Academic Planning"
+      },
+      {
+        "_key": "f4",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → My Time Table card, with timetable APIs for today’s schedule and slots.",
+        "icon": "Calendar",
+        "label": "My Time Table"
+      },
+      {
+        "_key": "f5",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Online Exam Builder card. Backend supports exam creation, AI/OCR questions, grading, analytics, and proctor reports.",
+        "icon": "FileQuestion",
+        "label": "Online Exam Builder"
+      },
+      {
+        "_key": "f6",
+        "_type": "homeEcosystemFeature",
+        "description": "Faculty /work → Manage Leaves card. Backend supports teacher leave queues, approvals, rejections, and calendars.",
+        "icon": "CalendarX",
+        "label": "Manage Leaves"
+      }
+    ],
+    "parent": [
+      {
+        "_key": "p1",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker /parent/:orgId after login → Application Progress pipeline.",
+        "icon": "Route",
+        "label": "Track Application"
+      },
+      {
+        "_key": "p2",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker initial screen → phone number verification.",
+        "icon": "Phone",
+        "label": "Phone Verification"
+      },
+      {
+        "_key": "p3",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view → student info and application status badge.",
+        "icon": "UserCheck",
+        "label": "Student Status Card"
+      },
+      {
+        "_key": "p4",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view → document checklist with verified/rejected/pending states.",
+        "icon": "FileCheck2",
+        "label": "Document Status"
+      },
+      {
+        "_key": "p5",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker result view when status is fee pending → fee deadline/action alert.",
+        "icon": "CreditCard",
+        "label": "Fee Payment Alert"
+      },
+      {
+        "_key": "p6",
+        "_type": "homeEcosystemFeature",
+        "description": "Parent Tracker enrolled state → downloadable admission letter and fee receipt.",
+        "icon": "Download",
+        "label": "Admission Letter"
+      }
+    ],
+    "student": [
+      {
+        "_key": "s1",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Assignments card. Backend supports viewing, submitting, and unsubmitting assignments.",
+        "icon": "UploadCloud",
+        "label": "Assignments"
+      },
+      {
+        "_key": "s2",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Attendance card. Backend supports overview, detailed records, class attendance, and appeals.",
+        "icon": "ClipboardCheck",
+        "label": "Attendance"
+      },
+      {
+        "_key": "s3",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → My Time Table card, backed by /me/today timetable APIs.",
+        "icon": "Calendar",
+        "label": "My Time Table"
+      },
+      {
+        "_key": "s4",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Examination card. Backend supports student exam dashboard, start exam, autosave, submit, proctoring, and hall ticket.",
+        "icon": "MonitorCheck",
+        "label": "Examination"
+      },
+      {
+        "_key": "s5",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Result card. Backend supports student result view, SGPA/CGPA, ranks, and published marks.",
+        "icon": "Trophy",
+        "label": "Result"
+      },
+      {
+        "_key": "s6",
+        "_type": "homeEcosystemFeature",
+        "description": "Student /student/work → Fees card. Backend supports student fee summary, ledger/records, Razorpay order, and payment verification.",
+        "icon": "CreditCard",
+        "label": "Fees"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-04-25T18:00:50Z",
+    "_id": "f5350155-5e30-49b4-a8f8-186e480686ee",
+    "_rev": "jYte0ppSeJqU7IfD1fwEKD",
+    "_system": {
+      "base": {
+        "id": "f5350155-5e30-49b4-a8f8-186e480686ee",
+        "rev": "jYte0ppSeJqU7IfD1fuciL"
+      }
+    },
+    "_type": "classgrid_talk",
+    "_updatedAt": "2026-04-26T07:40:12Z",
+    "avatar": {
+      "_type": "image",
+      "alt": "Nikhl ",
+      "asset": {
+        "_ref": "image-7173da701662b4489a19356b0100caa746bd4689-460x460-jpg",
+        "_type": "reference"
+      }
+    },
+    "college": "College of Engineering, Pune ( coep ) ",
+    "institutionLogo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-da3cc71753bbe875921c9bccd6cb635f031a138f-250x251-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Nikhil Shinde",
+    "order": 10,
+    "quote": [
+      {
+        "_key": "63e462e67822",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ddb6230a5370",
+            "_type": "span",
+            "marks": [
+              "strong"
+            ],
+            "text": "Managing 3,000 engineering students across 40 divisions used to require a backend team of five. From fee tracking to SGPA calculation, our legacy data was a mess. Classgrid completely eliminated administrative chaos. Our campus now runs on total autopilot."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "8b07b01c6172",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9f7743d3cb34",
+            "_type": "span",
+            "marks": [],
+            "text": "\n"
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "rating": 4,
+    "role": "principal "
+  },
+  {
+    "_createdAt": "2026-05-07T20:51:42Z",
+    "_id": "featuresPage-singleton",
+    "_rev": "Jl05JbWvbVsByEkDHv3QL5",
+    "_type": "featuresPage",
+    "_updatedAt": "2026-05-07T20:51:42Z",
+    "ctaButtonHref": "/demo",
+    "ctaButtonLabel": "Book a Free Demo",
+    "ctaHeadline": "See every feature in a live demo.",
+    "ctaSubtext": "Our team will walk you through the platform end-to-end and answer every question specific to your institution.",
+    "featureCards": [
+      {
+        "_key": "621bb746-88b7-4927-a5b0-1004d569a4dd",
+        "accentColor": "emerald",
+        "description": "Biometric and QR-based auto-attendance with instant SMS and app alerts to parents. Zero manual entry, zero disputes.",
+        "icon": "Clock",
+        "size": "large",
+        "title": "Real-time Attendance Engine"
+      },
+      {
+        "_key": "09d8127d-ebd3-40f7-bbcd-968650a88b38",
+        "accentColor": "violet",
+        "description": "Ask natural language questions about student performance, fee collection trends, and department-level insights.",
+        "icon": "Brain",
+        "size": "small",
+        "title": "AI-powered Analytics"
+      },
+      {
+        "_key": "7320e215-3304-4adf-911e-604595fa0006",
+        "accentColor": "blue",
+        "description": "One-click fee collection via Razorpay and UPI. Installment plans, auto-receipts, and overdue tracking built in.",
+        "icon": "CreditCard",
+        "size": "small",
+        "title": "Unified Fee Collection"
+      },
+      {
+        "_key": "8f2eecae-4dff-4f74-b485-410b82276f3a",
+        "accentColor": "amber",
+        "description": "Auto-generated, clash-free timetables that account for teacher availability, room capacity, and subject loads.",
+        "icon": "LayoutDashboard",
+        "size": "small",
+        "title": "Smart Timetable Generator"
+      },
+      {
+        "_key": "c773f439-103d-46f7-8a4b-386a7772d274",
+        "accentColor": "rose",
+        "description": "End-to-end exam lifecycle — hall tickets, seating, mark entry, merit lists, grade sheets, and GR records.",
+        "icon": "FileText",
+        "size": "small",
+        "title": "Exam & Result Management"
+      },
+      {
+        "_key": "91c3a145-1b40-4664-91d3-7c6b034b01e2",
+        "accentColor": "cyan",
+        "description": "Deliver targeted notifications via SMS, WhatsApp, and in-app push for attendance, fees, results, and announcements.",
+        "icon": "MessageSquare",
+        "size": "large",
+        "title": "Parent Communication Hub"
+      },
+      {
+        "_key": "914e9e12-6ae7-4b55-a514-df4986f0e7ea",
+        "accentColor": "emerald",
+        "description": "20+ pre-built staff roles with department-level permission controls. Every user sees only what they need.",
+        "icon": "Shield",
+        "size": "small",
+        "title": "Granular Role-based Access"
+      },
+      {
+        "_key": "88c441b4-8d0c-45b2-9b4b-f1cc0b9dd8c3",
+        "accentColor": "blue",
+        "description": "Manage multiple branches, departments, and campuses from a single admin dashboard with consolidated reporting.",
+        "icon": "Building2",
+        "size": "small",
+        "title": "Multi-campus Management"
+      }
+    ],
+    "heroHeadline": "Built for how institutions actually work.",
+    "heroSubheadline": "From attendance to examinations — every workflow is connected, automated, and purpose-built for the real demands of educational institutions across India.",
+    "seo": {
+      "metaDescription": "Explore the full capabilities of Classgrid — AI analytics, automated attendance, fee collection, smart timetables, exam management, and more. Built for Indian educational institutions.",
+      "metaTitle": "Platform Features | Classgrid"
+    },
+    "spotlights": [
+      {
+        "_key": "9b585c52-9f35-4d1a-823f-3858bd068fb1",
+        "description": "Students tap, swipe, or scan — the system does the rest. Classgrid automatically marks attendance, flags absentees, and notifies parents before the first period is over. No manual registers, no end-of-day reconciliation.",
+        "eyebrow": "Attendance & Communication",
+        "highlights": [
+          "Biometric, QR, and manual modes supported",
+          "Parent SMS/WhatsApp alerts within seconds",
+          "Daily and monthly attendance reports auto-generated",
+          "Defaulter lists pushed to class teachers automatically"
+        ],
+        "imagePosition": "right",
+        "title": "Attendance that runs itself."
+      },
+      {
+        "_key": "413bc19c-676e-4c5b-9f0c-ec3aac2630d4",
+        "description": "From generating fee structures to processing Razorpay payments, issuing receipts, and chasing overdue balances — Classgrid handles the entire fee lifecycle without a single spreadsheet.",
+        "eyebrow": "Finance & Fee Management",
+        "highlights": [
+          "Razorpay, UPI, and cash payment modes",
+          "Auto-generated receipts and ledger entries",
+          "Installment plans and scholarship management",
+          "Outstanding fee reports per student, class, and campus"
+        ],
+        "imagePosition": "left",
+        "title": "Fee collection, fully automated."
+      },
+      {
+        "_key": "c0a5c4e4-f9e1-42f7-a472-4230a880c155",
+        "description": "Classgrid manages your entire examination cycle. Set schedules, allocate rooms, issue hall tickets, collect marks, compute grades, and publish results — all within a single, auditable workflow.",
+        "eyebrow": "Examinations & Results",
+        "highlights": [
+          "Hall ticket generation and seating allocation",
+          "Subject-wise and aggregate mark entry",
+          "Customisable grading schemes and merit lists",
+          "GR records and result history maintained permanently"
+        ],
+        "imagePosition": "right",
+        "title": "From question paper to mark sheet — in one system."
+      }
+    ],
+    "stats": [
+      {
+        "_key": "b5e5937d-664e-46fc-9cfa-f2a93bbd404f",
+        "label": "Platform Modules",
+        "number": "41+"
+      },
+      {
+        "_key": "4fe57314-d08b-4e3c-bcdc-3b829e7a25e2",
+        "label": "Staff Roles Supported",
+        "number": "20+"
+      },
+      {
+        "_key": "baf86a45-a3d5-4d4a-897a-54fe3790878c",
+        "label": "Uptime SLA",
+        "number": "99.9%"
+      },
+      {
+        "_key": "45281436-76c2-4c29-82b0-34414b10cfd2",
+        "label": "Average Setup Time",
+        "number": "< 5 min"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-05-10T09:43:57Z",
+    "_id": "homeStats",
+    "_rev": "Py0OgCE9QhEbBLc7R3RZJJ",
+    "_system": {
+      "base": {
+        "id": "homeStats",
+        "rev": "gz9dTbVKIQuQwPPp9AyJXx"
+      }
+    },
+    "_type": "homeStats",
+    "_updatedAt": "2026-08-05T16:42:53Z",
+    "institutions": "Coming Soon",
+    "modules": "25+",
+    "showInstitutions": false,
+    "showModules": true,
+    "showStudents": false,
+    "showUptime": true,
+    "students": "Coming Soon",
+    "uptime": "99 %"
+  },
+  {
+    "_createdAt": "2026-05-21T11:54:44Z",
+    "_id": "iVtRkesY710xK44DxAR1My",
+    "_rev": "fTHDemlZVuar9XG8wIpFVd",
+    "_system": {
+      "base": {
+        "id": "iVtRkesY710xK44DxAR1My",
+        "rev": "fTHDemlZVuar9XG8wIluFm"
+      }
+    },
+    "_type": "classgridVideo",
+    "_updatedAt": "2026-05-29T08:58:55Z",
+    "ctaHref": "/#demo",
+    "ctaLabel": "Book a Free Demo",
+    "description": "Classgrid works silently behind every role on your campus — from the first attendance bell at sunrise to the last report reviewed at midnight. One platform, every stakeholder, every hour.",
+    "highlights": [
+      {
+        "_key": "h1",
+        "text": "Students, faculty, admins, accountants, librarians — every role, one login"
+      },
+      {
+        "_key": "h2",
+        "text": "Admissions at dawn, attendance by noon, fee reports by evening"
+      },
+      {
+        "_key": "h3",
+        "text": "Real-time sync across 25+ modules — nothing falls through the cracks"
+      },
+      {
+        "_key": "h4",
+        "text": "From small coaching centres to multi-campus universities, it just scales"
+      }
+    ],
+    "isVisible": true,
+    "label": "Your Campus, All Day",
+    "title": "With Every Role, From Morning to Night",
+    "videoFile": {
+      "_type": "file",
+      "asset": {
+        "_ref": "file-59b2f8ad95abb4cee067d5f5f79236de003a31a1-mp4",
+        "_type": "reference"
+      }
+    },
+    "videoPlaylist": [
+      {
+        "_key": "95694f1c456f",
+        "videoFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-112de837fef16e2e791bdb9387e95313bb85e69d-mp4",
+            "_type": "reference"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "_createdAt": "2026-05-12T18:00:31Z",
+    "_id": "isometricStack",
+    "_rev": "CYyBncfS2CCdDhOSu51qsJ",
+    "_type": "isometricStack",
+    "_updatedAt": "2026-05-12T18:00:31Z",
+    "headline": "The connected ERP stack behind every modern campus",
+    "kicker": "THE CLASSGRID ERP STACK",
+    "phases": [
+      {
+        "_key": "phase0",
+        "_type": "stackPhase",
+        "body": "ClassGrid gives each institution an isolated workspace where admins, faculty, students, and parents work from the same live campus record.",
+        "bullets": [
+          "Tenant workspaces for schools, colleges, junior colleges, and coaching institutes",
+          "Role-based access for owners, principals, HODs, faculty, students, and parents",
+          "Organization hierarchy for branches, standards, divisions, batches, and courses",
+          "Audit logs and system controls across sensitive workflows"
+        ],
+        "title": "One campus core.\nEvery user connected."
+      },
+      {
+        "_key": "phase1",
+        "_type": "stackPhase",
+        "body": "The admission engine supports real tracks for schools, junior colleges, engineering, diploma, coaching, and custom workflows.",
+        "bullets": [
+          "Phone OTP, EN-number OTP, portal, desk, and CET entry modes",
+          "Document verification, duplicate checks, edit locks, and stage history",
+          "Merit generation for percentage, Best-of-5, FCFS, and MHT-CET ranking",
+          "RLA, CAP upgrades, PRN generation, seat matrix, and DTE/SARAL/AICTE exports"
+        ],
+        "title": "Admissions that match.\nYour institution type."
+      },
+      {
+        "_key": "phase2",
+        "_type": "stackPhase",
+        "body": "Timetable, attendance, classroom activity, assignments, and teacher planning stay connected instead of living in separate registers.",
+        "bullets": [
+          "Conflict-aware timetable for lectures, labs, tutorials, and extra classes",
+          "GPS, device, code, and paste-detection checks for smart attendance",
+          "Classroom hub for announcements, assignments, materials, and discussions",
+          "Faculty planner, academic calendar, holidays, and daily schedule synthesis"
+        ],
+        "title": "Academics run from.\nOne daily operating layer."
+      },
+      {
+        "_key": "phase3",
+        "_type": "stackPhase",
+        "body": "ClassGrid connects admissions, fee ledgers, online payments, offline receipts, and campus services around one student account.",
+        "bullets": [
+          "Fee structures, components, student ledgers, installments, and overdue status",
+          "Institution-owned Razorpay keys with webhook verification and receipts",
+          "Offline cash, cheque, NEFT, and online payments in one ledger",
+          "Library, canteen, certificate, and student access workflows tied to ERP status"
+        ],
+        "title": "Fees and services.\nSynced to the student record."
+      },
+      {
+        "_key": "phase4",
+        "_type": "stackPhase",
+        "body": "Assessment data flows into marks, results, certificates, and accreditation outputs without rebuilding reports from scratch.",
+        "bullets": [
+          "Online exams, quizzes, AI proctoring, negative marking, and grading flows",
+          "Marks, result records, student performance analytics, and academic history",
+          "Certificate engine with templates, student data injection, and QR verification",
+          "NAAC/NBA, CO attainment, DTE, SARAL, AICTE, and State Board exports"
+        ],
+        "title": "Exams, results.\nAnd compliance ready."
+      },
+      {
+        "_key": "phase5",
+        "_type": "stackPhase",
+        "body": "Every important campus event can trigger dashboards, alerts, analytics, and AI-assisted actions from the same platform.",
+        "bullets": [
+          "Email, SMS, Firebase push notifications, chat, forums, and support CRM",
+          "Command Center, Super Analytics, activity logs, and system health views",
+          "AI RAG engine, AI study assistant, AI quiz maker, notes AI, and audit AI",
+          "Real-time updates through Socket.io, Redis, Firebase, and connected services"
+        ],
+        "title": "Communication and AI.\nAcross the full stack."
+      }
+    ],
+    "subheadline": "ClassGrid unifies admissions, academics, fees, exams, communication, compliance, and AI automation into one live operating system for schools, colleges, and coaching institutes."
+  },
+  {
+    "_createdAt": "2026-10-19T16:43:34Z",
+    "_id": "pricingPage",
+    "_rev": "CVamaBKVm4AM9cc17xJlxK",
+    "_type": "pricingPage",
+    "_updatedAt": "2026-10-19T16:47:55Z",
+    "agentTable": {
+      "columnOneLabel": "Free tokens",
+      "columnTwoLabel": "Token use",
+      "firstColumnLabel": "Model",
+      "rows": [
+        {
+          "_key": "k7h92h",
+          "_type": "pricingRow",
+          "icon": "sparkles",
+          "name": "Auto (picks the best model for you)",
+          "valueOne": "yes",
+          "valueTwo": "Low to Standard"
+        },
+        {
+          "_key": "k8h92h",
+          "_type": "pricingRow",
+          "icon": "brain",
+          "name": "DeepSeek V4 Pro",
+          "valueOne": "yes",
+          "valueTwo": "Standard"
+        },
+        {
+          "_key": "k9h92h",
+          "_type": "pricingRow",
+          "icon": "zap",
+          "name": "DeepSeek V4 Flash",
+          "valueOne": "yes",
+          "valueTwo": "Low"
+        },
+        {
+          "_key": "kah92h",
+          "_type": "pricingRow",
+          "icon": "cpu",
+          "name": "GLM 5.3",
+          "valueOne": "yes",
+          "valueTwo": "Standard"
+        },
+        {
+          "_key": "kbh92h",
+          "_type": "pricingRow",
+          "icon": "cpu",
+          "name": "GLM 5.2",
+          "valueOne": "yes",
+          "valueTwo": "Standard"
+        },
+        {
+          "_key": "kch92h",
+          "_type": "pricingRow",
+          "icon": "zap",
+          "name": "GLM 5.3 Flash",
+          "valueOne": "yes",
+          "valueTwo": "Very low"
+        },
+        {
+          "_key": "kdh92h",
+          "_type": "pricingRow",
+          "icon": "zap",
+          "name": "GLM 4.7 Flash",
+          "valueOne": "yes",
+          "valueTwo": "Very low"
+        },
+        {
+          "_key": "keh92h",
+          "_type": "pricingRow",
+          "icon": "brain",
+          "name": "Kimi K2.6",
+          "valueOne": "yes",
+          "valueTwo": "Standard"
+        },
+        {
+          "_key": "kfh92h",
+          "_type": "pricingRow",
+          "icon": "code",
+          "name": "Kimi K2.7 Code",
+          "valueOne": "yes",
+          "valueTwo": "Standard"
+        },
+        {
+          "_key": "kgh92h",
+          "_type": "pricingRow",
+          "icon": "cpu",
+          "name": "Qwen 3.8 27B",
+          "valueOne": "yes",
+          "valueTwo": "Low"
+        },
+        {
+          "_key": "khh92h",
+          "_type": "pricingRow",
+          "icon": "cpu",
+          "name": "GPT-OSS 120B",
+          "valueOne": "yes",
+          "valueTwo": "Low"
+        },
+        {
+          "_key": "kih92h",
+          "_type": "pricingRow",
+          "icon": "zap",
+          "name": "GPT-OSS 20B",
+          "valueOne": "yes",
+          "valueTwo": "Very low"
+        },
+        {
+          "_key": "kjh92h",
+          "_type": "pricingRow",
+          "icon": "cpu",
+          "name": "Nemotron 3 120B",
+          "valueOne": "yes",
+          "valueTwo": "Low"
+        },
+        {
+          "_key": "kkh92h",
+          "_type": "pricingRow",
+          "icon": "cpu",
+          "name": "Llama 4 Scout",
+          "valueOne": "yes",
+          "valueTwo": "Low"
+        },
+        {
+          "_key": "klh92h",
+          "_type": "pricingRow",
+          "icon": "cpu",
+          "name": "Mistral Small 3.1",
+          "valueOne": "yes",
+          "valueTwo": "Low"
+        },
+        {
+          "_key": "kmh92h",
+          "_type": "pricingRow",
+          "icon": "zap",
+          "name": "Gemma 4 26B",
+          "valueOne": "yes",
+          "valueTwo": "Very low"
+        },
+        {
+          "_key": "knh92h",
+          "_type": "pricingRow",
+          "icon": "zap",
+          "name": "Claude Haiku 5.5",
+          "valueOne": "yes",
+          "valueTwo": "Very low"
+        },
+        {
+          "_key": "koh92h",
+          "_type": "pricingRow",
+          "icon": "brain",
+          "name": "Claude Sonnet 5.5",
+          "valueOne": "yes",
+          "valueTwo": "High"
+        },
+        {
+          "_key": "kph92h",
+          "_type": "pricingRow",
+          "icon": "brain",
+          "name": "Claude Opus 5.5",
+          "valueOne": "yes",
+          "valueTwo": "High"
+        },
+        {
+          "_key": "kqh92h",
+          "_type": "pricingRow",
+          "icon": "sparkles",
+          "name": "Claude Fable 5.1",
+          "valueOne": "Paid credits only",
+          "valueTwo": "Very high"
+        }
+      ],
+      "subtitle": "Pick any model. Light models use fewer tokens and big models use more, so you only pay for what each answer really costs.",
+      "title": "Every model, one balance"
+    },
+    "banner": {
+      "chip": "Teams & colleges",
+      "ctaHref": "/contact",
+      "ctaLabel": "Contact us",
+      "text": "Talk to us about AI credits for your whole team, college or company.",
+      "title": "Using Classgrid AI with your team?"
+    },
+    "headline": "Pay only for what you use",
+    "heroChip": "Classgrid AI Pricing",
+    "mainPlan": {
+      "chip": "Free for everyone",
+      "ctaHref": "https://chat.classgrid.in",
+      "ctaLabel": "Start free",
+      "description": "Chat, Agent mode, Project Mode, schedules, images and connected apps, all in one account.",
+      "included": [
+        "Free tokens that refill on their own",
+        "Agent mode with tools and its own secure computer",
+        "Project Mode: a full code editor with GitHub",
+        "Image generation",
+        "Schedules with email and WhatsApp",
+        "Connected apps like Gmail, Google, GitHub and Slack",
+        "Many AI models, including Claude and DeepSeek",
+        "Free website hosting on Classgrid Cloud"
+      ],
+      "includedTitle": "What's included:",
+      "name": "Classgrid AI",
+      "priceLabel": "Free",
+      "priceNote": "Top up from ₹1 when you need more"
+    },
+    "seo": {
+      "metaDescription": "Classgrid AI is free to start. Free tokens refill on their own, and you can top up any amount when you need more. One balance for every AI model.",
+      "metaTitle": "Pricing",
+      "slug": "pricing"
+    },
+    "sidePlan": {
+      "description": "Pay as you go with AI credits. No subscription.",
+      "items": [
+        {
+          "_key": "k1h92g",
+          "_type": "pricingSideItem",
+          "description": "Top up anything from ₹1 to ₹10,000.",
+          "icon": "wallet",
+          "title": "Any amount"
+        },
+        {
+          "_key": "k2h92g",
+          "_type": "pricingSideItem",
+          "description": "Checkout with Razorpay and an email code.",
+          "icon": "shield",
+          "title": "Safe payment"
+        },
+        {
+          "_key": "k3h92g",
+          "_type": "pricingSideItem",
+          "description": "Every top-up keeps your credits valid for 30 days.",
+          "icon": "calendar",
+          "title": "Valid for 30 days"
+        },
+        {
+          "_key": "k4h92g",
+          "_type": "pricingSideItem",
+          "badge": "Premium",
+          "description": "Our most capable model unlocks after ₹100 of top-ups.",
+          "icon": "sparkles",
+          "title": "Unlock Claude Fable"
+        }
+      ],
+      "title": "Top up anytime"
+    },
+    "subheadline": "Every account gets free tokens that refill on their own. Need more? Top up any amount. No monthly plan, no lock-in."
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:45Z",
+    "_id": "solution-page-for-admins",
+    "_rev": "s0mjsvMLcxDn6CvMzAq6Am",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:06Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Connect Gmail or Outlook and your calendar. Ask what needs a reply, get a draft, and send it from your own account. Check your week and add new meetings with a Meet or Zoom link."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Email and calendar, handled"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Email the task to agent@classgrid.in from your sign-up email, or call the agent on WhatsApp. It works in the background for up to 48 hours and asks you on WhatsApp if it needs something. When it's done, it sends you the result."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Hand off work and walk away"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Make a group on Grids for quick decisions and polls. Ask the agent to catch you up on what your group said today, and it asks before it posts anything. Draft the pitch together in one shared AI chat with up to 3 other people."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Your team chat and shared AI chats"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Turn meeting notes into a Notion page or a Slack message. Write a proposal and get it as a polished PDF. Then send it from your own email."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Meeting notes and proposals"
+        }
+      }
+    ],
+    "category": "role",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Each person signs up with their own email. You work together with Grids groups and Share Grid, which is one AI chat for up to 4 people. It's free to start, and you top up when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can people work on it together?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. When you connect Gmail or Outlook, it sends from your own account. Without them, the agent can still send you email from agent@classgrid.in."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Does it send email as me?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "Not yet. It can list your events and create new ones."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it move or cancel my meetings?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Email agent@classgrid.in from the email you signed up with. It replies, works on the task and sends you the result."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How do I give it a task by email?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Long tasks run in the background for up to 48 hours. The result is sent to your WhatsApp and to the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it keep working when I'm offline?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. You can disconnect any app from Plugins and delete any chat at any time."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I disconnect apps?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Your inbox and week, handled"
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Email & calendar"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI is like an extra helper for your email and your week. You type what you need in plain words, and the agent does the work. It can read, write, plan and send things for you. You don't need to learn any new software to use it.\n\nConnect your Gmail or Outlook, and the agent can read your inbox for you. Ask it which emails need a reply today, and it gives you a short list. It can write a reply and send it from your own account when you say so. It can also read the files attached to an email.\n\nConnect Google Calendar and ask what your week looks like. The agent lists your meetings and tells you when you are free. It can add a new meeting, with a Google Meet link if you want one. It can also make Zoom or Outlook meetings. It can't move or cancel a meeting yet, so you still do that yourself.\n\nNeed a proposal, a quote or a short report? Tell the agent what it is about, and it writes it and turns it into a clean PDF. It can then email that PDF from your Gmail, with the file attached. You can read it first and ask for changes before anything is sent.\n\nAfter a meeting, paste your rough notes or upload a voice note. The agent turns them into clear notes with action items and a name next to each one. It can save them as a Notion page or post them in a Slack channel. Everyone sees the same notes without anyone typing them again.\n\nYou don't have to sit and watch. Email the task to agent@classgrid.in from the email you signed up with, or call the agent on WhatsApp. It keeps working in the background for up to 48 hours. If it needs something, it asks you on WhatsApp, and it sends you the result when it's done.\n\nWant a nudge at a set time? A schedule can send you a reminder you write, by email or WhatsApp. It sends the same words you set, once or on the days you pick. It does not write a fresh summary each time.\n\nYour team chat can live in a Grids group, with quick polls for decisions. The agent can catch you up on what your group said in the last couple of hours. It always shows you a draft and asks before it posts anything to the group. For bigger work, up to 4 people can share one AI chat and build the answer together.\n\nEach person signs up with their own email. You can connect or disconnect apps at any time from Plugins. You can delete any chat whenever you want. It is free to start, and you top up only when you need more.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Read my unread emails from today\n- What's on my calendar for tomorrow?\n- When am I free next week?\n- Search my Notion for recent strategy docs\n- Write meeting notes and action items.\n- Draft a project proposal.\n- Create a PDF report in minutes.\n- Get reminders on WhatsApp.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Read, reply and send from your account |\n| Microsoft Outlook | Read and send email, create meetings |\n| Google Calendar | See your week, add events |\n| Google Drive | Find and read files, save new ones |\n| Slack | Read and post messages, create canvases |\n| Notion | Search, create and update pages |\n| Microsoft Teams | Read and post in channels and chats |\n| Zoom | List and create meetings |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Catch up on email, check your week, draft proposals as PDFs and turn meeting notes into action with one AI agent. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI assistant for email and calendar | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-admins"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Catch up on email, check your week, send proposals and turn meeting notes into action, all from one chat."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:39Z",
+    "_id": "solution-page-for-coaching",
+    "_rev": "YfZj5VEMNrIVujHbdXDaZy",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:03Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent searches the web, opens the pages and reads them. Then it answers with numbered sources you can click. Long pages are read in parts, so nothing important gets skipped."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Answers with sources you can check"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Upload PDFs, Word files, slides, Excel sheets, CSVs, images and audio. Ask questions about them, compare them, or pull out tables and quotes. Your files stay in your Library to find later."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Read any file"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent writes and runs Python for you: cleaning, statistics, charts and models. You get the files back. That means a clean Excel sheet, charts and a PDF report."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Real Python for real data"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask about a stock, the weather, a place or a deadline. You get a live card right in the answer: a price chart, a 5-day forecast, a map pin or a countdown."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Live cards in the answer"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Every number links to a page the agent opened. Always click through and check what matters."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Are the sources real?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "No separate mode is needed. Ask your question, and the agent searches, opens pages and reads them itself."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is there a \"deep research\" mode?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "PDF, Word, PowerPoint, Excel, CSV and text files, plus images and audio. You can add up to 6 files in one message."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which files can it read?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. It writes Python and runs it in a safe sandbox. Then it gives you the files it made."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Does it really run code?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Upload the CSV or Excel export, or connect Google Forms and it can read the responses."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it read my survey results?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Use Incognito. Incognito chats aren't saved to your history."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I keep a chat private?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Real sources. Real numbers."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Research & data"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI helps you find facts and make sense of data. You ask a question in plain words. The agent searches, reads and works things out for you. Then it gives you an answer you can check.\n\nWhen you ask a research question, the agent searches the web and opens the pages it finds. It reads them, even long ones, in parts so nothing important is missed. Then it writes an answer with numbered sources. Click any number to see the page it came from.\n\nThe sources are real pages the agent opened. Still, always click through and check the facts that matter most. It does not search paid journal databases. There is no special mode to turn on, you just ask your question.\n\nYou can upload PDFs, Word files, slides, Excel sheets, CSV files, images and audio. Up to 6 files fit in one message. Ask questions about them, compare two papers, or pull out tables and quotes. Your files stay in your Library, where you can search for them later.\n\nFor numbers, the agent writes real Python code and runs it in a safe sandbox. It can clean messy data, remove repeated rows, fix dates and work out statistics. It shows you each step it took. You get the files back, like a clean Excel sheet.\n\nAsk for a chart and the agent draws one from your data, like a bar, line or pie chart. It can also draw a simple flow diagram. When you're done, ask for a PDF report with your charts and findings. You can download it or share it.\n\nSome answers come as live cards. Ask about a stock and you get its price and a small chart. Ask about the weather and you get today plus the next 5 days. You can also get a map pin, a route or a countdown to a deadline. The market card only shows data and is not financial advice.\n\nConnect Google Drive to find and read your files and save results there. Connect Google Forms to read survey answers, or make a new form. You can also save findings to Notion, read email attachments in Gmail, or run SQL on your Supabase database. Not sure how to write SQL? Ask in plain English and the agent writes it for you.\n\nWant to keep a chat private? Use Incognito, and that chat is not saved to your history. Want to share your findings? Send a read-only link, or share them in a Grids group. It is free to start, and you top up only when you need more.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Research a topic with real sources.\n- Search the web with sources.\n- Outline a literature review.\n- Analyse a file in seconds.\n- Clean up messy spreadsheet data.\n- Draw a chart from your data.\n- Create a PDF report in minutes.\n- Write SQL queries from plain English.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Google Drive | Find and read your files, save results |\n| Google Forms | Read survey responses, create a new form |\n| Notion | Search your notes, save findings to a page |\n| Supabase | Run SQL on your project's database |\n| Gmail | Read emails and attachments |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Search the web with real citations, read long PDFs, clean messy spreadsheets and turn data into charts and PDF reports. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI research and data analysis agent | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-coaching"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Search the web with citations, read long PDFs, clean messy spreadsheets, and get charts and PDF reports."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:37Z",
+    "_id": "solution-page-for-colleges",
+    "_rev": "YfZj5VEMNrIVujHbdXDaVl",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:00Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Message anyone on Classgrid AI, one to one or in groups. Choose who can join, who can post and who can add people. Send voice notes, photos, files and GIFs, pin what matters and see who has read it."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Chats and groups that feel familiar"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask the group with a poll. Mark a message Urgent so it stands out. Write it now and schedule it for later, or let it delete itself after a while."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Polls, priority and scheduled messages"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Bring friends or teammates into your AI chat. Everyone can read it, send messages and ask the AI together, and every message shows who sent it. Invite by link, by email, or pick people from your Grids."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Share Grid: one AI chat, up to 4 people"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask your agent to catch you up on a group, make a poll and tell you the result, or draft an announcement. It always shows you the message first and posts only when you say yes. It asks before reading your private chats."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Your agent helps, with your OK"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Anyone with a Classgrid AI account. Find them under \"Contacts on Classgrid\"."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Who can I chat with?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "No AI replies inside groups. Your own agent can read recent group messages, make polls and post for you after you say yes. To chat with the AI together, use Share Grid."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is there an AI inside my group chats?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "Up to 4, including you. Incognito and Project Mode chats can't be shared."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How many people can share one AI chat?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. You can schedule your own messages with \"Schedule For\"."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can the agent post on a schedule?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "It reads the recent messages (about the last couple of hours), so it's best for \"what did I miss today\"."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it summarise the whole group?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "In the main menu. If you're inside Agent, tap Back in the sidebar to see Grids."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Where do I find Grids?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Chat, plan and decide together"
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Grids"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nGrids is the messaging part of Classgrid AI. You find it as \"Grids\" in the side menu of the app. It works a lot like the chat apps you already know: you can talk one-to-one with anyone who has a Classgrid AI account, or make groups with many people. The big difference is that your own AI agent lives right next to your chats and can help you with them.\n\nYou can start a chat with any person on Classgrid AI by searching their name and pressing \"Start Chat\". You can also make a group and give it a name and a short subject. A group can be a general group, a team, a department, or an official announcement group. You decide who can see it and join it: it can be private and invite-only, visible but people must ask to join, or open so anyone can join straight away. People can also explore open groups and send requests to join.\n\nGroup owners have real control. You choose who can send messages, who can change the group name and picture, who can add new members and who can send files. If you set \"Only Admins\" for messages, your group becomes a clean notice board where only you post and everyone else reads. You can make other people admins too. Every change in the group is recorded in an audit log, and you can download that log as a sheet.\n\nMessages can do much more than text. You can send voice notes, photos, videos, documents and GIFs. You can mention one person or everyone in the group, react to messages, reply to a message, forward it, pin important ones for a day, a week or a month, and star messages to find them later. You can search inside a chat. You can mark a message as high priority or urgent so it stands out, set it to delete itself at a certain time, or schedule it to be sent later. You can also turn on disappearing messages for chats you do not want to keep.\n\nYou always know what is happening. You can see who is online, who is typing or recording, and for every message you can see who has received it and who has read it. New messages pop up even when you are on another page, and you get a badge with the number of unread messages.\n\nYou can make polls. Ask a question, add between two and ten options, and choose if people can pick more than one answer. Everyone votes in the group and you can see the results live. This is perfect for picking a day for a meeting, a place for a trip or an idea for a project.\n\nYour AI agent can help with your groups. You can ask it to catch you up on what a group talked about recently, list the members, check a poll's results, write a message or an announcement, make a new poll, or send a file to the group. The agent always shows you its draft first and asks \"Should I send this to the group?\", and it only sends after you say yes. It looks at groups by default and asks before it reads your private one-to-one chats.\n\nYou can share one AI chat with friends using Share Grid. Open any chat with the agent, press the share button, and invite up to three other people by email, from your Grids contacts or with an invite link you can send on WhatsApp. Then all four of you can read the chat, send messages and ask the AI together. Each message shows who sent it, and the agent knows who asked what. It answers one person at a time, so nothing gets mixed up. If the owner leaves, the chat passes to the next person.\n\nYou can also share a finished chat as a link. This makes a read-only copy of the chat that anyone can open, and you can post it straight to WhatsApp or LinkedIn or copy the link. Great for showing a good answer, a plan or a piece of research to people who do not use Classgrid yet.\n\nIn short: Grids lets you chat, run groups, take votes and post notices, with your AI agent helping you catch up and write, but only posting when you say yes. And with Share Grid, up to four people can work with the same AI chat together.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Read my Grid\n- Catch me up on the team group\n- Make a poll: Which day for the launch call?\n- Make a poll in the trip group: Goa, Manali or Ooty?\n- Who voted in the poll?\n- Draft an announcement for the Product launch group about Friday's demo\n- Send the launch plan PDF to the Product launch group\n- Who is in the Trip plan group?\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Google Calendar | Check free days before you make a poll |\n| Google Meet | Create a Meet link for group calls |\n| Google Drive | Read a file, share a summary |\n| Notion | Pull page notes into a group update |\n| Gmail | Turn an email into a group announcement |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Chat one to one or in groups, run polls, schedule messages and share one AI chat with up to 4 people. Your agent catches you up and posts with your OK."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Grids: group chats, polls and shared AI chats | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-colleges"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Chats, groups and polls inside Classgrid AI, plus shared AI chats for up to 4 people."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:40Z",
+    "_id": "solution-page-for-engineering",
+    "_rev": "YfZj5VEMNrIVujHbdXDaRY",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:56:59Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Full VS Code in a browser tab, with a terminal, a Run button, auto-save, Prettier and ESLint. Your packages install on their own when you open a project. Nothing to set up on your computer."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "A real editor in your browser"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent sees the file you have open, what you selected and the red squiggles. It follows your repo's rules files. It can send helpers to read different parts of the code at the same time."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "It knows your code"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "After each answer you see exactly what changed. Look at the diff file by file and reject what you don't want. Or undo the whole answer in one click."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Review every change"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Nothing goes straight to main. Every push is a new branch and a pull request you review and merge on GitHub. Connect Vercel and the agent can deploy that branch as a preview on your own account."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Pull requests only, previews on your Vercel"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Project Mode needs your GitHub account. You also install the Classgrid GitHub app on the repos you work on."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Do I need GitHub?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "On GitHub. While you work, a copy sits in your private editor box. It's removed after you close the editor, and anything not pushed is saved to a backup branch first."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Where is my code kept?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. Every change goes to a classgrid/ branch and a pull request. You review and merge it on GitHub."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Will it push to main?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "There's no live preview link from the editor. Connect Vercel and the agent can deploy your branch as a preview on your Vercel account."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I see my app running?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Python and Node.js / TypeScript, with npm packages installed for you."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which languages work?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "In Agent mode (not Project Mode) the agent can publish a site to yourname.sites.classgrid.in. In Project Mode, use Vercel."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it host a simple site for me?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Code with an agent. Ship by PR."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Project Mode"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nProject Mode is the coding side of Classgrid AI. You switch from \"Agent\" to \"Project\" in the app, and you get a full code editor right inside your browser, with an AI agent sitting next to it. It is VS Code, one of the most used code editors, so you do not need to install anything on your computer. You open a tab and start building websites and apps.\n\nTo use it you connect your GitHub account, because your code is kept on GitHub, with only a temporary copy while you work. You install the small Classgrid app on the GitHub repos you want to work on, and then you can open any of your projects in one click. If you do not have a project yet, you can start an empty one and ask the agent to build something from nothing, like a website or a small app. When you are ready, the agent can even create a new GitHub repo for you and save the work there.\n\nThe editor has everything you expect. There is a file list, a code area, a terminal where you can type commands, a Run button, auto-save, and tools that tidy your code and point out mistakes. When you open a project, it installs the project's packages by itself in the background, so you can start working straight away. Python and Node.js / TypeScript work out of the box.\n\nThe agent can really work on your code, not just give advice. You can ask it to fix a bug, add a feature, explain how something works, or build a new page. It reads your files, searches through the code, makes the changes, runs your build or tests, and checks for errors after every change. For big questions, like \"how does login work in this project?\", it can send up to five small helpers to read different parts of the code at the same time, so you get an answer much faster.\n\nIt understands what you are looking at. It knows which file you have open, which lines you have selected and which red error lines the editor is showing. So you can simply select a piece of code and ask \"why is this not working?\" If your project has a rules file for AI tools, the agent reads it and follows your rules. For bigger jobs it can write a plan first, show it to you, and only start building after you approve it.\n\nYou are always in control of every change. After each answer you see a small box that says how many files changed and how many lines were added or removed. You can open \"Review\" to see every change file by file, in colour, and reject the parts you do not want. Or you can press \"Undo\" and the whole project goes back to exactly how it was before that answer.\n\nNothing ever goes straight into your main code. When you save your work, by pressing \"Push to GitHub\" or by asking the agent, it goes to a new branch and opens a pull request on GitHub. You or the repo owner look at it and decide to merge it. The work is signed by Classgrid AI with you as co-author, so your name is on it too. If someone else changed the same branch in the meantime, it joins their work with yours carefully, and if the same lines clash it stops instead of overwriting anything. If you close the editor and forget to save, your unsaved work is backed up to a separate branch on GitHub, so nothing is lost.\n\nYou can put your work online through Vercel. If you connect your Vercel account, the agent can create the Vercel project, add the secret settings your app needs, and deploy your branch as a preview link or as the live site, all on your own Vercel account. Your project cards in Classgrid then show the live address next to the project.\n\nYour projects stay organised. Each project has its own card with a logo, the last change, the branch and the time, plus its own chats, so you can keep one project per client or per idea. You can also move a normal chat into a project if a conversation turns into real coding work.\n\nIn short: Project Mode is a full code editor in your browser with an AI that edits, runs and fixes your code, while you stay in charge. Every change can be reviewed or undone, everything is saved safely as a pull request on your GitHub, and you can ship it to your own Vercel when it is ready.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- You can ask it to write, fix or explain code\n- You can ask it to make a GitHub repo and push your code\n- Debug an error in your code.\n- Explain how auth works in this repo\n- Build a landing page for your idea.\n- Write SQL queries from plain English.\n- Write Python and run it for you.\n- List all my Supabase projects\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| GitHub | Repos, files, issues, pull requests and code search |\n| Vercel | Create projects, add env variables, deploy a branch |\n| Supabase | List projects, run SQL, see storage buckets |\n| Sanity CMS | Query, create and update documents |\n| Slack | Read and send messages, create canvases |\n| Notion | Search, create and update pages |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Code in a browser editor with an AI agent that edits files, runs your build and opens pull requests on your GitHub. Review every change. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI coding agent with GitHub pull requests | Classgrid Project Mode"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-engineering"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "A full code editor in your browser. The agent edits your files, runs your build and opens a pull request on your GitHub."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:38Z",
+    "_id": "solution-page-for-jr-colleges",
+    "_rev": "RVHES3swKkzmvYjsUtqxKp",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:02Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Call the number on WhatsApp and just say what you need. You can interrupt any time. Ask a quick question and get the answer on the call, using your connected apps."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Talk, don't type"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Everything you asked for becomes one job. The agent does it in a new chat and sends the result to your WhatsApp: text, links and real files like PDFs. Coding work goes to your Project Mode project."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Hang up. It keeps working."
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Forgot something? Send a photo, a PDF or a few more details on WhatsApp while the task is running, and the agent adds it to the job. You can also email agent@classgrid.in."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Add more after the call"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Connect Gmail, Calendar, Drive, Notion, GitHub or Vercel once, and use them by voice. Send an email, check your day, find a file or fix your site."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Works with your apps"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. It's a WhatsApp voice call to +91 81492 77038. A normal phone call won't reach the AI."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is this a normal phone call?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Anyone with a Classgrid AI account who has verified their WhatsApp number in the app first. The number must be on only one account."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Who can call?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "English only."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "What language does it speak?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Up to 15 minutes. The agent keeps working on your task after you hang up."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How long can a call be?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Texts add details to a task that's already running. To start a new task, call the number on WhatsApp or email agent@classgrid.in."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I just text the number instead?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Calls and tasks use your Classgrid AI credits. It's free to start, and you top up when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Does it cost extra?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Call your AI agent on WhatsApp"
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "WhatsApp calls"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nWith Classgrid AI you can give work to your AI agent just by talking to it on a WhatsApp call. You do not need to open the app or type anything. You call the Classgrid number, +91 81492 77038, on WhatsApp, say what you need in your own words, hang up, and the agent does the work and sends you the result on WhatsApp. It is like calling a smart assistant who then goes away and gets the job done for you.\n\nGetting ready takes a minute and you only do it once. You sign up on chat.classgrid.in with your email, then verify your WhatsApp number in the app with a six-digit code that arrives on WhatsApp. After that, your number is linked to your account and the AI knows it is you whenever you call.\n\nWhen you call, the AI picks up and greets you by your first name: \"Hi, this is Classgrid AI. What can I do for you?\" You talk normally, like on any phone call. You can interrupt it at any time and it will stop and listen. It speaks in English. Each call can last up to fifteen minutes, which is plenty of time to explain a few jobs.\n\nWhile you are on the call, the AI can answer you live. It can look things up, check your connected apps like Gmail, Google Calendar, Google Drive, Notion or GitHub, and tell you the answer right there on the call. If the answer takes a bit longer to find, it does not keep you waiting, it simply sends the answer to you on WhatsApp a little later.\n\nFor bigger jobs, the AI notes down what you asked and starts working as soon as you hang up. It sends you \"Got it\" on WhatsApp so you know it has your request. Then your agent does the work in the background, with all its normal powers: searching the web, writing emails, making reports and PDFs, building or fixing a website, and using your connected apps. Coding jobs go into Project Mode by themselves. When it is done, you get the result on WhatsApp with a link to the full chat, and files like PDFs arrive as real files you can open straight away.\n\nYou can add more after you hang up. If you forgot something, just send a WhatsApp message, a photo or a document while the job is still running, and the agent will use it. You can also email extra files to agent@classgrid.in. The agent can keep working on a job for up to two days, waiting for your replies when it needs them.\n\nThis is useful in many everyday moments. You can call while driving and ask it to email a client that the quote is approved. You can call in the morning to hear what is on your calendar today. You can describe a report out loud, hang up, and get the finished PDF on WhatsApp. You can ask it to find last week's invoice in your Drive. You can even ask it to fix the contact form on your website while you are away from your laptop.\n\nIt is safe and personal. Only a verified WhatsApp number that belongs to one Classgrid account can use the calls, so nobody else can talk to your agent. If an unknown number calls, it gets a message explaining how to sign up and verify first. There is a fair daily limit on calls for each number, and calls use your normal Classgrid AI credits.\n\nA few things to know. It is a WhatsApp voice call, so a normal phone call to the number will not reach the AI. It speaks in English. A WhatsApp text on its own does not start a new job; you start a job by calling or by emailing agent@classgrid.in, and then your messages are added to that job.\n\nHow it compares, as of October 2026: most big AI assistants cannot be called on WhatsApp in India today. Grok Bot can make calls to other people for you, but you cannot call it. OpenAI's Dots works inside ChatGPT, Slack and Teams, not on WhatsApp or calls. Meta's Muse is only in the US. Classgrid AI lets you call it on WhatsApp in India, and it does real work after the call and sends the results back to you.\n\nIn short: call +91 81492 77038 on WhatsApp, say what you need, hang up, and your Classgrid AI agent gets it done and sends you the result on WhatsApp.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Email Mr. Rao that the quote is approved.\n- What's on my calendar today?\n- Find last week's invoice in my Drive.\n- Fix the contact form on my site.\n- Make a one-page PDF of what I just told you and send it here.\n- Write a short report on our three biggest customers and send me the PDF.\n- Add lunch with Arjun to my calendar tomorrow at 1.\n- Save notes from this call to a new Notion page.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Send an email just by saying it |\n| Google Calendar | Hear your day and add events |\n| Google Drive | Find and read files in your Drive |\n| Notion | Save notes from your call to a page |\n| GitHub | Fix your site with a pull request |\n| Vercel | Deploy your site's branch as a preview |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "WhatsApp-call Classgrid AI on +91 81492 77038, say what you need, hang up, and get the result on WhatsApp: emails sent, PDFs made, sites fixed."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Call Classgrid AI on WhatsApp | AI agent you can call"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-jr-colleges"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Say what you need, hang up, and get the result on WhatsApp."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:35Z",
+    "_id": "solution-page-for-schools",
+    "_rev": "s0mjsvMLcxDn6CvMzAq62Y",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:56:57Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent searches the web with sources, reads any file, writes and runs code, makes images and PDFs, publishes websites and sends email. It picks the right tool for each step and shows you what it did."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Tools that actually do the work"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Answers come as real cards: charts, diagrams, flashcards, quizzes you can tap, day planners, live weather, stock prices, maps and countdowns. The agent can even build small interactive tools for you, like a poll or a calculator."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Answers you can use, not just read"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Give it a long job and close the tab. The agent keeps going for up to 48 hours, asks you on WhatsApp if it needs something, and sends the result when it's done. Hand off work by email to agent@classgrid.in or by a WhatsApp call, and set reminders that arrive by email and WhatsApp at the time you choose."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Works while you're away"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Connect 21 apps from the AI Hub and the agent works inside them as you. Let Auto pick the model for each message, or choose from Claude, DeepSeek and more."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Your apps and your choice of model"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Search the web with sources, read your files, run Python, make charts, images, PDFs and websites, work in your connected apps, and keep working in the background on long tasks."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "What can the agent do?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Auto picks one for each message. Or choose Claude Haiku, Sonnet, Opus or Fable, DeepSeek V4, or open models like Kimi, GLM, Qwen and Llama."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which models can I use?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "You set the time and the message. At that time it's sent to your email, and to WhatsApp if you verified your number. It can be once, daily, weekly or on the days you choose."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How do reminders work?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Long tasks run for up to 48 hours and send the result to WhatsApp and the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it keep working after I close the tab?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Incognito chats aren't saved to your history, and they're deleted when you close them."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I keep a chat private?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Sign up with your email. Top up only when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is it free to start?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "One agent. Real work done."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Agent mode"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nAgent mode is the main chat in Classgrid AI at chat.classgrid.in. You open it, type what you want in normal words, and the agent does the work for you. It is not only a chatbot that answers questions. It can search, read, write, make files, build small websites, send emails and keep working on a job in the background, and it comes back to you when the job is done.\n\nIt can look things up on the internet for you. When it answers from the web, it puts small numbers next to its sentences, and each number links to the page it read, so you can check where every fact came from. If you give it a link, it can open that page and read the whole thing, even a long one, and then explain it, summarise it or pull out what you need.\n\nIt can read your files. You can drop in a PDF, a Word file, a PowerPoint (it also reads the speaker notes), an Excel sheet, a CSV, a plain text file, a photo or a voice recording, up to six files in one message. It understands what is inside, so you can ask it to turn a long document into notes, find the important numbers in a report, explain a chart in a photo, or turn a voice note into written text.\n\nIt can make things for you, not just talk about them. It can draw an image from your idea, like a poster or a thumbnail. It can write and run real Python or JavaScript code on its own safe computer, so it can clean a messy spreadsheet, do the maths, draw charts and build files. It can hand you back finished files you can download: a PDF report, a Word document, a PowerPoint deck, an Excel sheet, or even a trimmed video or an audio clip.\n\nIt can build a simple website and put it live for you. You describe the site, the agent writes it, and it publishes it at your own address like yourname.sites.classgrid.in, all inside one chat. This is great for a portfolio, a landing page for an idea, or a small event page.\n\nIts answers are not only plain text. When it helps, it shows proper cards inside the chat: charts and diagrams, flashcards you can flip, quizzes you can tap to answer, a day-by-day planner with tick-boxes, a countdown to a date, live weather, a live stock price, a map with a pin, star ratings and score bars, and even small interactive cards it builds itself, like a poll, a calculator or a quick game. Maths is shown with proper symbols, the way it looks in print.\n\nIt can work for you in the background, for a long time. If a job needs waiting, like waiting for your reply or for a later time, the agent can pause, wake up later and carry on, for up to two days. When it finishes, it tells you \"Task completed\" and gives you the link to the chat. You can also email your work to its own address, agent@classgrid.in, and it will pick it up and work on it.\n\nIt can send you reminders. You can ask it to remind you once, every day, every week or on the days you pick. At that time you get the reminder by email, and on WhatsApp too if you have verified your number. The reminder text is written when you set it up, so it is perfect for \"pay the electricity bill tonight\" or \"call the client at 4\", not for fresh news every morning.\n\nIt can work inside the apps you already use, once you connect them from the AI Hub. With Gmail it can read and send your emails. With Google Drive it can find and read your files. With Google Calendar it can tell you your day and add events. It also connects to Notion, Slack, GitHub, Google Classroom, Google Meet, Google Forms, Outlook, Microsoft Teams, Zoom, Canva, Spotify, YouTube, Supabase, Sanity, Facebook Pages, Instagram Business, Vercel and WhatsApp Business. You can see all of them on the Plugins page.\n\nYou choose how smart or how fast it should be. \"Auto\" picks the best model for each message by itself, or you can pick one yourself: Claude (Haiku, Sonnet, Opus and the most powerful one, Fable), DeepSeek, and more than ten other well-known models. You can switch any time, even in the middle of a chat.\n\nIt keeps your work tidy and private. Every file you upload or the agent makes is saved in your Library, where you can search and sort them. You can teach the agent about yourself, like your name, your job and how you like answers, and it will remember that in every chat. If you want a chat that is not saved at all, you can open an Incognito chat, and it disappears when you close it. You can delete any chat and disconnect any app whenever you want.\n\nYou can also reach the agent on WhatsApp. After you verify your number, you can call the Classgrid number on WhatsApp, tell it what you need, hang up, and get the result back on WhatsApp. You can share any chat as a read-only link, or invite up to three other people into the same chat so you all work with the agent together.\n\nIn short: Agent mode is like having a smart helper who can research, read, write, calculate, design, build and remind, all from one chat box, and who keeps going even after you close the tab. It is free to start, and you top up only when you need more.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Analyse a file in seconds.\n- Search the web with sources.\n- Draw a chart from your data.\n- Create a PDF report in minutes.\n- Build and host a website.\n- Get reminders on WhatsApp.\n- Turn a voice note into text.\n- Write Python and run it for you.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Search, read and send your emails |\n| Google Drive | Find, read and upload your files |\n| Google Calendar | See your day and add events |\n| Notion | Search, read, create and update pages |\n| Slack | Read and send messages in channels |\n| GitHub | Read code, open issues and pull requests |\n| Google Classroom | Read courses and post announcements |\n| Google Meet | Create meetings with a Meet link |\n| Google Forms | Make forms and read the responses |\n| Microsoft Outlook | Read and send email, create meetings |\n| Microsoft Teams | Read and send channel messages |\n| Zoom | List and create Zoom meetings |\n| WhatsApp Business | Send texts from your Business account |\n| Vercel | Create projects and deploy branches |\n| Canva | Create new designs and export them |\n| Spotify | Search music and control playback |\n| YouTube | Search videos and read comments |\n| Supabase | Run SQL queries on your projects |\n| Sanity CMS | Query, create and update documents |\n| Facebook Pages | Publish posts and reply to comments |\n| Instagram Business | Publish image posts and read insights |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Search with sources, read files, run code, make charts, PDFs and websites, use your apps and keep working for up to 48 hours. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Agent mode: an AI agent that does real work | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-schools"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Search the web, read your files, run code, make documents and websites, and keep working in the background, all from one chat."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:42Z",
+    "_id": "solution-page-for-students",
+    "_rev": "YfZj5VEMNrIVujHbdXDaeB",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:04Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Drop in a PDF, Word file, slides, an Excel sheet, a CSV, a photo or a voice recording. You can add up to 6 files in one message. Slides include their speaker notes, and voice notes are turned into text first."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Reads almost any file"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask for a report, a letter, slides or a sheet. The agent writes it and gives you a file to download: PDF, Word, PowerPoint or Excel. It can also email the file to you."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Makes files you can use"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Upload an Excel or CSV file. The agent cleans it up, works out the numbers with Python and draws clear charts. You get a short report you can download."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Charts from your spreadsheets"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Turn any file into flashcards and quick quizzes you tap to answer, so you remember what matters. Tell it a goal and a date, and it makes a day-by-day plan with a countdown. It works for a new language, a new skill or a big project."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Learn it, plan it, remember it"
+        }
+      }
+    ],
+    "category": "role",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "PDF, Word, PowerPoint (with speaker notes), Excel, CSV and text files, plus photos and audio. You can add up to 6 files in one message."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which files can it read?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. It can give you PDF, Word, PowerPoint and Excel files to download, and it can email them to you."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it make Word, PowerPoint or Excel files?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Send a photo and it reads what is in it, like a printed page, a receipt or a chart."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it read a photo of a page?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "It runs Python on its own safe computer to clean data, do the maths and draw charts. You can see each step it took."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How does it work out the numbers?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Every file you upload or the agent makes is saved in your Library, where you can search and sort them. For chats you don't want saved, use Incognito."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Where are my files kept?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Sign up with your email and start for free. Top up only when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is it free to start?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Drop in a file. Get it done."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Documents & files"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI can read your files and do real work with them. You open chat.classgrid.in, drop in a file and say what you want in normal words. It does not just describe the file. It can pull out what matters, change it into something new and hand you back a finished file. It is free to start, and you top up only when you need more.\n\nIt reads almost any everyday file. You can give it a PDF, a Word file, a PowerPoint, an Excel sheet, a CSV, a plain text file, a photo or a voice recording. You can add up to 6 files in one message. For slides, it reads the speaker notes too. For voice recordings, it first turns the speech into text.\n\nIt can turn a long file into something short. Ask for clear notes, a summary, the key numbers or a list of things to follow up on. You can ask questions about the file, like \"when does this contract end?\", and it answers from what is inside. If you give it a few files at once, it can compare them for you.\n\nIt can make new files you can use straight away. Ask for a report, a letter, a proposal, a slide deck or a sheet. You get a file to download as PDF, Word, PowerPoint or Excel. It can also email the file to you. If something is not right, just ask for a change and it makes a new version.\n\nIt is good with spreadsheets. Upload an Excel or CSV file, and it can remove repeated rows, fix messy columns and work out totals and averages. It does the maths by running Python on its own safe computer, so you can see each step. Then it draws clear charts and can put everything into a short PDF report.\n\nIt can help you learn or remember anything. From any file, it can make flashcards you flip with a tap, and quick quizzes where you tap an answer and see your score. This works for a new language, a manual at work, a recipe book or any topic you want to know better.\n\nIt can plan big goals day by day. Tell it what you want to finish and by when, and it makes a plan with a task for each day, review days and short breaks. You can tick off each day as you go, and a countdown shows how much time is left. If you fall behind, ask it to make a new plan from today.\n\nIt works with the places your files already live. Connect Google Drive and it can find and read your files and save new ones there. Connect Gmail or Outlook and it can read your emails, and with Gmail it can read their attachments too. It also works with Notion pages and Google Forms responses.\n\nYour files stay easy to find. Everything you upload and everything the agent makes is saved in your Library, where you can search and sort it. If you don't want a chat saved, open an Incognito chat. In short: drop in a file, and get notes, answers, charts, plans or a brand new file back.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Analyse a file in seconds.\n- Turn a PDF into clear notes.\n- Summarize the product roadmap presentation\n- Create a PDF report in minutes.\n- Draw a chart from your data.\n- Clean up messy spreadsheet data.\n- Turn a voice note into text.\n- Create a quiz from a PDF.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Google Drive | Find and read your files, save new ones |\n| Gmail | Read emails and attachments, send emails |\n| Microsoft Outlook | Read and send emails |\n| Notion | Search, read, create and update pages |\n| Google Forms | Read a form and list its responses |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Read PDFs, Word, PowerPoint, Excel and audio files. Get notes, summaries, charts, flashcards and new files to download. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI for documents and files: PDF, Word, Excel | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-students"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Read any PDF, Word, PowerPoint, Excel or audio file, and turn it into notes, charts, plans or new files you can download."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:43Z",
+    "_id": "solution-page-for-teachers",
+    "_rev": "RVHES3swKkzmvYjsUtqxaA",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:05Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Set a reminder once, daily, weekly or on the days you choose, for up to 90 days. It comes to your email, and to WhatsApp after you verify your number. The words are set when you make it, so write exactly what you want to see."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Reminders by email and WhatsApp"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Give the agent a big job and close the tab. It keeps working for up to 48 hours. If it needs something, it asks you on WhatsApp, waits for your reply, then carries on."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Long jobs that keep going"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Email your work to agent@classgrid.in from the email you signed up with. The agent picks it up and starts the task, and you can follow it in the app. Emails from other addresses don't start a task."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Hand off work by email"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "When a job is done, the agent sends the result to your WhatsApp with a link to the chat. PDFs come as real files you can open and forward. You can also start a task with a WhatsApp call to +91 81492 77038."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Results on WhatsApp"
+        }
+      }
+    ],
+    "category": "role",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "You set the time and the message. At that time it's sent to your email, and to WhatsApp if you verified your number. It can be once, daily, weekly or on the days you choose, for up to 90 days."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How do reminders work?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. The message is written when you set up the reminder, and the AI doesn't run again at that time. For a fresh answer, ask the agent in the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can a reminder send me fresh news or a new summary each day?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. Reminders go only to you, by email and WhatsApp."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can reminders go to other people?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Up to 48 hours. The agent can pause, wait for your WhatsApp reply or a set time, and then carry on. When it's done you get \"Task completed\" with a link to the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How long can a task run?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. Start a task with a WhatsApp call to +91 81492 77038, or by emailing agent@classgrid.in from your sign-up email. While a task is open, you can send extra texts or files on WhatsApp."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I start a task by texting on WhatsApp?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Sign up with your email and start for free. Top up only when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is it free to start?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Close the tab. The work keeps going."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Reminders & automation"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI can keep working for you when you are not looking. You can set reminders that come at the right time, and you can give the agent long jobs that keep going after you close the tab. You set it all up by typing in normal words at chat.classgrid.in. It is free to start, and you top up only when you need more.\n\nYou can ask it to remind you about anything. It can be one time, every day, every week or only on the days you pick, for up to 90 days. At that time the reminder comes to your email. After you verify your WhatsApp number with a code, it comes on WhatsApp too.\n\nThere is one thing to know about reminders. The words are written when you set the reminder up, and the AI does not run again when it is sent. So it is perfect for \"call the client at 4\" or \"drink water and plan tomorrow\". It is not for fresh news or a new summary every morning. For a fresh answer, just ask the agent in the chat.\n\nReminders go only to you, by email and WhatsApp. They can't message other people. You can see all your reminders on the Schedule page in the app.\n\nThe agent can also work on long jobs in the background. Give it a big task, like comparing a few products, making a long report or building a list from the web, and close the tab. It keeps going for up to 48 hours. If it needs to wait for a later time or for your answer, it pauses and wakes up again to carry on.\n\nIf the agent needs something from you, it can ask you on WhatsApp and wait for your reply. You answer in WhatsApp like a normal message, and it picks up where it left off. When the job is done, you get \"Task completed\" with a link to the full chat.\n\nResults can come straight to your WhatsApp. If the agent makes a PDF, it sends it as a real file you can open, save and forward. You also get the link to the chat, so you can see everything it did and ask for changes.\n\nYou can hand off work without opening the app. Send an email to agent@classgrid.in from the email you signed up with, and the agent starts the task. You can also start a task with a WhatsApp call to +91 81492 77038, say what you need and hang up. Plain WhatsApp texts don't start a new task, but while a task is open you can send extra texts or files to add to it.\n\nIn short: set a reminder once and get it on time, or give the agent a long job and walk away. It keeps working, asks you when it needs to, and sends the result to your WhatsApp or email when it is done.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Get reminders on WhatsApp.\n- Help me set up a daily WhatsApp reminder. Ask me what time and what it should say.\n- Create a PDF report in minutes.\n- Research a topic with real sources.\n- Search the web with sources.\n- Read my unread emails from today\n- What's on my calendar for tomorrow?\n- Draft a project proposal.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Read and send emails |\n| Google Calendar | See your day and add events |\n| Google Drive | Find and read files, save new ones |\n| Notion | Search, create and update pages |\n| Slack | Read and send messages |\n| WhatsApp Business | Send texts from your own business account |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Set reminders by email and WhatsApp, and let the AI agent work on long tasks for up to 48 hours, then send results and PDFs on WhatsApp. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Reminders and background AI tasks on WhatsApp | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-teachers"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Set reminders that arrive by email and WhatsApp, and give the agent long jobs that keep running for up to 48 hours."
+    }
+  },
+  {
+    "_createdAt": "2026-04-26T07:20:24Z",
+    "_id": "test-talk-1",
+    "_rev": "jYte0ppSeJqU7IfD1fwTaB",
+    "_system": {
+      "base": {
+        "id": "test-talk-1",
+        "rev": "7wQCO4M3t9edSa4TG9zh3c"
+      }
+    },
+    "_type": "classgrid_talk",
+    "_updatedAt": "2026-04-26T07:58:39Z",
+    "avatar": {
+      "_type": "image",
+      "alt": "college ",
+      "asset": {
+        "_ref": "image-380fec137eae9581bbdb70704f7f8f6f1ac1a212-504x552-png",
+        "_type": "reference"
+      },
+      "crop": {
+        "_type": "sanity.imageCrop",
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+        "top": 0.01544127620323238
+      },
+      "hotspot": {
+        "_type": "sanity.imageHotspot",
+        "height": 0.9845587237967677,
+        "width": 1,
+        "x": 0.5,
+        "y": 0.5077206381016162
+      }
+    },
+    "college": "Vishwakarma Institute of Technology",
+    "institutionLogo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d95e34728d5d8a04ebfa35ecc486ea64b109fec1-360x360-jpg",
+        "_type": "reference"
+      }
+    },
+    "name": "Dr. Sharma",
+    "order": 2,
+    "quote": [
+      {
+        "_key": "3ed596b5f16b801e98501de48e79a5f5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "jYte0ppSeJqU7IfD1fwLkx",
+            "_type": "span",
+            "marks": [],
+            "text": "Managing 3,000 engineering students across 40 divisions used to require a backend team of five. From fee tracking to SGPA calculation, our legacy data was a mess. Classgrid completely eliminated administrative chaos. Our campus now runs on total autopilot."
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "rating": 5,
+    "role": "Principal"
+  },
+  {
+    "_createdAt": "2026-04-26T07:20:24Z",
+    "_id": "test-talk-2",
+    "_rev": "lnX7HMbh9IodYBkTbbgqxY",
+    "_type": "classgrid_talk",
+    "_updatedAt": "2026-04-26T07:20:24Z",
+    "college": "Deccan Junior College",
+    "name": "Anita Kulkarni",
+    "order": 3,
+    "quote": [
+      {
+        "_type": "block",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "We replaced scattered tools for attendance, assignments, and communication with one platform. Student and parent adoption went up immediately because everything became predictable."
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "rating": 5,
+    "role": "Director"
+  },
+  {
+    "_createdAt": "2026-04-26T07:20:24Z",
+    "_id": "test-talk-3",
+    "_rev": "lnX7HMbh9IodYBkTbbgqxY",
+    "_type": "classgrid_talk",
+    "_updatedAt": "2026-04-26T07:20:24Z",
+    "college": "Sinhgad College of Engineering",
+    "name": "Prof. Meena Patil",
+    "order": 4,
+    "quote": [
+      {
+        "_type": "block",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid transformed how we handle admissions. The entire merit-list, document verification, and fee-receipt pipeline is now automated end to end. Our admission office staff went from 12-hour days to finishing by lunch."
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "rating": 5,
+    "role": "Head of Admissions"
+  },
+  {
+    "_createdAt": "2026-04-26T07:20:24Z",
+    "_id": "test-talk-4",
+    "_rev": "lnX7HMbh9IodYBkTbbgqxY",
+    "_type": "classgrid_talk",
+    "_updatedAt": "2026-04-26T07:20:24Z",
+    "college": "MIT World Peace University",
+    "name": "Dr. Rajesh Nair",
+    "order": 5,
+    "quote": [
+      {
+        "_type": "block",
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The AI Viva module is a game-changer. Students get practice sessions anytime and exam-mode vivas with four-parameter scoring. It freed up 200+ faculty hours per semester."
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "rating": 4,
+    "role": "Dean of Academics"
+  },
+  {
+    "_createdAt": "2026-08-05T14:03:23Z",
+    "_id": "044a3ca7-a736-4d79-bd79-48cee3bb8453",
+    "_rev": "Py0OgCE9QhEbBLc7R3LmJj",
+    "_system": {
+      "base": {
+        "id": "044a3ca7-a736-4d79-bd79-48cee3bb8453",
+        "rev": "1W4MdLhK5Q9KbzDdqge95r"
+      }
+    },
+    "_type": "clientLogo",
+    "_updatedAt": "2026-08-05T14:29:57Z",
+    "hideInDarkMode": false,
+    "hideName": false,
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-de2a251c53c3495f124cf4b9f8a3326aff433404-944x264-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Sanjivani College of Engineering",
+    "nameColor": "#004B87",
+    "order": 99,
+    "subtitle": "(Sanjivani)"
+  },
+  {
+    "_createdAt": "2026-06-12T15:57:25Z",
+    "_id": "077ec148-b97f-494f-ab47-fc65ca5d943c",
+    "_rev": "vm5Eorlh6p4wg3IlCA1ZIP",
+    "_system": {
+      "base": {
+        "id": "077ec148-b97f-494f-ab47-fc65ca5d943c",
+        "rev": "vm5Eorlh6p4wg3IlC9rhn7"
+      }
+    },
+    "_type": "testimonialVideo",
+    "_updatedAt": "2026-06-12T17:10:14Z",
+    "avatar": {
+      "_type": "image",
+      "alt": "college ",
+      "asset": {
+        "_ref": "image-0a00bf46df4fdb7caacdc5389b42e42313bdbd9e-853x1280-jpg",
+        "_type": "reference"
+      }
+    },
+    "name": "Rahul  sharma  ",
+    "playerStyle": "classic",
+    "role": "Principal",
+    "subtitle": "The ERP system has significantly improved the way we manage our daily operations. The platform is easy to use, reliable, and has helped us reduce manual work across departments. Reporting and data tracking are now much faster and more accurate. The support team has been responsive whenever we needed assistance. Overall, it has been a valuable investment for our business growth and efficiency",
+    "video": {
+      "_type": "file",
+      "asset": {
+        "_ref": "file-ec646127da6e54554d05ac76b6d3c04f00359cee-mp4",
+        "_type": "reference"
+      }
+    }
+  },
+  {
+    "_createdAt": "2026-09-16T05:59:06Z",
+    "_id": "0DTmpQxN2Slvr9b7DEX9fr",
+    "_rev": "0DTmpQxN2Slvr9b7DEX9aq",
+    "_type": "communityReview",
+    "_updatedAt": "2026-09-16T05:59:06Z",
+    "email": "piyush.waghmare25@pccoepune.org",
+    "institution": "PCCOE",
+    "moduleName": "Attendance",
+    "name": "Piyush Waghmare",
+    "rating": 5,
+    "reviewText": "I recently tested the attendance system on ClassGrid, and I’m really impressed with how smoothly everything works. The fingerprint attendance feature worked perfectly, and the GPS functionality was also accurate and reliable.\n\nThe system is easy to use, fast, and makes attendance management much more convenient. I tested the features myself and everything worked as expected.\n\nThank you to the ClassGrid team for building such a useful and reliable attendance system. Great work! Highly recommended for schools and classrooms looking for a modern attendance solution.",
+    "status": "pending",
+    "suggestion": ""
+  },
+  {
+    "_createdAt": "2026-08-05T14:02:33Z",
+    "_id": "51ecd8ef-00b4-431a-9a40-ae6127a8d063",
+    "_rev": "Py0OgCE9QhEbBLc7R3Lr2O",
+    "_system": {
+      "base": {
+        "id": "51ecd8ef-00b4-431a-9a40-ae6127a8d063",
+        "rev": "QMB6N1bjfvfdxsfnPtE01s"
+      }
+    },
+    "_type": "clientLogo",
+    "_updatedAt": "2026-08-05T14:32:16Z",
+    "hideInDarkMode": false,
+    "hideName": false,
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-3d720649df4b034420fd60c3bd604343f215b0d7-378x453-png",
+        "_type": "reference"
+      }
+    },
+    "name": "College of Engineering Pune",
+    "nameColor": "#002147",
+    "order": 99,
+    "subtitle": "(COEP Tech)"
+  },
+  {
+    "_createdAt": "2026-08-05T14:01:02Z",
+    "_id": "5d8481bf-d559-434b-b278-37bfbe9cdc18",
+    "_rev": "QMB6N1bjfvfdxsfnPtEn0b",
+    "_system": {
+      "base": {
+        "id": "5d8481bf-d559-434b-b278-37bfbe9cdc18",
+        "rev": "QMB6N1bjfvfdxsfnPtEm39"
+      }
+    },
+    "_type": "clientLogo",
+    "_updatedAt": "2026-08-05T14:28:15Z",
+    "hideInDarkMode": false,
+    "hideName": false,
+    "href": "https://www.pccoepune.com/",
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d4b85e9182af107643dddfcb9deb51f49596faa7-515x388-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Pimpri Chinchwad College of Engineering",
+    "nameColor": "#0066CC",
+    "order": 99,
+    "subtitle": "(PCCOE)"
+  },
+  {
+    "_createdAt": "2026-05-31T08:25:30Z",
+    "_id": "caseStudy-future-education-infrastructure-india-unified-platforms",
+    "_rev": "6FoIi8F053NE9j8SvUhziE",
+    "_system": {
+      "base": {
+        "id": "caseStudy-future-education-infrastructure-india-unified-platforms",
+        "rev": "fTHDemlZVuar9XG8x8nJzc"
+      }
+    },
+    "_type": "caseStudy",
+    "_updatedAt": "2026-05-31T11:36:06Z",
+    "body": [
+      {
+        "_key": "block-2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-1",
+            "_type": "span",
+            "marks": [],
+            "text": "The Scale Problem Has Become an Infrastructure Problem"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-3",
+            "_type": "span",
+            "marks": [],
+            "text": "As of May 31, 2026, India's higher-education challenge is not merely that more students need access to college. It is that institutions must coordinate learning, attendance, fees, examinations, admissions, compliance, parent communication, student support, and placement preparation at a level of volume and speed that legacy administration was never designed to carry. According to the Ministry of Education's "
+          },
+          {
+            "_key": "span-5",
+            "_type": "span",
+            "marks": [
+              "link-4"
+            ],
+            "text": "All India Survey on Higher Education 2021-22"
+          },
+          {
+            "_key": "span-6",
+            "_type": "span",
+            "marks": [],
+            "text": ", total higher-education enrolment rose to nearly 4.33 crore, while the system included 1,168 university-level institutions, 45,473 colleges, and 12,002 standalone institutions. The same release reported 1.07 crore pass-outs in 2021-22. At that scale, the unit of reform is no longer the classroom alone; it is the institutional workflow that determines whether a student is visible, supported, assessed, and guided before it is too late."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-4",
+            "_type": "link",
+            "href": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1999713"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "image-8",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-2cdf0a781931535a1c5dc9666a2589e633666f73-1672x941-png",
+          "_type": "reference"
+        },
+        "caption": "Digital maturity in higher education is moving from paper and spreadsheets toward unified institutional infrastructure.",
+        "layout": "below"
+      },
+      {
+        "_key": "block-10",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-9",
+            "_type": "span",
+            "marks": [],
+            "text": "For many colleges, the practical reality is still a patchwork: one team manages admissions, another manages fees, faculty track attendance separately, departments circulate notices through messaging groups, and placement preparation often begins late because student performance data is scattered. This does not mean administrators are careless. It means the operating model asks human teams to reconcile too many moving parts without a shared source of truth. The result is delay, duplication, weak visibility, and poor continuity between academic progress and employability preparation."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "block-12",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-11",
+            "_type": "span",
+            "marks": [],
+            "text": "The Placement Crisis Is a Signal Failure"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-17",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-13",
+            "_type": "span",
+            "marks": [],
+            "text": "The employability crisis is often discussed as a student problem, but it is also an institutional intelligence problem. The "
+          },
+          {
+            "_key": "span-15",
+            "_type": "span",
+            "marks": [
+              "link-14"
+            ],
+            "text": "India Skills Report 2026"
+          },
+          {
+            "_key": "span-16",
+            "_type": "span",
+            "marks": [],
+            "text": ", prepared by ETS with CII, AICTE, AIU, and Taggd, placed India's overall employability at 56.35 percent. Engineering looked stronger than the national average, with B.E./B.Tech employability reported at 70.15 percent, but the headline still conceals a deeper issue: employers are no longer hiring degrees alone; they are hiring evidence of applied capability, communication, adaptability, and technical currency."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-14",
+            "_type": "link",
+            "href": "https://wheebox.com/assets/pdf/ISR_Report_2026.pdf"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-25",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-18",
+            "_type": "span",
+            "marks": [],
+            "text": "Older but still widely cited evidence shows why the problem became so persistent. The SHL/Aspiring Minds "
+          },
+          {
+            "_key": "span-20",
+            "_type": "span",
+            "marks": [
+              "link-19"
+            ],
+            "text": "National Employability Report Engineers 2019"
+          },
+          {
+            "_key": "span-21",
+            "_type": "span",
+            "marks": [],
+            "text": " found that a large share of Indian engineers were not ready for knowledge-economy roles and that only a small fraction possessed industry-ready AI skills. In 2026, Azim Premji University's "
+          },
+          {
+            "_key": "span-23",
+            "_type": "span",
+            "marks": [
+              "link-22"
+            ],
+            "text": "State of Working India 2026"
+          },
+          {
+            "_key": "span-24",
+            "_type": "span",
+            "marks": [],
+            "text": " sharpened the warning from the labour-market side: the transition from education to employment remains difficult even as higher education expands, and young graduate unemployment remains a structural concern. These reports differ in methodology, but they point in the same direction: the gap is not just between syllabus and industry; it is between institutional visibility and student readiness."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-19",
+            "_type": "link",
+            "href": "https://www.shl.com/wp-content/uploads/2020/10/national-employability-report-engineers-2019.pdf"
+          },
+          {
+            "_key": "link-22",
+            "_type": "link",
+            "href": "https://azimpremjiuniversity.edu.in/news/2026/40-percent-of-young-graduates-in-india-unemployed-as-jobs-fail-to-keep-pace"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "table-26",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "row-27",
+            "_type": "tableRow",
+            "cells": [
+              "Signal",
+              "What the evidence shows",
+              "Institutional implication"
+            ]
+          },
+          {
+            "_key": "row-28",
+            "_type": "tableRow",
+            "cells": [
+              "Scale",
+              "AISHE reports 4.33 crore higher-education enrolments and 1.07 crore pass-outs in 2021-22",
+              "Manual tracking cannot reliably identify risk, readiness, or missed support at national or institutional scale"
+            ]
+          },
+          {
+            "_key": "row-29",
+            "_type": "tableRow",
+            "cells": [
+              "Employability",
+              "India Skills Report 2026 reports 56.35 percent overall employability",
+              "Colleges need continuous readiness data, not only end-semester marks"
+            ]
+          },
+          {
+            "_key": "row-30",
+            "_type": "tableRow",
+            "cells": [
+              "Graduate transition",
+              "State of Working India 2026 highlights the difficult pathway from learning to earning",
+              "Placement preparation must start earlier and connect academic, skill, and communication signals"
+            ]
+          },
+          {
+            "_key": "row-31",
+            "_type": "tableRow",
+            "cells": [
+              "AI disruption",
+              "WEF and Microsoft data show rapid shifts in workplace skill demand and AI use",
+              "Institutions must teach students how to work with AI, not merely warn them about it"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "block-33",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-32",
+            "_type": "span",
+            "marks": [],
+            "text": "AI Has Changed What Prepared Means"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-44",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-34",
+            "_type": "span",
+            "marks": [],
+            "text": "AI has compressed the distance between classroom learning and workplace expectation. The Microsoft and LinkedIn "
+          },
+          {
+            "_key": "span-36",
+            "_type": "span",
+            "marks": [
+              "link-35"
+            ],
+            "text": "2024 Work Trend Index"
+          },
+          {
+            "_key": "span-37",
+            "_type": "span",
+            "marks": [],
+            "text": " reported that 75 percent of global knowledge workers were already using AI at work, while 66 percent of leaders said they would not hire someone without AI skills. GitHub's controlled study on Copilot found that developers using the tool completed a programming task "
+          },
+          {
+            "_key": "span-39",
+            "_type": "span",
+            "marks": [
+              "link-38"
+            ],
+            "text": "55 percent faster"
+          },
+          {
+            "_key": "span-40",
+            "_type": "span",
+            "marks": [],
+            "text": " than those who did not. The World Economic Forum's "
+          },
+          {
+            "_key": "span-42",
+            "_type": "span",
+            "marks": [
+              "link-41"
+            ],
+            "text": "Future of Jobs Report 2025"
+          },
+          {
+            "_key": "span-43",
+            "_type": "span",
+            "marks": [],
+            "text": " added that nearly 40 percent of skills required on the job are expected to change by 2030, with the skills gap already cited by 63 percent of employers as a major barrier to transformation."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-35",
+            "_type": "link",
+            "href": "https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part"
+          },
+          {
+            "_key": "link-38",
+            "_type": "link",
+            "href": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/"
+          },
+          {
+            "_key": "link-41",
+            "_type": "link",
+            "href": "https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-49",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-45",
+            "_type": "span",
+            "marks": [],
+            "text": "For education, this does not mean every institution must become a software company. It means rote learning, isolated coding assignments, and end-of-term marks are no longer enough evidence of readiness. Students need project work, problem-solving, AI literacy, communication practice, and feedback loops that help them understand where they stand before placement season. Faculty need tools that surface learning gaps early. Administrators need dashboards that translate academic activity into readiness signals. UNESCO's "
+          },
+          {
+            "_key": "span-47",
+            "_type": "span",
+            "marks": [
+              "link-46"
+            ],
+            "text": "guidance on generative AI in education and research"
+          },
+          {
+            "_key": "span-48",
+            "_type": "span",
+            "marks": [],
+            "text": " is useful here because it frames AI adoption as a human-centred governance challenge, not a race to automate everything."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-46",
+            "_type": "link",
+            "href": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "video-50",
+        "_type": "video",
+        "caption": "Reference video: World Economic Forum discussion on closing the jobs gap and preparing workers for changing skill demands.",
+        "layout": "below",
+        "url": "https://www.youtube.com/watch?v=oYOWeXxMSU0"
+      },
+      {
+        "_key": "block-52",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-51",
+            "_type": "span",
+            "marks": [],
+            "text": "The ERP/LMS Gap Is More Than a Software Gap"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-60",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-53",
+            "_type": "span",
+            "marks": [],
+            "text": "Indian institutions have already begun investing in digital transformation, but adoption is uneven. VMware's India-focused "
+          },
+          {
+            "_key": "span-55",
+            "_type": "span",
+            "marks": [
+              "link-54"
+            ],
+            "text": "Future of Education Survey"
+          },
+          {
+            "_key": "span-56",
+            "_type": "span",
+            "marks": [],
+            "text": " reported that 71 percent of surveyed higher-education institutions were looking to invest in digital workspaces or remote capabilities, and 84 percent had an institution-wide strategic plan for digital adoption, while only 68 percent had allocated budget to support it. Academic research on "
+          },
+          {
+            "_key": "span-58",
+            "_type": "span",
+            "marks": [
+              "link-57"
+            ],
+            "text": "digital competence in Indian higher education"
+          },
+          {
+            "_key": "span-59",
+            "_type": "span",
+            "marks": [],
+            "text": " also shows that online learning and LMS use expanded during the pandemic, but issues such as device dependence, socio-economic access, and digital capability continued to shape participation."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-54",
+            "_type": "link",
+            "href": "https://industrywired.com/digital-transformation-and-integration-of-new-technologiesa-priority-for-higher-education-institutions-vmware-education-research-reveals/"
+          },
+          {
+            "_key": "link-57",
+            "_type": "link",
+            "href": "https://journals.sagepub.com/doi/10.1177/23328584211069527"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-62",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-61",
+            "_type": "span",
+            "marks": [],
+            "text": "The deeper issue is that many products digitize one department without redesigning the institution. A fee tool may not understand attendance. An LMS may not connect to admissions. A messaging group may reach students but leave no auditable institutional memory. A spreadsheet may solve one clerk's immediate problem while creating a blind spot for the principal, HOD, or placement coordinator. This is why existing ERPs often fail in the Indian context: they can be expensive, complex, slow to configure, and too removed from the lived workflows of colleges that need affordability, local compliance, multilingual communication, mobile access, and rapid adoption."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "block-64",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-63",
+            "_type": "span",
+            "marks": [],
+            "text": "NEP 2020 Points Toward Interoperable Digital Infrastructure"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-69",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-65",
+            "_type": "span",
+            "marks": [],
+            "text": "The National Education Policy 2020 anticipated this shift. It states that technology will play an important role in improving educational processes and outcomes and calls for the National Educational Technology Forum to support technology use in learning, assessment, planning, administration, and related education functions. In its chapter on online and digital education, NEP 2020 specifically argues for "
+          },
+          {
+            "_key": "span-67",
+            "_type": "span",
+            "marks": [
+              "link-66"
+            ],
+            "text": "open, interoperable, evolvable public digital infrastructure"
+          },
+          {
+            "_key": "span-68",
+            "_type": "span",
+            "marks": [],
+            "text": " that can work across multiple platforms and point solutions while solving for India's scale, diversity, complexity, and device penetration."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-66",
+            "_type": "link",
+            "href": "https://www.education.gov.in/sites/upload_files/mhrd/files/NEP_Final_English_0.pdf"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-71",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-70",
+            "_type": "span",
+            "marks": [],
+            "text": "That sentence matters because it moves the conversation beyond buying software. The future institution needs a connected layer where student data, academic data, financial data, attendance records, communication history, learning progress, compliance evidence, and career signals can travel responsibly across departments. The goal is not surveillance; it is continuity. A student should not become invisible because one department's sheet was not shared with another. A parent should not receive five conflicting messages. A principal should not wait weeks for a report that already exists in fragments across the institution."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "block-73",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-72",
+            "_type": "span",
+            "marks": [],
+            "text": "The Rise of Unified Platforms"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-75",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-74",
+            "_type": "span",
+            "marks": [],
+            "text": "Globally, platforms such as Canvas and Blackboard helped normalize the idea that learning needs a digital environment. Enterprise ERPs normalized structured administration. Communication tools normalized real-time coordination. The next stage combines these previously separate categories into a unified campus platform: ERP for administration, LMS for learning, communication for engagement, analytics for decision-making, compliance for accountability, and AI for guided support."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "image-76",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-f86eb97f0d977e19eb2286c2a41e0f7fc1afc2cc-1536x1024-png",
+          "_type": "reference"
+        },
+        "caption": "A unified platform connects departments as one operating layer rather than a chain of disconnected tools.",
+        "layout": "right"
+      },
+      {
+        "_key": "block-78",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-77",
+            "_type": "span",
+            "marks": [],
+            "text": "India needs this model, but it cannot simply import it. Indian institutions face high student volumes, fee workflows that must fit local payment habits, attendance and compliance rules that vary by board or regulator, a strong mobile-first student base, and operating teams that cannot spend years on implementation. The winning model will be practical, local, and institution-aware. It will reduce administrative load while helping students move from admission to learning, assessment, mentoring, and placement readiness with fewer invisible gaps."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "block-80",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-79",
+            "_type": "span",
+            "marks": [],
+            "text": "Where Classgrid Fits"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-82",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-81",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid's relevance comes from the fact that it was built from firsthand institutional pain points, not from a distant software brief. The student team behind the platform, including Nikhil Shinde, Swaroop Ghorpade, Krushna Gore, and other contributors, experienced the friction of disconnected campus systems directly. They did not begin with a narrow module thesis; they began with the daily reality of students, faculty, departments, and administrators trying to coordinate college life through fragmented tools."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "block-84",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-83",
+            "_type": "span",
+            "marks": [],
+            "text": "That origin matters. A unified education platform for India must understand admissions, fees, attendance, classroom collaboration, assessments, communication, reports, compliance, AI assistance, mobile notifications, and institutional analytics as parts of one operating model. It must be powerful enough for administrators, simple enough for faculty, visible enough for students, and flexible enough for schools, colleges, engineering institutions, coaching centres, and junior colleges. Classgrid's mission is therefore not to add another dashboard to an already crowded ecosystem. It is to help institutions replace operational fragmentation with a coherent digital foundation."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "block-86",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-85",
+            "_type": "span",
+            "marks": [],
+            "text": "What the 2030 Campus Operating Model Looks Like"
+          }
+        ],
+        "markDefs": [],
+        "style": "h2"
+      },
+      {
+        "_key": "block-88",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-87",
+            "_type": "span",
+            "marks": [],
+            "text": "The 2030-ready institution will treat every major workflow as part of one student journey. Admission will not end when a form is submitted; it will become the first record in a living academic profile. Attendance will not be an isolated compliance ritual; it will become an early-warning signal. Fees will not be a separate ledger; they will connect to communication, student services, and institutional planning. Learning will not stop inside the LMS; it will connect to assessment, mentoring, project evidence, and placement readiness. Communication will not disappear into private chats; it will become accountable, searchable, and role-aware."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "table-89",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "row-90",
+            "_type": "tableRow",
+            "cells": [
+              "Legacy workflow",
+              "Unified-platform workflow"
+            ]
+          },
+          {
+            "_key": "row-91",
+            "_type": "tableRow",
+            "cells": [
+              "Admission records sit in one department",
+              "Student profiles begin at admission and follow the learner across the institution"
+            ]
+          },
+          {
+            "_key": "row-92",
+            "_type": "tableRow",
+            "cells": [
+              "Attendance is collected for compliance",
+              "Attendance becomes an early indicator for support, mentoring, and parent communication"
+            ]
+          },
+          {
+            "_key": "row-93",
+            "_type": "tableRow",
+            "cells": [
+              "Learning activity stays inside classroom notes",
+              "LMS activity connects to progress, assessments, and skill-readiness evidence"
+            ]
+          },
+          {
+            "_key": "row-94",
+            "_type": "tableRow",
+            "cells": [
+              "Fee reminders happen manually",
+              "Payment status, reminders, receipts, and escalation operate from a shared institutional record"
+            ]
+          },
+          {
+            "_key": "row-95",
+            "_type": "tableRow",
+            "cells": [
+              "Placement starts late",
+              "Readiness signals are built from projects, attendance, assessments, communication, and mentoring history"
+            ]
+          },
+          {
+            "_key": "row-96",
+            "_type": "tableRow",
+            "cells": [
+              "Reports are compiled at the end",
+              "Leadership sees live operational intelligence across departments"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "divider-97",
+        "_type": "divider",
+        "style": "Faded"
+      },
+      {
+        "_key": "block-99",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-98",
+            "_type": "span",
+            "marks": [],
+            "text": "Closing Perspective"
+          }
+        ],
+        "markDefs": [],
+        "style": "h3"
+      },
+      {
+        "_key": "block-101",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-100",
+            "_type": "span",
+            "marks": [],
+            "text": "The future of education technology in India is not a question of whether institutions will digitize. They already are. The real question is whether digitization will remain fragmented or become institutional infrastructure. The evidence is clear: scale is rising, employability expectations are changing, AI is rewriting workplace readiness, and national policy is pushing toward interoperable digital capacity. Institutions that unify ERP, LMS, communication, analytics, and student-readiness workflows will be better positioned to serve students with speed, clarity, and accountability."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "automation",
+    "champions": [
+      {
+        "_key": "prepared-nikhil-shinde",
+        "headshot": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-7173da701662b4489a19356b0100caa746bd4689-460x460-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Nikhil Shinde",
+        "socialLink": "https://github.com/Nikhilnick5050"
+      },
+      {
+        "_key": "prepared-swaroop-ghorpade",
+        "headshot": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-69f10f50d469946f704d1ee17e803f92564c4b04-1121x1280-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Swaroop Ghorpade"
+      },
+      {
+        "_key": "prepared-krushna-gore",
+        "headshot": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-237bd1a18f7d8b603046ee870b4dea95a1226d7d-1200x1600-jpg",
+            "_type": "reference"
+          }
+        },
+        "name": "Krushna Gore"
+      }
+    ],
+    "clientName": "Indian Higher Education Sector",
+    "conclusion": "The future of education technology in India is not a question of whether institutions will digitize; it is whether digitization will become unified infrastructure. Classgrid is positioned for that shift because it was born from the lived operating pain of Indian institutions and built to connect the workflows that shape student outcomes.",
+    "galleryImages": [
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7syr",
+        "_type": "image",
+        "alt": "Future education infrastructure hero visual",
+        "asset": {
+          "_ref": "image-53c7ed0b399eff1c51f6c9a998b73b168a64c77c-1774x887-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7szz",
+        "_type": "image",
+        "alt": "Graduate employability gap infographic",
+        "asset": {
+          "_ref": "image-818265c796e477f433733bf713072ad91150ca44-1254x1254-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t17",
+        "_type": "image",
+        "alt": "Digital maturity infographic",
+        "asset": {
+          "_ref": "image-2cdf0a781931535a1c5dc9666a2589e633666f73-1672x941-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t2F",
+        "_type": "image",
+        "alt": "AI in learning curve visual",
+        "asset": {
+          "_ref": "image-ba57d367780ef02a49177e67c804a4252be74b27-1693x929-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t3N",
+        "_type": "image",
+        "alt": "Fragmented versus unified platform comparison",
+        "asset": {
+          "_ref": "image-46794a9db3a3282a72f2fb52c7fc22080cde0869-1774x887-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t4V",
+        "_type": "image",
+        "alt": "Strategic education transformation stat cards",
+        "asset": {
+          "_ref": "image-8f7e7c1d412769b099e0154ae3b0d2df44002911-1254x1254-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t5d",
+        "_type": "image",
+        "alt": "Student journey funnel visual",
+        "asset": {
+          "_ref": "image-ce1aa95d6b8979d67c7d8dde8639ced63b22f4a9-1024x1536-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t6l",
+        "_type": "image",
+        "alt": "Unified campus platform architecture",
+        "asset": {
+          "_ref": "image-f86eb97f0d977e19eb2286c2a41e0f7fc1afc2cc-1536x1024-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t7t",
+        "_type": "image",
+        "alt": "Manual versus automated workflows visual",
+        "asset": {
+          "_ref": "image-256462347f31cb3da653acb4de2e20bf06d5457c-1774x887-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7t91",
+        "_type": "image",
+        "alt": "Education ecosystem map",
+        "asset": {
+          "_ref": "image-e5bb84ab2c8f37eddfaa38116422f5c9f9bd1cc8-1254x1254-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7tA9",
+        "_type": "image",
+        "alt": "NEP 2020 digital themes visual",
+        "asset": {
+          "_ref": "image-0a3eb204688059d3bb961a94f65b5f8371ac56bd-1254x1254-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7tBH",
+        "_type": "image",
+        "alt": "AI transforming classroom visual",
+        "asset": {
+          "_ref": "image-e40225b7adca2be94d13bf05d4b99d422756d05c-1672x941-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7tCP",
+        "_type": "image",
+        "alt": "Campus intelligence dashboard visual",
+        "asset": {
+          "_ref": "image-099cd96c45c1462f4620678c3a78f2fa59c58837-1672x941-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7tDX",
+        "_type": "image",
+        "alt": "Global trends Indian scale visual",
+        "asset": {
+          "_ref": "image-0532f8ea22b1d40293e15b37f6555b2b8643aa30-1672x941-png",
+          "_type": "reference"
+        }
+      },
+      {
+        "_key": "Z4zIauTZK3EtWBV5VM7tEf",
+        "_type": "image",
+        "alt": "2030 campus operations vision",
+        "asset": {
+          "_ref": "image-04ea68eaeb11d5b4d954c69b2c725549d24b150b-1672x941-png",
+          "_type": "reference"
+        }
+      }
+    ],
+    "heroImage": {
+      "_type": "image",
+      "alt": "Unified future education infrastructure across a connected Indian campus",
+      "asset": {
+        "_ref": "image-53c7ed0b399eff1c51f6c9a998b73b168a64c77c-1774x887-png",
+        "_type": "reference"
+      }
+    },
+    "institutionType": "engineering",
+    "metrics": [
+      {
+        "_key": "metric-aishe-enrolment",
+        "label": "HE Enrolment",
+        "suffix": "cr",
+        "value": "4.33"
+      },
+      {
+        "_key": "metric-employability",
+        "label": "Employable",
+        "suffix": "%",
+        "value": "56.35"
+      },
+      {
+        "_key": "metric-skills-change",
+        "label": "Skills Shift",
+        "suffix": "%",
+        "value": "39"
+      }
+    ],
+    "modules": [
+      "reports",
+      "communication",
+      "compliance"
+    ],
+    "overview": "This sector study looks at India higher-education infrastructure as of May 31, 2026. It is a research-backed perspective on market need and platform direction, not a named customer implementation.",
+    "overviewDivider": true,
+    "slug": {
+      "_type": "slug",
+      "current": "future-education-infrastructure-india-unified-platforms"
+    },
+    "summary": "A sector research study on why Indian institutions need unified ERP, LMS, communication, analytics, and AI-ready digital infrastructure to improve visibility, readiness, and continuity.",
+    "title": "The Future of Education Infrastructure: Why Indian Institutions Need Unified Digital Platforms",
+    "year": "May 31, 2026"
+  },
+  {
+    "_createdAt": "2026-09-16T05:59:06Z",
+    "_id": "drafts.0DTmpQxN2Slvr9b7DEX9fr",
+    "_rev": "34cde934-a8fa-48d0-84ce-d352accfc90c",
+    "_system": {
+      "base": {
+        "id": "0DTmpQxN2Slvr9b7DEX9fr",
+        "rev": "0DTmpQxN2Slvr9b7DEX9aq"
+      }
+    },
+    "_type": "communityReview",
+    "_updatedAt": "2026-10-28T07:06:26Z",
+    "customEmailBody": "Hi Piyush,\n\nI personally wanted to reach out and say — thank you so much for sharing your honest experience with Classgrid. It genuinely made our day at the team when we read your review.\n\nFeedback like yours is exactly what keeps us motivated to build something truly great for everyone who uses Classgrid AI. We are so glad to have you as part of the Classgrid community!\n\nYour review is now live on our community page for everyone to see:\n👉 View Your Published Review → classgrid.in/reviews\n\nA message from our team:\n\"\"\n\nIf you ever have more feedback, suggestions, or just want to talk — feel free to reply to this email directly. I read every single one.\n\nWith gratitude,\nNikhil Shinde\nCEO & Founder, Classgrid\nnikhil.shinde@classgrid.in | classgrid.in",
+    "email": "piyush.waghmare25@pccoepune.org",
+    "institution": "PCCOE",
+    "moduleName": "Attendance",
+    "name": "Piyush Waghmare",
+    "rating": 5,
+    "reviewText": "I recently tested the attendance system on ClassGrid, and I’m really impressed with how smoothly everything works. The fingerprint attendance feature worked perfectly, and the GPS functionality was also accurate and reliable.\n\nThe system is easy to use, fast, and makes attendance management much more convenient. I tested the features myself and everything worked as expected.\n\nThank you to the ClassGrid team for building such a useful and reliable attendance system. Great work! Highly recommended for schools and classrooms looking for a modern attendance solution.",
+    "status": "published",
+    "suggestion": ""
+  },
+  {
+    "_createdAt": "2026-08-05T14:04:13Z",
+    "_id": "f646562b-1fcc-4ec5-93e6-e48905e5e18b",
+    "_rev": "Py0OgCE9QhEbBLc7R3LlLy",
+    "_system": {
+      "base": {
+        "id": "f646562b-1fcc-4ec5-93e6-e48905e5e18b",
+        "rev": "QMB6N1bjfvfdxsfnPtE4p8"
+      }
+    },
+    "_type": "clientLogo",
+    "_updatedAt": "2026-08-05T14:29:14Z",
+    "hideInDarkMode": false,
+    "hideName": false,
+    "href": "https://www.pccoer.com/",
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-2a3cd1b1f25fb2b1fa58a4378963413418946d38-189x189-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Pimpri Chinchwad College of Engineering & Research",
+    "nameColor": "#E65100",
+    "order": 99,
+    "subtitle": "(PCCOE Ravet)"
+  }
+]

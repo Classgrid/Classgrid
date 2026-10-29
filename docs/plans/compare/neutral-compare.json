@@ -1,0 +1,100 @@
+{
+  "comparisonPage": {
+    "competitorName": "Other AI Agents",
+    "seoTitle": "Classgrid AI vs Other AI Agents | Call Your AI on WhatsApp",
+    "metaDescription": "Compare calling Classgrid AI on WhatsApp with other AI agents: who you can call, who keeps working after the call, and who sends results back on WhatsApp in India.",
+    "readTime": 5,
+    "body": [
+      { "type": "h2", "text": "Introduction" },
+      { "type": "p", "text": "More AI agents now promise to work for you in the background, and some can even talk by voice. But they work in very different ways. This page compares one thing in detail: giving work to an AI by calling it on WhatsApp, and getting the finished result back on WhatsApp." },
+      { "type": "p", "text": "We compare Classgrid AI with the other AI agents launched by large AI companies in 2026. We describe what these agents can and can't do, without naming them. Everything here is based on public information as of October 2026, and these products change quickly." },
+
+      { "type": "h2", "text": "How a WhatsApp call to Classgrid AI works" },
+      { "type": "p", "text": "Classgrid AI is an AI agent at chat.classgrid.in. Send \"Hi\" to the Classgrid number on WhatsApp, verify your number in the app with a one-time code, and you can then call +91 81492 77038 on WhatsApp and simply say what you need." },
+      { "type": "li", "text": "The AI picks up and greets you by name. You talk normally and can interrupt it." },
+      { "type": "li", "text": "It can answer you live during the call, using the apps you connected, like Gmail, Google Calendar, Google Drive, Notion or GitHub. If an answer takes longer, it sends it to you on WhatsApp instead." },
+      { "type": "li", "text": "For bigger jobs, it notes what you asked and starts working as soon as you hang up. Coding and website jobs go into Project Mode." },
+      { "type": "li", "text": "When the work is done, you get the result on WhatsApp with a link to the full chat. Files like PDFs arrive as real files." },
+      { "type": "li", "text": "If it needs something from you, it can ask you a question on WhatsApp and wait for your reply." },
+      { "type": "li", "text": "You can add more by sending a WhatsApp message, or by emailing agent@classgrid.in from your Classgrid account email, while the job is running. A job can keep going for up to 48 hours." },
+      { "type": "p", "text": "Each call can last up to 15 minutes and the AI speaks English. It is a WhatsApp voice call, so a normal phone call to the number will not reach the AI. Calls and jobs use your AI credits. If they run out, the job pauses and carries on when you top up." },
+
+      { "type": "h2", "text": "Agents that live inside a chat or work app" },
+      { "type": "p", "text": "Some of the new agents run in the background inside a chat assistant or a work app like a team messenger. They can connect to many apps and keep working while you do other things." },
+      { "type": "p", "text": "You can often talk to them by voice, but only inside their own app. You can't call them on WhatsApp or on a phone number, and their results stay inside that app. They usually need a paid plan." },
+      { "type": "h3", "text": "When this kind of agent is a good fit" },
+      { "type": "p", "text": "They suit people who already work all day inside that chat or work app and want an agent running there." },
+
+      { "type": "h2", "text": "Agents that make calls for you" },
+      { "type": "p", "text": "Some agents can now phone a person or a business on your behalf, make a request, and send you a summary afterwards. Some of them also have a voice mode inside their own apps." },
+      { "type": "p", "text": "But the calls go the other way: the agent calls other people for you. We found no way to call these agents yourself, on WhatsApp or on a phone number." },
+      { "type": "h3", "text": "When this kind of agent is a good fit" },
+      { "type": "p", "text": "They suit people who want an agent to phone businesses for them, and who are happy to give it tasks from its own app." },
+
+      { "type": "h2", "text": "Agents inside messaging apps" },
+      { "type": "p", "text": "Some agents can be messaged inside WhatsApp like a contact, and can send emails or fill in forms for you. Some also have voice chat inside their own app." },
+      { "type": "p", "text": "But you can't call them on WhatsApp, and at the time of writing several of them are not available in India." },
+      { "type": "h3", "text": "When this kind of agent is a good fit" },
+      { "type": "p", "text": "They suit people in the countries where they are available who prefer to type their requests." },
+
+      { "type": "h2", "text": "Side-by-side" },
+      { "type": "table", "rows": [
+        ["", "Classgrid AI", "Agents inside chat or work apps", "Agents that make calls for you", "Agents inside messaging apps"],
+        ["You can call the AI on WhatsApp", "Yes", "No (voice only inside their app)", "No (they call others for you)", "No (message only)"],
+        ["Keeps working after the call", "Yes, up to 48 hours", "Works in the background, not started by a call", "Works in the background, not started by a call", "Works in the background, not started by a call"],
+        ["Results back on WhatsApp", "Yes, PDFs as real files", "No", "No", "Replies in the chat"],
+        ["Where you use it", "WhatsApp and chat.classgrid.in", "Their own chat or work app", "Their own apps", "WhatsApp and their own app"],
+        ["Available in India", "Yes", "Varies", "Varies", "Often not yet"]
+      ] },
+
+      { "type": "h2", "text": "When to choose Classgrid AI" },
+      { "type": "p", "text": "Choose Classgrid AI when you want to hand off work by voice from anywhere in India, with no new app to install and no typing, and get the finished work back on WhatsApp." },
+      { "type": "li", "text": "You are driving, travelling or away from your laptop and want to say what you need in a quick call." },
+      { "type": "li", "text": "You want the agent to keep working after the call and send you the result, not just answer a question." },
+      { "type": "li", "text": "You want PDFs and other files delivered straight to WhatsApp." },
+      { "type": "li", "text": "You want the same agent on the web too, with research, files, code, Project Mode and Grids." },
+
+      { "type": "h2", "text": "Good to know" },
+      { "type": "li", "text": "Calls are WhatsApp voice calls in English, up to 15 minutes each." },
+      { "type": "li", "text": "Sign up at chat.classgrid.in and verify your WhatsApp number first. Only your verified number can call, and only your account email can send it work." },
+      { "type": "li", "text": "Sending a WhatsApp text on its own does not start a new job. You start a job by calling or by emailing agent@classgrid.in." },
+      { "type": "li", "text": "Classgrid AI is free to start, and you top up only when you need more." }
+    ],
+    "ratingBadges": [],
+    "usps": [
+      { "icon": "phone", "title": "Call your AI on WhatsApp", "description": "Call +91 81492 77038 on WhatsApp from your verified number and say what you need. No new app to install, no typing." },
+      { "icon": "workflow", "title": "It keeps working after you hang up", "description": "Classgrid AI carries on with the job in the background, for up to 48 hours, using your connected apps." },
+      { "icon": "sparkles", "title": "Results come back on WhatsApp", "description": "You get the answer and a link to the full chat on WhatsApp, and files like PDFs arrive as real files." },
+      { "icon": "shield", "title": "Only you can give it work", "description": "Calls are answered only from your verified number, and emails are only taken from your Classgrid account email." }
+    ],
+    "featureMatrix": [
+      { "category": "Calling", "featureName": "Call the AI yourself on WhatsApp", "ourStatus": "Yes. WhatsApp voice call to +91 81492 77038, up to 15 minutes, in English.", "ourIcon": "check", "competitorStatus": "No. Some can be voice-called inside their own app, some call other people for you, and some can only be messaged.", "competitorIcon": "cross" },
+      { "category": "Calling", "featureName": "Live answers during the call", "ourStatus": "Yes, using your connected apps like Gmail, Calendar, Drive, Notion and GitHub.", "ourIcon": "check", "competitorStatus": "Only by voice inside their own apps, not on a WhatsApp call.", "competitorIcon": "warning" },
+      { "category": "Background work", "featureName": "Keeps working after the call", "ourStatus": "Yes. The job runs in the background for up to 48 hours.", "ourIcon": "check", "competitorStatus": "Many run background work, but none is started by calling them on WhatsApp.", "competitorIcon": "warning" },
+      { "category": "Results", "featureName": "Sends results back on WhatsApp", "ourStatus": "Yes, with a link to the chat. PDFs arrive as real files.", "ourIcon": "check", "competitorStatus": "Most keep results inside their own app. Agents inside messaging apps reply in the chat.", "competitorIcon": "warning" },
+      { "category": "Results", "featureName": "Add more after you hang up", "ourStatus": "Yes. Send a WhatsApp message, or email agent@classgrid.in from your account email, while the job runs.", "ourIcon": "check", "competitorStatus": "Not by WhatsApp after a call.", "competitorIcon": "cross" },
+      { "category": "Availability", "featureName": "Available in India", "ourStatus": "Yes, it works in India.", "ourIcon": "check", "competitorStatus": "Varies. Several new agents are not available in India yet.", "competitorIcon": "warning" },
+      { "category": "Availability", "featureName": "Where you use it", "ourStatus": "WhatsApp, plus the full agent at chat.classgrid.in.", "ourIcon": "check", "competitorStatus": "Mostly inside their own chat, work or agent apps.", "competitorIcon": "warning" },
+      { "category": "Getting started", "featureName": "Free to start", "ourStatus": "Yes. Top up only when you need more.", "ourIcon": "check", "competitorStatus": "Many need a paid plan.", "competitorIcon": "warning" }
+    ],
+    "migrationTestimonial": {
+      "quoteText": "We built WhatsApp calling so people can hand off work the way they already talk: call, say what you need, hang up, and get the finished work back on WhatsApp.",
+      "authorName": "Classgrid Product Team",
+      "authorRole": "Classgrid AI"
+    },
+    "faqs": [
+      { "question": "Can I call Classgrid AI on a normal phone line?", "answer": "No. It is a WhatsApp voice call to +91 81492 77038. A normal phone call to the number will not reach the AI." },
+      { "question": "Do I need to set anything up first?", "answer": "Yes. Send \"Hi\" to the Classgrid number on WhatsApp, then sign up at chat.classgrid.in and verify your number with a one-time code. Then you can call." },
+      { "question": "How is this different from agents that make calls for you?", "answer": "Those agents call businesses or people on your behalf. With Classgrid AI, you call the AI yourself to give it work, and it sends the result back to you on WhatsApp." },
+      { "question": "Can other AI agents be called on WhatsApp?", "answer": "As of October 2026, we found none that you can call on WhatsApp. Some can be messaged there, and some can be voice-called only inside their own app." },
+      { "question": "What language does the call use?", "answer": "English. Each call can last up to 15 minutes." },
+      { "question": "What if my credits run out during a job?", "answer": "The job pauses, and it carries on by itself after you top up." }
+    ]
+  },
+  "compareHubPage": {
+    "seoTitle": "Compare Classgrid AI with other AI agents",
+    "metaDescription": "See how calling Classgrid AI on WhatsApp compares with other AI agents.",
+    "heroHeadline": "Compare Classgrid AI with other AI agents",
+    "heroSubheadline": "Call your AI on WhatsApp, let it work after you hang up, and get the result back on WhatsApp. See how that compares with other AI agents."
+  }
+}

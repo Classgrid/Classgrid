@@ -1,0 +1,934 @@
+[
+  {
+    "_createdAt": "2026-05-09T17:21:40Z",
+    "_id": "3rpjI1abmKeJaJDXiRz40g",
+    "_rev": "lWC3z1etCH2cpKB4GcPnYD",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:45:55Z",
+    "answer": [
+      {
+        "_key": "4ahfuq",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "d9mbe",
+            "_type": "span",
+            "marks": [],
+            "text": "Absolutely. Classgrid automatically adapts forms, workflows, and reporting for Engineering, Junior Colleges, Schools, Coaching, and Diploma institutes."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "General",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "left",
+    "order": 2,
+    "question": "Can Classgrid adapt to different institution types?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:41Z",
+    "_id": "3rpjI1abmKeJaJDXiRz4eM",
+    "_rev": "lWC3z1etCH2cpKB4GcPoOJ",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:45:57Z",
+    "answer": [
+      {
+        "_key": "ugpkct",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "l9bgl",
+            "_type": "span",
+            "marks": [],
+            "text": "Candidates experience a seamless journey: they register via OTP, fill out customized forms, upload documents, and pay fees securely. They can track their live status until officially enrolled."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "left",
+    "order": 3,
+    "question": "How does the online admissions workflow work for candidates?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:43Z",
+    "_id": "3rpjI1abmKeJaJDXiRz5VG",
+    "_rev": "CD9L37YSY0XMQhixkGfRNJ",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:45:58Z",
+    "answer": [
+      {
+        "_key": "3j60m8",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9f181",
+            "_type": "span",
+            "marks": [],
+            "text": "Parents stay informed through automatic SMS, email, and push notifications at every major step. They can also log into a secure portal to check live application status and fee receipts."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "left",
+    "order": 5,
+    "question": "How do parents follow an admission application?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:45Z",
+    "_id": "3rpjI1abmKeJaJDXiRz6JW",
+    "_rev": "lWC3z1etCH2cpKB4GcPopt",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:46:01Z",
+    "answer": [
+      {
+        "_key": "tsulj",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "nsmvl8",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid ensures complete financial separation. Student fees flow directly into your institution's integrated payment gateway, while platform subscriptions are managed separately."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Billing",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "right",
+    "order": 1,
+    "question": "How does pricing and billing work?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:50Z",
+    "_id": "3rpjI1abmKeJaJDXiRz7o6",
+    "_rev": "lWC3z1etCH2cpKB4GcPpNb",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:46:05Z",
+    "answer": [
+      {
+        "_key": "nv3bkj",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ctixw",
+            "_type": "span",
+            "marks": [],
+            "text": "Students access a modern dashboard to view timetables, submit assignments, and check results. Faculty use their portal to host live classes, grade assignments, and track attendance."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Dashboard",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "right",
+    "order": 5,
+    "question": "What do students and faculty use after logging in?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:00Z",
+    "_id": "3rpjI1abmKeJaJDXiRz9wM",
+    "_rev": "3rpjI1abmKeJaJDXiRz9ti",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:00Z",
+    "answer": [
+      {
+        "_key": "me96obrs",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "0skifnbw",
+            "_type": "span",
+            "marks": [],
+            "text": "CET-based flows validate the enrollment number before continuing. If validation fails, check that the CET data import is complete, the enrollment number is entered exactly as issued, the candidate belongs to the configured admission cycle, and the portal strategy is set to the correct engineering or diploma workflow. After validation, the candidate may still need email OTP verification."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "Why can a CET candidate not continue after entering an enrollment number?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:01Z",
+    "_id": "3rpjI1abmKeJaJDXiRzAsY",
+    "_rev": "3rpjI1abmKeJaJDXiRzApu",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:01Z",
+    "answer": [
+      {
+        "_key": "kfl48j2p",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1j1j6ig7",
+            "_type": "span",
+            "marks": [],
+            "text": "A rejected document remains visible with the rejection reason. The candidate can upload a corrected file if reupload is allowed for that document. Staff should review documents from the verification queue, approve valid files, reject unclear or incorrect files with a useful reason, and only mark the application verified once all required documents are complete."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "What happens when an uploaded document is rejected?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:06Z",
+    "_id": "3rpjI1abmKeJaJDXiRzC1y",
+    "_rev": "3rpjI1abmKeJaJDXiRzBzK",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:06Z",
+    "answer": [
+      {
+        "_key": "z5b38e70",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "n0z3repi",
+            "_type": "span",
+            "marks": [],
+            "text": "Parents use the parent tracker route and authenticate with the registered phone number. The tracker displays a simplified timeline, document status, and action alerts such as waitlist or fee pending messages. It does not expose staff-only tools such as verification actions, bulk updates, exports, or dashboard analytics."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "How can parents track an application without staff access?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:08Z",
+    "_id": "3rpjI1abmKeJaJDXiRzCPm",
+    "_rev": "3rpjI1abmKeJaJDXiRzCN8",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:08Z",
+    "answer": [
+      {
+        "_key": "9214sfrk",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "1w7b2wke",
+            "_type": "span",
+            "marks": [],
+            "text": "Use the All Applications page to search by applicant name, enrollment number, phone number, or email. Staff can also filter by status, browse division or hierarchy views where available, and use server-side pagination for large application sets. Document teams should use the verification queue when the goal is specifically to approve or reject documents."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Dashboard Usage",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "How do admission staff find a specific application?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:09Z",
+    "_id": "3rpjI1abmKeJaJDXiRzCna",
+    "_rev": "3rpjI1abmKeJaJDXiRzCkw",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:09Z",
+    "answer": [
+      {
+        "_key": "mjhqrmsx",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "mvchbkjp",
+            "_type": "span",
+            "marks": [],
+            "text": "The fees dashboard summarizes total collected, total payable, pending amount, overdue balances, paid/partial/unpaid counts, collection rate, payment mode distribution, daily collection trends, recent transactions, and top defaulters. Stale or missing numbers usually indicate missing fee data, no recent payments, or an API/configuration issue."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Dashboard Usage",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "What do the fees dashboard numbers mean?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:13Z",
+    "_id": "3rpjI1abmKeJaJDXiRzDx0",
+    "_rev": "3rpjI1abmKeJaJDXiRzDuM",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:13Z",
+    "answer": [
+      {
+        "_key": "mhds8go4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "it1fieb2",
+            "_type": "span",
+            "marks": [],
+            "text": "First confirm that Razorpay keys are configured for the environment and that the organization or admission fee configuration has a valid payable amount. For subscription payments, retry from the organization billing area and verify that the payment verification endpoint receives the Razorpay payment response. For admission payments, confirm the candidate application is in a fee-eligible state and that the fee structure is active."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Payments & Billing",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "What should I check if a Razorpay payment fails?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:15Z",
+    "_id": "3rpjI1abmKeJaJDXiRzEQ6",
+    "_rev": "3rpjI1abmKeJaJDXiRzENS",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:15Z",
+    "answer": [
+      {
+        "_key": "n3hwrsun",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "w1u2jn84",
+            "_type": "span",
+            "marks": [],
+            "text": "The platform includes notification surfaces in the web app and push notification handling in the Android wrapper. Firebase messaging recognizes types such as assignments, grades, live classes, chat, fees, canteen, exams, and announcements, each with deep links into the relevant area. Email infrastructure is also present for OTPs, password resets, digests, and other transactional messages."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Integrations",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "Which notifications can users receive?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:16Z",
+    "_id": "3rpjI1abmKeJaJDXiRzElG",
+    "_rev": "3rpjI1abmKeJaJDXiRzEic",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:16Z",
+    "answer": [
+      {
+        "_key": "eyyj8x3e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "8j60c3ol",
+            "_type": "span",
+            "marks": [],
+            "text": "Key integration points include Razorpay payment verification, Zoom OAuth and webhook routes, Google OAuth/API integrations, Firebase authentication and push services, Socket.io real-time events, admission public endpoints, support ticket endpoints, and department analytics APIs. If an integration stops working, check environment variables, provider credentials, callback URLs, webhook secrets, and whether the organization is active."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "API/Webhooks",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "What APIs and webhooks are important for integrations?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:18Z",
+    "_id": "3rpjI1abmKeJaJDXiRzFMI",
+    "_rev": "3rpjI1abmKeJaJDXiRzFJe",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:18Z",
+    "answer": [
+      {
+        "_key": "l988ovgo",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9l9f1iy3",
+            "_type": "span",
+            "marks": [],
+            "text": "For empty or stale dashboards, check whether the user has the correct role, the organization is active, the API endpoint is returning data, and the selected module has live records for the period. If the issue remains, create a support ticket and include the organization name, affected role, module, screenshot, approximate time, and recent action. Super admins can filter tickets by status and priority, inspect replies, and mark tickets resolved."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Troubleshooting",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "What should I check before raising a support request?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:47Z",
+    "_id": "Lr2L4V22G1FLjwXKIDniJZ",
+    "_rev": "CD9L37YSY0XMQhixkGfRbj",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:46:03Z",
+    "answer": [
+      {
+        "_key": "1m26ab",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "lsda5i",
+            "_type": "span",
+            "marks": [],
+            "text": "Security is layered throughout the platform. We employ strict role-based access controls, automated session timeouts, and immutable audit trails to keep your institution's data safe."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Security",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "right",
+    "order": 3,
+    "question": "How does Classgrid handle security and privacy?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:49Z",
+    "_id": "Lr2L4V22G1FLjwXKIDniYl",
+    "_rev": "lWC3z1etCH2cpKB4GcPp8H",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:46:04Z",
+    "answer": [
+      {
+        "_key": "omx2r",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "hcc07o",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes. The platform is engineered to handle massive spikes in traffic during admission seasons, featuring real-time vacancy tracking and instantaneous seat allocation updates."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Performance",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "right",
+    "order": 4,
+    "question": "Is Classgrid designed for heavy admission periods?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:51Z",
+    "_id": "Lr2L4V22G1FLjwXKIDnivY",
+    "_rev": "CD9L37YSY0XMQhixkGfRsY",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:46:05Z",
+    "answer": [
+      {
+        "_key": "a8bxsdr",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9bdjcz",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid includes a built-in Support Ticketing System for administrators to get direct help. Conversations are bidirectional with the Classgrid Team to ensure rapid issue resolution."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Support",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "right",
+    "order": 6,
+    "question": "What support tools and helpdesk features are built into the platform?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:57Z",
+    "_id": "Lr2L4V22G1FLjwXKIDnk4S",
+    "_rev": "Lr2L4V22G1FLjwXKIDnk1v",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:21:57Z",
+    "answer": [
+      {
+        "_key": "aipypq9j",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "2f1k4ifz",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid can challenge new or untrusted devices with an email OTP. This protects accounts when login activity comes from a device the platform has not seen before. Check the registered email inbox, enter the OTP, and continue. Internal sandbox accounts and trusted devices may bypass this check depending on configuration."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Account & Authentication",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "Why am I being asked to verify a new device?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:58Z",
+    "_id": "Lr2L4V22G1FLjwXKIDnkbN",
+    "_rev": "Lr2L4V22G1FLjwXKIDnkYq",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:21:58Z",
+    "answer": [
+      {
+        "_key": "obgdo4wh",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ub4xmnaz",
+            "_type": "span",
+            "marks": [],
+            "text": "Use the forgot-password flow from the correct login page and open the latest reset email. Reset tokens are time-limited, so request a fresh email if the link has expired. The new password must pass the platform's strength rules. If an institution admin is activating an account for the first time, use the activation link or activation code flow instead of the normal reset flow."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Account & Authentication",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "What should I do if password reset does not work?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:03Z",
+    "_id": "Lr2L4V22G1FLjwXKIDnmTr",
+    "_rev": "Lr2L4V22G1FLjwXKIDnmRK",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:03Z",
+    "answer": [
+      {
+        "_key": "h86n47t9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9p49yhk4",
+            "_type": "span",
+            "marks": [],
+            "text": "The backend includes desk enrollment and admin enrollment routes for staff-assisted admission workflows. Staff can use these flows when a candidate applies in person or when the institution needs to complete an application on behalf of a student, subject to the admission configuration and role permissions."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "Can staff enter walk-in applications from the office desk?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:04Z",
+    "_id": "Lr2L4V22G1FLjwXKIDnn0m",
+    "_rev": "Lr2L4V22G1FLjwXKIDnmyF",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:04Z",
+    "answer": [
+      {
+        "_key": "rzrzw46k",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "9ryam3xp",
+            "_type": "span",
+            "marks": [],
+            "text": "Admission teams can generate merit lists, manage rounds, advance admission stages, promote waitlisted candidates, apply fee deadlines, and monitor live seat or merit data where enabled. A candidate may move from applied to verified, selected, fee pending, confirmed, or enrolled depending on document verification, merit rules, seat allocation, and payment status."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "How do merit lists, waitlists, and fee deadlines work?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:12Z",
+    "_id": "Lr2L4V22G1FLjwXKIDnoOs",
+    "_rev": "Lr2L4V22G1FLjwXKIDnoML",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:12Z",
+    "answer": [
+      {
+        "_key": "h7d0t26f",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "afo5ok5f",
+            "_type": "span",
+            "marks": [],
+            "text": "Open the organization detail or billing area as a super admin. Configure the plan type, active/demo state, expiry date, maximum students, maximum faculty, storage limit, base monthly price, per-student price, and per-GB storage price. The organization detail page calculates the monthly bill from these values and can launch Razorpay checkout for subscription payment."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Payments & Billing",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "How do I configure subscription rates and quotas for an institution?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:38Z",
+    "_id": "siRSXrVH2rEfWhbz4DI9Ih",
+    "_rev": "lWC3z1etCH2cpKB4GcPnP1",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:45:54Z",
+    "answer": [
+      {
+        "_key": "behnzw",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "f41use",
+            "_type": "span",
+            "marks": [],
+            "text": "When an institution is onboarded, our guided 8-step setup covers branding, academic structure, and fee configuration. An intuitive dashboard tracks progress in real-time to help you go live quickly."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "General",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "left",
+    "order": 1,
+    "question": "What happens after an institution starts using Classgrid?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:42Z",
+    "_id": "siRSXrVH2rEfWhbz4DIB1O",
+    "_rev": "CD9L37YSY0XMQhixkGfRBI",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:45:57Z",
+    "answer": [
+      {
+        "_key": "z1zafp",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "wt3x9u",
+            "_type": "span",
+            "marks": [],
+            "text": "Yes, government workflows are deeply integrated. Institutions can import allotment data (like CET) and instantly generate compliance-ready export reports for state and national bodies."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "left",
+    "order": 4,
+    "question": "Does Classgrid support CET, CAP, and government-reporting workflows?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:44Z",
+    "_id": "siRSXrVH2rEfWhbz4DIBT3",
+    "_rev": "CD9L37YSY0XMQhixkGfRUW",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:46:00Z",
+    "answer": [
+      {
+        "_key": "d00v6c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "yfzpzh",
+            "_type": "span",
+            "marks": [],
+            "text": "Organization Admins get a comprehensive view of campus operations. They can manage all students and staff, control billing, and oversee the entire admission pipeline from a single dashboard."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Dashboard",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "left",
+    "order": 6,
+    "question": "What do admins see in the dashboard?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:46Z",
+    "_id": "siRSXrVH2rEfWhbz4DICMN",
+    "_rev": "7ugL6PxizEJiLdEyw4qmaH",
+    "_type": "faqItem",
+    "_updatedAt": "2026-08-01T09:46:02Z",
+    "answer": [
+      {
+        "_key": "580qrs",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "5k5ph5",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid ships with out-of-the-box integrations for critical campus needs, including payment gateways, SMS/email providers, virtual meeting platforms like Zoom, and social logins."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Integrations",
+    "displayPages": [
+      "home",
+      "help-center"
+    ],
+    "homeColumn": "right",
+    "order": 2,
+    "question": "Which integrations are already wired into Classgrid?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:53Z",
+    "_id": "siRSXrVH2rEfWhbz4DIEKs",
+    "_rev": "siRSXrVH2rEfWhbz4DIEGv",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:21:53Z",
+    "answer": [
+      {
+        "_key": "tt7lz11g",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "35ekchd8",
+            "_type": "span",
+            "marks": [],
+            "text": "Start from the super admin organization area. Create or open the organization record, confirm the institution details, plan status, student and faculty limits, storage quota, billing configuration, and organization admin access. After the admin account is active, the institution admin can enter the dashboard and begin configuring departments, admissions, users, and daily modules."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Getting Started",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "How do I onboard a new institution in Classgrid?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:54Z",
+    "_id": "siRSXrVH2rEfWhbz4DIFAF",
+    "_rev": "siRSXrVH2rEfWhbz4DIF6I",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:21:54Z",
+    "answer": [
+      {
+        "_key": "i6esmhvk",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "y5a3jxtz",
+            "_type": "span",
+            "marks": [],
+            "text": "Before publishing the admission portal, configure the admission strategy, portal status, application cutoff date, registration fee, document verification requirement, PRN generation, credential dispatch, seat matrix policy, merit list settings, waitlist behavior, fee deadline, and applicant instructions. Engineering and diploma strategies should also confirm CET imports, CAP round settings, ranking behavior, RLA/NOC rules, and government export requirements."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Getting Started",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "What should be configured before opening the admission portal?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:55Z",
+    "_id": "siRSXrVH2rEfWhbz4DIG7W",
+    "_rev": "siRSXrVH2rEfWhbz4DIG3Z",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:21:55Z",
+    "answer": [
+      {
+        "_key": "ryqo4fsq",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "6k7p3n88",
+            "_type": "span",
+            "marks": [],
+            "text": "Students and faculty use the role-aware institution login flow. Institution admins use the admin login. Platform operators use the super admin login. The frontend also supports forgot-password and reset-password pages, and protected routes redirect users to the correct dashboard based on their role and organization context."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Account & Authentication",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "Which login page should each user use?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:21:59Z",
+    "_id": "siRSXrVH2rEfWhbz4DII24",
+    "_rev": "siRSXrVH2rEfWhbz4DIHy7",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:21:59Z",
+    "answer": [
+      {
+        "_key": "wlidvjp7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "rzryae53",
+            "_type": "span",
+            "marks": [],
+            "text": "The portal may be closed because the institution disabled admissions, the cutoff date has passed, the admission configuration is incomplete, or the organization is inactive, suspended, or under maintenance. Institution admins should check portal status, cutoff date, active configuration, and organization plan/status before asking candidates to apply."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Admissions",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "Why is the candidate portal closed or unavailable?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:11Z",
+    "_id": "siRSXrVH2rEfWhbz4DIQZa",
+    "_rev": "siRSXrVH2rEfWhbz4DIQVd",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:11Z",
+    "answer": [
+      {
+        "_key": "unej1plu",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "ydekgm1g",
+            "_type": "span",
+            "marks": [],
+            "text": "Exams surfaces upcoming exams, pending results, hall tickets, paper creation, question bank stats, recent exams, and trends. Library shows books, availability, issued/returned/overdue counts, fines, transactions, most-issued books, and defaulters. Attendance, HR, hostel, and transport pages provide dashboards for attendance, leave, payroll, residents, rooms, complaints, and routes."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Dashboard Usage",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "Which department dashboards are available and what do they show?"
+  },
+  {
+    "_createdAt": "2026-05-09T17:22:17Z",
+    "_id": "siRSXrVH2rEfWhbz4DITVM",
+    "_rev": "siRSXrVH2rEfWhbz4DITRP",
+    "_type": "faqItem",
+    "_updatedAt": "2026-05-09T17:22:17Z",
+    "answer": [
+      {
+        "_key": "23oehm66",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "73i0h01g",
+            "_type": "span",
+            "marks": [],
+            "text": "Authenticated users carry role and organization context. Protected routes validate the user's token, status, role, and organization state before allowing access. Client routes and sidebar items are role-aware, so students, faculty, department users, organization admins, and super admins land in different areas and see different navigation options. The platform also includes privacy, GDPR/privacy, backups, audit logs, and content moderation surfaces for operational control."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "category": "Roles & Permissions",
+    "displayPages": [
+      "help-center"
+    ],
+    "question": "How is access separated between organizations and roles?"
+  }
+]

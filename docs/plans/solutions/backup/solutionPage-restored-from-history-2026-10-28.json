@@ -1,0 +1,1202 @@
+[
+  {
+    "_createdAt": "2026-05-10T07:12:43Z",
+    "_id": "solution-page-for-teachers",
+    "_rev": "RVHES3swKkzmvYjsUtqxaA",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:05Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Set a reminder once, daily, weekly or on the days you choose, for up to 90 days. It comes to your email, and to WhatsApp after you verify your number. The words are set when you make it, so write exactly what you want to see."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Reminders by email and WhatsApp"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Give the agent a big job and close the tab. It keeps working for up to 48 hours. If it needs something, it asks you on WhatsApp, waits for your reply, then carries on."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Long jobs that keep going"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Email your work to agent@classgrid.in from the email you signed up with. The agent picks it up and starts the task, and you can follow it in the app. Emails from other addresses don't start a task."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Hand off work by email"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "When a job is done, the agent sends the result to your WhatsApp with a link to the chat. PDFs come as real files you can open and forward. You can also start a task with a WhatsApp call to +91 81492 77038."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Results on WhatsApp"
+        }
+      }
+    ],
+    "category": "role",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "You set the time and the message. At that time it's sent to your email, and to WhatsApp if you verified your number. It can be once, daily, weekly or on the days you choose, for up to 90 days."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How do reminders work?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. The message is written when you set up the reminder, and the AI doesn't run again at that time. For a fresh answer, ask the agent in the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can a reminder send me fresh news or a new summary each day?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. Reminders go only to you, by email and WhatsApp."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can reminders go to other people?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Up to 48 hours. The agent can pause, wait for your WhatsApp reply or a set time, and then carry on. When it's done you get \"Task completed\" with a link to the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How long can a task run?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. Start a task with a WhatsApp call to +91 81492 77038, or by emailing agent@classgrid.in from your sign-up email. While a task is open, you can send extra texts or files on WhatsApp."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I start a task by texting on WhatsApp?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Sign up with your email and start for free. Top up only when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is it free to start?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Close the tab. The work keeps going."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Reminders & automation"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI can keep working for you when you are not looking. You can set reminders that come at the right time, and you can give the agent long jobs that keep going after you close the tab. You set it all up by typing in normal words at chat.classgrid.in. It is free to start, and you top up only when you need more.\n\nYou can ask it to remind you about anything. It can be one time, every day, every week or only on the days you pick, for up to 90 days. At that time the reminder comes to your email. After you verify your WhatsApp number with a code, it comes on WhatsApp too.\n\nThere is one thing to know about reminders. The words are written when you set the reminder up, and the AI does not run again when it is sent. So it is perfect for \"call the client at 4\" or \"drink water and plan tomorrow\". It is not for fresh news or a new summary every morning. For a fresh answer, just ask the agent in the chat.\n\nReminders go only to you, by email and WhatsApp. They can't message other people. You can see all your reminders on the Schedule page in the app.\n\nThe agent can also work on long jobs in the background. Give it a big task, like comparing a few products, making a long report or building a list from the web, and close the tab. It keeps going for up to 48 hours. If it needs to wait for a later time or for your answer, it pauses and wakes up again to carry on.\n\nIf the agent needs something from you, it can ask you on WhatsApp and wait for your reply. You answer in WhatsApp like a normal message, and it picks up where it left off. When the job is done, you get \"Task completed\" with a link to the full chat.\n\nResults can come straight to your WhatsApp. If the agent makes a PDF, it sends it as a real file you can open, save and forward. You also get the link to the chat, so you can see everything it did and ask for changes.\n\nYou can hand off work without opening the app. Send an email to agent@classgrid.in from the email you signed up with, and the agent starts the task. You can also start a task with a WhatsApp call to +91 81492 77038, say what you need and hang up. Plain WhatsApp texts don't start a new task, but while a task is open you can send extra texts or files to add to it.\n\nIn short: set a reminder once and get it on time, or give the agent a long job and walk away. It keeps working, asks you when it needs to, and sends the result to your WhatsApp or email when it is done.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Get reminders on WhatsApp.\n- Help me set up a daily WhatsApp reminder. Ask me what time and what it should say.\n- Create a PDF report in minutes.\n- Research a topic with real sources.\n- Search the web with sources.\n- Read my unread emails from today\n- What's on my calendar for tomorrow?\n- Draft a project proposal.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Read and send emails |\n| Google Calendar | See your day and add events |\n| Google Drive | Find and read files, save new ones |\n| Notion | Search, create and update pages |\n| Slack | Read and send messages |\n| WhatsApp Business | Send texts from your own business account |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Set reminders by email and WhatsApp, and let the AI agent work on long tasks for up to 48 hours, then send results and PDFs on WhatsApp. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Reminders and background AI tasks on WhatsApp | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-teachers"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Set reminders that arrive by email and WhatsApp, and give the agent long jobs that keep running for up to 48 hours."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:45Z",
+    "_id": "solution-page-for-admins",
+    "_rev": "s0mjsvMLcxDn6CvMzAq6Am",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:06Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Connect Gmail or Outlook and your calendar. Ask what needs a reply, get a draft, and send it from your own account. Check your week and add new meetings with a Meet or Zoom link."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Email and calendar, handled"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Email the task to agent@classgrid.in from your sign-up email, or call the agent on WhatsApp. It works in the background for up to 48 hours and asks you on WhatsApp if it needs something. When it's done, it sends you the result."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Hand off work and walk away"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Make a group on Grids for quick decisions and polls. Ask the agent to catch you up on what your group said today, and it asks before it posts anything. Draft the pitch together in one shared AI chat with up to 3 other people."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Your team chat and shared AI chats"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Turn meeting notes into a Notion page or a Slack message. Write a proposal and get it as a polished PDF. Then send it from your own email."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Meeting notes and proposals"
+        }
+      }
+    ],
+    "category": "role",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Each person signs up with their own email. You work together with Grids groups and Share Grid, which is one AI chat for up to 4 people. It's free to start, and you top up when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can people work on it together?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. When you connect Gmail or Outlook, it sends from your own account. Without them, the agent can still send you email from agent@classgrid.in."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Does it send email as me?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "Not yet. It can list your events and create new ones."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it move or cancel my meetings?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Email agent@classgrid.in from the email you signed up with. It replies, works on the task and sends you the result."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How do I give it a task by email?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Long tasks run in the background for up to 48 hours. The result is sent to your WhatsApp and to the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it keep working when I'm offline?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. You can disconnect any app from Plugins and delete any chat at any time."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I disconnect apps?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Your inbox and week, handled"
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Email & calendar"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI is like an extra helper for your email and your week. You type what you need in plain words, and the agent does the work. It can read, write, plan and send things for you. You don't need to learn any new software to use it.\n\nConnect your Gmail or Outlook, and the agent can read your inbox for you. Ask it which emails need a reply today, and it gives you a short list. It can write a reply and send it from your own account when you say so. It can also read the files attached to an email.\n\nConnect Google Calendar and ask what your week looks like. The agent lists your meetings and tells you when you are free. It can add a new meeting, with a Google Meet link if you want one. It can also make Zoom or Outlook meetings. It can't move or cancel a meeting yet, so you still do that yourself.\n\nNeed a proposal, a quote or a short report? Tell the agent what it is about, and it writes it and turns it into a clean PDF. It can then email that PDF from your Gmail, with the file attached. You can read it first and ask for changes before anything is sent.\n\nAfter a meeting, paste your rough notes or upload a voice note. The agent turns them into clear notes with action items and a name next to each one. It can save them as a Notion page or post them in a Slack channel. Everyone sees the same notes without anyone typing them again.\n\nYou don't have to sit and watch. Email the task to agent@classgrid.in from the email you signed up with, or call the agent on WhatsApp. It keeps working in the background for up to 48 hours. If it needs something, it asks you on WhatsApp, and it sends you the result when it's done.\n\nWant a nudge at a set time? A schedule can send you a reminder you write, by email or WhatsApp. It sends the same words you set, once or on the days you pick. It does not write a fresh summary each time.\n\nYour team chat can live in a Grids group, with quick polls for decisions. The agent can catch you up on what your group said in the last couple of hours. It always shows you a draft and asks before it posts anything to the group. For bigger work, up to 4 people can share one AI chat and build the answer together.\n\nEach person signs up with their own email. You can connect or disconnect apps at any time from Plugins. You can delete any chat whenever you want. It is free to start, and you top up only when you need more.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Read my unread emails from today\n- What's on my calendar for tomorrow?\n- When am I free next week?\n- Search my Notion for recent strategy docs\n- Write meeting notes and action items.\n- Draft a project proposal.\n- Create a PDF report in minutes.\n- Get reminders on WhatsApp.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Read, reply and send from your account |\n| Microsoft Outlook | Read and send email, create meetings |\n| Google Calendar | See your week, add events |\n| Google Drive | Find and read files, save new ones |\n| Slack | Read and post messages, create canvases |\n| Notion | Search, create and update pages |\n| Microsoft Teams | Read and post in channels and chats |\n| Zoom | List and create meetings |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Catch up on email, check your week, draft proposals as PDFs and turn meeting notes into action with one AI agent. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI assistant for email and calendar | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-admins"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Catch up on email, check your week, send proposals and turn meeting notes into action, all from one chat."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:39Z",
+    "_id": "solution-page-for-coaching",
+    "_rev": "YfZj5VEMNrIVujHbdXDaZy",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:03Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent searches the web, opens the pages and reads them. Then it answers with numbered sources you can click. Long pages are read in parts, so nothing important gets skipped."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Answers with sources you can check"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Upload PDFs, Word files, slides, Excel sheets, CSVs, images and audio. Ask questions about them, compare them, or pull out tables and quotes. Your files stay in your Library to find later."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Read any file"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent writes and runs Python for you: cleaning, statistics, charts and models. You get the files back. That means a clean Excel sheet, charts and a PDF report."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Real Python for real data"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask about a stock, the weather, a place or a deadline. You get a live card right in the answer: a price chart, a 5-day forecast, a map pin or a countdown."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Live cards in the answer"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Every number links to a page the agent opened. Always click through and check what matters."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Are the sources real?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "No separate mode is needed. Ask your question, and the agent searches, opens pages and reads them itself."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is there a \"deep research\" mode?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "PDF, Word, PowerPoint, Excel, CSV and text files, plus images and audio. You can add up to 6 files in one message."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which files can it read?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. It writes Python and runs it in a safe sandbox. Then it gives you the files it made."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Does it really run code?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Upload the CSV or Excel export, or connect Google Forms and it can read the responses."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it read my survey results?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Use Incognito. Incognito chats aren't saved to your history."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I keep a chat private?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Real sources. Real numbers."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Research & data"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI helps you find facts and make sense of data. You ask a question in plain words. The agent searches, reads and works things out for you. Then it gives you an answer you can check.\n\nWhen you ask a research question, the agent searches the web and opens the pages it finds. It reads them, even long ones, in parts so nothing important is missed. Then it writes an answer with numbered sources. Click any number to see the page it came from.\n\nThe sources are real pages the agent opened. Still, always click through and check the facts that matter most. It does not search paid journal databases. There is no special mode to turn on, you just ask your question.\n\nYou can upload PDFs, Word files, slides, Excel sheets, CSV files, images and audio. Up to 6 files fit in one message. Ask questions about them, compare two papers, or pull out tables and quotes. Your files stay in your Library, where you can search for them later.\n\nFor numbers, the agent writes real Python code and runs it in a safe sandbox. It can clean messy data, remove repeated rows, fix dates and work out statistics. It shows you each step it took. You get the files back, like a clean Excel sheet.\n\nAsk for a chart and the agent draws one from your data, like a bar, line or pie chart. It can also draw a simple flow diagram. When you're done, ask for a PDF report with your charts and findings. You can download it or share it.\n\nSome answers come as live cards. Ask about a stock and you get its price and a small chart. Ask about the weather and you get today plus the next 5 days. You can also get a map pin, a route or a countdown to a deadline. The market card only shows data and is not financial advice.\n\nConnect Google Drive to find and read your files and save results there. Connect Google Forms to read survey answers, or make a new form. You can also save findings to Notion, read email attachments in Gmail, or run SQL on your Supabase database. Not sure how to write SQL? Ask in plain English and the agent writes it for you.\n\nWant to keep a chat private? Use Incognito, and that chat is not saved to your history. Want to share your findings? Send a read-only link, or share them in a Grids group. It is free to start, and you top up only when you need more.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Research a topic with real sources.\n- Search the web with sources.\n- Outline a literature review.\n- Analyse a file in seconds.\n- Clean up messy spreadsheet data.\n- Draw a chart from your data.\n- Create a PDF report in minutes.\n- Write SQL queries from plain English.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Google Drive | Find and read your files, save results |\n| Google Forms | Read survey responses, create a new form |\n| Notion | Search your notes, save findings to a page |\n| Supabase | Run SQL on your project's database |\n| Gmail | Read emails and attachments |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Search the web with real citations, read long PDFs, clean messy spreadsheets and turn data into charts and PDF reports. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI research and data analysis agent | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-coaching"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Search the web with citations, read long PDFs, clean messy spreadsheets, and get charts and PDF reports."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:37Z",
+    "_id": "solution-page-for-colleges",
+    "_rev": "YfZj5VEMNrIVujHbdXDaVl",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:00Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Message anyone on Classgrid AI, one to one or in groups. Choose who can join, who can post and who can add people. Send voice notes, photos, files and GIFs, pin what matters and see who has read it."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Chats and groups that feel familiar"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask the group with a poll. Mark a message Urgent so it stands out. Write it now and schedule it for later, or let it delete itself after a while."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Polls, priority and scheduled messages"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Bring friends or teammates into your AI chat. Everyone can read it, send messages and ask the AI together, and every message shows who sent it. Invite by link, by email, or pick people from your Grids."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Share Grid: one AI chat, up to 4 people"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask your agent to catch you up on a group, make a poll and tell you the result, or draft an announcement. It always shows you the message first and posts only when you say yes. It asks before reading your private chats."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Your agent helps, with your OK"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Anyone with a Classgrid AI account. Find them under \"Contacts on Classgrid\"."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Who can I chat with?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "No AI replies inside groups. Your own agent can read recent group messages, make polls and post for you after you say yes. To chat with the AI together, use Share Grid."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is there an AI inside my group chats?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "Up to 4, including you. Incognito and Project Mode chats can't be shared."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How many people can share one AI chat?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. You can schedule your own messages with \"Schedule For\"."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can the agent post on a schedule?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "It reads the recent messages (about the last couple of hours), so it's best for \"what did I miss today\"."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it summarise the whole group?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "In the main menu. If you're inside Agent, tap Back in the sidebar to see Grids."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Where do I find Grids?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Chat, plan and decide together"
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Grids"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nGrids is the messaging part of Classgrid AI. You find it as \"Grids\" in the side menu of the app. It works a lot like the chat apps you already know: you can talk one-to-one with anyone who has a Classgrid AI account, or make groups with many people. The big difference is that your own AI agent lives right next to your chats and can help you with them.\n\nYou can start a chat with any person on Classgrid AI by searching their name and pressing \"Start Chat\". You can also make a group and give it a name and a short subject. A group can be a general group, a team, a department, or an official announcement group. You decide who can see it and join it: it can be private and invite-only, visible but people must ask to join, or open so anyone can join straight away. People can also explore open groups and send requests to join.\n\nGroup owners have real control. You choose who can send messages, who can change the group name and picture, who can add new members and who can send files. If you set \"Only Admins\" for messages, your group becomes a clean notice board where only you post and everyone else reads. You can make other people admins too. Every change in the group is recorded in an audit log, and you can download that log as a sheet.\n\nMessages can do much more than text. You can send voice notes, photos, videos, documents and GIFs. You can mention one person or everyone in the group, react to messages, reply to a message, forward it, pin important ones for a day, a week or a month, and star messages to find them later. You can search inside a chat. You can mark a message as high priority or urgent so it stands out, set it to delete itself at a certain time, or schedule it to be sent later. You can also turn on disappearing messages for chats you do not want to keep.\n\nYou always know what is happening. You can see who is online, who is typing or recording, and for every message you can see who has received it and who has read it. New messages pop up even when you are on another page, and you get a badge with the number of unread messages.\n\nYou can make polls. Ask a question, add between two and ten options, and choose if people can pick more than one answer. Everyone votes in the group and you can see the results live. This is perfect for picking a day for a meeting, a place for a trip or an idea for a project.\n\nYour AI agent can help with your groups. You can ask it to catch you up on what a group talked about recently, list the members, check a poll's results, write a message or an announcement, make a new poll, or send a file to the group. The agent always shows you its draft first and asks \"Should I send this to the group?\", and it only sends after you say yes. It looks at groups by default and asks before it reads your private one-to-one chats.\n\nYou can share one AI chat with friends using Share Grid. Open any chat with the agent, press the share button, and invite up to three other people by email, from your Grids contacts or with an invite link you can send on WhatsApp. Then all four of you can read the chat, send messages and ask the AI together. Each message shows who sent it, and the agent knows who asked what. It answers one person at a time, so nothing gets mixed up. If the owner leaves, the chat passes to the next person.\n\nYou can also share a finished chat as a link. This makes a read-only copy of the chat that anyone can open, and you can post it straight to WhatsApp or LinkedIn or copy the link. Great for showing a good answer, a plan or a piece of research to people who do not use Classgrid yet.\n\nIn short: Grids lets you chat, run groups, take votes and post notices, with your AI agent helping you catch up and write, but only posting when you say yes. And with Share Grid, up to four people can work with the same AI chat together.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Read my Grid\n- Catch me up on the team group\n- Make a poll: Which day for the launch call?\n- Make a poll in the trip group: Goa, Manali or Ooty?\n- Who voted in the poll?\n- Draft an announcement for the Product launch group about Friday's demo\n- Send the launch plan PDF to the Product launch group\n- Who is in the Trip plan group?\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Google Calendar | Check free days before you make a poll |\n| Google Meet | Create a Meet link for group calls |\n| Google Drive | Read a file, share a summary |\n| Notion | Pull page notes into a group update |\n| Gmail | Turn an email into a group announcement |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Chat one to one or in groups, run polls, schedule messages and share one AI chat with up to 4 people. Your agent catches you up and posts with your OK."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Grids: group chats, polls and shared AI chats | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-colleges"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Chats, groups and polls inside Classgrid AI, plus shared AI chats for up to 4 people."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:40Z",
+    "_id": "solution-page-for-engineering",
+    "_rev": "YfZj5VEMNrIVujHbdXDaRY",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:56:59Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Full VS Code in a browser tab, with a terminal, a Run button, auto-save, Prettier and ESLint. Your packages install on their own when you open a project. Nothing to set up on your computer."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "A real editor in your browser"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent sees the file you have open, what you selected and the red squiggles. It follows your repo's rules files. It can send helpers to read different parts of the code at the same time."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "It knows your code"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "After each answer you see exactly what changed. Look at the diff file by file and reject what you don't want. Or undo the whole answer in one click."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Review every change"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Nothing goes straight to main. Every push is a new branch and a pull request you review and merge on GitHub. Connect Vercel and the agent can deploy that branch as a preview on your own account."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Pull requests only, previews on your Vercel"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Project Mode needs your GitHub account. You also install the Classgrid GitHub app on the repos you work on."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Do I need GitHub?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "On GitHub. While you work, a copy sits in your private editor box. It's removed after you close the editor, and anything not pushed is saved to a backup branch first."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Where is my code kept?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. Every change goes to a classgrid/ branch and a pull request. You review and merge it on GitHub."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Will it push to main?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "There's no live preview link from the editor. Connect Vercel and the agent can deploy your branch as a preview on your Vercel account."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I see my app running?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Python and Node.js / TypeScript, with npm packages installed for you."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which languages work?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "In Agent mode (not Project Mode) the agent can publish a site to yourname.sites.classgrid.in. In Project Mode, use Vercel."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it host a simple site for me?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Code with an agent. Ship by PR."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Project Mode"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nProject Mode is the coding side of Classgrid AI. You switch from \"Agent\" to \"Project\" in the app, and you get a full code editor right inside your browser, with an AI agent sitting next to it. It is VS Code, one of the most used code editors, so you do not need to install anything on your computer. You open a tab and start building websites and apps.\n\nTo use it you connect your GitHub account, because your code is kept on GitHub, with only a temporary copy while you work. You install the small Classgrid app on the GitHub repos you want to work on, and then you can open any of your projects in one click. If you do not have a project yet, you can start an empty one and ask the agent to build something from nothing, like a website or a small app. When you are ready, the agent can even create a new GitHub repo for you and save the work there.\n\nThe editor has everything you expect. There is a file list, a code area, a terminal where you can type commands, a Run button, auto-save, and tools that tidy your code and point out mistakes. When you open a project, it installs the project's packages by itself in the background, so you can start working straight away. Python and Node.js / TypeScript work out of the box.\n\nThe agent can really work on your code, not just give advice. You can ask it to fix a bug, add a feature, explain how something works, or build a new page. It reads your files, searches through the code, makes the changes, runs your build or tests, and checks for errors after every change. For big questions, like \"how does login work in this project?\", it can send up to five small helpers to read different parts of the code at the same time, so you get an answer much faster.\n\nIt understands what you are looking at. It knows which file you have open, which lines you have selected and which red error lines the editor is showing. So you can simply select a piece of code and ask \"why is this not working?\" If your project has a rules file for AI tools, the agent reads it and follows your rules. For bigger jobs it can write a plan first, show it to you, and only start building after you approve it.\n\nYou are always in control of every change. After each answer you see a small box that says how many files changed and how many lines were added or removed. You can open \"Review\" to see every change file by file, in colour, and reject the parts you do not want. Or you can press \"Undo\" and the whole project goes back to exactly how it was before that answer.\n\nNothing ever goes straight into your main code. When you save your work, by pressing \"Push to GitHub\" or by asking the agent, it goes to a new branch and opens a pull request on GitHub. You or the repo owner look at it and decide to merge it. The work is signed by Classgrid AI with you as co-author, so your name is on it too. If someone else changed the same branch in the meantime, it joins their work with yours carefully, and if the same lines clash it stops instead of overwriting anything. If you close the editor and forget to save, your unsaved work is backed up to a separate branch on GitHub, so nothing is lost.\n\nYou can put your work online through Vercel. If you connect your Vercel account, the agent can create the Vercel project, add the secret settings your app needs, and deploy your branch as a preview link or as the live site, all on your own Vercel account. Your project cards in Classgrid then show the live address next to the project.\n\nYour projects stay organised. Each project has its own card with a logo, the last change, the branch and the time, plus its own chats, so you can keep one project per client or per idea. You can also move a normal chat into a project if a conversation turns into real coding work.\n\nIn short: Project Mode is a full code editor in your browser with an AI that edits, runs and fixes your code, while you stay in charge. Every change can be reviewed or undone, everything is saved safely as a pull request on your GitHub, and you can ship it to your own Vercel when it is ready.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- You can ask it to write, fix or explain code\n- You can ask it to make a GitHub repo and push your code\n- Debug an error in your code.\n- Explain how auth works in this repo\n- Build a landing page for your idea.\n- Write SQL queries from plain English.\n- Write Python and run it for you.\n- List all my Supabase projects\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| GitHub | Repos, files, issues, pull requests and code search |\n| Vercel | Create projects, add env variables, deploy a branch |\n| Supabase | List projects, run SQL, see storage buckets |\n| Sanity CMS | Query, create and update documents |\n| Slack | Read and send messages, create canvases |\n| Notion | Search, create and update pages |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Code in a browser editor with an AI agent that edits files, runs your build and opens pull requests on your GitHub. Review every change. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI coding agent with GitHub pull requests | Classgrid Project Mode"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-engineering"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "A full code editor in your browser. The agent edits your files, runs your build and opens a pull request on your GitHub."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:38Z",
+    "_id": "solution-page-for-jr-colleges",
+    "_rev": "RVHES3swKkzmvYjsUtqxKp",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:02Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Call the number on WhatsApp and just say what you need. You can interrupt any time. Ask a quick question and get the answer on the call, using your connected apps."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Talk, don't type"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Everything you asked for becomes one job. The agent does it in a new chat and sends the result to your WhatsApp: text, links and real files like PDFs. Coding work goes to your Project Mode project."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Hang up. It keeps working."
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Forgot something? Send a photo, a PDF or a few more details on WhatsApp while the task is running, and the agent adds it to the job. You can also email agent@classgrid.in."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Add more after the call"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Connect Gmail, Calendar, Drive, Notion, GitHub or Vercel once, and use them by voice. Send an email, check your day, find a file or fix your site."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Works with your apps"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "No. It's a WhatsApp voice call to +91 81492 77038. A normal phone call won't reach the AI."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is this a normal phone call?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Anyone with a Classgrid AI account who has verified their WhatsApp number in the app first. The number must be on only one account."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Who can call?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "English only."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "What language does it speak?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Up to 15 minutes. The agent keeps working on your task after you hang up."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How long can a call be?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Texts add details to a task that's already running. To start a new task, call the number on WhatsApp or email agent@classgrid.in."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I just text the number instead?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Calls and tasks use your Classgrid AI credits. It's free to start, and you top up when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Does it cost extra?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Call your AI agent on WhatsApp"
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "WhatsApp calls"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nWith Classgrid AI you can give work to your AI agent just by talking to it on a WhatsApp call. You do not need to open the app or type anything. You call the Classgrid number, +91 81492 77038, on WhatsApp, say what you need in your own words, hang up, and the agent does the work and sends you the result on WhatsApp. It is like calling a smart assistant who then goes away and gets the job done for you.\n\nGetting ready takes a minute and you only do it once. You sign up on chat.classgrid.in with your email, then verify your WhatsApp number in the app with a six-digit code that arrives on WhatsApp. After that, your number is linked to your account and the AI knows it is you whenever you call.\n\nWhen you call, the AI picks up and greets you by your first name: \"Hi, this is Classgrid AI. What can I do for you?\" You talk normally, like on any phone call. You can interrupt it at any time and it will stop and listen. It speaks in English. Each call can last up to fifteen minutes, which is plenty of time to explain a few jobs.\n\nWhile you are on the call, the AI can answer you live. It can look things up, check your connected apps like Gmail, Google Calendar, Google Drive, Notion or GitHub, and tell you the answer right there on the call. If the answer takes a bit longer to find, it does not keep you waiting, it simply sends the answer to you on WhatsApp a little later.\n\nFor bigger jobs, the AI notes down what you asked and starts working as soon as you hang up. It sends you \"Got it\" on WhatsApp so you know it has your request. Then your agent does the work in the background, with all its normal powers: searching the web, writing emails, making reports and PDFs, building or fixing a website, and using your connected apps. Coding jobs go into Project Mode by themselves. When it is done, you get the result on WhatsApp with a link to the full chat, and files like PDFs arrive as real files you can open straight away.\n\nYou can add more after you hang up. If you forgot something, just send a WhatsApp message, a photo or a document while the job is still running, and the agent will use it. You can also email extra files to agent@classgrid.in. The agent can keep working on a job for up to two days, waiting for your replies when it needs them.\n\nThis is useful in many everyday moments. You can call while driving and ask it to email a client that the quote is approved. You can call in the morning to hear what is on your calendar today. You can describe a report out loud, hang up, and get the finished PDF on WhatsApp. You can ask it to find last week's invoice in your Drive. You can even ask it to fix the contact form on your website while you are away from your laptop.\n\nIt is safe and personal. Only a verified WhatsApp number that belongs to one Classgrid account can use the calls, so nobody else can talk to your agent. If an unknown number calls, it gets a message explaining how to sign up and verify first. There is a fair daily limit on calls for each number, and calls use your normal Classgrid AI credits.\n\nA few things to know. It is a WhatsApp voice call, so a normal phone call to the number will not reach the AI. It speaks in English. A WhatsApp text on its own does not start a new job; you start a job by calling or by emailing agent@classgrid.in, and then your messages are added to that job.\n\nHow it compares, as of October 2026: most big AI assistants cannot be called on WhatsApp in India today. Grok Bot can make calls to other people for you, but you cannot call it. OpenAI's Dots works inside ChatGPT, Slack and Teams, not on WhatsApp or calls. Meta's Muse is only in the US. Classgrid AI lets you call it on WhatsApp in India, and it does real work after the call and sends the results back to you.\n\nIn short: call +91 81492 77038 on WhatsApp, say what you need, hang up, and your Classgrid AI agent gets it done and sends you the result on WhatsApp.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Email Mr. Rao that the quote is approved.\n- What's on my calendar today?\n- Find last week's invoice in my Drive.\n- Fix the contact form on my site.\n- Make a one-page PDF of what I just told you and send it here.\n- Write a short report on our three biggest customers and send me the PDF.\n- Add lunch with Arjun to my calendar tomorrow at 1.\n- Save notes from this call to a new Notion page.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Send an email just by saying it |\n| Google Calendar | Hear your day and add events |\n| Google Drive | Find and read files in your Drive |\n| Notion | Save notes from your call to a page |\n| GitHub | Fix your site with a pull request |\n| Vercel | Deploy your site's branch as a preview |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "WhatsApp-call Classgrid AI on +91 81492 77038, say what you need, hang up, and get the result on WhatsApp: emails sent, PDFs made, sites fixed."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Call Classgrid AI on WhatsApp | AI agent you can call"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-jr-colleges"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Say what you need, hang up, and get the result on WhatsApp."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:35Z",
+    "_id": "solution-page-for-schools",
+    "_rev": "s0mjsvMLcxDn6CvMzAq62Y",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:56:57Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "The agent searches the web with sources, reads any file, writes and runs code, makes images and PDFs, publishes websites and sends email. It picks the right tool for each step and shows you what it did."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Tools that actually do the work"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Answers come as real cards: charts, diagrams, flashcards, quizzes you can tap, day planners, live weather, stock prices, maps and countdowns. The agent can even build small interactive tools for you, like a poll or a calculator."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Answers you can use, not just read"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Give it a long job and close the tab. The agent keeps going for up to 48 hours, asks you on WhatsApp if it needs something, and sends the result when it's done. Hand off work by email to agent@classgrid.in or by a WhatsApp call, and set reminders that arrive by email and WhatsApp at the time you choose."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Works while you're away"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Connect 21 apps from the AI Hub and the agent works inside them as you. Let Auto pick the model for each message, or choose from Claude, DeepSeek and more."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Your apps and your choice of model"
+        }
+      }
+    ],
+    "category": "industry",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "Search the web with sources, read your files, run Python, make charts, images, PDFs and websites, work in your connected apps, and keep working in the background on long tasks."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "What can the agent do?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Auto picks one for each message. Or choose Claude Haiku, Sonnet, Opus or Fable, DeepSeek V4, or open models like Kimi, GLM, Qwen and Llama."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which models can I use?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "You set the time and the message. At that time it's sent to your email, and to WhatsApp if you verified your number. It can be once, daily, weekly or on the days you choose."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How do reminders work?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Long tasks run for up to 48 hours and send the result to WhatsApp and the chat."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it keep working after I close the tab?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Incognito chats aren't saved to your history, and they're deleted when you close them."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can I keep a chat private?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Sign up with your email. Top up only when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is it free to start?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "One agent. Real work done."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Agent mode"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nAgent mode is the main chat in Classgrid AI at chat.classgrid.in. You open it, type what you want in normal words, and the agent does the work for you. It is not only a chatbot that answers questions. It can search, read, write, make files, build small websites, send emails and keep working on a job in the background, and it comes back to you when the job is done.\n\nIt can look things up on the internet for you. When it answers from the web, it puts small numbers next to its sentences, and each number links to the page it read, so you can check where every fact came from. If you give it a link, it can open that page and read the whole thing, even a long one, and then explain it, summarise it or pull out what you need.\n\nIt can read your files. You can drop in a PDF, a Word file, a PowerPoint (it also reads the speaker notes), an Excel sheet, a CSV, a plain text file, a photo or a voice recording, up to six files in one message. It understands what is inside, so you can ask it to turn a long document into notes, find the important numbers in a report, explain a chart in a photo, or turn a voice note into written text.\n\nIt can make things for you, not just talk about them. It can draw an image from your idea, like a poster or a thumbnail. It can write and run real Python or JavaScript code on its own safe computer, so it can clean a messy spreadsheet, do the maths, draw charts and build files. It can hand you back finished files you can download: a PDF report, a Word document, a PowerPoint deck, an Excel sheet, or even a trimmed video or an audio clip.\n\nIt can build a simple website and put it live for you. You describe the site, the agent writes it, and it publishes it at your own address like yourname.sites.classgrid.in, all inside one chat. This is great for a portfolio, a landing page for an idea, or a small event page.\n\nIts answers are not only plain text. When it helps, it shows proper cards inside the chat: charts and diagrams, flashcards you can flip, quizzes you can tap to answer, a day-by-day planner with tick-boxes, a countdown to a date, live weather, a live stock price, a map with a pin, star ratings and score bars, and even small interactive cards it builds itself, like a poll, a calculator or a quick game. Maths is shown with proper symbols, the way it looks in print.\n\nIt can work for you in the background, for a long time. If a job needs waiting, like waiting for your reply or for a later time, the agent can pause, wake up later and carry on, for up to two days. When it finishes, it tells you \"Task completed\" and gives you the link to the chat. You can also email your work to its own address, agent@classgrid.in, and it will pick it up and work on it.\n\nIt can send you reminders. You can ask it to remind you once, every day, every week or on the days you pick. At that time you get the reminder by email, and on WhatsApp too if you have verified your number. The reminder text is written when you set it up, so it is perfect for \"pay the electricity bill tonight\" or \"call the client at 4\", not for fresh news every morning.\n\nIt can work inside the apps you already use, once you connect them from the AI Hub. With Gmail it can read and send your emails. With Google Drive it can find and read your files. With Google Calendar it can tell you your day and add events. It also connects to Notion, Slack, GitHub, Google Classroom, Google Meet, Google Forms, Outlook, Microsoft Teams, Zoom, Canva, Spotify, YouTube, Supabase, Sanity, Facebook Pages, Instagram Business, Vercel and WhatsApp Business. You can see all of them on the Plugins page.\n\nYou choose how smart or how fast it should be. \"Auto\" picks the best model for each message by itself, or you can pick one yourself: Claude (Haiku, Sonnet, Opus and the most powerful one, Fable), DeepSeek, and more than ten other well-known models. You can switch any time, even in the middle of a chat.\n\nIt keeps your work tidy and private. Every file you upload or the agent makes is saved in your Library, where you can search and sort them. You can teach the agent about yourself, like your name, your job and how you like answers, and it will remember that in every chat. If you want a chat that is not saved at all, you can open an Incognito chat, and it disappears when you close it. You can delete any chat and disconnect any app whenever you want.\n\nYou can also reach the agent on WhatsApp. After you verify your number, you can call the Classgrid number on WhatsApp, tell it what you need, hang up, and get the result back on WhatsApp. You can share any chat as a read-only link, or invite up to three other people into the same chat so you all work with the agent together.\n\nIn short: Agent mode is like having a smart helper who can research, read, write, calculate, design, build and remind, all from one chat box, and who keeps going even after you close the tab. It is free to start, and you top up only when you need more.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Analyse a file in seconds.\n- Search the web with sources.\n- Draw a chart from your data.\n- Create a PDF report in minutes.\n- Build and host a website.\n- Get reminders on WhatsApp.\n- Turn a voice note into text.\n- Write Python and run it for you.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Gmail | Search, read and send your emails |\n| Google Drive | Find, read and upload your files |\n| Google Calendar | See your day and add events |\n| Notion | Search, read, create and update pages |\n| Slack | Read and send messages in channels |\n| GitHub | Read code, open issues and pull requests |\n| Google Classroom | Read courses and post announcements |\n| Google Meet | Create meetings with a Meet link |\n| Google Forms | Make forms and read the responses |\n| Microsoft Outlook | Read and send email, create meetings |\n| Microsoft Teams | Read and send channel messages |\n| Zoom | List and create Zoom meetings |\n| WhatsApp Business | Send texts from your Business account |\n| Vercel | Create projects and deploy branches |\n| Canva | Create new designs and export them |\n| Spotify | Search music and control playback |\n| YouTube | Search videos and read comments |\n| Supabase | Run SQL queries on your projects |\n| Sanity CMS | Query, create and update documents |\n| Facebook Pages | Publish posts and reply to comments |\n| Instagram Business | Publish image posts and read insights |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Search with sources, read files, run code, make charts, PDFs and websites, use your apps and keep working for up to 48 hours. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "Agent mode: an AI agent that does real work | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-schools"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Search the web, read your files, run code, make documents and websites, and keep working in the background, all from one chat."
+    }
+  },
+  {
+    "_createdAt": "2026-05-10T07:12:42Z",
+    "_id": "solution-page-for-students",
+    "_rev": "YfZj5VEMNrIVujHbdXDaeB",
+    "_type": "solutionPage",
+    "_updatedAt": "2026-10-28T03:57:04Z",
+    "capabilities": [
+      {
+        "_key": "cap0",
+        "description": {
+          "_type": "localeText",
+          "en": "Drop in a PDF, Word file, slides, an Excel sheet, a CSV, a photo or a voice recording. You can add up to 6 files in one message. Slides include their speaker notes, and voice notes are turned into text first."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Reads almost any file"
+        }
+      },
+      {
+        "_key": "cap1",
+        "description": {
+          "_type": "localeText",
+          "en": "Ask for a report, a letter, slides or a sheet. The agent writes it and gives you a file to download: PDF, Word, PowerPoint or Excel. It can also email the file to you."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Makes files you can use"
+        }
+      },
+      {
+        "_key": "cap2",
+        "description": {
+          "_type": "localeText",
+          "en": "Upload an Excel or CSV file. The agent cleans it up, works out the numbers with Python and draws clear charts. You get a short report you can download."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Charts from your spreadsheets"
+        }
+      },
+      {
+        "_key": "cap3",
+        "description": {
+          "_type": "localeText",
+          "en": "Turn any file into flashcards and quick quizzes you tap to answer, so you remember what matters. Tell it a goal and a date, and it makes a day-by-day plan with a countdown. It works for a new language, a new skill or a big project."
+        },
+        "feature": {
+          "_type": "localeString",
+          "en": "Learn it, plan it, remember it"
+        }
+      }
+    ],
+    "category": "role",
+    "faqs": [
+      {
+        "_key": "faq0",
+        "answer": {
+          "_type": "localeText",
+          "en": "PDF, Word, PowerPoint (with speaker notes), Excel, CSV and text files, plus photos and audio. You can add up to 6 files in one message."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Which files can it read?"
+        }
+      },
+      {
+        "_key": "faq1",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. It can give you PDF, Word, PowerPoint and Excel files to download, and it can email them to you."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it make Word, PowerPoint or Excel files?"
+        }
+      },
+      {
+        "_key": "faq2",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Send a photo and it reads what is in it, like a printed page, a receipt or a chart."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Can it read a photo of a page?"
+        }
+      },
+      {
+        "_key": "faq3",
+        "answer": {
+          "_type": "localeText",
+          "en": "It runs Python on its own safe computer to clean data, do the maths and draw charts. You can see each step it took."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "How does it work out the numbers?"
+        }
+      },
+      {
+        "_key": "faq4",
+        "answer": {
+          "_type": "localeText",
+          "en": "Every file you upload or the agent makes is saved in your Library, where you can search and sort them. For chats you don't want saved, use Incognito."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Where are my files kept?"
+        }
+      },
+      {
+        "_key": "faq5",
+        "answer": {
+          "_type": "localeText",
+          "en": "Yes. Sign up with your email and start for free. Top up only when you need more."
+        },
+        "question": {
+          "_type": "localeString",
+          "en": "Is it free to start?"
+        }
+      }
+    ],
+    "headline": {
+      "_type": "localeString",
+      "en": "Drop in a file. Get it done."
+    },
+    "label": {
+      "_type": "localeString",
+      "en": "Documents & files"
+    },
+    "lastUpdatedAt": "2026-10-28T03:56:57.107Z",
+    "markdownBody": "## Overview\n\nClassgrid AI can read your files and do real work with them. You open chat.classgrid.in, drop in a file and say what you want in normal words. It does not just describe the file. It can pull out what matters, change it into something new and hand you back a finished file. It is free to start, and you top up only when you need more.\n\nIt reads almost any everyday file. You can give it a PDF, a Word file, a PowerPoint, an Excel sheet, a CSV, a plain text file, a photo or a voice recording. You can add up to 6 files in one message. For slides, it reads the speaker notes too. For voice recordings, it first turns the speech into text.\n\nIt can turn a long file into something short. Ask for clear notes, a summary, the key numbers or a list of things to follow up on. You can ask questions about the file, like \"when does this contract end?\", and it answers from what is inside. If you give it a few files at once, it can compare them for you.\n\nIt can make new files you can use straight away. Ask for a report, a letter, a proposal, a slide deck or a sheet. You get a file to download as PDF, Word, PowerPoint or Excel. It can also email the file to you. If something is not right, just ask for a change and it makes a new version.\n\nIt is good with spreadsheets. Upload an Excel or CSV file, and it can remove repeated rows, fix messy columns and work out totals and averages. It does the maths by running Python on its own safe computer, so you can see each step. Then it draws clear charts and can put everything into a short PDF report.\n\nIt can help you learn or remember anything. From any file, it can make flashcards you flip with a tap, and quick quizzes where you tap an answer and see your score. This works for a new language, a manual at work, a recipe book or any topic you want to know better.\n\nIt can plan big goals day by day. Tell it what you want to finish and by when, and it makes a plan with a task for each day, review days and short breaks. You can tick off each day as you go, and a countdown shows how much time is left. If you fall behind, ask it to make a new plan from today.\n\nIt works with the places your files already live. Connect Google Drive and it can find and read your files and save new ones there. Connect Gmail or Outlook and it can read your emails, and with Gmail it can read their attachments too. It also works with Notion pages and Google Forms responses.\n\nYour files stay easy to find. Everything you upload and everything the agent makes is saved in your Library, where you can search and sort it. If you don't want a chat saved, open an Incognito chat. In short: drop in a file, and get notes, answers, charts, plans or a brand new file back.\n\n## Things to try\n\nType any of these in Classgrid AI:\n\n- Analyse a file in seconds.\n- Turn a PDF into clear notes.\n- Summarize the product roadmap presentation\n- Create a PDF report in minutes.\n- Draw a chart from your data.\n- Clean up messy spreadsheet data.\n- Turn a voice note into text.\n- Create a quiz from a PDF.\n\n## Works with your apps\n\n| App | What it does |\n|---|---|\n| Google Drive | Find and read your files, save new ones |\n| Gmail | Read emails and attachments, send emails |\n| Microsoft Outlook | Read and send emails |\n| Notion | Search, read, create and update pages |\n| Google Forms | Read a form and list its responses |\n\nSee every app on the [Plugins](/plugins) page.\n",
+    "seo": {
+      "metaDescription": {
+        "_type": "localeText",
+        "en": "Read PDFs, Word, PowerPoint, Excel and audio files. Get notes, summaries, charts, flashcards and new files to download. Free to start."
+      },
+      "metaTitle": {
+        "_type": "localeString",
+        "en": "AI for documents and files: PDF, Word, Excel | Classgrid AI"
+      }
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "for-students"
+    },
+    "subtitle": {
+      "_type": "localeText",
+      "en": "Read any PDF, Word, PowerPoint, Excel or audio file, and turn it into notes, charts, plans or new files you can download."
+    }
+  }
+]

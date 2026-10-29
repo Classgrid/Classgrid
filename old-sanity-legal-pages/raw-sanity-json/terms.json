@@ -1,0 +1,5094 @@
+{
+  "_createdAt": "2026-04-20T20:08:27Z",
+  "_id": "legal-terms",
+  "_rev": "8FwD3bqpuDdPQOMh1rwHqG",
+  "_system": {
+    "base": {
+      "id": "legal-terms",
+      "rev": "weF1htccz62u5yhDmMstAx"
+    }
+  },
+  "_type": "legalPage",
+  "_updatedAt": "2026-08-09T07:08:43Z",
+  "effectiveDate": "2026-04-20T00:00:00.000Z",
+  "intro": {
+    "introductionBody": "Classgrid — Educational Management Platform Operated by: Classgrid Technologies, Pune, Maharashtra, India Registered Address: Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India\n\nThese Terms of Service (\"Terms\", \"Agreement\") govern Your access to and use of the Classgrid website (classgrid.in), its sub-domain tenant websites (*.classgrid.in), the Classgrid mobile application (\"App\"), and the Classgrid ERP Platform (collectively, the \"Platform\"), operated by Classgrid Technologies (\"Company\", \"We\", \"Us\", \"Our\").\n\nBy accessing or using the Platform, You agree to be bound by these Terms. If You do not agree to these Terms, please do not access or use the Platform.\n\nIf You are accepting these Terms on behalf of a Tenant Organization (school, junior college, or coaching institute), You represent and warrant that You have the authority to bind the organization to these Terms.\n\n1. Definitions 2. Eligibility 3. Account Registration and Security 4. Platform Services 5. Subscription Plans and Payments 6. User Roles and Responsibilities 7. Acceptable Use Policy 8. Tenant Websites 9. Intellectual Property 10. User-Generated Content 11. Data Ownership and Portability 12. Privacy 13. Third-Party Services 14. Availability and Uptime 15. Limitation of Liability 16. Indemnification 17. Termination 18. Dispute Resolution 19. Governing Law and Jurisdiction 20. Modifications to Terms 21. Severability 22. Entire Agreement 23. Waiver 24. Contact Information",
+    "introductionHeading": "Introduction",
+    "scopeBody": "",
+    "scopeHeading": "Scope"
+  },
+  "lastUpdated": "2026-08-09T00:00:00.000Z",
+  "sections": [
+    {
+      "_key": "section-1",
+      "content": [
+        {
+          "_key": "block-3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"User\" / \"You\" / \"Your\""
+            },
+            {
+              "_key": "span-2",
+              "_type": "span",
+              "marks": [],
+              "text": " — Any individual who accesses or uses the Platform in any capacity."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-4",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Student\""
+            },
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": " — An individual enrolled in a Tenant Organization who uses the Platform."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Parent/Guardian\""
+            },
+            {
+              "_key": "span-8",
+              "_type": "span",
+              "marks": [],
+              "text": " — A parent or legal guardian of a Student."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-10",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Faculty\""
+            },
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": " — A teacher, professor, or educational staff member at a Tenant Organization."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-15",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Org Admin\""
+            },
+            {
+              "_key": "span-14",
+              "_type": "span",
+              "marks": [],
+              "text": " — An authorized representative of a Tenant Organization who manages the institution's account."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-21",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Tenant Organization\""
+            },
+            {
+              "_key": "span-20",
+              "_type": "span",
+              "marks": [],
+              "text": " — An educational institution (school, junior college, coaching institute) that subscribes to the Platform."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-22",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Tenant Website\""
+            },
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": " — A website hosted on a sub-domain of classgrid.in (e.g., collegename.classgrid.in) managed by a Tenant Organization."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-27",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-25",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Services\""
+            },
+            {
+              "_key": "span-26",
+              "_type": "span",
+              "marks": [],
+              "text": " — All features, tools, and functionalities provided through the Platform including the ERP system, CMS, mobile application, and tenant websites."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-30",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-28",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Content\""
+            },
+            {
+              "_key": "span-29",
+              "_type": "span",
+              "marks": [],
+              "text": " — Any text, images, videos, documents, data, or other materials uploaded, shared, or displayed on the Platform."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-33",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-31",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "\"Subscription\""
+            },
+            {
+              "_key": "span-32",
+              "_type": "span",
+              "marks": [],
+              "text": " — A paid or free plan that grants a Tenant Organization access to specific Platform features."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "definitions",
+      "title": "1. DEFINITIONS"
+    },
+    {
+      "_key": "section-2",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "2.1 Age Requirements"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "You must be at least 18 years old to create an account as an Org Admin or Faculty member."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "Students under 18 years of age may use the Platform through accounts created by their Tenant Organization, with parental/guardian consent obtained by the institution as part of the enrollment process."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "Parents/Guardians may create accounts to monitor their ward's academic progress."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "2.2 Institutional Requirements"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "Tenant Organizations must be legally registered educational institutions or coaching centers operating in compliance with applicable Indian education laws and regulations."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "The Org Admin must be a person authorized by the institution to enter into this Agreement on its behalf."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "2.3 Geographic Availability"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform is currently available for educational institutions operating in India."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to expand or restrict geographic availability at any time."
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "eligibility",
+      "title": "2. ELIGIBILITY"
+    },
+    {
+      "_key": "section-3",
+      "content": [
+        {
+          "_key": "86c9fccc0f61",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e90c49be23a1",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "3.1 Account Creation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "7ecafaf01f50",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "97d04bf9286a",
+              "_type": "span",
+              "marks": [],
+              "text": "Institutional accounts (Tenant Organizations) are created upon submission of an application through the Platform and subsequent approval by the Company, or through the Company's sales team."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "94d5ddb83461",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "53f53c0276fa",
+              "_type": "span",
+              "marks": [],
+              "text": "Individual User accounts are created by one of the following methods: (a) the Tenant Organization's Org Admin creates and invites accounts directly from the admin dashboard; (b) Faculty members receive invitation links generated by the Platform containing a secure, time-limited activation token; (c) Students self-register through the Platform using a valid email address and the Organization Honor Code provided by their institution; or (d) accounts are provisioned automatically through the Admissions module upon successful admission."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ee122e8faf1f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "223fbb846ecc",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform supports multiple authentication providers for account creation and sign-in, including manual email and password registration, Google, Facebook, GitHub, and LinkedIn OAuth."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3dc6cc88f489",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b73907234986",
+              "_type": "span",
+              "marks": [],
+              "text": "You agree to provide accurate, current, and complete information during registration."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e4cb718b61f7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b4f0cc6780cb",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "3.2 Account Security"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "dada61928f13",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9f76fa6cb508",
+              "_type": "span",
+              "marks": [],
+              "text": "You are responsible for maintaining the confidentiality of Your account credentials, including email, password, and session tokens."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "3ad39835d889",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4cd3f20b0831",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform enforces an automated account lockout policy. After five consecutive failed login attempts, the account is temporarily locked for a period of five minutes to prevent brute-force attacks."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9b35a30b8712",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "94e99fbe047d",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform maintains a trusted device registry. Each device from which You log in is identified by a cryptographic fingerprint (a SHA-256 hash of the user agent and network address). When a login attempt is detected from an unrecognized device, a login notification email is sent to the registered email address. The trusted device registry is limited to ten devices per account; the oldest device is removed when this limit is exceeded."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5752d4b7746d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "86f0cf0611e8",
+              "_type": "span",
+              "marks": [],
+              "text": "You agree to immediately notify Us at support@classgrid.in if You become aware of any unauthorized use of Your account."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1946725e03e6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b2af778424d1",
+              "_type": "span",
+              "marks": [],
+              "text": "We are not liable for any loss or damage arising from Your failure to maintain the security of Your account credentials."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "78e4e83f9237",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "d4ff182f790b",
+              "_type": "span",
+              "marks": [],
+              "text": "We recommend using strong, unique passwords and enabling all available security features provided by the Platform."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0ed3d9a0688b",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "0484a9f5734b",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "3.3 One Account Per User"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "470a3a324774",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "47596bd26b14",
+              "_type": "span",
+              "marks": [],
+              "text": "Each individual should have only one User account within a Tenant Organization."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0d3aecb5dbe1",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e408dac05845",
+              "_type": "span",
+              "marks": [],
+              "text": "Sharing of account credentials between individuals is strictly prohibited."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2ed85e4055b2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "84bef611076c",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to suspend or terminate duplicate or shared accounts."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "9aab27318f2e",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "2fae5d038bce",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "3.4 Account Types and Roles"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "0d7e1c15dcc0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7e07234d34c4",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform enforces role-based access control (RBAC). Each User is assigned a primary role that determines the dashboard view and access permissions. The Platform also supports an additional roles system, allowing a single User to hold multiple roles simultaneously (for example, a Head of Department who also teaches may hold the roles of HOD and Faculty concurrently)."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "72db8d65583f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "aaa6e219ea0c",
+              "_type": "span",
+              "marks": [],
+              "text": "The following primary roles exist:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "rolesTable2026",
+          "_type": "legalTable",
+          "headers": [
+            "Role",
+            "Created By",
+            "Access Level"
+          ],
+          "rows": [
+            {
+              "_key": "r01",
+              "_type": "row",
+              "cells": [
+                "Org Admin",
+                "Company or Tenant Organization",
+                "Full administrative control of the Tenant Organization, including user management, billing, classrooms, and configuration"
+              ]
+            },
+            {
+              "_key": "r02",
+              "_type": "row",
+              "cells": [
+                "Faculty",
+                "Org Admin (via invitation)",
+                "Classroom management, attendance, grading, assignments, and student interactions"
+              ]
+            },
+            {
+              "_key": "r03",
+              "_type": "row",
+              "cells": [
+                "Student",
+                "Org Admin, Admissions Module, or self-registration via Honor Code",
+                "Classroom participation, assignments, notes, grades, and attendance records"
+              ]
+            },
+            {
+              "_key": "r04",
+              "_type": "row",
+              "cells": [
+                "HOD (Head of Department)",
+                "Org Admin",
+                "Department-level oversight, faculty supervision, and academic coordination"
+              ]
+            },
+            {
+              "_key": "r05",
+              "_type": "row",
+              "cells": [
+                "Principal",
+                "Org Admin",
+                "Institution-level administrative access and oversight of all departments"
+              ]
+            },
+            {
+              "_key": "r06",
+              "_type": "row",
+              "cells": [
+                "Vice Principal",
+                "Org Admin",
+                "Supporting institution-level administrative access"
+              ]
+            },
+            {
+              "_key": "r07",
+              "_type": "row",
+              "cells": [
+                "Exam Controller",
+                "Org Admin",
+                "Examination scheduling, grading policies, and result management"
+              ]
+            },
+            {
+              "_key": "r08",
+              "_type": "row",
+              "cells": [
+                "Fee Manager",
+                "Org Admin",
+                "Fee structure configuration, invoice generation, and payment tracking"
+              ]
+            },
+            {
+              "_key": "r09",
+              "_type": "row",
+              "cells": [
+                "Admission Head",
+                "Org Admin",
+                "Admissions pipeline management, application review, and enrollment decisions"
+              ]
+            },
+            {
+              "_key": "r10",
+              "_type": "row",
+              "cells": [
+                "Admission Verifier",
+                "Org Admin",
+                "Document verification and applicant credential review"
+              ]
+            },
+            {
+              "_key": "r11",
+              "_type": "row",
+              "cells": [
+                "Admission Counselor",
+                "Org Admin",
+                "Applicant guidance, inquiry handling, and follow-up management"
+              ]
+            },
+            {
+              "_key": "r12",
+              "_type": "row",
+              "cells": [
+                "Admission Clerk",
+                "Org Admin",
+                "Administrative data entry and applicant record maintenance"
+              ]
+            },
+            {
+              "_key": "r13",
+              "_type": "row",
+              "cells": [
+                "TPO Officer",
+                "Org Admin",
+                "Training and placement operations, company liaison, and student career services"
+              ]
+            },
+            {
+              "_key": "r14",
+              "_type": "row",
+              "cells": [
+                "Transport Manager",
+                "Org Admin",
+                "Vehicle fleet, route planning, and student transport logistics"
+              ]
+            },
+            {
+              "_key": "r15",
+              "_type": "row",
+              "cells": [
+                "Library Manager",
+                "Org Admin",
+                "Library catalog management, issue/return tracking, and inventory"
+              ]
+            },
+            {
+              "_key": "r16",
+              "_type": "row",
+              "cells": [
+                "Counselor",
+                "Org Admin",
+                "Student well-being, academic advising, and pastoral support"
+              ]
+            },
+            {
+              "_key": "r17",
+              "_type": "row",
+              "cells": [
+                "Coordinator",
+                "Org Admin",
+                "Cross-functional coordination, event management, and workflow facilitation"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "account-registration-and-security",
+      "title": "3. ACCOUNT REGISTRATION AND SECURITY"
+    },
+    {
+      "_key": "section-4",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "4.1 ERP and Institutional Management"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform provides the following core services (availability depends on subscription plan):"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Attendance Management"
+            },
+            {
+              "_key": "span-6",
+              "_type": "span",
+              "marks": [],
+              "text": " — Digital attendance tracking with QR code and manual entry support"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-8",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Academic Management"
+            },
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": " — Grade entry, report card generation, assignment distribution and submission tracking"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-13",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Fee Management"
+            },
+            {
+              "_key": "span-12",
+              "_type": "span",
+              "marks": [],
+              "text": " — Fee structure definition, payment tracking, receipt generation, and installment management"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-14",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Timetable Management"
+            },
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": " — Class scheduling, faculty allocation, and timetable display"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-19",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Communication"
+            },
+            {
+              "_key": "span-18",
+              "_type": "span",
+              "marks": [],
+              "text": " — Institutional notices, circulars, announcements, and messaging between stakeholders"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-20",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Student Information System"
+            },
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": " — Comprehensive student records including enrollment, academic history, and personal details"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-25",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Faculty Management"
+            },
+            {
+              "_key": "span-24",
+              "_type": "span",
+              "marks": [],
+              "text": " — Faculty profiles, attendance, and teaching load management"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-28",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-26",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Library Management"
+            },
+            {
+              "_key": "span-27",
+              "_type": "span",
+              "marks": [],
+              "text": " — Book catalogue, issue/return tracking"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-31",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-29",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Transport Management"
+            },
+            {
+              "_key": "span-30",
+              "_type": "span",
+              "marks": [],
+              "text": " — Route management, bus tracking"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-34",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-32",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Canteen Management"
+            },
+            {
+              "_key": "span-33",
+              "_type": "span",
+              "marks": [],
+              "text": " — Menu management, order tracking"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-37",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-35",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Examination Management"
+            },
+            {
+              "_key": "span-36",
+              "_type": "span",
+              "marks": [],
+              "text": " — Exam scheduling, hall ticket generation, result processing"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-39",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-38",
+              "_type": "span",
+              "marks": [],
+              "text": "4.2 Tenant Website (CMS)"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-41",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-40",
+              "_type": "span",
+              "marks": [],
+              "text": "Tenant Organizations receive a hosted website on a sub-domain (e.g., collegename.classgrid.in)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-43",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-42",
+              "_type": "span",
+              "marks": [],
+              "text": "The CMS allows management of: Hero section, programs, notices, faculty gallery, events, blog, testimonials, alumni, fees, merit lists, mandatory disclosures, committees, infrastructure, downloads, and more"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-45",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-44",
+              "_type": "span",
+              "marks": [],
+              "text": "The tenant website design follows the Classgrid design system with customizable primary colors and branding"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-47",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-46",
+              "_type": "span",
+              "marks": [],
+              "text": "4.3 Mobile Application"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-49",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-48",
+              "_type": "span",
+              "marks": [],
+              "text": "The Classgrid mobile app (Android and iOS) provides on-the-go access to Platform features including attendance, notices, academic data, communication, and more"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-51",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-50",
+              "_type": "span",
+              "marks": [],
+              "text": "Feature availability in the mobile app may differ from the web platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-53",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-52",
+              "_type": "span",
+              "marks": [],
+              "text": "4.4 AI-Powered Features"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-55",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-54",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform may include AI-powered features such as past paper analysis, academic insights, and automated recommendations"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-57",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-56",
+              "_type": "span",
+              "marks": [],
+              "text": "AI features are advisory in nature and should not replace professional academic judgment"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-59",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-58",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to modify, suspend, or discontinue AI features at any time"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "platform-services",
+      "title": "4. PLATFORM SERVICES"
+    },
+    {
+      "_key": "section-5",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "5.1 Plans"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform offers the following subscription tiers:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "table-7",
+          "_type": "legalTable",
+          "children": [],
+          "headers": [
+            "Plan",
+            "Features",
+            "Pricing"
+          ],
+          "rows": [
+            {
+              "_key": "row-5",
+              "cells": [
+                "FREE",
+                "Basic ERP, limited features, basic tenant website",
+                "Free"
+              ]
+            },
+            {
+              "_key": "row-6",
+              "cells": [
+                "PRO",
+                "Full ERP, all modules, advanced tenant website, priority support",
+                "As per current pricing on classgrid.in"
+              ]
+            }
+          ]
+        },
+        {
+          "_key": "block-9",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-8",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to modify pricing, features, and plans at any time with 30 days prior notice to existing subscribers."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-11",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-10",
+              "_type": "span",
+              "marks": [],
+              "text": "5.2 Billing and Payment"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-13",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-12",
+              "_type": "span",
+              "marks": [],
+              "text": "Subscription fees are billed on a monthly or annual basis as selected during subscription"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-17",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-14",
+              "_type": "span",
+              "marks": [],
+              "text": "Payments are processed securely through "
+            },
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Razorpay"
+            },
+            {
+              "_key": "span-16",
+              "_type": "span",
+              "marks": [],
+              "text": ". The Company does not store Your card or banking details"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-19",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-18",
+              "_type": "span",
+              "marks": [],
+              "text": "All prices are listed in Indian Rupees (INR) and are exclusive of applicable taxes (GST at 18%)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-21",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-20",
+              "_type": "span",
+              "marks": [],
+              "text": "Invoices are generated automatically and available in the Org Admin dashboard"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-23",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-22",
+              "_type": "span",
+              "marks": [],
+              "text": "5.3 Late Payment and Suspension"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-25",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-24",
+              "_type": "span",
+              "marks": [],
+              "text": "If payment is not received within 15 days of the due date, the Company reserves the right to:"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-27",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-26",
+              "_type": "span",
+              "marks": [],
+              "text": "Send payment reminders via email"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-29",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-28",
+              "_type": "span",
+              "marks": [],
+              "text": "Restrict access to premium features"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-31",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-30",
+              "_type": "span",
+              "marks": [],
+              "text": "Suspend the Tenant Organization's account after 30 days of non-payment"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-33",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-32",
+              "_type": "span",
+              "marks": [],
+              "text": "Take the tenant website offline after 45 days of non-payment"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-35",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-34",
+              "_type": "span",
+              "marks": [],
+              "text": "Suspended accounts can be reactivated upon full payment of outstanding dues"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-37",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-36",
+              "_type": "span",
+              "marks": [],
+              "text": "5.4 Refund Policy"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-39",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-38",
+              "_type": "span",
+              "marks": [],
+              "text": "Annual subscriptions: Eligible for a pro-rated refund if cancellation is requested within 30 days of subscription start"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-41",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-40",
+              "_type": "span",
+              "marks": [],
+              "text": "Monthly subscriptions: No refund for the current billing period; cancellation takes effect at the end of the billing cycle"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-43",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-42",
+              "_type": "span",
+              "marks": [],
+              "text": "Free plan users: No charges, no refund applicable"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-45",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-44",
+              "_type": "span",
+              "marks": [],
+              "text": "Refund requests must be submitted to billing@classgrid.in with Your organization name, subscription ID, and reason for cancellation"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-47",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-46",
+              "_type": "span",
+              "marks": [],
+              "text": "Approved refunds will be processed within 14 business days via the original payment method"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-49",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-48",
+              "_type": "span",
+              "marks": [],
+              "text": "5.5 Free Plan Terms"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-51",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-50",
+              "_type": "span",
+              "marks": [],
+              "text": "The FREE plan is provided at the discretion of the Company and may be modified or discontinued at any time"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-53",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-52",
+              "_type": "span",
+              "marks": [],
+              "text": "Free plan users do not receive guaranteed uptime, priority support, or advanced features"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-55",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-54",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to place reasonable usage limits on free plan accounts"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "subscription-plans-and-payments",
+      "title": "5. SUBSCRIPTION PLANS AND PAYMENTS"
+    },
+    {
+      "_key": "section-6",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "6.1 Org Admin Responsibilities"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "As the institutional administrator, You are responsible for:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "Ensuring all institutional data entered on the Platform is accurate and up-to-date"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "Obtaining appropriate parental/guardian consent before entering minor students' data"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "Managing user accounts (creation, deactivation, role assignment) for Your institution"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "Ensuring that faculty and staff use the Platform in compliance with these Terms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "Managing content published on Your tenant website, ensuring it is accurate, lawful, and does not infringe third-party rights"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "Maintaining the confidentiality of admin credentials"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "Complying with all applicable educational regulations, board requirements, and data protection laws"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "6.2 Faculty Responsibilities"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "Using the Platform only for legitimate educational purposes"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "Maintaining the accuracy of attendance records, grades, and academic data entered"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-26",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-25",
+              "_type": "span",
+              "marks": [],
+              "text": "Not sharing login credentials with other faculty members or students"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-28",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-27",
+              "_type": "span",
+              "marks": [],
+              "text": "Following the institution's data handling policies when accessing student information"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-30",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-29",
+              "_type": "span",
+              "marks": [],
+              "text": "6.3 Student Responsibilities"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-32",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-31",
+              "_type": "span",
+              "marks": [],
+              "text": "Using the Platform for legitimate academic purposes only"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-34",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-33",
+              "_type": "span",
+              "marks": [],
+              "text": "Not sharing account credentials with other students"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-36",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-35",
+              "_type": "span",
+              "marks": [],
+              "text": "Submitting only original academic work (not plagiarized content) through the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-38",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-37",
+              "_type": "span",
+              "marks": [],
+              "text": "Treating communication through the Platform with respect and professionalism"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-40",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-39",
+              "_type": "span",
+              "marks": [],
+              "text": "6.4 Parent/Guardian Responsibilities"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-42",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-41",
+              "_type": "span",
+              "marks": [],
+              "text": "Using the Platform only to monitor their ward's academic progress and communicate with the institution"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-44",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-43",
+              "_type": "span",
+              "marks": [],
+              "text": "Not attempting to access other students' data or accounts"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-46",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-45",
+              "_type": "span",
+              "marks": [],
+              "text": "Reporting any concerns about their child's data to the Org Admin or Our support team"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "user-roles-and-responsibilities",
+      "title": "6. USER ROLES AND RESPONSIBILITIES"
+    },
+    {
+      "_key": "section-7",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "7.1 You May NOT Use the Platform To:"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "Violate any applicable local, state, national, or international law or regulation"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "Upload, post, or transmit any content that is unlawful, defamatory, obscene, offensive, threatening, abusive, harassing, or otherwise objectionable"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "Impersonate any person or entity, or falsely state or misrepresent Your affiliation with any person or entity"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "Upload viruses, malware, or any other malicious code"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "Attempt to gain unauthorized access to any part of the Platform, other User accounts, or any computer systems or networks connected to the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "Interfere with or disrupt the Platform's servers, networks, or infrastructure"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "Scrape, crawl, or use automated tools to extract data from the Platform without express written permission"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "Reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code of the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "Use the Platform for any commercial purpose other than its intended educational use"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "Send unsolicited communications (spam) through the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "Collect or harvest personal information of other Users without their consent"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-26",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-25",
+              "_type": "span",
+              "marks": [],
+              "text": "Use the Platform to discriminate against any individual or group based on caste, religion, gender, disability, or any other protected characteristic"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-28",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-27",
+              "_type": "span",
+              "marks": [],
+              "text": "Upload or publish content that infringes intellectual property rights of any third party"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-30",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-29",
+              "_type": "span",
+              "marks": [],
+              "text": "7.2 Content Standards"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-32",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-31",
+              "_type": "span",
+              "marks": [],
+              "text": "All content published on the Platform (including tenant websites, notices, blog posts, and gallery) must:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-34",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-33",
+              "_type": "span",
+              "marks": [],
+              "text": "Be accurate and not misleading"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-36",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-35",
+              "_type": "span",
+              "marks": [],
+              "text": "Comply with applicable laws including the Information Technology Act, 2000"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-38",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-37",
+              "_type": "span",
+              "marks": [],
+              "text": "Not contain hate speech, discriminatory content, or content promoting violence"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-40",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-39",
+              "_type": "span",
+              "marks": [],
+              "text": "Not infringe any third-party intellectual property rights"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-42",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-41",
+              "_type": "span",
+              "marks": [],
+              "text": "Not contain personal information of individuals without their consent"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-44",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-43",
+              "_type": "span",
+              "marks": [],
+              "text": "Be appropriate for an educational context"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-46",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-45",
+              "_type": "span",
+              "marks": [],
+              "text": "7.3 Enforcement"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-48",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-47",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-50",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-49",
+              "_type": "span",
+              "marks": [],
+              "text": "Remove any content that violates these Terms without prior notice"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-52",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-51",
+              "_type": "span",
+              "marks": [],
+              "text": "Suspend or terminate accounts that violate the Acceptable Use Policy"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-54",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-53",
+              "_type": "span",
+              "marks": [],
+              "text": "Report illegal activities to law enforcement authorities"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-56",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-55",
+              "_type": "span",
+              "marks": [],
+              "text": "Cooperate with law enforcement investigations"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "acceptable-use-policy",
+      "title": "7. ACCEPTABLE USE POLICY"
+    },
+    {
+      "_key": "section-8",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "8.1 Sub-Domain Hosting"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "Each Tenant Organization is assigned a sub-domain (e.g., collegename.classgrid.in)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "The sub-domain remains the property of the Company and is licensed to the Tenant Organization for the duration of the subscription"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "Custom domain mapping (e.g., www.collegename.edu.in → collegename.classgrid.in) may be available on PRO plans"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "8.2 Content Responsibility"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "The Tenant Organization is solely responsible for all content published on its tenant website"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company does not moderate, edit, or review tenant website content prior to publication"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to remove or disable access to content that violates these Terms, applicable law, or third-party rights"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "8.3 Website Takedown"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company may take a tenant website offline if:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "The subscription has expired or payment is overdue (as per Section 5.3)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "The content published violates these Terms or applicable law"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-26",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-25",
+              "_type": "span",
+              "marks": [],
+              "text": "A valid legal takedown notice is received"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-28",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-27",
+              "_type": "span",
+              "marks": [],
+              "text": "The Tenant Organization requests deactivation"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-30",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-29",
+              "_type": "span",
+              "marks": [],
+              "text": "8.4 SEO and Indexing"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-32",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-31",
+              "_type": "span",
+              "marks": [],
+              "text": "Tenant websites may be indexed by search engines"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-34",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-33",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company provides basic SEO setup but does not guarantee search engine rankings"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-36",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-35",
+              "_type": "span",
+              "marks": [],
+              "text": "The Tenant Organization is responsible for the accuracy of meta tags, descriptions, and other SEO elements managed through the CMS"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "tenant-websites",
+      "title": "8. TENANT WEBSITES"
+    },
+    {
+      "_key": "section-9",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "9.1 Company's Intellectual Property"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform, its underlying technology, software code, design, user interface, logos, trademarks (\"Classgrid\"), documentation, and all related intellectual property are the exclusive property of Classgrid Technologies"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "The \"Powered by Classgrid\" branding on tenant websites is mandatory and may not be removed or hidden"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "You are granted a limited, non-exclusive, non-transferable, revocable license to use the Platform for its intended purpose during the term of Your subscription"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "9.2 Restrictions"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "You may not:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "Copy, modify, distribute, or create derivative works of the Platform's software or design"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "Remove, alter, or obscure any proprietary notices, labels, or marks on the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "Sub-license, sell, rent, lease, or transfer any rights to the Platform to any third party"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "Use the Classgrid name, logo, or trademarks without prior written consent"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "9.3 Feedback"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "If You provide suggestions, ideas, feedback, or recommendations regarding the Platform, You grant the Company a worldwide, perpetual, irrevocable, royalty-free license to use, modify, and incorporate such feedback into the Platform without any obligation to You."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "intellectual-property",
+      "title": "9. INTELLECTUAL PROPERTY"
+    },
+    {
+      "_key": "section-10",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "10.1 Ownership"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "You retain ownership of all content You upload, submit, or publish on the Platform (including institutional data, student records, website content, images, and documents)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "By uploading content to the Platform, You grant the Company a limited license to host, store, display, and transmit such content solely for the purpose of providing the Platform Services"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "10.2 Content License"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "For tenant website content that is set to \"public,\" You grant the Company a license to display and distribute such content on the tenant website for public access"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company will not use Your content for advertising, marketing, or any purpose beyond operating the Platform, unless You provide explicit consent"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "10.3 Content Removal"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "You may remove Your content at any time through the Platform's admin tools"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "Upon account or subscription termination, Your content will be handled as described in the Data Retention section of Our Privacy Policy"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to remove content that violates these Terms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "user-generated-content",
+      "title": "10. USER-GENERATED CONTENT"
+    },
+    {
+      "_key": "section-11",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "11.1 Institutional Data Ownership"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "All institutional data (student records, academic data, faculty information, notices, content) entered by a Tenant Organization into the Platform remains the property of the Tenant Organization"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company acts as a Data Processor and does not claim ownership of institutional data"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "11.2 Data Portability"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "Tenant Organizations may request a full export of their institutional data at any time"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "Data exports are provided in standard machine-readable formats (CSV, PDF, JSON)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "Data export requests should be made through the Org Admin dashboard or by emailing support@classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "Data exports will be fulfilled within 30 days of the request"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "11.3 Data After Termination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "Upon subscription termination, institutional data is retained for 1 year as described in Our Privacy Policy"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "After the retention period, all data is permanently and irreversibly deleted"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company will provide at least 3 export reminders during the retention period"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "data-ownership-and-portability",
+      "title": "11. DATA OWNERSHIP AND PORTABILITY"
+    },
+    {
+      "_key": "section-12",
+      "content": [
+        {
+          "_key": "block-5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "Your privacy is important to Us. Our collection, use, storage, and sharing of Your personal information is governed by Our "
+            },
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [
+                "link-2"
+              ],
+              "text": "Privacy Policy"
+            },
+            {
+              "_key": "span-4",
+              "_type": "span",
+              "marks": [],
+              "text": ", which is incorporated into these Terms by reference."
+            }
+          ],
+          "markDefs": [
+            {
+              "_key": "link-2",
+              "_type": "link",
+              "href": "https://classgrid.in/legal/privacy-policy"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "block-7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-6",
+              "_type": "span",
+              "marks": [],
+              "text": "By using the Platform, You acknowledge that You have read and understood Our Privacy Policy."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "privacy",
+      "title": "12. PRIVACY"
+    },
+    {
+      "_key": "section-13",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "13.1 Integrations"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform integrates with third-party services including but not limited to:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Google Sign-In"
+            },
+            {
+              "_key": "span-6",
+              "_type": "span",
+              "marks": [],
+              "text": " — Authentication"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-8",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Razorpay"
+            },
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": " — Payment processing"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-13",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Supabase"
+            },
+            {
+              "_key": "span-12",
+              "_type": "span",
+              "marks": [],
+              "text": " — File storage"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-14",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "YouTube"
+            },
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": " — Video embedding"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-19",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Google Maps"
+            },
+            {
+              "_key": "span-18",
+              "_type": "span",
+              "marks": [],
+              "text": " — Location embedding"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-20",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Firebase"
+            },
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": " — Push notifications"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "13.2 Third-Party Terms"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-26",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-25",
+              "_type": "span",
+              "marks": [],
+              "text": "Your use of third-party services through the Platform is subject to the respective third party's terms of service and privacy policy. The Company is not responsible for the practices of third-party service providers."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-28",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-27",
+              "_type": "span",
+              "marks": [],
+              "text": "13.3 Third-Party Links"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-30",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-29",
+              "_type": "span",
+              "marks": [],
+              "text": "The Platform or tenant websites may contain links to external websites. The Company does not endorse, control, or take responsibility for the content or practices of these external websites."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "third-party-services",
+      "title": "13. THIRD-PARTY SERVICES"
+    },
+    {
+      "_key": "section-14",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "14.1 Service Level"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company will make reasonable efforts to maintain Platform availability"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "PRO plan subscribers receive a target uptime of 99.5% (measured monthly, excluding scheduled maintenance)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "FREE plan subscribers do not receive uptime guarantees"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "14.2 Scheduled Maintenance"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company may perform scheduled maintenance during off-peak hours (typically 1:00 AM — 5:00 AM IST)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "PRO plan subscribers will be notified at least 24 hours in advance of scheduled maintenance"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "Emergency maintenance may be performed without prior notice"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "14.3 No Guarantee"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "Despite Our best efforts, the Company does not guarantee uninterrupted, error-free, or secure access to the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company is not liable for any downtime, data loss, or inconvenience resulting from service interruptions"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "availability-and-uptime",
+      "title": "14. AVAILABILITY AND UPTIME"
+    },
+    {
+      "_key": "section-15",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "15.1 Disclaimer of Warranties"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "THE PLATFORM IS PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS. THE COMPANY EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "15.2 Limitation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE COMPANY, ITS DIRECTORS, EMPLOYEES, AGENTS, OR AFFILIATES BE LIABLE FOR:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "Any indirect, incidental, special, consequential, or punitive damages"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "Any loss of profits, data, business opportunities, or goodwill"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "Any damages arising from unauthorized access to or alteration of Your data"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "Any damages arising from Your reliance on information obtained through the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "Any damages exceeding the total fees paid by You to the Company in the twelve (12) months preceding the claim"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "15.3 Exceptions"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "Nothing in these Terms shall exclude or limit liability for:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "Death or personal injury caused by negligence"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-26",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-25",
+              "_type": "span",
+              "marks": [],
+              "text": "Fraud or fraudulent misrepresentation"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-28",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-27",
+              "_type": "span",
+              "marks": [],
+              "text": "Any liability that cannot be excluded or limited by applicable Indian law"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "limitation-of-liability",
+      "title": "15. LIMITATION OF LIABILITY"
+    },
+    {
+      "_key": "section-16",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "You agree to indemnify, defend, and hold harmless the Company, its directors, officers, employees, agents, and affiliates from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorney's fees) arising out of or related to:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "Your use or misuse of the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "Your violation of these Terms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "Your violation of any applicable law or regulation"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "Content You upload, publish, or transmit through the Platform"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "Your infringement of any third party's intellectual property or other rights"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "Any claim by a third party resulting from Your use of the Platform (including claims by students, parents, or regulatory bodies)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "This indemnification obligation shall survive termination of Your account and these Terms."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "indemnification",
+      "title": "16. INDEMNIFICATION"
+    },
+    {
+      "_key": "section-17",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "17.1 Termination by You"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "FREE plan users may discontinue use of the Platform at any time by requesting account deletion"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "PRO plan subscribers may cancel their subscription as per the refund policy in Section 5.4"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "To request account or data deletion, contact support@classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "17.2 Termination by the Company"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company may suspend or terminate Your account immediately, without prior notice, if:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "You breach any provision of these Terms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "Your payment is overdue for more than 30 days (PRO plan)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "We are required to do so by law or a court order"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "We reasonably believe that Your account is being used for illegal or unauthorized activities"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-22",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-21",
+              "_type": "span",
+              "marks": [],
+              "text": "We decide to discontinue the Platform (with at least 90 days prior notice)"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-24",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-23",
+              "_type": "span",
+              "marks": [],
+              "text": "17.3 Effect of Termination"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-26",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-25",
+              "_type": "span",
+              "marks": [],
+              "text": "Upon termination:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-28",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-27",
+              "_type": "span",
+              "marks": [],
+              "text": "Your right to access the Platform ceases immediately"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-30",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-29",
+              "_type": "span",
+              "marks": [],
+              "text": "Tenant websites are taken offline"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-32",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-31",
+              "_type": "span",
+              "marks": [],
+              "text": "Institutional data is retained for 1 year for export, then permanently deleted"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-34",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-33",
+              "_type": "span",
+              "marks": [],
+              "text": "Provisions that by their nature should survive termination (including indemnification, limitation of liability, intellectual property, and dispute resolution) shall survive"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "termination",
+      "title": "17. TERMINATION"
+    },
+    {
+      "_key": "section-18",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "18.1 Informal Resolution"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "Before filing any formal claim, You agree to attempt to resolve the dispute informally by contacting Us at support@classgrid.in. We will attempt to resolve the dispute within 30 days."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "18.2 Mediation"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "If the dispute is not resolved informally, both parties agree to attempt mediation before proceeding to arbitration or litigation. Mediation shall be conducted by a mutually agreed mediator in Pune, Maharashtra."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "18.3 Arbitration"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "If mediation fails, the dispute shall be referred to and finally resolved by arbitration in accordance with the Arbitration and Conciliation Act, 1996. The arbitration shall be conducted:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "By a sole arbitrator mutually agreed upon by both parties"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-16",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": "In the English language"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [],
+              "text": "In Pune, Maharashtra, India"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-20",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [],
+              "text": "The arbitration award shall be final and binding on both parties"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "dispute-resolution",
+      "title": "18. DISPUTE RESOLUTION"
+    },
+    {
+      "_key": "section-19",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "These Terms shall be governed by and construed in accordance with the laws of India"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "Subject to the arbitration clause above, the courts of Pune, Maharashtra, India shall have exclusive jurisdiction over any disputes arising from or related to these Terms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "The United Nations Convention on Contracts for the International Sale of Goods does not apply to these Terms"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "governing-law-and-jurisdiction",
+      "title": "19. GOVERNING LAW AND JURISDICTION"
+    },
+    {
+      "_key": "section-20",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "20.1 Changes"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [],
+              "text": "The Company reserves the right to modify these Terms at any time. When We make material changes:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [],
+              "text": "We will update the \"Last Updated\" date at the top"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-8",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-7",
+              "_type": "span",
+              "marks": [],
+              "text": "We will notify Users via email and/or in-app notification"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": "Material changes will take effect 30 days after notice"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-12",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [],
+              "text": "20.2 Acceptance"
+            }
+          ],
+          "markDefs": [],
+          "style": "h3"
+        },
+        {
+          "_key": "block-14",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-13",
+              "_type": "span",
+              "marks": [],
+              "text": "Your continued use of the Platform after the effective date of modified Terms constitutes acceptance. If You do not agree with the changes, You must discontinue use of the Platform before the effective date."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "modifications-to-terms",
+      "title": "20. MODIFICATIONS TO TERMS"
+    },
+    {
+      "_key": "section-21",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it enforceable, and the remaining provisions shall continue in full force and effect."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "severability",
+      "title": "21. SEVERABILITY"
+    },
+    {
+      "_key": "section-22",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "These Terms, together with the Privacy Policy, Disclaimer, Cookie Policy, and any Subscription Agreement, constitute the entire agreement between You and the Company regarding the use of the Platform. These Terms supersede all prior agreements, understandings, and communications between the parties, whether written or oral."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "entire-agreement",
+      "title": "22. ENTIRE AGREEMENT"
+    },
+    {
+      "_key": "section-23",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "The failure of the Company to enforce any right or provision of these Terms shall not be deemed a waiver of such right or provision. Any waiver of any provision of these Terms shall be effective only if in writing and signed by an authorized representative of the Company."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "waiver",
+      "title": "23. WAIVER"
+    },
+    {
+      "_key": "section-24",
+      "content": [
+        {
+          "_key": "block-2",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-1",
+              "_type": "span",
+              "marks": [],
+              "text": "For questions about these Terms of Service, please contact:"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-3",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Classgrid Technologies"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-7",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-5",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Email:"
+            },
+            {
+              "_key": "span-6",
+              "_type": "span",
+              "marks": [],
+              "text": " support@classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-10",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-8",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Sales:"
+            },
+            {
+              "_key": "span-9",
+              "_type": "span",
+              "marks": [],
+              "text": " sales@classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-13",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-11",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Phone:"
+            },
+            {
+              "_key": "span-12",
+              "_type": "span",
+              "marks": [],
+              "text": " +91 8623947038 / +91 8149277038"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-18",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-14",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Website:"
+            },
+            {
+              "_key": "span-15",
+              "_type": "span",
+              "marks": [],
+              "text": " "
+            },
+            {
+              "_key": "span-17",
+              "_type": "span",
+              "marks": [
+                "link-16"
+              ],
+              "text": "https://classgrid.in"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [
+            {
+              "_key": "link-16",
+              "_type": "link",
+              "href": "https://classgrid.in"
+            }
+          ],
+          "style": "normal"
+        },
+        {
+          "_key": "block-21",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-19",
+              "_type": "span",
+              "marks": [
+                "strong"
+              ],
+              "text": "Address:"
+            },
+            {
+              "_key": "span-20",
+              "_type": "span",
+              "marks": [],
+              "text": " Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India"
+            }
+          ],
+          "level": 1,
+          "listItem": "bullet",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-23",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-22",
+              "_type": "span",
+              "marks": [],
+              "text": "*This document is an electronic record within the meaning of the Information Technology Act, 2000, and the rules made thereunder. This electronic record is generated by a computer system and does not require any physical or digital signatures.*"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "block-25",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "span-24",
+              "_type": "span",
+              "marks": [],
+              "text": "*© 2026 Classgrid Technologies. All rights reserved.*"
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "id": "contact-information",
+      "title": "24. CONTACT INFORMATION"
+    }
+  ],
+  "sendSubscriberNotification": false,
+  "slug": {
+    "_type": "slug",
+    "current": "terms"
+  },
+  "summary": "Updated Section 3 (Account Registration and Security): Expanded the role-based access control (RBAC) table from 4 to 17 roles reflecting the full platform capability, including HOD, Principal, Fee Manager, Admission Head, TPO Officer, and more. Clarified account creation methods to include OAuth sign-in (Google, Facebook, GitHub, LinkedIn), self-registration via Honor Code, and Admissions module provisioning. Added details on the automated account lockout policy, trusted device fingerprinting, and login notification emails for unrecognized devices.",
+  "title": "TERMS OF SERVICE"
+}

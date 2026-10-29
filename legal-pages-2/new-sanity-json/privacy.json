@@ -1,0 +1,1466 @@
+{
+  "_id": "legal-privacy",
+  "_type": "legalPage",
+  "title": "PRIVACY POLICY",
+  "slug": {
+    "_type": "slug",
+    "current": "privacy"
+  },
+  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "effectiveDate": "2026-10-27T00:00:00.000Z",
+  "intro": {
+    "introductionHeading": "Introduction",
+    "introductionBody": "",
+    "scopeHeading": "Scope",
+    "scopeBody": "Governs all public-facing artificial intelligence services, cloud development environments, and APIs operated by Classgrid Technologies."
+  },
+  "sections": [
+    {
+      "_key": "77d88d9c107cc3e9",
+      "id": "1-introduction-scope",
+      "title": "1. INTRODUCTION & SCOPE",
+      "content": [
+        {
+          "_key": "3602e72563cfc276",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "7303648176232b8a",
+              "_type": "span",
+              "text": "Classgrid Technologies (\"**Company**\", \"**Classgrid**\", \"**We**\", \"**Us**\", or \"**Our**\"), having its registered operational address at Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India, operates the public artificial intelligence and developer platform available at [https://classgrid.in](https://classgrid.in) and [https://chat.classgrid.in](https://chat.classgrid.in), including associated APIs, developer sandboxes, voice telephony integrations, and collaborative workspaces (collectively, the \"**Platform**\" or \"**Services**\").",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "22c3049a9e4c7cee",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "2c1246946ff3fa7f",
+              "_type": "span",
+              "text": "This Privacy Policy describes how We collect, use, store, process, disclose, and protect personal data and technical telemetry when You (\"**User**\", \"**Developer**\", \"**You**\", or \"**Your**\") access or use the Platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "80e35e136601c7dd",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "1eb13f1b4343278b",
+              "_type": "span",
+              "text": "**Important Scope Notice:** The Classgrid Platform is a public-facing cloud artificial intelligence workspace, developer sandbox environment, real-time collaboration suite, and voice assistant telephony gateway. Classgrid is **not** an educational ERP, school administration portal, or student record management system. Any legacy institutional services have been fully discontinued. This Privacy Policy governs the public-facing AI platform and developer toolchain exclusively.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "351587260dc08891",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "1e2cec10f5eaa990",
+              "_type": "span",
+              "text": "By creating an account, connecting an OAuth provider (such as Google or GitHub), interacting with Our autonomous AI agents, launching cloud development sandboxes, participating in multi-user collaborative Grids, using WhatsApp voice telephony, or purchasing AI compute credits, You acknowledge and consent to the data practices described in this Privacy Policy. If You do not agree with this Policy, You must immediately cease accessing and using the Platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "cac8afbcdcd5bd5a",
+      "id": "2-legal-compliance-framework",
+      "title": "2. LEGAL & COMPLIANCE FRAMEWORK",
+      "content": [
+        {
+          "_key": "a50e4fc1ed1be4e9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "f42f6c5b5bfac1bb",
+              "_type": "span",
+              "text": "This Privacy Policy is formulated, published, and enforced in strict compliance with applicable global and Indian data protection laws, including:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5c2c45069382ad72",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2848f5f49fb3fe7f",
+              "_type": "span",
+              "text": "**The Digital Personal Data Protection Act, 2023 (DPDP Act, India)**;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f925d1be929848cd",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "621ddf6f7b6d6983",
+              "_type": "span",
+              "text": "**The Information Technology Act, 2000** and the **Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011**;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5fb7357d039abd31",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "886ead3a7c6df55b",
+              "_type": "span",
+              "text": "**The Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021**;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "825262c4362bf98e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "3bf69eb4d45747ec",
+              "_type": "span",
+              "text": "International data protection principles regarding lawfulness, fairness, purpose limitation, data minimization, accuracy, storage limitation, integrity, and confidentiality (such as the General Data Protection Regulation - GDPR where applicable to cross-border access).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e435f81f4d40f7b0",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "35c808636b015640",
+              "_type": "span",
+              "text": "Under the DPDP Act 2023, Classgrid Technologies acts as a **Data Fiduciary** for personal data directly collected from Users during account registration, profile setup, billing, and platform telemetry. When processing codebases, third-party repository contents, and agent tasks on behalf of a User or collaborative workspace team, Classgrid processes such data strictly in accordance with User instructions.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "dabc22edfd28c433",
+      "id": "3-information-we-collect",
+      "title": "3. INFORMATION WE COLLECT",
+      "content": [
+        {
+          "_key": "4cd127e625bf3eac",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "f81681d5e4aa5cdb",
+              "_type": "span",
+              "text": "We collect only the categories of data necessary to provide, secure, meter, and enhance the Platform. Data is grouped into the following categories:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c103d78dad41639a",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "e689fd9ae5eb89b5",
+              "_type": "span",
+              "text": "3.1 Account & Authentication Data",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3fa62fd4945c6f32",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d40376bc3070551f",
+              "_type": "span",
+              "text": "**OAuth Identity Data:** When You register or sign in via Google OAuth or GitHub OAuth, We receive Your verified email address, full name, avatar/profile image URL, and provider-specific unique user identifier.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3b84dd1edc55c0ef",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4f6ea803d94af642",
+              "_type": "span",
+              "text": "**Passwordless Email OTP Data:** When signing in with email, We generate, transmit, and verify cryptographically hashed, short-lived One-Time Passwords (OTPs).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c269d5bd2b83e36d",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4e672821c4788ae7",
+              "_type": "span",
+              "text": "**Session Credentials:** Cryptographically signed session tokens (JWTs) stored in secure, HttpOnly cookies or client-side storage keys, validated with constant-time comparison algorithms to prevent timing attacks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4e47f643b155f531",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "e54b3ce7c17acb2e",
+              "_type": "span",
+              "text": "3.2 Device Telemetry & Anti-Abuse Fingerprints",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "965dd34caf8c9aa9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "4e2441f35b3d06a0",
+              "_type": "span",
+              "text": "To protect the Platform, prevent credit farming, block distributed denial-of-service (DDoS) attacks, and enforce session integrity across distributed nodes, Our client applications gather non-reversible client security fingerprints:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e84fa11ebdd06ae2",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "cd1f8e9dc0d17ab8",
+              "_type": "span",
+              "text": "**Hardware Canvas & WebGL Hash:** A mathematical hash derived from client-side GPU rendering characteristics, canvas drawing output, and screen color depth.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "36e69c25eeb4949e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a46a3c70976eb2dc",
+              "_type": "span",
+              "text": "**Client System Environment:** Operating system architecture, user-agent string, browser version, client language, and screen dimensions.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "ef3796e788df7557",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e2e4a98c48aef54e",
+              "_type": "span",
+              "text": "**Network Metadata:** Public IP address, reverse DNS, autonomous system number (ASN), and Cloudflare edge geolocation indicators.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "021b286b81ad1ba4",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "73d1a94dc1edfad9",
+              "_type": "span",
+              "text": "3.3 Autonomous AI Agent & Workspace Data",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5fba6463d1317001",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "484a4158667e972f",
+              "_type": "span",
+              "text": "**Agent Tasks & Directives:** Natural language instructions, scheduled tasks, sleep intervals (`sleep_until` directives), task status history, and execution transcripts.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a3fc115522aa6b5f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "20810ecd10dae9e2",
+              "_type": "span",
+              "text": "**Execution Logs & Traceability:** Tool invocation logs, command inputs/outputs, error codes, and progress logs generated during autonomous agent runs (capped at a 48-hour continuous runtime window).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "44ad744ae0cfcc94",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "9c5bf8093208d460",
+              "_type": "span",
+              "text": "**Agent Communication Records:** Email headers, subject lines, message bodies, and recipient addresses dispatched by the agent via `agent-mail.service.js` under explicit User authorization.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9fa305f25c190515",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "f14fd9d57a9efafe",
+              "_type": "span",
+              "text": "3.4 Project Mode & Cloud Development Sandbox Data",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b454b5f4c8912d53",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "dfa3e45802804167",
+              "_type": "span",
+              "text": "**Source Code & Files:** Code files, project manifests, configuration files, and assets uploaded to or edited within cloud sandboxes (subject to a 2 megabyte individual file limit per upload).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7ae161a3a934efbe",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "cf1d4672d6c52026",
+              "_type": "span",
+              "text": "**Terminal Execution History:** Command strings executed in ephemeral Linux sandbox containers via secure NodeSSH sessions, including standard output (`stdout`) and standard error (`stderr`).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d3282113169a59b0",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5cf8fcda8248fa52",
+              "_type": "span",
+              "text": "**GitHub Integration Artifacts:** Dynamic, time-limited GitHub App installation tokens (`repoAppToken`), repository clones, branches, automated commits marked with `Co-authored-by: Classgrid AI`, and pull requests generated on Your behalf.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "317373f63cd0b0b1",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "a74d2dab80f725bf",
+              "_type": "span",
+              "text": "3.5 Grids Real-Time Collaborative Workspace Data",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f17d45d61ac7b332",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2315aca9c1170305",
+              "_type": "span",
+              "text": "**Multi-User Collaboration Logs:** Chat messages, shared prompt inputs, AI streaming response events, and real-time cursor/presence states shared among participants in a Grid room (capped at 4 users per Grid).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "793121e95b090fe0",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "24a76fc633fe1449",
+              "_type": "span",
+              "text": "**Privacy Preferences (`hideEmail`):** Settings chosen by collaborators to conceal their verified email address from non-admin participants within a multi-user Grid room.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1edde020f754dff1",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "695f0a1bc5315aa2",
+              "_type": "span",
+              "text": "**Room Invite Metadata:** Cryptographically secure 12-byte base64url invitation tokens, join timestamps, and authorization state.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "38bd3c5b5d90ade7",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "ea1da68242087772",
+              "_type": "span",
+              "text": "3.6 WhatsApp AI Voice Telephony Data",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "eaaf2e135e4db3cc",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0b743c8383f027e1",
+              "_type": "span",
+              "text": "**Phone Number Binding:** Verified telephone numbers linked 1-to-1 with Your registered Classgrid account.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "587db9200c17afde",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2c164c2948ea3cd9",
+              "_type": "span",
+              "text": "**Real-Time Audio Streams:** WebRTC 48 kHz Opus audio packets received during incoming and outgoing voice assistant phone calls via Meta's WhatsApp Calling Cloud API.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9fa6a09ee37d241e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "52f326a158a9fd31",
+              "_type": "span",
+              "text": "**Transcripts & Synthesis Buffers:** Transient speech-to-text transcripts generated via Whisper STT, text responses generated by LLM reasoning engines (Claude Haiku / DeepSeek), and synthesized text-to-speech audio generated via Aura TTS.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f7a7f4004f58162c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "355e448c34ff7805",
+              "_type": "span",
+              "text": "**Call Metadata:** Call connection timestamps, duration metrics (subject to a 15-minute maximum call limit), call termination reason codes, and automated post-call background task dispatch triggers.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "853ec5a4a7cf408f",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "13ee10271bc72cee",
+              "_type": "span",
+              "text": "3.7 Financial, Billing & Usage Telemetry Data",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a4775189ed3ad804",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "750ea030c057d69e",
+              "_type": "span",
+              "text": "**Transaction Records:** Payment order IDs, transaction references, Razorpay payment identifiers, and invoice amounts. **We do not store complete credit card numbers, debit card numbers, or UPI PINs.** All sensitive banking and card data is handled directly by Razorpay (an RBI-authorized payment aggregator).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "57aedbf8a850591a",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c4c0ecf0667d24d5",
+              "_type": "span",
+              "text": "**Tax Compliance Records:** Indian Goods & Services Tax (GST) numbers, legal entity names, state codes, and billing addresses required for issuing valid GST tax invoices under Indian law.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "64c3cdb2a5ef6a7e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "22cc4adb6aa059a1",
+              "_type": "span",
+              "text": "**AI Token Metering Records:** Input tokens, output tokens, prompt cache read tokens, prompt cache creation tokens, model identifiers, and compute credit deductions recorded per inference cycle against the DeepSeek V4 Pro 1.0x baseline unit standard.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "bda2cc78a2cd1585",
+      "id": "4-how-we-use-your-information",
+      "title": "4. HOW WE USE YOUR INFORMATION",
+      "content": [
+        {
+          "_key": "f477ad89ceb2392c",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "1e2b1b5a8192fa7d",
+              "_type": "span",
+              "text": "We process personal and technical data strictly for the following lawful purposes:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a98fed0135f61dc5",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "25f54905601db5c1",
+              "_type": "span",
+              "text": "**Service Provision & Workflow Execution:** Creating accounts, authenticating sessions, routing WebSocket payloads, provisioning Linux sandbox containers, and executing autonomous agent tasks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "89c01e41638de5d6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f9833d0365f61b06",
+              "_type": "span",
+              "text": "**AI Inference & Voice Telephony:** Processing natural language prompts through dual-tier LLM infrastructure (GLM-4.7-Flash for low-latency classification and triage; DeepSeek V4 Pro / Claude 3.5 Sonnet for deep reasoning), and executing real-time voice speech pipelines.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "92b6f72c47a34bf3",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "552e67037d6c5d14",
+              "_type": "span",
+              "text": "**Usage Metering & Account Billing:** Calculating token consumption, applying 90%+ prompt caching cost reductions, deducting AI compute credits in real time, and maintaining zero-negative account balance guardrails.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2b9421129a8b6172",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "3e03ac17012ac4a1",
+              "_type": "span",
+              "text": "**Security & Abuse Mitigation:** Detecting multiple fake accounts created to siphon free weekly promotional credits, mitigating DDoS attacks, identifying botnets, and enforcing container isolation boundaries.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1159567a8fdac93f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4a34cbb0d404d6d5",
+              "_type": "span",
+              "text": "**Git & Repository Synchronization:** Authorizing dynamic GitHub App tokens to enable branch commits, automated issue resolution, and repository pull requests.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a2ee046a117f179c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "8e81b36988041a0c",
+              "_type": "span",
+              "text": "**Regulatory Compliance:** Generating GST-compliant tax invoices, responding to lawful government data access requests under the IT Act 2000, and enforcing intellectual property rights.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "f7603ef7908f79c0",
+      "id": "5-artificial-intelligence-model-training-commitments",
+      "title": "5. ARTIFICIAL INTELLIGENCE & MODEL TRAINING COMMITMENTS",
+      "content": [
+        {
+          "_key": "000697cfd5f8c630",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "f4f358a77664d245",
+              "_type": "span",
+              "text": "We respect Your intellectual property and code confidentiality. Our AI processing adheres to the following strict principles:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f01b46bbca718b38",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7154b5d8a5b883e8",
+              "_type": "span",
+              "text": "**Zero Foundation Model Training on Private Code:** We do **not** use Your proprietary source code, private sandbox files, private prompt instructions, or personal data to train public foundation models without Your affirmative, explicit written consent.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "da1bd6044f1c7a0f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d466ed08c4807cc6",
+              "_type": "span",
+              "text": "**Multi-Model Inference Routing:** Depending on task complexity, queries are routed through specialized model endpoints (e.g., GLM-4.7-Flash for rapid triage and classification; DeepSeek V4 Pro and Claude 3.5 Sonnet for code synthesis and analytical reasoning).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e7f059e36ede79de",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c108d31058c78679",
+              "_type": "span",
+              "text": "**Prompt Caching Security:** Shared prefix prompt caches are isolated to tenant-safe, cryptographic memory spaces to optimize execution speed without leaking prompt boundaries across unrelated accounts.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "f5b9cad5d3146365",
+      "id": "6-disclosure-sharing-of-information",
+      "title": "6. DISCLOSURE & SHARING OF INFORMATION",
+      "content": [
+        {
+          "_key": "e31bb1a6ce49f621",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "83b273b6bddf5122",
+              "_type": "span",
+              "text": "Classgrid Technologies does **not** sell, rent, or trade Your personal data to third parties or data brokers. Data is shared exclusively with trusted third-party service providers and sub-processors necessary for delivering the Platform:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9c2fba07a4c9a8da",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "689697c4f335dfab",
+              "_type": "span",
+              "text": "**Cloud & Sandbox Hosting:** Infrastructure providers hosting Our high-performance compute nodes, virtualized Linux sandboxes, Redis clusters, and PostgreSQL databases (e.g., Amazon Web Services, Cloudflare).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "78a9185851462a77",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "3891469e13d1f1d8",
+              "_type": "span",
+              "text": "**AI Model Infrastructure:** API model providers (including Anthropic, DeepSeek, and Zhipu AI/GLM) that process prompt contexts under enterprise zero-data-retention or restricted retention agreements.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "946e5558123627eb",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0e0ff250c4269c85",
+              "_type": "span",
+              "text": "**Telephony & Messaging Providers:** Meta Platforms Inc. (WhatsApp Cloud Calling API for WebRTC voice telephony) and Resend/transactional SMTP relays for email OTP and agent notification delivery.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "bf2b1918b8bef44a",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c180e60a463f9481",
+              "_type": "span",
+              "text": "**Speech Processing Engines:** Deepgram / OpenAI Whisper for speech-to-text (STT) and Aura / ElevenLabs for text-to-speech (TTS) voice synthesis.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "baf4d9109f2e78ce",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f09f78ee9fc27255",
+              "_type": "span",
+              "text": "**Payment Aggregation:** Razorpay Software Private Limited for processing Indian and international payment methods, UPI, net banking, and generating statutory tax receipts.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "980f32b9e6e7bdd6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "323e3eb873db6ad5",
+              "_type": "span",
+              "text": "**Legal & Law Enforcement Requirements:** We may disclose data if required by a court order, statutory subpoena, or lawful request under Indian law, or to protect the vital security of the Platform, its users, or the general public.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "aa94b00aa83e1e02",
+      "id": "7-data-retention-deletion",
+      "title": "7. DATA RETENTION & DELETION",
+      "content": [
+        {
+          "_key": "e1f5a1997706c241",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "6e42bf1a7ed0575f",
+              "_type": "span",
+              "text": "We retain data only as long as necessary to fulfill the operational purposes described in this Policy:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2f930ab6db3600e2",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e742413429251770",
+              "_type": "span",
+              "text": "**Account Profiles:** Retained for the active lifetime of Your account. Upon receiving a valid account deletion request, We purge personal identifiers within thirty (30) days, except for billing transaction logs required to be preserved under Indian tax and corporate laws.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "851c760552fb570c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2b6699204610b2d2",
+              "_type": "span",
+              "text": "**Cloud Sandbox Environments:** Ephemeral Linux sandboxes in Project Mode are automatically terminated and wiped when closed or after periods of inactivity. Uncommitted files are permanently purged.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "540cfe67b53a6006",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "61386d63eb518fe0",
+              "_type": "span",
+              "text": "**Agent Task Logs & Transcripts:** Task execution logs and agent message history are retained for ninety (90) days to allow debugging and audit verification, after which they are archived or deleted.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2bb7cb00a59e751e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "3d16e7d6f7bc2c91",
+              "_type": "span",
+              "text": "**WhatsApp Audio Packets:** Real-time WebRTC audio streams are processed in memory and are **not** permanently recorded or stored on Classgrid servers after call termination, unless an explicit session recording feature is requested by the User.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f3d4c33101e40199",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a822a94e5abdc1e8",
+              "_type": "span",
+              "text": "**Billing & Tax Records:** Invoices, GST numbers, and payment receipts are retained for a minimum of seven (7) years in accordance with Indian tax statutory requirements.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "659644cb3ec58fea",
+      "id": "8-data-security-measures",
+      "title": "8. DATA SECURITY MEASURES",
+      "content": [
+        {
+          "_key": "eb9efe6200518cd7",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "a91726e03ef6a060",
+              "_type": "span",
+              "text": "We implement comprehensive technical and organizational safeguards designed to protect personal and developer data:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "77824cf314d079ef",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5773731b66a43dfc",
+              "_type": "span",
+              "text": "**Cryptographic Encryption:** All web traffic and WebSocket streams are encrypted using TLS 1.3 in transit. All database records, object storage, and disk volumes are encrypted at rest using industry-standard AES-256 encryption.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9a29f967654513ad",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d737dfdc39f8c6c5",
+              "_type": "span",
+              "text": "**Isolated Linux Sandboxes:** Cloud development environments in Project Mode run inside isolated, restricted Linux environments preventing access to host hypervisors or neighboring tenant workloads.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "58bff66703c07fce",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5e6033c3a5c64d9d",
+              "_type": "span",
+              "text": "**Constant-Time Verification:** Session tokens and authentication secrets are compared using constant-time cryptographic algorithms (`crypto.timingSafeEqual`) to prevent timing side-channel attacks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "288871b7ba101518",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f49cc30ee9a07f11",
+              "_type": "span",
+              "text": "**Circuit Breakers & Rate Limits:** Agent operations are guarded by a 5-consecutive-failure circuit breaker (`NO_PROGRESS_LIMIT = 5`), a 48-hour maximum continuous runtime cutoff (`MAX_WORK_MS`), and strict telephony rate limits (50 calls per 24 hours).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3d197c9e41ef5038",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0dc4f3b074cd0686",
+              "_type": "span",
+              "text": "**Edge Protection:** Cloudflare WAF, DDoS shielding, and rate-limiting daemons safeguard APIs against brute-force and credential-stuffing attacks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "1ccb0498eb85c90c",
+      "id": "9-your-rights-under-the-dpdp-act-2023-global-regulations",
+      "title": "9. YOUR RIGHTS UNDER THE DPDP ACT 2023 & GLOBAL REGULATIONS",
+      "content": [
+        {
+          "_key": "2ce220f98dfe288e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "ea5df5052d334a26",
+              "_type": "span",
+              "text": "Depending on Your jurisdiction, You have specific statutory rights concerning Your personal data:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8e5811daa631380f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d3fcd11c46245bf9",
+              "_type": "span",
+              "text": "**Right to Access & Summary:** You may request a summary of the personal data We hold about You, the processing activities carried out, and the identities of third parties with whom it has been shared.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d5307bbce0d51879",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "fde9f0bb7cb4fc65",
+              "_type": "span",
+              "text": "**Right to Correction & Erasure:** You may update inaccurate personal data or request the deletion of data that is no longer necessary for the purpose it was collected.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5a8e5c6cf29d5ee3",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7b02662aaed9c7d9",
+              "_type": "span",
+              "text": "**Right to Grievance Redressal:** You have the right to register a grievance with Our designated Grievance Officer regarding any matter relating to Your data processing.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "15a8700eb65eef16",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "b7c1a4c68a8485e5",
+              "_type": "span",
+              "text": "**Right to Nominate:** Under the DPDP Act 2023, You have the right to nominate an individual who will exercise Your data privacy rights in the event of death or incapacity.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "805d0974512d0bb3",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "83090024869bf749",
+              "_type": "span",
+              "text": "**Right to Withdraw Consent:** Where processing is based on consent, You may withdraw consent at any time through Your account dashboard or by writing to `privacy@classgrid.in`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "a8e422b3cacc1535",
+      "id": "10-children-s-privacy",
+      "title": "10. CHILDREN'S PRIVACY",
+      "content": [
+        {
+          "_key": "3ab75ae86e256dd6",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "6cc78c54fe8dc1ad",
+              "_type": "span",
+              "text": "The Classgrid Platform is designed for software developers, engineers, creators, and adult professionals. It is not intended for use by children under eighteen (18) years of age. We do not knowingly collect personal data from individuals under 18. If We become aware that an account has been created by a minor under 18 without verifiable parental consent, We will immediately terminate the account and purge associated data.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "77af7b879ab26603",
+      "id": "11-cross-border-data-transfers",
+      "title": "11. CROSS-BORDER DATA TRANSFERS",
+      "content": [
+        {
+          "_key": "d9337327be141b8e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "454b4c28664f136d",
+              "_type": "span",
+              "text": "Classgrid operates globally utilizing cloud infrastructure, model inference clusters, and edge networks located in India, the United States, and the European Union. By accessing the Platform, You consent to the transfer, storage, and processing of Your data across international borders in compliance with the DPDP Act 2023 and applicable cross-border transfer mechanisms.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "23de6ee403c8246f",
+      "id": "12-changes-to-this-privacy-policy",
+      "title": "12. CHANGES TO THIS PRIVACY POLICY",
+      "content": [
+        {
+          "_key": "117f72960a78227f",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "fca94e0d196072b8",
+              "_type": "span",
+              "text": "We reserve the right to modify or update this Privacy Policy at any time to reflect technological advancements, new platform capabilities, or changes in legal regulations. When material changes are made, We will update the \"Last Updated\" date at the top of this document and notify Users via email or through a prominent banner on [https://chat.classgrid.in](https://chat.classgrid.in). Continued use of the Platform after the effective date of an updated policy constitutes Your acceptance of the revised terms.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "872b8f06bd7de300",
+      "id": "13-grievance-officer-contact-information",
+      "title": "13. GRIEVANCE OFFICER & CONTACT INFORMATION",
+      "content": [
+        {
+          "_key": "87319d2e5674fc6d",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "8861011f19429a22",
+              "_type": "span",
+              "text": "In accordance with the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023, the details of the designated Grievance Officer are set forth below:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b973424742ccd0e6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c1b139deaea74c8b",
+              "_type": "span",
+              "text": "**Entity Name:** Classgrid Technologies",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a2b9b609c46d1673",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "065c9c25ddd1b30f",
+              "_type": "span",
+              "text": "**Attention:** Grievance Officer / Legal Counsel",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "778220eeab258f58",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "265794d060929bda",
+              "_type": "span",
+              "text": "**Operational Address:** Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "51ac9db03e58b18d",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "378ef0fd449477db",
+              "_type": "span",
+              "text": "**Grievance Email:** `grievance@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7f7b35d35d7c9fdf",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7bce6ddc5d0bf5cf",
+              "_type": "span",
+              "text": "**Privacy & Legal Inquiries:** `privacy@classgrid.in` / `legal@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a2a90424ee778a02",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "faf4306c1e69053b",
+              "_type": "span",
+              "text": "**Platform URL:** [https://chat.classgrid.in](https://chat.classgrid.in)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "629c62dc6981683e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "c632de34a43a3eed",
+              "_type": "span",
+              "text": "We commit to acknowledging data privacy grievances within forty-eight (48) hours and resolving complaints within thirty (30) days from the date of receipt.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    }
+  ]
+}

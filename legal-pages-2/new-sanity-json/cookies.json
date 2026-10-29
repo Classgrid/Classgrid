@@ -1,0 +1,677 @@
+{
+  "_id": "legal-cookies",
+  "_type": "legalPage",
+  "title": "COOKIE POLICY",
+  "slug": {
+    "_type": "slug",
+    "current": "cookies"
+  },
+  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "effectiveDate": "2026-10-27T00:00:00.000Z",
+  "intro": {
+    "introductionHeading": "Introduction",
+    "introductionBody": "",
+    "scopeHeading": "Scope",
+    "scopeBody": "Governs all public-facing artificial intelligence services, cloud development environments, and APIs operated by Classgrid Technologies."
+  },
+  "sections": [
+    {
+      "_key": "b0ef9f252a02a780",
+      "id": "1-introduction-scope",
+      "title": "1. INTRODUCTION & SCOPE",
+      "content": [
+        {
+          "_key": "665d9a6bcc56c9a3",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "e3f24e399f82e15e",
+              "_type": "span",
+              "text": "This Cookie & Local Storage Policy explains how Classgrid Technologies (\"**Company**\", \"**Classgrid**\", \"**We**\", \"**Us**\", or \"**Our**\") uses cookies, local browser storage, session storage, and client-side device security hashes on the Classgrid marketing website ([https://classgrid.in](https://classgrid.in)) and the Classgrid public AI development platform ([https://chat.classgrid.in](https://chat.classgrid.in)) (collectively, the \"**Platform**\").",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3b977245d7041220",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "adee8e40ad194660",
+              "_type": "span",
+              "text": "**Scope Clarification:** Classgrid is a public cloud artificial intelligence workspace, developer sandbox environment, real-time collaboration suite, and voice telephony gateway. Classgrid is **not** an educational ERP, school administration portal, or student record management system. Any legacy institutional services have been fully decommissioned. This Policy applies exclusively to the public-facing AI platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5ce831c300cd761c",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "ec7797df3a683630",
+              "_type": "span",
+              "text": "This Cookie Policy should be read in conjunction with Our [Privacy Policy](file:///c:/classgrid_marketting/legal-pages-2/NEW-01-privacy-policy.md) and [Terms of Service](file:///c:/classgrid_marketting/legal-pages-2/NEW-02-terms-of-service.md).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "a386af1e112309f4",
+      "id": "2-technologies-we-use",
+      "title": "2. TECHNOLOGIES WE USE",
+      "content": [
+        {
+          "_key": "8233e3391098b0f9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "caa0eefa2a410630",
+              "_type": "span",
+              "text": "When You interact with the Platform, We utilize several client-side storage and telemetry technologies:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8b59e36eb358ef5f",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "8853b46c3847843e",
+              "_type": "span",
+              "text": "2.1 HTTP Cookies",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "78c0347fb6540e6f",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "92637cd30eb8108f",
+              "_type": "span",
+              "text": "Cookies are small data files placed on Your computer or mobile device by a web server. Cookies may be:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "51ccc792b189d2b7",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "dc699dcf40634fff",
+              "_type": "span",
+              "text": "**Session Cookies:** Temporary cookies that expire automatically when You close Your browser tab or session.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "15c753ec63d55623",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f568ab02db4de99f",
+              "_type": "span",
+              "text": "**Persistent Cookies:** Cookies that remain stored on Your device for a predetermined period or until manually deleted.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "0a1a40c40a4c2bc6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0a995be6b3a0a88a",
+              "_type": "span",
+              "text": "**HttpOnly & Secure Cookies:** Cryptographically secure cookies inaccessible to client-side JavaScript, protecting session tokens from Cross-Site Scripting (XSS) attacks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "38cb741ee4aa6197",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "c8f8424e0df9c8ee",
+              "_type": "span",
+              "text": "2.2 HTML5 Local Storage (`localStorage`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "bed8a23daea332b7",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "c3911349b41ca5ea",
+              "_type": "span",
+              "text": "Local storage allows web applications to store data persistently within the user's browser with no expiration date. Classgrid uses local storage for non-sensitive client preferences (e.g., dark/light theme, code editor font size, minimized panels) and, where configured in standard browser flows, client bearer token caching for authenticated API requests.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "49ccd61e2b5fb214",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "ab2db49de632b747",
+              "_type": "span",
+              "text": "2.3 HTML5 Session Storage (`sessionStorage`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8cc88ae394d56407",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "693f02f1d7153aa0",
+              "_type": "span",
+              "text": "Session storage maintains data temporarily for the lifetime of a specific browser tab. Classgrid uses session storage to buffer transient streaming AI tokens, multi-user Grid room states, and active editor tab indexes, which are automatically purged upon tab closure.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "71d365cd3637fa4f",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "95a78a11a8568bf6",
+              "_type": "span",
+              "text": "2.4 Client-Side Hardware Telemetry & Device Hashing",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9501477a15152cc7",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "052895166435f975",
+              "_type": "span",
+              "text": "To prevent credit farming, botnet infiltration, and brute-force account creation, Our web client computes a non-reversible cryptographic hash from client hardware rendering characteristics (Canvas rendering output, WebGL parameters, screen bit depth). This hash is used strictly for platform security and session anti-tamper verification; it is never shared with advertising networks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "b61394da84909e8a",
+      "id": "3-categories-of-cookies-storage-used",
+      "title": "3. CATEGORIES OF COOKIES & STORAGE USED",
+      "content": [
+        {
+          "_key": "798ed7613549f962",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "dec7958df2bb8e3c",
+              "_type": "span",
+              "text": "We organize cookies and local storage items into three clear functional categories:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "bee6778de4b1f281",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "ee5f4eab2c2046e6",
+              "_type": "span",
+              "text": "3.1 Strictly Necessary (Essential) Cookies & Keys",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "83d4ced40c77b6a3",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "94d0f22f0e82d952",
+              "_type": "span",
+              "text": "These technologies are strictly required for the operation, security, and authentication of the Platform. Without them, core features such as logging in, executing sandbox commands, and communicating with AI models cannot function.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b02675004bc99c4c",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "9d53ee368624922f",
+              "_type": "span",
+              "text": "3.2 Functional & Preference Cookies & Keys",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "89c48af044c7c684",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "3e41fe2463b3b53c",
+              "_type": "span",
+              "text": "These technologies allow the Platform to remember Your interface configurations, editor customizations, and workspace states to provide a seamless development experience.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d523a41abf82aadb",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "86de9d8d5fe290d6",
+              "_type": "span",
+              "text": "3.3 Security, Telemetry & Performance",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "435fbac6c183d5ed",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "23a21b456ce2744f",
+              "_type": "span",
+              "text": "We collect aggregate, privacy-preserving performance telemetry to monitor model latency, token throughput, and server health.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "639d11dbd8eb8104",
+      "id": "4-strict-zero-advertising-zero-tracking-commitment",
+      "title": "4. STRICT ZERO-ADVERTISING & ZERO-TRACKING COMMITMENT",
+      "content": [
+        {
+          "_key": "fb6213f11586f549",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "a8d2d09d6ebd15fa",
+              "_type": "span",
+              "text": "🛡️ **Zero Third-Party Advertising Trackers:**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "95dc7b4e4b5ebd93",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "0d3ac4f0b3797a27",
+              "_type": "span",
+              "text": "Classgrid is a dedicated engineering, AI, and developer productivity platform. We **do not** host third-party behavioral advertising banners, do **not** sell Your browsing data, and do **not** embed tracking pixels from ad networks (such as Google AdSense, Meta Pixel, TikTok Pixel, or commercial data broker trackers).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "0ffe27b36dbca52c",
+      "id": "5-third-party-services-integrations",
+      "title": "5. THIRD-PARTY SERVICES & INTEGRATIONS",
+      "content": [
+        {
+          "_key": "c060aa19b584c908",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "ed977c9edd9dce6c",
+              "_type": "span",
+              "text": "Certain features of the Platform integrate with trusted third-party providers who may set cookies or inspect client session headers:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "08f6137c1be5854f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "9b98ef8acc3a58f9",
+              "_type": "span",
+              "text": "**Cloudflare:** Provides global Content Delivery Network (CDN) acceleration, DDoS protection, and Web Application Firewall (WAF) filtering. Cloudflare cookies are strictly essential for security.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9830a9f2f8a49022",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "902a1a1348bc1643",
+              "_type": "span",
+              "text": "**Google OAuth & GitHub OAuth:** When You authenticate via Google or GitHub, their authentication pop-ups manage cookies on their respective domains (`accounts.google.com` and `github.com`) in accordance with their privacy policies.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f520822b95f3ff9b",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d26cc7ca2f1d3609",
+              "_type": "span",
+              "text": "**Razorpay Software Private Limited:** When You purchase AI compute credits, Razorpay's checkout modal loads payment security scripts that may set fraud prevention cookies. Razorpay complies with RBI regulations and PCI-DSS Level 1 security standards.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "952bab8f37b92b1d",
+      "id": "6-managing-controlling-your-cookies",
+      "title": "6. MANAGING & CONTROLLING YOUR COOKIES",
+      "content": [
+        {
+          "_key": "a405e43f0ecc52f6",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "1438dfccc78444f7",
+              "_type": "span",
+              "text": "You have the right to control how cookies are stored on Your device. You can manage or delete cookies through Your browser settings:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "6f84af0693fa16dd",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "89ca2ed37699fb0d",
+              "_type": "span",
+              "text": "**Google Chrome:** Go to `Settings > Privacy and Security > Third-Party Cookies`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "60d3d2ce6d234014",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "b322ce904b537d6c",
+              "_type": "span",
+              "text": "**Mozilla Firefox:** Go to `Settings > Privacy & Security > Cookies and Site Data`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a054feae333c3c3f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "71428e7cf8606f80",
+              "_type": "span",
+              "text": "**Apple Safari:** Go to `Preferences > Privacy > Block all cookies`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "72244c2353bc8529",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d01377716e0081c9",
+              "_type": "span",
+              "text": "**Microsoft Edge:** Go to `Settings > Cookies and site permissions > Manage and delete cookies`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a5b14942fd96881d",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "e9d8e97fb7c0871e",
+              "_type": "span",
+              "text": "⚠️ **Impact of Disabling Cookies:**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1a146d533251bc7d",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "c52164a79d6c5218",
+              "_type": "span",
+              "text": "Because the `token` cookie and related session keys are strictly necessary to authenticate Your account, maintain secure WebSocket connections in Grids, and launch Project Mode sandboxes, disabling cookies will prevent You from logging in or using the core features of the Classgrid AI platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "b6cc621a935f5b59",
+      "id": "7-updates-to-this-cookie-policy",
+      "title": "7. UPDATES TO THIS COOKIE POLICY",
+      "content": [
+        {
+          "_key": "7081f9ba96d76c92",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "0319b6e230d13370",
+              "_type": "span",
+              "text": "We may update this Cookie Policy from time to time to reflect changes in platform technology, security practices, or legal requirements. When updates are published, the \"Last Updated\" date at the top of this document will be revised. Significant modifications will be announced via in-platform notifications on [https://chat.classgrid.in](https://chat.classgrid.in).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "56f3a99f3ae870e4",
+      "id": "8-contact-us",
+      "title": "8. CONTACT US",
+      "content": [
+        {
+          "_key": "b171efa9e3d92c9c",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "1d2b1ec18f8cc8f1",
+              "_type": "span",
+              "text": "If You have questions, feedback, or concerns regarding Our use of cookies or browser storage technologies, please contact Our data privacy team at:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b68e0f789317cb35",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5996a8ba3d59971c",
+              "_type": "span",
+              "text": "**Data Privacy Team:** `privacy@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "cbffb10d79ed17c5",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "edd2b24f95a7ac59",
+              "_type": "span",
+              "text": "**Legal Inquiries:** `legal@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "fb20e4dbc0b98e8c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1c5facb9e0ddc927",
+              "_type": "span",
+              "text": "**Operational Address:** Classgrid Technologies, Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "fe0ca7c775d030aa",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "632c26ef6b0bf813",
+              "_type": "span",
+              "text": "**Public Platform:** [https://chat.classgrid.in](https://chat.classgrid.in)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    }
+  ]
+}

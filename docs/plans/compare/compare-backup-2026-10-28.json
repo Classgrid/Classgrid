@@ -1,0 +1,2024 @@
+[
+  {
+    "_createdAt": "2026-04-27T12:40:33Z",
+    "_id": "compareHubPage",
+    "_rev": "dtpHFqdg69dGewqOfOJiUg",
+    "_type": "compareHubPage",
+    "_updatedAt": "2026-06-24T04:16:20Z",
+    "heroHeadline": "Compare Classgrid with the platforms institutions are trying to replace",
+    "heroSubheadline": "Audit our NAAC compliance engine, biometric integrations, and real-time architecture against legacy systems before your next rollout.",
+    "metaDescription": "Compare Classgrid against legacy school ERP software.",
+    "seoTitle": "Compare Classgrid vs Alternative School ERPs"
+  },
+  {
+    "_createdAt": "2026-05-28T11:19:31Z",
+    "_id": "comparisonpage-legacy-platforms",
+    "_rev": "G9qWA4d4mGLRjdbqTVlAaX",
+    "_type": "comparisonPage",
+    "_updatedAt": "2026-05-28T16:43:40Z",
+    "body": [
+      {
+        "_key": "block-2klggj",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-fiz8ca",
+            "_type": "span",
+            "marks": [],
+            "text": "Introduction"
+          }
+        ],
+        "style": "h2"
+      },
+      {
+        "_key": "block-isq77h",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-bb2m9f",
+            "_type": "span",
+            "marks": [],
+            "text": "Most institutional software available today — whether established or recently launched — follows a similar design: a centralized admin panel where one team enters data, generates reports, and exports spreadsheets. Departments, faculty, students, and parents either depend on that admin team for updates or use the system in a limited way. In this comparison, we refer to these conventional systems as \"Legacy Platforms.\" This is not a reference to any specific product or vendor, but to the design pattern itself — where the platform stores and retrieves data rather than actively connecting the daily workflows of every department, role, and stakeholder."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-0e87ku",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-2gcv3w",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid follows a different architecture. Every department operates from its own dedicated dashboard, every role gets a purpose-built experience, and support is embedded directly into the platform. This comparison walks through when Classgrid is the stronger choice, when a conventional platform may still be sufficient, and what your evaluation team should verify — whether exploring our "
+          },
+          {
+            "_key": "span-i2zncrd",
+            "_type": "span",
+            "marks": [
+              "link-aguzh7"
+            ],
+            "text": "platform modules"
+          },
+          {
+            "_key": "span-tb1by",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-8zuuwm",
+            "_type": "span",
+            "marks": [
+              "link-e5t8m3"
+            ],
+            "text": "interactive platform preview"
+          },
+          {
+            "_key": "span-j279c",
+            "_type": "span",
+            "marks": [],
+            "text": ", or "
+          },
+          {
+            "_key": "span-fa4wld",
+            "_type": "span",
+            "marks": [
+              "link-voaqs6"
+            ],
+            "text": "scheduling a personalized demo"
+          },
+          {
+            "_key": "span-aita70g",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-aguzh7",
+            "_type": "link",
+            "href": "/product/modules"
+          },
+          {
+            "_key": "link-e5t8m3",
+            "_type": "link",
+            "href": "/view-platform"
+          },
+          {
+            "_key": "link-voaqs6",
+            "_type": "link",
+            "href": "/#demo"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-bsba5c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-cvjt96",
+            "_type": "span",
+            "marks": [],
+            "text": "When to choose Classgrid"
+          }
+        ],
+        "style": "h2"
+      },
+      {
+        "_key": "block-zqzdoe",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ds6zd42",
+            "_type": "span",
+            "marks": [],
+            "text": "Choose Classgrid when the goal is not just to digitize records, but to run the institution through connected workflows. This is the right fit when different teams need their own dashboards, when departments need ownership, when principals and administrators need live visibility, and when students, faculty, parents, and support teams should not depend on back-office follow-ups for every update."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-h9q957",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-hqd6oh",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid is strongest when the institution has moved beyond \"one office enters data and exports reports\" and now needs a platform that can support daily work across roles."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-ys80d",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-m8ia4s",
+            "_type": "span",
+            "marks": [],
+            "text": "Best fit for Classgrid"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-uowmbj",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-bohmt",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid is a strong fit when your institution needs:"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-nekbih",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-7lbwo",
+            "_type": "span",
+            "marks": [],
+            "text": "A platform for "
+          },
+          {
+            "_key": "span-2ysa1b",
+            "_type": "span",
+            "marks": [
+              "link-0x8rsd"
+            ],
+            "text": "schools"
+          },
+          {
+            "_key": "span-tq8yhu",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-t1ll6",
+            "_type": "span",
+            "marks": [
+              "link-6j1p2"
+            ],
+            "text": "junior colleges"
+          },
+          {
+            "_key": "span-6dqsxy",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-uvl3af",
+            "_type": "span",
+            "marks": [
+              "link-2q4ukh"
+            ],
+            "text": "engineering colleges"
+          },
+          {
+            "_key": "span-ot58uk",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-p1x6qu",
+            "_type": "span",
+            "marks": [
+              "link-141mp"
+            ],
+            "text": "coaching institutes"
+          },
+          {
+            "_key": "span-a1f7qt",
+            "_type": "span",
+            "marks": [],
+            "text": ", diploma institutes, and custom academic structures."
+          }
+        ],
+        "listItem": "bullet",
+        "markDefs": [
+          {
+            "_key": "link-0x8rsd",
+            "_type": "link",
+            "href": "/solutions/for-schools"
+          },
+          {
+            "_key": "link-6j1p2",
+            "_type": "link",
+            "href": "/solutions/for-jr-colleges"
+          },
+          {
+            "_key": "link-2q4ukh",
+            "_type": "link",
+            "href": "/solutions/for-engineering"
+          },
+          {
+            "_key": "link-141mp",
+            "_type": "link",
+            "href": "/solutions/for-coaching"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-zvzfa",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-gukh1m",
+            "_type": "span",
+            "marks": [],
+            "text": "Separate operating surfaces for administrators, departments, faculty, students, and parents."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-nw115",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ajcdp",
+            "_type": "span",
+            "marks": [],
+            "text": "A clear workflow from "
+          },
+          {
+            "_key": "span-leypjq",
+            "_type": "span",
+            "marks": [
+              "link-ikmiyu"
+            ],
+            "text": "admission"
+          },
+          {
+            "_key": "span-ld2yn",
+            "_type": "span",
+            "marks": [],
+            "text": " to enrollment, "
+          },
+          {
+            "_key": "span-d8txpo",
+            "_type": "span",
+            "marks": [
+              "link-ah96bp"
+            ],
+            "text": "fee collection"
+          },
+          {
+            "_key": "span-7u9eiw",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-nums7d",
+            "_type": "span",
+            "marks": [
+              "link-7qev5l"
+            ],
+            "text": "attendance"
+          },
+          {
+            "_key": "span-iui3s8",
+            "_type": "span",
+            "marks": [],
+            "text": ", exams, reporting, and support."
+          }
+        ],
+        "listItem": "bullet",
+        "markDefs": [
+          {
+            "_key": "link-ikmiyu",
+            "_type": "link",
+            "href": "/product/modules/enterprise-admission-engine"
+          },
+          {
+            "_key": "link-ah96bp",
+            "_type": "link",
+            "href": "/product/modules/fee-payments-engine"
+          },
+          {
+            "_key": "link-7qev5l",
+            "_type": "link",
+            "href": "/product/modules/smart-attendance"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-zx0wv",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-pjww7c",
+            "_type": "span",
+            "marks": [],
+            "text": "A system that helps departments act without waiting for one central admin team."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-7baa",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ij9tw",
+            "_type": "span",
+            "marks": [],
+            "text": "Buyer-facing support, ticket tracking, and request history for adoption after rollout."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-4e1r5o",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ekesg",
+            "_type": "span",
+            "marks": [],
+            "text": "AI-assisted academic workflows and compliance-oriented reporting direction."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-so972",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-y1u9bt",
+            "_type": "span",
+            "marks": [],
+            "text": "Multi-role workflows"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-dhftym",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-hzzupv",
+            "_type": "span",
+            "marks": [],
+            "text": "In the actual platform code, Classgrid supports primary roles and additional roles. This matters in real institutions because one person may be a faculty member, HOD, coordinator, examiner, or administrator at the same time. A platform should not force those people into one generic screen."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-1lsjm",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-s6hbvl",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid supports role-aware experiences for organization admins, admissions teams, fee teams, exam teams, library teams, attendance teams, HR/payroll teams, hostel/transport teams, faculty, and students. Dedicated role-based experiences are also available for "
+          },
+          {
+            "_key": "span-4glqf",
+            "_type": "span",
+            "marks": [
+              "link-d15hej"
+            ],
+            "text": "teachers"
+          },
+          {
+            "_key": "span-onrkej",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-bteff",
+            "_type": "span",
+            "marks": [
+              "link-5nvra6"
+            ],
+            "text": "students"
+          },
+          {
+            "_key": "span-t6cnvtl",
+            "_type": "span",
+            "marks": [],
+            "text": ", and "
+          },
+          {
+            "_key": "span-tkrteu",
+            "_type": "span",
+            "marks": [
+              "link-dxvmrm"
+            ],
+            "text": "admins"
+          },
+          {
+            "_key": "span-f48qyf",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-d15hej",
+            "_type": "link",
+            "href": "/solutions/for-teachers"
+          },
+          {
+            "_key": "link-5nvra6",
+            "_type": "link",
+            "href": "/solutions/for-students"
+          },
+          {
+            "_key": "link-dxvmrm",
+            "_type": "link",
+            "href": "/solutions/for-admins"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-t8cqkr",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-sykzmc",
+            "_type": "span",
+            "marks": [],
+            "text": "Department-level dashboards"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-4r0ef",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-fgywgv",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid is built around department ownership. Instead of one broad admin dashboard trying to serve every team, the product separates workspaces for the teams that actually run campus operations."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-0316zv",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "row-s6tbroe",
+            "cells": [
+              "Dashboard surface",
+              "What it is for"
+            ]
+          },
+          {
+            "_key": "row-ltamww",
+            "cells": [
+              "Organization Admin",
+              "Institution-wide academics, management, facilities, compliance, engagement, analytics, and tools"
+            ]
+          },
+          {
+            "_key": "row-g5o39",
+            "cells": [
+              "Admissions Department",
+              "Applications, document verification, merit lists, enrollment, admission configuration, reports, and communication"
+            ]
+          },
+          {
+            "_key": "row-xefy9n",
+            "cells": [
+              "Fees Department",
+              "Collections, transactions, defaulters, receipts, fee structure, scholarships, late rules, and reporting"
+            ]
+          },
+          {
+            "_key": "row-uxbl8",
+            "cells": [
+              "Examination Department",
+              "Exam scheduling, online exams, hall tickets, marks, results, question bank, and performance reports"
+            ]
+          },
+          {
+            "_key": "row-qxv42",
+            "cells": [
+              "Library Department",
+              "Catalog, issue/return, overdue books, digital resources, usage analytics, and stock reports"
+            ]
+          },
+          {
+            "_key": "row-hn20i9",
+            "cells": [
+              "Attendance Department",
+              "Marking, daily/monthly reports, low attendance, parent notifications, analytics, and compliance exports"
+            ]
+          },
+          {
+            "_key": "row-lawf4k",
+            "cells": [
+              "HR & Payroll",
+              "Staff, departments, leave requests, leave policy, salary processing, payslips, and payroll reports"
+            ]
+          },
+          {
+            "_key": "row-ymgmc",
+            "cells": [
+              "Hostel & Transport",
+              "Room allocation, residents, complaints, mess, transport routes, passengers, and related fees"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "block-pgu1u4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-46pzs",
+            "_type": "span",
+            "marks": [],
+            "text": "This is one of the most important differences for buyers. Module count alone does not prove usefulness. The better question is whether each department can log in and complete its own work without depending on another team. You can explore individual modules like "
+          },
+          {
+            "_key": "span-u8tgl8",
+            "_type": "span",
+            "marks": [
+              "link-gsxihe"
+            ],
+            "text": "Smart Attendance"
+          },
+          {
+            "_key": "span-8hvac",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-ib9d88",
+            "_type": "span",
+            "marks": [
+              "link-by223f"
+            ],
+            "text": "Admission Management"
+          },
+          {
+            "_key": "span-z1oll",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-9qoe8",
+            "_type": "span",
+            "marks": [
+              "link-mx2o6"
+            ],
+            "text": "Fee Collection"
+          },
+          {
+            "_key": "span-wfs09s",
+            "_type": "span",
+            "marks": [],
+            "text": ", or "
+          },
+          {
+            "_key": "span-q29wuc",
+            "_type": "span",
+            "marks": [
+              "link-w8k6up"
+            ],
+            "text": "view all modules"
+          },
+          {
+            "_key": "span-vv1jz9",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-gsxihe",
+            "_type": "link",
+            "href": "/product/modules/smart-attendance"
+          },
+          {
+            "_key": "link-by223f",
+            "_type": "link",
+            "href": "/product/modules/enterprise-admission-engine"
+          },
+          {
+            "_key": "link-mx2o6",
+            "_type": "link",
+            "href": "/product/modules/fee-payments-engine"
+          },
+          {
+            "_key": "link-w8k6up",
+            "_type": "link",
+            "href": "/product/modules"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-emcmiw",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-y5hxvr",
+            "_type": "span",
+            "marks": [],
+            "text": "Support and adoption"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-uljm6b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-4hz9",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid has a real support workflow rather than only a contact email. The platform includes support tickets, categories, priority, status, assignment, message history, replies, internal notes, reopen flow, satisfaction rating, and request tracking. Institutions also have access to a public "
+          },
+          {
+            "_key": "span-fusbhs",
+            "_type": "span",
+            "marks": [
+              "link-uaofcq"
+            ],
+            "text": "support portal"
+          },
+          {
+            "_key": "span-ov152a",
+            "_type": "span",
+            "marks": [],
+            "text": " for platform tickets, inquiries, and \"My requests\" tracking."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-uaofcq",
+            "_type": "link",
+            "href": "/support"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-oz4auo",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-h8px7l",
+            "_type": "span",
+            "marks": [],
+            "text": "For an institution, this matters because ERP success is not only implementation. It is adoption. Faculty, students, administrators, and department users need a clear way to ask for help, track replies, and continue the conversation."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-aa7kz",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-1shd1",
+            "_type": "span",
+            "marks": [],
+            "text": "AI and compliance readiness"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-fiwiv5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-0aes8x",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid includes "
+          },
+          {
+            "_key": "span-g1sz6c",
+            "_type": "span",
+            "marks": [
+              "link-yqwfgj"
+            ],
+            "text": "AI-assisted"
+          },
+          {
+            "_key": "span-izyd88",
+            "_type": "span",
+            "marks": [],
+            "text": " academic workflows such as syllabus-based chat, student persona generation, quiz/question assistance, OCR-based question extraction, proctoring analysis, and academic analytics. The product also has "
+          },
+          {
+            "_key": "span-q4oizn",
+            "_type": "span",
+            "marks": [
+              "link-u2uwhio"
+            ],
+            "text": "audit and reporting paths"
+          },
+          {
+            "_key": "span-1pn9vx",
+            "_type": "span",
+            "marks": [],
+            "text": " that support the direction toward faster NBA/NAAC evidence preparation."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-yqwfgj",
+            "_type": "link",
+            "href": "/product/modules/ai-assistant"
+          },
+          {
+            "_key": "link-u2uwhio",
+            "_type": "link",
+            "href": "/product/modules/naac-nba-audit-capture-engine"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-4uz6kf",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-nmsjr3",
+            "_type": "span",
+            "marks": [],
+            "text": "The accurate public framing is this: Classgrid is building toward one-click NBA/NAAC data aggregation by connecting academic, attendance, marks, fee, faculty, classroom, and enrollment workflows. That is stronger and safer than claiming every compliance step is already automatic in every institution scenario."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-9ye3tl",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-xgc6r7",
+            "_type": "span",
+            "marks": [],
+            "text": "When to choose Legacy Platforms"
+          }
+        ],
+        "style": "h2"
+      },
+      {
+        "_key": "block-1yqku",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-zfk11q",
+            "_type": "span",
+            "marks": [],
+            "text": "Legacy Platforms can still be a practical fit for institutions with simpler requirements. If your institution mainly wants structured record keeping, basic dashboards, familiar ERP-style screens, and periodic exports, a traditional platform may be enough."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-fhdjg",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-uaosyh",
+            "_type": "span",
+            "marks": [],
+            "text": "Best fit for Legacy Platforms"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-d6flw6",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-h527hj",
+            "_type": "span",
+            "marks": [],
+            "text": "Choose a Legacy Platform when:"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-s8wq55",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-v86mir",
+            "_type": "span",
+            "marks": [],
+            "text": "The institution mainly needs data entry, storage, and basic reports."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-vdlps",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-jnqr1",
+            "_type": "span",
+            "marks": [],
+            "text": "Most work is still handled by a central office or a small admin team."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-658rsc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-r969sa",
+            "_type": "span",
+            "marks": [],
+            "text": "Departments do not need separate daily workspaces."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-b1kkg",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-q9t2f9",
+            "_type": "span",
+            "marks": [],
+            "text": "Faculty, students, parents, and support teams are not expected to use the system deeply."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-gnh2wl",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-srcm9p",
+            "_type": "span",
+            "marks": [],
+            "text": "Reporting can happen through exports and manual consolidation."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-ga409c",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-uv8vu",
+            "_type": "span",
+            "marks": [],
+            "text": "The institution wants a low-change rollout and is not ready to redesign internal workflows."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-ic6cja",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-jk7q6g",
+            "_type": "span",
+            "marks": [],
+            "text": "Where Legacy Platforms can be comfortable"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-vtdn2",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-3fzuf",
+            "_type": "span",
+            "marks": [],
+            "text": "Legacy Platforms are often familiar to back-office users. They may work well when staff are already trained on form-heavy workflows, when the institution is comfortable with manual follow-ups, and when the ERP is treated as a record system rather than an operating layer."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-cd9z83",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-cd3uwi",
+            "_type": "span",
+            "marks": [],
+            "text": "That does not make them bad. It means the buying decision should match the institution's ambition. If the goal is only to store records and generate occasional reports, a simpler system can be acceptable. If the goal is to connect teams, reduce manual coordination, improve adoption, and give leadership faster visibility, Classgrid becomes the better fit."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-4mkpwi",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-blyyn",
+            "_type": "span",
+            "marks": [],
+            "text": "Shared capabilities"
+          }
+        ],
+        "style": "h2"
+      },
+      {
+        "_key": "block-iox4hi",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ketq8p",
+            "_type": "span",
+            "marks": [],
+            "text": "Most institutional ERP/LMS platforms now advertise similar top-level capabilities: admissions, attendance, fees, exams, parent/student communication, reports, dashboards, support, and implementation help. So the comparison should not stop at whether a feature name exists."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-66map3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-r1jeeb",
+            "_type": "span",
+            "marks": [],
+            "text": "The better question is how the feature behaves in daily use."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-ousm1s",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "row-q7vzlm",
+            "cells": [
+              "Capability",
+              "Classgrid",
+              "Legacy Platforms"
+            ]
+          },
+          {
+            "_key": "row-i4zrug",
+            "cells": [
+              "Institution setup",
+              "Supports school, junior college, engineering college, coaching, diploma, and custom academic structures",
+              "Often supports common institution types, but fit may depend on configuration or customization"
+            ]
+          },
+          {
+            "_key": "row-jyskhe",
+            "cells": [
+              "User roles",
+              "Role-aware experiences with support for multiple roles per user",
+              "Often role-based, but many workflows still route through generic admin screens"
+            ]
+          },
+          {
+            "_key": "row-fo8xon",
+            "cells": [
+              "Dashboards",
+              "Separate dashboards for administrators and major departments",
+              "May provide dashboards, but department depth varies widely"
+            ]
+          },
+          {
+            "_key": "row-nbzgaf",
+            "cells": [
+              "Admissions",
+              "Built for application, verification, merit, enrollment, parent tracking, and admission operations",
+              "Usually supports admission records and forms, with varying automation depth"
+            ]
+          },
+          {
+            "_key": "row-qpzdvv",
+            "cells": [
+              "Attendance",
+              "Built for live and manual attendance workflows, alerts, reports, and department ownership",
+              "Usually supports attendance entry and reports, but live workflows vary"
+            ]
+          },
+          {
+            "_key": "row-u8rhy",
+            "cells": [
+              "Fees",
+              "Supports fee records, payment workflows, receipts, analytics, and department visibility",
+              "Usually supports fee collection and receipts, with reconciliation depth varying by platform"
+            ]
+          },
+          {
+            "_key": "row-it9x1c",
+            "cells": [
+              "Exams and results",
+              "Supports exam workflows, online assessment paths, result processing, analytics, and publishing",
+              "Usually supports exam scheduling, marks, and reports, with less consistent online workflow depth"
+            ]
+          },
+          {
+            "_key": "row-bvvscq",
+            "cells": [
+              "Support",
+              "Ticket, inquiry, request tracking, replies, categories, priority, and admin handling",
+              "Support may exist, but is often outside the product workflow or handled through email/chat"
+            ]
+          },
+          {
+            "_key": "row-rugbhk",
+            "cells": [
+              "Reporting",
+              "Connected reporting direction across academic and administrative data",
+              "Often depends on exports and spreadsheet consolidation"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "block-2k524k",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-2nrzrs",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid platform overview"
+          }
+        ],
+        "style": "h2"
+      },
+      {
+        "_key": "block-p6tk11",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-cihudk",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid should be understood as an institutional operating platform, not a simple module list. The platform connects institution structure, roles, dashboards, support, academic operations, administrative operations, and reporting into one product story."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-ua1vy",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-s7y61",
+            "_type": "span",
+            "marks": [],
+            "text": "Institution types supported"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-ax4mm5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-whixl",
+            "_type": "span",
+            "marks": [],
+            "text": "The platform supports multiple institution types and structures, including school, junior college, engineering college, coaching, diploma, and custom academic hierarchies. This matters because a school does not operate like a junior college, and a junior college does not operate like an engineering department."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-tt4npb",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-5qkcx",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid's model is built to represent different academic structures such as standards, streams, departments, years, semesters, divisions, batches, and custom groupings."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-chtvs7",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-o3d6kg",
+            "_type": "span",
+            "marks": [],
+            "text": "Role-based access and multiple roles"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-skzud",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-kt3sve",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid supports defined roles such as student, faculty, organization admin, principal, vice principal, HOD, exam controller, fee manager, admission head, admission verifier, admission counselor, admission clerk, library manager, transport manager, counselor, and coordinator. It also supports additional roles for users who handle more than one responsibility."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-pjkt6k",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-clqn7",
+            "_type": "span",
+            "marks": [],
+            "text": "For buyers, the key point is simple: Classgrid is built for real institutional staffing, where responsibilities overlap."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-wz0crs",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ibqvi6",
+            "_type": "span",
+            "marks": [],
+            "text": "Faculty, student, and parent experience"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-8ynuk",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ui2arj",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid delivers dedicated experiences for "
+          },
+          {
+            "_key": "span-eybgiw",
+            "_type": "span",
+            "marks": [
+              "link-5dwwse"
+            ],
+            "text": "teachers"
+          },
+          {
+            "_key": "span-ykrfu9",
+            "_type": "span",
+            "marks": [],
+            "text": ", "
+          },
+          {
+            "_key": "span-1t3lll",
+            "_type": "span",
+            "marks": [
+              "link-se8dih"
+            ],
+            "text": "students"
+          },
+          {
+            "_key": "span-f4y72j",
+            "_type": "span",
+            "marks": [],
+            "text": ", and "
+          },
+          {
+            "_key": "span-6rlbuq",
+            "_type": "span",
+            "marks": [
+              "link-du5yye"
+            ],
+            "text": "admins"
+          },
+          {
+            "_key": "span-yzyt2o",
+            "_type": "span",
+            "marks": [],
+            "text": "—each designed around the workflows they use daily. Adoption improves when every user gets a relevant operating surface instead of being forced through a generic admin-oriented ERP screen."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-5dwwse",
+            "_type": "link",
+            "href": "/solutions/for-teachers"
+          },
+          {
+            "_key": "link-se8dih",
+            "_type": "link",
+            "href": "/solutions/for-students"
+          },
+          {
+            "_key": "link-du5yye",
+            "_type": "link",
+            "href": "/solutions/for-admins"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-5rfglx",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-t6q486",
+            "_type": "span",
+            "marks": [],
+            "text": "Support system"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-2c5oqi",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-cz3sv2z",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid has both platform-level and public-facing "
+          },
+          {
+            "_key": "span-xvje9",
+            "_type": "span",
+            "marks": [
+              "link-du2gkj"
+            ],
+            "text": "support flows"
+          },
+          {
+            "_key": "span-tcjmnm",
+            "_type": "span",
+            "marks": [],
+            "text": ". Users can raise tickets, track requests, reply to conversations, reopen resolved issues, and see status. Admin and support teams can classify, prioritize, assign, reply, and maintain ticket history."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-du2gkj",
+            "_type": "link",
+            "href": "/support"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-5r246",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-o1bwnp",
+            "_type": "span",
+            "marks": [],
+            "text": "This is a strong comparison point because many ERP evaluations focus on features before purchase but suffer after rollout when users need help."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-l3ild5",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-xdzgk",
+            "_type": "span",
+            "marks": [],
+            "text": "Live platform preview"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-90lxl",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-m89c9s",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid includes a "
+          },
+          {
+            "_key": "span-pycoph",
+            "_type": "span",
+            "marks": [
+              "link-tvbwwo"
+            ],
+            "text": "live platform preview"
+          },
+          {
+            "_key": "span-si1dl",
+            "_type": "span",
+            "marks": [],
+            "text": " with role selection for organization admin, admission, fees, examination, library, attendance, HR/leave, hostel/transport, and mobile views for student and faculty. Decision-makers can evaluate real workflows visually before committing, rather than relying on vendor claims or static feature checklists."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-tvbwwo",
+            "_type": "link",
+            "href": "/view-platform"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-89xna4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-9dq5n",
+            "_type": "span",
+            "marks": [],
+            "text": "AI-assisted workflows and reporting direction"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-xsvenh",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-cmza8b",
+            "_type": "span",
+            "marks": [],
+            "text": "Classgrid's AI layer is tied to academic work rather than only a generic chatbot. It supports academic assistance, question generation paths, OCR-based extraction, proctoring-related analysis, and student insight workflows. For compliance, Classgrid is positioned around connected data preparation for NBA/NAAC-style reporting instead of last-minute evidence chasing."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-lpiyyp",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ecowpp",
+            "_type": "span",
+            "marks": [],
+            "text": "How to choose the right platform"
+          }
+        ],
+        "style": "h2"
+      },
+      {
+        "_key": "block-kz8gs3",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-cime45",
+            "_type": "span",
+            "marks": [],
+            "text": "The right platform depends on how deeply the institution wants software to participate in daily operations. A buyer should evaluate beyond the module list."
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-67liu",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "row-aoki7",
+            "cells": [
+              "Evaluation area",
+              "What to verify",
+              "Why it matters"
+            ]
+          },
+          {
+            "_key": "row-mq1wvj",
+            "cells": [
+              "Daily usability",
+              "Can each team complete its daily work without calling another department?",
+              "Adoption fails when software works only for the admin office"
+            ]
+          },
+          {
+            "_key": "row-izevnt",
+            "cells": [
+              "Department ownership",
+              "Are admissions, fees, exams, attendance, support, and HR handled in separate workspaces?",
+              "Department users need focused workflows, not one crowded admin screen"
+            ]
+          },
+          {
+            "_key": "row-u2di1g",
+            "cells": [
+              "Role clarity",
+              "Can users have the right permissions and multiple responsibilities?",
+              "Real institutions have overlapping roles and changing duties"
+            ]
+          },
+          {
+            "_key": "row-sa2hsk",
+            "cells": [
+              "Reporting speed",
+              "Can reports be prepared from connected data instead of manual spreadsheet consolidation?",
+              "Leadership and compliance teams need faster, more reliable evidence"
+            ]
+          },
+          {
+            "_key": "row-akgnj3j",
+            "cells": [
+              "Support quality",
+              "Can users raise, track, reply to, and reopen support requests?",
+              "Rollout success depends on post-adoption support, not only sales demos"
+            ]
+          },
+          {
+            "_key": "row-iv7nax",
+            "cells": [
+              "Migration path",
+              "Can the institution move department by department?",
+              "A phased rollout reduces disruption during the academic cycle"
+            ]
+          },
+          {
+            "_key": "row-jcdjp",
+            "cells": [
+              "AI usefulness",
+              "Does AI connect to academic workflows, or is it only a chatbot?",
+              "AI should reduce faculty and academic workload, not sit outside the system"
+            ]
+          },
+          {
+            "_key": "row-tas98",
+            "cells": [
+              "Platform evaluation",
+              "Can decision makers see real role-based workflows before buying?",
+              "A live preview is stronger than a static feature checklist"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "block-k14d7p",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-nnhkgg",
+            "_type": "span",
+            "marks": [],
+            "text": "Decision table"
+          }
+        ],
+        "style": "h3"
+      },
+      {
+        "_key": "block-zms01h",
+        "_type": "table",
+        "rows": [
+          {
+            "_key": "row-e7ggga",
+            "cells": [
+              "When to choose Classgrid",
+              "When to choose Legacy Platforms"
+            ]
+          },
+          {
+            "_key": "row-ii3el3",
+            "cells": [
+              "You want connected workflows across departments",
+              "You mainly need record storage and basic exports"
+            ]
+          },
+          {
+            "_key": "row-nongmp",
+            "cells": [
+              "You need separate dashboards for admins and departments",
+              "One generic admin panel is enough"
+            ]
+          },
+          {
+            "_key": "row-l8gzif",
+            "cells": [
+              "You want support and request tracking built into the product experience",
+              "Email or external support channels are enough"
+            ]
+          },
+          {
+            "_key": "row-ouxrkf",
+            "cells": [
+              "You want faculty, student, and parent adoption",
+              "Only back-office users will operate the system"
+            ]
+          },
+          {
+            "_key": "row-qny8z7",
+            "cells": [
+              "You want AI-assisted academic and reporting workflows",
+              "AI is not part of your current requirement"
+            ]
+          },
+          {
+            "_key": "row-0dk7w8",
+            "cells": [
+              "You want to evaluate live role-based workflows before buying",
+              "A static demo or module checklist is enough"
+            ]
+          },
+          {
+            "_key": "row-0bqisk",
+            "cells": [
+              "You want to reduce spreadsheet consolidation for reports and audits",
+              "Manual consolidation is acceptable"
+            ]
+          }
+        ]
+      },
+      {
+        "_key": "block-9y2oqs",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-jml1rd",
+            "_type": "span",
+            "marks": [],
+            "text": "Book a Demo"
+          }
+        ],
+        "style": "h2"
+      },
+      {
+        "_key": "block-tgiwm",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-63jm12",
+            "_type": "span",
+            "marks": [],
+            "text": "The best way to evaluate Classgrid is to bring the actual decision team into a demo: principal or director, organization admin, admissions lead, fee manager, exam controller, attendance coordinator, faculty representative, and support/admin owner. "
+          },
+          {
+            "_key": "span-3ynqgg",
+            "_type": "span",
+            "marks": [
+              "link-r3rix"
+            ],
+            "text": "Schedule your personalized demo here"
+          },
+          {
+            "_key": "span-fbcnw",
+            "_type": "span",
+            "marks": [],
+            "text": "."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-r3rix",
+            "_type": "link",
+            "href": "/#demo"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-vedxc",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-kco0f",
+            "_type": "span",
+            "marks": [],
+            "text": "In the demo, ask to see:"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-of4bme",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-9rb7v",
+            "_type": "span",
+            "marks": [],
+            "text": "The institution type closest to your setup: school, junior college, college, coaching, diploma, or custom."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-rmkdh",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-depcp5",
+            "_type": "span",
+            "marks": [],
+            "text": "The dashboard each department would use daily."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-4087sv",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-8nponc",
+            "_type": "span",
+            "marks": [],
+            "text": "How a user with multiple responsibilities is handled."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-unt63i",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-2klu3wj",
+            "_type": "span",
+            "marks": [],
+            "text": "How "
+          },
+          {
+            "_key": "span-mvck9",
+            "_type": "span",
+            "marks": [
+              "link-faq6x"
+            ],
+            "text": "support tickets and request tracking"
+          },
+          {
+            "_key": "span-hbjmr9",
+            "_type": "span",
+            "marks": [],
+            "text": " work."
+          }
+        ],
+        "listItem": "bullet",
+        "markDefs": [
+          {
+            "_key": "link-faq6x",
+            "_type": "link",
+            "href": "/support"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-3m52b",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-vyj7pl",
+            "_type": "span",
+            "marks": [],
+            "text": "How admissions, fees, attendance, exams, and reports connect at a workflow level."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-2f0fm",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-rxs82r",
+            "_type": "span",
+            "marks": [],
+            "text": "How the "
+          },
+          {
+            "_key": "span-cc4zpi",
+            "_type": "span",
+            "marks": [
+              "link-qgp8xt"
+            ],
+            "text": "live platform preview"
+          },
+          {
+            "_key": "span-grixmh",
+            "_type": "span",
+            "marks": [],
+            "text": " maps to your institution's real operating model."
+          }
+        ],
+        "listItem": "bullet",
+        "markDefs": [
+          {
+            "_key": "link-qgp8xt",
+            "_type": "link",
+            "href": "/view-platform"
+          }
+        ],
+        "style": "normal"
+      },
+      {
+        "_key": "block-2sv9mn",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-qx57la",
+            "_type": "span",
+            "marks": [],
+            "text": "What migration can look like if you start with one department first."
+          }
+        ],
+        "listItem": "bullet",
+        "style": "normal"
+      },
+      {
+        "_key": "block-ld1ypw",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "span-ldpjnco",
+            "_type": "span",
+            "marks": [
+              "link-lpun3s"
+            ],
+            "text": "Book a demo"
+          },
+          {
+            "_key": "span-daa4zd",
+            "_type": "span",
+            "marks": [],
+            "text": " when you want to evaluate Classgrid as an operating platform, not just as another ERP feature list."
+          }
+        ],
+        "markDefs": [
+          {
+            "_key": "link-lpun3s",
+            "_type": "link",
+            "href": "/#demo"
+          }
+        ],
+        "style": "normal"
+      }
+    ],
+    "competitorName": "Legacy Platforms",
+    "faqs": [
+      {
+        "_key": "faq-br6mom",
+        "answer": "Yes. Classgrid supports multiple institution types, including schools, junior colleges, colleges, coaching institutes, diploma institutes, and custom academic structures.",
+        "question": "Can Classgrid work for schools, junior colleges, and colleges?"
+      },
+      {
+        "_key": "faq-irxo8r",
+        "answer": "No. Module count is already covered on the pricing and module pages. This comparison focuses on decision criteria such as roles, dashboards, department ownership, support, reporting, adoption, and migration.",
+        "question": "Is this comparison based only on module count?"
+      },
+      {
+        "_key": "faq-2ogfwg",
+        "answer": "Ask to see the institution type closest to your setup, the dashboards your departments will use, support ticket tracking, multi-role access, and how admissions, fees, attendance, exams, and reports connect in daily work.",
+        "question": "What should we check in a Classgrid demo?"
+      },
+      {
+        "_key": "faq-7njthb",
+        "answer": "Classgrid is designed to connect academic, attendance, marks, fee, faculty, classroom, and enrollment data toward faster evidence preparation and a future one-click NBA/NAAC data aggregation experience.",
+        "question": "Does Classgrid help with NBA, NAAC, and institutional reporting?"
+      }
+    ],
+    "featureMatrix": [
+      {
+        "_key": "fm-hxu4eb",
+        "category": "Institution Fit",
+        "competitorIcon": "warning",
+        "competitorStatus": "Often supports common institution types, but fit may depend on setup, customization, or generic academic structures.",
+        "featureName": "School, Junior College, Engineering College, Coaching, Diploma Support",
+        "ourIcon": "check",
+        "ourStatus": "Supports multiple institution structures including school, junior college, engineering college, coaching, diploma, and custom hierarchies."
+      },
+      {
+        "_key": "fm-l3ezr",
+        "category": "Roles",
+        "competitorIcon": "warning",
+        "competitorStatus": "Role access may exist, but overlapping real-world responsibilities often require manual handling or admin intervention.",
+        "featureName": "Multiple User Responsibilities",
+        "ourIcon": "check",
+        "ourStatus": "Supports primary roles and additional roles so one person can hold multiple institutional responsibilities."
+      },
+      {
+        "_key": "fm-xakv33",
+        "category": "Dashboards",
+        "competitorIcon": "warning",
+        "competitorStatus": "May provide dashboards, but many workflows are still concentrated in generic admin screens.",
+        "featureName": "Department-Level Workspaces",
+        "ourIcon": "check",
+        "ourStatus": "Dedicated dashboard surfaces for organization admin, admissions, fees, examinations, library, attendance, HR/payroll, hostel/transport, faculty, and students."
+      },
+      {
+        "_key": "fm-k6boow",
+        "category": "Support",
+        "competitorIcon": "warning",
+        "competitorStatus": "Support may be handled through email, external tools, or less connected request tracking.",
+        "featureName": "Ticket And Request Tracking",
+        "ourIcon": "check",
+        "ourStatus": "Support tickets include categories, priority, status, assignment, message history, replies, reopen flow, and satisfaction rating."
+      },
+      {
+        "_key": "fm-qnmy9p",
+        "category": "Admissions",
+        "competitorIcon": "warning",
+        "competitorStatus": "Usually supports admission records and forms, but automation depth varies by platform.",
+        "featureName": "Admission-To-Enrollment Workflow",
+        "ourIcon": "check",
+        "ourStatus": "Built for applications, document verification, merit lists, enrollment, parent tracking, exports, and admission operations."
+      },
+      {
+        "_key": "fm-lqqii",
+        "category": "Operations",
+        "competitorIcon": "warning",
+        "competitorStatus": "Often covers similar modules, but day-to-day coordination may still depend on exports, calls, or spreadsheets.",
+        "featureName": "Connected Daily Workflows",
+        "ourIcon": "check",
+        "ourStatus": "Designed to connect admissions, fees, attendance, exams, reports, support, and role experiences into one operating layer."
+      },
+      {
+        "_key": "fm-mdtymd",
+        "category": "Reporting",
+        "competitorIcon": "warning",
+        "competitorStatus": "Compliance preparation commonly depends on manual exports, department files, and spreadsheet consolidation.",
+        "featureName": "Audit And Compliance Preparation",
+        "ourIcon": "check",
+        "ourStatus": "Connects academic, attendance, marks, fee, faculty, classroom, and enrollment data toward faster NBA/NAAC evidence preparation."
+      },
+      {
+        "_key": "fm-23dqj8",
+        "category": "AI",
+        "competitorIcon": "warning",
+        "competitorStatus": "AI depth varies and may be limited to generic assistance outside core academic workflows.",
+        "featureName": "Academic AI Workflows",
+        "ourIcon": "check",
+        "ourStatus": "AI is connected to academic use cases such as syllabus assistance, question workflows, OCR extraction, proctoring analysis, and student insights."
+      },
+      {
+        "_key": "fm-xfg4zh",
+        "category": "Evaluation",
+        "competitorIcon": "warning",
+        "competitorStatus": "Evaluation may rely on sales-led demos, screenshots, or limited sandbox access.",
+        "featureName": "Live Platform Preview",
+        "ourIcon": "check",
+        "ourStatus": "Marketing site includes a live platform preview with role selection across admin, department, student, and faculty views."
+      },
+      {
+        "_key": "fm-ohtc8",
+        "category": "Migration",
+        "competitorIcon": "warning",
+        "competitorStatus": "Migration approach varies and may require a broader one-time switch or heavier vendor-led configuration.",
+        "featureName": "Phased Rollout",
+        "ourIcon": "check",
+        "ourStatus": "Classgrid can be evaluated department by department so institutions can start with admissions, fees, attendance, exams, support, or reporting."
+      }
+    ],
+    "metaDescription": "See how Classgrid compares against traditional institutional software. This detailed comparison covers department-level dashboards, multi-role workflows, built-in support systems, AI-assisted academics, compliance reporting, and what your evaluation team should verify before choosing a platform.",
+    "migrationTestimonial": {
+      "authorName": "Classgrid Product Team",
+      "authorRole": "Architecture Review",
+      "quoteText": "The strongest reason to choose Classgrid is not a longer feature list. It is the way separate departments, roles, support, and reporting can work from one connected operating layer instead of depending on spreadsheets and follow-ups."
+    },
+    "ratingBadges": [
+      {
+        "_key": "badge-ur16da",
+        "badgeLabel": "Department Ready",
+        "platform": "Role-Based Operations",
+        "score": 4.9
+      },
+      {
+        "_key": "badge-lc3hc",
+        "badgeLabel": "Workflow Native",
+        "platform": "Support & Adoption",
+        "score": 4.8
+      },
+      {
+        "_key": "badge-9g24bn",
+        "badgeLabel": "Compliance Focused",
+        "platform": "Reporting Readiness",
+        "score": 4.7
+      }
+    ],
+    "seoTitle": "Classgrid vs Traditional Platforms | How Classgrid Transforms Institutional Operations",
+    "slug": {
+      "_type": "slug",
+      "current": "legacy-platforms"
+    },
+    "usps": [
+      {
+        "_key": "usp-ylvvbg",
+        "description": "Classgrid separates daily operations into role and department dashboards for organization admins, admissions, fees, examinations, library, attendance, HR/payroll, hostel/transport, faculty, and students.",
+        "icon": "workflow",
+        "title": "Built for department ownership"
+      },
+      {
+        "_key": "usp-gib719",
+        "description": "Classgrid includes support tickets, request tracking, replies, categories, priority, assignment, reopen flows, and satisfaction capture so users have a clear path for help after implementation.",
+        "icon": "shield",
+        "title": "Adoption supported after rollout"
+      },
+      {
+        "_key": "usp-8o51d8",
+        "description": "Classgrid connects AI-assisted academic workflows and compliance-oriented reporting direction to real institutional operations rather than treating AI as a separate chatbot.",
+        "icon": "sparkles",
+        "title": "AI and reporting connected to academic work"
+      }
+    ]
+  }
+]

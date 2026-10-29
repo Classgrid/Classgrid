@@ -1,0 +1,993 @@
+{
+  "_id": "legal-disclaimer",
+  "_type": "legalPage",
+  "title": "DISCLAIMER",
+  "slug": {
+    "_type": "slug",
+    "current": "disclaimer"
+  },
+  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "effectiveDate": "2026-10-27T00:00:00.000Z",
+  "intro": {
+    "introductionHeading": "Introduction",
+    "introductionBody": "",
+    "scopeHeading": "Scope",
+    "scopeBody": "Governs all public-facing artificial intelligence services, cloud development environments, and APIs operated by Classgrid Technologies."
+  },
+  "sections": [
+    {
+      "_key": "d7b3593b5a4639ff",
+      "id": "1-general-platform-disclaimer",
+      "title": "1. GENERAL PLATFORM DISCLAIMER",
+      "content": [
+        {
+          "_key": "467db10475d26098",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "2425c2e744befe48",
+              "_type": "span",
+              "text": "All services, software, artificial intelligence agents, cloud development environments, terminal sandboxes, voice telephony integrations, multi-user collaborative Grids, and APIs provided on the Classgrid website ([https://classgrid.in](https://classgrid.in)) and the Classgrid AI chat platform ([https://chat.classgrid.in](https://chat.classgrid.in)) (collectively, the \"**Platform**\") are provided on an **\"AS IS\"** and **\"AS AVAILABLE\"** basis without warranties of any kind, whether express, statutory, or implied.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3d3cd58a2c1f93e6",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "8392d5f3d35d34de",
+              "_type": "span",
+              "text": "Classgrid Technologies (\"**Company**\", \"**Classgrid**\", \"**We**\", \"**Us**\", or \"**Our**\"), having its operational address at Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India, expressly disclaims all warranties, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, non-infringement, security, title, and uninterrupted uptime.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "bacc61653cb2ff1b",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "a8f5f0f6f9ea5dea",
+              "_type": "span",
+              "text": "**Scope Notice:** Classgrid is a public-facing cloud artificial intelligence workspace, developer sandbox environment, real-time collaboration suite, and voice assistant telephony gateway. Classgrid is **not** an educational ERP, school administration portal, or student record management system. Any legacy institutional services have been fully decommissioned. This Disclaimer applies exclusively to the public-facing AI platform and developer toolchain.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "4b292eae63fe7ac2",
+      "id": "2-artificial-intelligence-output-fallibility-human-oversight",
+      "title": "2. ARTIFICIAL INTELLIGENCE OUTPUT FALLIBILITY & HUMAN OVERSIGHT",
+      "content": [
+        {
+          "_key": "8571d2025f77c54a",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "b1da6f55234a566c",
+              "_type": "span",
+              "text": "2.1 Probabilistic Nature of Large Language Models",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d7f5cf61b2d77a94",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "3e9ba43ed4404702",
+              "_type": "span",
+              "text": "The Platform utilizes generative large language models (LLMs) and multi-agent reasoning frameworks (including GLM-4.7-Flash, DeepSeek V4 Pro, and Claude 3.5 Sonnet). You expressly acknowledge that:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1cb2825b0d88b2b1",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "b7c9e098e2b47a9f",
+              "_type": "span",
+              "text": "Generative AI models operate on statistical probabilities and patterns;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "721163d236c2a5bc",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "52e1f1d437c7ac8c",
+              "_type": "span",
+              "text": "AI outputs are inherently probabilistic and may contain inaccuracies, logical flaws, out-of-date library syntax, compilation errors, or complete fabrications (commonly known as \"hallucinations\");",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5f72590f843da3d2",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "17b653d7f1aa0e69",
+              "_type": "span",
+              "text": "The generation of executable code or technical documentation by Classgrid AI does not imply certification, testing, or formal verification by Classgrid Technologies.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "80462db5bbe00bfd",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "5533541d2e0d9196",
+              "_type": "span",
+              "text": "2.2 Mandatory Human Review & Testing",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9804006027b2c4d5",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "817f556bb900f26e",
+              "_type": "span",
+              "text": "You are solely responsible for reviewing, auditing, compiling, linting, unit testing, and verifying any code, script, architecture, command, or advice generated by the Platform prior to executing it in production environments. **Under no circumstances should code generated by an AI model be deployed to critical production, financial, medical, aerospace, or safety-critical infrastructure without thorough independent human review.**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "02011bfdf1b189ec",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "e232b469aef2ec3f",
+              "_type": "span",
+              "text": "2.3 No Professional Advice",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5363a3954480fed5",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "1958cb89c3474fe4",
+              "_type": "span",
+              "text": "Content and communications generated by Classgrid AI do not constitute professional engineering, legal, regulatory, medical, architectural, or financial advice. You agree that You rely on any AI-generated recommendations strictly at Your own risk.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "b64701e87e20832b",
+      "id": "3-autonomous-ai-agent-execution-risks",
+      "title": "3. AUTONOMOUS AI AGENT EXECUTION RISKS",
+      "content": [
+        {
+          "_key": "ae7cc37b7382c539",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "a0a38eb260eb846c",
+              "_type": "span",
+              "text": "3.1 Autonomous Operations & User Directives",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "910f729c47566490",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "3d2f8f13b2004a43",
+              "_type": "span",
+              "text": "Classgrid provides autonomous AI agents capable of continuous background execution (up to a 48-hour runtime limit `MAX_WORK_MS`), scheduling operations via `sleep_until` directives, invoking command-line tools, creating files, and dispatching emails via `agent-mail.service.js`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "47350c44d7c1251f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4388ceb2d4fc8a36",
+              "_type": "span",
+              "text": "You acknowledge that the AI agent operates as an autonomous proxy following Your instructions.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8ca5b65cccc20df3",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "b2e2315d9892fdd4",
+              "_type": "span",
+              "text": "You assume full legal and operational responsibility for any side-effects, API calls, database writes, file deletions, or third-party communications initiated by an autonomous agent running under Your account.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "77e0619c5535e66e",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "95e5c47da42d2bb5",
+              "_type": "span",
+              "text": "3.2 Safety Circuit Breakers Are Not Absolute Guarantees",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2c2e542be71a0e6d",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "0363b09449e4aafc",
+              "_type": "span",
+              "text": "While Classgrid enforces automated safety circuit breakers (including halting tasks after five consecutive tool execution failures `NO_PROGRESS_LIMIT = 5` and hard runtime terminations at 48 hours), these mechanisms are designed to protect platform compute stability and reduce runaway credit consumption. They do not constitute an absolute guarantee that an agent will not generate sub-optimal code, corrupt workspace files, or fail to achieve Your desired engineering objective.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "6eea7252026fb8bf",
+      "id": "4-project-mode-cloud-development-sandbox-disclaimer",
+      "title": "4. PROJECT MODE & CLOUD DEVELOPMENT SANDBOX DISCLAIMER",
+      "content": [
+        {
+          "_key": "4bb12977740347c7",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "5c05ef4742959796",
+              "_type": "span",
+              "text": "4.1 Ephemeral Container Architecture",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "efdec8ca011549a9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "4b3f5ca64ef06adf",
+              "_type": "span",
+              "text": "Cloud development sandboxes provisioned under Project Mode run inside isolated, ephemeral Linux containers.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9fb6891f78cea626",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "9bff2d2b7fac9ebb",
+              "_type": "span",
+              "text": "4.2 Data Loss Warning & Uncommitted Code",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "0f574eb8f058eb12",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "13dee9a284fae901",
+              "_type": "span",
+              "text": "Cloud sandboxes are temporary workspaces intended for active coding, testing, and debugging. They are **not** persistent file backup vaults.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2cbe02c651835dc9",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "96a92126263bd709",
+              "_type": "span",
+              "text": "If a sandbox container times out due to inactivity, crashes, or is restarted during cluster maintenance, any files, dependencies, or database migrations that have **not** been committed and pushed to a remote git repository (e.g., GitHub) may be permanently and irrecoverably lost.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a908733d899f74a8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "fbfa8d78c45f7478",
+              "_type": "span",
+              "text": "**Classgrid Technologies is not liable for any lost code, work stoppage, corrupted workspaces, or destroyed data occurring inside Project Mode cloud sandboxes.**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3599deaad9af7cb8",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "4416ea3f419295a2",
+              "_type": "span",
+              "text": "4.3 Automated Git Commits (`Co-authored-by: Classgrid AI`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "62b1740519271371",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "a520a52a7ba337db",
+              "_type": "span",
+              "text": "When Project Mode commits changes to Your GitHub repositories using dynamic installation tokens (`repoAppToken`), automated commits include the trailer `Co-authored-by: Classgrid AI <noreply@classgrid.in>`. You are solely responsible for reviewing git diffs, managing branch merges, and validating the integrity of Your repository commit history.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "865b380da646dc1c",
+      "id": "5-strict-whatsapp-ai-calling-emergency-services-disclaimer",
+      "title": "5. STRICT WHATSAPP AI CALLING & EMERGENCY SERVICES DISCLAIMER",
+      "content": [
+        {
+          "_key": "77d067d6a8b17498",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "614c21fbfeb9b26d",
+              "_type": "span",
+              "text": "🚨 **CRITICAL WARNING — ABSOLUTELY NO EMERGENCY CALLING CAPABILITY:**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a9407d20818fee68",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "462c673eaabe4e8c",
+              "_type": "span",
+              "text": "CLASSGRID WHATSAPP AI VOICE TELEPHONY IS AN EXPERIMENTAL ARTIFICIAL INTELLIGENCE INTERACTION SERVICE OPERATING OVER WEBRTC AND META'S WHATSAPP CALLING CLOUD API.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "abc8515aa534ddb3",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "6fbdacd832498d8b",
+              "_type": "span",
+              "text": "- IT IS **NOT** A PUBLIC TELECOMMUNICATIONS SERVICE OR FIXED-LINE / MOBILE TELEPHONE REPLACEMENT.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "aa54a5e2007b300b",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "0aadf8e653f0984c",
+              "_type": "span",
+              "text": "- IT HAS **NO ABILITY** TO CONNECT TO EMERGENCY SERVICES OF ANY KIND, INCLUDING BUT NOT LIMITED TO:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c98acdd605e25816",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "16cccbade507697d",
+              "_type": "span",
+              "text": "- **112 / 100 / 101 / 102 / 108** (India Emergency Services: Police, Fire, Ambulance, Disaster);",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5ff682b0903dec4f",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "4bfbb61e6e0be232",
+              "_type": "span",
+              "text": "- **911** (United States / Canada Emergency Response);",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "706d485b533d674f",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "04187990f04350e4",
+              "_type": "span",
+              "text": "- **999 / 111** (United Kingdom Emergency & Medical Services);",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d64da9847f2e01d1",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "8e6fec4ef297ba38",
+              "_type": "span",
+              "text": "- ANY HOSPITAL, AMBULANCE, LAW ENFORCEMENT, OR LIFE-SAFETY RESCUE DISPATCH CENTER GLOBALLY.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8070ab2440054601",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "98bce07433363aa2",
+              "_type": "span",
+              "text": "- DO NOT ATTEMPT TO USE CLASSGRID VOICE TELEPHONY FOR MEDICAL EMERGENCIES, LIFE-SAFETY CRISES, SUICIDE PREVENTION, OR ACCIDENT REPORTING. IN ANY EMERGENCY, IMMEDIATELY DIAL YOUR LOCAL EMERGENCY NUMBERS USING A DEDICATED MOBILE OR LANDLINE TELEPHONE.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a35b09cf85f36bd4",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "a419351323bd3df6",
+              "_type": "span",
+              "text": "5.2 Speech Recognition Inaccuracies",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5e2cbc080c42da55",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "add9dee9890326ea",
+              "_type": "span",
+              "text": "Voice conversations are processed through automated speech-to-text (Whisper STT) and text-to-speech (Aura TTS) pipelines. Accents, background acoustic noise, audio compression over WebRTC, and telephony jitter may lead to mistranscription or misinterpretation of verbal instructions. Classgrid is not liable for errors resulting from verbal misinterpretations.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "e129236bcbc42a7c",
+      "id": "6-grids-multi-user-collaborative-chat-disclaimer",
+      "title": "6. GRIDS MULTI-USER COLLABORATIVE CHAT DISCLAIMER",
+      "content": [
+        {
+          "_key": "6cfae198017a1410",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "e164f37bdc3193ce",
+              "_type": "span",
+              "text": "Grids collaborative rooms permit up to four (4) concurrent users (`GRID_MAX_PEOPLE = 4`) to share prompts, execute tools, and inspect real-time AI streaming outputs:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "03e12b19316bdac8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "8727518b76e714c4",
+              "_type": "span",
+              "text": "Room creators (\"Hosts\") are exclusively responsible for controlling the distribution of their 12-byte base64url room invitation tokens.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "ac34c876a8db11f8",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "df2c45104854c5d5",
+              "_type": "span",
+              "text": "Classgrid is not responsible for unauthorized code changes, proprietary code leaks, or disputes arising between collaborators who were invited into a shared Grid.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9e5dead9c8f6b043",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "586ffcb918c3cb42",
+              "_type": "span",
+              "text": "Users who choose not to enable the `hideEmail` privacy toggle consent to having their verified email address displayed to co-collaborators in that room.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "b3eab42116a137cd",
+      "id": "7-ai-credits-token-pricing-non-fiat-disclaimer",
+      "title": "7. AI CREDITS, TOKEN PRICING & NON-FIAT DISCLAIMER",
+      "content": [
+        {
+          "_key": "12429c76e8ad3165",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1d5d2104a3c2646e",
+              "_type": "span",
+              "text": "**Virtual Utility Only:** AI compute credits, promotional allowances, and token meters are non-fiat, non-transferable virtual accounting units used exclusively on the Platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "180f600a17f65c8b",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a4f9b40526a138c4",
+              "_type": "span",
+              "text": "**No Cash Value:** AI credits do not represent money, securities, legal tender, or bank deposits. They have zero cash surrender value and cannot be redeemed for fiat currency.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b5e27231f0c0a61b",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "42b84c32f02e2284",
+              "_type": "span",
+              "text": "**Model Baseline Estimates:** Token pricing is normalized against the **DeepSeek V4 Pro 1.0x baseline unit standard**. Prompt caching hit rates (up to 90%+ discounts) depend strictly on model cache availability and prefix stability; cache hits are not guaranteed for arbitrary or frequently changing prompts.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2062692af9c1d914",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e6f0d7280af57e91",
+              "_type": "span",
+              "text": "**No Refunds:** Purchased credits are strictly non-refundable once acquired or consumed.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "6cc668452bd6f06d",
+      "id": "8-third-party-services-external-dependencies",
+      "title": "8. THIRD-PARTY SERVICES & EXTERNAL DEPENDENCIES",
+      "content": [
+        {
+          "_key": "91f9e98662deeb9d",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "560afdab33b4b45a",
+              "_type": "span",
+              "text": "The Platform relies upon external infrastructure, services, and APIs, including:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5d4e8b2e9ec4129e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4c0fdc609e44f78e",
+              "_type": "span",
+              "text": "Cloud infrastructure providers (Cloudflare, AWS);",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1676e87cb1c56f25",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2f0475fd8c0b7df4",
+              "_type": "span",
+              "text": "AI foundation model providers (Anthropic, DeepSeek, Zhipu AI);",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "24c683a7c665edb6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "cdc3cf784a8d52c0",
+              "_type": "span",
+              "text": "Telephony and messaging APIs (Meta Platforms WhatsApp Cloud API);",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "74663a6f0ab76c43",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "02bcb999b5449a6f",
+              "_type": "span",
+              "text": "Payment gateways (Razorpay Software Private Limited);",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2948e33de8d4b196",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c56f297d7610643d",
+              "_type": "span",
+              "text": "Code hosting platforms (GitHub, GitHub Apps).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "ad9bb5c020008c98",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "82cff47f2e351c9c",
+              "_type": "span",
+              "text": "Classgrid does not control and is not liable for any downtime, outages, API deprecations, rate limits, latency spikes, or terms modifications imposed by these independent third-party vendors.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "d2c1f215a35dcce0",
+      "id": "9-limitation-of-liability-cross-reference",
+      "title": "9. LIMITATION OF LIABILITY & CROSS-REFERENCE",
+      "content": [
+        {
+          "_key": "dbde7e6dd5a6192e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "11c7823a007f4d8e",
+              "_type": "span",
+              "text": "To the maximum extent permitted by applicable law, Classgrid Technologies and its officers, directors, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of Your use of or inability to use the Platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "ac874c3a32b11ed6",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "ad45a41e12868ee4",
+              "_type": "span",
+              "text": "For full limitation of liability caps and indemnification requirements, please refer to Section 12 and Section 13 of Our [Terms of Service](file:///c:/classgrid_marketting/legal-pages-2/NEW-02-terms-of-service.md).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "4b955a173697dc2b",
+      "id": "10-governing-law-legal-contact",
+      "title": "10. GOVERNING LAW & LEGAL CONTACT",
+      "content": [
+        {
+          "_key": "22e9c7418900b29a",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "b210996361db73f3",
+              "_type": "span",
+              "text": "This Disclaimer is governed by the laws of India, with exclusive jurisdiction resting in the competent courts of **Pune / Pimpri-Chinchwad, Maharashtra, India**.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "72960f166a8249a9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "02544cd47da46b23",
+              "_type": "span",
+              "text": "For legal inquiries or clarifications regarding this Disclaimer, please contact:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "ddebab09366fa48a",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "41514ea5aa01b5a4",
+              "_type": "span",
+              "text": "**Entity Name:** Classgrid Technologies",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "189cdb4908174ecf",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a20c4f760420da80",
+              "_type": "span",
+              "text": "**Registered Operational Address:** Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4f4a962de957addc",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4360944989821152",
+              "_type": "span",
+              "text": "**Legal Counsel:** `legal@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f84ac81b491b4e5e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "2b0ec696af4cb403",
+              "_type": "span",
+              "text": "**Support Team:** `support@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9eb43810e47b7648",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "06a22fa119df4533",
+              "_type": "span",
+              "text": "**Public Platform:** [https://chat.classgrid.in](https://chat.classgrid.in)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    }
+  ]
+}

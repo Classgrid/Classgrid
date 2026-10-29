@@ -1,0 +1,2150 @@
+{
+  "_id": "legal-terms",
+  "_type": "legalPage",
+  "title": "TERMS OF SERVICE",
+  "slug": {
+    "_type": "slug",
+    "current": "terms"
+  },
+  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "effectiveDate": "2026-10-27T00:00:00.000Z",
+  "intro": {
+    "introductionHeading": "Introduction",
+    "introductionBody": "",
+    "scopeHeading": "Scope",
+    "scopeBody": "Governs all public-facing artificial intelligence services, cloud development environments, and APIs operated by Classgrid Technologies."
+  },
+  "sections": [
+    {
+      "_key": "cedca9857fe3e1f5",
+      "id": "1-acceptance-of-terms",
+      "title": "1. ACCEPTANCE OF TERMS",
+      "content": [
+        {
+          "_key": "17d9420f5087f79e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "71ee82f2b29ec07e",
+              "_type": "span",
+              "text": "These Terms of Service (\"**Terms**\", \"**Agreement**\") constitute a legally binding agreement between You (\"**User**\", \"**Developer**\", \"**You**\", or \"**Your**\") and Classgrid Technologies (\"**Company**\", \"**Classgrid**\", \"**We**\", \"**Us**\", or \"**Our**\"), having its principal operational office at Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "222e311f60fb3dd9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "2e275138f29d647e",
+              "_type": "span",
+              "text": "These Terms govern Your access to and use of the Classgrid website ([https://classgrid.in](https://classgrid.in)), the Classgrid AI chat and development platform ([https://chat.classgrid.in](https://chat.classgrid.in)), associated software development tools, autonomous agent execution systems, ephemeral cloud sandboxes, real-time multi-user collaborative Grids, voice telephony integrations, and application programming interfaces (collectively, the \"**Platform**\" or \"**Services**\").",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2e801234baf97625",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "634cc096de448114",
+              "_type": "span",
+              "text": "**Important Scope Notice:** Classgrid is an autonomous artificial intelligence platform and cloud development workspace. Classgrid is **not** an educational ERP, school management system, or student administrative portal. All legacy educational institution ERP offerings have been permanently decommissioned. These Terms govern the public-facing AI platform exclusively.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e1f3b815306bae63",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "f3a2b8a30e850e6c",
+              "_type": "span",
+              "text": "BY CREATING AN ACCOUNT, CONNECTING VIA OAUTH (GOOGLE OR GITHUB), INITIALIZING AN AUTONOMOUS AGENT TASK, LAUNCHING A CLOUD SANDBOX, PARTICIPATING IN A COLLABORATIVE GRID, INITIATING A WHATSAPP VOICE CALL, OR PURCHASING AI CREDITS, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS IN THEIR ENTIRETY, YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE PLATFORM.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "01979cc796fef991",
+      "id": "2-eligibility-account-registration",
+      "title": "2. ELIGIBILITY & ACCOUNT REGISTRATION",
+      "content": [
+        {
+          "_key": "2875ebc099517ae5",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "c16e29918728f504",
+              "_type": "span",
+              "text": "2.1 Age & Legal Capacity",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "11cbf9db5a6cb628",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "ae818ebf4999af0d",
+              "_type": "span",
+              "text": "You must be at least eighteen (18) years of age, or the age of legal majority in Your jurisdiction, and possess the legal capacity to enter into a binding contract under the Indian Contract Act, 1872, or other applicable laws. If You access the Platform on behalf of a company or legal entity, You represent and warrant that You have full authority to bind that entity to these Terms.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "628f80ff304eecf6",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "249d256921266c2c",
+              "_type": "span",
+              "text": "2.2 Account Creation & Authentication",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "af1e96847520e3a4",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "4bd79e84375fb49d",
+              "_type": "span",
+              "text": "To access core platform features, You must authenticate using:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d0123f634825a1e5",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "b8910eaea0451337",
+              "_type": "span",
+              "text": "**Third-Party OAuth:** Google OAuth or GitHub OAuth; or",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "094bd156b6d542a9",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "b8f1d0602ee7c31c",
+              "_type": "span",
+              "text": "**Passwordless Verification:** Cryptographically secure One-Time Passwords (OTPs) sent to Your verified email address.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "944c3f063b182147",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "fd5ca4b6042f31e9",
+              "_type": "span",
+              "text": "You agree to provide accurate, current, and complete registration information. You are solely responsible for maintaining the confidentiality of Your session credentials, access tokens, and any activity occurring under Your account.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "cc9665ddde8782f1",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "c69e9f5dc6866ac6",
+              "_type": "span",
+              "text": "2.3 Account Integrity & Anti-Abuse Controls",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b82b30018ad49cf5",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "9a52a6b3f26c6b67",
+              "_type": "span",
+              "text": "Classgrid implements client-side device fingerprinting (including hardware Canvas and WebGL hashing, user-agent parsing, and IP address logging) to enforce platform security and prevent fraudulent exploitation. The creation of automated, scripted, or multiple dummy accounts designed to exploit free weekly promotional credits is strictly prohibited and constitutes a material breach resulting in immediate account termination.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "907e6f4ed1a37ce4",
+      "id": "3-platform-services",
+      "title": "3. PLATFORM SERVICES",
+      "content": [
+        {
+          "_key": "07eb59c2adea1c8b",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "44fa08f2c3228efb",
+              "_type": "span",
+              "text": "Classgrid provides next-generation developer tooling, cloud intelligence, and autonomous compute environments, including:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "867bd0c645441a3f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "6e75bb458581e575",
+              "_type": "span",
+              "text": "**The Autonomous AI Agent:** An autonomous task engine capable of executing complex engineering workflows, scheduling recurring operations, running external tools, invoking APIs, and sending outbound notifications over continuous background execution cycles.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e07e1b72fb47cab1",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a376089ebb2e5fd5",
+              "_type": "span",
+              "text": "**Project Mode (Cloud Development Sandboxes):** Ephemeral, isolated Linux container environments enabling code authoring, dependency installation, command-line terminal execution via NodeSSH, and dynamic GitHub synchronization.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f433ca1f933b807d",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a67164a475b6f2d8",
+              "_type": "span",
+              "text": "**Grids Collaborative Chat:** Real-time multi-user virtual collaboration rooms enabling teams to co-develop, stream LLM responses simultaneously, and manage workspace context.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3c2447160c6cfccd",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0da2a941bb7f194e",
+              "_type": "span",
+              "text": "**WhatsApp AI Voice Telephony:** Real-time voice interaction gateway powered by Meta's WhatsApp Calling API, integrating Whisper speech-to-text, deep reasoning models, and Aura speech synthesis.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c23486324ba02ca2",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "566e07171b007a4f",
+              "_type": "span",
+              "text": "**AI Credits & Metered Computing:** A unified token consumption and credit accounting mechanism powering multi-model LLM access.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "7a8fcd7283b31d8e",
+      "id": "4-ai-credits-token-pricing-payment-billing",
+      "title": "4. AI CREDITS, TOKEN PRICING & PAYMENT BILLING",
+      "content": [
+        {
+          "_key": "ce6230bffe7fec8d",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "198367f03615badc",
+              "_type": "span",
+              "text": "4.1 Nature of AI Credits",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "fd7983441562fe26",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "2638b7b89d943d29",
+              "_type": "span",
+              "text": "AI Credits are non-fiat, virtual platform units used solely to meter and pay for computational processing, large language model (LLM) inference, cloud sandbox uptime, voice telephony duration, and autonomous agent tool execution. **Credits do not constitute real currency, legal tender, bank deposits, or securities, and hold no cash surrender value outside the Platform.**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "11d48338ad3fa62c",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "7f045024613b1348",
+              "_type": "span",
+              "text": "4.2 Credit Allocation Hierarchy",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f3125b123e4cc4ec",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "2214d3e971bc8d86",
+              "_type": "span",
+              "text": "When executing compute or inference operations, credit deductions occur in the following strict order of priority:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9f096362a09348b7",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "56ef47d4d9dbcb31",
+              "_type": "span",
+              "text": "**Free Weekly Allowance:** Promotional credits provided weekly to active accounts (non-cumulative, expiring at the end of each cycle).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2a260e8fad3ccdd6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "217f934fc7a0b75b",
+              "_type": "span",
+              "text": "**Granted / Promotional Credits:** Credits awarded via promotions, hackathons, or system bonuses.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "55af89847e09254d",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "67d4ccc66addb433",
+              "_type": "span",
+              "text": "**Purchased Top-Up Credits:** Balances acquired through direct commercial purchase.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c770bd7658b1ec20",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "3e857e1d558fc179",
+              "_type": "span",
+              "text": "4.3 Normalized Token Pricing & Prompt Caching",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "970d313fc0816c85",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "032a631af9b370a6",
+              "_type": "span",
+              "text": "Model token consumption is normalized against an industry-standard baseline of **1.0x DeepSeek V4 Pro unit cost**. Advanced reasoning models (e.g., Claude 3.5 Sonnet) and lightweight triage models (e.g., GLM-4.7-Flash) are dynamically factored based on their computational cost relative to this baseline. Prompt caching benefits (up to 90%+ discount on cached input prefix tokens) are automatically passed through to reduce User credit burn.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "54d89f22c4eb5ebf",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "f317062905b0d349",
+              "_type": "span",
+              "text": "4.4 Payments, Razorpay & GST Compliance",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c0f34d42ad15206b",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7469f9e195baef1a",
+              "_type": "span",
+              "text": "All commercial credit top-up transactions are processed through **Razorpay Software Private Limited**, an RBI-authorized payment aggregator.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f3ac1fd602ff332f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7d48f206ee0c0b71",
+              "_type": "span",
+              "text": "Purchases made within India are subject to statutory Indian Goods & Services Tax (GST) at the prevailing rate of **18%**, which is added to the transaction at checkout.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5e8e0d532ff38182",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "af615300d40d482c",
+              "_type": "span",
+              "text": "You agree to provide a valid GST identification number (GSTIN) if purchasing on behalf of a registered tax entity.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "89552ed1b321d3ba",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "5f6fbaf4dc1c4165",
+              "_type": "span",
+              "text": "4.5 Non-Refundable Nature & Zero-Negative Floor",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3859113cb5f957a1",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "ffe65a1a02b9d77b",
+              "_type": "span",
+              "text": "**No Refunds:** All credit purchases are final and strictly non-refundable once purchased or partially consumed.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4fa55e6a269f2f33",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "81f9d238a4da879d",
+              "_type": "span",
+              "text": "**Zero-Negative Balance:** The Platform operates on a zero-negative balance model. If Your credit balance is depleted to zero, active background agent tasks, telephony sessions, and cloud sandbox executions will pause or gracefully terminate until top-up credits are acquired.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "78e1f6371e390578",
+      "id": "5-the-autonomous-ai-agent-task-execution",
+      "title": "5. THE AUTONOMOUS AI AGENT & TASK EXECUTION",
+      "content": [
+        {
+          "_key": "c9f1f77496b97d40",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "aa4caf1351226a1c",
+              "_type": "span",
+              "text": "5.1 Autonomous Agency & User Instructions",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f129e9c9c99d6fe4",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "4f3ebde5906d4b3b",
+              "_type": "span",
+              "text": "Classgrid AI agents act strictly as autonomous software proxies executing instructions provided by You. You are solely responsible for all instructions, prompts, script commands, code generations, and network requests initiated through the agent.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "a07e6f04971a930f",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "74cd00fdc852e1c1",
+              "_type": "span",
+              "text": "5.2 Runtime Cutoffs & Scheduling",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "32c675430b984a62",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e0ade47f26753b15",
+              "_type": "span",
+              "text": "**48-Hour Execution Ceiling (`MAX_WORK_MS`):** No individual autonomous task may run continuously for longer than 48 hours. Tasks exceeding this limit are automatically terminated by system daemons to prevent runaway execution.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "049b292dbde68407",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "3cdee6fe94292867",
+              "_type": "span",
+              "text": "**Sleep & Polling Controls:** Tasks utilizing the `sleep_until` scheduler or background polling alarms must adhere to system minimum intervals (5 minutes) and cannot be configured to trigger denial-of-service loops against third parties.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "43a09943509f22ca",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "175c8dd5144302b6",
+              "_type": "span",
+              "text": "5.3 Tool Execution Circuit Breaker (`NO_PROGRESS_LIMIT = 5`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "ad539b9f66df1934",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "d600a32e2f45eed7",
+              "_type": "span",
+              "text": "To protect Your credit balance and system stability, autonomous agent tasks incorporate an automated safety circuit breaker: if an agent experiences **five (5) consecutive tool execution failures** without measurable progress, the task is automatically aborted, and diagnostic failure logs are recorded.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "140714e943865b93",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "ec86c6a8109db5af",
+              "_type": "span",
+              "text": "5.4 Agent Outbound Communications (`agent-mail.service.js`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d5c38609aa921647",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "9c7e00ebf4b49e2e",
+              "_type": "span",
+              "text": "If You authorize an autonomous agent to dispatch emails on Your behalf:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2527f3711ef47ef3",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "9d498ac434859d79",
+              "_type": "span",
+              "text": "You represent that You have obtained prior consent from all email recipients.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d5cf31b5b99dff14",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "14d6cdd6ad4e9090",
+              "_type": "span",
+              "text": "You may not use the agent to send unsolicited bulk communications, spam, marketing blasts, phishing lures, or fraudulent messages.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "83e02564b081903a",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "8f0a27671942c86a",
+              "_type": "span",
+              "text": "Classgrid reserves the right to immediately terminate the outbound mail capability of any account violating spam or email abuse policies.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "4eea46ab3618b19d",
+      "id": "6-project-mode-cloud-development-sandboxes",
+      "title": "6. PROJECT MODE & CLOUD DEVELOPMENT SANDBOXES",
+      "content": [
+        {
+          "_key": "e476840baeff1b6d",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "6efd8ca1b4299098",
+              "_type": "span",
+              "text": "6.1 Ephemeral Container Architecture",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2d48deba4ada4ffc",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "78609e2c2c54a637",
+              "_type": "span",
+              "text": "Cloud sandboxes provisioned under Project Mode run inside isolated Linux environments accessible via secure NodeSSH sessions. **Sandboxes are ephemeral development environments and must not be used for long-term production hosting or persistent data storage.**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "82c3c25cb60cb7ff",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "0ab625a54da56bcc",
+              "_type": "span",
+              "text": "6.2 Data Loss Warning & Git Synchronization",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "01c328f35896ffbd",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "bc1cd4125079656f",
+              "_type": "span",
+              "text": "You are responsible for regularly committing and pushing Your source code to remote git repositories (such as GitHub). **Classgrid is not responsible or liable for any loss of uncommitted source code, configuration files, or database dumps caused by sandbox timeout, container reboot, crash, or scheduled cluster maintenance.**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "450aa009f60a5fd6",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "d7ad6030403485be",
+              "_type": "span",
+              "text": "6.3 GitHub Dynamic Tokens & Automated Commits",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e9cb6ec548054a23",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1a6169e5efb70fd2",
+              "_type": "span",
+              "text": "When Project Mode connects to GitHub, Classgrid generates short-lived, scoped installation tokens (`repoAppToken`) through the official Classgrid GitHub App.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9d07f0d16b8a8439",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "bbf802d713a2f77f",
+              "_type": "span",
+              "text": "Automated commits or code modifications generated by the platform will be attributed with the standard trailer: `Co-authored-by: Classgrid AI <noreply@classgrid.in>`.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "449548766dbfddf9",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f471c2f8acf6be9e",
+              "_type": "span",
+              "text": "You retain full authority and responsibility to review, test, merge, or revert any commits or pull requests created by the Platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "39f450d2a7b099cc",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "1382ac8307ce4357",
+              "_type": "span",
+              "text": "6.4 File Limits & Upload Restrictions",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "465eec588b0a2302",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "1d225d3211f22fee",
+              "_type": "span",
+              "text": "Individual file uploads into Project Mode sandboxes are subject to a hard cap of **2 Megabytes (`MAX_FILE_BYTES = 2MB`)** to mitigate denial-of-service, storage exhaustion, and malicious archive decompression attacks (zip bombs).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "6d4b9a78e6240f2e",
+      "id": "7-whatsapp-ai-voice-telephony",
+      "title": "7. WHATSAPP AI VOICE TELEPHONY",
+      "content": [
+        {
+          "_key": "04e0277687c44e98",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "bddb313d8a67f254",
+              "_type": "span",
+              "text": "7.1 Telephony Gateway & Phone Binding",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "480cd74604690fcb",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "24109f8f25ba2f0a",
+              "_type": "span",
+              "text": "Classgrid provides voice telephony integration using Meta Platforms' WhatsApp Calling API. Voice calling features are restricted to phone numbers verified and linked 1-to-1 with Your authenticated Classgrid account.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "45296570a1b1b888",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "86ad2538b6b32f51",
+              "_type": "span",
+              "text": "7.2 Strict Emergency Services Disclaimer",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e786cbdbdfa6d18d",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "ac34917c37cbce70",
+              "_type": "span",
+              "text": "🚨 **CRITICAL WARNING — NO EMERGENCY DISPATCH:**",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "dd9ffe27d9b6236d",
+          "_type": "block",
+          "style": "blockquote",
+          "children": [
+            {
+              "_key": "921f3dd82ea59db6",
+              "_type": "span",
+              "text": "CLASSGRID VOICE TELEPHONY IS AN EXPERIMENTAL ARTIFICIAL INTELLIGENCE CONVERSATIONAL TOOL. IT IS **NOT** A REPLACEMENT FOR TRADITIONAL TELEPHONE SERVICES AND CANNOT CONNECT TO EMERGENCY SERVICES (INCLUDING 112, 100, 101, 102, 108 IN INDIA, 911 IN THE UNITED STATES, 999 IN THE UNITED KINGDOM, OR ANY LOCAL POLICE, FIRE, AMBULANCE, OR DISASTER RESPONSE AGENCIES). DO NOT ATTEMPT TO USE CLASSGRID VOICE TELEPHONY FOR EMERGENCY ASSISTANCE.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "056dfd790e909e59",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "47361022932b7bac",
+              "_type": "span",
+              "text": "7.3 Call Duration Limits & Automated Termination",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "99d5ac8717489ff9",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7492c42316e2c8ea",
+              "_type": "span",
+              "text": "**15-Minute Hard Cap:** Individual voice calls are restricted to a maximum duration of fifteen (15) minutes.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "88765de3c1029eb4",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "fb8d585536dc6a47",
+              "_type": "span",
+              "text": "**Wrap-Up Warning & Grace Overtime:** An automated audio wrap-up announcement will play fifteen (15) seconds before the limit, followed by a thirty (30) second hard disconnect grace window.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4ed9ebe792c926d6",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "777942b5b3968154",
+              "_type": "span",
+              "text": "**Daily Rate Cap:** Accounts are limited to a maximum of fifty (50) voice calls per rolling 24-hour window.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "6035a3455046f32a",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "480362b03cb303ba",
+              "_type": "span",
+              "text": "7.4 Post-Call Autonomous Task Dispatch",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8e13c4019a7728c9",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "25e41d4de78b37b8",
+              "_type": "span",
+              "text": "Upon the termination of a voice call, the Platform may automatically initialize an autonomous background agent task to summarize conversation notes, generate code artifacts, or update project files as requested during the call. Standard AI credit metering rules apply to post-call tasks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "708745387cec7d42",
+      "id": "8-grids-real-time-collaborative-chat",
+      "title": "8. GRIDS REAL-TIME COLLABORATIVE CHAT",
+      "content": [
+        {
+          "_key": "599cf0dbbb6640dd",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "3e127e31e3de9838",
+              "_type": "span",
+              "text": "8.1 Multi-User Room Capacity & Access Tokens",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "bba388d531a85158",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "00e68857934e4a1f",
+              "_type": "span",
+              "text": "Grids chat rooms are limited to a maximum of **four (4) concurrent participants (`GRID_MAX_PEOPLE = 4`)**.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "943564ebd6f2de1e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "97acd5547ab8d3ff",
+              "_type": "span",
+              "text": "Rooms are joined via secure, unguessable 12-byte base64url invitation tokens. The account creating the Grid (\"Host\") is responsible for all invitations issued.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7e5c5a2a7d5efd66",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "5ae6659cdd3d2d3d",
+              "_type": "span",
+              "text": "8.2 Privacy Controls (`hideEmail`)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5aea1356418dc026",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "e0499747c9cf5226",
+              "_type": "span",
+              "text": "Participants in collaborative Grids have the option to enable the `hideEmail` privacy toggle, masking their verified email address from non-admin participants in the room while maintaining real-time collaborative state.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f24e68f124dbde09",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "7e94efc55ed7bfc1",
+              "_type": "span",
+              "text": "8.3 Collaborator Conduct",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f19bc5ff6911861b",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "4b2d62666646dee6",
+              "_type": "span",
+              "text": "All users in a shared Grid must comply with these Terms. Hosts are responsible for immediately revoking access tokens if unauthorized or abusive individuals enter their collaborative workspace.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "67067b7161453615",
+      "id": "9-acceptable-use-policy-aup",
+      "title": "9. ACCEPTABLE USE POLICY (AUP)",
+      "content": [
+        {
+          "_key": "c8b80248612e785b",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "de2a81d7d12f00a6",
+              "_type": "span",
+              "text": "You agree that You will not, and will not permit any third party or autonomous agent under Your direction to:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "05c490b5c02f68eb",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "6ad2a856c5a5c467",
+              "_type": "span",
+              "text": "**Malicious Computing:** Use cloud sandboxes or terminal commands to mine cryptocurrencies, launch Distributed Denial of Service (DDoS) attacks, perform unauthorized network port scanning, or host command-and-control servers.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1b35971c51dffd15",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0cdfe5bba9177820",
+              "_type": "span",
+              "text": "**Malware & Exploit Development:** Write, compile, distribute, or execute malicious software, viruses, worms, keyloggers, ransomware, or exploits designed to compromise computer systems or networks.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9b6b034fab1a0153",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "15674a8e705b1240",
+              "_type": "span",
+              "text": "**Adversarial AI Attacks:** Attempt prompt injection, jailbreaking, model extraction, denial of service against LLM inference clusters, or circumvent safety filters.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "e3e21b84a0684a09",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5d90895995b25c8c",
+              "_type": "span",
+              "text": "**Illegal & Infringing Content:** Generate, store, upload, or transmit content that is defamatory, obscene, pornographic, harassing, promoting violence, violating privacy rights, or infringing any third-party patent, trademark, trade secret, or copyright.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "cc2ae768232e9f7e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "a548ab00de77dbbb",
+              "_type": "span",
+              "text": "**System Tampering:** Circumvent credit accounting systems, exploit sandbox hypervisor boundaries, reverse engineer proprietary platform microservices, or spoof device fingerprinting telemetry.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "922b22ccd74761c1",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "9118114c79aee335",
+              "_type": "span",
+              "text": "**Unauthorized Mass Telephony:** Exploit the WhatsApp voice calling API for robocalling, automated telemarketing, cold outreach harassment, or unsolicited voice spam.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f822b3715256d45e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "450c6e64bcef66db",
+              "_type": "span",
+              "text": "Violation of this Acceptable Use Policy constitutes grounds for immediate suspension or permanent termination of Your account without refund, and may result in legal referral to law enforcement authorities.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "07b9529784cfb8f9",
+      "id": "10-intellectual-property-rights",
+      "title": "10. INTELLECTUAL PROPERTY RIGHTS",
+      "content": [
+        {
+          "_key": "8d1da61819788f8e",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "18ec8cece4d4a9cf",
+              "_type": "span",
+              "text": "10.1 Your Proprietary Content & Code",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "3d3d1dd5d83a9dd6",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "5a84939387fb784a",
+              "_type": "span",
+              "text": "As between You and Classgrid, You retain all right, title, and interest (including all copyright and patent rights) in and to:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "6bdb11e41fedf6bf",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "78f4f668b1176678",
+              "_type": "span",
+              "text": "Source code, software architectures, documents, and data authored or uploaded by You into the Platform;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "591f9f9da7d85625",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d2e032732aba4dd7",
+              "_type": "span",
+              "text": "Prompts, task parameters, and instructions submitted to Our AI models.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "85a4a075b5668201",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "81664419c8d4a8cb",
+              "_type": "span",
+              "text": "10.2 AI-Generated Outputs",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "47a2ca509d910fd4",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "7bb2607284c6e8d9",
+              "_type": "span",
+              "text": "Subject to Your compliance with these Terms and the upstream licensing constraints of underlying foundation model providers (such as Anthropic, DeepSeek, and Zhipu AI), Classgrid assigns to You all of its right, title, and interest in and to the specific code, text, and synthetic artifacts generated for You by the Platform's AI models. You acknowledge that AI outputs are non-exclusive and that identical or similar outputs may be generated for other users submitting similar prompts.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d3cec3e638f03b0c",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "1906caf88a2f3695",
+              "_type": "span",
+              "text": "10.3 Classgrid Platform Intellectual Property",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "6e888da85d3abdf0",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "581cbf8c4abbc40c",
+              "_type": "span",
+              "text": "Classgrid Technologies retains all right, title, and interest in and to the Platform, including all underlying source code, user interfaces, proprietary autonomous agent frameworks, scheduling engines, database schemas, trademarks, domain names, logos, and documentation. You may not copy, reverse engineer, decompile, or create derivative works of the Platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "f5eac0d43e751aed",
+      "id": "11-disclaimer-of-warranties",
+      "title": "11. DISCLAIMER OF WARRANTIES",
+      "content": [
+        {
+          "_key": "90e9e58a9dd79fdf",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "f3da3083c028b79e",
+              "_type": "span",
+              "text": "THE PLATFORM, INCLUDING ALL ARTIFICIAL INTELLIGENCE AGENTS, CLOUD DEVELOPMENT SANDBOXES, TERMINAL SHELLS, VOICE TELEPHONY INTEGRATIONS, AND REAL-TIME GRIDS, IS PROVIDED STRICTLY ON AN **\"AS IS\"** AND **\"AS AVAILABLE\"** BASIS, WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4c797b29853a7253",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "778aead9d8e75015",
+              "_type": "span",
+              "text": "CLASSGRID TECHNOLOGIES EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7d6f585160a9248c",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "0e8dd1a2ee6cb217",
+              "_type": "span",
+              "text": "WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2c5b399504ecbee3",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "999fc6c9e6d017bb",
+              "_type": "span",
+              "text": "WARRANTIES THAT THE PLATFORM WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4cca68116b81ac1d",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e1b470b81f9e96d6",
+              "_type": "span",
+              "text": "WARRANTIES REGARDING THE ACCURACY, RELIABILITY, CODE QUALITY, COMPILABILITY, OR LOGICAL CORRECTNESS OF ANY CODE, TEXT, OR ADVICE GENERATED BY ARTIFICIAL INTELLIGENCE MODELS.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d25f809be511485f",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "a08b5ed944330d58",
+              "_type": "span",
+              "text": "YOU ACKNOWLEDGE THAT LARGE LANGUAGE MODELS OPERATE PROBABILISTICALLY AND ARE PRONE TO OCCASIONAL \"HALLUCINATIONS,\" COMPILATION ERRORS, OUTDATED API RECOMMENDATIONS, AND SYNTAX ANOMALIES. YOU AGREE TO INDEPENDENTLY AUDIT, COMPILE, TEST, AND VERIFY ALL CODE PRIOR TO PRODUCTION DEPLOYMENT.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "49fed398b75ca266",
+      "id": "12-limitation-of-liability",
+      "title": "12. LIMITATION OF LIABILITY",
+      "content": [
+        {
+          "_key": "f59a13e35bcc420c",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "c320e120852e6800",
+              "_type": "span",
+              "text": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CLASSGRID TECHNOLOGIES, ITS DIRECTORS, OFFICERS, EMPLOYEES, AFFILIATES, AGENTS, SUPPLIERS, OR LICENSORS BE LIABLE FOR:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d2eb71fc637faac9",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4c66874dc20c7f27",
+              "_type": "span",
+              "text": "ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "478d3dada65dc92f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e11ffc44f7a182a7",
+              "_type": "span",
+              "text": "DAMAGES FOR LOSS OF PROFITS, REVENUE, GOODWILL, DATA, WORK STOPPAGE, OR COMPUTER/CONTAINER CRASHES;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "05515d3d67e41217",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "936998628dc51c93",
+              "_type": "span",
+              "text": "ANY LOSS OF UNCOMMITTED SOURCE CODE IN PROJECT MODE SANDBOXES;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "64f9a2022d1f1c09",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "39d1e1c837c8fc26",
+              "_type": "span",
+              "text": "ANY ACTIONS TAKEN BY AUTONOMOUS AI AGENTS PURSUANT TO YOUR PROMPTS OR INSTRUCTIONS;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "f68ee70e0bbe8749",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7d794e407c0289f0",
+              "_type": "span",
+              "text": "ANY INABILITY TO CONNECT TO EMERGENCY RESCUE OR DISPATCH SERVICES VIA WHATSAPP TELEPHONY.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "d37d36809abfa9ce",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "ca14c3c0c421660d",
+              "_type": "span",
+              "text": "IN NO EVENT SHALL THE TOTAL AGGREGATE LIABILITY OF CLASSGRID TECHNOLOGIES ARISING OUT OF OR RELATING TO THESE TERMS OR THE PLATFORM EXCEED THE GREATER OF: (A) THE TOTAL AMOUNT ACTUALLY PAID BY YOU TO CLASSGRID FOR AI CREDITS IN THE THREE (3) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO LIABILITY; OR (B) FIVE THOUSAND INDIAN RUPEES (INR 5,000).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "c337bc7bc9194e58",
+      "id": "13-indemnification",
+      "title": "13. INDEMNIFICATION",
+      "content": [
+        {
+          "_key": "773f8ee63670d81b",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "69e81d8bbdf93013",
+              "_type": "span",
+              "text": "You agree to defend, indemnify, and hold harmless Classgrid Technologies, its parent companies, subsidiaries, directors, officers, employees, contractors, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, debts, and expenses (including reasonable attorneys' fees and legal costs) arising from:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "03c70a31f7578869",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "d27b7cd11d9d1390",
+              "_type": "span",
+              "text": "Your access to or use of the Platform, cloud sandboxes, or voice telephony;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "20791112d3ecc13f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1793454b9929f040",
+              "_type": "span",
+              "text": "Your violation of any provision of these Terms or the Acceptable Use Policy;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7b60cfe15a7c90ed",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "07214cae013cfe00",
+              "_type": "span",
+              "text": "Any commands, tasks, or code executed by an autonomous agent on Your behalf;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8582d1a54f579a3a",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "ad1a1ee31e012c0f",
+              "_type": "span",
+              "text": "Your infringement or violation of any third-party intellectual property or privacy right;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "5f42e58d8e901065",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "number",
+          "level": 1,
+          "children": [
+            {
+              "_key": "58e1ff6db4a36113",
+              "_type": "span",
+              "text": "Any dispute between You and participants invited into Your collaborative Grids.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "cc64c58daa4ea5bf",
+      "id": "14-termination-suspension",
+      "title": "14. TERMINATION & SUSPENSION",
+      "content": [
+        {
+          "_key": "6a57e63bcbb6d45c",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "3df6a162ae01b624",
+              "_type": "span",
+              "text": "14.1 Suspension for Security Threats",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "24480deb42601848",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "ba513769e087121c",
+              "_type": "span",
+              "text": "We reserve the right to immediately suspend or restrict Your access to the Platform, cloud sandboxes, or AI inference endpoints without notice if:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9e1ad4ec8e281c4e",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "92c832f73fe4cd7c",
+              "_type": "span",
+              "text": "We detect suspicious activity, botnet signatures, or device fingerprint anomalies;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "642e36dceb044b41",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "f1f25f887780b427",
+              "_type": "span",
+              "text": "Your autonomous agent initiates excessive failing loops or unauthorized outbound attacks;",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "be01a67740104511",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "9b4d6b385e6f0a5e",
+              "_type": "span",
+              "text": "You violate the Acceptable Use Policy or applicable laws.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "b334f76c3bac2f4d",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "0aad00f0fb7bb30d",
+              "_type": "span",
+              "text": "14.2 Termination by User",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "0478e25282d11c7f",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "17c36a9f4a8766b7",
+              "_type": "span",
+              "text": "You may terminate Your account at any time via Your account profile dashboard. Termination does not entitle You to any refund of unconsumed AI credits.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "820a4d08cea0483b",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "8a981dd638ca446e",
+              "_type": "span",
+              "text": "14.3 Effect of Termination",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "aa0122b65159f055",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "f3239eaa7cd94c89",
+              "_type": "span",
+              "text": "Upon termination of Your account, all active sandboxes, task schedules, and agent alarms will be cancelled immediately, and stored session tokens will be invalidated. Provisions that by their nature should survive termination shall survive (including Intellectual Property, Warranty Disclaimers, Limitation of Liability, Indemnification, and Governing Law).",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "ae880f11113ea899",
+      "id": "15-governing-law-dispute-resolution",
+      "title": "15. GOVERNING LAW & DISPUTE RESOLUTION",
+      "content": [
+        {
+          "_key": "64c60dd2ece2bf6b",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "9b295b0d197fae4c",
+              "_type": "span",
+              "text": "15.1 Governing Law",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "0da54cebff896ca4",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "1d9ab4c7af54ddb3",
+              "_type": "span",
+              "text": "These Terms and any dispute or claim arising out of or in connection with them shall be governed by and construed in accordance with the laws of the Republic of India, without giving effect to any principles of conflicts of law.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "87f0cfc7322a0067",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "d0e5551770e884c4",
+              "_type": "span",
+              "text": "15.2 Exclusive Jurisdiction",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "efe930053173fc3c",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "abd782a3d63c63dc",
+              "_type": "span",
+              "text": "Subject to the arbitration clause below, You agree that the competent courts located in **Pune / Pimpri-Chinchwad, Maharashtra, India**, shall have sole and exclusive jurisdiction to resolve any legal disputes arising under these Terms.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "649522e147d454d7",
+          "_type": "block",
+          "style": "h3",
+          "children": [
+            {
+              "_key": "b502b0bf79e93c3e",
+              "_type": "span",
+              "text": "15.3 Arbitration",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "9bea455ec1caf002",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "10797021931b1492",
+              "_type": "span",
+              "text": "Any dispute, controversy, or claim arising out of or relating to this Agreement, including its formation or breach, shall be referred to and finally resolved by binding arbitration administered in Pune, Maharashtra, in accordance with the Arbitration and Conciliation Act, 1996. The arbitration tribunal shall consist of a sole arbitrator appointed mutually by the parties. The language of arbitration shall be English.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "0f27501b7b215ae0",
+      "id": "16-miscellaneous-provisions",
+      "title": "16. MISCELLANEOUS PROVISIONS",
+      "content": [
+        {
+          "_key": "ae80a19647f36b99",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "4ad99b8be3ff45ea",
+              "_type": "span",
+              "text": "**Entire Agreement:** These Terms, together with Our Privacy Policy, Security Policy, Cookie Policy, and Disclaimer, constitute the entire agreement between You and Classgrid Technologies regarding the Platform.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "2a64af51a70be677",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "c255f6a984da8ab3",
+              "_type": "span",
+              "text": "**Severability:** If any provision of these Terms is found to be invalid or unenforceable, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "8db8e31ca1657515",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "e510e203eb4722ce",
+              "_type": "span",
+              "text": "**No Waiver:** Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "4bf3ac639742b773",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "5763a2456b78d679",
+              "_type": "span",
+              "text": "**Assignment:** You may not assign or transfer these Terms without Our prior written consent. We may assign Our rights and obligations without restriction.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_key": "ec1a6ac4a2dc3812",
+      "id": "17-contact-legal-notices",
+      "title": "17. CONTACT & LEGAL NOTICES",
+      "content": [
+        {
+          "_key": "023db649a951bf22",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "3f1e52839d7856a8",
+              "_type": "span",
+              "text": "For legal notices, terms inquiries, or formal communications, please contact Us at:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "1b1cb07fa0e66e6f",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "54a495c234f17168",
+              "_type": "span",
+              "text": "**Entity Name:** Classgrid Technologies",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "0c8915a8682a3853",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "b3a3f6a2c037f05a",
+              "_type": "span",
+              "text": "**Registered Address:** Akurdi Railway Station Road, Sector No. 26, Pradhikaran, Nigdi, Pimpri-Chinchwad, Maharashtra 411044, India",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "936c2ee8dace3c63",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "7561486f7eae88ec",
+              "_type": "span",
+              "text": "**Legal Notices Email:** `legal@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "7ff30c4cf4119408",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "1f932b6b13f743f0",
+              "_type": "span",
+              "text": "**Developer Support:** `support@classgrid.in`",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "c192acd251eaa13d",
+          "_type": "block",
+          "style": "normal",
+          "listItem": "bullet",
+          "level": 1,
+          "children": [
+            {
+              "_key": "56fb27d343bfeaf2",
+              "_type": "span",
+              "text": "**Platform URL:** [https://chat.classgrid.in](https://chat.classgrid.in)",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    }
+  ]
+}
