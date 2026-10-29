@@ -317,9 +317,8 @@ export function AppChrome({ children, chromeContent, latestReleaseDate }: AppChr
     return <main className="min-h-screen">{children}</main>;
   }
 
-  // Use new in-flow side-by-side layout for docs, blog, and changelog.
-  // Other pages (Home, Pricing, etc) will use the classic overlay drawer layout.
-  const useInFlowAskAi = isDocsRoute || pathname.startsWith("/blog") || pathname.startsWith("/changelog");
+  // Every page uses the in-flow side-by-side layout: the page shrinks and the Ask AI panel sits beside it
+  const useInFlowAskAi = true;
 
   return (
     <>

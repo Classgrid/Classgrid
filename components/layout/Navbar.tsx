@@ -475,7 +475,7 @@ export function Navbar({
                     return (
                       <NavigationMenuItem 
                         key={`${item.label}-${idx}`}
-                        className={item.label === 'Our Institutions' ? 'hide-when-ask-ai-open' : undefined}
+                        className={item.label === 'Our Institutions' || item.label === 'About Us' ? 'hide-when-ask-ai-open' : undefined}
                       >
                         <NavigationMenuLink
                           className={cn(
