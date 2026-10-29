@@ -247,7 +247,9 @@ export function DocsToc() {
       } else if (aiName === 'Claude') {
         window.open(`https://claude.ai/new?q=${encodeURIComponent(prompt)}`, '_blank');
       } else if (aiName === 'Classgrid') {
-        window.open(`https://chat.classgrid.in/?q=${encodeURIComponent(prompt)}`, '_blank');
+        // Classgrid AI only confirms it read the page (no review of it), then waits for the questions
+        const classgridPrompt = `Read ${url} and reply in one short line that you have read it. Then I will ask questions about it.`;
+        window.open(`https://chat.classgrid.in/?q=${encodeURIComponent(classgridPrompt)}`, '_blank');
       }
     }, 1000);
   };

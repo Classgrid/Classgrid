@@ -3,9 +3,11 @@
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { Callout } from '@/components/docs/callout';
 import { CodeBlock } from '@/components/docs/code-block';
+import { CodeTabs } from '@/components/docs/code-tabs';
 
 const components = {
   Callout,
+  CodeTabs,
   pre: CodeBlock,
   code: ({ children, className }: any) => {
     if (className) return <code className={className}>{children}</code>;

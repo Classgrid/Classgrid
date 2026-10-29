@@ -6,6 +6,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeRaw from 'rehype-raw';
 import { CodeBlock } from '@/components/docs/code-block';
 import { Callout } from '@/components/docs/callout';
+import { CodeTabs } from '@/components/docs/code-tabs';
 import { DocsImage } from '@/components/docs/docs-image';
 import { DocsNavigation } from '@/components/docs/docs-navigation';
 import { DocsFAQItem, DocsFAQSummary } from '@/components/docs/docs-faq';
@@ -104,6 +105,8 @@ export default async function DocPage({ params }: { params: Promise<{ slug?: str
                 return <code className="bg-white/10 rounded px-1.5 py-0.5 text-sm font-mono text-foreground">{children}</code>;
               },
               callout: (props: any) => <Callout type={props.type || 'info'}>{props.children}</Callout>,
+              // <CodeTabs labels="cURL,Python,Node.js"> … </CodeTabs> in the Markdown: one code box with a language dropdown
+              codetabs: (props: any) => <CodeTabs labels={props.labels}>{props.children}</CodeTabs>,
               h2: ({ node, children, ...props }) => {
                 const id = props.id;
                 return (
