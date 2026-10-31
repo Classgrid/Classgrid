@@ -17,7 +17,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   "getting-started": "Getting Started",
   "agent-mode": "Agent mode",
   "project-mode": "Project Mode",
-  "studio-mode": "Project Mode",
+  "studio-mode": "Studio Mode",
   "grids": "Grids",
   "whatsapp": "WhatsApp",
   "plugins": "Plugins",
