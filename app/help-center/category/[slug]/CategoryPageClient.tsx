@@ -22,6 +22,7 @@ import {
   Plug,
   CreditCard,
   LifeBuoy,
+  Globe,
 } from "lucide-react";
 import { buildLangHref, extractLocaleString, type SupportedLang } from "@/lib/locale";
 import { getCategoryArticles } from "./actions";
@@ -43,6 +44,7 @@ const ICON_MAP: Record<string, any> = {
   Plug,
   CreditCard,
   LifeBuoy,
+  Globe,
 };
 
 const CATEGORY_ACCENT: Record<string, { iconBg: string; iconColor: string }> = {

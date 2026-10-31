@@ -18,6 +18,7 @@ async function getSidebarSections() {
     { id: 'getting-started', label: 'Getting Started' },
     { id: 'agent-mode', label: 'Agent mode' },
     { id: 'project-mode', label: 'Project Mode' },
+    { id: 'studio-mode', label: 'Studio Mode' },
     { id: 'grids', label: 'Grids' },
     { id: 'whatsapp', label: 'WhatsApp' },
     { id: 'plugins', label: 'Plugins' },

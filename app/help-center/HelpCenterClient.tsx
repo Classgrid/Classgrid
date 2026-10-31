@@ -27,6 +27,7 @@ import {
   Plug,
   CreditCard,
   LifeBuoy,
+  Globe,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -61,6 +62,7 @@ const ICON_MAP: Record<string, any> = {
   Plug,
   CreditCard,
   LifeBuoy,
+  Globe,
 };
 
 const CATEGORY_ACCENT: Record<
