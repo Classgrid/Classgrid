@@ -71,10 +71,10 @@ export async function generateMetadata(): Promise<Metadata> {
           locale: "en_IN",
           images: [
             {
-              url: "/android-chrome-512x512.png",
-              width: 512,
-              height: 512,
-              alt: "Classgrid Logo",
+              url: "/og-image.png",
+              width: 1200,
+              height: 630,
+              alt: "Do anything with Classgrid AI",
             },
           ],
         }
@@ -84,7 +84,7 @@ export async function generateMetadata(): Promise<Metadata> {
           card: "summary_large_image",
           title: defaultTitle,
           description,
-          images: ["/android-chrome-512x512.png"],
+          images: ["/og-image.png"],
         }
       : undefined,
     alternates: {

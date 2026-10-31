@@ -23,8 +23,8 @@ export function buildPageMetadata({
 }: MetadataInput): Metadata {
   const url = `${siteMeta.domain}${path}`;
   const fullTitle = `${title} | ${siteMeta.siteName}`;
-  // Every page has a share image (WhatsApp, LinkedIn, X previews); the logo when the page has none of its own
-  const image = ogImage || "/android-chrome-512x512.png";
+  // Every page has a share image (WhatsApp, LinkedIn, X previews); the Classgrid AI card when the page has none of its own
+  const image = ogImage || "/og-image.png";
   const imageUrl = image.startsWith("http") ? image : `${siteMeta.domain}${image}`;
 
   return {
