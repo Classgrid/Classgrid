@@ -18,7 +18,6 @@ async function getSidebarSections() {
     { id: 'getting-started', label: 'Getting Started' },
     { id: 'agent-mode', label: 'Agent mode' },
     { id: 'project-mode', label: 'Project Mode' },
-    { id: 'studio-mode', label: 'Studio Mode' },
     { id: 'grids', label: 'Grids' },
     { id: 'whatsapp', label: 'WhatsApp' },
     { id: 'plugins', label: 'Plugins' },
@@ -32,9 +31,10 @@ async function getSidebarSections() {
     sectionsMap.set(cat.id, { title: cat.label, items: [] });
   });
 
-  // Group docs by category
-  docs.forEach((doc: any) => {
-    const cat = doc.category || 'getting-started';
+  // Group docs by category. Studio Mode pages sit in the Project Mode section, after its own pages
+  const studioDocs = docs.filter((doc: any) => doc.category === 'studio-mode');
+  [...docs.filter((doc: any) => doc.category !== 'studio-mode'), ...studioDocs].forEach((doc: any) => {
+    const cat = doc.category === 'studio-mode' ? 'project-mode' : doc.category || 'getting-started';
     if (!sectionsMap.has(cat)) {
       sectionsMap.set(cat, {
         title: cat.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
