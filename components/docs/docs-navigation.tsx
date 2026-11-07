@@ -25,6 +25,8 @@ const DOCS_NAV_ORDER = [
   { slug: "incognito", title: "Incognito", category: "Agent mode" },
   { slug: "project-mode", title: "Project Mode", category: "Project Mode" },
   { slug: "connect-github", title: "Connect GitHub", category: "Project Mode" },
+  { slug: "projects-cloud-and-computer", title: "Projects in the Cloud and on Your Computer", category: "Project Mode" },
+  { slug: "mastero", title: "Mastero Projects", category: "Project Mode" },
   { slug: "working-with-the-agent", title: "Working with the Agent", category: "Project Mode" },
   { slug: "review-and-undo", title: "Review and Undo", category: "Project Mode" },
   { slug: "pull-requests-and-backups", title: "Pull Requests and Backups", category: "Project Mode" },
