@@ -1042,8 +1042,6 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
 
 
       <AgentRealWorkSection />
-      <AgentSchedulesSection />
-      <AgentGetStartedSection />
       <AgentModelsSection />
 
       <AgentPluginsSection />
@@ -1141,6 +1139,10 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
       <div id="faq">
         <AgentFaqSection />
       </div>
+
+      {/* Schedules and "Get started": right before "Talk to our team" */}
+      <AgentSchedulesSection />
+      <AgentGetStartedSection />
 
       {showDemoForm ? (
         <>
