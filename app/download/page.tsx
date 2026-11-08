@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
-import { getDesktopRelease } from "@/lib/desktopRelease";
+import { formatReleaseDate, getLatestPerPlatform, getReleases } from "@/lib/desktopRelease";
 import { AppleIcon, LinuxIcon, WindowsIcon } from "@/components/download/OsIcons";
 
 export const metadata = buildPageMetadata({
@@ -10,24 +9,20 @@ export const metadata = buildPageMetadata({
   path: "/download",
 });
 
-// The page shows the newest version from R2 (lib/desktopRelease.ts); refreshed every 5 minutes
+// Versions, release notes and download addresses come from Sanity (Desktop App Releases, lib/desktopRelease.ts);
+// the page refreshes every 5 minutes, so a version added there shows up without a code change
 export const revalidate = 300;
 
-const WINDOWS_DOWNLOAD = "/download/windows";
-
-// The public release notes (newest first). For the public the first release is the first version, so it starts
-// with one entry; add the next version at the top when it is released.
-const RELEASES: { version: string; date: string; notes: string[] }[] = [
-  {
-    version: "1.0.3",
-    date: "8 November 2026",
-    notes: ["First public version: the Classgrid app with Studio mode, and Classgrid Code."],
-  },
-];
+const PLATFORM_CARDS = [
+  { key: "windows", name: "Windows", Icon: WindowsIcon },
+  { key: "macos", name: "macOS", Icon: AppleIcon },
+  { key: "linux", name: "Linux", Icon: LinuxIcon },
+] as const;
 
 export default async function DownloadPage() {
-  const release = await getDesktopRelease();
-  const version = release?.version ?? RELEASES[0].version;
+  const releases = await getReleases();
+  const latest = await getLatestPerPlatform(releases);
+  const newest = releases[0]?.version;
 
   return (
     <div className="bg-background text-foreground">
@@ -52,30 +47,34 @@ export default async function DownloadPage() {
       {/* Platforms */}
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-5xl grid-cols-1 sm:grid-cols-3">
-          <a
-            href={WINDOWS_DOWNLOAD}
-            className="flex items-center gap-4 px-6 py-8 transition-colors hover:bg-muted/60 md:px-8"
-          >
-            <WindowsIcon className="h-7 w-7 shrink-0" />
-            <span>
-              <span className="block font-medium">Windows</span>
-              <span className="block text-sm text-muted-foreground">Download version {version}</span>
-            </span>
-          </a>
-          <div className="flex items-center gap-4 border-t border-border px-6 py-8 sm:border-l sm:border-t-0 md:px-8">
-            <AppleIcon className="h-7 w-7 shrink-0" />
-            <span>
-              <span className="block font-medium">macOS</span>
-              <span className="block text-sm text-muted-foreground">Coming soon</span>
-            </span>
-          </div>
-          <div className="flex items-center gap-4 border-t border-border px-6 py-8 sm:border-l sm:border-t-0 md:px-8">
-            <LinuxIcon className="h-7 w-7 shrink-0" />
-            <span>
-              <span className="block font-medium">Linux</span>
-              <span className="block text-sm text-muted-foreground">Coming soon</span>
-            </span>
-          </div>
+          {PLATFORM_CARDS.map(({ key, name, Icon }, i) => {
+            const release = latest[key];
+            const border = i > 0 ? "border-t border-border sm:border-l sm:border-t-0" : "";
+            const body = (
+              <>
+                <Icon className="h-7 w-7 shrink-0" />
+                <span>
+                  <span className="block font-medium">{name}</span>
+                  <span className="block text-sm text-muted-foreground">
+                    {release ? `Download version ${release.version}` : "Coming soon"}
+                  </span>
+                </span>
+              </>
+            );
+            return release ? (
+              <a
+                key={key}
+                href={`/download/${key}`}
+                className={`flex items-center gap-4 px-6 py-8 transition-colors hover:bg-muted/60 md:px-8 ${border}`}
+              >
+                {body}
+              </a>
+            ) : (
+              <div key={key} className={`flex items-center gap-4 px-6 py-8 md:px-8 ${border}`}>
+                {body}
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -105,20 +104,16 @@ export default async function DownloadPage() {
       {/* Release notes */}
       <section>
         <div className="mx-auto max-w-3xl px-6 py-14 md:py-20">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-2xl font-medium tracking-[-0.02em]">Release notes</h2>
-            <Link href="/changelog" className="text-sm text-muted-foreground hover:text-foreground">
-              Changelog
-            </Link>
-          </div>
+          <h2 className="text-2xl font-medium tracking-[-0.02em]">Release notes</h2>
           <p className="mt-2 text-[15px] text-muted-foreground">The app updates itself when a new version is out.</p>
+          {releases.length > 0 ? (
           <ol className="mt-8 divide-y divide-border border-y border-border">
-            {RELEASES.map((r) => (
+            {releases.map((r) => (
               <li key={r.version} className="grid gap-2 py-5 sm:grid-cols-[140px_minmax(0,1fr)]">
                 <div>
                   <span className="font-medium">{r.version}</span>
-                  {r.version === version ? <span className="ml-2 text-sm text-muted-foreground">Latest</span> : null}
-                  <span className="block text-sm text-muted-foreground">{r.date}</span>
+                  {r.version === newest ? <span className="ml-2 text-sm text-muted-foreground">Latest</span> : null}
+                  <span className="block text-sm text-muted-foreground">{formatReleaseDate(r.releaseDate)}</span>
                 </div>
                 <ul className="space-y-1 text-[15px] leading-7 text-muted-foreground">
                   {r.notes.map((n) => (
@@ -128,6 +123,7 @@ export default async function DownloadPage() {
               </li>
             ))}
           </ol>
+          ) : null}
         </div>
       </section>
     </div>

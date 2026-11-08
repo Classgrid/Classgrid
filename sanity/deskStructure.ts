@@ -18,6 +18,7 @@ const singletonTypes = new Set(["homePage", "circularTimeline", "homeStats", "ab
 
 // Types already shown via custom items above.
 const hiddenTypes = new Set([
+  "desktopRelease",
   "clientLogo",
   "helpCategory",
   "helpArticle",
@@ -64,6 +65,15 @@ export const structure = (S: StructureBuilder) =>
         .title("Home Page")
         .id("homePageSingleton")
         .child(S.document().schemaType("homePage").documentId("homePage")),
+
+      S.listItem()
+        .title("Desktop App Releases")
+        .id("desktopReleases")
+        .child(
+          S.documentTypeList("desktopRelease")
+            .title("Desktop App Releases")
+            .defaultOrdering([{ field: "releaseDate", direction: "desc" }])
+        ),
 
       S.listItem()
         .title("Plugins Page")
