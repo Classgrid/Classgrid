@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { WindowsIcon } from "@/components/download/OsIcons";
 
 const CHAT_APP_URL = "https://chat.classgrid.in";
 const ICON_BASE = "https://cdn.classgrid.in/classgrid_intgration";
@@ -144,8 +143,8 @@ export function AgentHeroSection({
             href="/download"
             className="inline-flex h-12 items-center gap-2 rounded-full bg-white/40 px-7 text-[16px] font-medium text-[#0d0d0d] backdrop-blur-md transition-colors hover:bg-white/60 md:h-14 md:px-8 md:text-[17px]"
           >
-            <WindowsIcon className="h-4 w-4" />
-            Download for Windows
+            <Download className="h-4 w-4" />
+            Download app
           </Link>
         </div>
 
