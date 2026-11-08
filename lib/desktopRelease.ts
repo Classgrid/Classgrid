@@ -1,10 +1,12 @@
 // The Classgrid desktop app's versions for classgrid.in/download. They are kept in Sanity (Desktop App Releases):
 // each version has its date, what changed and the download address of every platform it came out on, so a new
-// version is added there, never in the code. Windows can also be read from the latest.yml the installed apps update
-// from (R2), which keeps the Windows download working before its version is entered in Sanity.
+// version is added there, never in the code. Until a Windows version is entered in Sanity, Windows is read from the
+// latest.yml the installed apps update from (R2), and people get that version's public copy on the CDN
+// (cdn.classgrid.in/desktop/Classgrid-Setup-x.y.z.exe), or the R2 file while the CDN copy isn't up yet.
 import { getDesktopReleases, type DesktopReleaseDoc } from "@/sanity/lib/marketing";
 
 export const DESKTOP_RELEASE_BASE = "https://pub-96a564393c0440f2bab37ad8bbe92398.r2.dev/desktop";
+export const DESKTOP_CDN_BASE = "https://cdn.classgrid.in/desktop";
 
 export type Platform = "windows" | "macos" | "linux";
 export const PLATFORMS: Platform[] = ["windows", "macos", "linux"];
@@ -35,7 +37,10 @@ async function windowsFromR2(): Promise<Release | null> {
     const file = pick(/^path:\s*(.+)$/m);
     if (!version || !file) return null;
     const date = (pick(/^releaseDate:\s*(.+)$/m) || "").slice(0, 10);
-    return { version, releaseDate: date, urls: { windows: `${DESKTOP_RELEASE_BASE}/${encodeURIComponent(file)}` }, notes: [] };
+    const cdn = `${DESKTOP_CDN_BASE}/Classgrid-Setup-${version}.exe`;
+    const cdnUp = await fetch(cdn, { method: "HEAD", next: { revalidate: 300 } }).then((r) => r.ok).catch(() => false);
+    const url = cdnUp ? cdn : `${DESKTOP_RELEASE_BASE}/${encodeURIComponent(file)}`;
+    return { version, releaseDate: date, urls: { windows: url }, notes: [] };
   } catch {
     return null;
   }

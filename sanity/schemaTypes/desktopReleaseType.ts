@@ -26,7 +26,7 @@ export const desktopReleaseType = defineType({
       name: "windowsUrl",
       title: "Windows download address",
       type: "url",
-      description: "The installer for this version (for example on R2: …/desktop/Classgrid%20Setup%201.0.3.exe).",
+      description: "The public copy of this version's installer on the CDN, for example https://cdn.classgrid.in/desktop/Classgrid-Setup-1.0.4.exe",
       validation: (Rule) => Rule.uri({ scheme: ["https"] }),
     }),
     defineField({
