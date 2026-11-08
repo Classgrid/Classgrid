@@ -214,3 +214,17 @@ export const getAiSolutionPage = (slug: string) =>
   safeFetch(aiSolutionPageBySlugQuery, { slug }, { disableInMemoryCache: true })
 export const getAiSolutionPages = () => safeFetch(aiSolutionPagesListQuery, undefined, { disableInMemoryCache: true })
 export const getAiPricingPage = () => safeFetch(aiPricingPageQuery, undefined, { disableInMemoryCache: true })
+
+// Desktop app releases (classgrid.in/download), newest first
+export type DesktopReleaseDoc = {
+  version: string
+  releaseDate: string
+  windowsUrl?: string | null
+  macosUrl?: string | null
+  linuxUrl?: string | null
+  notes?: string[] | null
+}
+const desktopReleasesQuery = `*[_type == "desktopRelease" && defined(version) && defined(releaseDate)] | order(releaseDate desc, version desc){
+  version, releaseDate, windowsUrl, macosUrl, linuxUrl, notes
+}`
+export const getDesktopReleases = () => safeFetch<DesktopReleaseDoc[]>(desktopReleasesQuery)

@@ -87,6 +87,7 @@ import { classgridTeamVisionType } from './classgridTeamVisionType'
 import { ipProtectionPageType } from './ipProtectionPageType'
 import { pluginItemType, pluginsPageType } from './pluginsPageType'
 import { aiUseCaseType } from './aiUseCaseType'
+import { desktopReleaseType } from './desktopReleaseType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -174,5 +175,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aiUseCaseType,
     aiPricingModelType,
     aiPricingPageType,
+    desktopReleaseType,
   ],
 }
