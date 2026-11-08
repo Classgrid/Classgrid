@@ -13,6 +13,7 @@ import { AgentModelsSection } from "@/components/sections/agent/AgentModelsSecti
 import { AgentFaqSection } from "@/components/sections/agent/AgentFaqSection";
 import { AgentFinalCtaSection } from "@/components/sections/agent/AgentFinalCtaSection";
 import { AgentPluginsSection } from "@/components/sections/agent/AgentPluginsSection";
+import { AgentStudioSection } from "@/components/sections/agent/AgentStudioSection";
 import { Reveal } from "@/components/sections/Reveal";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { TimelineSection } from "@/components/sections/TimelineSection";
@@ -1044,6 +1045,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
       <AgentRealWorkSection />
       <AgentModelsSection />
 
+      <AgentStudioSection />
       <AgentPluginsSection />
 
       {showTurboComparison ? (
