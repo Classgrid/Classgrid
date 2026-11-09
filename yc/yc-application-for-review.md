@@ -80,7 +80,7 @@ Yes. I built everything so far alone, but growing an AI agent company needs a se
 **Classgrid**
 
 ### Describe what your company does in 50 characters or less.
-**The AI agent that does real work for you**
+**An AI agent that works where you do**
 
 ### Company URL
 **https://classgrid.in**
@@ -93,7 +93,9 @@ Enter the review account details directly in the YC form only. Never store them 
 
 ### What is your company going to make?
 
-Classgrid AI is an AI agent that does real work, not just chat. You ask in plain words and it searches the web, reads your files, runs Python, makes charts, documents and reports, and works inside the apps you already use, then hands you the finished result.
+Classgrid AI is an AI agent that lives where you do: it codes, but it also texts you on WhatsApp, reads your inbox, runs your calendar, and keeps working when your laptop is closed.
+
+You ask in plain words and it searches the web, reads your files, runs Python, makes charts, documents and reports, and works inside the apps you already use, then hands you the finished result.
 
 It has three modes:
 - **Agent mode** for everyday work: research, files, spreadsheets, PDFs, reports and reminders.
@@ -130,7 +132,19 @@ I have been building Classgrid since July 2025, alongside college. Classgrid AI 
 
 ### What tech stack are you using?
 
-<!-- Nikhil: fill in the real stack of the agent platform before submitting. -->
+**Frontend:** React 19 with TypeScript and Vite, Tailwind CSS, Radix UI and shadcn components, Zustand for state, TanStack Query and SWR for data, Socket.IO for live updates, Monaco for the code editor, xterm.js for the terminal, and Chart.js, Recharts and Mermaid for charts and diagrams.
+
+**Backend:** Node.js with Express, Socket.IO for real-time chat and streaming, BullMQ on Redis for background jobs, and JWT and OAuth (Google, GitHub, Facebook) for auth.
+
+**Data:** MongoDB for users, chats, credits and configuration, Supabase (Postgres) for real-time messaging, and Redis for caching and queues.
+
+**AI:** A model router across Claude, OpenAI, Gemini, Mistral, Groq, Hugging Face and more, with automatic model selection, streaming, tool calling, RAG and memory. MCP for third-party app connectors.
+
+**Desktop app:** Electron, with the agent's file, terminal and memory tools running locally on the user's computer.
+
+**Classgrid Code:** our own editor built from VS Code's open-source code (1.143.1) with the Classgrid AI extension built in, extensions from Open VSX.
+
+**Infrastructure:** Cloudflare Workers for the AI sandbox, Cloudflare R2 for file storage, AWS SES for email, and Razorpay for payments.
 
 ### Are people using your product?
 **Yes**
@@ -280,7 +294,7 @@ Vercel's startup team mentioned YC as one of their accelerator partners.
 
 - [ ] Change the password of the old review account that was stored in this file earlier
 - [ ] Create a review account and put its login only in the YC form
-- [ ] Fill in the tech stack
+- [x] Fill in the tech stack
 - [ ] Put the exact user count
 - [ ] Confirm the batch that is open now
 - [ ] Record Founder Video (1 min, webcam, face to camera)
