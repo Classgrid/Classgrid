@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowUpRight, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -67,7 +67,7 @@ export function AgentHeroSection({
     <section className="relative isolate overflow-hidden text-[#0d0d0d]">
       <style>{HERO_CSS}</style>
 
-      {/* ── Animated silk background ── */}
+      {/* â”€â”€ Animated silk background â”€â”€ */}
       <div aria-hidden className="absolute inset-0 -z-10">
         {/* Periwinkle base, deeper cobalt to the right */}
         <div className="absolute inset-0 bg-[linear-gradient(115deg,#9fabf5_0%,#93a0f4_32%,#8c95f3_58%,#8188f1_82%,#7479ef_100%)]" />
@@ -95,7 +95,7 @@ export function AgentHeroSection({
         <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent to-background dark:to-black" />
       </div>
 
-      {/* ── Content ── */}
+      {/* â”€â”€ Content â”€â”€ */}
       <div className="mx-auto flex max-w-[1728px] flex-col items-center px-5 pb-32 pt-20 text-center md:px-10 md:pb-44 md:pt-[120px]">
         <img
           src="/logo.png"

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 import { DemoRequestForm } from "@/components/sections/DemoRequestForm";
@@ -478,7 +478,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
           headline: slide?.headline ?? slide?.subtitle ?? slide?.label ?? "",
           body:
             slide?.body ??
-            (Array.isArray(slide?.highlights) ? slide.highlights.filter(Boolean).join(" • ") : "") ??
+            (Array.isArray(slide?.highlights) ? slide.highlights.filter(Boolean).join(" â€¢ ") : "") ??
             slide?.subtitle ??
             "",
           src: slide.imageUrl,
@@ -505,7 +505,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
           headline: slide?.headline ?? slide?.subtitle ?? slide?.label ?? "",
           body:
             slide?.body ??
-            (Array.isArray(slide?.highlights) ? slide.highlights.filter(Boolean).join(" • ") : "") ??
+            (Array.isArray(slide?.highlights) ? slide.highlights.filter(Boolean).join(" â€¢ ") : "") ??
             slide?.subtitle ??
             "",
           src: slide.imageUrl,
@@ -916,7 +916,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
   const demoSectionLabel = 'Book a Demo';
   const demoSectionHeading = 'Talk to our team';
   const demoSectionSubtext =
-    'See how Classgrid AI can work for your team.\nAgent Mode for everyday work, Project Mode for code, WhatsApp and your connected apps — all in one place at chat.classgrid.in.';
+    'See how Classgrid AI can work for your team.\nAgent Mode for everyday work, Project Mode for code, WhatsApp and your connected apps â€” all in one place at chat.classgrid.in.';
   const demoSectionCtaLine = 'Tell us about your team and we will get in touch.';
 
   const ctaFormTitle = withFallbackString(
@@ -981,7 +981,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
       modulesCalloutCtaLabel
     );
   const showTimeline = Boolean(timelineTabs.length);
-  // Respect the Sanity "Testimonials Controls" toggles — if the toggle is OFF (false), hide the section.
+  // Respect the Sanity "Testimonials Controls" toggles â€” if the toggle is OFF (false), hide the section.
   // If sectionSettings is null (fetch failed), default to showing the sections to avoid blank pages.
   const trustedInstitutionsEnabled = sectionSettings ? sectionSettings.showTrustedInstitutions === true : true;
   const clientTestimonialsEnabled = sectionSettings ? sectionSettings.showClientTestimonials === true : true;
@@ -1043,9 +1043,9 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
 
 
       <AgentRealWorkSection />
-      <AgentModelsSection />
 
       <AgentStudioSection />
+
       <AgentPluginsSection />
 
       {showTurboComparison ? (
@@ -1137,6 +1137,8 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
           </div>
         </Reveal>
       ) : null}
+
+      <AgentGetStartedSection />
 
       <div id="faq">
         <AgentFaqSection />
