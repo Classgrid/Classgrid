@@ -268,7 +268,7 @@ export async function POST(request: NextRequest) {
         attachments: [
           {
             filename: `Resume_${sanitizedName.replace(/[^a-zA-Z0-9]/g, "_")}.pdf`,
-            href: resumeUrl,
+            path: resumeUrl,
           },
         ],
       }),

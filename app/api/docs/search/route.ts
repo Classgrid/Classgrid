@@ -10,15 +10,14 @@ export async function GET(request: Request) {
   }
 
   // Search docs by title and content using Sanity's text matching
-  const results = await client.fetch(
-    `*[_type == "apiDoc" && docsVersion == "ai" && (title match $query || content match $query)] | order(title asc) [0...12] {
+  const docsQuery: string = `*[_type == "apiDoc" && docsVersion == "ai" && (title match $query || content match $query)] | order(title asc) [0...12] {
       "slug": slug.current,
       title,
       category,
       "snippet": coalesce(description, content)
-    }`,
-    { query: `${query}*` }
-  );
+    }`;
+  const docsParams: Record<string, any> = { query: `${query}*` };
+  const results = await client.fetch<any[]>(docsQuery, docsParams as any);
 
   // Build lightweight results with content snippet
   const formatted = (results || []).map((doc: any) => {

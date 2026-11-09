@@ -12,7 +12,6 @@ import { NextResponse } from "next/server";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { supabaseAdmin } from "@/lib/supabase";
-import { encryptEmail } from "@/lib/crypto";
 
 const transporter = nodemailer.createTransport({
   host: process.env.BREVO_SMTP_HOST,

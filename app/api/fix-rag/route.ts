@@ -66,8 +66,7 @@ User data, connected apps, and operational reliability are handled with security
       section: "Our Story & What is Classgrid",
       contentType: "markdown",
       embedding: emb1,
-      embeddingModel: "Xenova/all-MiniLM-L6-v2",
-      embeddingDimensions: 384,
+      metadata: { embeddingModel: "Xenova/all-MiniLM-L6-v2", embeddingDimensions: 384 },
     });
 
     await RagChunk.create({
@@ -80,8 +79,7 @@ User data, connected apps, and operational reliability are handled with security
       section: "Mission, Vision, Values",
       contentType: "markdown",
       embedding: emb2,
-      embeddingModel: "Xenova/all-MiniLM-L6-v2",
-      embeddingDimensions: 384,
+      metadata: { embeddingModel: "Xenova/all-MiniLM-L6-v2", embeddingDimensions: 384 },
     });
 
     const forumChunks = await RagChunk.find({ chunkText: { $regex: /forum is not yet launched/i } });
@@ -126,8 +124,7 @@ Support Tickets are available right now at https://classgrid.in/support/ticket
       section: "What is the Classgrid Forum",
       contentType: "markdown",
       embedding: forumEmb,
-      embeddingModel: "Xenova/all-MiniLM-L6-v2",
-      embeddingDimensions: 384,
+      metadata: { embeddingModel: "Xenova/all-MiniLM-L6-v2", embeddingDimensions: 384 },
     });
 
     return NextResponse.json({
