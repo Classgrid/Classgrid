@@ -79,7 +79,7 @@ export async function POST(req: Request) {
       messageId: result.messageId,
       accepted: result.accepted,
       rejected: result.rejected,
-      pending: result.pending,
+      pending: (result as { pending?: unknown }).pending,
       response: result.response,
       mongoMs,
       smtpMs,
