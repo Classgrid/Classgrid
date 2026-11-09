@@ -7,6 +7,7 @@ import {
   MessageSquarePlus, 
   Calendar, 
   Library, 
+  Phone,
   Pin,
   Clock,
   Bell,
@@ -168,6 +169,10 @@ export function ViewPlatformPreview() {
                       <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
                         <Library className="w-4 h-4" />
                         Library
+                      </a>
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                        <Phone className="w-4 h-4" />
+                        Calls
                       </a>
                     </nav>
 

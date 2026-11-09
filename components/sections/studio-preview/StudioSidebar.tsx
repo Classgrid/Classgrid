@@ -11,6 +11,7 @@ import {
   Shield,
   Folder,
   Library,
+  Phone,
   Users,
   Plus,
   Search,
@@ -24,6 +25,7 @@ const NAV = [
   { label: "New Chat", Icon: SquarePen },
   { label: "Schedule", Icon: Calendar },
   { label: "Library", Icon: Library },
+  { label: "Calls", Icon: Phone },
   { label: "Grids", Icon: ClassgridLogoIcon },
   { label: "Requests", Icon: Users },
   { label: "Audit Logs", Icon: Shield },
@@ -112,7 +114,7 @@ export function StudioSidebar({ className }: { className?: string }) {
         </span>
       </div>
 
-      {/* Real Studio rows: New Chat, Schedule, Library, Grids, Requests, Audit Logs (Search is in the header) */}
+      {/* Real Studio rows: New Chat, Schedule, Library, Calls, Grids, Requests, Audit Logs (Search is in the header) */}
       <div className="border-b border-black/[0.08] px-2 pb-2 pt-1 dark:border-white/[0.08]">
         {NAV.map(({ label, Icon }) => (
           <div key={label} className="flex h-8 cursor-pointer items-center gap-3 rounded-sm p-2 text-sm text-black/80 transition-colors hover:bg-[#ececec] dark:text-white/80 dark:hover:bg-[#262626]">
