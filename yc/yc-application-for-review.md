@@ -134,7 +134,7 @@ I have been building Classgrid since July 2025, alongside college. Classgrid AI 
 
 **Frontend:** React 19 with TypeScript and Vite, Tailwind CSS, Radix UI and shadcn components, Zustand for state, TanStack Query and SWR for data, Socket.IO for live updates, Monaco for the code editor, xterm.js for the terminal, and Chart.js, Recharts and Mermaid for charts and diagrams.
 
-**Backend:** Node.js with Express, Socket.IO for real-time chat and streaming, BullMQ on Redis for background jobs, and JWT and OAuth (Google, GitHub, Facebook) for auth.
+**Backend:** Node.js with Express, Socket.IO for real-time chat and streaming, BullMQ on Redis for background jobs, and JWT and OAuth (Google, GitHub, Facebook) for auth. The server ships in Docker.
 
 **Data:** MongoDB for users, chats, credits and configuration, Supabase (Postgres) for real-time messaging, and Redis for caching and queues.
 
@@ -144,7 +144,7 @@ I have been building Classgrid since July 2025, alongside college. Classgrid AI 
 
 **Classgrid Code:** our own editor built from VS Code's open-source code (1.143.1) with the Classgrid AI extension built in, extensions from Open VSX.
 
-**Infrastructure:** Cloudflare Workers for the AI sandbox, Cloudflare R2 for file storage, AWS SES for email, and Razorpay for payments.
+**Infrastructure:** Cloudflare Workers for the AI sandbox, a separate OCR worker on Cloudflare, Cloudflare R2 for file storage, AWS SES for email, and Razorpay for payments.
 
 ### Are people using your product?
 **Yes**
