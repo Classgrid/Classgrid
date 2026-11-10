@@ -46,10 +46,21 @@ async function windowsFromR2(): Promise<Release | null> {
   }
 }
 
-// All versions from Sanity, newest first
+// All versions from Sanity, newest first. Sorted here by the version's numbers (1.0.10 is newer than 1.0.9), then by
+// date: Sanity's own order compares versions as text, which put 1.0.9 above 1.0.10 and showed the older one as Latest
+const versionParts = (v: string) => v.split(".").map((n) => parseInt(n, 10) || 0);
+function compareVersionDesc(a: Release, b: Release) {
+  const pa = versionParts(a.version);
+  const pb = versionParts(b.version);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const d = (pb[i] ?? 0) - (pa[i] ?? 0);
+    if (d) return d;
+  }
+  return (b.releaseDate || "").localeCompare(a.releaseDate || "");
+}
 export async function getReleases(): Promise<Release[]> {
   const docs = await getDesktopReleases();
-  return (docs || []).map(fromSanity);
+  return (docs || []).map(fromSanity).sort(compareVersionDesc);
 }
 
 // For each platform: the newest version that has a download address for it (or nothing: "Coming soon")
