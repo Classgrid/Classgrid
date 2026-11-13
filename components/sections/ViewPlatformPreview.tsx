@@ -151,7 +151,7 @@ export function ViewPlatformPreview() {
                 <div className="flex flex-1 min-h-0 overflow-hidden relative">
                   
                   {/* Sidebar */}
-                  <aside className={cn("w-[220px] shrink-0 border-r border-border bg-muted/20 dark:bg-black hidden flex-col text-foreground min-h-0 overflow-y-auto [scrollbar-width:thin]", sidebarOpen && "md:flex")}>
+                  <aside className={cn("w-[220px] shrink-0 border-r border-border bg-muted/20 dark:bg-black hidden flex-col text-foreground min-h-0 overflow-hidden", sidebarOpen && "md:flex")}>
                     <div className="flex items-center gap-2 p-3 font-semibold text-[13px]">
                       <img src="/logo.png" alt="" className="w-5 h-5 object-contain" />
                       Classgrid
@@ -194,7 +194,7 @@ export function ViewPlatformPreview() {
                       </a>
                     </nav>
 
-                    <div className="mt-4 px-3 flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                    <div className="mt-3 px-3 flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
                       <CustomPinIcon className="w-3 h-3" /> Pinned
                     </div>
                     <div className="mt-1 px-2 space-y-0.5">
@@ -208,16 +208,14 @@ export function ViewPlatformPreview() {
                       </div>
                     </div>
 
-                    <div className="mt-4 px-3 flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
+                    <div className="mt-3 px-3 flex items-center gap-1.5 text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
                       <Clock className="w-3 h-3" /> Today
                     </div>
                     <div className="mt-1 px-2 space-y-0.5">
                       <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Competitor research</div>
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Trip plan for Goa</div>
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Chart from sales.xlsx</div>
                     </div>
 
-                    <div className="mt-auto sticky bottom-0 bg-muted/20 dark:bg-black border-t border-border p-3 flex items-center gap-2">
+                    <div className="mt-auto border-t border-border p-3 flex items-center gap-2">
                       <img src="https://cdn.classgrid.in/android-chrome-512x512.png" alt="Classgrid" className="w-7 h-7 rounded-full object-cover" />
                       <div className="text-[13px] font-medium text-foreground truncate flex-1">Classgrid</div>
                       <Bell className="w-4 h-4 text-muted-foreground hover:text-foreground cursor-pointer" />
