@@ -14,13 +14,14 @@ import {
   Paperclip,
   Mic,
   ArrowUp,
-  ChevronLeft,
   ChevronDown,
   Copy,
   ThumbsUp,
   ThumbsDown,
   SquarePen,
-  PanelLeft
+  PanelLeft,
+  Users,
+  Shield
 } from "lucide-react";
 
 const CustomSlidersIcon = ({ className }: { className?: string }) => (
@@ -152,12 +153,7 @@ export function ViewPlatformPreview() {
                       <kbd className="text-[9px] border border-border rounded px-1 bg-background/50">⌘K</kbd>
                     </div>
 
-                    <div className="px-3 flex items-center gap-2 text-[13px] font-semibold py-1.5 text-foreground cursor-pointer hover:bg-muted/50 rounded-md mx-1">
-                      <ChevronLeft className="w-4 h-4" />
-                      Agent
-                    </div>
-
-                    <nav className="px-2 mt-2 space-y-0.5">
+                    <nav className="px-2 mt-1 space-y-0.5">
                       <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-muted/60 text-foreground text-[13px] font-medium transition-colors">
                         <SquarePen className="w-4 h-4" />
                         New Chat
@@ -173,6 +169,18 @@ export function ViewPlatformPreview() {
                       <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
                         <Phone className="w-4 h-4" />
                         Calls
+                      </a>
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                        <img src="/logo.png" alt="" className="w-4 h-4 object-contain opacity-80" />
+                        Grids
+                      </a>
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                        <Users className="w-4 h-4" />
+                        Requests
+                      </a>
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                        <Shield className="w-4 h-4" />
+                        Audit Logs
                       </a>
                     </nav>
 
