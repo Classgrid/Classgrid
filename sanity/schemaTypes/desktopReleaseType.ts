@@ -51,6 +51,21 @@ export const desktopReleaseType = defineType({
       of: [defineArrayMember({ type: "string" })],
       validation: (Rule) => Rule.required().min(1),
     }),
+    // Counted by the site (lib/downloadCount.ts), never typed by hand
+    defineField({
+      name: "downloads",
+      title: "People who downloaded this version",
+      type: "number",
+      readOnly: true,
+      description: "Each person once, by the address they downloaded from",
+    }),
+    defineField({
+      name: "clicks",
+      title: "Download clicks for this version",
+      type: "number",
+      readOnly: true,
+      description: "Every download, also the same person's again",
+    }),
   ],
   orderings: [
     {
@@ -63,10 +78,11 @@ export const desktopReleaseType = defineType({
     },
   ],
   preview: {
-    select: { version: "version", date: "releaseDate", windows: "windowsUrl", macos: "macosUrl", linux: "linuxUrl" },
-    prepare({ version, date, windows, macos, linux }) {
+    select: { version: "version", date: "releaseDate", windows: "windowsUrl", macos: "macosUrl", linux: "linuxUrl", downloads: "downloads" },
+    prepare({ version, date, windows, macos, linux, downloads }) {
       const platforms = [windows && "Windows", macos && "macOS", linux && "Linux"].filter(Boolean).join(", ");
-      return { title: version ? `Version ${version}` : "New version", subtitle: [date, platforms].filter(Boolean).join(" · ") };
+      const people = typeof downloads === "number" ? `${downloads} ${downloads === 1 ? "download" : "downloads"}` : "";
+      return { title: version ? `Version ${version}` : "New version", subtitle: [date, platforms, people].filter(Boolean).join(" · ") };
     },
   },
 });

@@ -19,6 +19,8 @@ const singletonTypes = new Set(["homePage", "circularTimeline", "homeStats", "ab
 // Types already shown via custom items above.
 const hiddenTypes = new Set([
   "desktopRelease",
+  "desktopDownloadStats",
+  "desktopDownloader",
   "clientLogo",
   "helpCategory",
   "helpArticle",
@@ -74,6 +76,12 @@ export const structure = (S: StructureBuilder) =>
             .title("Desktop App Releases")
             .defaultOrdering([{ field: "releaseDate", direction: "desc" }])
         ),
+
+      // The download counts of classgrid.in/download (people and clicks, lib/downloadCount.ts)
+      S.listItem()
+        .title("Desktop App Downloads")
+        .id("desktopDownloadStatsSingleton")
+        .child(S.document().schemaType("desktopDownloadStats").documentId("desktopDownloadStats")),
 
       S.listItem()
         .title("Plugins Page")

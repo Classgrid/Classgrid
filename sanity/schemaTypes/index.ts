@@ -88,6 +88,7 @@ import { ipProtectionPageType } from './ipProtectionPageType'
 import { pluginItemType, pluginsPageType } from './pluginsPageType'
 import { aiUseCaseType } from './aiUseCaseType'
 import { desktopReleaseType } from './desktopReleaseType'
+import { desktopDownloadStatsType, desktopDownloaderType } from './desktopDownloadType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -176,5 +177,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aiPricingModelType,
     aiPricingPageType,
     desktopReleaseType,
+    desktopDownloadStatsType,
+    desktopDownloaderType,
   ],
 }
