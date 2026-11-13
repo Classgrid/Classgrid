@@ -18,7 +18,23 @@ import { useSearchParams } from "next/navigation";
 import { getDictionary } from "@/lib/i18n-dictionary";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
-type FooterLink = { label?: string; href?: string; isNew?: boolean };
+// newSince: the day a link was added (YYYY-MM-DD); it shows "NEW" for NEW_DAYS days from then, then by itself no more
+type FooterLink = { label?: string; href?: string; newSince?: string };
+const NEW_DAYS = 10;
+// (the date is read in the visitor's browser after the page shows, so a page built long ago never keeps an old badge)
+function NewBadge({ since }: { since?: string }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const start = since ? Date.parse(`${since}T00:00:00+05:30`) : NaN;
+    setShow(Number.isFinite(start) && Date.now() >= start && Date.now() < start + NEW_DAYS * 86400000);
+  }, [since]);
+  if (!show) return null;
+  return (
+    <span className="rounded-md border border-foreground/20 bg-foreground/5 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-foreground">
+      NEW
+    </span>
+  );
+}
 type FooterColumn = { heading?: string; links?: FooterLink[] };
 type SocialLink = { platform?: string; href?: string };
 
@@ -103,7 +119,7 @@ export function Footer({
     { label: 'Acknowledgements', href: '/acknowledgement' },
     { label: 'Compare', href: '/compare' },
     { label: 'Careers', href: '/careers' },
-    { label: 'Brand Assets', href: '/brand', isNew: true }
+    { label: 'Brand Assets', href: '/brand', newSince: '2026-07-17' }
   ];
 
   // Try to find a "Company" or "About" column, or just use the first column
@@ -143,7 +159,7 @@ export function Footer({
         ...footerColumns[resourcesColIndex],
         links: [
           ...(footerColumns[resourcesColIndex].links || []),
-          { label: 'Docs', href: '/docs', isNew: true }
+          { label: 'Docs', href: '/docs', newSince: '2026-06-10' }
         ]
       };
     }
@@ -229,11 +245,7 @@ export function Footer({
                       >
                         {link.label}
                       </Link>
-                      {link.isNew && (
-                        <span className="rounded-md border border-foreground/20 bg-foreground/5 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-foreground">
-                          NEW
-                        </span>
-                      )}
+                      <NewBadge since={link.newSince} />
                     </li>
                   ))}
                 </ul>
