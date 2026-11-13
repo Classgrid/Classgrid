@@ -25,6 +25,7 @@ import { generateAIReplyEmail } from "./email-template";
 import { markEmailAsRead, type ZohoEmailContent } from "./zoho-mail";
 import { generateGroqReply } from "../ai/groq-chat";
 import { sendFailedEscalationEmail, sendTicketCreatedEscalationEmail } from "../email";
+import { parseEscalationTag, withoutEscalationTag } from "./escalation-tag";
 
 // ── Escalation regex (same as server.ts) ──────────────────────────────────────
 
@@ -348,6 +349,7 @@ export async function processIncomingEmail(
     if (
       answer.includes("The AI is currently receiving too many requests") ||
       answer.includes("I am processing your request") ||
+      answer.includes("I could not find the exact detail in the Classgrid knowledge base") ||
       answer.includes("[RATE_LIMITED]") ||
       answer.trim().startsWith("[ERROR:") ||
       answer.trim().length < 5
@@ -362,7 +364,7 @@ export async function processIncomingEmail(
 
       // 9. Handle escalation from RAG
       console.log(`⚙️  [email-ai] State: LLM processing finished. Evaluating escalation rules...`);
-      const escalateMatch = answer.match(ESCALATE_RE);
+      const escalateMatch = parseEscalationTag(answer);
 
       if (wasTicketClosed && !escalateMatch) {
         isEscalation = true;
@@ -373,14 +375,14 @@ export async function processIncomingEmail(
         aiDraft = "";
       } else if (escalateMatch && !alreadyEscalated) {
         isEscalation = true;
-        aiSummary = escalateMatch[1].trim();
-        aiSubject = escalateMatch[2]?.trim() || `AI Email Escalation: ${parsed.subject}`;
-        rawCategory = escalateMatch[3]?.trim().toLowerCase() || "general";
-        rawPriority = escalateMatch[4]?.trim().toLowerCase() || "medium";
-        aiDraft = escalateMatch[5]?.trim() || "";
+        aiSummary = escalateMatch.summary || parsed.subject;
+        aiSubject = escalateMatch.subject || `AI Email Escalation: ${parsed.subject}`;
+        rawCategory = escalateMatch.category?.toLowerCase() || "general";
+        rawPriority = escalateMatch.priority?.toLowerCase() || "medium";
+        aiDraft = escalateMatch.draft || "";
 
-        // Strip the [ESCALATE] tag from the customer-facing reply
-        answer = answer.replace(ESCALATE_RE_G, "");
+        // Strip the [ESCALATE] tag from the customer-facing reply (everything from the tag to the end)
+        answer = withoutEscalationTag(answer);
         
         // Failsafe: Strip malformed/broken escalation tags (e.g. missing the [ESCALATE: prefix)
         // If the AI outputs `some text | SUBJECT: ... | CATEGORY: ... | PRIORITY: ...]`, strip it.
@@ -400,14 +402,14 @@ export async function processIncomingEmail(
         // AI is following up on an existing open ticket
         if (escalateMatch) {
           console.log(`⚠️  [email-ai] AI tried to re-escalate an already-escalated conversation. Stripping [ESCALATE] tag and replying normally.`);
-          answer = answer.replace(ESCALATE_RE_G, "").replace(/[\s\-*]+$/, "").trim();
+          answer = withoutEscalationTag(answer);
         }
         
         // Strip out any leaked hallucinated thought blocks or JSON blocks
         answer = answer.replace(/^Thought[\s\S]*?SUBJECT:[\s\S]*?(?:\]|\n\n)/g, "").trim();
         answer = answer.replace(/\[internal_thought_process\][\s\S]*?(?=\n\n|\n[A-Z]|$)/g, "").trim();
 
-        let followUpSummary = escalateMatch?.[1]?.trim();
+        let followUpSummary = escalateMatch?.summary;
         if (!followUpSummary && parsed.cleanBody.length > 20) {
           console.log(`🧠 [email-ai] Generating quick summary for follow-up email...`);
           
@@ -700,6 +702,17 @@ export async function processIncomingEmail(
       console.log(`💾 [email-ai] Conversation saved (${conversation.messages.length} messages total)`);
     } else {
       console.log(`💾 [email-ai] Conversation already saved in escalation block, skipping duplicate save.`);
+    }
+
+    // 12. Nothing meant for the support team goes to the customer: a tag the parsing above did not catch is cut off,
+    //     and the admin's signature placeholder (from a leaked draft) becomes the team's signature
+    if (/\[ESCALATE:/i.test(answer)) {
+      console.error(`⚠️  [email-ai] An [ESCALATE] tag was still in the customer reply; cut off before sending.`);
+      answer = withoutEscalationTag(answer);
+    }
+    if (answer.includes("[ADMIN_NAME]")) {
+      console.error(`⚠️  [email-ai] "[ADMIN_NAME]" was in the customer reply; replaced before sending.`);
+      answer = answer.replace(/\[ADMIN_NAME\]/g, "Classgrid Support Team");
     }
 
     // 12. Generate branded HTML email

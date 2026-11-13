@@ -945,7 +945,7 @@ export async function generateClassgridRagAnswer(
       messages,
       channel,
       maxTokens: 4096,
-      timeoutMs: channel === "whatsapp" ? 10000 : 10000, // Strict 10-second limit
+      timeoutMs: channel === "email" ? 60000 : 10000, // chat: a strict 10 s; email: the reply is long and nobody waits on screen
       temperature: 0.35,
       onStatus: options.onStatus,
       onThought: options.onThought,
