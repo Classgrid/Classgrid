@@ -35,6 +35,7 @@ export const apiDocType = defineType({
           { title: 'Grids', value: 'grids' },
           { title: 'WhatsApp', value: 'whatsapp' },
           { title: 'Plugins', value: 'plugins' },
+          { title: 'MCP', value: 'mcp' },
           { title: 'Account', value: 'account' },
           { title: 'Platform Guides (old)', value: 'platform-guides' },
           { title: 'API Reference (old)', value: 'api-reference' },

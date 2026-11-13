@@ -47,6 +47,9 @@ const DOCS_NAV_ORDER = [
   { slug: "whatsapp-messages", title: "WhatsApp Messages", category: "WhatsApp" },
   { slug: "plugins", title: "Plugins", category: "Plugins" },
   { slug: "connect-and-disconnect-apps", title: "Connect and Disconnect Apps", category: "Plugins" },
+  { slug: "classgrid-mcp-server", title: "Classgrid MCP Server", category: "MCP" },
+  { slug: "classgrid-for-claude", title: "Classgrid in Claude", category: "MCP" },
+  { slug: "classgrid-for-chatgpt", title: "Classgrid in ChatGPT", category: "MCP" },
   { slug: "credits-and-top-ups", title: "Credits and Top Ups", category: "Account" },
   { slug: "privacy-and-data", title: "Privacy and Your Data", category: "Account" },
 ];

@@ -22,6 +22,7 @@ async function getSidebarSections() {
     { id: 'grids', label: 'Grids' },
     { id: 'whatsapp', label: 'WhatsApp' },
     { id: 'plugins', label: 'Plugins' },
+    { id: 'mcp', label: 'MCP' },
     { id: 'account', label: 'Account' },
   ];
   

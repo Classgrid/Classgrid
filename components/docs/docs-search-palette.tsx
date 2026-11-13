@@ -22,6 +22,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   "grids": "Grids",
   "whatsapp": "WhatsApp",
   "plugins": "Plugins",
+  "mcp": "MCP",
   "account": "Account",
   "platform-guides": "Platform Guides",
   "api-reference": "API Reference",
