@@ -110,6 +110,8 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
       },
     },
     types: {
+      // Body pictures sit on white (bg-white): a logo with a see-through background, such as a black wordmark, was
+      // invisible on the dark theme's black page
       image: ({ value }) => {
         if (!value?.asset?._ref) return null;
         const imgSrc = urlFor(value).url();
@@ -118,7 +120,7 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
             <img
               src={imgSrc}
               alt={value.alt || 'Blog image'}
-              className="w-full h-auto rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg object-contain"
+              className="w-full h-auto rounded-2xl border border-slate-200 dark:border-white/10 bg-white shadow-lg object-contain"
             />
             {value.caption && (
               <figcaption className="mt-3 text-center text-sm text-muted-foreground italic">
@@ -140,7 +142,7 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
               <img 
                 src={imgSrc} 
                 alt={value.caption || 'Image'} 
-                className="w-full h-auto rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg object-contain" 
+                className="w-full h-auto rounded-2xl border border-slate-200 dark:border-white/10 bg-white shadow-lg object-contain" 
               />
               {value.caption && <figcaption className="mt-3 text-center text-sm text-muted-foreground italic">{value.caption}</figcaption>}
             </figure>
@@ -154,7 +156,7 @@ function createPortableTextComponents(showAccentBars: boolean): PortableTextComp
               <img 
                 src={imgSrc} 
                 alt={value.caption || 'Image'} 
-                className="w-full h-auto rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg object-contain" 
+                className="w-full h-auto rounded-2xl border border-slate-200 dark:border-white/10 bg-white shadow-lg object-contain" 
               />
             </div>
             {value.caption && (
