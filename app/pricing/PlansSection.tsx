@@ -1,10 +1,11 @@
 "use client";
 
-import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Fragment, Suspense, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
-import { ArrowRight, ArrowUpRight, Check, ChevronDown, CornerRightDown, Minus } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, CheckCircle2, ChevronDown, CornerRightDown, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Billing, CompareGroup, CompareValue, Faq, PricingView, TopupInfo, ViewPlan } from "./plans-data";
 
@@ -116,7 +117,7 @@ function PriceAmount({ text }: { text: string }) {
 // one) glows in the brand gradient, which fades in and out (Framer Motion)
 function PriceBlock({ plan, billing, active, current }: { plan: ViewPlan; billing: Billing; active: boolean; current: boolean }) {
   const price = plan.price[billing];
-  const badge = current ? "Your plan" : plan.badge;
+  const badge = current ? "Subscribed" : plan.badge;
   return (
     <div
       className={cn(
@@ -145,6 +146,7 @@ function PriceBlock({ plan, billing, active, current }: { plan: ViewPlan; billin
               active ? "border-white/80 text-white" : "border-border text-muted-foreground"
             )}
           >
+            {current ? <CheckCircle2 className="mr-1 inline h-3.5 w-3.5 align-[-2px]" aria-hidden /> : null}
             {badge}
           </span>
         ) : null}
@@ -167,9 +169,20 @@ function PriceBlock({ plan, billing, active, current }: { plan: ViewPlan; billin
   );
 }
 
-function PlanColumn({ plan, billing, active, current, index, onFocus }: { plan: ViewPlan; billing: Billing; active: boolean; current: boolean; index: number; onFocus: () => void }) {
-  // Buying the plan you're on adds time to it
-  const label = current && plan.cta.buy ? (billing === "yearly" ? "Add 1 year" : "Add 1 month") : plan.cta.label;
+// Where the card stands against the visitor's plan (plans are listed smallest first)
+type Relation = "guest" | "current" | "below" | "above";
+
+function PlanColumn({ plan, billing, active, relation, index, onFocus }: { plan: ViewPlan; billing: Billing; active: boolean; relation: Relation; index: number; onFocus: () => void }) {
+  const current = relation === "current";
+  // Signed in: the plan you're on says Subscribed and buying it again adds time; a bigger plan says Upgrade; a
+  // smaller one is already included. Not signed in: the plain words.
+  const isFree = !plan.cta.buy && plan.cta.label !== "Contact us";
+  const label = current
+    ? plan.cta.buy ? (billing === "yearly" ? "Add 1 year" : "Add 1 month") : "Your plan"
+    : relation === "below" && plan.cta.buy ? "Upgrade"
+    : relation === "above" && (plan.cta.buy || isFree) ? "Included"
+    : plan.cta.label;
+  const inert = (current && !plan.cta.buy) || (relation === "above" && (plan.cta.buy || isFree));
   return (
     <motion.div
       className="flex flex-col p-4 sm:p-5"
@@ -181,9 +194,16 @@ function PlanColumn({ plan, billing, active, current, index, onFocus }: { plan: 
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
       <PriceBlock plan={plan} billing={billing} active={active} current={current} />
-      <ButtonLink href={plan.cta.href[billing]} className="mt-4 w-full">
-        {label}
-      </ButtonLink>
+      {inert ? (
+        <span aria-disabled className="mt-4 inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-full border border-border px-6 text-[15px] font-medium text-muted-foreground">
+          {current ? <CheckCircle2 className="h-4 w-4" aria-hidden /> : <Check className="h-4 w-4" aria-hidden />}
+          {label}
+        </span>
+      ) : (
+        <ButtonLink href={plan.cta.href[billing]} className="mt-4 w-full">
+          {label}
+        </ButtonLink>
+      )}
       {plan.tagline ? <p className="mt-4 text-[14px] leading-6 text-muted-foreground">{plan.tagline}</p> : null}
 
       <div className="mt-6">
@@ -428,19 +448,68 @@ function Faqs({ faqs }: { faqs: Faq[] }) {
 
 // The signed-in visitor's plan (the login cookie is shared across classgrid.in), or null when not signed in
 const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
-function useCurrentPlan() {
+function useCurrentPlan(reloadToken = 0) {
   const [key, setKey] = useState<string | null>(null);
   useEffect(() => {
     const ctrl = new AbortController();
-    fetch(`${PLATFORM_API}/api/ai/plan`, { credentials: "include", signal: ctrl.signal })
+    fetch(`${PLATFORM_API}/api/ai/plan`, { credentials: "include", signal: ctrl.signal, cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((plan: { enabled?: boolean; key?: string } | null) => {
         if (plan?.enabled && typeof plan.key === "string") setKey(plan.key.toLowerCase());
       })
       .catch(() => {});
     return () => ctrl.abort();
-  }, []);
+  }, [reloadToken]);
   return key;
+}
+
+// Back from the payment page (?subscribed=pro&term=month): a notice with a tick, the receipt line, a button to the
+// chat, and the chat opens by itself after a few seconds. Read inside Suspense (useSearchParams, Next 15).
+const SUBSCRIBED_WAIT_S = 5;
+function SubscribedNotice({ plans, onSubscribed }: { plans: ViewPlan[]; onSubscribed: (key: string) => void }) {
+  const params = useSearchParams();
+  const raw = (params.get("subscribed") ?? "").toLowerCase();
+  const key = /^[a-z]{2,20}$/.test(raw) ? raw : "";
+  const plan = plans.find((p) => p.key === key);
+  const chatUrl = key ? `${CHAT_APP_URL}/c?ai_payment=success&plan=${encodeURIComponent(key)}` : CHAT_APP_URL;
+  const [left, setLeft] = useState(SUBSCRIBED_WAIT_S);
+  const clicked = useRef(false);
+
+  useEffect(() => {
+    if (!key) return;
+    onSubscribed(key);
+    const tick = window.setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
+    const go = window.setTimeout(() => {
+      if (!clicked.current) window.location.assign(chatUrl);
+    }, SUBSCRIBED_WAIT_S * 1000);
+    return () => {
+      window.clearInterval(tick);
+      window.clearTimeout(go);
+    };
+  }, [key, chatUrl, onSubscribed]);
+
+  if (!key) return null;
+  return (
+    <div role="status" className="mx-5 mb-8 flex flex-col gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-500/5 p-5 sm:flex-row sm:items-center sm:justify-between md:mx-8">
+      <div className="flex items-start gap-3">
+        <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-emerald-600 dark:text-emerald-400" aria-hidden />
+        <div>
+          <p className="text-[17px] font-medium">You&apos;re subscribed to {plan?.name ?? key.charAt(0).toUpperCase() + key.slice(1)}.</p>
+          <p className="mt-1 text-[14px] text-muted-foreground">The receipt is in your email. Classgrid opens in {left}s.</p>
+        </div>
+      </div>
+      <a
+        href={chatUrl}
+        onClick={() => {
+          clicked.current = true;
+        }}
+        className="inline-flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-full bg-foreground px-6 text-[15px] font-medium text-background transition-colors hover:bg-zinc-700 dark:hover:bg-zinc-300"
+      >
+        Open Classgrid
+        <ArrowUpRight className="h-4 w-4" />
+      </a>
+    </div>
+  );
 }
 
 export function PricingPage({ view }: { view: PricingView }) {
@@ -449,7 +518,17 @@ export function PricingPage({ view }: { view: PricingView }) {
   // The plan in focus wears the gradient: the hovered one, else the featured one
   const restingKey = plans.find((p) => p.featured)?.key ?? plans[0]?.key;
   const [focusKey, setFocusKey] = useState(restingKey);
-  const currentKey = useCurrentPlan();
+  // Just subscribed (back from the payment page): that plan counts as the visitor's at once, and the account is read again
+  const [subscribedKey, setSubscribedKey] = useState<string | null>(null);
+  const [reloadToken, setReloadToken] = useState(0);
+  const onSubscribed = useMemo(() => (key: string) => {
+    setSubscribedKey(key);
+    setReloadToken((n) => n + 1);
+  }, []);
+  const currentKey = useCurrentPlan(reloadToken) ?? subscribedKey;
+  const currentRank = currentKey ? plans.findIndex((p) => p.key === currentKey) : -1;
+  const relationOf = (plan: ViewPlan, i: number): Relation =>
+    currentRank < 0 ? "guest" : i === currentRank ? "current" : i > currentRank ? "below" : "above";
   const hasStudent = plans.some((p) => p.student);
 
   return (
@@ -469,6 +548,10 @@ export function PricingPage({ view }: { view: PricingView }) {
         </Rise>
       </section>
 
+      <Suspense fallback={null}>
+        <SubscribedNotice plans={plans} onSubscribed={onSubscribed} />
+      </Suspense>
+
       {/* Plans */}
       <section
         onMouseLeave={() => setFocusKey(restingKey)}
@@ -478,7 +561,7 @@ export function PricingPage({ view }: { view: PricingView }) {
         )}
       >
         {plans.map((plan, i) => (
-          <PlanColumn key={plan.key} plan={plan} billing={billing} index={i} active={focusKey === plan.key} current={currentKey === plan.key} onFocus={() => setFocusKey(plan.key)} />
+          <PlanColumn key={plan.key} plan={plan} billing={billing} index={i} active={focusKey === plan.key} relation={relationOf(plan, i)} onFocus={() => setFocusKey(plan.key)} />
         ))}
       </section>
       <p className="border-b border-border px-5 py-3 text-center text-[13px] text-muted-foreground">
