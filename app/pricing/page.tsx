@@ -1,21 +1,34 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/metadata";
-import { PRICING_FAQS } from "./faqs";
 import { PricingPage } from "./PlansSection";
+import { buildPricingView, plansFromFeed, topupFromFeed } from "./plans-data";
 
-// The Free, Pro, Max and Enterprise plans (PlansSection.tsx). The old free-tokens and pay-as-you-go page (Sanity
-// aiPricingPage: hero, two cards, top-up calculator, token steps and the model price list) is no longer shown.
+// The plans page. Plans, prices, limits and top-ups come from the live feed the super admin sets
+// (GET /api/public/ai-pricing, cached 5 minutes); plans-data.ts keeps a fallback for when the feed has no plans yet.
+
+const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
+
+async function getFeed(): Promise<unknown> {
+  try {
+    const res = await fetch(`${PLATFORM_API}/api/public/ai-pricing`, { next: { revalidate: 300 }, signal: AbortSignal.timeout(8000) });
+    return res.ok ? await res.json() : null;
+  } catch {
+    return null;
+  }
+}
 
 export function generateMetadata() {
   return buildPageMetadata({
     title: "Pricing",
-    description:
-      "Classgrid AI plans: Free, Pro at ₹499 a month, Max at ₹1,999 a month and Enterprise for schools and colleges. Student prices, yearly billing and top-up packs from ₹49. Prices include GST.",
+    description: "Classgrid AI plans: start free, then Pro or Max, with student prices and yearly billing. Prices include GST.",
     path: "/pricing",
   });
 }
 
-export default function PricingRoute() {
+export default async function PricingRoute() {
+  const feed = await getFeed();
+  const view = buildPricingView(plansFromFeed(feed), topupFromFeed(feed));
+
   return (
     <div className="relative overflow-x-clip bg-background text-foreground">
       <JsonLd
@@ -36,7 +49,7 @@ export default function PricingRoute() {
           },
           {
             "@type": "FAQPage",
-            mainEntity: PRICING_FAQS.map((faq) => ({
+            mainEntity: view.faqs.map((faq) => ({
               "@type": "Question",
               name: faq.question,
               acceptedAnswer: { "@type": "Answer", text: faq.answer },
@@ -44,7 +57,7 @@ export default function PricingRoute() {
           },
         ]}
       />
-      <PricingPage />
+      <PricingPage view={view} />
     </div>
   );
 }

@@ -1,197 +1,24 @@
 "use client";
 
-import { Fragment, useState, type ReactNode } from "react";
+import { Fragment, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, CornerRightDown, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { PRICING_FAQS as FAQS } from "./faqs";
+import type { Billing, CompareGroup, CompareValue, Faq, PricingView, TopupInfo, ViewPlan } from "./plans-data";
 
-// The whole pricing page for the Free, Pro, Max and Enterprise plans (laid out like a framed grid: thin side lines,
-// a line between sections). Written here, not in Sanity, until the plan numbers are kept in Sanity. Prices for
-// people include GST.
+// The whole pricing page for the plans (laid out like a framed grid: thin side lines, a line between sections). Every
+// number comes from the live feed the super admin sets, through plans-data.ts. Prices for people include GST.
 
 const CHAT_APP_URL = "https://chat.classgrid.in";
 const CONTACT_URL = "/contact";
 
-type Billing = "monthly" | "yearly";
-
-// A feature line: the bold lead (a number) and the rest
-type Feature = [lead: string, rest?: string];
-
-type Plan = {
-  id: "free" | "pro" | "max" | "enterprise";
-  name: string;
-  tagline: string;
-  price: Record<Billing, { amount: string; per: string; note?: string }>;
-  compareLine: Record<Billing, string>;
-  student?: Record<Billing, string>;
-  badge?: string;
-  featured?: boolean;
-  includesLabel?: string;
-  features: Feature[];
-  cta: { label: string; href: string };
-};
-
-const PLANS: Plan[] = [
-  {
-    id: "free",
-    name: "Free",
-    tagline: "Try Classgrid AI every day",
-    price: {
-      monthly: { amount: "₹0", per: "/month" },
-      yearly: { amount: "₹0", per: "/month" },
-    },
-    compareLine: { monthly: "Free forever", yearly: "Free forever" },
-    features: [
-      ["40 messages", " every 5 hours"],
-      ["4 images", " and photo edits a week"],
-      ["20 voice replies", " a day"],
-      ["30 minutes", " of WhatsApp AI calls a month"],
-      ["3 projects"],
-      ["600 MB", " Library"],
-    ],
-    cta: { label: "Start for free", href: CHAT_APP_URL },
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    tagline: "For students and builders who use AI every day",
-    badge: "Popular",
-    featured: true,
-    price: {
-      monthly: { amount: "₹499", per: "/month" },
-      yearly: { amount: "₹333", per: "/month", note: "₹3,999 billed yearly" },
-    },
-    compareLine: { monthly: "₹499 per month", yearly: "₹3,999 per year" },
-    student: { monthly: "₹299/month", yearly: "₹2,499/year" },
-    includesLabel: "Everything in Free, plus",
-    features: [
-      ["300 messages", " every 5 hours"],
-      ["Claude Sonnet and Opus"],
-      ["Claude Fable,", " a few answers a week"],
-      ["Deep", " thinking"],
-      ["100 images", " and photo edits a month"],
-      ["150 minutes", " of WhatsApp AI calls a month"],
-      ["25 projects"],
-      ["5 GB", " Library"],
-    ],
-    cta: { label: "Get Pro", href: CHAT_APP_URL },
-  },
-  {
-    id: "max",
-    name: "Max",
-    tagline: "For heavy daily work, long chats and coding",
-    price: {
-      monthly: { amount: "₹1,999", per: "/month" },
-      yearly: { amount: "₹1,250", per: "/month", note: "₹14,999 billed yearly" },
-    },
-    compareLine: { monthly: "₹1,999 per month", yearly: "₹14,999 per year" },
-    student: { monthly: "₹1,499/month", yearly: "₹10,999/year" },
-    includesLabel: "Everything in Pro, plus",
-    features: [
-      ["1,000 messages", " every 5 hours"],
-      ["5x", " the Claude use of Pro"],
-      ["About 20", " Claude Fable answers a week"],
-      ["300 images", " and photo edits a month"],
-      ["400 minutes", " of WhatsApp AI calls a month"],
-      ["Unlimited", " projects"],
-      ["20 GB", " Library"],
-      ["Priority", " at busy times"],
-    ],
-    cta: { label: "Get Max", href: CHAT_APP_URL },
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    tagline: "For schools, colleges and teams",
-    badge: "Coming soon",
-    price: {
-      monthly: { amount: "Contact us", per: "" },
-      yearly: { amount: "Contact us", per: "" },
-    },
-    compareLine: { monthly: "Per seat, yearly", yearly: "Per seat, yearly" },
-    includesLabel: "Everything in Max, plus",
-    features: [
-      ["Priced per seat,", " billed yearly"],
-      ["From 50 seats,", " with volume discounts"],
-      ["One shared pool", " for every member"],
-      ["Admin controls,", " SSO and your branding"],
-      ["A named contact", " and a 45-day free pilot"],
-    ],
-    cta: { label: "Contact us", href: CONTACT_URL },
-  },
-];
-
-// One-time top-up packs, valid for 30 days on any plan
-const PACKS = [
-  { price: "₹49", credits: "1,50,000" },
-  { price: "₹99", credits: "3,30,000" },
-  { price: "₹199", credits: "6,90,000" },
-  { price: "₹499", credits: "18,00,000" },
-  { price: "₹999", credits: "39,00,000" },
-];
-
-type CompareValue = string | boolean;
-type CompareGroup = { label: string; rows: { label: string; values: [CompareValue, CompareValue, CompareValue, CompareValue] }[] };
-
-// Free, Pro, Max, Enterprise. false = not included, true = included
-const COMPARE: CompareGroup[] = [
-  {
-    label: "Chat and AI",
-    rows: [
-      { label: "Everyday chat", values: ["40 every 5 hours", "300 every 5 hours", "1,000 every 5 hours", "Shared pool"] },
-      { label: "Everyday chat a week", values: ["150", "2,000", "6,000", "Shared pool"] },
-      { label: "Claude Sonnet and Opus", values: [false, "About 30 long answers a week", "5x Pro", "Shared pool"] },
-      { label: "Claude Fable", values: [false, "A few answers a week", "About 20 answers a week", "Shared pool"] },
-      { label: "Thinking modes", values: ["Fast, Normal", "Fast, Normal, Deep", "Fast, Normal, Deep", "Fast, Normal, Deep"] },
-      { label: "Memory of a chat", values: ["32K tokens", "128K tokens", "400K tokens", "Up to 1M tokens"] },
-      { label: "Helpers working at once", values: ["1", "3", "5", "5"] },
-    ],
-  },
-  {
-    label: "Images and voice",
-    rows: [
-      { label: "Images and photo edits", values: ["4 a week", "100 a month", "300 a month", "60 per seat a month"] },
-      { label: "Voice replies", values: ["20 a day", "150 a day", "500 a day", "150 per seat a day"] },
-      { label: "Voice input", values: ["15 minutes a day", "2 hours a day", "5 hours a day", "2 hours per seat a day"] },
-    ],
-  },
-  {
-    label: "WhatsApp",
-    rows: [
-      { label: "AI call minutes a month", values: ["30", "150", "400", "100 per seat"] },
-      { label: "AI calls a day", values: ["3", "10", "30", "Shared pool"] },
-      { label: "Minutes per call", values: ["5", "10", "15", "15"] },
-      { label: "Scheduled messages a day", values: ["10", "100", "300", "Shared pool"] },
-    ],
-  },
-  {
-    label: "Projects and code",
-    rows: [
-      { label: "Projects", values: ["3", "25", "Unlimited", "Unlimited"] },
-      { label: "Coding agent runs a month", values: ["30", "500", "1,500", "300 per seat"] },
-      { label: "Cloud sandbox hours a month", values: ["3", "30", "100", "25 per seat"] },
-      { label: "Work on your own PC", values: [true, true, true, true] },
-    ],
-  },
-  {
-    label: "Files and account",
-    rows: [
-      { label: "File uploads", values: ["3 a day", "50 every 5 hours", "150 every 5 hours", "150 every 5 hours"] },
-      { label: "Largest file", values: ["10 MB", "50 MB", "200 MB", "200 MB"] },
-      { label: "Library storage", values: ["600 MB", "5 GB", "20 GB", "5 GB per seat"] },
-      { label: "Signed-in devices", values: ["2", "5", "10", "10 per seat"] },
-      { label: "Grids, Schedule, Calls, Studio and the apps", values: [true, true, true, true] },
-      { label: "Support", values: ["Community", "Email", "Priority email", "Named contact"] },
-    ],
-  },
-];
-
 // Grain for the price blocks: an inline SVG noise layer, so the colour block looks printed rather than flat
 const NOISE =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")";
+const BRAND_GRADIENT = "bg-[linear-gradient(135deg,#047857_0%,#10b981_42%,#f59e0b_78%,#ea580c_100%)]";
 
 const isExternal = (href: string) => /^https?:\/\//.test(href);
+const inr = (n: number) => `₹${Math.round(n).toLocaleString("en-IN")}`;
 
 function ButtonLink({ href, variant = "solid", className, children }: { href: string; variant?: "solid" | "outline"; className?: string; children: ReactNode }) {
   const classes = cn(
@@ -214,7 +41,7 @@ function ButtonLink({ href, variant = "solid", className, children }: { href: st
   );
 }
 
-function BillingSwitch({ billing, onChange, className }: { billing: Billing; onChange: (b: Billing) => void; className?: string }) {
+function BillingSwitch({ billing, onChange, savePercent, className }: { billing: Billing; onChange: (b: Billing) => void; savePercent: number | null; className?: string }) {
   return (
     <div role="radiogroup" aria-label="Billing" className={cn("inline-flex rounded-full border border-border bg-background p-1", className)}>
       {(["monthly", "yearly"] as const).map((b) => (
@@ -230,9 +57,9 @@ function BillingSwitch({ billing, onChange, className }: { billing: Billing; onC
           )}
         >
           {b === "monthly" ? "Monthly" : "Yearly"}
-          {b === "yearly" ? (
+          {b === "yearly" && savePercent ? (
             <span className={cn("ml-1.5 text-xs", billing === b ? "text-background/70" : "text-emerald-600 dark:text-emerald-400")}>
-              save up to 37%
+              save up to {savePercent}%
             </span>
           ) : null}
         </button>
@@ -241,16 +68,26 @@ function BillingSwitch({ billing, onChange, className }: { billing: Billing; onC
   );
 }
 
+// A feature line with its leading number in bold ("2,000 chats every 5 hours"); a "Name: value" line bolds the name
+function FeatureText({ line }: { line: string }) {
+  const lead = /^(?:[₹]?[\d][\d,.]*(?:\s?(?:GB|MB|K|M|x))?|Unlimited|About \d[\d,]*)\b/.exec(line) ?? /^[^:]{2,40}:/.exec(line);
+  if (!lead) return <span>{line}</span>;
+  return (
+    <span>
+      <span className="font-medium">{lead[0]}</span>
+      <span className="text-foreground/80">{line.slice(lead[0].length)}</span>
+    </span>
+  );
+}
+
 // The block at the top of a card: name top left, price bottom left. The featured plan's block is coloured
-function PriceBlock({ plan, billing }: { plan: Plan; billing: Billing }) {
+function PriceBlock({ plan, billing }: { plan: ViewPlan; billing: Billing }) {
   const price = plan.price[billing];
   return (
     <div
       className={cn(
         "relative flex h-[200px] flex-col justify-between overflow-hidden rounded-2xl border p-5",
-        plan.featured
-          ? "border-transparent bg-[linear-gradient(135deg,#047857_0%,#10b981_42%,#f59e0b_78%,#ea580c_100%)] text-white"
-          : "border-border bg-black/[0.035] dark:bg-white/[0.05]"
+        plan.featured ? cn("border-transparent text-white", BRAND_GRADIENT) : "border-border bg-black/[0.035] dark:bg-white/[0.05]"
       )}
     >
       <span
@@ -287,14 +124,14 @@ function PriceBlock({ plan, billing }: { plan: Plan; billing: Billing }) {
   );
 }
 
-function PlanColumn({ plan, billing }: { plan: Plan; billing: Billing }) {
+function PlanColumn({ plan, billing }: { plan: ViewPlan; billing: Billing }) {
   return (
     <div className="flex flex-col p-4 sm:p-5">
       <PriceBlock plan={plan} billing={billing} />
       <ButtonLink href={plan.cta.href} className="mt-4 w-full">
         {plan.cta.label}
       </ButtonLink>
-      <p className="mt-4 text-[14px] leading-6 text-muted-foreground">{plan.tagline}</p>
+      {plan.tagline ? <p className="mt-4 text-[14px] leading-6 text-muted-foreground">{plan.tagline}</p> : null}
 
       <div className="mt-6">
         {plan.includesLabel ? (
@@ -304,13 +141,10 @@ function PlanColumn({ plan, billing }: { plan: Plan; billing: Billing }) {
           </p>
         ) : null}
         <ul>
-          {plan.features.map(([lead, rest]) => (
-            <li key={lead + (rest ?? "")} className="flex items-start gap-3 border-b border-dotted border-border py-3 text-[15px] leading-6 last:border-b-0">
+          {plan.features.map((line) => (
+            <li key={line} className="flex items-start gap-3 border-b border-dotted border-border py-3 text-[15px] leading-6 last:border-b-0">
               <Check className="mt-1 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
-              <span>
-                <span className="font-medium">{lead}</span>
-                {rest ? <span className="text-foreground/80">{rest}</span> : null}
-              </span>
+              <FeatureText line={line} />
             </li>
           ))}
         </ul>
@@ -319,84 +153,91 @@ function PlanColumn({ plan, billing }: { plan: Plan; billing: Billing }) {
   );
 }
 
-function CompareCell({ value, align = "right" }: { value: CompareValue; align?: "right" | "left" }) {
-  if (value === true)
-    return <Check className={cn("h-4 w-4", align === "right" ? "ml-auto" : "")} aria-label="Included" />;
-  if (value === false)
-    return <Minus className={cn("h-4 w-4 text-muted-foreground/50", align === "right" ? "ml-auto" : "")} aria-label="Not included" />;
+function CompareCell({ value }: { value: CompareValue }) {
+  if (value === true) return <Check className="ml-auto h-4 w-4" aria-label="Included" />;
+  if (value === false) return <Minus className="ml-auto h-4 w-4 text-muted-foreground/50" aria-label="Not included" />;
+  if (value === "") return <span className="text-muted-foreground/50">–</span>;
   return <span>{value}</span>;
 }
 
-function TopUps() {
-  const [picked, setPicked] = useState(1);
-  const pack = PACKS[picked];
+// The real top-up, from the feed: any amount between its minimum and maximum
+function TopUps({ topup }: { topup: TopupInfo }) {
+  const presets = useMemo(() => {
+    const steps = [topup.min, 500, 1000, 2000, 5000, topup.max].filter((n) => n >= topup.min && n <= topup.max);
+    return Array.from(new Set(steps)).slice(0, 6);
+  }, [topup]);
+  const [amount, setAmount] = useState(presets[Math.min(1, presets.length - 1)]);
+  const credits = topup.creditsPerInr ? Math.floor(amount * topup.creditsPerInr) : null;
+
   return (
     <div className="grid gap-10 px-5 py-16 md:grid-cols-2 md:gap-12 md:px-8 md:py-24">
       <div>
-        <h2 className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.03em] md:text-[40px]">
-          Need more in a month? Top up any plan
-        </h2>
+        <h2 className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.03em] md:text-[40px]">Need more in a month? Top up</h2>
         <p className="mt-5 flex items-center gap-2.5 text-[15px]">
           <span className="flex h-6 w-6 items-center justify-center rounded-full border border-border text-xs">1</span>
-          Pick a pack
+          Pick an amount
         </p>
-        <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-5">
-          {PACKS.map((p, i) => (
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          {presets.map((p) => (
             <button
-              key={p.price}
+              key={p}
               type="button"
-              onClick={() => setPicked(i)}
-              aria-pressed={picked === i}
+              onClick={() => setAmount(p)}
+              aria-pressed={amount === p}
               className={cn(
-                "rounded-xl border px-3 py-2.5 text-left transition-colors",
-                picked === i ? "border-foreground bg-foreground text-background" : "border-border hover:bg-black/5 dark:hover:bg-white/10"
+                "rounded-xl border px-3 py-2.5 text-left text-[15px] font-medium tabular-nums transition-colors",
+                amount === p ? "border-foreground bg-foreground text-background" : "border-border hover:bg-black/5 dark:hover:bg-white/10"
               )}
             >
-              <span className="block text-[15px] font-medium tabular-nums">{p.price}</span>
+              {inr(p)}
             </button>
           ))}
         </div>
         <p className="mt-6 flex items-center gap-2.5 text-[15px]">
           <span className="flex h-6 w-6 items-center justify-center rounded-full border border-border text-xs">2</span>
-          Use it on top of your plan
+          Use it when you need it
         </p>
         <p className="mt-3 max-w-md text-[14px] leading-6 text-muted-foreground">
-          A pack is used only after your plan&apos;s limit is reached, and it lasts 30 days. Buy it in the app, from Upgrade.
+          Any amount from {inr(topup.min)} to {inr(topup.max)}, from Upgrade in the app.
+          {topup.validityDays ? ` It lasts ${topup.validityDays} days.` : ""}
         </p>
       </div>
 
-      <div className="relative flex min-h-[320px] flex-col overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#047857_0%,#10b981_42%,#f59e0b_78%,#ea580c_100%)] p-6 text-white sm:p-8">
+      <div className={cn("relative flex min-h-[300px] flex-col overflow-hidden rounded-3xl p-6 text-white sm:p-8", BRAND_GRADIENT)}>
         <span aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.22] mix-blend-overlay" style={{ backgroundImage: NOISE }} />
         <div className="relative flex items-start justify-between gap-4">
           <div>
-            <p className="text-2xl font-medium tracking-[-0.02em]">Top-up pack</p>
+            <p className="text-2xl font-medium tracking-[-0.02em]">Top-up</p>
             <p className="mt-1 text-sm text-white/85">One time, no subscription</p>
           </div>
           <p className="text-right">
-            <span className="block text-[40px] font-medium leading-none tracking-[-0.03em] tabular-nums">{pack.price}</span>
+            <span className="block text-[40px] font-medium leading-none tracking-[-0.03em] tabular-nums">{inr(amount)}</span>
             <span className="mt-1 block text-sm text-white/85">including GST</span>
           </p>
         </div>
         <ul className="relative mt-8 space-y-3 text-[15px]">
+          {credits !== null ? (
+            <li className="flex items-start gap-3">
+              <Check className="mt-1 h-4 w-4 shrink-0" />
+              <span>
+                <span className="font-medium tabular-nums">{credits.toLocaleString("en-IN")}</span> credits
+              </span>
+            </li>
+          ) : null}
+          {topup.validityDays ? (
+            <li className="flex items-start gap-3">
+              <Check className="mt-1 h-4 w-4 shrink-0" />
+              <span>Lasts {topup.validityDays} days</span>
+            </li>
+          ) : null}
           <li className="flex items-start gap-3">
             <Check className="mt-1 h-4 w-4 shrink-0" />
-            <span>
-              <span className="font-medium tabular-nums">{pack.credits}</span> credits
-            </span>
-          </li>
-          <li className="flex items-start gap-3">
-            <Check className="mt-1 h-4 w-4 shrink-0" />
-            <span>Lasts 30 days</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <Check className="mt-1 h-4 w-4 shrink-0" />
-            <span>Works on Free, Pro and Max</span>
+            <span>Buy it any time from Upgrade in the app</span>
           </li>
         </ul>
         <a
           href={CHAT_APP_URL}
-          className="relative mt-auto inline-flex h-11 items-center justify-center gap-1.5 rounded-full bg-white px-6 pt-0 text-[15px] font-medium text-black transition-colors hover:bg-white/90"
-          style={{ marginTop: "2.5rem" }}
+          className="relative mt-10 inline-flex h-11 items-center justify-center gap-1.5 rounded-full bg-white px-6 text-[15px] font-medium text-black transition-colors hover:bg-white/90"
         >
           Top up in the app
           <ArrowUpRight className="h-4 w-4" />
@@ -406,34 +247,31 @@ function TopUps() {
   );
 }
 
-function ComparePlans({ billing, onBilling }: { billing: Billing; onBilling: (b: Billing) => void }) {
-  const [phonePlan, setPhonePlan] = useState(1);
+function ComparePlans({ plans, groups, billing, onBilling, savePercent }: { plans: ViewPlan[]; groups: CompareGroup[]; billing: Billing; onBilling: (b: Billing) => void; savePercent: number | null }) {
+  const [phonePlan, setPhonePlan] = useState(Math.min(1, plans.length - 1));
   return (
     <div className="py-16 md:py-24">
       <div className="flex flex-col gap-5 px-5 sm:flex-row sm:items-end sm:justify-between md:px-8">
         <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-[40px]">Compare plans</h2>
-        <BillingSwitch billing={billing} onChange={onBilling} className="self-start sm:self-auto" />
+        <BillingSwitch billing={billing} onChange={onBilling} savePercent={savePercent} className="self-start sm:self-auto" />
       </div>
 
       {/* Phone: one plan at a time */}
       <div className="mt-8 px-5 md:hidden">
-        <div className="grid grid-cols-4 gap-1 rounded-full border border-border p-1">
-          {PLANS.map((plan, i) => (
+        <div className="grid gap-1 rounded-full border border-border p-1" style={{ gridTemplateColumns: `repeat(${plans.length}, minmax(0, 1fr))` }}>
+          {plans.map((plan, i) => (
             <button
-              key={plan.id}
+              key={plan.key}
               type="button"
               onClick={() => setPhonePlan(i)}
-              className={cn(
-                "rounded-full py-2 text-[13px] font-medium transition-colors",
-                phonePlan === i ? "bg-foreground text-background" : "text-muted-foreground"
-              )}
+              className={cn("rounded-full py-2 text-[13px] font-medium transition-colors", phonePlan === i ? "bg-foreground text-background" : "text-muted-foreground")}
             >
               {plan.name}
             </button>
           ))}
         </div>
-        <p className="mt-3 text-center text-sm text-muted-foreground">{PLANS[phonePlan].compareLine[billing]}</p>
-        {COMPARE.map((group) => (
+        <p className="mt-3 text-center text-sm text-muted-foreground">{plans[phonePlan]?.compareLine[billing]}</p>
+        {groups.map((group) => (
           <div key={group.label} className="mt-6">
             <p className="rounded-lg bg-black/[0.035] px-3 py-2 text-[13px] font-medium text-muted-foreground dark:bg-white/[0.05]">{group.label}</p>
             <dl>
@@ -455,16 +293,15 @@ function ComparePlans({ billing, onBilling }: { billing: Billing; onBilling: (b:
         <table className="w-full table-fixed border-collapse text-[15px]">
           <colgroup>
             <col className="w-[28%]" />
-            <col />
-            <col />
-            <col />
-            <col />
+            {plans.map((plan) => (
+              <col key={plan.key} />
+            ))}
           </colgroup>
           <thead>
             <tr>
               <th scope="col" className="px-8 py-5 text-left font-normal" />
-              {PLANS.map((plan) => (
-                <th key={plan.id} scope="col" className="border-l border-border px-5 py-5 text-right align-top font-normal">
+              {plans.map((plan) => (
+                <th key={plan.key} scope="col" className="border-l border-border px-5 py-5 text-right align-top font-normal">
                   <span className="block text-[17px] font-medium">{plan.name}</span>
                   <span className="mt-1 block text-[13px] text-muted-foreground">{plan.compareLine[billing]}</span>
                 </th>
@@ -472,10 +309,10 @@ function ComparePlans({ billing, onBilling }: { billing: Billing; onBilling: (b:
             </tr>
           </thead>
           <tbody>
-            {COMPARE.map((group) => (
+            {groups.map((group) => (
               <Fragment key={group.label}>
                 <tr className="border-y border-border bg-black/[0.03] dark:bg-white/[0.04]">
-                  <th scope="colgroup" colSpan={5} className="px-8 py-2.5 text-left text-[13px] font-medium text-muted-foreground">
+                  <th scope="colgroup" colSpan={plans.length + 1} className="px-8 py-2.5 text-left text-[13px] font-medium text-muted-foreground">
                     {group.label}
                   </th>
                 </tr>
@@ -485,8 +322,8 @@ function ComparePlans({ billing, onBilling }: { billing: Billing; onBilling: (b:
                       {row.label}
                     </th>
                     {row.values.map((value, i) => (
-                      <td key={PLANS[i].id} className="border-b border-l border-border border-b-transparent px-5 py-4 text-right leading-6">
-                        <span className="block border-b border-dotted border-border pb-0">
+                      <td key={plans[i]?.key ?? i} className="border-l border-border px-5 py-4 text-right leading-6">
+                        <span className="block border-b border-dotted border-border">
                           <CompareCell value={value} />
                         </span>
                       </td>
@@ -502,12 +339,12 @@ function ComparePlans({ billing, onBilling }: { billing: Billing; onBilling: (b:
   );
 }
 
-function Faqs() {
+function Faqs({ faqs }: { faqs: Faq[] }) {
   return (
     <div className="grid gap-8 px-5 py-16 md:grid-cols-[1fr_2fr] md:gap-12 md:px-8 md:py-24">
       <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-[40px]">FAQs</h2>
       <div>
-        {FAQS.map((faq) => (
+        {faqs.map((faq) => (
           <details key={faq.question} className="group border-b border-dotted border-border">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-[16px] [&::-webkit-details-marker]:hidden">
               {faq.question}
@@ -521,8 +358,10 @@ function Faqs() {
   );
 }
 
-export function PricingPage() {
+export function PricingPage({ view }: { view: PricingView }) {
   const [billing, setBilling] = useState<Billing>("monthly");
+  const { plans, compare, faqs, topup, yearlySavePercent } = view;
+  const hasStudent = plans.some((p) => p.student);
 
   return (
     <div className="mx-auto max-w-[1180px] border-x border-border">
@@ -533,36 +372,47 @@ export function PricingPage() {
             Plans for every way you use AI
           </h1>
           <p className="mt-4 max-w-xl text-pretty text-[17px] leading-7 text-muted-foreground">
-            Start free. Move to Pro or Max when you need more, and top up any month.
+            Start free, and move to a bigger plan when you need more.
           </p>
         </div>
-        <BillingSwitch billing={billing} onChange={setBilling} className="self-start sm:self-auto" />
+        <BillingSwitch billing={billing} onChange={setBilling} savePercent={yearlySavePercent} className="self-start sm:self-auto" />
       </section>
 
       {/* Plans */}
-      <section className="grid border-y border-border sm:grid-cols-2 lg:grid-cols-4 [&>*]:border-border max-sm:[&>*+*]:border-t sm:[&>*:nth-child(even)]:border-l lg:[&>*+*]:border-l sm:max-lg:[&>*:nth-child(n+3)]:border-t">
-        {PLANS.map((plan) => (
-          <PlanColumn key={plan.id} plan={plan} billing={billing} />
+      <section
+        className={cn(
+          "grid border-y border-border sm:grid-cols-2 [&>*]:border-border max-sm:[&>*+*]:border-t sm:[&>*:nth-child(even)]:border-l",
+          plans.length >= 4 ? "lg:grid-cols-4 lg:[&>*+*]:border-l sm:max-lg:[&>*:nth-child(n+3)]:border-t" : "lg:grid-cols-3 lg:[&>*+*]:border-l"
+        )}
+      >
+        {plans.map((plan) => (
+          <PlanColumn key={plan.key} plan={plan} billing={billing} />
         ))}
       </section>
       <p className="border-b border-border px-5 py-3 text-center text-[13px] text-muted-foreground">
-        Prices include GST. Students get Pro and Max for less.
+        Prices include GST.{hasStudent ? " Students pay less." : ""}
       </p>
 
-      {/* Top-up packs */}
-      <section id="top-up" className="scroll-mt-24 border-b border-border">
-        <TopUps />
-      </section>
+      {/* Top-up */}
+      {topup ? (
+        <section id="top-up" className="scroll-mt-24 border-b border-border">
+          <TopUps topup={topup} />
+        </section>
+      ) : null}
 
       {/* Compare */}
-      <section id="compare" className="scroll-mt-24 border-b border-border">
-        <ComparePlans billing={billing} onBilling={setBilling} />
-      </section>
+      {compare.length ? (
+        <section id="compare" className="scroll-mt-24 border-b border-border">
+          <ComparePlans plans={plans} groups={compare} billing={billing} onBilling={setBilling} savePercent={yearlySavePercent} />
+        </section>
+      ) : null}
 
       {/* FAQ */}
-      <section className="border-b border-border">
-        <Faqs />
-      </section>
+      {faqs.length ? (
+        <section className="border-b border-border">
+          <Faqs faqs={faqs} />
+        </section>
+      ) : null}
 
       {/* Closing call to action */}
       <section className="flex flex-col gap-6 px-5 py-14 sm:flex-row sm:items-center sm:justify-between md:px-8 md:py-16">
