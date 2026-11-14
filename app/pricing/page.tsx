@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/sections/Reveal";
 import { AgentFaqSection } from "@/components/sections/agent/AgentFaqSection";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -8,6 +8,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import { getAiPricingPage } from "@/sanity/lib/marketing";
 import { ModelPricingTable, TopupCalculator, type PricingModelRow } from "./PricingClient";
+import { ComparePlans, PlanCards } from "./PlansSection";
 import { fillLive, liveTokens, normalizeLivePricing, type LivePricing } from "./pricing-format";
 
 const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
@@ -117,56 +118,6 @@ function SectionHeading({ title, subtitle }: { title: string; subtitle?: string 
   );
 }
 
-function PlanCard({
-  plan,
-  tokens,
-  featured,
-  delay,
-}: {
-  plan: PlanData;
-  tokens: Record<string, string | null>;
-  featured?: boolean;
-  delay: number;
-}) {
-  const price = fillLive(plan.priceLabel, tokens);
-  const tagline = fillLive(plan.tagline, tokens);
-  const features = (plan.features ?? []).map((line) => fillLive(line, tokens)).filter((line): line is string => !!line);
-
-  return (
-    <Reveal delay={delay} className="h-full">
-      <div
-        className={cn(
-          "flex h-full flex-col rounded-3xl border p-6 sm:p-8 md:p-10",
-          featured ? "border-black/80 dark:border-white/70" : "border-black/10 dark:border-white/10"
-        )}
-      >
-        <h3 className="text-xl font-medium">{plan.name}</h3>
-        {price ? <p className="mt-6 text-5xl font-medium tracking-[-0.03em] md:text-6xl">{price}</p> : null}
-        {tagline ? <p className="mt-4 text-[17px] leading-7 text-black/70 dark:text-white/65">{tagline}</p> : null}
-
-        {features.length ? (
-          <ul className="mt-8 space-y-3.5 border-t border-black/10 pt-8 text-[15px] leading-6 dark:border-white/10">
-            {features.map((feature) => (
-              <li key={feature} className="flex items-start gap-3">
-                <Check className="mt-1 h-4 w-4 shrink-0" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-
-        {plan.ctaLabel && plan.ctaHref ? (
-          <div className="mt-auto pt-10">
-            <CtaLink href={plan.ctaHref} className="w-full">
-              {plan.ctaLabel}
-            </CtaLink>
-          </div>
-        ) : null}
-      </div>
-    </Reveal>
-  );
-}
-
 export async function generateMetadata() {
   const page = (await getAiPricingPage()) as AiPricingPageData | null;
   return buildPageMetadata({
@@ -188,8 +139,6 @@ export default async function PricingPage() {
   const heroSubtitle = fillLive(page?.hero?.subtitle, tokens);
   const heroCtaLabel = page?.hero?.primaryCtaLabel?.trim() || "Start for free";
   const heroCtaHref = page?.hero?.primaryCtaHref?.trim() || CHAT_APP_URL;
-
-  const plans = [page?.freePlan, page?.paygPlan].filter((plan): plan is PlanData => !!plan?.name?.trim());
 
   const calculator =
     page?.calculator?.show !== false &&
@@ -288,20 +237,16 @@ export default async function PricingPage() {
         </Reveal>
       </section>
 
-      {/* Plans */}
-      {plans.length ? (
-        <section className="mx-auto max-w-[1100px] px-5 pb-24 md:px-10 md:pb-32">
-          <div className={cn("grid gap-5", plans.length > 1 && "md:grid-cols-2")}>
-            {plans.map((plan, i) => (
-              <PlanCard key={plan.name} plan={plan} tokens={tokens} featured={i === 1} delay={0.05 + i * 0.08} />
-            ))}
-          </div>
-        </section>
-      ) : null}
+      {/* Plans: Free, Pro, Max, Enterprise (PlansSection.tsx) */}
+      <section className="mx-auto max-w-[1400px] px-5 pb-24 md:px-10 md:pb-32">
+        <Reveal delay={0.05}>
+          <PlanCards />
+        </Reveal>
+      </section>
 
       {/* Top-up calculator */}
       {calculator ? (
-        <section className="mx-auto max-w-[1100px] px-5 pb-24 md:px-10 md:pb-32">
+        <section id="top-up" className="mx-auto max-w-[1100px] scroll-mt-24 px-5 pb-24 md:px-10 md:pb-32">
           <SectionHeading
             title={page?.calculator?.title?.trim() || "See what you get"}
             subtitle={fillLive(page?.calculator?.subtitle, tokens)}
@@ -311,6 +256,14 @@ export default async function PricingPage() {
           </Reveal>
         </section>
       ) : null}
+
+      {/* Compare plans */}
+      <section id="compare" className="mx-auto max-w-[1100px] scroll-mt-24 px-5 pb-24 md:px-10 md:pb-32">
+        <SectionHeading title="Compare plans" subtitle="Everything each plan includes, area by area." />
+        <Reveal delay={0.1} className="mt-10 md:mt-12">
+          <ComparePlans />
+        </Reveal>
+      </section>
 
       {/* How tokens are used */}
       {steps.length ? (
