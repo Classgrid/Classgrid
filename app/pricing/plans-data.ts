@@ -243,7 +243,7 @@ function planButton(p: FeedPlan, contact: boolean): ViewPlan["cta"] {
     const start = isHttpsUrl(p.startUrl) ? p.startUrl : CHAT_APP_URL;
     return { label: "Start for free", href: { monthly: start, yearly: start }, buy: false };
   }
-  const buy = (term: "month" | "year") => `${CHAT_APP_URL}/c?buy=${encodeURIComponent(p.key)}&term=${term}&back=pricing`;
+  const buy = (term: "month" | "year") => `${CHAT_APP_URL}/agent?buy=${encodeURIComponent(p.key)}&term=${term}&back=pricing`;
   // back=pricing: the payment page sends the visitor back here afterwards ("Subscribed"), then on to the chat
   const fromPricing = (url: string) => (/[?&]back=/.test(url) ? url : `${url}${url.includes("?") ? "&" : "?"}back=pricing`);
   return {

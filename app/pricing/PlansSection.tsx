@@ -471,7 +471,7 @@ function SubscribedNotice({ plans, onSubscribed }: { plans: ViewPlan[]; onSubscr
   const raw = (params.get("subscribed") ?? "").toLowerCase();
   const key = /^[a-z]{2,20}$/.test(raw) ? raw : "";
   const plan = plans.find((p) => p.key === key);
-  const chatUrl = key ? `${CHAT_APP_URL}/c?ai_payment=success&plan=${encodeURIComponent(key)}` : CHAT_APP_URL;
+  const chatUrl = key ? `${CHAT_APP_URL}/agent?ai_payment=success&plan=${encodeURIComponent(key)}` : CHAT_APP_URL;
   const [left, setLeft] = useState(SUBSCRIBED_WAIT_S);
   const clicked = useRef(false);
 
