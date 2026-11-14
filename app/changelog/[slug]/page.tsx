@@ -118,8 +118,9 @@ const DEFAULT_UPDATE_META = { label: "Update", icon: Rocket };
 
 function buildSanityImageUrl(image: unknown, width: number) {
   if (!image) return null;
-  const base = urlFor(image).width(width).fit("max").quality(80).format("webp").url();
-  return `${base}&auto=format,compress`;
+  // No "auto=format,compress": Vercel's image optimizer rejects a link with that comma (400), so the picture never showed;
+  // the format is already set to webp and next/image compresses it
+  return urlFor(image).width(width).fit("max").quality(80).format("webp").url();
 }
 
 function prettyModule(moduleValue: string) {
