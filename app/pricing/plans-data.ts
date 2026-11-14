@@ -37,6 +37,9 @@ export type FeedPlan = {
   priceInrYearly?: number;
   studentPriceInrMonthly?: number;
   studentPriceInrYearly?: number;
+  // The student price's buy links (null when the plan has no student price): the chat confirms the student email first
+  studentBuyUrlMonthly?: string | null;
+  studentBuyUrlYearly?: string | null;
   features?: string[];
   limits?: FeedLimits;
   // Where the buttons go (set by the server): buying opens the chat, which signs in if needed and starts the payment
@@ -59,6 +62,9 @@ export type ViewPlan = {
   price: Record<Billing, { amount: string; per: string; note: string | null }>;
   compareLine: Record<Billing, string>;
   student: Record<Billing, string> | null;
+  // The student price shown in the card when the Student switch is on, and where its button goes
+  studentPrice: Record<Billing, { amount: string; per: string; note: string | null }> | null;
+  studentHref: Record<Billing, string> | null;
   includesLabel: string | null;
   features: string[];
   cta: { label: string; href: Record<Billing, string>; buy: boolean };
@@ -228,6 +234,13 @@ function viewPlan(p: FeedPlan, i: number, all: FeedPlan[]): ViewPlan {
     price: { monthly: pricePart(p.priceInrMonthly, p.priceInrYearly, "monthly"), yearly: pricePart(p.priceInrMonthly, p.priceInrYearly, "yearly") },
     compareLine: { monthly: compareLine(p, "monthly"), yearly: compareLine(p, "yearly") },
     student,
+    studentPrice: student
+      ? {
+          monthly: pricePart(p.studentPriceInrMonthly!, p.studentPriceInrYearly, "monthly"),
+          yearly: pricePart(p.studentPriceInrMonthly!, p.studentPriceInrYearly, "yearly"),
+        }
+      : null,
+    studentHref: student && !contact && !p.comingSoon ? studentLinks(p) : null,
     includesLabel: i > 0 ? `Everything in ${all[i - 1].name}, plus` : null,
     features: (p.features ?? []).filter((line) => typeof line === "string" && line.trim()),
     cta: planButton(p, contact),
@@ -235,6 +248,15 @@ function viewPlan(p: FeedPlan, i: number, all: FeedPlan[]): ViewPlan {
 }
 
 const isHttpsUrl = (v: unknown): v is string => typeof v === "string" && /^https:\/\//.test(v);
+
+// The student price's buttons: the feed's links, or the same chat link it would send (student=1)
+function studentLinks(p: FeedPlan): Record<Billing, string> {
+  const buy = (term: "month" | "year") => `${CHAT_APP_URL}/agent?buy=${encodeURIComponent(p.key)}&term=${term}&student=1&back=pricing`;
+  return {
+    monthly: isHttpsUrl(p.studentBuyUrlMonthly) ? p.studentBuyUrlMonthly : buy("month"),
+    yearly: isHttpsUrl(p.studentBuyUrlYearly) ? p.studentBuyUrlYearly : buy("year"),
+  };
+}
 
 // The feed's links; until the server sends them, the same chat links it would send
 function planButton(p: FeedPlan, contact: boolean): ViewPlan["cta"] {
@@ -334,7 +356,7 @@ function buildFaqs(plans: FeedPlan[], topup: TopupInfo | null): Faq[] {
   if (student.length) {
     faqs.push({
       question: "Is there a student price?",
-      answer: `Yes: ${list(student.map((p) => `${p.name} is ${inr(p.studentPriceInrMonthly!)} a month`))} for students. You show you're a student with an .ac.in or .edu email, or your student ID.`,
+      answer: `Yes: ${list(student.map((p) => `${p.name} is ${inr(p.studentPriceInrMonthly!)} a month`))} for students. Turn on Student above the plans, and confirm your student email (like .edu or .ac.in) when you buy.`,
     });
   }
   if (yearly.length) {

@@ -71,6 +71,39 @@ function BillingSwitch({ billing, onChange, savePercent, className }: { billing:
   );
 }
 
+// Student prices on or off (classgrid.in/pricing?student=1 opens with them on)
+function StudentSwitch({ on, onChange, className }: { on: boolean; onChange: (on: boolean) => void; className?: string }) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={on}
+      onClick={() => onChange(!on)}
+      className={cn("inline-flex items-center gap-2.5 rounded-full border border-border bg-background py-1 pl-1 pr-4 text-sm font-medium", className)}
+    >
+      <span className={cn("relative h-6 w-10 rounded-full transition-colors", on ? "bg-foreground" : "bg-black/10 dark:bg-white/15")}>
+        <motion.span
+          className="absolute top-0.5 h-5 w-5 rounded-full bg-background shadow-sm"
+          initial={false}
+          animate={{ left: on ? 18 : 2 }}
+          transition={{ type: "spring", stiffness: 500, damping: 34 }}
+        />
+      </span>
+      <span className={on ? "text-foreground" : "text-muted-foreground"}>Student</span>
+    </button>
+  );
+}
+
+// Reads ?student=1 (inside Suspense: useSearchParams, Next 15)
+function StudentFromQuery({ onStudent }: { onStudent: () => void }) {
+  const params = useSearchParams();
+  const on = params.get("student") === "1";
+  useEffect(() => {
+    if (on) onStudent();
+  }, [on, onStudent]);
+  return null;
+}
+
 // A feature line with its leading number in bold ("2,000 chats every 5 hours"); a "Name: value" line bolds the name
 function FeatureText({ line }: { line: string }) {
   const lead = /^(?:[₹]?[\d][\d,.]*(?:\s?(?:GB|MB|K|M|x))?|Unlimited|About \d[\d,]*)\b/.exec(line) ?? /^[^:]{2,40}:/.exec(line);
@@ -115,8 +148,9 @@ function PriceAmount({ text }: { text: string }) {
 
 // The block at the top of a card: name top left, price bottom left. The plan in focus (hovered, else the featured
 // one) glows in the brand gradient, which fades in and out (Framer Motion)
-function PriceBlock({ plan, billing, active, current }: { plan: ViewPlan; billing: Billing; active: boolean; current: boolean }) {
-  const price = plan.price[billing];
+function PriceBlock({ plan, billing, active, current, student }: { plan: ViewPlan; billing: Billing; active: boolean; current: boolean; student: boolean }) {
+  const studentOn = student && !!plan.studentPrice;
+  const price = studentOn ? plan.studentPrice![billing] : plan.price[billing];
   const badge = current ? "Subscribed" : plan.badge;
   return (
     <div
@@ -161,7 +195,11 @@ function PriceBlock({ plan, billing, active, current }: { plan: ViewPlan; billin
         {price.note || plan.student ? (
           <p className={cn("mt-1.5 text-[13px] leading-5", active ? "text-white/85" : "text-muted-foreground")}>
             {price.note ? <span className="block">{price.note}</span> : null}
-            {plan.student ? <span className="block">Students: {plan.student[billing]}</span> : null}
+            {studentOn ? (
+              <span className="block">Student price</span>
+            ) : plan.student ? (
+              <span className="block">Students: {plan.student[billing]}</span>
+            ) : null}
           </p>
         ) : null}
       </div>
@@ -172,8 +210,10 @@ function PriceBlock({ plan, billing, active, current }: { plan: ViewPlan; billin
 // Where the card stands against the visitor's plan (plans are listed smallest first)
 type Relation = "guest" | "current" | "below" | "above";
 
-function PlanColumn({ plan, billing, active, relation, index, onFocus }: { plan: ViewPlan; billing: Billing; active: boolean; relation: Relation; index: number; onFocus: () => void }) {
+function PlanColumn({ plan, billing, active, relation, index, onFocus, student }: { plan: ViewPlan; billing: Billing; active: boolean; relation: Relation; index: number; onFocus: () => void; student: boolean }) {
   const current = relation === "current";
+  // Student switch on: a plan with a student price buys at it (the chat confirms the student email first)
+  const href = student && plan.studentHref ? plan.studentHref[billing] : plan.cta.href[billing];
   // Signed in: the plan you're on says Subscribed and buying it again adds time; a bigger plan says Upgrade; a
   // smaller one is already included. Not signed in: the plain words.
   const isFree = !plan.cta.buy && plan.cta.label !== "Contact us";
@@ -193,14 +233,14 @@ function PlanColumn({ plan, billing, active, relation, index, onFocus }: { plan:
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
-      <PriceBlock plan={plan} billing={billing} active={active} current={current} />
+      <PriceBlock plan={plan} billing={billing} active={active} current={current} student={student} />
       {inert ? (
         <span aria-disabled className="mt-4 inline-flex h-11 w-full items-center justify-center gap-1.5 rounded-full border border-border px-6 text-[15px] font-medium text-muted-foreground">
           {current ? <CheckCircle2 className="h-4 w-4" aria-hidden /> : <Check className="h-4 w-4" aria-hidden />}
           {label}
         </span>
       ) : (
-        <ButtonLink href={plan.cta.href[billing]} className="mt-4 w-full">
+        <ButtonLink href={href} className="mt-4 w-full">
           {label}
         </ButtonLink>
       )}
@@ -514,6 +554,8 @@ function SubscribedNotice({ plans, onSubscribed }: { plans: ViewPlan[]; onSubscr
 
 export function PricingPage({ view }: { view: PricingView }) {
   const [billing, setBilling] = useState<Billing>("monthly");
+  const [student, setStudent] = useState(false);
+  const studentOn = useMemo(() => () => setStudent(true), []);
   const { plans, compare, faqs, topup, yearlySavePercent } = view;
   // The plan in focus wears the gradient: the hovered one, else the featured one
   const restingKey = plans.find((p) => p.featured)?.key ?? plans[0]?.key;
@@ -543,13 +585,15 @@ export function PricingPage({ view }: { view: PricingView }) {
             Start free, and move to a bigger plan when you need more.
           </p>
         </Rise>
-        <Rise delay={0.15} className="self-start sm:self-auto">
+        <Rise delay={0.15} className="flex flex-wrap items-center gap-3 self-start sm:self-auto">
+          {hasStudent ? <StudentSwitch on={student} onChange={setStudent} /> : null}
           <BillingSwitch billing={billing} onChange={setBilling} savePercent={yearlySavePercent} />
         </Rise>
       </section>
 
       <Suspense fallback={null}>
         <SubscribedNotice plans={plans} onSubscribed={onSubscribed} />
+        <StudentFromQuery onStudent={studentOn} />
       </Suspense>
 
       {/* Plans */}
@@ -561,11 +605,12 @@ export function PricingPage({ view }: { view: PricingView }) {
         )}
       >
         {plans.map((plan, i) => (
-          <PlanColumn key={plan.key} plan={plan} billing={billing} index={i} active={focusKey === plan.key} relation={relationOf(plan, i)} onFocus={() => setFocusKey(plan.key)} />
+          <PlanColumn key={plan.key} plan={plan} billing={billing} index={i} active={focusKey === plan.key} relation={relationOf(plan, i)} onFocus={() => setFocusKey(plan.key)} student={student} />
         ))}
       </section>
       <p className="border-b border-border px-5 py-3 text-center text-[13px] text-muted-foreground">
-        Prices include GST.{hasStudent ? " Students pay less." : ""}
+        Prices include GST.
+        {hasStudent ? (student ? " Student prices: you confirm your student email when you buy." : " Students pay less: turn on Student.") : ""}
       </p>
 
       {/* Top-up */}
