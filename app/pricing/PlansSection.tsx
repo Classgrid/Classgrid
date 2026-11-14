@@ -1,7 +1,9 @@
 "use client";
 
-import { Fragment, useMemo, useState, type ReactNode } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
+import gsap from "gsap";
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, CornerRightDown, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Billing, CompareGroup, CompareValue, Faq, PricingView, TopupInfo, ViewPlan } from "./plans-data";
@@ -80,41 +82,82 @@ function FeatureText({ line }: { line: string }) {
   );
 }
 
-// The block at the top of a card: name top left, price bottom left. The featured plan's block is coloured
-function PriceBlock({ plan, billing }: { plan: ViewPlan; billing: Billing }) {
+// A ₹ price that counts from the old amount to the new one when monthly/yearly changes (GSAP); other text as is
+function PriceAmount({ text }: { text: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const shown = useRef(text);
+  const reduce = useReducedMotion();
+  useEffect(() => {
+    const el = ref.current;
+    const from = Number(shown.current.replace(/[^\d]/g, ""));
+    const to = Number(text.replace(/[^\d]/g, ""));
+    shown.current = text;
+    if (!el || reduce || !/^₹[\d,]+$/.test(text) || !Number.isFinite(from) || from === to) {
+      if (el) el.textContent = text;
+      return;
+    }
+    const counter = { value: from };
+    const tween = gsap.to(counter, {
+      value: to,
+      duration: 0.6,
+      ease: "power2.out",
+      onUpdate: () => {
+        el.textContent = `₹${Math.round(counter.value).toLocaleString("en-IN")}`;
+      },
+    });
+    return () => {
+      tween.kill();
+    };
+  }, [text, reduce]);
+  return <span ref={ref}>{text}</span>;
+}
+
+// The block at the top of a card: name top left, price bottom left. The plan in focus (hovered, else the featured
+// one) glows in the brand gradient, which fades in and out (Framer Motion)
+function PriceBlock({ plan, billing, active, current }: { plan: ViewPlan; billing: Billing; active: boolean; current: boolean }) {
   const price = plan.price[billing];
+  const badge = current ? "Your plan" : plan.badge;
   return (
     <div
       className={cn(
-        "relative flex h-[200px] flex-col justify-between overflow-hidden rounded-2xl border p-5",
-        plan.featured ? cn("border-transparent text-white", BRAND_GRADIENT) : "border-border bg-black/[0.035] dark:bg-white/[0.05]"
+        "relative flex h-[200px] flex-col justify-between overflow-hidden rounded-2xl border p-5 transition-colors duration-300",
+        active ? "border-transparent text-white" : "border-border bg-black/[0.035] dark:bg-white/[0.05]"
       )}
     >
+      <motion.span
+        aria-hidden
+        className={cn("pointer-events-none absolute inset-0", BRAND_GRADIENT)}
+        initial={false}
+        animate={{ opacity: active ? 1 : 0, scale: active ? 1 : 1.08 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      />
       <span
         aria-hidden
-        className={cn("pointer-events-none absolute inset-0", plan.featured ? "opacity-[0.22] mix-blend-overlay" : "opacity-[0.06] dark:opacity-[0.08]")}
+        className={cn("pointer-events-none absolute inset-0 transition-opacity duration-300", active ? "opacity-[0.22] mix-blend-overlay" : "opacity-[0.06] dark:opacity-[0.08]")}
         style={{ backgroundImage: NOISE }}
       />
       <div className="relative">
         <h3 className="text-2xl font-medium tracking-[-0.02em]">{plan.name}</h3>
-        {plan.badge ? (
+        {badge ? (
           <span
             className={cn(
               "mt-2 inline-block rounded-full border px-2 py-px text-xs font-medium",
-              plan.featured ? "border-white/80 text-white" : "border-border text-muted-foreground"
+              active ? "border-white/80 text-white" : "border-border text-muted-foreground"
             )}
           >
-            {plan.badge}
+            {badge}
           </span>
         ) : null}
       </div>
       <div className="relative">
         <p className="flex items-baseline gap-1">
-          <span className="text-[28px] font-medium leading-none tracking-[-0.02em] tabular-nums">{price.amount}</span>
-          {price.per ? <span className={cn("text-sm", plan.featured ? "text-white/85" : "text-muted-foreground")}>{price.per}</span> : null}
+          <span className="text-[28px] font-medium leading-none tracking-[-0.02em] tabular-nums">
+            <PriceAmount text={price.amount} />
+          </span>
+          {price.per ? <span className={cn("text-sm", active ? "text-white/85" : "text-muted-foreground")}>{price.per}</span> : null}
         </p>
         {price.note || plan.student ? (
-          <p className={cn("mt-1.5 text-[13px] leading-5", plan.featured ? "text-white/85" : "text-muted-foreground")}>
+          <p className={cn("mt-1.5 text-[13px] leading-5", active ? "text-white/85" : "text-muted-foreground")}>
             {price.note ? <span className="block">{price.note}</span> : null}
             {plan.student ? <span className="block">Students: {plan.student[billing]}</span> : null}
           </p>
@@ -124,12 +167,22 @@ function PriceBlock({ plan, billing }: { plan: ViewPlan; billing: Billing }) {
   );
 }
 
-function PlanColumn({ plan, billing }: { plan: ViewPlan; billing: Billing }) {
+function PlanColumn({ plan, billing, active, current, index, onFocus }: { plan: ViewPlan; billing: Billing; active: boolean; current: boolean; index: number; onFocus: () => void }) {
+  // Buying the plan you're on adds time to it
+  const label = current && plan.cta.buy ? (billing === "yearly" ? "Add 1 year" : "Add 1 month") : plan.cta.label;
   return (
-    <div className="flex flex-col p-4 sm:p-5">
-      <PriceBlock plan={plan} billing={billing} />
-      <ButtonLink href={plan.cta.href} className="mt-4 w-full">
-        {plan.cta.label}
+    <motion.div
+      className="flex flex-col p-4 sm:p-5"
+      onMouseEnter={onFocus}
+      onFocusCapture={onFocus}
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <PriceBlock plan={plan} billing={billing} active={active} current={current} />
+      <ButtonLink href={plan.cta.href[billing]} className="mt-4 w-full">
+        {label}
       </ButtonLink>
       {plan.tagline ? <p className="mt-4 text-[14px] leading-6 text-muted-foreground">{plan.tagline}</p> : null}
 
@@ -149,7 +202,22 @@ function PlanColumn({ plan, billing }: { plan: ViewPlan; billing: Billing }) {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
+  );
+}
+
+// A section that rises in when it scrolls into view
+function Rise({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
@@ -358,35 +426,59 @@ function Faqs({ faqs }: { faqs: Faq[] }) {
   );
 }
 
+// The signed-in visitor's plan (the login cookie is shared across classgrid.in), or null when not signed in
+const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
+function useCurrentPlan() {
+  const [key, setKey] = useState<string | null>(null);
+  useEffect(() => {
+    const ctrl = new AbortController();
+    fetch(`${PLATFORM_API}/api/ai/plan`, { credentials: "include", signal: ctrl.signal })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((plan: { enabled?: boolean; key?: string } | null) => {
+        if (plan?.enabled && typeof plan.key === "string") setKey(plan.key.toLowerCase());
+      })
+      .catch(() => {});
+    return () => ctrl.abort();
+  }, []);
+  return key;
+}
+
 export function PricingPage({ view }: { view: PricingView }) {
   const [billing, setBilling] = useState<Billing>("monthly");
   const { plans, compare, faqs, topup, yearlySavePercent } = view;
+  // The plan in focus wears the gradient: the hovered one, else the featured one
+  const restingKey = plans.find((p) => p.featured)?.key ?? plans[0]?.key;
+  const [focusKey, setFocusKey] = useState(restingKey);
+  const currentKey = useCurrentPlan();
   const hasStudent = plans.some((p) => p.student);
 
   return (
     <div className="mx-auto max-w-[1180px] border-x border-border">
       {/* Hero */}
       <section className="flex flex-col gap-6 px-5 pb-10 pt-16 sm:flex-row sm:items-end sm:justify-between md:px-8 md:pb-12 md:pt-24">
-        <div>
+        <Rise>
           <h1 className="text-balance text-[40px] font-medium leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-[64px]">
             Plans for every way you use AI
           </h1>
           <p className="mt-4 max-w-xl text-pretty text-[17px] leading-7 text-muted-foreground">
             Start free, and move to a bigger plan when you need more.
           </p>
-        </div>
-        <BillingSwitch billing={billing} onChange={setBilling} savePercent={yearlySavePercent} className="self-start sm:self-auto" />
+        </Rise>
+        <Rise delay={0.15} className="self-start sm:self-auto">
+          <BillingSwitch billing={billing} onChange={setBilling} savePercent={yearlySavePercent} />
+        </Rise>
       </section>
 
       {/* Plans */}
       <section
+        onMouseLeave={() => setFocusKey(restingKey)}
         className={cn(
           "grid border-y border-border sm:grid-cols-2 [&>*]:border-border max-sm:[&>*+*]:border-t sm:[&>*:nth-child(even)]:border-l",
           plans.length >= 4 ? "lg:grid-cols-4 lg:[&>*+*]:border-l sm:max-lg:[&>*:nth-child(n+3)]:border-t" : "lg:grid-cols-3 lg:[&>*+*]:border-l"
         )}
       >
-        {plans.map((plan) => (
-          <PlanColumn key={plan.key} plan={plan} billing={billing} />
+        {plans.map((plan, i) => (
+          <PlanColumn key={plan.key} plan={plan} billing={billing} index={i} active={focusKey === plan.key} current={currentKey === plan.key} onFocus={() => setFocusKey(plan.key)} />
         ))}
       </section>
       <p className="border-b border-border px-5 py-3 text-center text-[13px] text-muted-foreground">
@@ -396,21 +488,27 @@ export function PricingPage({ view }: { view: PricingView }) {
       {/* Top-up */}
       {topup ? (
         <section id="top-up" className="scroll-mt-24 border-b border-border">
-          <TopUps topup={topup} />
+          <Rise>
+            <TopUps topup={topup} />
+          </Rise>
         </section>
       ) : null}
 
       {/* Compare */}
       {compare.length ? (
         <section id="compare" className="scroll-mt-24 border-b border-border">
-          <ComparePlans plans={plans} groups={compare} billing={billing} onBilling={setBilling} savePercent={yearlySavePercent} />
+          <Rise>
+            <ComparePlans plans={plans} groups={compare} billing={billing} onBilling={setBilling} savePercent={yearlySavePercent} />
+          </Rise>
         </section>
       ) : null}
 
       {/* FAQ */}
       {faqs.length ? (
         <section className="border-b border-border">
-          <Faqs faqs={faqs} />
+          <Rise>
+            <Faqs faqs={faqs} />
+          </Rise>
         </section>
       ) : null}
 

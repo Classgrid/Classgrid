@@ -39,6 +39,10 @@ export type FeedPlan = {
   studentPriceInrYearly?: number;
   features?: string[];
   limits?: FeedLimits;
+  // Where the buttons go (set by the server): buying opens the chat, which signs in if needed and starts the payment
+  buyUrlMonthly?: string | null;
+  buyUrlYearly?: string | null;
+  startUrl?: string | null;
 };
 
 export type TopupInfo = { min: number; max: number; creditsPerInr: number | null; validityDays: number | null };
@@ -57,7 +61,7 @@ export type ViewPlan = {
   student: Record<Billing, string> | null;
   includesLabel: string | null;
   features: string[];
-  cta: { label: string; href: string };
+  cta: { label: string; href: Record<Billing, string>; buy: boolean };
 };
 
 export type CompareGroup = { label: string; rows: { label: string; values: CompareValue[] }[] };
@@ -143,15 +147,15 @@ export const FALLBACK_PLANS: FeedPlan[] = [
   {
     key: "enterprise",
     name: "Enterprise",
-    tagline: "Classgrid AI for your whole institution",
+    tagline: "Classgrid AI for your whole company",
     comingSoon: true,
     priceInrMonthly: -1,
     priceInrYearly: -1,
     features: [
-      "Classgrid AI for everyone in your institution, not an ERP",
+      "Classgrid AI for everyone on your team",
       "Priced per seat, billed yearly, from 50 seats",
       "One shared AI credit pool",
-      "Admin controls, roles, branding and SSO",
+      "Admin controls, roles, SSO and your branding",
       "A named contact and a 45-day free pilot",
     ],
     limits: { projectsMax: -1, support: "Named contact" },
@@ -226,12 +230,27 @@ function viewPlan(p: FeedPlan, i: number, all: FeedPlan[]): ViewPlan {
     student,
     includesLabel: i > 0 ? `Everything in ${all[i - 1].name}, plus` : null,
     features: (p.features ?? []).filter((line) => typeof line === "string" && line.trim()),
-    cta:
-      contact || p.comingSoon
-        ? { label: "Contact us", href: CONTACT_URL }
-        : p.priceInrMonthly === 0
-          ? { label: "Start for free", href: CHAT_APP_URL }
-          : { label: `Get ${p.name}`, href: CHAT_APP_URL },
+    cta: planButton(p, contact),
+  };
+}
+
+const isHttpsUrl = (v: unknown): v is string => typeof v === "string" && /^https:\/\//.test(v);
+
+// The feed's links; until the server sends them, the same chat links it would send
+function planButton(p: FeedPlan, contact: boolean): ViewPlan["cta"] {
+  if (contact || p.comingSoon) return { label: "Contact us", href: { monthly: CONTACT_URL, yearly: CONTACT_URL }, buy: false };
+  if (p.priceInrMonthly === 0) {
+    const start = isHttpsUrl(p.startUrl) ? p.startUrl : CHAT_APP_URL;
+    return { label: "Start for free", href: { monthly: start, yearly: start }, buy: false };
+  }
+  const buy = (term: "month" | "year") => `${CHAT_APP_URL}/c?buy=${encodeURIComponent(p.key)}&term=${term}`;
+  return {
+    label: `Get ${p.name}`,
+    href: {
+      monthly: isHttpsUrl(p.buyUrlMonthly) ? p.buyUrlMonthly : buy("month"),
+      yearly: isHttpsUrl(p.buyUrlYearly) ? p.buyUrlYearly : buy("year"),
+    },
+    buy: true,
   };
 }
 
@@ -313,7 +332,7 @@ function buildFaqs(plans: FeedPlan[], topup: TopupInfo | null): Faq[] {
   if (student.length) {
     faqs.push({
       question: "Is there a student price?",
-      answer: `Yes: ${list(student.map((p) => `${p.name} is ${inr(p.studentPriceInrMonthly!)} a month`))} for students. You show you're a student with your college email (.ac.in or .edu) or your student ID.`,
+      answer: `Yes: ${list(student.map((p) => `${p.name} is ${inr(p.studentPriceInrMonthly!)} a month`))} for students. You show you're a student with an .ac.in or .edu email, or your student ID.`,
     });
   }
   if (yearly.length) {
