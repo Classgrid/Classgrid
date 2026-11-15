@@ -92,7 +92,7 @@ export function ViewPlatformPreview() {
 
   const panelInput = (
     <form onSubmit={handleSubmit} className="space-y-2">
-      <div className="group relative w-full shadow-sm rounded-2xl border border-border bg-white dark:bg-[#0f0f0f] focus-within:border-black/80 dark:focus-within:border-white/50 focus-within:ring-1 focus-within:ring-black/80 dark:focus-within:ring-white/50 transition-all duration-300">
+      <div className="group relative w-full shadow-sm rounded-2xl border border-border bg-white dark:bg-[#1e1e1e] focus-within:border-black/80 dark:focus-within:border-white/50 focus-within:ring-1 focus-within:ring-black/80 dark:focus-within:ring-white/50 transition-all duration-300">
         <textarea
           rows={1}
           value={input}
@@ -146,49 +146,49 @@ export function ViewPlatformPreview() {
       <section className="relative pt-8 pb-12 md:pb-16">
         <div className="relative z-10 mx-auto max-w-[1400px] px-6">
           <div className="mx-auto w-full max-w-5xl">
-            <div className="flex flex-col overflow-hidden bg-background dark:bg-black rounded-2xl border border-border shadow-2xl h-[480px] md:h-[600px] transition-all relative">
+            <div className="flex flex-col overflow-hidden bg-white dark:bg-[#121212] rounded-2xl border border-border shadow-2xl h-[480px] md:h-[600px] transition-all relative">
                 {/* Agent App Layout */}
                 <div className="flex flex-1 min-h-0 overflow-hidden relative">
                   
                   {/* Sidebar */}
-                  <aside className={cn("w-[220px] shrink-0 border-r border-border bg-muted/20 dark:bg-black hidden flex-col text-foreground min-h-0 overflow-hidden", sidebarOpen && "md:flex")}>
+                  <aside className={cn("w-[220px] shrink-0 border-r border-border bg-[#f5f5f5] dark:bg-[#181818] hidden flex-col text-foreground min-h-0 overflow-hidden", sidebarOpen && "md:flex")}>
                     <div className="flex items-center gap-2 p-3 font-semibold text-[13px]">
                       <img src="/logo.png" alt="" className="w-5 h-5 object-contain" />
                       Classgrid
                     </div>
 
-                    <div className="mx-3 mt-1 mb-3 flex items-center gap-2 rounded-lg border border-border bg-muted/40 dark:bg-[#0f0f0f] px-2.5 py-1.5 text-muted-foreground cursor-pointer hover:bg-muted/60 transition-colors">
+                    <div className="mx-3 mt-1 mb-3 flex items-center gap-2 rounded-lg border border-border bg-muted/40 dark:bg-[#1e1e1e] px-2.5 py-1.5 text-muted-foreground cursor-pointer hover:bg-muted/60 transition-colors">
                       <Search className="w-3.5 h-3.5" />
                       <span className="text-xs flex-1">Search chat</span>
                       <kbd className="text-[9px] border border-border rounded px-1 bg-background/50">⌘K</kbd>
                     </div>
 
                     <nav className="px-2 mt-1 space-y-0.5">
-                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-muted/60 text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[#eaeaea] dark:bg-[#262626] text-foreground text-[13px] font-medium transition-colors">
                         <SquarePen className="w-4 h-4" />
                         New Chat
                       </a>
-                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] hover:text-foreground text-[13px] font-medium transition-colors">
                         <Calendar className="w-4 h-4" />
                         Schedule
                       </a>
-                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] hover:text-foreground text-[13px] font-medium transition-colors">
                         <Library className="w-4 h-4" />
                         Library
                       </a>
-                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] hover:text-foreground text-[13px] font-medium transition-colors">
                         <Phone className="w-4 h-4" />
                         Calls
                       </a>
-                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] hover:text-foreground text-[13px] font-medium transition-colors">
                         <GridsIcon className="w-4 h-4" />
                         Grids
                       </a>
-                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] hover:text-foreground text-[13px] font-medium transition-colors">
                         <Users className="w-4 h-4" />
                         Requests
                       </a>
-                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-muted/40 hover:text-foreground text-[13px] font-medium transition-colors">
+                      <a href="https://chat.classgrid.in" onClick={handleSubmit} className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-muted-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] hover:text-foreground text-[13px] font-medium transition-colors">
                         <Shield className="w-4 h-4" />
                         Audit Logs
                       </a>
@@ -198,11 +198,11 @@ export function ViewPlatformPreview() {
                       <CustomPinIcon className="w-3 h-3" /> Pinned
                     </div>
                     <div className="mt-1 px-2 space-y-0.5">
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate flex items-center gap-2">
+                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] rounded-lg cursor-pointer truncate flex items-center gap-2">
                         <CustomChatIcon className="w-[15px] h-[15px] opacity-80 shrink-0" />
                         Weekly sales report
                       </div>
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate flex items-center gap-2">
+                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] rounded-lg cursor-pointer truncate flex items-center gap-2">
                         <CustomChatIcon className="w-[15px] h-[15px] opacity-80 shrink-0" />
                         Launch email draft
                       </div>
@@ -212,7 +212,7 @@ export function ViewPlatformPreview() {
                       <Clock className="w-3 h-3" /> Today
                     </div>
                     <div className="mt-1 px-2 space-y-0.5">
-                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-lg cursor-pointer truncate">Competitor research</div>
+                      <div className="px-2.5 py-1.5 text-[13px] text-muted-foreground hover:text-foreground hover:bg-[#eaeaea] dark:hover:bg-[#262626] rounded-lg cursor-pointer truncate">Competitor research</div>
                     </div>
 
                     <div className="mt-auto border-t border-border p-3 flex items-center gap-2">
@@ -223,7 +223,7 @@ export function ViewPlatformPreview() {
                   </aside>
 
                   {/* Main Chat Area */}
-                  <div className="flex-1 flex flex-col relative bg-background dark:bg-black">
+                  <div className="flex-1 flex flex-col relative bg-white dark:bg-[#121212]">
                     {/* Sidebar toggle (same icon, size and place as the app's SidebarTrigger) */}
                     <div className="shrink-0 hidden md:flex items-center px-3 pt-3 h-14">
                       <button
@@ -293,7 +293,7 @@ export function ViewPlatformPreview() {
                              </div>
                            </div>
                         </div>
-                        <div className="shrink-0 bg-background dark:bg-black pt-2 pb-6 px-4 md:px-8 max-w-4xl w-full mx-auto animate-in slide-in-from-top-4 duration-500">
+                        <div className="shrink-0 bg-white dark:bg-[#121212] pt-2 pb-6 px-4 md:px-8 max-w-4xl w-full mx-auto animate-in slide-in-from-top-4 duration-500">
                           {panelInput}
                         </div>
                       </>
