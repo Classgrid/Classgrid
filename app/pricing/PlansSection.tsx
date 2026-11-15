@@ -326,7 +326,7 @@ function TopUps({ topup }: { topup: TopupInfo }) {
           Use it when you need it
         </p>
         <p className="mt-3 max-w-md text-[14px] leading-6 text-muted-foreground">
-          Any amount from {inr(topup.min)} to {inr(topup.max)}, from Upgrade in the app.
+          Top-ups are for the Pro and Max plans (the Free plan has none). Any amount from {inr(topup.min)} to {inr(topup.max)}, from Upgrade in the app.
           {topup.validityDays ? ` It lasts ${topup.validityDays} days.` : ""}
         </p>
       </div>

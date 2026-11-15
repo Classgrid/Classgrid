@@ -368,7 +368,7 @@ function buildFaqs(plans: FeedPlan[], topup: TopupInfo | null): Faq[] {
   if (topup) {
     faqs.push({
       question: "Can I top up?",
-      answer: `Yes. Top up any amount from ${inr(topup.min)} to ${inr(topup.max)} from Upgrade in the app${topup.validityDays ? `; top-ups last ${topup.validityDays} days` : ""}.`,
+      answer: `Yes, on the Pro and Max plans (the Free plan has no top-ups). Top up any amount from ${inr(topup.min)} to ${inr(topup.max)} from Upgrade in the app${topup.validityDays ? `; top-ups last ${topup.validityDays} days` : ""}.`,
     });
   }
   faqs.push({ question: "Can I change or cancel my plan?", answer: "Yes. Move up, move down or cancel from your account. A cancelled plan stays active until the end of the period you paid for." });
