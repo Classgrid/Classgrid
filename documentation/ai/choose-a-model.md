@@ -21,11 +21,12 @@ The model picker starts on **Auto** — "Picks the best model for each message".
 | **Claude Haiku 5.5** | Fast, everyday answers and quick questions. |
 | **Claude Sonnet 5.5** | A strong all-rounder for writing, research, files and code. |
 | **Claude Opus 5.5** | Hard problems, long documents and careful reasoning. |
-| **Claude Fable 5.2** | A premium model for the most demanding work. |
+| **Claude Fable 5.2** | The newest premium model, for the most demanding work. |
+| **Claude Fable 5.1** | The earlier premium Fable model, for the most demanding work. |
 
 <callout type="info">
 
-Fable 5.2 is a premium model. If it is not available on your account, Claude Opus 5.5 is a good choice for hard work.
+Fable 5.2 and Fable 5.1 are premium models in one Fable family that shares one limit. If they are not available on your account, Claude Opus 5.5 is a good choice for hard work.
 
 </callout>
 
