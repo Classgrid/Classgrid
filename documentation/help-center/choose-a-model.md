@@ -25,7 +25,7 @@ Classgrid AI can answer with many AI models. Most people leave it on **Auto**, w
 | A long report or careful analysis | **Claude Sonnet 5.5** or **Claude Opus 5.5** |
 | Help with code | **Claude Sonnet 5.5**, **Claude Opus 5.5** or **Kimi K2.7 Code** |
 
-**Claude Fable 5.1** is a premium model. If it isn't available on your account, **Claude Opus 5.5** is a good choice for hard work.
+**Claude Fable 5.2** is a premium model. If it isn't available on your account, **Claude Opus 5.5** is a good choice for hard work.
 
 ## Switch in the middle of a chat
 

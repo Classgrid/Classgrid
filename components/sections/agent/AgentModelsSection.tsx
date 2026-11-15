@@ -19,7 +19,7 @@ const MODEL_GROUPS: { label: string; models: { name: string; description: string
       { name: "Claude Haiku 5.5", description: "Fastest, for quick everyday answers", logo: LOGO.claude },
       { name: "Claude Sonnet 5.5", description: "Best mix of speed and intelligence", logo: LOGO.claude },
       { name: "Claude Opus 5.5", description: "Complex projects, coding and agents", logo: LOGO.claude },
-      { name: "Claude Fable 5.1", description: "Most capable, for the hardest reasoning", logo: LOGO.claude },
+      { name: "Claude Fable 5.2", description: "Most capable, for the hardest reasoning", logo: LOGO.claude },
     ],
   },
   {
