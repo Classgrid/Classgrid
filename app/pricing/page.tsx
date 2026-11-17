@@ -1,10 +1,10 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/metadata";
 import { PricingPage } from "./PlansSection";
-import { buildPricingView, plansFromFeed, topupFromFeed } from "./plans-data";
+import { buildPricingView, plansFromFeed, topupFromFeed } from "@/lib/pricing/plans-data";
 
 // The plans page. Plans, prices, limits and top-ups come from the live feed the super admin sets
-// (GET /api/public/ai-pricing, cached 5 minutes); plans-data.ts keeps a fallback for when the feed has no plans yet.
+// (GET /api/public/ai-pricing, cached 5 minutes); lib/pricing/plans-data.ts keeps a fallback for when the feed has no plans yet.
 
 const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
 

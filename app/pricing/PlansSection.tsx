@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
 import { ArrowRight, ArrowUpRight, Check, CheckCircle2, ChevronDown, CornerRightDown, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { Billing, CompareGroup, CompareValue, Faq, PricingView, TopupInfo, ViewPlan } from "./plans-data";
+import type { Billing, CompareGroup, CompareValue, Faq, PricingView, TopupInfo, ViewPlan } from "@/lib/pricing/plans-data";
 
 // The whole pricing page for the plans (laid out like a framed grid: thin side lines, a line between sections). Every
 // number comes from the live feed the super admin sets, through plans-data.ts. Prices for people include GST.

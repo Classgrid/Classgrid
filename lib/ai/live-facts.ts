@@ -1,11 +1,11 @@
 // LIVE FACTS for every Classgrid AI that answers people: the site chat, the support inbox replies, the WhatsApp AI and
 // Telegram (all through rag-answer.ts), and the WhatsApp help bot's download reply (login-help-bot.ts).
 // Plans, prices, limits and top-ups come from the live feed the super admin sets (GET /api/public/ai-pricing, the
-// same feed classgrid.in/pricing shows), read with the pricing page's own parsers (app/pricing/plans-data.ts), so
+// same feed classgrid.in/pricing shows), read with the pricing page's own parsers (lib/pricing/plans-data.ts), so
 // no plan number is ever typed into a prompt. The desktop app's versions come from Sanity (lib/desktopRelease.ts).
 // The block is kept in memory for 5 minutes. When the feed is down or has no plans, the block states no plan numbers
 // and points to classgrid.in/pricing (never the pricing page's fallback numbers).
-import { buildPricingView, plansFromFeed, topupFromFeed } from "@/app/pricing/plans-data";
+import { buildPricingView, plansFromFeed, topupFromFeed } from "@/lib/pricing/plans-data";
 
 const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
 const PRICING_URL = "https://classgrid.in/pricing";
