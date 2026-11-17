@@ -25,7 +25,7 @@ Bigger jobs, longer chats and stronger models use more than short, simple questi
 1. Sign in at [chat.classgrid.in](https://chat.classgrid.in).
 2. Open **Settings** > **Usage** to see how much of your limits you've used and when they come back.
 
-![AI Hub, AI Credits, showing your credits](SCREENSHOT:ai-hub-credits)
+![Settings, Usage, showing how much of your limits you've used](SCREENSHOT:settings-usage)
 
 ## Get more on Free
 

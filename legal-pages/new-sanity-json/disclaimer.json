@@ -6,7 +6,7 @@
     "_type": "slug",
     "current": "disclaimer"
   },
-  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "lastUpdated": "2026-11-17T00:00:00.000Z",
   "effectiveDate": "2026-10-27T00:00:00.000Z",
   "intro": {
     "introductionHeading": "Introduction",
@@ -301,7 +301,7 @@
     {
       "_key": "6eea7252026fb8bf",
       "id": "4-project-mode-cloud-development-sandbox-disclaimer",
-      "title": "4. PROJECT MODE & CLOUD DEVELOPMENT SANDBOX DISCLAIMER",
+      "title": "4. PROJECT IN STUDIO & CLOUD DEVELOPMENT SANDBOX DISCLAIMER",
       "content": [
         {
           "_key": "4bb12977740347c7",
@@ -325,7 +325,7 @@
             {
               "_key": "4b3f5ca64ef06adf",
               "_type": "span",
-              "text": "Cloud development sandboxes provisioned under Project Mode run inside isolated, ephemeral Linux containers.",
+              "text": "Cloud development sandboxes provisioned under Project in Studio run inside isolated, ephemeral Linux containers.",
               "marks": []
             }
           ],
@@ -387,7 +387,7 @@
             {
               "_key": "fbfa8d78c45f7478",
               "_type": "span",
-              "text": "**Classgrid Technologies is not liable for any lost code, work stoppage, corrupted workspaces, or destroyed data occurring inside Project Mode cloud sandboxes.**",
+              "text": "**Classgrid Technologies is not liable for any lost code, work stoppage, corrupted workspaces, or destroyed data occurring inside Project in Studio cloud sandboxes.**",
               "marks": []
             }
           ],
@@ -415,7 +415,7 @@
             {
               "_key": "a520a52a7ba337db",
               "_type": "span",
-              "text": "When Project Mode commits changes to Your GitHub repositories using dynamic installation tokens (`repoAppToken`), automated commits include the trailer `Co-authored-by: Classgrid AI <noreply@classgrid.in>`. You are solely responsible for reviewing git diffs, managing branch merges, and validating the integrity of Your repository commit history.",
+              "text": "When Project in Studio commits changes to Your GitHub repositories using dynamic installation tokens (`repoAppToken`), automated commits include the trailer `Co-authored-by: Classgrid AI <noreply@classgrid.in>`. You are solely responsible for reviewing git diffs, managing branch merges, and validating the integrity of Your repository commit history.",
               "marks": []
             }
           ],
@@ -668,7 +668,7 @@
             {
               "_key": "1d5d2104a3c2646e",
               "_type": "span",
-              "text": "**Virtual Utility Only:** AI compute credits, promotional allowances, and token meters are non-fiat, non-transferable virtual accounting units used exclusively on the Platform.",
+              "text": "**Virtual Utility Only:** AI compute credits, plan usage allowances, and token meters are non-fiat, non-transferable virtual accounting units used exclusively on the Platform.",
               "marks": []
             }
           ],

@@ -4,7 +4,7 @@
 > **Platform:** Classgrid Public AI Platform (`classgrid.in` & `chat.classgrid.in`)  
 > **Entity:** Classgrid Technologies, Pune, Maharashtra, India  
 > **Effective Date:** October 27, 2026  
-> **Last Updated:** October 27, 2026  
+> **Last Updated:** November 17, 2026  
 
 ---
 
@@ -88,7 +88,7 @@ Certain features of the Platform integrate with trusted third-party providers wh
 
 1. **Cloudflare:** Provides global Content Delivery Network (CDN) acceleration, DDoS protection, and Web Application Firewall (WAF) filtering. Cloudflare cookies are strictly essential for security.
 2. **Google OAuth & GitHub OAuth:** When You authenticate via Google or GitHub, their authentication pop-ups manage cookies on their respective domains (`accounts.google.com` and `github.com`) in accordance with their privacy policies.
-3. **Razorpay Software Private Limited:** When You purchase AI compute credits, Razorpay's checkout modal loads payment security scripts that may set fraud prevention cookies. Razorpay complies with RBI regulations and PCI-DSS Level 1 security standards.
+3. **Razorpay Software Private Limited:** When You purchase a plan or AI compute credits, Razorpay's checkout modal loads payment security scripts that may set fraud prevention cookies. Razorpay complies with RBI regulations and PCI-DSS Level 1 security standards.
 
 ---
 
@@ -102,7 +102,7 @@ You have the right to control how cookies are stored on Your device. You can man
 - **Microsoft Edge:** Go to `Settings > Cookies and site permissions > Manage and delete cookies`.
 
 > ⚠️ **Impact of Disabling Cookies:**  
-> Because the `token` cookie and related session keys are strictly necessary to authenticate Your account, maintain secure WebSocket connections in Grids, and launch Project Mode sandboxes, disabling cookies will prevent You from logging in or using the core features of the Classgrid AI platform.
+> Because the `token` cookie and related session keys are strictly necessary to authenticate Your account, maintain secure WebSocket connections in Grids, and launch Project in Studio sandboxes, disabling cookies will prevent You from logging in or using the core features of the Classgrid AI platform.
 
 ---
 

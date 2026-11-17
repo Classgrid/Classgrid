@@ -4,7 +4,7 @@
 > **Platform:** Classgrid Public AI Platform (`classgrid.in` & `chat.classgrid.in`)  
 > **Entity:** Classgrid Technologies, Pune, Maharashtra, India  
 > **Effective Date:** October 27, 2026  
-> **Last Updated:** October 27, 2026  
+> **Last Updated:** November 17, 2026  
 
 ---
 
@@ -37,16 +37,16 @@ Our client applications generate non-reversible hardware environment fingerprint
 
 ---
 
-## 3. PROJECT MODE & CLOUD DEVELOPMENT SANDBOX SECURITY
+## 3. PROJECT IN STUDIO & CLOUD DEVELOPMENT SANDBOX SECURITY
 
 ### 3.1 Ephemeral Container Isolation
-Project Mode provides developers with dynamic Linux cloud development environments. Security controls include:
+Project in Studio, the coding workspace inside Studio, provides developers with dynamic Linux cloud development environments. Security controls include:
 - **Isolated Linux Sandboxes:** Workspaces run inside isolated virtual containers or VMs managed via NodeSSH over private VPC networks. Sandboxes have zero access to the underlying hypervisor or adjacent tenant environments.
 - **Ephemeral Storage Lifecycle:** Cloud containers are provisioned on demand. When a development session ends or times out, the container is safely terminated, and the file system is zeroed out.
 - **Network Egress Safeguards:** Outbound network connections from sandboxes are monitored and rate-limited. Cloud sandboxes cannot be used to scan internal AWS/cloud metadata services (`169.254.169.254`), execute DDoS attacks, or interact with prohibited botnet command-and-control infrastructure.
 
 ### 3.2 2MB File Cap (`MAX_FILE_BYTES = 2MB`)
-Individual file uploads into Project Mode sandboxes are subject to a strict 2-Megabyte limit (`MAX_FILE_BYTES = 2 * 1024 * 1024`). This rule prevents:
+Individual file uploads into Project in Studio sandboxes are subject to a strict 2-Megabyte limit (`MAX_FILE_BYTES = 2 * 1024 * 1024`). This rule prevents:
 - Denial-of-Service attacks attempting to exhaust container disk space or memory;
 - Decompression bombs ("zip bombs") engineered to crash containerized file system daemons;
 - Accidental ingestion of massive uncompiled binary blobs into AI model prompt contexts.
@@ -139,8 +139,8 @@ Grids enable real-time collaboration between developers and AI agents. Security 
 - Token consumption updates use atomic conditional operations to eliminate race conditions, double-spending, or negative balance vulnerabilities during concurrent agent invocations.
 
 ### 8.2 Payment Gateway Signature Verification
-- Top-up payments are processed through Razorpay.
-- Every payment notification received via webhooks is validated using HMAC-SHA256 signature verification before compute credits are credited to an account. Unsigned or invalid webhook calls are rejected and logged as security anomalies.
+- Plan payments and top-up payments are processed through Razorpay.
+- Every payment notification received via webhooks is validated using HMAC-SHA256 signature verification before a plan is activated or compute credits are credited to an account. Unsigned or invalid webhook calls are rejected and logged as security anomalies.
 
 ---
 

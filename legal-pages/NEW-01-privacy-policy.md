@@ -4,7 +4,7 @@
 > **Platform:** Classgrid Public AI Platform (`classgrid.in` & `chat.classgrid.in`)  
 > **Entity:** Classgrid Technologies, Pune, Maharashtra, India  
 > **Effective Date:** October 27, 2026  
-> **Last Updated:** October 27, 2026  
+> **Last Updated:** November 17, 2026  
 
 ---
 
@@ -16,7 +16,7 @@ This Privacy Policy describes how We collect, use, store, process, disclose, and
 
 > **Important Scope Notice:** The Classgrid Platform is a public-facing cloud artificial intelligence workspace, developer sandbox environment, real-time collaboration suite, and voice assistant telephony gateway. Classgrid is **not** an educational ERP, school administration portal, or student record management system. Any legacy institutional services have been fully discontinued. This Privacy Policy governs the public-facing AI platform and developer toolchain exclusively.
 
-By creating an account, connecting an OAuth provider (such as Google or GitHub), interacting with Our autonomous AI agents, launching cloud development sandboxes, participating in multi-user collaborative Grids, using WhatsApp voice telephony, or purchasing AI compute credits, You acknowledge and consent to the data practices described in this Privacy Policy. If You do not agree with this Policy, You must immediately cease accessing and using the Platform.
+By creating an account, connecting an OAuth provider (such as Google or GitHub), interacting with Our autonomous AI agents, launching cloud development sandboxes, participating in multi-user collaborative Grids, using WhatsApp voice telephony, or purchasing a plan or AI compute credits, You acknowledge and consent to the data practices described in this Privacy Policy. If You do not agree with this Policy, You must immediately cease accessing and using the Platform.
 
 ---
 
@@ -52,7 +52,7 @@ To protect the Platform, prevent credit farming, block distributed denial-of-ser
 - **Execution Logs & Traceability:** Tool invocation logs, command inputs/outputs, error codes, and progress logs generated during autonomous agent runs (capped at a 48-hour continuous runtime window).
 - **Agent Communication Records:** Email headers, subject lines, message bodies, and recipient addresses dispatched by the agent via `agent-mail.service.js` under explicit User authorization.
 
-### 3.4 Project Mode & Cloud Development Sandbox Data
+### 3.4 Project in Studio & Cloud Development Sandbox Data
 - **Source Code & Files:** Code files, project manifests, configuration files, and assets uploaded to or edited within cloud sandboxes (subject to a 2 megabyte individual file limit per upload).
 - **Terminal Execution History:** Command strings executed in ephemeral Linux sandbox containers via secure NodeSSH sessions, including standard output (`stdout`) and standard error (`stderr`).
 - **GitHub Integration Artifacts:** Dynamic, time-limited GitHub App installation tokens (`repoAppToken`), repository clones, branches, automated commits marked with `Co-authored-by: Classgrid AI`, and pull requests generated on Your behalf.
@@ -80,8 +80,8 @@ To protect the Platform, prevent credit farming, block distributed denial-of-ser
 We process personal and technical data strictly for the following lawful purposes:
 1. **Service Provision & Workflow Execution:** Creating accounts, authenticating sessions, routing WebSocket payloads, provisioning Linux sandbox containers, and executing autonomous agent tasks.
 2. **AI Inference & Voice Telephony:** Processing natural language prompts through dual-tier LLM infrastructure (GLM-4.7-Flash for low-latency classification and triage; DeepSeek V4 Pro / Claude 3.5 Sonnet for deep reasoning), and executing real-time voice speech pipelines.
-3. **Usage Metering & Account Billing:** Calculating token consumption, applying 90%+ prompt caching cost reductions, deducting AI compute credits in real time, and maintaining zero-negative account balance guardrails.
-4. **Security & Abuse Mitigation:** Detecting multiple fake accounts created to siphon free weekly promotional credits, mitigating DDoS attacks, identifying botnets, and enforcing container isolation boundaries.
+3. **Usage Metering & Account Billing:** Calculating token consumption, applying plan usage limits, applying 90%+ prompt caching cost reductions, deducting AI compute credits in real time, and maintaining zero-negative account balance guardrails.
+4. **Security & Abuse Mitigation:** Detecting multiple fake accounts created to obtain more Free plan usage, mitigating DDoS attacks, identifying botnets, and enforcing container isolation boundaries.
 5. **Git & Repository Synchronization:** Authorizing dynamic GitHub App tokens to enable branch commits, automated issue resolution, and repository pull requests.
 6. **Regulatory Compliance:** Generating GST-compliant tax invoices, responding to lawful government data access requests under the IT Act 2000, and enforcing intellectual property rights.
 
@@ -114,7 +114,7 @@ Classgrid Technologies does **not** sell, rent, or trade Your personal data to t
 
 We retain data only as long as necessary to fulfill the operational purposes described in this Policy:
 - **Account Profiles:** Retained for the active lifetime of Your account. Upon receiving a valid account deletion request, We purge personal identifiers within thirty (30) days, except for billing transaction logs required to be preserved under Indian tax and corporate laws.
-- **Cloud Sandbox Environments:** Ephemeral Linux sandboxes in Project Mode are automatically terminated and wiped when closed or after periods of inactivity. Uncommitted files are permanently purged.
+- **Cloud Sandbox Environments:** Ephemeral Linux sandboxes in Project in Studio are automatically terminated and wiped when closed or after periods of inactivity. Uncommitted files are permanently purged.
 - **Agent Task Logs & Transcripts:** Task execution logs and agent message history are retained for ninety (90) days to allow debugging and audit verification, after which they are archived or deleted.
 - **WhatsApp Audio Packets:** Real-time WebRTC audio streams are processed in memory and are **not** permanently recorded or stored on Classgrid servers after call termination, unless an explicit session recording feature is requested by the User.
 - **Billing & Tax Records:** Invoices, GST numbers, and payment receipts are retained for a minimum of seven (7) years in accordance with Indian tax statutory requirements.
@@ -125,7 +125,7 @@ We retain data only as long as necessary to fulfill the operational purposes des
 
 We implement comprehensive technical and organizational safeguards designed to protect personal and developer data:
 - **Cryptographic Encryption:** All web traffic and WebSocket streams are encrypted using TLS 1.3 in transit. All database records, object storage, and disk volumes are encrypted at rest using industry-standard AES-256 encryption.
-- **Isolated Linux Sandboxes:** Cloud development environments in Project Mode run inside isolated, restricted Linux environments preventing access to host hypervisors or neighboring tenant workloads.
+- **Isolated Linux Sandboxes:** Cloud development environments in Project in Studio run inside isolated, restricted Linux environments preventing access to host hypervisors or neighboring tenant workloads.
 - **Constant-Time Verification:** Session tokens and authentication secrets are compared using constant-time cryptographic algorithms (`crypto.timingSafeEqual`) to prevent timing side-channel attacks.
 - **Circuit Breakers & Rate Limits:** Agent operations are guarded by a 5-consecutive-failure circuit breaker (`NO_PROGRESS_LIMIT = 5`), a 48-hour maximum continuous runtime cutoff (`MAX_WORK_MS`), and strict telephony rate limits (50 calls per 24 hours).
 - **Edge Protection:** Cloudflare WAF, DDoS shielding, and rate-limiting daemons safeguard APIs against brute-force and credential-stuffing attacks.

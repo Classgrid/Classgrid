@@ -39,7 +39,7 @@ export const pageMeta: Record<string, PageMeta> = {
   compare: {
     title: "Compare",
     description:
-      "Classgrid vs legacy ERP comparison across architecture, communication, and finance capabilities.",
+      "Compare Classgrid against other platforms.",
     path: "/compare",
   },
   contact: {
@@ -91,42 +91,6 @@ export const pageMeta: Record<string, PageMeta> = {
     description: "Classgrid integration ecosystem across payments, communication, cloud, and AI services.",
     path: "/integrations",
   },
-  institutions: {
-    title: "Institutions",
-    description:
-      "Choose your institution profile and view Classgrid capabilities aligned to your operating model.",
-    path: "/institutions",
-  },
-  institutionsCollege: {
-    title: "College Institutions",
-    description:
-      "Classgrid college stack for admissions workflows, placements, and accreditation-grade controls.",
-    path: "/institutions/college",
-  },
-  institutionsJuniorCollege: {
-    title: "Junior College Institutions",
-    description:
-      "Classgrid junior college stack for XI-XII timetables, attendance, and parent communication.",
-    path: "/institutions/junior-college",
-  },
-  institutionsCoaching: {
-    title: "Coaching Institutions",
-    description:
-      "Classgrid coaching stack for batches, test series, rank workflows, and high-speed operations.",
-    path: "/institutions/coaching",
-  },
-  institutionsSchool: {
-    title: "School Institutions",
-    description:
-      "Classgrid school stack for attendance, parent communication, schedules, and classroom continuity.",
-    path: "/institutions/school",
-  },
-  institutionsEngineering: {
-    title: "Engineering Institutions",
-    description:
-      "Classgrid engineering stack for department workflows, semester operations, and accreditation-ready controls.",
-    path: "/institutions/engineering",
-  },
   pricing: {
     title: "Pricing",
     description:
@@ -172,42 +136,8 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   useCases: {
     title: "Use Cases",
-    description: "Coaching, college, junior college, and school use-cases for Classgrid platform capabilities.",
+    description:
+      "Real ways to use Classgrid AI: research with sources, summarise documents, build charts, fix code, publish websites, hand off tasks on WhatsApp and more.",
     path: "/use-cases",
-  },
-  useCasesCoaching: {
-    title: "Coaching",
-    description: "Classgrid coaching workflows for batches, payments, and result analytics.",
-    path: "/use-cases/coaching",
-  },
-  useCasesCollege: {
-    title: "College",
-    description: "Classgrid college workflows for academics, admissions, and compliance.",
-    path: "/use-cases/college",
-  },
-  useCasesJuniorCollege: {
-    title: "Junior College",
-    description: "Classgrid junior college workflows for XI-XII operations and tracking.",
-    path: "/use-cases/junior-college",
-  },
-  useCasesSchool: {
-    title: "School",
-    description: "Classgrid school workflows for attendance, communication, and reporting.",
-    path: "/use-cases/school",
-  },
-  useCasesStudents: {
-    title: "Students",
-    description: "Classgrid student experience for identity, learning, alerts, and academic progression.",
-    path: "/use-cases/students",
-  },
-  useCasesTeachers: {
-    title: "Teachers",
-    description: "Classgrid faculty workflows for attendance, planning, assessment, and reporting.",
-    path: "/use-cases/teachers",
-  },
-  useCasesInstitutes: {
-    title: "Institutes",
-    description: "Classgrid institutional oversight for analytics, admissions, finance, and compliance.",
-    path: "/use-cases/institutes",
   },
 };

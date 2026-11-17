@@ -6,7 +6,7 @@
     "_type": "slug",
     "current": "cookies"
   },
-  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "lastUpdated": "2026-11-17T00:00:00.000Z",
   "effectiveDate": "2026-10-27T00:00:00.000Z",
   "intro": {
     "introductionHeading": "Introduction",
@@ -446,7 +446,7 @@
             {
               "_key": "d26cc7ca2f1d3609",
               "_type": "span",
-              "text": "**Razorpay Software Private Limited:** When You purchase AI compute credits, Razorpay's checkout modal loads payment security scripts that may set fraud prevention cookies. Razorpay complies with RBI regulations and PCI-DSS Level 1 security standards.",
+              "text": "**Razorpay Software Private Limited:** When You purchase a plan or AI compute credits, Razorpay's checkout modal loads payment security scripts that may set fraud prevention cookies. Razorpay complies with RBI regulations and PCI-DSS Level 1 security standards.",
               "marks": []
             }
           ],
@@ -559,7 +559,7 @@
             {
               "_key": "c52164a79d6c5218",
               "_type": "span",
-              "text": "Because the `token` cookie and related session keys are strictly necessary to authenticate Your account, maintain secure WebSocket connections in Grids, and launch Project Mode sandboxes, disabling cookies will prevent You from logging in or using the core features of the Classgrid AI platform.",
+              "text": "Because the `token` cookie and related session keys are strictly necessary to authenticate Your account, maintain secure WebSocket connections in Grids, and launch Project in Studio sandboxes, disabling cookies will prevent You from logging in or using the core features of the Classgrid AI platform.",
               "marks": []
             }
           ],

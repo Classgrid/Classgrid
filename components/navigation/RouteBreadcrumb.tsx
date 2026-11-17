@@ -13,11 +13,8 @@ type BreadcrumbEntry = {
 const segmentLabelMap: Record<string, string> = {
   "use-cases": "Use Cases",
   "case-studies": "Case Studies",
-  "jr-college": "Jr College",
-  "junior-college": "Junior College",
   faq: "FAQ",
   ai: "AI",
-  erp: "ERP",
   lms: "LMS",
   "help-center": "Articles",
 };

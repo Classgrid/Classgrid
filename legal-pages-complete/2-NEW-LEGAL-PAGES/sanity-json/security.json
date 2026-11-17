@@ -6,7 +6,7 @@
     "_type": "slug",
     "current": "security"
   },
-  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "lastUpdated": "2026-11-17T00:00:00.000Z",
   "effectiveDate": "2026-10-27T00:00:00.000Z",
   "intro": {
     "introductionHeading": "Introduction",
@@ -256,7 +256,7 @@
     {
       "_key": "dedfec91ef71460f",
       "id": "3-project-mode-cloud-development-sandbox-security",
-      "title": "3. PROJECT MODE & CLOUD DEVELOPMENT SANDBOX SECURITY",
+      "title": "3. PROJECT IN STUDIO & CLOUD DEVELOPMENT SANDBOX SECURITY",
       "content": [
         {
           "_key": "c65bfd586f43df8a",
@@ -280,7 +280,7 @@
             {
               "_key": "b85ddba400a485ff",
               "_type": "span",
-              "text": "Project Mode provides developers with dynamic Linux cloud development environments. Security controls include:",
+              "text": "Project in Studio, the coding workspace inside Studio, provides developers with dynamic Linux cloud development environments. Security controls include:",
               "marks": []
             }
           ],
@@ -356,7 +356,7 @@
             {
               "_key": "8c437718d80ecb12",
               "_type": "span",
-              "text": "Individual file uploads into Project Mode sandboxes are subject to a strict 2-Megabyte limit (`MAX_FILE_BYTES = 2 * 1024 * 1024`). This rule prevents:",
+              "text": "Individual file uploads into Project in Studio sandboxes are subject to a strict 2-Megabyte limit (`MAX_FILE_BYTES = 2 * 1024 * 1024`). This rule prevents:",
               "marks": []
             }
           ],
@@ -1281,7 +1281,7 @@
             {
               "_key": "a6bea9b6c5533c70",
               "_type": "span",
-              "text": "Top-up payments are processed through Razorpay.",
+              "text": "Plan payments and top-up payments are processed through Razorpay.",
               "marks": []
             }
           ],
@@ -1297,7 +1297,7 @@
             {
               "_key": "f625ef371d3a3f57",
               "_type": "span",
-              "text": "Every payment notification received via webhooks is validated using HMAC-SHA256 signature verification before compute credits are credited to an account. Unsigned or invalid webhook calls are rejected and logged as security anomalies.",
+              "text": "Every payment notification received via webhooks is validated using HMAC-SHA256 signature verification before a plan is activated or compute credits are credited to an account. Unsigned or invalid webhook calls are rejected and logged as security anomalies.",
               "marks": []
             }
           ],

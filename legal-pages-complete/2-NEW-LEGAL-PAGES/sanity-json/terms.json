@@ -6,7 +6,7 @@
     "_type": "slug",
     "current": "terms"
   },
-  "lastUpdated": "2026-10-27T00:00:00.000Z",
+  "lastUpdated": "2026-11-17T00:00:00.000Z",
   "effectiveDate": "2026-10-27T00:00:00.000Z",
   "intro": {
     "introductionHeading": "Introduction",
@@ -70,7 +70,7 @@
             {
               "_key": "f3a2b8a30e850e6c",
               "_type": "span",
-              "text": "BY CREATING AN ACCOUNT, CONNECTING VIA OAUTH (GOOGLE OR GITHUB), INITIALIZING AN AUTONOMOUS AGENT TASK, LAUNCHING A CLOUD SANDBOX, PARTICIPATING IN A COLLABORATIVE GRID, INITIATING A WHATSAPP VOICE CALL, OR PURCHASING AI CREDITS, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS IN THEIR ENTIRETY, YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE PLATFORM.",
+              "text": "BY CREATING AN ACCOUNT, CONNECTING VIA OAUTH (GOOGLE OR GITHUB), INITIALIZING AN AUTONOMOUS AGENT TASK, LAUNCHING A CLOUD SANDBOX, PARTICIPATING IN A COLLABORATIVE GRID, INITIATING A WHATSAPP VOICE CALL, OR PURCHASING A PLAN OR AI CREDITS, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS IN THEIR ENTIRETY, YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE PLATFORM.",
               "marks": []
             }
           ],
@@ -207,7 +207,7 @@
             {
               "_key": "9a52a6b3f26c6b67",
               "_type": "span",
-              "text": "Classgrid implements client-side device fingerprinting (including hardware Canvas and WebGL hashing, user-agent parsing, and IP address logging) to enforce platform security and prevent fraudulent exploitation. The creation of automated, scripted, or multiple dummy accounts designed to exploit free weekly promotional credits is strictly prohibited and constitutes a material breach resulting in immediate account termination.",
+              "text": "Classgrid implements client-side device fingerprinting (including hardware Canvas and WebGL hashing, user-agent parsing, and IP address logging) to enforce platform security and prevent fraudulent exploitation. The creation of automated, scripted, or multiple dummy accounts designed to obtain more Free plan usage is strictly prohibited and constitutes a material breach resulting in immediate account termination.",
               "marks": []
             }
           ],
@@ -260,7 +260,7 @@
             {
               "_key": "a376089ebb2e5fd5",
               "_type": "span",
-              "text": "**Project Mode (Cloud Development Sandboxes):** Ephemeral, isolated Linux container environments enabling code authoring, dependency installation, command-line terminal execution via NodeSSH, and dynamic GitHub synchronization.",
+              "text": "**Project in Studio:** The coding workspace inside Studio, using ephemeral, isolated Linux container environments enabling code authoring, dependency installation, command-line terminal execution via NodeSSH, and dynamic GitHub synchronization.",
               "marks": []
             }
           ],
@@ -308,7 +308,7 @@
             {
               "_key": "566e07171b007a4f",
               "_type": "span",
-              "text": "**AI Credits & Metered Computing:** A unified token consumption and credit accounting mechanism powering multi-model LLM access.",
+              "text": "**Plans, AI Credits & Metered Computing:** The Free, Pro and Max plans, and a unified token consumption and credit accounting mechanism powering multi-model LLM access.",
               "marks": []
             }
           ],
@@ -319,8 +319,36 @@
     {
       "_key": "7a8fcd7283b31d8e",
       "id": "4-ai-credits-token-pricing-payment-billing",
-      "title": "4. AI CREDITS, TOKEN PRICING & PAYMENT BILLING",
+      "title": "4. PLANS, AI CREDITS, TOKEN PRICING & PAYMENT BILLING",
       "content": [
+        {
+          "_key": "40bb0dc2881215de",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "08b390df94ac6033",
+              "_type": "span",
+              "text": "Classgrid offers three plans: Free, Pro and Max. Each plan has its own usage limits, shown at [https://classgrid.in/pricing](https://classgrid.in/pricing). The Free plan has usage limits that refill over time: a limit for each time window and a weekly limit.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_key": "0c9e111ce81f188e",
+          "_type": "block",
+          "style": "normal",
+          "children": [
+            {
+              "_key": "93a9ea9f8fa3d155",
+              "_type": "span",
+              "text": "Pro and Max are paid plans, bought for one (1) month or one (1) year at the prices shown at [https://classgrid.in/pricing](https://classgrid.in/pricing), which include GST. A paid plan does not renew automatically. It ends at the end of the period paid for, and the account then returns to the Free plan.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
         {
           "_key": "ce6230bffe7fec8d",
           "_type": "block",
@@ -371,7 +399,7 @@
             {
               "_key": "2214d3e971bc8d86",
               "_type": "span",
-              "text": "When executing compute or inference operations, credit deductions occur in the following strict order of priority:",
+              "text": "When executing compute or inference operations, usage is deducted in the following strict order of priority:",
               "marks": []
             }
           ],
@@ -387,7 +415,7 @@
             {
               "_key": "56ef47d4d9dbcb31",
               "_type": "span",
-              "text": "**Free Weekly Allowance:** Promotional credits provided weekly to active accounts (non-cumulative, expiring at the end of each cycle).",
+              "text": "**Plan Usage Limits:** The usage included in Your current plan (Free, Pro or Max), within that plan's limits for each time window and each week (non-cumulative; unused plan usage does not carry over).",
               "marks": []
             }
           ],
@@ -403,7 +431,7 @@
             {
               "_key": "217f934fc7a0b75b",
               "_type": "span",
-              "text": "**Granted / Promotional Credits:** Credits awarded via promotions, hackathons, or system bonuses.",
+              "text": "**Granted / Promotional Credits:** Credits given by Classgrid via promotions, hackathons, or system bonuses.",
               "marks": []
             }
           ],
@@ -419,7 +447,7 @@
             {
               "_key": "67d4ccc66addb433",
               "_type": "span",
-              "text": "**Purchased Top-Up Credits:** Balances acquired through direct commercial purchase.",
+              "text": "**Purchased Top-Up Credits:** Extra AI credits acquired through direct commercial purchase (top-ups), available on the Pro and Max plans only, used after the plan's limits are reached, and valid for the period stated at purchase.",
               "marks": []
             }
           ],
@@ -477,7 +505,7 @@
             {
               "_key": "7469f9e195baef1a",
               "_type": "span",
-              "text": "All commercial credit top-up transactions are processed through **Razorpay Software Private Limited**, an RBI-authorized payment aggregator.",
+              "text": "All plan purchases and commercial credit top-up transactions are processed through **Razorpay Software Private Limited**, an RBI-authorized payment aggregator.",
               "marks": []
             }
           ],
@@ -555,7 +583,7 @@
             {
               "_key": "81f9d238a4da879d",
               "_type": "span",
-              "text": "**Zero-Negative Balance:** The Platform operates on a zero-negative balance model. If Your credit balance is depleted to zero, active background agent tasks, telephony sessions, and cloud sandbox executions will pause or gracefully terminate until top-up credits are acquired.",
+              "text": "**Zero-Negative Balance:** The Platform operates on a zero-negative balance model. If Your plan's usage limits are reached and Your credit balance is depleted to zero, active background agent tasks, telephony sessions, and cloud sandbox executions will pause or gracefully terminate until Your plan's limits refill or top-up credits are acquired.",
               "marks": []
             }
           ],
@@ -751,7 +779,7 @@
     {
       "_key": "4eea46ab3618b19d",
       "id": "6-project-mode-cloud-development-sandboxes",
-      "title": "6. PROJECT MODE & CLOUD DEVELOPMENT SANDBOXES",
+      "title": "6. PROJECT IN STUDIO & CLOUD DEVELOPMENT SANDBOXES",
       "content": [
         {
           "_key": "e476840baeff1b6d",
@@ -775,7 +803,7 @@
             {
               "_key": "78609e2c2c54a637",
               "_type": "span",
-              "text": "Cloud sandboxes provisioned under Project Mode run inside isolated Linux environments accessible via secure NodeSSH sessions. **Sandboxes are ephemeral development environments and must not be used for long-term production hosting or persistent data storage.**",
+              "text": "Cloud sandboxes provisioned under Project in Studio run inside isolated Linux environments accessible via secure NodeSSH sessions. **Sandboxes are ephemeral development environments and must not be used for long-term production hosting or persistent data storage.**",
               "marks": []
             }
           ],
@@ -833,7 +861,7 @@
             {
               "_key": "1a6169e5efb70fd2",
               "_type": "span",
-              "text": "When Project Mode connects to GitHub, Classgrid generates short-lived, scoped installation tokens (`repoAppToken`) through the official Classgrid GitHub App.",
+              "text": "When Project in Studio connects to GitHub, Classgrid generates short-lived, scoped installation tokens (`repoAppToken`) through the official Classgrid GitHub App.",
               "marks": []
             }
           ],
@@ -893,7 +921,7 @@
             {
               "_key": "1d225d3211f22fee",
               "_type": "span",
-              "text": "Individual file uploads into Project Mode sandboxes are subject to a hard cap of **2 Megabytes (`MAX_FILE_BYTES = 2MB`)** to mitigate denial-of-service, storage exhaustion, and malicious archive decompression attacks (zip bombs).",
+              "text": "Individual file uploads into Project in Studio sandboxes are subject to a hard cap of **2 Megabytes (`MAX_FILE_BYTES = 2MB`)** to mitigate denial-of-service, storage exhaustion, and malicious archive decompression attacks (zip bombs).",
               "marks": []
             }
           ],
@@ -1589,7 +1617,7 @@
             {
               "_key": "936998628dc51c93",
               "_type": "span",
-              "text": "ANY LOSS OF UNCOMMITTED SOURCE CODE IN PROJECT MODE SANDBOXES;",
+              "text": "ANY LOSS OF UNCOMMITTED SOURCE CODE IN PROJECT IN STUDIO SANDBOXES;",
               "marks": []
             }
           ],

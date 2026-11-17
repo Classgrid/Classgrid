@@ -4,7 +4,7 @@
 > **Platform:** Classgrid Public AI Platform (`classgrid.in` & `chat.classgrid.in`)  
 > **Entity:** Classgrid Technologies, Pune, Maharashtra, India  
 > **Effective Date:** October 27, 2026  
-> **Last Updated:** October 27, 2026  
+> **Last Updated:** November 17, 2026  
 
 ---
 
@@ -47,18 +47,18 @@ While Classgrid enforces automated safety circuit breakers (including halting ta
 
 ---
 
-## 4. PROJECT MODE & CLOUD DEVELOPMENT SANDBOX DISCLAIMER
+## 4. PROJECT IN STUDIO & CLOUD DEVELOPMENT SANDBOX DISCLAIMER
 
 ### 4.1 Ephemeral Container Architecture
-Cloud development sandboxes provisioned under Project Mode run inside isolated, ephemeral Linux containers. 
+Cloud development sandboxes provisioned under Project in Studio run inside isolated, ephemeral Linux containers. 
 
 ### 4.2 Data Loss Warning & Uncommitted Code
 - Cloud sandboxes are temporary workspaces intended for active coding, testing, and debugging. They are **not** persistent file backup vaults.
 - If a sandbox container times out due to inactivity, crashes, or is restarted during cluster maintenance, any files, dependencies, or database migrations that have **not** been committed and pushed to a remote git repository (e.g., GitHub) may be permanently and irrecoverably lost.
-- **Classgrid Technologies is not liable for any lost code, work stoppage, corrupted workspaces, or destroyed data occurring inside Project Mode cloud sandboxes.**
+- **Classgrid Technologies is not liable for any lost code, work stoppage, corrupted workspaces, or destroyed data occurring inside Project in Studio cloud sandboxes.**
 
 ### 4.3 Automated Git Commits (`Co-authored-by: Classgrid AI`)
-When Project Mode commits changes to Your GitHub repositories using dynamic installation tokens (`repoAppToken`), automated commits include the trailer `Co-authored-by: Classgrid AI <noreply@classgrid.in>`. You are solely responsible for reviewing git diffs, managing branch merges, and validating the integrity of Your repository commit history.
+When Project in Studio commits changes to Your GitHub repositories using dynamic installation tokens (`repoAppToken`), automated commits include the trailer `Co-authored-by: Classgrid AI <noreply@classgrid.in>`. You are solely responsible for reviewing git diffs, managing branch merges, and validating the integrity of Your repository commit history.
 
 ---
 
@@ -90,7 +90,7 @@ Grids collaborative rooms permit up to four (4) concurrent users (`GRID_MAX_PEOP
 
 ## 7. AI CREDITS, TOKEN PRICING & NON-FIAT DISCLAIMER
 
-- **Virtual Utility Only:** AI compute credits, promotional allowances, and token meters are non-fiat, non-transferable virtual accounting units used exclusively on the Platform.
+- **Virtual Utility Only:** AI compute credits, plan usage allowances, and token meters are non-fiat, non-transferable virtual accounting units used exclusively on the Platform.
 - **No Cash Value:** AI credits do not represent money, securities, legal tender, or bank deposits. They have zero cash surrender value and cannot be redeemed for fiat currency.
 - **Model Baseline Estimates:** Token pricing is normalized against the **DeepSeek V4 Pro 1.0x baseline unit standard**. Prompt caching hit rates (up to 90%+ discounts) depend strictly on model cache availability and prefix stability; cache hits are not guaranteed for arbitrary or frequently changing prompts.
 - **No Refunds:** Purchased credits are strictly non-refundable once acquired or consumed.

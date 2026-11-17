@@ -20,7 +20,7 @@ About Us
 We build an AI agent that does real work for you, so you can focus on what matters.
 
 Our Story
-The journey started during my first semester of engineering college when I saw how much everyday work was still slow, manual, and spread across too many separate tools. Seeing these everyday problems inspired me to build a better digital solution.
+The journey started during my first semester of engineering when I saw how much everyday work was still slow, manual, and spread across too many separate tools. Seeing these everyday problems inspired me to build a better digital solution.
 
 What began as a simple idea gradually evolved into Classgrid AI, an AI agent at https://chat.classgrid.in. The goal is to create a secure and modern AI agent that can research, read files, run code, make documents and reports, and work inside the apps people already use, all in one place.
 

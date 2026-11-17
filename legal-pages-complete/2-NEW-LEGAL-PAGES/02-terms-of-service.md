@@ -4,7 +4,7 @@
 > **Platform:** Classgrid Public AI Platform (`classgrid.in` & `chat.classgrid.in`)  
 > **Entity:** Classgrid Technologies, Pune, Maharashtra, India  
 > **Effective Date:** October 27, 2026  
-> **Last Updated:** October 27, 2026  
+> **Last Updated:** November 17, 2026  
 
 ---
 
@@ -16,7 +16,7 @@ These Terms govern Your access to and use of the Classgrid website ([https://cla
 
 > **Important Scope Notice:** Classgrid is an autonomous artificial intelligence platform and cloud development workspace. Classgrid is **not** an educational ERP, school management system, or student administrative portal. All legacy educational institution ERP offerings have been permanently decommissioned. These Terms govern the public-facing AI platform exclusively.
 
-BY CREATING AN ACCOUNT, CONNECTING VIA OAUTH (GOOGLE OR GITHUB), INITIALIZING AN AUTONOMOUS AGENT TASK, LAUNCHING A CLOUD SANDBOX, PARTICIPATING IN A COLLABORATIVE GRID, INITIATING A WHATSAPP VOICE CALL, OR PURCHASING AI CREDITS, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS IN THEIR ENTIRETY, YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE PLATFORM.
+BY CREATING AN ACCOUNT, CONNECTING VIA OAUTH (GOOGLE OR GITHUB), INITIALIZING AN AUTONOMOUS AGENT TASK, LAUNCHING A CLOUD SANDBOX, PARTICIPATING IN A COLLABORATIVE GRID, INITIATING A WHATSAPP VOICE CALL, OR PURCHASING A PLAN OR AI CREDITS, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS IN THEIR ENTIRETY, YOU ARE NOT AUTHORIZED TO ACCESS OR USE THE PLATFORM.
 
 ---
 
@@ -33,7 +33,7 @@ To access core platform features, You must authenticate using:
 You agree to provide accurate, current, and complete registration information. You are solely responsible for maintaining the confidentiality of Your session credentials, access tokens, and any activity occurring under Your account.
 
 ### 2.3 Account Integrity & Anti-Abuse Controls
-Classgrid implements client-side device fingerprinting (including hardware Canvas and WebGL hashing, user-agent parsing, and IP address logging) to enforce platform security and prevent fraudulent exploitation. The creation of automated, scripted, or multiple dummy accounts designed to exploit free weekly promotional credits is strictly prohibited and constitutes a material breach resulting in immediate account termination.
+Classgrid implements client-side device fingerprinting (including hardware Canvas and WebGL hashing, user-agent parsing, and IP address logging) to enforce platform security and prevent fraudulent exploitation. The creation of automated, scripted, or multiple dummy accounts designed to obtain more Free plan usage is strictly prohibited and constitutes a material breach resulting in immediate account termination.
 
 ---
 
@@ -42,35 +42,39 @@ Classgrid implements client-side device fingerprinting (including hardware Canva
 Classgrid provides next-generation developer tooling, cloud intelligence, and autonomous compute environments, including:
 
 1. **The Autonomous AI Agent:** An autonomous task engine capable of executing complex engineering workflows, scheduling recurring operations, running external tools, invoking APIs, and sending outbound notifications over continuous background execution cycles.
-2. **Project Mode (Cloud Development Sandboxes):** Ephemeral, isolated Linux container environments enabling code authoring, dependency installation, command-line terminal execution via NodeSSH, and dynamic GitHub synchronization.
+2. **Project in Studio:** The coding workspace inside Studio, using ephemeral, isolated Linux container environments enabling code authoring, dependency installation, command-line terminal execution via NodeSSH, and dynamic GitHub synchronization.
 3. **Grids Collaborative Chat:** Real-time multi-user virtual collaboration rooms enabling teams to co-develop, stream LLM responses simultaneously, and manage workspace context.
 4. **WhatsApp AI Voice Telephony:** Real-time voice interaction gateway powered by Meta's WhatsApp Calling API, integrating Whisper speech-to-text, deep reasoning models, and Aura speech synthesis.
-5. **AI Credits & Metered Computing:** A unified token consumption and credit accounting mechanism powering multi-model LLM access.
+5. **Plans, AI Credits & Metered Computing:** The Free, Pro and Max plans, and a unified token consumption and credit accounting mechanism powering multi-model LLM access.
 
 ---
 
-## 4. AI CREDITS, TOKEN PRICING & PAYMENT BILLING
+## 4. PLANS, AI CREDITS, TOKEN PRICING & PAYMENT BILLING
+
+Classgrid offers three plans: Free, Pro and Max. Each plan has its own usage limits, shown at [https://classgrid.in/pricing](https://classgrid.in/pricing). The Free plan has usage limits that refill over time: a limit for each time window and a weekly limit.
+
+Pro and Max are paid plans, bought for one (1) month or one (1) year at the prices shown at [https://classgrid.in/pricing](https://classgrid.in/pricing), which include GST. A paid plan does not renew automatically. It ends at the end of the period paid for, and the account then returns to the Free plan.
 
 ### 4.1 Nature of AI Credits
 AI Credits are non-fiat, virtual platform units used solely to meter and pay for computational processing, large language model (LLM) inference, cloud sandbox uptime, voice telephony duration, and autonomous agent tool execution. **Credits do not constitute real currency, legal tender, bank deposits, or securities, and hold no cash surrender value outside the Platform.**
 
 ### 4.2 Credit Allocation Hierarchy
-When executing compute or inference operations, credit deductions occur in the following strict order of priority:
-1. **Free Weekly Allowance:** Promotional credits provided weekly to active accounts (non-cumulative, expiring at the end of each cycle).
-2. **Granted / Promotional Credits:** Credits awarded via promotions, hackathons, or system bonuses.
-3. **Purchased Top-Up Credits:** Balances acquired through direct commercial purchase.
+When executing compute or inference operations, usage is deducted in the following strict order of priority:
+1. **Plan Usage Limits:** The usage included in Your current plan (Free, Pro or Max), within that plan's limits for each time window and each week (non-cumulative; unused plan usage does not carry over).
+2. **Granted / Promotional Credits:** Credits given by Classgrid via promotions, hackathons, or system bonuses.
+3. **Purchased Top-Up Credits:** Extra AI credits acquired through direct commercial purchase (top-ups), available on the Pro and Max plans only, used after the plan's limits are reached, and valid for the period stated at purchase.
 
 ### 4.3 Normalized Token Pricing & Prompt Caching
 Model token consumption is normalized against an industry-standard baseline of **1.0x DeepSeek V4 Pro unit cost**. Advanced reasoning models (e.g., Claude 3.5 Sonnet) and lightweight triage models (e.g., GLM-4.7-Flash) are dynamically factored based on their computational cost relative to this baseline. Prompt caching benefits (up to 90%+ discount on cached input prefix tokens) are automatically passed through to reduce User credit burn.
 
 ### 4.4 Payments, Razorpay & GST Compliance
-- All commercial credit top-up transactions are processed through **Razorpay Software Private Limited**, an RBI-authorized payment aggregator.
+- All plan purchases and commercial credit top-up transactions are processed through **Razorpay Software Private Limited**, an RBI-authorized payment aggregator.
 - Purchases made within India are subject to statutory Indian Goods & Services Tax (GST) at the prevailing rate of **18%**, which is added to the transaction at checkout.
 - You agree to provide a valid GST identification number (GSTIN) if purchasing on behalf of a registered tax entity.
 
 ### 4.5 Non-Refundable Nature & Zero-Negative Floor
 - **No Refunds:** All credit purchases are final and strictly non-refundable once purchased or partially consumed.
-- **Zero-Negative Balance:** The Platform operates on a zero-negative balance model. If Your credit balance is depleted to zero, active background agent tasks, telephony sessions, and cloud sandbox executions will pause or gracefully terminate until top-up credits are acquired.
+- **Zero-Negative Balance:** The Platform operates on a zero-negative balance model. If Your plan's usage limits are reached and Your credit balance is depleted to zero, active background agent tasks, telephony sessions, and cloud sandbox executions will pause or gracefully terminate until Your plan's limits refill or top-up credits are acquired.
 
 ---
 
@@ -94,21 +98,21 @@ If You authorize an autonomous agent to dispatch emails on Your behalf:
 
 ---
 
-## 6. PROJECT MODE & CLOUD DEVELOPMENT SANDBOXES
+## 6. PROJECT IN STUDIO & CLOUD DEVELOPMENT SANDBOXES
 
 ### 6.1 Ephemeral Container Architecture
-Cloud sandboxes provisioned under Project Mode run inside isolated Linux environments accessible via secure NodeSSH sessions. **Sandboxes are ephemeral development environments and must not be used for long-term production hosting or persistent data storage.**
+Cloud sandboxes provisioned under Project in Studio run inside isolated Linux environments accessible via secure NodeSSH sessions. **Sandboxes are ephemeral development environments and must not be used for long-term production hosting or persistent data storage.**
 
 ### 6.2 Data Loss Warning & Git Synchronization
 You are responsible for regularly committing and pushing Your source code to remote git repositories (such as GitHub). **Classgrid is not responsible or liable for any loss of uncommitted source code, configuration files, or database dumps caused by sandbox timeout, container reboot, crash, or scheduled cluster maintenance.**
 
 ### 6.3 GitHub Dynamic Tokens & Automated Commits
-- When Project Mode connects to GitHub, Classgrid generates short-lived, scoped installation tokens (`repoAppToken`) through the official Classgrid GitHub App.
+- When Project in Studio connects to GitHub, Classgrid generates short-lived, scoped installation tokens (`repoAppToken`) through the official Classgrid GitHub App.
 - Automated commits or code modifications generated by the platform will be attributed with the standard trailer: `Co-authored-by: Classgrid AI <noreply@classgrid.in>`.
 - You retain full authority and responsibility to review, test, merge, or revert any commits or pull requests created by the Platform.
 
 ### 6.4 File Limits & Upload Restrictions
-Individual file uploads into Project Mode sandboxes are subject to a hard cap of **2 Megabytes (`MAX_FILE_BYTES = 2MB`)** to mitigate denial-of-service, storage exhaustion, and malicious archive decompression attacks (zip bombs).
+Individual file uploads into Project in Studio sandboxes are subject to a hard cap of **2 Megabytes (`MAX_FILE_BYTES = 2MB`)** to mitigate denial-of-service, storage exhaustion, and malicious archive decompression attacks (zip bombs).
 
 ---
 
@@ -192,7 +196,7 @@ YOU ACKNOWLEDGE THAT LARGE LANGUAGE MODELS OPERATE PROBABILISTICALLY AND ARE PRO
 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CLASSGRID TECHNOLOGIES, ITS DIRECTORS, OFFICERS, EMPLOYEES, AFFILIATES, AGENTS, SUPPLIERS, OR LICENSORS BE LIABLE FOR:
 - ANY INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES;
 - DAMAGES FOR LOSS OF PROFITS, REVENUE, GOODWILL, DATA, WORK STOPPAGE, OR COMPUTER/CONTAINER CRASHES;
-- ANY LOSS OF UNCOMMITTED SOURCE CODE IN PROJECT MODE SANDBOXES;
+- ANY LOSS OF UNCOMMITTED SOURCE CODE IN PROJECT IN STUDIO SANDBOXES;
 - ANY ACTIONS TAKEN BY AUTONOMOUS AI AGENTS PURSUANT TO YOUR PROMPTS OR INSTRUCTIONS;
 - ANY INABILITY TO CONNECT TO EMERGENCY RESCUE OR DISPATCH SERVICES VIA WHATSAPP TELEPHONY.
 

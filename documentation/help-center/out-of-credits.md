@@ -38,7 +38,7 @@ Your new credits are added to your account and are used after your plan's limit 
 
 Open **Settings** > **Usage** to see how much you've used and when your limits come back.
 
-![AI Hub, Usage, showing how much you've used](SCREENSHOT:ai-hub-usage)
+![Settings, Usage, showing how much you've used](SCREENSHOT:settings-usage)
 
 ## Make your limit go further
 
