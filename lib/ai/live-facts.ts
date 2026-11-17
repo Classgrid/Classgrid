@@ -2,10 +2,14 @@
 // Telegram (all through rag-answer.ts), and the WhatsApp help bot's download reply (login-help-bot.ts).
 // Plans, prices, limits and top-ups come from the live feed the super admin sets (GET /api/public/ai-pricing, the
 // same feed classgrid.in/pricing shows), read with the pricing page's own parsers (lib/pricing/plans-data.ts), so
-// no plan number is ever typed into a prompt. The desktop app's versions come from Sanity (lib/desktopRelease.ts).
+// no plan number is ever typed into a prompt. The desktop app's versions come from Sanity (lib/desktopReleaseCore.ts).
+// Everything this file imports must stay inside lib/: the AI server (server-ai) gets only lib/ and server-ai/
+// (deploy-ai.yml), and an import from app/ or sanity/ crashed it on 2026-11-17 (scripts/check-ai-imports.mjs checks
+// this before every AI deploy).
 // The block is kept in memory for 5 minutes. When the feed is down or has no plans, the block states no plan numbers
 // and points to classgrid.in/pricing (never the pricing page's fallback numbers).
 import { buildPricingView, plansFromFeed, topupFromFeed } from "@/lib/pricing/plans-data";
+import { DESKTOP_RELEASES_QUERY, formatReleaseDate, latestPerPlatform, releasesFromDocs, type DesktopReleaseDoc } from "@/lib/desktopReleaseCore";
 
 const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
 const PRICING_URL = "https://classgrid.in/pricing";
@@ -44,10 +48,8 @@ async function fetchFeedLive(): Promise<unknown> {
 
 async function loadDesktopLive(): Promise<DesktopFacts | null> {
   try {
-    // Loaded only when needed: the Sanity client needs its settings, and the chat must still answer without them
-    const { getLatestPerPlatform, formatReleaseDate } = await import("@/lib/desktopRelease");
     const latest = await Promise.race([
-      getLatestPerPlatform(),
+      desktopReleaseDocs().then((docs) => latestPerPlatform(releasesFromDocs(docs))),
       new Promise<null>((resolve) => setTimeout(() => resolve(null), DESKTOP_TIMEOUT_MS)),
     ]);
     if (!latest) return null;
@@ -66,6 +68,18 @@ async function loadDesktopLive(): Promise<DesktopFacts | null> {
   } catch {
     return null;
   }
+}
+
+// The published release documents, from Sanity's public read API (no client or token needed, so the AI server can
+// read them as well as the website). The project and dataset are the site's own (public values).
+const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "a4wk6kp5";
+const SANITY_DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+async function desktopReleaseDocs(): Promise<DesktopReleaseDoc[] | null> {
+  const url = `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v2023-05-03/data/query/${SANITY_DATASET}?query=${encodeURIComponent(DESKTOP_RELEASES_QUERY)}`;
+  const res = await fetch(url, { signal: AbortSignal.timeout(DESKTOP_TIMEOUT_MS) });
+  if (!res.ok) return null;
+  const body = (await res.json()) as { result?: unknown };
+  return Array.isArray(body?.result) ? (body.result as DesktopReleaseDoc[]) : null;
 }
 
 const DEFAULT_DEPS: LiveFactsDeps = { fetchFeed: fetchFeedLive, loadDesktop: loadDesktopLive };

@@ -18,7 +18,6 @@ import {
 } from "@/lib/ai/rag-retrieve";
 import { extractTextFromAttachment } from "./file-parser";
 import { describeImageWithGemini, answerChatWithGeminiNatively } from "./gemini-ocr";
-import { fetchPlatformContext } from "./platform-context";
 import { getLiveFactsBlock } from "./live-facts";
 
 export type ChatHistoryItem = {

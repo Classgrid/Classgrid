@@ -8,6 +8,7 @@ on:
       - 'server-ai/**'
       - 'lib/**'
       - 'tsconfig.json'
+      - 'scripts/check-ai-imports.mjs'
       - '.github/workflows/deploy-ai.yml'
   workflow_dispatch:
 
@@ -18,6 +19,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      # Only lib/ and server-ai/ are copied to the server: an import from anywhere else crash-loops the AI server
+      # (2026-11-17), so the deploy stops here instead
+      - name: Check the AI server imports only lib/ and server-ai/
+        run: node scripts/check-ai-imports.mjs
 
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.7.0
