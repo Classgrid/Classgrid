@@ -90,7 +90,7 @@
         "floating": {
           "kind": "status",
           "title": "Installing packages",
-          "subtitle": "Installing the project's packages in the background…",
+          "subtitle": "Installing the project's packages in the background",
           "tone": "info"
         }
       }

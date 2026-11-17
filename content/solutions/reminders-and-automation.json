@@ -47,7 +47,7 @@
         "floating": {
           "kind": "whatsapp",
           "sender": "Classgrid AI",
-          "text": "✅ Task completed. Your comparison is ready: chat.classgrid.in/…",
+          "text": "✅ Task completed. Your comparison is ready: chat.classgrid.in/agent/7b2e1",
           "time": "4:12 PM"
         }
       }
@@ -111,7 +111,7 @@
         "floating": {
           "kind": "whatsapp",
           "sender": "Classgrid AI",
-          "text": "✅ Task completed. Your cafe list is ready: chat.classgrid.in/…",
+          "text": "✅ Task completed. Your cafe list is ready: chat.classgrid.in/agent/3d8a6",
           "time": "6:40 PM"
         }
       }
@@ -144,7 +144,7 @@
         "main": {
           "kind": "whatsapp",
           "sender": "Classgrid AI",
-          "text": "Here is your report. Open the full chat: chat.classgrid.in/…",
+          "text": "Here is your report. Open the full chat: chat.classgrid.in/agent/9e5c2",
           "time": "11:05 AM"
         },
         "floating": {

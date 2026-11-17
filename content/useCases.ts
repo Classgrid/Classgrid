@@ -575,7 +575,7 @@ export const LOCAL_USE_CASES: UseCase[] = [
       "Ask for a summary or the key points.",
       "Ask follow-up questions about the video.",
     ],
-    tryPrompt: "Summarise this video in 5 points: https://youtube.com/…",
+    tryPrompt: "Summarise this video in 5 points: https://youtu.be/your-video",
     relatedSolution: { label: "Research & data", href: "/solutions/research" },
     order: 25,
   },

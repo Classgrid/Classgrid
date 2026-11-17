@@ -1,14 +1,6 @@
 import { CmsFallback } from "@/components/ui/CmsErrorBoundary";
 import { StructuredContentPage } from "@/components/templates/StructuredContentPage";
 import { buildPageMetadata } from "@/lib/metadata";
-import {
-  industryProblemSolution,
-  roleProblemSolution,
-  solutionClientLogos,
-  solutionImpactMetrics,
-  solutionTestimonialsBySlug,
-  solutionTrustBadges,
-} from "@/lib/solution-content";
 import { getSolutionPage } from "@/sanity/lib/marketing";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -16,29 +8,20 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-/** Slugs that are industry/institution type pages */
-const INDUSTRY_SLUGS = new Set([
-  "for-schools",
-  "for-colleges",
-  "for-jr-colleges",
-  "for-coaching",
-  "for-engineering",
-]);
-
-/** Page address -> old key of its extra content in lib/solution-content */
-const OLD_KEYS: Record<string, string> = {
-  "agent-mode": "for-schools",
-  "project-mode": "for-engineering",
-  "grids": "for-colleges",
-  "whatsapp-calls": "for-jr-colleges",
-  "research": "for-coaching",
-  "documents-and-files": "for-students",
-  "reminders-and-automation": "for-teachers",
-  "email-and-calendar": "for-admins",
-};
+/** The Solutions pages (their content lives in Sanity) */
+const SOLUTION_SLUGS = [
+  "agent-mode",
+  "project-mode",
+  "grids",
+  "whatsapp-calls",
+  "research",
+  "documents-and-files",
+  "reminders-and-automation",
+  "email-and-calendar",
+];
 
 export async function generateStaticParams() {
-  return Object.keys(OLD_KEYS).map((slug) => ({ slug }));
+  return SOLUTION_SLUGS.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -77,7 +60,6 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function SolutionPage({ params }: PageProps) {
   const { slug } = await params;
-  const oldKey = OLD_KEYS[slug] ?? slug;
   const page = (await getSolutionPage(slug)) as any;
 
   if (!page) {
@@ -91,7 +73,6 @@ export default async function SolutionPage({ params }: PageProps) {
   }
 
   const heroImageUrl = page?.heroImage?.asset?.url ?? null;
-  const isIndustry = INDUSTRY_SLUGS.has(oldKey);
 
   const capabilities = Array.isArray(page?.capabilities)
     ? page.capabilities
@@ -148,15 +129,6 @@ export default async function SolutionPage({ params }: PageProps) {
         faqs={Array.isArray(page?.faqs) ? page.faqs : []}
         primaryCtaLabel="Use Agent"
         primaryCtaHref="https://chat.classgrid.in"
-        trustBadges={solutionTrustBadges}
-        clientLogos={solutionClientLogos}
-        impactMetrics={solutionImpactMetrics}
-        testimonials={solutionTestimonialsBySlug[oldKey] ?? []}
-        problemSolution={
-          isIndustry
-            ? (industryProblemSolution[oldKey] ?? [])
-            : (roleProblemSolution[oldKey] ?? [])
-        }
       />
     </>
   );
