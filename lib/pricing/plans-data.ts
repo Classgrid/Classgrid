@@ -17,6 +17,11 @@ export type FeedLimits = {
   callMinutesPerPeriod?: number;
   callsPerDay?: number;
   callMaxMinutes?: number;
+  callsPerWeek?: number;
+  callsPerMonth?: number;
+  callTasksPerCall?: number;
+  callTasksAtOnce?: number;
+  callTaskMaxMinutes?: number;
   whatsappPerDay?: number;
   projectsMax?: number;
   codingRunsPerMonth?: number;
@@ -308,7 +313,12 @@ function buildCompare(plans: FeedPlan[]): CompareGroup[] {
       rows: [
         row("AI call minutes a month", (l) => cell(l.callMinutesPerPeriod, num)),
         row("AI calls a day", (l) => cell(l.callsPerDay, num)),
+        row("AI calls a week", (l) => cell(l.callsPerWeek, num)),
+        row("AI calls a month", (l) => cell(l.callsPerMonth, num)),
         row("Minutes per call", (l) => cell(l.callMaxMinutes, num)),
+        row("Tasks one call can start", (l) => cell(l.callTasksPerCall, num)),
+        row("Tasks from calls running at once", (l) => cell(l.callTasksAtOnce, num)),
+        row("Work time for one task from a call", (l) => cell(l.callTaskMaxMinutes, (n) => `${num(n)} minutes`)),
         row("Scheduled messages a day", (l) => cell(l.whatsappPerDay, num)),
       ],
     },
