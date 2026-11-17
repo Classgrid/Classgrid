@@ -62,13 +62,13 @@ You can open the chat to see what was done and ask the agent to continue from th
 | The agent makes no progress for several runs | It stops and waits for you to reply before going on. |
 | The server restarts | The task carries on afterwards. You don't need to do anything. |
 
-## If your credits run out
+## If you reach your plan's limit
 
-Long tasks use your AI credits, the same as normal chats. If your credits run out in the middle of a task, the task is **paused**, not deleted, and you get a message that starts:
+Long tasks use your plan's limit, the same as normal chats. If you reach the limit in the middle of a task, the task is **paused**, not deleted, and you get this message on WhatsApp:
 
-> "⏸️ Your AI tokens ran out, so I paused your task…"
+> "You've used your {Plan} plan's limit for now, so I paused your task. I'll continue by myself when it comes back on {time}."
 
-Top up to keep using Classgrid AI. See [Credits and top-ups](/docs/credits-and-top-ups).
+On Free, the message ends by saying you can upgrade to Pro or Max for more. On Pro and Max, it ends by saying you can top up on chat.classgrid.in. The task carries on by itself when your limit comes back. See [Plans and top-ups](/docs/credits-and-top-ups).
 
 ## Tips
 

@@ -6,14 +6,11 @@ order: 2
 description: Connect your GitHub account, install the Classgrid app, and create a project with or without a repo.
 ---
 
-Project Mode works on top of GitHub. Before you can open a project, you connect your GitHub account and install the Classgrid GitHub app on the repos you want to work on. Then you create a project and link it to a repo, or start without one and let the agent make the repo for you.
+Project, inside Studio, works on top of GitHub. Before you can open a project, you connect your GitHub account and install the Classgrid GitHub app on the repos you want to work on. Then you create a project and link it to a repo, or start without one and let the agent make the repo for you.
 
 ## Step 1: Connect GitHub
 
-The first time you switch to Project Mode, you'll see:
-
-> **Connect GitHub to use Project Mode**
-> "Project Mode needs your GitHub account. Your code is only kept on GitHub, never on our servers."
+The first time you open Project (go to Studio and click **Project** in the left sidebar), you're asked to connect GitHub. Project needs your GitHub account: "Your code is only kept on GitHub, never on our servers."
 
 1. Click **Connect GitHub**.
 2. Sign in to GitHub and allow access.
@@ -88,7 +85,7 @@ Yes. Private repos show in the list with a "private" tag.
 <details>
 <summary>Why does it ask me to install the Classgrid app?</summary>
 
-The Classgrid GitHub app is what lets Project Mode download your code and open pull requests. It needs to be installed on each repo you work on.
+The Classgrid GitHub app is what lets Project download your code and open pull requests. It needs to be installed on each repo you work on.
 
 </details>
 

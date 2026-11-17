@@ -6,12 +6,12 @@ order: 2
 summary: Connect your GitHub account, install the Classgrid GitHub app on your repos, and link a repo to a project.
 ---
 
-Project Mode works on top of GitHub. You connect your GitHub account once, then install the Classgrid GitHub app on the repos you want to work on.
+Project, inside Studio, works on top of GitHub. You connect your GitHub account once, then install the Classgrid GitHub app on the repos you want to work on.
 
 ## Step 1: Connect GitHub
 
-1. Switch to Project Mode (**Switch Mode** → **Project**).
-2. You'll see **Connect GitHub to use Project Mode**. Click **Connect GitHub**.
+1. Go to Studio and click **Project** in the left sidebar.
+2. You're asked to connect GitHub. Click **Connect GitHub**.
 3. Sign in to GitHub and allow access.
 4. You come back to the **Projects** page, which shows your GitHub picture, name and email.
 
@@ -22,7 +22,7 @@ Project Mode works on top of GitHub. You connect your GitHub account once, then 
 3. On GitHub, choose the account or organisation and the repos to allow, then confirm.
 4. You're sent back to Classgrid and see **"Classgrid app installed"**.
 
-The app is what lets Project Mode download your code and open pull requests. It must be installed on each repo you work on.
+The app is what lets Project download your code and open pull requests. It must be installed on each repo you work on.
 
 ## Step 3: Create a project and link a repo
 

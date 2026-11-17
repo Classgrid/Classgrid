@@ -23,7 +23,7 @@ For a short job, like checking one page, the agent does the work itself. For a l
 | **What they can use** | In Studio, every helper can use the live browser and the scratchpad |
 | **Permissions** | Helpers follow your permission mode. Their cards show in the same chat, and you answer them the same way |
 | **GitHub** | Helpers never push to GitHub. Only the main agent does, and only when allowed |
-| **Credits** | Helpers use credits like the rest of the chat |
+| **Plan limit** | Helpers use your plan's limit like the rest of the chat |
 
 ### Which model a helper uses
 

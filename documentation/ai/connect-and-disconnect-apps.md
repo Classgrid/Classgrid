@@ -77,7 +77,7 @@ You can also remove Classgrid's access from the app's own settings page, for exa
 
 <details><summary>Can I connect more than one app?</summary>Yes. Connect as many plugins as you like. The agent can use several in one request, for example finding a file in Drive and emailing it with Gmail.</details>
 
-<details><summary>Does the work in my apps use credits?</summary>Yes. The work the agent does uses your AI credits, like any other chat. See Credits and top ups.</details>
+<details><summary>Does the work in my apps use my plan's limit?</summary>Yes. The work the agent does uses your plan's limit, like any other chat. See Plans and top-ups.</details>
 
 <details><summary>Can the agent use my apps during a WhatsApp call?</summary>Yes. During a WhatsApp call the agent can use your connected apps, such as Gmail, Google Calendar, Google Drive, Notion, GitHub and Vercel.</details>
 
@@ -86,4 +86,4 @@ You can also remove Classgrid's access from the app's own settings page, for exa
 - [Plugins](/docs/plugins)
 - [Connect GitHub](/docs/connect-github)
 - [Privacy and your data](/docs/privacy-and-data)
-- [Credits and top ups](/docs/credits-and-top-ups)
+- [Plans and top-ups](/docs/credits-and-top-ups)

@@ -38,7 +38,7 @@ If an answer needs more than about 90 seconds, the AI sends it to you on WhatsAp
 
 ### Bigger jobs become tasks
 
-For work that takes longer, like writing a report or fixing a website, the AI saves it as a task to do after you hang up. Coding work goes into [Project Mode](/docs/project-mode).
+For work that takes longer, like writing a report or fixing a website, the AI saves it as a task to do after you hang up. Coding work goes into [Project in Studio](/docs/project-mode).
 
 ## After you hang up
 
@@ -69,9 +69,9 @@ Forgot something? While your task is running you can:
 | Type of call | **WhatsApp voice call** only. Not a normal phone call. |
 | Who starts the call | You. The AI never calls you or anyone else. |
 | Daily limit | There is a daily limit on calls per number. If you reach it, you are told when you can call again. |
-| Credits | Calls and tasks use your AI credits. See [Credits and top ups](/docs/credits-and-top-ups). |
+| Plan limit | Calls and tasks use your plan's limit. See [Plans and top-ups](/docs/credits-and-top-ups). |
 
-If you are out of credits, you get: "You're out of Classgrid AI credits right now. Top up on https://chat.classgrid.in to use calls."
+If you have used your plan's limit, the call is not taken and you get: "You've used your {Plan} plan's limit for now, so Classgrid AI can't take calls. Calls come back on {time}, or upgrade to Pro or Max for more." On Pro and Max, the end says "or top up on chat.classgrid.in" instead.
 
 ## Things you can say
 
@@ -79,7 +79,7 @@ If you are out of credits, you get: "You're out of Classgrid AI credits right no
 - "What's on my calendar today?"
 - "Make a one page report on electric scooters in India." Hang up and get the PDF on WhatsApp.
 - "Find last week's invoice in my Drive."
-- "Fix the contact form on my website." It runs in Project Mode and the result comes on WhatsApp.
+- "Fix the contact form on my website." It runs in Project in Studio and the result comes on WhatsApp.
 - "Plan a 3-day trip to Jaipur and send me the plan on WhatsApp."
 
 ## Common questions
@@ -88,7 +88,7 @@ If you are out of credits, you get: "You're out of Classgrid AI credits right no
 
 <details><summary>Can I start a new task by sending a WhatsApp text?</summary>No. New tasks start from a call, or from an email to agent@classgrid.in. WhatsApp texts reach the agent only while a task is already running.</details>
 
-<details><summary>Why didn't the AI pick up?</summary>Check that you are making a WhatsApp call (not a phone call), that your number is verified on chat.classgrid.in, and that you have credits left.</details>
+<details><summary>Why didn't the AI pick up?</summary>Check that you are making a WhatsApp call (not a phone call), that your number is verified on chat.classgrid.in, and that you have not used up your plan's limit for now.</details>
 
 ## Related pages
 

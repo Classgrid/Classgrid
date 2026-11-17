@@ -3,7 +3,7 @@ title: Why was my call not answered?
 slug: my-call-was-not-answered
 category: troubleshooting
 order: 2
-summary: Check that it's a WhatsApp voice call from a verified number with credits left.
+summary: Check that it's a WhatsApp voice call from a verified number, and that you haven't used your plan's limit for now.
 ---
 
 If Classgrid AI didn't pick up your call, check these things in order.
@@ -24,13 +24,15 @@ Fix: [Verify your WhatsApp number](/help-center/article/verify-your-whatsapp-num
 
 Calls only work from a number verified on **exactly one** Classgrid AI account. If the same number is on two accounts, calls aren't answered. Keep the number on one account only.
 
-## 4. Do you have credits?
+## 4. Have you used your plan's limit?
 
-If you're out of credits, you get:
+If you've used your plan's limit for now, the call is not taken and you get:
 
-"You're out of Classgrid AI credits right now. Top up on https://chat.classgrid.in to use calls."
+"You've used your {Plan} plan's limit for now, so Classgrid AI can't take calls. Calls come back on {time}, or upgrade to Pro or Max for more."
 
-Fix: top up from **Upgrade** in the **AI Hub**. See [Out of credits](/help-center/article/out-of-credits).
+On Pro and Max, the end says "or top up on chat.classgrid.in" instead.
+
+Fix: call again after the time it gives. On Free, you can move to Pro or Max from **Settings** > **Billing**. On Pro and Max, you can top up from **Settings** > **Billing** > **Buy credits**. See [Out of credits](/help-center/article/out-of-credits).
 
 ## 5. Did you reach the daily call limit?
 

@@ -10,7 +10,7 @@ Studio Mode is a **full agentic workspace**. You tell the agent what you need, a
 
 You chat with the agent on the left. On the right, a pane with tabs shows everything it's doing: a **live browser** it can use for you, your project's **files**, the **terminal**, **screenshots** and the changes to **review**.
 
-It uses the same projects as Project Mode, so you can start a job in one mode and finish it in the other.
+**Project**, the code editor for your GitHub projects, is inside Studio: click **Project** in Studio's left sidebar. Studio and Project use the same projects, so you can start a job in the Studio chat and finish it in Project.
 
 ## What Studio Mode is for
 
@@ -23,9 +23,9 @@ It uses the same projects as Project Mode, so you can start a job in one mode an
 
 1. Open chat.classgrid.in and sign in.
 2. Click your name at the top of the sidebar. A menu opens under **Switch Mode**.
-3. Choose **Studio**. (Choose **Agent** or **Project** to switch back.)
+3. Choose **Studio**. (Choose **Agent** to switch back.)
 
-Switching between **Project** and **Studio** keeps the chat you have open.
+To open Project, click **Project** in Studio's left sidebar. Its page is [chat.classgrid.in/c/studio/project](https://chat.classgrid.in/c/studio/project).
 
 <callout type="info">
 
@@ -37,7 +37,7 @@ Switching between **Project** and **Studio** keeps the chat you have open.
 
 | Part | Where | What it does |
 |---|---|---|
-| **Sidebar** | Left | New Chat, Search, Pinned Chats and Recent Chats. Drag its edge to make it wider; double-click the edge to reset it |
+| **Sidebar** | Left | New Chat, Search, Pinned Chats and Recent Chats, plus **Project** (the code editor). Drag its edge to make it wider; double-click the edge to reset it |
 | **Chat** | Middle | Talk to the agent, as in Agent mode |
 | **Pane** | Right | Tabs that show the browser, files, terminal and more |
 
@@ -65,13 +65,13 @@ A project gives the agent your code to work on. Above the chat box on a new chat
 - Hover over a project to **Rename** it, **Link a repo** or **Change repo**, or **Delete** it.
 - **No project** to chat without one.
 
-Projects are shared: *"Shared with Project Mode and Studio Mode."* The project you pick is also the open project in Project Mode.
+Projects are shared between the Studio chat and Project, which is inside Studio. The project you pick is also the open project in Project.
 
 When you pick a project, Classgrid gets its code ready. You'll see *"Downloading [name] from GitHub…"* or *"Getting [name] ready…"* at the top of the chat.
 
 <callout type="info">
 
-**You need GitHub connected to open a project.** Set up GitHub and the Classgrid app in Project Mode first. If something is missing, Studio shows *"GitHub is not connected. Set it up in Project Mode first, then come back."* or *"The Classgrid app is not installed on [repo]. Set it up in Project Mode first."*, with a **Go to Project Mode** button. See [Connect GitHub](/docs/connect-github).
+**You need GitHub connected to open a project.** Set up GitHub and the Classgrid app in Project first (click **Project** in Studio's left sidebar). If GitHub is not connected, or the Classgrid app is not installed on the repo, Studio tells you to set it up in Project first and shows a button that takes you there. See [Connect GitHub](/docs/connect-github).
 
 </callout>
 
@@ -79,7 +79,7 @@ You can use the browser without a project. Files, the terminal, your dev server 
 
 ## What the agent does in Studio
 
-- It makes code changes itself. You don't need to edit files; if you want to edit by hand, switch to Project Mode.
+- It makes code changes itself. You don't need to edit files; if you want to edit by hand, open Project from Studio's left sidebar.
 - It uses the live browser to look at websites, not terminal commands.
 - It asks your permission before risky steps, based on the mode you choose. See [Permissions](/docs/studio-permissions).
 - For long jobs it can send helpers that work at the same time. See [Helpers and the scratchpad](/docs/studio-browser-helpers).
@@ -91,7 +91,7 @@ When the pane is hidden, three buttons sit at the top right of a chat:
 | Button | What it does |
 |---|---|
 | **⋮ Chat options** | **Rename**, **Pin**/**Unpin**, **Archive**, **Archived chats**, **Copy** (link, chat or chat ID) and **Delete** |
-| **Open** | Opens this chat in Project Mode, with its project |
+| **Open** | Opens this chat in Project, with its project |
 | **Overview** | Jumps to the **Review**, **Files** or **Terminal** tab, and shows how many **Background commands** are running |
 
 **Archived chats** are kept, not deleted: *"This project's archived chats. They are not deleted."* Click **Unarchive** to bring one back.
@@ -115,16 +115,16 @@ If you leave Studio for about 30 minutes, Classgrid removes the working copy of 
 ## FAQ
 
 <details>
-<summary>What's the difference between Studio Mode and Project Mode?</summary>
+<summary>What's the difference between the Studio chat and Project?</summary>
 
-Project Mode is a full code editor (VS Code) with the agent beside it. Studio Mode has no code editor: the agent does the work and you watch it in the browser, files and terminal tabs. Both use the same projects and chats.
+Project is inside Studio: click **Project** in Studio's left sidebar. It is a full code editor (VS Code) with the agent beside it. The Studio chat has no code editor: the agent does the work and you watch it in the browser, files and terminal tabs. Both use the same projects and chats.
 
 </details>
 
 <details>
 <summary>Can I edit files myself in Studio?</summary>
 
-No. The Files tab is read-only. Ask the agent to make the change, or click **Open** to continue the chat in Project Mode and edit there.
+No. The Files tab is read-only. Ask the agent to make the change, or click **Open** to continue the chat in Project and edit there.
 
 </details>
 

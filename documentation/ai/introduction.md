@@ -13,7 +13,7 @@ Classgrid AI is an AI agent that does real work, not just chat. You ask in plain
 Three things set Classgrid AI apart from a normal chatbot:
 
 - **You can call it on WhatsApp.** Say what you need, hang up, and the finished work comes back to your WhatsApp.
-- **It has Project Mode.** A real code editor in your browser, linked to GitHub, where every change the AI makes arrives as a pull request you review.
+- **It has Project, inside Studio.** A real code editor in your browser, linked to GitHub, where every change the AI makes arrives as a pull request you review.
 - **It has Grids.** Built-in messaging and groups, plus one AI chat shared by up to 4 people (you included).
 
 ## The four parts
@@ -21,7 +21,7 @@ Three things set Classgrid AI apart from a normal chatbot:
 | Part | What it is | Start here |
 |---|---|---|
 | **Agent mode** | The main AI chat: web search with sources, files, code, images, PDFs, websites, email, plugins and background tasks of up to 48 hours. | [Agent mode](/docs/agent-mode) |
-| **Project Mode** | A full code editor in the browser, linked to your GitHub. The AI edits your code and sends every change as a pull request. | [Project Mode](/docs/project-mode) |
+| **Studio** | A full agentic workspace: the agent uses a live browser, your files and a terminal while you watch. **Project** sits in Studio's left sidebar: a full code editor in the browser, linked to your GitHub, where the AI sends every change as a pull request. | [Studio](/docs/studio-mode) and [Project](/docs/project-mode) |
 | **Grids** | 1:1 chats and groups with other Classgrid AI users, plus a shared AI chat for up to 4 people. | [Grids](/docs/grids) |
 | **WhatsApp** | Call Classgrid AI on WhatsApp, talk in English, and get results back on WhatsApp. | [WhatsApp calls](/docs/whatsapp-calls) |
 
@@ -38,9 +38,11 @@ This is the home screen of chat.classgrid.in. The message box says "Ask anything
 - Use [plugins](/docs/plugins) such as Gmail, Google Calendar, Notion, GitHub and Slack.
 - Set [reminders](/docs/schedules-and-reminders) and run [long tasks](/docs/long-tasks).
 
-### Project Mode
+### Studio and Project
 
-Switch to it from the sidebar with **Switch Mode** → **Project**. You need a GitHub account. The agent reads, edits and runs your code, and saves your work as pull requests. See [Project Mode](/docs/project-mode).
+Classgrid AI has two modes: **Agent** and **Studio**. In Studio, the agent works in a live browser, your files and a terminal while you watch. See [Studio](/docs/studio-mode).
+
+To work on your code, go to Studio and click **Project** in the left sidebar. You need a GitHub account. The agent reads, edits and runs your code, and saves your work as pull requests. See [Project](/docs/project-mode).
 
 ### Grids
 
@@ -57,7 +59,7 @@ Verify your WhatsApp number, then WhatsApp-call Classgrid AI on **+91 81492 7703
 | **Research** | "Research a topic with real sources." or "Compare the top 3 project management apps, with a score for each." |
 | **Work with documents** | "Turn this PDF into clear notes." or "Draft a project proposal and make it a PDF." |
 | **Work with data** | "Clean up messy spreadsheet data." or "Show total sales by month as a chart." |
-| **Write and run code** | "Debug an error in your code." or open a repo in Project Mode and ask it to fix a failing build. |
+| **Write and run code** | "Debug an error in your code." or open a repo in Project in Studio and ask it to fix a failing build. |
 | **Build a website** | "Build a landing page for your idea." |
 | **Work as a team** | Chat in a Grids group, run a quick poll, or share one AI chat (up to 4 people in total). |
 | **Stay on top of things** | "Read my unread emails from today." or set a reminder for a meeting. |
@@ -72,7 +74,7 @@ Verify your WhatsApp number, then WhatsApp-call Classgrid AI on **+91 81492 7703
 
 <callout type="info">
 
-Classgrid AI is free to start. Using the AI uses credits, and you can top up any time from **Upgrade** in the AI Hub. See [Credits and top-ups](/docs/credits-and-top-ups).
+Classgrid AI has three plans: **Free**, **Pro** and **Max**. Free costs nothing. Every plan has limits, and Pro and Max have higher ones. To get more, move to Pro or Max from **Settings** > **Billing**. See [Plans and top-ups](/docs/credits-and-top-ups).
 
 </callout>
 
@@ -81,7 +83,7 @@ Classgrid AI is free to start. Using the AI uses credits, and you can top up any
 <details>
 <summary>Do I need to install anything?</summary>
 
-No. Classgrid AI runs in your browser at chat.classgrid.in. Project Mode also runs in the browser, with nothing to install.
+No. Classgrid AI runs in your browser at chat.classgrid.in. Studio and Project also run in the browser, with nothing to install.
 
 </details>
 

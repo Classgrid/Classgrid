@@ -41,7 +41,7 @@ The panel shows **People · N of 4**. **History** shows each invite: Pending, Ac
 
 ## If it doesn't work
 
-- **No Share Grid icon?** Incognito chats and Project Mode chats can't be shared.
+- **No Share Grid icon?** Incognito chats and Project chats can't be shared.
 - **Your friend can't open an emailed invite?** It works only for the email it was sent to. They must sign in with that email, or you can send them the invite link instead.
 - **Need more than 4 people?** Make a group in Grids instead.
 - **Just want people to read it?** Use a [share link](/help-center/article/share-a-chat-link).

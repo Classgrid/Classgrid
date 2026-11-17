@@ -1,14 +1,16 @@
 ---
-title: How do credits and top-ups work?
+title: How do plans and top-ups work?
 slug: credits-and-top-ups
 category: account-and-billing
 order: 1
-summary: Classgrid AI is free to start; check your usage and top up from AI Hub when you need more.
+summary: Classgrid AI has Free, Pro and Max plans; check your usage in Settings and, on Pro and Max, top up from Settings > Billing.
 ---
 
-Classgrid AI is free to start. When the agent does work for you, it uses AI credits. When you need more, you top up from the **AI Hub**.
+Classgrid AI has three plans: **Free**, **Pro** and **Max**. Free costs nothing. Every plan has a limit that refills every few hours and a weekly limit. Pro and Max have higher limits, Claude models, more images and more storage.
 
-## What uses credits
+Prices and limits are on [classgrid.in/pricing](https://classgrid.in/pricing).
+
+## What uses your limit
 
 - Chatting with the agent, including Incognito chats.
 - Making images.
@@ -16,28 +18,32 @@ Classgrid AI is free to start. When the agent does work for you, it uses AI cred
 - Tasks the agent does after a call or an email.
 - Work the agent does in your connected apps.
 
-Bigger jobs, longer chats and stronger models use more credits than short, simple questions.
+Bigger jobs, longer chats and stronger models use more than short, simple questions.
 
-## Check what you have
+## Check what you have used
 
-1. In the message box, click the sliders icon (**AI Hub**).
-2. Open **AI Credits** to see what you have left.
-3. Open **Usage** to see how much you've used.
+1. Sign in at [chat.classgrid.in](https://chat.classgrid.in).
+2. Open **Settings** > **Usage** to see how much of your limits you've used and when they come back.
 
 ![AI Hub, AI Credits, showing your credits](SCREENSHOT:ai-hub-credits)
 
-The current amounts and limits are always shown in the app, in the AI Hub. They can change, so check there for the latest.
+## Get more on Free
 
-## Top up
+Free users can't top up. To get more, move to **Pro** or **Max** from **Settings** > **Billing** or from [classgrid.in/pricing](https://classgrid.in/pricing).
 
-1. Open the **AI Hub**.
-2. Open **Upgrade** or **AI Credits**.
-3. Choose how much you want to add and follow the steps to pay.
-4. Your new credits are added to your account.
+## Top up (Pro and Max)
 
-Bought credits expire after a set time, so use them soon. See **AI Credits** for the current details.
+Top-ups are extra AI credits. They are used only after your plan's limit runs out.
 
-## Make credits go further
+1. Sign in at [chat.classgrid.in](https://chat.classgrid.in).
+2. Open **Settings** > **Billing**.
+3. Click **Buy credits**.
+4. Choose how much you want to add and follow the steps to pay.
+5. Your new credits are added to your account.
+
+Bought credits expire after a set time, so use them soon.
+
+## Make your limit go further
 
 - **Use Auto.** It picks a good model for each message.
 - **Be clear.** A clear request gets the right answer with less back and forth.
@@ -46,14 +52,14 @@ Bought credits expire after a set time, so use them soon. See **AI Credits** for
 
 ## Before a big job
 
-About to start a long research task or a WhatsApp call with many tasks? Check **AI Credits** first, so the work doesn't stop halfway.
+About to start a long research task or a WhatsApp call with many tasks? Check **Settings** > **Usage** first, so the work doesn't stop halfway.
 
 ## Good to know
 
-- Each person has their own account and their own credits. To work together, use [Share Grid](/help-center/article/share-an-ai-chat).
+- Each person has their own account and their own plan. To work together, use [Share Grid](/help-center/article/share-an-ai-chat).
 
 ## If it doesn't work
 
-Ran out? See [Out of credits](/help-center/article/out-of-credits). Payment problem? Contact us from the [support page](/support).
+Reached your limit? See [Out of credits](/help-center/article/out-of-credits). Payment problem? Contact us from the [support page](/support).
 
-Full details: [Credits and top-ups](/docs/credits-and-top-ups).
+Full details: [Plans and top-ups](/docs/credits-and-top-ups).

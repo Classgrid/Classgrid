@@ -60,7 +60,7 @@ The code is valid for **10 minutes**. If it does not arrive, you can ask for a n
 - **One number, one account.** WhatsApp calls only work from a number that is verified on exactly one Classgrid AI account. If the same number is on more than one account, calls are not answered.
 - **WhatsApp calls, not phone calls.** The AI answers WhatsApp voice calls only. A regular phone call will not reach it.
 - **Texting does not start a task.** A new task starts from a WhatsApp call or an [email to the agent](/docs/email-the-agent). While a task is running, you can send extra text, photos or PDFs on WhatsApp and they are passed to that task.
-- **Credits.** Calls and tasks use your AI credits. You can top up from **Upgrade** in the AI Hub. See [Credits and top-ups](/docs/credits-and-top-ups).
+- **Plan limits.** Calls and tasks use your plan's limit. See [Plans and top-ups](/docs/credits-and-top-ups).
 
 ## Troubleshooting
 
@@ -69,7 +69,7 @@ The code is valid for **10 minutes**. If it does not arrive, you can ask for a n
 | "This WhatsApp number is not linked to a Classgrid account. Sign in on https://chat.classgrid.in and verify this number, then call again." | Your number is not verified yet. Follow the steps above, then call again. |
 | The code did not arrive | Make sure you messaged +91 81492 77038 first, check you chose the right country code, then wait 60 seconds and tap **Send OTP** again. |
 | The code does not work | It may be older than 10 minutes. Ask for a new one. |
-| "You're out of Classgrid AI credits right now. Top up on https://chat.classgrid.in to use calls." | Top up from **Upgrade** in the AI Hub, then call again. |
+| "You've used your {Plan} plan's limit for now, so Classgrid AI can't take calls. Calls come back on {time}, or upgrade to Pro or Max for more." (on Pro and Max: "or top up on chat.classgrid.in") | Call again after the time it gives. On Free, you can move to Pro or Max from **Settings** > **Billing**. On Pro and Max, you can top up from **Settings** > **Billing** > **Buy credits**. |
 
 ## FAQ
 

@@ -26,7 +26,7 @@ Rejecting can't be undone, so read first.
 
 To put the whole project back to before an answer:
 
-1. Hide the pane, then click **Open** at the top right of the chat to open it in Project Mode.
+1. Hide the pane, then click **Open** at the top right of the chat to open it in Project.
 2. Click **Undo** in that answer's files changed box, and confirm.
 
 ## Save your work

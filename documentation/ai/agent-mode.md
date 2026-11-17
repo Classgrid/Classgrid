@@ -15,7 +15,7 @@ The box says "Ask anything, analyse a file, or schedule a task…". Around it yo
 | Control | What it does |
 |---|---|
 | Paperclip (**Attach file**) | Upload files from your computer. |
-| Sliders icon (**AI Hub**) | Open plugins, skills, settings and **Upgrade**. |
+| Sliders icon (**AI Hub**) | Open **Plugins**, **Images**, **Skills** and **Connected apps**. |
 | **Dictate** (mic) | Speak, and your words are typed into the box. |
 | Model picker | Choose **Auto** or a specific model. See [Choose a model](/docs/choose-a-model). |
 
@@ -75,15 +75,15 @@ You do not need special commands. Just say what you want, for example "Turn this
 - **Incognito chat** — "Incognito chats are not saved to your history or search." Closing the chat deletes it. See [Incognito](/docs/incognito).
 - **Library** — "Manage your uploaded and AI-generated files." See [Library](/docs/library).
 
-## Agent mode or Project Mode?
+## Agent mode or Project?
 
-| Use Agent mode for… | Use Project Mode for… |
+| Use Agent mode for | Use Project (in Studio) for |
 |---|---|
 | Questions, research, files, images, documents, reminders | Working on a GitHub code repository |
 | Quick websites hosted at `sites.classgrid.in` | Changes saved as pull requests you review |
 | Plugins, email and WhatsApp | A full code editor with a terminal |
 
-A chat can be moved into a project with **Move to project**. See [Project Mode](/docs/project-mode).
+To open Project, go to Studio and click **Project** in the left sidebar. A chat can be moved into a project with **Move to project**. See [Project](/docs/project-mode).
 
 ## FAQ
 
@@ -104,6 +104,6 @@ Yes. Share a read-only link, or use **Share Grid** to chat with the AI together,
 <details>
 <summary>Does using the agent cost anything?</summary>
 
-Classgrid AI is free to start. Using the AI uses credits, and you can top up from **Upgrade** in the AI Hub. See [Credits and top-ups](/docs/credits-and-top-ups).
+The **Free** plan costs nothing. Every plan has a limit that refills every few hours and a weekly limit. **Pro** and **Max** have higher limits, and you can move to them from **Settings** > **Billing**. See [Plans and top-ups](/docs/credits-and-top-ups).
 
 </details>

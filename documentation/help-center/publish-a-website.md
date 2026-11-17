@@ -43,8 +43,8 @@ Then ask the agent to publish again to the same name.
 
 ## If it doesn't work
 
-- **Publishing isn't offered?** Publishing to `sites.classgrid.in` works only in Agent mode chats at chat.classgrid.in. It doesn't work in Project Mode chats, or in tasks started from a WhatsApp call or an email.
-- **Working in Project Mode?** Use the Vercel plugin instead. See [Deploy to Vercel](/help-center/article/deploy-to-vercel).
+- **Publishing isn't offered?** Publishing to `sites.classgrid.in` works only in Agent mode chats at chat.classgrid.in. It doesn't work in Project chats, or in tasks started from a WhatsApp call or an email.
+- **Working in Project?** Use the Vercel plugin instead. See [Deploy to Vercel](/help-center/article/deploy-to-vercel).
 - **Name already taken?** Pick another name.
 
 Full details: [Publish a website](/docs/publish-a-website).

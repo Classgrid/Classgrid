@@ -63,7 +63,7 @@ Want to add your title, logo or a border to an image? Ask the agent, for example
 
 ## Limits
 
-Image making uses your credits and has its own usage limit. If you run out, you can top up from **Upgrade** in the AI Hub. See [Credits and top-ups](/docs/credits-and-top-ups).
+Image making uses your plan's limit and has its own image limit. Pro and Max get more images than Free. On Free, you can move to Pro or Max from **Settings** > **Billing**. See [Plans and top-ups](/docs/credits-and-top-ups).
 
 ## FAQ
 

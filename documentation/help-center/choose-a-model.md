@@ -21,9 +21,11 @@ Classgrid AI can answer with many AI models. Most people leave it on **Auto**, w
 | You want… | Try |
 |---|---|
 | "Just make it work" | **Auto** |
-| A quick answer or a short rewrite | **Claude Haiku 5.5** or a **Flash** model |
-| A long report or careful analysis | **Claude Sonnet 5.5** or **Claude Opus 5.5** |
-| Help with code | **Claude Sonnet 5.5**, **Claude Opus 5.5** or **Kimi K2.7 Code** |
+| A quick answer or a short rewrite | **Claude Haiku 5.5** (Pro and Max) or a **Flash** model |
+| A long report or careful analysis | **Claude Sonnet 5.5** or **Claude Opus 5.5** (Pro and Max), or **DeepSeek V4 Pro** |
+| Help with code | **Claude Sonnet 5.5**, **Claude Opus 5.5** (Pro and Max) or **Kimi K2.7 Code** |
+
+Claude models are on the **Pro** and **Max** plans only. The Free plan has no Claude models.
 
 **Claude Fable 5.2** and **Claude Fable 5.1** are premium models in one Fable family that shares one limit. If they aren't available on your account, **Claude Opus 5.5** is a good choice for hard work.
 
@@ -34,7 +36,7 @@ You can change the model for any message. The new model sees the same chat, so y
 ## Good to know
 
 - Every model can still use the agent's tools, like web search, files, code, images and plugins. The model changes how it thinks and writes, not what it can reach.
-- Stronger models and longer chats use more credits. See [Credits and top-ups](/help-center/article/credits-and-top-ups).
+- Stronger models and longer chats use more of your plan's limit. See [Plans and top-ups](/help-center/article/credits-and-top-ups).
 - WhatsApp calls don't use the model picker. Classgrid chooses a fast voice setup for calls.
 - To set a tone or style for every model, see [Teach Classgrid AI about you](/help-center/article/teach-classgrid-ai-about-you).
 

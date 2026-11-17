@@ -18,7 +18,7 @@ Classgrid AI can build a website for you and put it live on the internet in one 
 
 <callout type="info">
 
-Publishing is part of **Agent mode** only. It is not available in Project Mode chats or in tasks started from a WhatsApp call or an email. To put a Project Mode site online, use the Vercel plugin. See [Deploy with Vercel](/docs/deploy-with-vercel).
+Publishing is part of **Agent mode** only. It is not available in Project chats or in tasks started from a WhatsApp call or an email. To put a site from Project online, use the Vercel plugin. See [Deploy with Vercel](/docs/deploy-with-vercel).
 
 </callout>
 
@@ -71,15 +71,15 @@ Anything you publish is public. Anyone with the link can see it, so do not put p
 | You need… | Use |
 |---|---|
 | A quick site live in minutes | Agent mode publishing (this page) |
-| Your code kept in GitHub with every change reviewed | [Project Mode](/docs/project-mode) |
+| Your code kept in GitHub with every change reviewed | [Project in Studio](/docs/project-mode) |
 | Hosting on your own Vercel account | [Deploy with Vercel](/docs/deploy-with-vercel) |
 
 ## FAQ
 
 <details>
-<summary>Can I publish from Project Mode?</summary>
+<summary>Can I publish from Project?</summary>
 
-No. Classgrid's `sites.classgrid.in` hosting works in Agent mode only. In Project Mode, connect the Vercel plugin and ask the agent to deploy. See [Deploy with Vercel](/docs/deploy-with-vercel).
+No. Classgrid's `sites.classgrid.in` hosting works in Agent mode only. In Project, connect the Vercel plugin and ask the agent to deploy. See [Deploy with Vercel](/docs/deploy-with-vercel).
 
 </details>
 

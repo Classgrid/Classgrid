@@ -22,7 +22,7 @@ When you connect an app like Gmail or Google Drive, the agent works in it as you
 - Ask for a draft before the agent sends or posts anything.
 - Disconnect apps you don't use: **AI Hub** → **Plugins** → tap the app → **Disconnect**. See [Disconnect an app](/help-center/article/disconnect-an-app).
 
-## Your code in Project Mode
+## Your code in Project
 
 - Your code is kept on **GitHub**. Opening a project downloads it fresh.
 - While you work, a temporary copy sits in your editor. It's removed after you close the editor.
@@ -49,7 +49,7 @@ Files you upload and files the AI makes are kept in your [Library](/help-center/
 2. **Delete** chats you don't need.
 3. **Disconnect** apps you aren't using.
 4. **Check** a chat before sharing a link.
-5. **Push** your Project Mode work to GitHub when you're done.
+5. **Push** your Project work to GitHub when you're done.
 
 Never put passwords or secrets in your chats or in Custom Instructions.
 

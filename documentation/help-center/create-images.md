@@ -49,6 +49,6 @@ Ask for a new version and describe the change, for example "Same idea, but at su
 
 ## If it doesn't work
 
-Making images uses your credits and has its own usage limit. If you run out, see [Out of credits](/help-center/article/out-of-credits).
+Making images uses your plan's limit and has its own image limit. Pro and Max get more images than Free. If you reach the limit, see [Out of credits](/help-center/article/out-of-credits).
 
 Full details: [Images](/docs/images).

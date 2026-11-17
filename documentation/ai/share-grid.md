@@ -14,7 +14,7 @@ Share Grid turns any normal AI chat into a shared one. Up to 4 people can read t
 2. In the chat header, tap the **Share Grid** icon. (It is an icon with no text label.)
 3. The **Invite people** panel opens.
 
-<callout type="warning">Incognito chats and Project Mode chats can't be shared with Share Grid.</callout>
+<callout type="warning">Incognito chats and Project chats can't be shared with Share Grid.</callout>
 
 ## Invite people
 

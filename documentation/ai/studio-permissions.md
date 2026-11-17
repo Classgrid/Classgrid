@@ -6,7 +6,7 @@ order: 4
 description: Choose how often the agent asks before it acts, and answer the permission card to allow, block or skip a step.
 ---
 
-In Studio Mode and Project Mode, you decide how much the agent can do without asking. Pick a mode with the **shield**, and answer the **permission card** when the agent asks.
+In Studio, including Project, you decide how much the agent can do without asking. Pick a mode with the **shield**, and answer the **permission card** when the agent asks.
 
 ## The shield
 

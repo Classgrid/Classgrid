@@ -6,7 +6,7 @@ order: 3
 summary: Choose how often the agent asks before it acts, and answer the permission card.
 ---
 
-In Studio Mode and Project Mode, the agent asks before risky steps, like installing packages, deleting files, pushing to GitHub or opening a website.
+In Studio, including Project, the agent asks before risky steps, like installing packages, deleting files, pushing to GitHub or opening a website.
 
 ## Choose a mode
 

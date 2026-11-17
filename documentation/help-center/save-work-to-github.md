@@ -6,7 +6,7 @@ order: 4
 summary: Use Push to GitHub to send your changes to a classgrid/ branch with a pull request you merge yourself.
 ---
 
-Project Mode saves your work to GitHub as a **pull request**. It never pushes straight to your main branch, so the repo owner always decides what gets merged.
+Project saves your work to GitHub as a **pull request**. It never pushes straight to your main branch, so the repo owner always decides what gets merged.
 
 ## Steps
 

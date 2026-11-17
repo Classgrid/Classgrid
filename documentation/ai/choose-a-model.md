@@ -16,6 +16,8 @@ The model picker starts on **Auto** — "Picks the best model for each message".
 
 ### Claude
 
+Claude models are on the **Pro** and **Max** plans only. The Free plan has no Claude models.
+
 | Model | Good for |
 |---|---|
 | **Claude Haiku 5.5** | Fast, everyday answers and quick questions. |
@@ -26,7 +28,7 @@ The model picker starts on **Auto** — "Picks the best model for each message".
 
 <callout type="info">
 
-Fable 5.2 and Fable 5.1 are premium models in one Fable family that shares one limit. If they are not available on your account, Claude Opus 5.5 is a good choice for hard work.
+Fable 5.2 and Fable 5.1 are premium models in one Fable family that shares one limit. If they are not available on your account, Claude Opus 5.5 is a good choice for hard work. On Free, use **Auto** or a **DeepSeek** model instead.
 
 </callout>
 
@@ -59,9 +61,9 @@ There is no single right answer. These are simple starting points:
 | You want… | Try |
 |---|---|
 | "Just make it work" | **Auto** |
-| A quick answer or short rewrite | **Claude Haiku 5.5** or a **Flash** model |
-| A long report, research brief or careful analysis | **Claude Sonnet 5.5** or **Claude Opus 5.5** |
-| Help with code | **Claude Sonnet 5.5**, **Claude Opus 5.5** or **Kimi K2.7 Code** |
+| A quick answer or short rewrite | **Claude Haiku 5.5** (Pro and Max) or a **Flash** model |
+| A long report, research brief or careful analysis | **Claude Sonnet 5.5** or **Claude Opus 5.5** (Pro and Max), or **DeepSeek V4 Pro** |
+| Help with code | **Claude Sonnet 5.5**, **Claude Opus 5.5** (Pro and Max) or **Kimi K2.7 Code** |
 | To compare how different models answer | Ask the same question, switch model, and ask again |
 
 <callout type="info">
@@ -80,9 +82,9 @@ Whichever model you choose, the agent still has its tools: web search, files, th
 
 You can switch model for any message, even halfway through a conversation. The new model sees the same chat, so you do not need to repeat yourself. A common pattern is to draft with a fast model, then switch to a stronger one for the final, careful version.
 
-## Credits
+## Plans and limits
 
-Using the AI uses your credits. If you run low, top up from **Upgrade** in the AI Hub. See [Credits and top-ups](/docs/credits-and-top-ups).
+Using the AI uses your plan's limit, and stronger models use more. Check what you have used in **Settings** > **Usage**. On Free, move to Pro or Max from **Settings** > **Billing** to get more and to use Claude models. On Pro and Max, you can also top up from **Settings** > **Billing**. See [Plans and top-ups](/docs/credits-and-top-ups).
 
 ## FAQ
 

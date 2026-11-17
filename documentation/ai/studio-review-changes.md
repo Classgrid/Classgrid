@@ -84,9 +84,9 @@ Files the agent created in that answer are removed.
 
 ## Undo a whole answer
 
-Undo puts the **whole project** back to how it was before an answer, including any later changes. In Studio, do it from Project Mode:
+Undo puts the **whole project** back to how it was before an answer, including any later changes. In Studio, do it from Project:
 
-1. Hide the pane, then click **Open** at the top right of the chat. The chat opens in Project Mode.
+1. Hide the pane, then click **Open** at the top right of the chat. The chat opens in Project.
 2. Click **Undo** in the answer's files changed box, and confirm.
 
 See [Review and undo](/docs/review-and-undo) for how Undo works.

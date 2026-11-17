@@ -113,8 +113,8 @@ No. Each person has their own browser, and their own sign-ins.
 </details>
 
 <details>
-<summary>Can I use the live browser in Agent mode or Project Mode?</summary>
+<summary>Can I use the live browser in Agent mode or in Project?</summary>
 
-No, the live browser is only in Studio Mode. If you ask for it in another mode, the agent will suggest switching to Studio.
+No, the live browser is only in the Studio chat. If you ask for it in Agent mode, the agent will suggest switching to Studio. In Project, go back to the Studio chat to use it.
 
 </details>

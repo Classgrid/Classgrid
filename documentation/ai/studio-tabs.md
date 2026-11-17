@@ -51,7 +51,7 @@ The code view has colours and line numbers. Pictures show as images; click to zo
 
 <callout type="info">
 
-**You can't edit here.** The Files tab is for looking. Ask the agent to make a change, or open the chat in Project Mode to edit by hand.
+**You can't edit here.** The Files tab is for looking. Ask the agent to make a change, or open the chat in Project to edit by hand.
 
 </callout>
 
@@ -84,7 +84,7 @@ The terminal is read-only: you can't type commands. Ask the agent instead. When 
 
 ## Project
 
-A summary of the open project, *"Shared with Project Mode"*.
+A summary of the open project. Projects are shared with Project, which is inside Studio.
 
 | Card | What it shows |
 |---|---|
@@ -93,7 +93,7 @@ A summary of the open project, *"Shared with Project Mode"*.
 | **Last commit** | The newest commit's message and when it was made |
 | **History** | The list of commits; click one to open it on GitHub |
 
-**Open in Project Mode** opens the project in the code editor. **Refresh** loads the details again.
+**Open in Project** opens the project in the code editor. **Refresh** loads the details again.
 
 ## Screenshots
 

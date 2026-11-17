@@ -74,7 +74,7 @@ A good pattern is: upload data, ask for analysis, then say "Make this into a PDF
 - "Write a Python script that renames these files by date, and test it."
 - "Explain what this JavaScript function does, line by line."
 
-The agent can run the code to check it works before giving it to you. For working on a full code project with GitHub, use [Project Mode](/docs/project-mode).
+The agent can run the code to check it works before giving it to you. For working on a full code project with GitHub, use [Project in Studio](/docs/project-mode).
 
 ## Tips
 
@@ -101,8 +101,8 @@ Yes. It can build a site and publish it at `yourname.sites.classgrid.in`. See [P
 </details>
 
 <details>
-<summary>Is the code sandbox the same as Project Mode?</summary>
+<summary>Is the code sandbox the same as Project?</summary>
 
-No. The sandbox is for one-off jobs inside a chat. [Project Mode](/docs/project-mode) is a full code editor linked to your GitHub, where changes are saved as pull requests.
+No. The sandbox is for one-off jobs inside a chat. [Project](/docs/project-mode), inside Studio, is a full code editor linked to your GitHub, where changes are saved as pull requests.
 
 </details>

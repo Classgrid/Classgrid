@@ -1,14 +1,12 @@
 ---
-title: Why does it say "Project Mode is busy"?
+title: Why does it say Project is busy?
 slug: project-mode-is-busy
 category: troubleshooting
 order: 3
-summary: Project Mode can only run a set number of editors at once; wait a few minutes and try again.
+summary: Project can only run a set number of editors at once; wait a few minutes and try again.
 ---
 
-Sometimes, when you open a project, you see:
-
-"Project Mode is busy right now. Try again in a few minutes."
+Sometimes, when you open a project in Project, you see a message that Project is busy right now and to try again in a few minutes.
 
 ## Why it happens
 
@@ -24,7 +22,7 @@ Your code is safe. It's kept on GitHub, and nothing is lost.
 
 ## While you wait
 
-- Use **Agent mode** for questions, research or files. Click **Switch Mode** in the sidebar and choose **Agent**.
+- Use **Agent mode** for questions, research or files. Click your name at the top of the sidebar and, under **Switch Mode**, choose **Agent**.
 - Read your code or pull requests on GitHub.
 
 ## Other loading messages
@@ -46,4 +44,4 @@ Your code is safe. It's kept on GitHub, and nothing is lost.
 
 If you keep seeing the busy message for a long time, contact us from the [support page](/support).
 
-Full details: [Project Mode](/docs/project-mode).
+Full details: [Project in Studio](/docs/project-mode).

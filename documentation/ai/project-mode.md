@@ -1,14 +1,14 @@
 ---
-title: Project Mode
+title: Project in Studio
 slug: project-mode
 category: project-mode
 order: 1
-description: A full code editor in your browser, linked to your GitHub, with the Classgrid agent built in.
+description: Project, inside Studio, is a full code editor in your browser, linked to your GitHub, with the Classgrid agent built in.
 ---
 
-Project Mode (Classgrid Code) is a real code editor that runs in your browser, with the Classgrid agent working beside you. You open a GitHub repo, ask the agent to build, fix or explain things, review every change it makes, and send the work back to GitHub as a pull request.
+Project (Classgrid Code) is a real code editor that runs in your browser, with the Classgrid agent working beside you. It is an item in Studio's left sidebar, not a separate mode. You open a GitHub repo, ask the agent to build, fix or explain things, review every change it makes, and send the work back to GitHub as a pull request.
 
-## What Project Mode is for
+## What Project is for
 
 - Building a website or an app from an empty project, with the agent writing the code.
 - Fixing a bug or a failing build in an existing repo.
@@ -16,17 +16,19 @@ Project Mode (Classgrid Code) is a real code editor that runs in your browser, w
 - Making changes across many files, then checking each file before you keep it.
 - Shipping a preview of your site on your own Vercel account.
 
-## Switch to Project Mode
+## Open Project
 
 1. Open chat.classgrid.in and sign in.
-2. In the sidebar, click **Switch Mode**.
-3. Choose **Project**. (Choose **Agent** to go back to the normal chat.)
+2. Go to **Studio**. See [Studio Mode](/docs/studio-mode).
+3. In Studio's left sidebar, click **Project**.
+
+Project's page is [chat.classgrid.in/c/studio/project](https://chat.classgrid.in/c/studio/project).
 
 The first time, you'll be asked to connect GitHub. See [Connect GitHub](/docs/connect-github).
 
 <callout type="info">
 
-**Your code stays on GitHub.** Project Mode says: *"Your code is only kept on GitHub, never on our servers."* Opening a project downloads the latest code fresh. Classgrid keeps a working copy only while you work, then removes it.
+**Your code stays on GitHub.** Project says: *"Your code is only kept on GitHub, never on our servers."* Opening a project downloads the latest code fresh. Classgrid keeps a working copy only while you work, then removes it.
 
 </callout>
 
@@ -50,7 +52,7 @@ Card actions are **Open**, **Edit** and **Delete**. Deleting only removes the pr
 
 When you click **Open**, you'll see a short loading screen: *"Downloading the latest code from GitHub"*, then *"Starting the editor"*, then *"Almost ready"*. If you reload the page, it shows *"Reconnecting to your project"*.
 
-At busy times you may see: *"Project Mode is busy right now. Try again in a few minutes."*
+At busy times you may see a message that Project is busy right now and to try again in a few minutes.
 
 ## The editor
 
@@ -69,7 +71,7 @@ Confirmed languages are **Python 3.13** and **Node 20 / TypeScript**, with a bro
 
 ## Moving a chat into a project
 
-Started something in Agent mode that turned into a coding job? Open the chat's menu, choose **Move to project**, then pick a project (or create a new one): *"The chat moves into this project and continues in Project Mode."* Each project keeps its own chats.
+Started something in Agent mode that turned into a coding job? Open the chat's menu, choose **Move to project**, then pick a project (or create a new one). The chat moves into that project and continues in Project. Each project keeps its own chats.
 
 ## Learn more
 
@@ -86,12 +88,12 @@ Started something in Agent mode that turned into a coding job? Open the chat's m
 <details>
 <summary>Do I need a GitHub account?</summary>
 
-Yes. Project Mode needs your GitHub account, because your code is kept on GitHub.
+Yes. Project needs your GitHub account, because your code is kept on GitHub.
 
 </details>
 
 <details>
-<summary>Can I see my site running live inside Project Mode?</summary>
+<summary>Can I see my site running live inside Project?</summary>
 
 No. There is no live preview link for a running dev server. Use a Vercel preview instead. See [Deploy with Vercel](/docs/deploy-with-vercel).
 

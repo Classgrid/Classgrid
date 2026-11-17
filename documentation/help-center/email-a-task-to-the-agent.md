@@ -25,7 +25,7 @@ The inbox is checked about every 45 seconds. You get a short automatic reply, an
 
 ## Where to find the work
 
-A task started by email is created as a project in **Project Mode**, so you can find its chat there. Tasks run for up to **48 hours**.
+A task started by email is created as a project in **Project** (in Studio's left sidebar), so you can find its chat there. Tasks run for up to **48 hours**.
 
 ## Add more to a running task
 
@@ -43,6 +43,6 @@ Want the email to come from your own Gmail or Outlook? [Connect that app](/help-
 ## If it doesn't work
 
 - **Nothing happened?** Check that you sent the email from the address on your Classgrid AI account. Emails from any other address are not linked to you.
-- **Out of credits?** Email tasks use credits. See [Out of credits](/help-center/article/out-of-credits).
+- **Reached your plan's limit?** Email tasks use your plan's limit. See [Out of credits](/help-center/article/out-of-credits).
 
 Full details: [Email the agent](/docs/email-the-agent).

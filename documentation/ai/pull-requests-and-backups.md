@@ -3,10 +3,10 @@ title: Pull Requests and Backups
 slug: pull-requests-and-backups
 category: project-mode
 order: 5
-description: How Project Mode saves your work to GitHub as a pull request, and how unpushed work is backed up.
+description: How Project saves your work to GitHub as a pull request, and how unpushed work is backed up.
 ---
 
-Project Mode never pushes straight to your main branch. Your work goes to its own `classgrid/` branch with a pull request, so the repo owner always decides what gets merged. And if you close the editor without pushing, your work is backed up to GitHub for you.
+Project never pushes straight to your main branch. Your work goes to its own `classgrid/` branch with a pull request, so the repo owner always decides what gets merged. And if you close the editor without pushing, your work is backed up to GitHub for you.
 
 ## Push to GitHub
 
@@ -70,7 +70,7 @@ Backups are a safety net, not a replacement for pushing. When you're ready to sh
 ## FAQ
 
 <details>
-<summary>Can Project Mode push directly to main?</summary>
+<summary>Can Project push directly to main?</summary>
 
 No. Every push goes to a `classgrid/` branch and opens or updates a pull request. The repo owner merges it on GitHub.
 

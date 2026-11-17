@@ -6,7 +6,7 @@ order: 5
 summary: Connect the Vercel plugin and ask the agent to deploy your branch as a preview or to production.
 ---
 
-Project Mode has no deploy button. To put your project live, connect your own **Vercel** account and ask the agent to deploy.
+Project has no deploy button. To put your project live, connect your own **Vercel** account and ask the agent to deploy.
 
 ## Before you start
 

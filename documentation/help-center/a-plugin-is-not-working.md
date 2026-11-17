@@ -43,9 +43,9 @@ If you use two similar apps, like Gmail and Outlook, type `@` in the message box
 
 This plugin needs your own Meta app details: Phone Number ID, Permanent Access Token (System User) and Webhook Verify Token. Check they're correct. It sends from **your** business number, not the Classgrid number.
 
-## 6. Are you out of credits?
+## 6. Have you reached your plan's limit?
 
-Work in your apps uses credits. See [Out of credits](/help-center/article/out-of-credits).
+Work in your apps uses your plan's limit. See [Out of credits](/help-center/article/out-of-credits).
 
 ## Still not working?
 

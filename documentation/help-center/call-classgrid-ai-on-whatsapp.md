@@ -27,7 +27,7 @@ This is a WhatsApp call, not a normal phone call. Dialling the number from your 
 
 - **Quick questions** are answered live. The AI can use your connected apps, like Gmail, Google Calendar, Google Drive, Notion, GitHub and Vercel.
 - If an answer takes more than about 90 seconds, it's sent to you on WhatsApp instead.
-- **Bigger jobs**, like writing a report, are saved as a task for after the call. Coding work goes into Project Mode.
+- **Bigger jobs**, like writing a report, are saved as a task for after the call. Coding work goes into Project in Studio.
 
 ## After you hang up
 
@@ -47,7 +47,7 @@ If you only asked questions, you get a short recap called "Your call with Classg
 
 - Calls last up to **15 minutes**. You get a warning near the end.
 - There's a daily limit on calls per number. If you reach it, you're told when you can call again.
-- Calls and tasks use your credits.
+- Calls and tasks use your plan's limit. If you've used it for now, the call is not taken and you're told when calls come back.
 
 ## If it doesn't work
 

@@ -14,7 +14,7 @@ This guide takes you from a new account to your first real result in a few minut
 2. Create your account and sign in.
 3. You land on the Agent mode home screen, with a greeting and a message box that says "Ask anything, analyse a file, or schedule a task…".
 
-Classgrid AI is free to start. When you need more, you can top up from **Upgrade** in the AI Hub. See [Credits and top-ups](/docs/credits-and-top-ups).
+You start on the **Free** plan, which costs nothing. When you need more, move to **Pro** or **Max** from **Settings** > **Billing**. See [Plans and top-ups](/docs/credits-and-top-ups).
 
 ## 2. Run your first task
 
@@ -82,7 +82,7 @@ This is a WhatsApp voice call, not a normal phone call. A regular phone call wil
 | Let the agent work for hours in the background | [Long tasks](/docs/long-tasks) |
 | Hand off a task by email | [Email the agent](/docs/email-the-agent) |
 | Teach the AI how you like answers | [Skills and custom instructions](/docs/skills-and-custom-instructions) |
-| Work on your code with GitHub | [Project Mode](/docs/project-mode) |
+| Work on your code with GitHub | [Project in Studio](/docs/project-mode) |
 | Chat and share an AI chat with friends | [Grids](/docs/grids) |
 
 ## FAQ

@@ -44,6 +44,6 @@ If **no** task is running, a WhatsApp text goes to the help bot, not the agent. 
 - **Nothing arrived?** Check that your number is verified.
 - **Got a help bot reply instead?** No task was running. Call or email to start one.
 - **Some messages stopped coming?** WhatsApp messages from Classgrid have a weekly limit.
-- **Out of credits?** A running task pauses. See [Out of credits](/help-center/article/out-of-credits).
+- **Reached your plan's limit?** A running task pauses and continues by itself when your limit comes back. See [Out of credits](/help-center/article/out-of-credits).
 
 Full details: [WhatsApp messages](/docs/whatsapp-messages) and [Long tasks](/docs/long-tasks).

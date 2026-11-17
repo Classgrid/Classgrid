@@ -1,18 +1,18 @@
 ---
-title: How do I start with Project Mode?
+title: How do I start with Project in Studio?
 slug: start-with-project-mode
 category: project-mode
 order: 1
-summary: Switch to Project Mode, open a project and work on your GitHub code with the agent in your browser.
+summary: Go to Studio, click Project in the left sidebar, open a project and work on your GitHub code with the agent in your browser.
 ---
 
-Project Mode is a real code editor (VS Code) in your browser, linked to your GitHub, with the Classgrid agent built in. You need a GitHub account.
+Project is a real code editor (VS Code) in your browser, linked to your GitHub, with the Classgrid agent built in. It is inside Studio, not a separate mode. You need a GitHub account.
 
-## Switch to Project Mode
+## Open Project
 
 1. Sign in at [chat.classgrid.in](https://chat.classgrid.in).
-2. In the sidebar, click **Switch Mode**.
-3. Choose **Project**. (Choose **Agent** to go back to the normal chat.)
+2. Go to **Studio**. See [How do I start with Studio Mode?](/help-center/article/start-with-studio-mode)
+3. In Studio's left sidebar, click **Project**. Its page is [chat.classgrid.in/c/studio/project](https://chat.classgrid.in/c/studio/project).
 4. The first time, click **Connect GitHub**. See [Connect GitHub and install the app](/help-center/article/connect-github-and-install-the-app).
 
 ## Open a project
@@ -21,7 +21,7 @@ Project Mode is a real code editor (VS Code) in your browser, linked to your Git
 2. Wait for the loading screen: "Downloading the latest code from GitHub", then "Starting the editor", then "Almost ready".
 3. Click **Agent** in the top bar to open the agent panel. Drag its edge to make it wider.
 
-![The Project Mode editor with the agent panel open on the right](SCREENSHOT:project-mode)
+![The Project editor with the agent panel open on the right](SCREENSHOT:project-mode)
 
 ## Ask the agent
 
@@ -35,7 +35,7 @@ The agent sees your open file, your selection and the editor's errors, so you do
 
 ## Move a chat into a project
 
-Started something in Agent mode that became a coding job? Open the chat's menu, choose **Move to project**, and pick a project. "The chat moves into this project and continues in Project Mode."
+Started something in Agent mode that became a coding job? Open the chat's menu, choose **Move to project**, and pick a project. The chat moves into that project and continues in Project.
 
 ## Good to know
 
@@ -46,7 +46,7 @@ Started something in Agent mode that became a coding job? Open the chat's menu, 
 
 ## If it doesn't work
 
-- "Project Mode is busy right now"? See [Project Mode is busy](/help-center/article/project-mode-is-busy).
+- Told that Project is busy right now? See [Project is busy](/help-center/article/project-mode-is-busy).
 - Asked to install the Classgrid app? See [Connect GitHub and install the app](/help-center/article/connect-github-and-install-the-app).
 
-Full details: [Project Mode](/docs/project-mode).
+Full details: [Project in Studio](/docs/project-mode).

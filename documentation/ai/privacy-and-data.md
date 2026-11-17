@@ -6,7 +6,7 @@ order: 2
 description: How to delete chats, use Incognito, disconnect apps, and what happens to your code and shared links.
 ---
 
-You decide what Classgrid AI keeps and what it can reach. This page shows the simple controls you have: deleting chats, Incognito chats, disconnecting apps, how Project Mode keeps your code, and how share links work. For the full legal policy, read our [Privacy Policy](/privacy).
+You decide what Classgrid AI keeps and what it can reach. This page shows the simple controls you have: deleting chats, Incognito chats, disconnecting apps, how Project keeps your code, and how share links work. For the full legal policy, read our [Privacy Policy](/privacy).
 
 ## Delete a chat
 
@@ -39,9 +39,9 @@ After that, the agent can no longer use the app. See [Connect and disconnect app
 
 <callout type="info">Only connect the apps you need. If you connected an app for one job, you can disconnect it as soon as you are done.</callout>
 
-## Project Mode: your code stays on GitHub
+## Project: your code stays on GitHub
 
-[Project Mode](/docs/project-mode) is linked to your GitHub account.
+[Project](/docs/project-mode), inside Studio, is linked to your GitHub account.
 
 - Your code is kept on **GitHub**. When you open a project, the latest code is downloaded fresh from GitHub.
 - While you work, a **temporary copy** sits in your editor so you and the agent can change it. This copy is removed after you close the editor.
@@ -74,7 +74,7 @@ See [Call Classgrid AI on WhatsApp](/docs/whatsapp-calls).
 - **Delete** chats you no longer need.
 - **Disconnect** apps you aren't using.
 - **Check** a chat before you share a public link.
-- **Push** your Project Mode work to GitHub when you're done.
+- **Push** your Project work to GitHub when you're done.
 
 ## Common questions
 
@@ -89,4 +89,4 @@ See [Call Classgrid AI on WhatsApp](/docs/whatsapp-calls).
 - [Incognito](/docs/incognito)
 - [Connect and disconnect apps](/docs/connect-and-disconnect-apps)
 - [Share links](/docs/share-links)
-- [Project Mode](/docs/project-mode)
+- [Project in Studio](/docs/project-mode)

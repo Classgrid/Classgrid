@@ -35,7 +35,7 @@ Files attached to your email are passed to the agent, so it can read them just l
 
 ### Where the task shows up
 
-A task started by email is created as a project in Project Mode, so you can find its chat there. See [Project Mode](/docs/project-mode).
+A task started by email is created as a project in Project, so you can find its chat there (go to Studio and click **Project** in the left sidebar). See [Project in Studio](/docs/project-mode).
 
 ## Add more to a running task
 
@@ -68,7 +68,7 @@ Emails the agent sends come from agent@classgrid.in, not from your own address. 
 ## Good to know
 
 - agent@classgrid.in is Classgrid's agent address for everyone. Your account is matched by the address you send from, so always use your registered email.
-- Email tasks use your AI credits, like any other chat. See [Credits and top-ups](/docs/credits-and-top-ups).
+- Email tasks use your plan's limit, like any other chat. See [Plans and top-ups](/docs/credits-and-top-ups).
 - Background tasks stop after 48 hours if they are not finished.
 
 ## FAQ

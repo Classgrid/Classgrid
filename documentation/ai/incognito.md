@@ -52,7 +52,7 @@ There is no undo. Once you close an Incognito chat, it is gone. If you might nee
 ## Things to know
 
 - **Can't share it.** Incognito chats can't be shared with Share Grid. See [Share Grid](/docs/share-grid).
-- **Credits still apply.** Messages in an Incognito chat use your AI credits like any other chat. See [Credits and top-ups](/docs/credits-and-top-ups).
+- **Plan limits still apply.** Messages in an Incognito chat use your plan's limit like any other chat. See [Plans and top-ups](/docs/credits-and-top-ups).
 - **It is still your account.** You are signed in, so your normal account rules apply. Incognito only changes whether the chat is kept.
 - **Want to keep it after all?** Start a normal chat instead and ask again.
 

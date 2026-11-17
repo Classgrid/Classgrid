@@ -35,9 +35,9 @@ You don't need to delete an Incognito chat. Closing it deletes it, and it can't 
 - **Copy anything you need.** Copy answers you want to keep.
 - **Download your files.** Save any files from the chat you still need. Your uploaded and AI-made files are also listed in your [Library](/help-center/article/find-files-in-library).
 
-## Project Mode projects
+## Projects in Project
 
-Deleting a project in Project Mode doesn't delete your code: "Its code stays on GitHub. Only the project here is deleted." To delete the code, delete the repo on GitHub.
+Deleting a project in Project (inside Studio) doesn't delete your code: "Its code stays on GitHub. Only the project here is deleted." To delete the code, delete the repo on GitHub.
 
 ## If it doesn't work
 

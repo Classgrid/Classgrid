@@ -42,7 +42,7 @@ Use an **Incognito chat**. It is not saved to your history. See [Use Incognito c
 
 ## If it doesn't work
 
-- If the agent stops because you are out of credits, see [Out of credits](/help-center/article/out-of-credits).
+- If the agent stops because you reached your plan's limit, see [Out of credits](/help-center/article/out-of-credits).
 - If the page seems stuck, reload it and send your message again.
 
 Learn more in [Agent mode](/docs/agent-mode).

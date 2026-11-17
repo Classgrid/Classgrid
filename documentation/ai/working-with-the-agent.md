@@ -3,10 +3,10 @@ title: Working with the Agent
 slug: working-with-the-agent
 category: project-mode
 order: 3
-description: What the Project Mode agent can see and do, and how to get the best results from it.
+description: What the agent in Project can see and do, and how to get the best results from it.
 ---
 
-In Project Mode, the agent works inside your project. It reads and searches your code, edits files, runs commands, and checks the editor's errors after each change. This page explains what it sees, what it can do, and how to guide it.
+In Project (inside Studio), the agent works inside your project. It reads and searches your code, edits files, runs commands, and checks the editor's errors after each change. This page explains what it sees, what it can do, and how to guide it.
 
 ## What the agent sees
 

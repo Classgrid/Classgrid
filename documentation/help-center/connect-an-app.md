@@ -41,7 +41,7 @@ The agent uses **your** account in each app. An email sent with Gmail comes from
 - Each plugin does a set list of things. For example, **Google Calendar** can list and create events but can't move or cancel them, and **Vercel** can deploy but can't roll back or show build logs. See [Plugins](/docs/plugins) for the full list.
 - The **WhatsApp Business** plugin needs your own Meta app details, and sends from your business number, not the Classgrid number.
 - The agent can use your connected apps during a [WhatsApp call](/help-center/article/call-classgrid-ai-on-whatsapp) too.
-- For Project Mode, GitHub is connected separately. See [Connect GitHub and install the app](/help-center/article/connect-github-and-install-the-app).
+- For Project in Studio, GitHub is connected separately. See [Connect GitHub and install the app](/help-center/article/connect-github-and-install-the-app).
 
 ## If it doesn't work
 

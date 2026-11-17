@@ -6,7 +6,7 @@ order: 3
 summary: Check each file the agent changed, reject what you don't want, or undo a whole answer.
 ---
 
-Every time the agent answers in Project Mode, Classgrid takes a snapshot of your project. You can check what changed, reject single files, or undo a whole answer.
+Every time the agent answers in Project, Classgrid takes a snapshot of your project. You can check what changed, reject single files, or undo a whole answer.
 
 ## The "files changed" box
 

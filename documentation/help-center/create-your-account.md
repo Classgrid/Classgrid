@@ -6,7 +6,7 @@ order: 1
 summary: Sign up at chat.classgrid.in, verify your email and WhatsApp, and reach the home screen in a few minutes.
 ---
 
-Classgrid AI runs in your web browser, so there is nothing to install. It's free to start. Signing up takes a few short steps, and the app guides you through each one.
+Classgrid AI runs in your web browser, so there is nothing to install. You start on the Free plan, which costs nothing. Signing up takes a few short steps, and the app guides you through each one.
 
 ## Step 1: Sign up with your email
 
@@ -72,9 +72,9 @@ Type your first request right away. See [Start your first chat](/help-center/art
 
 Your password is saved as soon as you set it. If you close the page before verifying WhatsApp, just sign in again with your email and password, and the app takes you back to the WhatsApp step.
 
-## It's free to start
+## Start on the Free plan
 
-You don't need to pay anything to try Classgrid AI. Using the AI uses credits. When you need more, top up from **Upgrade** in the **AI Hub** (the sliders icon in the message box). See [Credits and top-ups](/help-center/article/credits-and-top-ups).
+You don't need to pay anything to try Classgrid AI. The Free plan has a limit that refills every few hours and a weekly limit. When you need more, move to **Pro** or **Max** from **Settings** > **Billing** or [classgrid.in/pricing](https://classgrid.in/pricing). See [Plans and top-ups](/help-center/article/credits-and-top-ups).
 
 ## Use an email you check
 

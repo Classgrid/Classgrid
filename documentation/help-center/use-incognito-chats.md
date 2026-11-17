@@ -41,7 +41,7 @@ There is no undo. When you close an Incognito chat, it is deleted, including on 
 
 ## Good to know
 
-- Incognito messages still use your credits.
+- Incognito messages still use your plan's limit.
 - You are still signed in, so your normal account rules apply.
 - Want to keep the chat after all? Start a normal chat and ask again.
 

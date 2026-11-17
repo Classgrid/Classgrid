@@ -22,7 +22,7 @@ To work on code, pick a project:
 2. Choose a project, or click **New project**.
 3. Wait for *"Getting [name] ready…"* to finish.
 
-You need GitHub connected to open a project. If Studio says *"GitHub is not connected"*, click **Go to Project Mode** and set it up there. See [Connect GitHub and install the app](/help-center/article/connect-github-and-install-the-app).
+You need GitHub connected to open a project. If Studio says GitHub is not connected, click **Project** in Studio's left sidebar (or the button Studio shows) and set it up there. See [Connect GitHub and install the app](/help-center/article/connect-github-and-install-the-app).
 
 To only use the browser, you don't need a project.
 
@@ -38,8 +38,8 @@ Click **Show pane** at the top right to see the tabs. The pane opens by itself w
 
 ## Good to know
 
-- Projects are shared with Project Mode. Switching between Project and Studio keeps your chat.
-- You can't edit files yourself in Studio. Ask the agent, or click **Open** to continue in Project Mode.
+- **Project**, the code editor for your GitHub projects, is inside Studio. Click **Project** in Studio's left sidebar to open it. The Studio chat and Project use the same projects.
+- You can't edit files yourself in the Studio chat. Ask the agent, or click **Open** to continue in Project.
 - The agent asks before risky steps. See [Allow or block an AI action](/help-center/article/allow-or-block-an-ai-action).
 
 Full details: [Studio Mode](/docs/studio-mode).
