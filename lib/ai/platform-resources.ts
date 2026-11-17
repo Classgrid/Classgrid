@@ -52,9 +52,16 @@ export const PLATFORM_RESOURCES: PlatformResource[] = [
   {
     label: "Pricing",
     href: "/pricing",
-    description: "Classgrid AI plans: Free, Pro and Max, with limits that refill every 5 hours, and top-ups for Pro and Max.",
+    description: "Classgrid AI plans: Free, Pro and Max, with limits that refill every few hours, and top-ups for Pro and Max.",
     category: "sales",
     keywords: ["pricing", "plans", "billing", "quote", "cost"],
+  },
+  {
+    label: "Download",
+    href: "/download",
+    description: "Download the Classgrid desktop app for Windows (macOS and Linux are listed there when they come out).",
+    category: "product",
+    keywords: ["download", "desktop", "windows", "install", "app"],
   },
   {
     label: "Book a Demo",
@@ -80,7 +87,7 @@ export const PLATFORM_RESOURCES: PlatformResource[] = [
   {
     label: "Classgrid AI",
     href: "https://chat.classgrid.in",
-    description: "Sign in or create an account to use Classgrid AI: Agent mode, connected apps, WhatsApp tasks, and Project Mode.",
+    description: "Sign in or create an account to use Classgrid AI: Agent and Studio modes (with Project inside Studio), connected apps, and WhatsApp tasks.",
     category: "product",
     keywords: ["modules", "features", "product", "capabilities"],
   },

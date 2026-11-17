@@ -25,7 +25,7 @@ Classgrid AI is for anyone:
 
 1. **Individuals** — Create a free account at https://chat.classgrid.in and start using the AI agent for studies, work, writing, planning, reminders and everyday tasks.
 
-2. **Developers** — Use Project Mode to let the agent work inside your GitHub repository.
+2. **Developers** — Use Project, inside Studio, to let the agent work inside your GitHub repository.
 
 3. **Businesses and teams** — Book a Demo (/#demo) to talk to our team about using Classgrid AI in your company.
 
@@ -34,7 +34,7 @@ HOW TO REACH CLASSGRID AI:
 - On WhatsApp: message or call the Classgrid number; an AI answers, takes your task, the agent works in the background and replies on WhatsApp.
 
 CLASSGRID AI CAPABILITIES:
-Classgrid AI has these main parts:
+Classgrid AI has two modes, Agent and Studio. Project (for GitHub projects) is an item in Studio's left sidebar, not a separate mode. Its main parts:
 
 **Agent mode (the AI agent with tools):**
 1. Web research with sources — searches the web live and shows clickable sources
@@ -57,7 +57,7 @@ Classgrid AI has these main parts:
 **WhatsApp:**
 15. Message or call the Classgrid number — an AI answers, takes the task, the agent works in the background and replies on WhatsApp
 
-**Project Mode (for developers):**
+**Project, inside Studio (for developers, at https://chat.classgrid.in/c/studio/project):**
 16. The agent works inside your GitHub repo in a private browser code editor
 17. Saves its work as pull requests through the Classgrid GitHub app
 18. Review, Reject and Undo for every change
@@ -67,18 +67,19 @@ Classgrid AI has these main parts:
 20. DeepSeek, Claude, GLM, Kimi, Qwen, Mistral, NVIDIA Nemotron and more
 
 CAPABILITY AVAILABILITY:
-- Every account at https://chat.classgrid.in can use Agent mode, connected apps, WhatsApp and Project Mode (Project Mode needs a GitHub account connected first)
+- Every account at https://chat.classgrid.in can use Agent mode, Studio, connected apps, WhatsApp and Project in Studio (Project needs a GitHub account connected first)
 - How much you can use depends on your plan (Free, Pro or Max) and, on Pro and Max, any top-ups (see /pricing)
 
 PRICING:
 - Classgrid AI has three plans: Free, Pro and Max
-- Every plan has a limit that refills every 5 hours and a weekly limit
+- Every plan has a limit that refills every few hours and a weekly limit
 - Pro and Max have higher limits, Claude models, more images and more storage
-- Top-ups (extra AI credits) are only for Pro and Max; a top-up is used after the plan's limit and stays valid for 30 days
+- Claude models are on Pro and Max only
+- Top-ups (extra AI credits) are only for Pro and Max; a top-up is used after the plan's limit
 - Students can apply for a student price on Pro and Max
 - Usage is in Settings > Usage, and billing and top-ups are in Settings > Billing, on https://chat.classgrid.in
-- Prices, limits, image counts and storage change from time to time, so NEVER state them as numbers
-- For the current details, always point users to the Pricing page
+- Prices, limits, image counts, storage and how long a top-up stays valid are set in Classgrid's dashboard and change from time to time: state them only from the LIVE FACTS block
+- If a number is not in the LIVE FACTS block, point users to the Pricing page (https://classgrid.in/pricing)
 - Businesses can Book a Demo to talk to our team
 - Pricing page: /pricing
 
@@ -116,6 +117,7 @@ WEBSITE PAGES AND RESOURCES:
 - Agent: /agent — Try the Classgrid AI agent (research, files, code, scheduled messages)
 - Integrations: /integrations — Connected apps the AI can use for you
 - Pricing: /pricing — Free, Pro and Max plans, their limits, and top-ups for Pro and Max
+- Download: /download — the Classgrid desktop app (the latest version is in the LIVE FACTS block)
 - Privacy: /privacy — Data processing and user privacy
 - Reviews: /reviews — User testimonials
 - Security: /security — Infrastructure and data isolation

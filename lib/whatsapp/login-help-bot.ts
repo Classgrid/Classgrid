@@ -11,9 +11,15 @@
  *   "Hi Classgrid Desktop"  the desktop app
  *   "Hi Classgrid Web"      the website, chat.classgrid.in
  * A plain "Hi" (typed by hand) gets a reply that names all three.
+ *
+ * Someone asking where to download Classgrid gets the download page, with the desktop app's latest Windows version
+ * read live from Sanity (lib/ai/live-facts.ts). The phone app is not listed for download on the website yet, so no
+ * phone link is given.
  */
+import { getCachedDesktopFacts } from "@/lib/ai/live-facts";
 
 const SUPPORT_URL = "https://classgrid.in/support/ticket";
+const DOWNLOAD_URL = "https://classgrid.in/download";
 
 export type ClassgridClient = "app" | "desktop" | "web";
 
@@ -97,7 +103,21 @@ const NUMBER_TAKEN_MESSAGE = [
   `If you used this number on another account, log in with that account instead. If you need it moved, raise a ticket: ${SUPPORT_URL}`,
 ].join("\n");
 
-const slowDownMessage = (client: ClassgridClient | null) => {
+// The desktop version comes from the last live read (none yet right after a start: then only the page is named)
+const downloadMessage = () => {
+  const win = getCachedDesktopFacts()?.windows;
+  return [
+    "*Download Classgrid*",
+    "",
+    win
+      ? `💻 Desktop app for Windows (version ${win.version}): ${DOWNLOAD_URL}`
+      : `💻 Desktop app: ${DOWNLOAD_URL}`,
+    "📱 The phone app is not listed for download on the website yet.",
+    "🌐 On the web: https://chat.classgrid.in",
+  ].join("\n");
+};
+
+const slowDownMessage =(client: ClassgridClient | null) => {
   const place = PLACE[client || "any"];
   return `Got it! 🙂 We've already sent the steps above. Please go back to ${place.name} and tap *${place.button}*. Your code will come here.`;
 };
@@ -109,6 +129,7 @@ const GREETING_ONLY =
 const CODE_WORDS = /\b(otp|code|not\s+(received|receive|coming|came|getting)|didn'?t\s+(get|receive|come)|no\s+code|resend|expired?)\b/i;
 const HELP_WORDS = /\b(help|support|problem|issue|stuck|error|not\s+working|how)\b/i;
 const TAKEN_WORDS = /\b(already\s+linked|another\s+(account|email)|already\s+(used|registered))\b/i;
+const DOWNLOAD_WORDS = /\b(download|downloads|install|installer|apk|play\s?store|app\s?store)\b/i;
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const BURST_WINDOW_MS = 10 * 60 * 1000; // 4+ messages in 10 minutes = flooding
@@ -150,6 +171,7 @@ export function pickLoginHelpReply(fromNumber: string, text: string, now = Date.
   if (greeting) return firstMessage(client); // "hi", "hello classgrid", "hi classgrid app" etc. always get the steps
   if (TAKEN_WORDS.test(t)) return NUMBER_TAKEN_MESSAGE;
   if (CODE_WORDS.test(t)) return CODE_HELP_MESSAGE;
+  if (DOWNLOAD_WORDS.test(t)) return downloadMessage();
   if (state.count === 1) return firstMessage(client);
   if (HELP_WORDS.test(t)) return helpMessage(client);
   return againMessage(client);
