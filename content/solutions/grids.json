@@ -201,7 +201,7 @@
     },
     {
       "question": "How many people can share one AI chat?",
-      "answer": "Up to 4, including you. Incognito and Project Mode chats can't be shared."
+      "answer": "Up to 4, including you. Incognito chats and Project chats in Studio can't be shared."
     },
     {
       "question": "Can the agent post on a schedule?",

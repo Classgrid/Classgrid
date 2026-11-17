@@ -13,6 +13,8 @@ const MotionDiv = motion.div as any;
 
 // Classgrid AI features a review can be about (old reviews with other values show no tag)
 const FEATURE_NAMES = ["Overall", "Agent Mode", "Project Mode", "WhatsApp", "Connected Apps", "Schedules", "Files & Reports", "Research", "AI Models"];
+// Labels shown for stored values that use old names (the stored value stays the same so old reviews keep their tag)
+const FEATURE_LABELS: Record<string, string> = { "Project Mode": "Studio & Project" };
 
 // Define the Review Type
 type Review = {
@@ -244,7 +246,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                     <SelectContent>
                       <SelectItem value="Overall">Overall Experience</SelectItem>
                       <SelectItem value="Agent Mode">Agent Mode</SelectItem>
-                      <SelectItem value="Project Mode">Project Mode</SelectItem>
+                      <SelectItem value="Project Mode">Studio &amp; Project</SelectItem>
                       <SelectItem value="WhatsApp">WhatsApp & Calls</SelectItem>
                       <SelectItem value="Connected Apps">Connected Apps</SelectItem>
                       <SelectItem value="Schedules">Schedules & Background Tasks</SelectItem>
@@ -378,7 +380,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                       {(!!rev.positives?.length || (rev.moduleName && FEATURE_NAMES.includes(rev.moduleName))) && (
                         <div className="flex flex-wrap gap-2">
                           {rev.moduleName && rev.moduleName !== 'Overall' && FEATURE_NAMES.includes(rev.moduleName) && (
-                            <span title={`This user specifically reviewed ${rev.moduleName}.`} className="cursor-default rounded-sm bg-muted px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-foreground">Feature: {rev.moduleName}</span>
+                            <span title={`This user specifically reviewed ${FEATURE_LABELS[rev.moduleName] ?? rev.moduleName}.`} className="cursor-default rounded-sm bg-muted px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-foreground">Feature: {FEATURE_LABELS[rev.moduleName] ?? rev.moduleName}</span>
                           )}
                           {rev.positives?.filter(p => p && p.trim() !== '').map((p, i) => (
                             <span key={i} title="A key positive point mentioned by the user" className="cursor-default rounded-sm bg-muted px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">{p}</span>

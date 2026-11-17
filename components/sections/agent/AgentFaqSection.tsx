@@ -25,12 +25,13 @@ const FAQS: { question: string; answer: ReactNode }[] = [
   },
   {
     question: "How does pricing work?",
-    answer: "There's no fixed plan. Top up AI credits with any amount from ₹299 to ₹10,000 from Upgrade in the app.",
+    answer:
+      "There are three plans: Free, Pro and Max. Free costs nothing. Pro and Max have higher limits, Claude models, more images and storage. See classgrid.in/pricing for prices and limits.",
   },
   {
     question: "Which AI models can I use?",
     answer:
-      "Auto picks a model for each message, or you can choose from 19 models, including Claude Haiku, Sonnet, Opus and Fable, DeepSeek V4, and open models like Kimi, GLM, Qwen and Llama.",
+      "Auto picks a model for each message, or you can choose from 19 models, including Claude Haiku, Sonnet, Opus and Fable, DeepSeek V4, and open models like Kimi, GLM, Qwen and Llama. Claude models are on Pro and Max.",
   },
   {
     question: "Which apps can it connect to?",

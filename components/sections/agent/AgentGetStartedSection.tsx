@@ -1,8 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/sections/Reveal";
 
-// chat.classgrid.in has no fixed plans: credits are topped up with any amount from ₹299 to ₹10,000
-// (AiUpgradePanel in the Classgrid app), so the cards show the real steps instead of invented prices.
+// chat.classgrid.in has three plans: Free, Pro and Max. Prices and limits live on classgrid.in/pricing,
+// so the cards show the real steps and never type prices or limits.
 const CHAT_APP_URL = "https://chat.classgrid.in";
 
 const STEPS = [
@@ -21,9 +21,9 @@ const STEPS = [
     href: `${CHAT_APP_URL}/login`,
   },
   {
-    title: "Top up when you need",
-    description: "Add AI credits from ₹299 to ₹10,000. No fixed plan.",
-    highlight: "From ₹299",
+    title: "Start on Free",
+    description: "Free costs nothing. Move to Pro or Max when you need more.",
+    highlight: "Free",
     cta: "Use Agent",
     href: CHAT_APP_URL,
   },

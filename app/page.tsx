@@ -916,7 +916,7 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
   const demoSectionLabel = 'Book a Demo';
   const demoSectionHeading = 'Talk to our team';
   const demoSectionSubtext =
-    'See how Classgrid AI can work for your team.\nAgent Mode for everyday work, Project Mode for code, WhatsApp and your connected apps â€” all in one place at chat.classgrid.in.';
+    'See how Classgrid AI can work for your team.\nAgent for everyday work, Studio with Project for code, WhatsApp and your connected apps, all in one place at chat.classgrid.in.';
   const demoSectionCtaLine = 'Tell us about your team and we will get in touch.';
 
   const ctaFormTitle = withFallbackString(

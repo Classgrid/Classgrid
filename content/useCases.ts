@@ -148,15 +148,15 @@ export const LOCAL_USE_CASES: UseCase[] = [
     challenge:
       "A build is failing or a bug report is waiting, and the code is unfamiliar. Tracking down the cause means reading many files and running the project again and again.",
     solution:
-      "Open your GitHub repo in Project Mode, a code editor in your browser with the agent beside you. It reads the code, edits files and runs commands and builds. You review every change, and pushing opens a pull request on its own classgrid/ branch, never on main.",
+      "Open your GitHub repo in Project in Studio, a code editor in your browser with the agent beside you. It reads the code, edits files and runs commands and builds. You review every change, and pushing opens a pull request on its own classgrid/ branch, never on main.",
     result: "A pull request with the fix that you review and merge on GitHub. Your code stays on GitHub.",
     steps: [
-      "Switch to Project Mode and connect GitHub.",
+      "Open Project in Studio and connect GitHub.",
       "Open the repo and describe the bug or paste the error.",
       "Review the changes, then ask the agent to push to GitHub.",
     ],
     tryPrompt: "The build fails with this error. Find the cause and fix it.",
-    relatedSolution: { label: "Project Mode", href: "/solutions/project-mode" },
+    relatedSolution: { label: "Project in Studio", href: "/solutions/project-mode" },
     order: 5,
   },
   {
@@ -169,15 +169,15 @@ export const LOCAL_USE_CASES: UseCase[] = [
     challenge:
       "Setting up a new project, writing the first version and getting it online takes many tools and many steps before anyone can see it.",
     solution:
-      "Start in Project Mode and ask the agent to build what you have in mind. Push your work to GitHub, connect the Vercel plugin, and ask the agent to create the Vercel project and deploy it.",
+      "Open Project in Studio and ask the agent to build what you have in mind. Push your work to GitHub, connect the Vercel plugin, and ask the agent to create the Vercel project and deploy it.",
     result: "A live preview on your own Vercel account that you can open and share.",
     steps: [
-      "Describe the app in Project Mode and let the agent build it.",
+      "Describe the app in Project in Studio and let the agent build it.",
       "Push your work to GitHub.",
       "Connect Vercel in the AI Hub and ask the agent to deploy.",
     ],
     tryPrompt: "Build a simple booking page for my salon with a contact form.",
-    relatedSolution: { label: "Project Mode", href: "/solutions/project-mode" },
+    relatedSolution: { label: "Project in Studio", href: "/solutions/project-mode" },
     order: 6,
   },
   {
@@ -356,17 +356,17 @@ export const LOCAL_USE_CASES: UseCase[] = [
     audiences: ["Students", "Developers"],
     icon: "Code2",
     challenge:
-      "Setting up a code editor, tools and packages on every computer takes time, and a college lab PC or a borrowed laptop rarely has what you need. Your code ends up stuck on one machine.",
+      "Setting up a code editor, tools and packages on every computer takes time, and a shared lab PC or a borrowed laptop rarely has what you need. Your code ends up stuck on one machine.",
     solution:
-      "Open Project Mode on chat.classgrid.in. It's VS Code running in your browser, with a built-in terminal and the Classgrid agent in its own panel. Packages install by themselves, and Python and Node are ready. Your code is kept on GitHub, not on the computer you're using.",
+      "Open Project in Studio on chat.classgrid.in. It's VS Code running in your browser, with a built-in terminal and the Classgrid agent in its own panel. Packages install by themselves, and Python and Node are ready. Your code is kept on GitHub, not on the computer you're using.",
     result: "Code from any computer with a browser, with an AI that writes, explains and fixes code beside you, and no setup or local storage needed.",
     steps: [
-      "Sign in at chat.classgrid.in and switch to Project Mode.",
+      "Sign in at chat.classgrid.in, open Studio and pick Project in its left sidebar.",
       "Connect GitHub and open a repo, or start a new one.",
       "Open the Agent panel and ask it to build, explain or fix code.",
     ],
     tryPrompt: "Explain how this project works and add a contact form to the home page.",
-    relatedSolution: { label: "Project Mode", href: "/solutions/project-mode" },
+    relatedSolution: { label: "Project in Studio", href: "/solutions/project-mode" },
     order: 15,
   },
   {

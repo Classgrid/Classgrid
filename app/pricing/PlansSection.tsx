@@ -326,7 +326,7 @@ function TopUps({ topup }: { topup: TopupInfo }) {
           Use it when you need it
         </p>
         <p className="mt-3 max-w-md text-[14px] leading-6 text-muted-foreground">
-          Top-ups are for the Pro and Max plans (the Free plan has none). Any amount from {inr(topup.min)} to {inr(topup.max)}, from Upgrade in the app.
+          Top-ups are for the Pro and Max plans (the Free plan has none). Any amount from {inr(topup.min)} to {inr(topup.max)}, from Settings &gt; Billing on chat.classgrid.in.
           {topup.validityDays ? ` It lasts ${topup.validityDays} days.` : ""}
         </p>
       </div>
@@ -360,7 +360,7 @@ function TopUps({ topup }: { topup: TopupInfo }) {
           ) : null}
           <li className="flex items-start gap-3">
             <Check className="mt-1 h-4 w-4 shrink-0" />
-            <span>Buy it any time from Upgrade in the app</span>
+            <span>Buy it any time from Settings &gt; Billing on chat.classgrid.in</span>
           </li>
         </ul>
         <a

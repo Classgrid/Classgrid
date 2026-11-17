@@ -141,7 +141,7 @@ const LEFT_NAV = [
     section: "Classgrid AI",
     items: [
       { label: "Agent mode", href: "/solutions/agent-mode", icon: School },
-      { label: "Project Mode", href: "/solutions/project-mode", icon: Cpu },
+      { label: "Project in Studio", href: "/solutions/project-mode", icon: Cpu },
       { label: "Grids", href: "/solutions/grids", icon: GraduationCap },
       { label: "WhatsApp calls", href: "/solutions/whatsapp-calls", icon: BookOpen },
       { label: "Research & data", href: "/solutions/research", icon: Target },

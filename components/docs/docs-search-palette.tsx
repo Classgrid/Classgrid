@@ -17,8 +17,8 @@ type SearchResult = {
 const CATEGORY_LABELS: Record<string, string> = {
   "getting-started": "Getting Started",
   "agent-mode": "Agent mode",
-  "project-mode": "Project Mode",
   "studio-mode": "Studio Mode",
+  "project-mode": "Project in Studio",
   "grids": "Grids",
   "whatsapp": "WhatsApp",
   "plugins": "Plugins",

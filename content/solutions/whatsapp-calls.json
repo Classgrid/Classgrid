@@ -103,7 +103,7 @@
     },
     {
       "title": "Hang up. It keeps working.",
-      "text": "Everything you asked for becomes one job. The agent does it in a new chat and sends the result to your WhatsApp: text, links and real files like PDFs. Coding work goes to your Project Mode project.",
+      "text": "Everything you asked for becomes one job. The agent does it in a new chat and sends the result to your WhatsApp: text, links and real files like PDFs. Coding work goes to your project in Studio.",
       "visual": {
         "main": {
           "kind": "chat",
@@ -213,7 +213,7 @@
     },
     {
       "question": "Does it cost extra?",
-      "answer": "Calls and tasks use your Classgrid AI credits. It's free to start, and you top up when you need more."
+      "answer": "Calls use your plan's call minutes, and tasks use your plan's limits. See classgrid.in/pricing for what each plan includes."
     }
   ],
   "plainEnglishHeading": "What WhatsApp calls can do, in plain English",
@@ -222,10 +222,10 @@
     "Getting ready takes a minute and you only do it once. You sign up on chat.classgrid.in with your email, then verify your WhatsApp number in the app with a six-digit code that arrives on WhatsApp. After that, your number is linked to your account and the AI knows it is you whenever you call.",
     "When you call, the AI picks up and greets you by your first name: \"Hi, this is Classgrid AI. What can I do for you?\" You talk normally, like on any phone call. You can interrupt it at any time and it will stop and listen. It speaks in English. Each call can last up to fifteen minutes, which is plenty of time to explain a few jobs.",
     "While you are on the call, the AI can answer you live. It can look things up, check your connected apps like Gmail, Google Calendar, Google Drive, Notion or GitHub, and tell you the answer right there on the call. If the answer takes a bit longer to find, it does not keep you waiting, it simply sends the answer to you on WhatsApp a little later.",
-    "For bigger jobs, the AI notes down what you asked and starts working as soon as you hang up. It sends you \"Got it\" on WhatsApp so you know it has your request. Then your agent does the work in the background, with all its normal powers: searching the web, writing emails, making reports and PDFs, building or fixing a website, and using your connected apps. Coding jobs go into Project Mode by themselves. When it is done, you get the result on WhatsApp with a link to the full chat, and files like PDFs arrive as real files you can open straight away.",
+    "For bigger jobs, the AI notes down what you asked and starts working as soon as you hang up. It sends you \"Got it\" on WhatsApp so you know it has your request. Then your agent does the work in the background, with all its normal powers: searching the web, writing emails, making reports and PDFs, building or fixing a website, and using your connected apps. Coding jobs go to your project in Studio by themselves. When it is done, you get the result on WhatsApp with a link to the full chat, and files like PDFs arrive as real files you can open straight away.",
     "You can add more after you hang up. If you forgot something, just send a WhatsApp message, a photo or a document while the job is still running, and the agent will use it. You can also email extra files to agent@classgrid.in. The agent can keep working on a job for up to two days, waiting for your replies when it needs them.",
     "This is useful in many everyday moments. You can call while driving and ask it to email a client that the quote is approved. You can call in the morning to hear what is on your calendar today. You can describe a report out loud, hang up, and get the finished PDF on WhatsApp. You can ask it to find last week's invoice in your Drive. You can even ask it to fix the contact form on your website while you are away from your laptop.",
-    "It is safe and personal. Only a verified WhatsApp number that belongs to one Classgrid account can use the calls, so nobody else can talk to your agent. If an unknown number calls, it gets a message explaining how to sign up and verify first. There is a fair daily limit on calls for each number, and calls use your normal Classgrid AI credits.",
+    "It is safe and personal. Only a verified WhatsApp number that belongs to one Classgrid account can use the calls, so nobody else can talk to your agent. If an unknown number calls, it gets a message explaining how to sign up and verify first. There is a fair daily limit on calls for each number, and calls use your plan's call minutes.",
     "A few things to know. It is a WhatsApp voice call, so a normal phone call to the number will not reach the AI. It speaks in English. A WhatsApp text on its own does not start a new job; you start a job by calling or by emailing agent@classgrid.in, and then your messages are added to that job.",
     "How it compares, as of October 2026: most big AI assistants cannot be called on WhatsApp in India today. Grok Bot can make calls to other people for you, but you cannot call it. OpenAI's Dots works inside ChatGPT, Slack and Teams, not on WhatsApp or calls. Meta's Muse is only in the US. Classgrid AI lets you call it on WhatsApp in India, and it does real work after the call and sends the results back to you.",
     "In short: call +91 81492 77038 on WhatsApp, say what you need, hang up, and your Classgrid AI agent gets it done and sends you the result on WhatsApp."

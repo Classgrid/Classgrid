@@ -376,7 +376,7 @@ export function ComparisonDetailClient({ comparison }: ComparisonDetailClientPro
                       <ul className="ml-4 space-y-2 text-[15px] text-[#171717] dark:text-[#ededed]">
                         <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Auto picks a model for each message, or you choose one yourself</li>
                         <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Claude, DeepSeek, GLM, Kimi, Qwen and more in one chat</li>
-                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Pay only for what you use with credit top-ups</li>
+                        <li className="flex items-start gap-3"><span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-slate-300 dark:bg-neutral-600" />Start on Free, or move to Pro or Max for higher limits and Claude models</li>
                       </ul>
                     </div>
                   </section>

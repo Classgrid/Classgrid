@@ -282,7 +282,7 @@
     "Ask for a chart and the agent draws one from your data, like a bar, line or pie chart. It can also draw a simple flow diagram. When you're done, ask for a PDF report with your charts and findings. You can download it or share it.",
     "Some answers come as live cards. Ask about a stock and you get its price and a small chart. Ask about the weather and you get today plus the next 5 days. You can also get a map pin, a route or a countdown to a deadline. The market card only shows data and is not financial advice.",
     "Connect Google Drive to find and read your files and save results there. Connect Google Forms to read survey answers, or make a new form. You can also save findings to Notion, read email attachments in Gmail, or run SQL on your Supabase database. Not sure how to write SQL? Ask in plain English and the agent writes it for you.",
-    "Want to keep a chat private? Use Incognito, and that chat is not saved to your history. Want to share your findings? Send a read-only link, or share them in a Grids group. It is free to start, and you top up only when you need more."
+    "Want to keep a chat private? Use Incognito, and that chat is not saved to your history. Want to share your findings? Send a read-only link, or share them in a Grids group. It is free to start, and you can move to Pro or Max when you need more."
   ],
   "seo": {
     "title": "AI research and data analysis agent | Classgrid AI",

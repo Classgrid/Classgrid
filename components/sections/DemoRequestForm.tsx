@@ -60,7 +60,7 @@ const TEAM_SIZE_OPTIONS = ["1-10", "11-50", "51-200", "201-1000", "1000+"] as co
 
 const USE_CASE_OPTIONS = [
   "Agent for everyday work",
-  "Project Mode for code",
+  "Project in Studio for code",
   "WhatsApp automation",
   "Connected apps & automation",
   "Something else",

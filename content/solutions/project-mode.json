@@ -2,12 +2,12 @@
   "slug": "project-mode",
   "order": 2,
   "menuGroup": "product",
-  "menuLabel": "Project Mode",
+  "menuLabel": "Project in Studio",
   "menuDescription": "AI code editor with GitHub PRs",
-  "eyebrow": "Project Mode",
+  "eyebrow": "Project in Studio",
   "headline": "Code with an agent. Ship by PR.",
   "subheadline": "A full code editor in your browser. The agent edits your files, runs your build and opens a pull request on your GitHub.",
-  "primaryCta": { "label": "Open Project Mode", "href": "https://chat.classgrid.in/c/project" },
+  "primaryCta": { "label": "Open Project in Studio", "href": "https://chat.classgrid.in/c/studio/project" },
   "demoHeading": "Watch the agent work on real code",
   "demoTabs": [
     {
@@ -182,7 +182,7 @@
   "faqs": [
     {
       "question": "Do I need GitHub?",
-      "answer": "Yes. Project Mode needs your GitHub account. You also install the Classgrid GitHub app on the repos you work on."
+      "answer": "Yes. Project in Studio needs your GitHub account. You also install the Classgrid GitHub app on the repos you work on."
     },
     {
       "question": "Where is my code kept?",
@@ -202,12 +202,12 @@
     },
     {
       "question": "Can it host a simple site for me?",
-      "answer": "In Agent mode (not Project Mode) the agent can publish a site to yourname.sites.classgrid.in. In Project Mode, use Vercel."
+      "answer": "In Agent mode (not Project in Studio) the agent can publish a site to yourname.sites.classgrid.in. In Project, use Vercel."
     }
   ],
-  "plainEnglishHeading": "What Project Mode can do, in plain English",
+  "plainEnglishHeading": "What Project in Studio can do, in plain English",
   "plainEnglish": [
-    "Project Mode is the coding side of Classgrid AI. You switch from \"Agent\" to \"Project\" in the app, and you get a full code editor right inside your browser, with an AI agent sitting next to it. It is VS Code, one of the most used code editors, so you do not need to install anything on your computer. You open a tab and start building websites and apps.",
+    "Project in Studio is the coding side of Classgrid AI. You open Studio in the app and pick Project in its left sidebar, and you get a full code editor right inside your browser, with an AI agent sitting next to it. It is VS Code, one of the most used code editors, so you do not need to install anything on your computer. You open a tab and start building websites and apps.",
     "To use it you connect your GitHub account, because your code is kept on GitHub, with only a temporary copy while you work. You install the small Classgrid app on the GitHub repos you want to work on, and then you can open any of your projects in one click. If you do not have a project yet, you can start an empty one and ask the agent to build something from nothing, like a website or a small app. When you are ready, the agent can even create a new GitHub repo for you and save the work there.",
     "The editor has everything you expect. There is a file list, a code area, a terminal where you can type commands, a Run button, auto-save, and tools that tidy your code and point out mistakes. When you open a project, it installs the project's packages by itself in the background, so you can start working straight away. Python and Node.js / TypeScript work out of the box.",
     "The agent can really work on your code, not just give advice. You can ask it to fix a bug, add a feature, explain how something works, or build a new page. It reads your files, searches through the code, makes the changes, runs your build or tests, and checks for errors after every change. For big questions, like \"how does login work in this project?\", it can send up to five small helpers to read different parts of the code at the same time, so you get an answer much faster.",
@@ -216,10 +216,10 @@
     "Nothing ever goes straight into your main code. When you save your work, by pressing \"Push to GitHub\" or by asking the agent, it goes to a new branch and opens a pull request on GitHub. You or the repo owner look at it and decide to merge it. The work is signed by Classgrid AI with you as co-author, so your name is on it too. If someone else changed the same branch in the meantime, it joins their work with yours carefully, and if the same lines clash it stops instead of overwriting anything. If you close the editor and forget to save, your unsaved work is backed up to a separate branch on GitHub, so nothing is lost.",
     "You can put your work online through Vercel. If you connect your Vercel account, the agent can create the Vercel project, add the secret settings your app needs, and deploy your branch as a preview link or as the live site, all on your own Vercel account. Your project cards in Classgrid then show the live address next to the project.",
     "Your projects stay organised. Each project has its own card with a logo, the last change, the branch and the time, plus its own chats, so you can keep one project per client or per idea. You can also move a normal chat into a project if a conversation turns into real coding work.",
-    "In short: Project Mode is a full code editor in your browser with an AI that edits, runs and fixes your code, while you stay in charge. Every change can be reviewed or undone, everything is saved safely as a pull request on your GitHub, and you can ship it to your own Vercel when it is ready."
+    "In short: Project in Studio is a full code editor in your browser with an AI that edits, runs and fixes your code, while you stay in charge. Every change can be reviewed or undone, everything is saved safely as a pull request on your GitHub, and you can ship it to your own Vercel when it is ready."
   ],
   "seo": {
-    "title": "AI coding agent with GitHub pull requests | Classgrid Project Mode",
+    "title": "AI coding agent with GitHub pull requests | Project in Classgrid Studio",
     "description": "Code in a browser editor with an AI agent that edits files, runs your build and opens pull requests on your GitHub. Review every change. Free to start."
   }
 }

@@ -24,7 +24,7 @@ const segmentLabelMap: Record<string, string> = {
 
 const solutionLabels: Record<string, string> = {
   "agent-mode": "Agent mode",
-  "project-mode": "Project Mode",
+  "project-mode": "Project in Studio",
   grids: "Grids",
   "whatsapp-calls": "WhatsApp calls",
   research: "Research & data",

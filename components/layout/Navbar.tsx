@@ -115,7 +115,7 @@ function isNavItemActive(pathname: string, item: NavItem): boolean {
 
 const ICON_MAP: Record<string, any> = {
   "Agent Mode": Bot,
-  "Project Mode": Cpu,
+  "Project in Studio": Cpu,
   "Connected Apps": Building2,
   "Docs": BookOpen,
   "For Individuals": User,
@@ -143,6 +143,7 @@ const ICON_MAP: Record<string, any> = {
 /** Runtime label renames - catches stale Sanity / cached placeholder data */
 const LABEL_RENAME: Record<string, { label: string; href: string }> = {
   "For Institutes": { label: "For Admins", href: "/solutions/email-and-calendar" },
+  "Project Mode": { label: "Project in Studio", href: "/solutions/project-mode" },
 };
 
 function normalizeNavItems(items: NavItem[]): NavItem[] {
@@ -241,7 +242,7 @@ export function Navbar({
           heading: "Classgrid AI",
           links: [
             { label: "Agent mode",      href: "/solutions/agent-mode",     icon: Bot            },
-            { label: "Project Mode",    href: "/solutions/project-mode", icon: Cpu            },
+            { label: "Project in Studio", href: "/solutions/project-mode", icon: Cpu          },
             { label: "Grids",           href: "/solutions/grids",    icon: MessagesSquare },
             { label: "WhatsApp calls",  href: "/solutions/whatsapp-calls", icon: Phone          },
             { label: "Research & data", href: "/solutions/research",    icon: BarChart3      },
@@ -282,7 +283,7 @@ export function Navbar({
   const docsNavItems: NavItem[] = [
     { label: "Getting Started", href: "/docs" },
     { label: "Agent mode", href: "/docs/agent-mode" },
-    { label: "Project Mode", href: "/docs/project-mode" },
+    { label: "Studio", href: "/docs/studio-mode" },
     { label: "Grids", href: "/docs/grids" }
   ];
 
@@ -348,7 +349,7 @@ export function Navbar({
               {[
                 { label: 'Getting Started', href: '/docs/introduction' },
                 { label: 'Agent mode',      href: '/docs/agent-mode' },
-                { label: 'Project Mode',    href: '/docs/project-mode' },
+                { label: 'Studio',          href: '/docs/studio-mode' },
                 { label: 'Grids',           href: '/docs/grids' },
                 { label: 'Changelog',       href: '/changelog' },
               ].map((item) => {
@@ -654,7 +655,7 @@ export function Navbar({
                       {[
                         { label: 'Getting Started', href: '/docs/introduction' },
                         { label: 'Agent mode',      href: '/docs/agent-mode' },
-                        { label: 'Project Mode',    href: '/docs/project-mode' },
+                        { label: 'Studio',          href: '/docs/studio-mode' },
                         { label: 'Grids',           href: '/docs/grids' },
                         { label: 'Changelog',       href: '/changelog' },
                       ].map((item, idx, arr) => (

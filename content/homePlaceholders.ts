@@ -95,7 +95,7 @@ export const placeholderChromeContent: ChromeContent = {
           heading: "Classgrid AI",
           links: [
             { label: "Agent mode", href: "/solutions/agent-mode" },
-            { label: "Project Mode", href: "/solutions/project-mode" },
+            { label: "Project in Studio", href: "/solutions/project-mode" },
             { label: "Grids", href: "/solutions/grids" },
             { label: "WhatsApp calls", href: "/solutions/whatsapp-calls" },
             { label: "Research & data", href: "/solutions/research" },
@@ -446,7 +446,7 @@ export const placeholderHomePage = {
     validationPhoneInvalid: "Please enter a valid phone number.",
     solutionOptions: [
       { value: "Agent for everyday work", label: "Agent for everyday work" },
-      { value: "Project Mode for code", label: "Project Mode for code" },
+      { value: "Project in Studio for code", label: "Project in Studio for code" },
       { value: "WhatsApp automation", label: "WhatsApp automation" },
       { value: "Connected apps & automation", label: "Connected apps & automation" },
       { value: "Something else", label: "Something else" },

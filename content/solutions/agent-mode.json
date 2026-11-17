@@ -214,7 +214,7 @@
     },
     {
       "question": "Which models can I use?",
-      "answer": "Auto picks one for each message. Or choose Claude Haiku, Sonnet, Opus or Fable, DeepSeek V4, or open models like Kimi, GLM, Qwen and Llama."
+      "answer": "Auto picks one for each message. Or choose Claude Haiku, Sonnet, Opus or Fable, DeepSeek V4, or open models like Kimi, GLM, Qwen and Llama. Claude models are on Pro and Max."
     },
     {
       "question": "How do reminders work?",
@@ -230,7 +230,7 @@
     },
     {
       "question": "Is it free to start?",
-      "answer": "Yes. Sign up with your email. Top up only when you need more."
+      "answer": "Yes. Sign up with your email and start on the Free plan. Move to Pro or Max when you need more."
     }
   ],
   "plainEnglishHeading": "What Agent mode can do, in plain English",
@@ -244,10 +244,10 @@
     "It can work for you in the background, for a long time. If a job needs waiting, like waiting for your reply or for a later time, the agent can pause, wake up later and carry on, for up to two days. When it finishes, it tells you \"Task completed\" and gives you the link to the chat. You can also email your work to its own address, agent@classgrid.in, and it will pick it up and work on it.",
     "It can send you reminders. You can ask it to remind you once, every day, every week or on the days you pick. At that time you get the reminder by email, and on WhatsApp too if you have verified your number. The reminder text is written when you set it up, so it is perfect for \"pay the electricity bill tonight\" or \"call the client at 4\", not for fresh news every morning.",
     "It can work inside the apps you already use, once you connect them from the AI Hub. With Gmail it can read and send your emails. With Google Drive it can find and read your files. With Google Calendar it can tell you your day and add events. It also connects to Notion, Slack, GitHub, Google Classroom, Google Meet, Google Forms, Outlook, Microsoft Teams, Zoom, Canva, Spotify, YouTube, Supabase, Sanity, Facebook Pages, Instagram Business, Vercel and WhatsApp Business. You can see all of them on the Plugins page.",
-    "You choose how smart or how fast it should be. \"Auto\" picks the best model for each message by itself, or you can pick one yourself: Claude (Haiku, Sonnet, Opus and the most powerful one, Fable), DeepSeek, and more than ten other well-known models. You can switch any time, even in the middle of a chat.",
+    "You choose how smart or how fast it should be. \"Auto\" picks the best model for each message by itself, or you can pick one yourself: Claude (Haiku, Sonnet, Opus and the most powerful one, Fable), DeepSeek, and more than ten other well-known models. Claude models are on Pro and Max. You can switch any time, even in the middle of a chat.",
     "It keeps your work tidy and private. Every file you upload or the agent makes is saved in your Library, where you can search and sort them. You can teach the agent about yourself, like your name, your job and how you like answers, and it will remember that in every chat. If you want a chat that is not saved at all, you can open an Incognito chat, and it disappears when you close it. You can delete any chat and disconnect any app whenever you want.",
     "You can also reach the agent on WhatsApp. After you verify your number, you can call the Classgrid number on WhatsApp, tell it what you need, hang up, and get the result back on WhatsApp. You can share any chat as a read-only link, or invite up to three other people into the same chat so you all work with the agent together.",
-    "In short: Agent mode is like having a smart helper who can research, read, write, calculate, design, build and remind, all from one chat box, and who keeps going even after you close the tab. It is free to start, and you top up only when you need more."
+    "In short: Agent mode is like having a smart helper who can research, read, write, calculate, design, build and remind, all from one chat box, and who keeps going even after you close the tab. It is free to start, and you can move to Pro or Max when you need more."
   ],
   "seo": {
     "title": "Agent mode: an AI agent that does real work | Classgrid AI",

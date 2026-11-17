@@ -205,7 +205,7 @@ Welcome to the Classgrid Community
 <ul style="padding-left:20px;">
 <li style="margin-bottom:6px;">Share tips and ideas with people who use Classgrid AI</li>
 <li style="margin-bottom:6px;">Ask questions and get real answers from the community</li>
-<li style="margin-bottom:6px;">Learn how others use Agent Mode, Project Mode and WhatsApp</li>
+<li style="margin-bottom:6px;">Learn how others use Agent, Studio and WhatsApp</li>
 <li style="margin-bottom:6px;">Track the latest product updates and announcements</li>
 </ul>
 

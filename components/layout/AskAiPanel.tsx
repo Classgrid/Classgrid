@@ -109,7 +109,7 @@ type StructuredBlock =
 const SUGGESTED_QUESTIONS = [
   "What is Classgrid?",
   "What can the Classgrid AI agent do?",
-  "How does Project Mode work?",
+  "How does Project in Studio work?",
   "How do I get started?",
 ];
 
@@ -119,8 +119,8 @@ function suggestedQuestionsForPage(pageContext?: PageContext) {
   if (path === "/pricing") {
     return [
       "How does Classgrid pricing work?",
-      "How do AI credits work?",
-      "How much can I top up?",
+      "What is the difference between Free, Pro and Max?",
+      "What happens when I reach my limit?",
       "Is there a free plan?",
     ];
   }

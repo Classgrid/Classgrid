@@ -214,7 +214,7 @@
   "faqs": [
     {
       "question": "Can people work on it together?",
-      "answer": "Each person signs up with their own email. You work together with Grids groups and Share Grid, which is one AI chat for up to 4 people. It's free to start, and you top up when you need more."
+      "answer": "Each person signs up with their own email. You work together with Grids groups and Share Grid, which is one AI chat for up to 4 people. It's free to start, and you can move to Pro or Max when you need more."
     },
     {
       "question": "Does it send email as me?",
@@ -247,7 +247,7 @@
     "You don't have to sit and watch. Email the task to agent@classgrid.in from the email you signed up with, or call the agent on WhatsApp. It keeps working in the background for up to 48 hours. If it needs something, it asks you on WhatsApp, and it sends you the result when it's done.",
     "Want a nudge at a set time? A schedule can send you a reminder you write, by email or WhatsApp. It sends the same words you set, once or on the days you pick. It does not write a fresh summary each time.",
     "Your team chat can live in a Grids group, with quick polls for decisions. The agent can catch you up on what your group said in the last couple of hours. It always shows you a draft and asks before it posts anything to the group. For bigger work, up to 4 people can share one AI chat and build the answer together.",
-    "Each person signs up with their own email. You can connect or disconnect apps at any time from Plugins. You can delete any chat whenever you want. It is free to start, and you top up only when you need more."
+    "Each person signs up with their own email. You can connect or disconnect apps at any time from Plugins. You can delete any chat whenever you want. It is free to start, and you can move to Pro or Max when you need more."
   ],
   "seo": {
     "title": "AI assistant for email and calendar | Classgrid AI",

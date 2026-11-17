@@ -62,7 +62,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   general: "General Question",
   login: "Login & Account",
   ai: "Agent Mode",
-  "project-mode": "Project Mode & GitHub",
+  "project-mode": "Studio, Project & GitHub",
   billing: "Billing & Credits",
   whatsapp: "WhatsApp & Calls",
   "connected-apps": "Connected Apps",
@@ -570,7 +570,7 @@ export default function RaiseTicketPage() {
                       <SelectItem value="general">General Question</SelectItem>
                       <SelectItem value="login">Login &amp; Account</SelectItem>
                       <SelectItem value="ai">Agent Mode</SelectItem>
-                      <SelectItem value="project-mode">Project Mode &amp; GitHub</SelectItem>
+                      <SelectItem value="project-mode">Studio, Project &amp; GitHub</SelectItem>
                       <SelectItem value="billing">Billing &amp; Credits</SelectItem>
                       <SelectItem value="whatsapp">WhatsApp &amp; Calls</SelectItem>
                       <SelectItem value="connected-apps">Connected Apps</SelectItem>
@@ -595,7 +595,7 @@ export default function RaiseTicketPage() {
                     <option value="general">General Question</option>
                     <option value="login">Login &amp; Account</option>
                     <option value="ai">Agent Mode</option>
-                    <option value="project-mode">Project Mode &amp; GitHub</option>
+                    <option value="project-mode">Studio, Project &amp; GitHub</option>
                     <option value="billing">Billing &amp; Credits</option>
                     <option value="whatsapp">WhatsApp &amp; Calls</option>
                     <option value="connected-apps">Connected Apps</option>

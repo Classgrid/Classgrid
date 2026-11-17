@@ -38,9 +38,9 @@ const CATEGORIES = [
     delay: 0.1,
   },
   {
-    title: "Project Mode",
+    title: "Studio & Project",
     value: "project-mode",
-    description: "Your repo, the code editor, pull requests, and deploys.",
+    description: "Studio, Project, your repo, the code editor, pull requests, and deploys.",
     icon: Terminal,
     delay: 0.15,
   },
