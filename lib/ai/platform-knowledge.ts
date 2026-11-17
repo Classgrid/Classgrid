@@ -1,7 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 
-import { footerLinkGroups, headerNav } from "@/content/pageCopy";
+import { placeholderChromeContent } from "@/content/homePlaceholders";
 import { pageMeta } from "@/content/pageMeta";
 import { embedText, RAG_EMBEDDING_DIMENSIONS, RAG_EMBEDDING_MODEL } from "@/lib/ai/embedding";
 import {
@@ -33,6 +33,11 @@ const APP_DIR = path.join(ROOT_DIR, "app");
 const CONTENT_DIR = path.join(ROOT_DIR, "content");
 const DOCS_DIR = path.join(ROOT_DIR, "docs");
 const STATIC_SOURCE_FILES = [path.join(ROOT_DIR, "lib", "route-maps.ts")];
+
+// content/ files the AI must not learn from. The legal pages and the cookie policy live in Sanity
+// (legalPage documents); these two files are only old offline copies the legal page shows when Sanity
+// cannot be reached, so they are not current wording.
+const CONTENT_FILES_NOT_INDEXED = new Set(["content/legal.ts", "content/cookiePolicy.ts"]);
 
 const PAGE_META_BY_PATH = new Map(
   Object.values(pageMeta).map((meta) => [normalizeHrefPath(meta.path), meta])
@@ -216,33 +221,41 @@ function buildResourceDirectoryDocument() {
   });
 }
 
+function formatNavLinks(links?: Array<{ label?: string; href?: string }>) {
+  return (links ?? [])
+    .filter((link) => link?.label && link?.href)
+    .map((link) => `${link.label} (${link.href})`)
+    .join(", ");
+}
+
+// The site's own header and footer links (the same defaults app/layout.tsx shows when Sanity has none)
 function formatHeaderNavigation() {
+  const chrome = placeholderChromeContent;
   const parts: string[] = [];
 
-  parts.push(`Header nav groups: ${headerNav.groups.map((group) => group.label).join(", ")}`);
   parts.push(
-    `Header module columns:\n${headerNav.modulesColumns
-      .map((column) => `- ${column.heading}: ${column.items.join(", ")}`)
+    `Header menu:\n${(chrome.navbarMenuItems ?? [])
+      .map((item) => {
+        if (item.href) return `- ${item.label}: ${item.href}`;
+        const sections = (item.sections ?? [])
+          .map((group) => `${group.heading ? `${group.heading}: ` : ""}${formatNavLinks(group.links)}`)
+          .join("; ");
+        return `- ${item.label}: ${sections}`;
+      })
       .join("\n")}`
   );
   parts.push(
-    `Header platform links:\n${headerNav.platformLinks
-      .map((link) => `- ${link.label}: ${link.href}`)
-      .join("\n")}`
+    `Header buttons: ${formatNavLinks([
+      { label: chrome.navbarSecondaryLinkLabel, href: chrome.navbarSecondaryLinkHref },
+      { label: chrome.navbarPrimaryCtaLabel, href: chrome.navbarPrimaryCtaHref },
+    ])}`
   );
   parts.push(
-    `Header mobile links:\n${headerNav.mobileLinks
-      .map((link) => `- ${link.label}: ${link.href}`)
+    `Footer link groups:\n${(chrome.footerColumns ?? [])
+      .map((column) => `- ${column.heading}: ${formatNavLinks(column.links)}`)
       .join("\n")}`
   );
-  parts.push(
-    `Footer link groups:\n${footerLinkGroups
-      .map(
-        (group) =>
-          `- ${group.heading}: ${group.links.map((link) => `${link.label} (${link.href})`).join(", ")}`
-      )
-      .join("\n")}`
-  );
+  parts.push(`Footer legal links: ${formatNavLinks(chrome.footerLegalLinks)}`);
 
   return parts.join("\n\n");
 }
@@ -403,22 +416,14 @@ function publicHrefForSourceFile(relative: string) {
   const fileName = path.basename(relative, ".ts");
   const map: Record<string, string> = {
     about: "/about",
-    campusCommunity: "/community",
     changelog: "/changelog",
-    compare: "/compare",
-    forms: "/demo",
-    homepage: "/",
     homePlaceholders: "/",
-    institutions: "/institutions",
-    integrations: "/integrations",
-    legal: "/terms",
-    modules: "/product/modules",
-    pageCopy: "/",
+    pageCopy: "/campaigns",
     pageMeta: "/",
-    pricing: "/pricing",
-    routeMaps: "/",
+    plugins: "/plugins",
     siteContent: "/",
     siteMeta: "/",
+    useCases: "/use-cases",
   };
 
   return map[fileName] || "/";
@@ -489,7 +494,12 @@ function isReadableIndexString(value: string) {
 }
 
 async function buildContentSourceDocuments() {
-  const contentFiles = await listFiles(CONTENT_DIR, (filePath) => filePath.endsWith(".ts"));
+  const contentFiles = await listFiles(
+    CONTENT_DIR,
+    (filePath) =>
+      filePath.endsWith(".ts") &&
+      !CONTENT_FILES_NOT_INDEXED.has(path.relative(ROOT_DIR, filePath).replace(/\\/g, "/"))
+  );
   const files = [...contentFiles, ...STATIC_SOURCE_FILES];
   const docs: ExtractedRagDocument[] = [];
 

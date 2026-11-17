@@ -32,7 +32,7 @@ export const changelogSettingsFallback: ChangelogSettingsContent = {
     "A public log of product improvements, new releases, and operational fixes across the platform.",
 };
 
-// The old ERP release notes were removed; the real changelog lives in Sanity
+// The old release notes were removed; the real changelog lives in Sanity
 export const changelogFallbackEntries: ChangelogEntryContent[] = [];
 
 export const changelogFallbackBySlug = Object.fromEntries(

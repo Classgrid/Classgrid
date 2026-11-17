@@ -1,19 +1,3 @@
-import { demoOrgTypes } from "./forms";
-import {
-  heroContent,
-  categorizedModules,
-  orgTypes,
-  timelineTabs,
-  faqContent,
-  trustContent,
-  integrationsContent,
-} from "./homepage";
-import {
-  demoCopy,
-  homeCopy,
-  homeModuleGrid,
-  testimonials as placeholderTestimonials,
-} from "./pageCopy";
 import { siteMeta } from "./siteMeta";
 import {
   DEFAULT_FOOTER_STATUS_STATE,
@@ -192,145 +176,20 @@ export const placeholderChromeContent: ChromeContent = {
   },
 };
 
+// Only the home page fields that app/page.tsx still shows. Sanity values win; these are the fallbacks.
 export const placeholderHomePage = {
-  headline: {
-    en: homeCopy.headline,
-    hi: "आधुनिक शिक्षा के लिए ऑपरेटिंग सिस्टम।",
-    mr: "आधुनिक शिक्षणासाठी ऑपरेटिंग सिस्टम।"
-  },
-  subheadline: {
-    en: homeCopy.subheadline,
-    hi: "क्लासिग्रिड के साथ अपने संस्थान का प्रबंधन करें। प्रवेश से लेकर शिक्षा तक सब कुछ एक जगह।",
-    mr: "क्लासिग्रिडसह तुमच्या संस्थेचे व्यवस्थापन करा. प्रवेशापासून शिक्षणापर्यंत सर्व काही एकाच ठिकाणी।"
-  },
-  whatsNew: homeCopy.whatsNew,
-  heroPrimaryCtaLabel: heroContent.primaryCta,
-  heroPrimaryCtaHref: "/#demo",
-  heroSecondaryCtaLabel: "Use Agent",
-  heroSecondaryCtaHref: "/agent",
-  empowerSection: {
-    heading: "All-in-One ERP for Schools, Colleges & Coaching Institutes",
-    description:
-      "ClassGrid is a comprehensive education management platform designed to simplify and streamline the operations of schools, colleges, and coaching institutes. From admissions and student lifecycle management to fee collection, attendance tracking, academic planning, and communication, ClassGrid brings every critical function into a single unified system.",
-    imageUrl: "/dashboards/admin-overview.png",
-    imageAlt: "Classgrid admin overview dashboard",
-  },
-  platformKicker: "Unified Education Stack",
-  platformTitle: "Built for every institution, on one education platform",
-  platformBody:
-    "ClassGrid unifies academic workflows, operations, and communication in a single platform built for schools, colleges, and coaching institutes. No disconnected tools for fees, exams, admissions, CRM, or parent updates.",
-  platformConnectionHint:
-    "Primary use cases shown. Every module supports every institution type.",
-  platformSystemLabel: "classgrid/os",
-  platformInputLabels: [
-    "Academic Management",
-    "Institutional Operations",
-    "Communication & Engagement",
-  ],
-  platformAudienceCards: [
-    {
-      badge: "K12",
-      title: "Schools",
-      subtitle: "Fees, attendance, exams, and parent communication in one system.",
-    },
-    {
-      badge: "DEG",
-      title: "Colleges",
-      subtitle: "Department workflows, accreditation, exams, and campus administration.",
-    },
-    {
-      badge: "CO",
-      title: "Coaching Institutes",
-      subtitle: "Batches, test series, enquiries, and student follow-up.",
-    },
-  ],
-  showcaseKicker: homeModuleGrid.kicker,
-  showcaseTitle: homeModuleGrid.title,
-  showcaseSubtitle:
-    "Admissions, academics, fees, exams, and communication work from one calm, connected system.",
-  showcaseCtaLabelTemplate: "Explore {label}",
-  showcaseSlides: [
-    {
-      label: "Overview",
-      headline: "All-in-One ERP for Schools, Colleges & Coaching Institutes",
-      body: "ClassGrid is a comprehensive education management platform designed to simplify and streamline the operations of schools, colleges, and coaching institutes. From admissions and student lifecycle management to fee collection, attendance tracking, academic planning, and communication, ClassGrid brings every critical function into a single unified system.\n\nOur platform helps institutions eliminate manual processes, reduce operational errors, and improve overall efficiency through automation and real-time insights. With a user-friendly interface and scalable architecture, ClassGrid adapts to the unique needs of institutions of all sizes, ensuring seamless coordination between administrators, teachers, students, and parents. By integrating academics, finance, and communication into one intelligent platform, ClassGrid empowers institutions to focus more on education and less on administrative complexity, driving better outcomes and smarter growth.",
-    },
-    {
-      label: "Automation",
-      headline: "Automation & Efficiency",
-      body: "ClassGrid transforms the way educational institutions handle daily operations by automating repetitive tasks and centralizing critical workflows. From managing admissions and generating reports to tracking attendance and processing fee payments, every function is streamlined into a single platform.\n\nThis reduces administrative burden, minimizes human errors, and allows staff to focus more on delivering quality education instead of handling manual processes.",
-    },
-    {
-      label: "Analytics",
-      headline: "Powerful Analytics & Real-Time Reporting",
-      body: "With powerful analytics and real-time reporting, ClassGrid gives institutions complete visibility into their operations. Administrators can monitor financial performance, track student progress, and analyze key metrics from a unified dashboard.\n\nThese insights enable faster, data-driven decision-making, helping institutions improve performance, identify gaps, and plan more effectively for the future.",
-    },
-    {
-      label: "Communication",
-      headline: "Communication & Collaboration",
-      body: "Effective communication is at the core of every successful institution, and ClassGrid ensures seamless interaction between administrators, teachers, students, and parents.\n\nThrough integrated messaging, notifications, and updates, everyone stays informed and connected. This improves transparency, strengthens engagement, and creates a more collaborative educational environment.",
-    },
-    {
-      label: "Scalability",
-      headline: "Scalability & Flexibility",
-      body: "Designed to grow with your institution, ClassGrid offers a flexible and scalable architecture that adapts to your evolving needs. Whether you are managing a small coaching institute or a large multi-campus university, the platform provides the tools and customization required to support your operations.\n\nIts modern design and intuitive interface ensure quick adoption and a smooth user experience across all users.",
-    },
-  ],
-  trustedBy: homeCopy.trustedBy,
-  trustSectionDescription:
-    homeCopy.machineShowcase,
-  stats: trustContent.stats.map((stat) => ({
-    label: stat.label,
-    value: String(stat.value),
-    suffix: stat.suffix ?? "",
-  })),
-  trustedLogos: [],
-  organizationSectionTitle: "Built for every type of institution",
-  organizationCardCtaLabel: "Explore Use Case",
-  organizationCards: orgTypes,
-  modulesSectionHeading: "Every campus workflow, connected",
-  modulesSectionSubtext:
-    "Admissions, academics, fees, exams, and communication work from one calm, connected system.",
-  modulesTitle: "Every campus workflow, connected",
-  modulesSubtitle:
-    "Admissions, academics, fees, exams, and communication work from one calm, connected system.",
-  modulesAudienceTabs: [
-    { id: "school", label: "School" },
-    { id: "junior-college", label: "Junior College" },
-    { id: "engineering", label: "Engineering" },
-    { id: "coaching", label: "Coaching" },
-  ],
-  modulesAllTabLabel: "All Ecosystem",
-  modulesCardCtaLabel: "Explore Module",
-  modulesShowMoreLabel: "Show More Modules",
-  modulesViewAllLabel: "View All {count}",
-  modules: categorizedModules,
-  modulesCalloutTitle: "Experience the platform yourself",
-  modulesCalloutBody:
-    "Step inside Classgrid. Take an interactive tour through our real dashboards and see exactly how our 30+ modules work together.",
-  modulesCalloutCtaLabel: "Use Agent",
-  modulesCalloutCtaHref: "/agent",
-  stakeholderSectionHeading: "One system for every stakeholder",
-  stakeholderSectionSubtext:
-    "Classgrid connects students, staff, leadership, and compliance into one unified system.",
-  timelineTitle: "One system for every stakeholder",
-  timelineSubtitle:
-    "Classgrid connects students, staff, leadership, and compliance into one unified system.",
-  timelineTabs,
   testimonialsLabel: "Testimonials",
-  testimonialsHeading: "Trusted by educators and institutions",
-  testimonialsSubtext:
-    "Hear directly from educators and leaders about how Classgrid transformed their operations.",
-  testimonialsTitle: "Trusted by educators and institutions",
-  testimonialsSectionDescription:
-    "Hear directly from educators and leaders about how Classgrid transformed their operations.",
-  testimonials: placeholderTestimonials,
+  testimonialsHeading: "What people say about Classgrid AI",
+  testimonialsSubtext: "Hear from people who use Classgrid AI.",
+  testimonials: [] as Array<{
+    quote: string;
+    name: string;
+    role: string;
+    company: string;
+    rating: number;
+  }>,
   videoSectionHeading: "See Classgrid in action",
-  videoSectionSubtext:
-    "Watch how Classgrid simplifies operations across your institution.",
-  videoSectionTitle: "See Classgrid in action",
-  videoSectionDescription:
-    "Watch how Classgrid simplifies operations across your institution.",
+  videoSectionSubtext: "Watch how Classgrid AI gets real work done for you.",
   testimonialVideos: [],
   productVideo: {
     videoUrl: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
@@ -338,86 +197,11 @@ export const placeholderHomePage = {
     posterAlt: "Classgrid product video poster",
   },
   integrationsKicker: "Integrations",
-  integrationsHeadline: "Classgrid integrates with the tools you rely on",
-  integrationsSubtext:
-    "Classgrid is integrated with leading tools like AWS, Google, and more.",
-  integrationsTitle: "Classgrid integrates with the tools you rely on",
-  integrationsSubtitle:
-    "Classgrid is integrated with leading tools like AWS, Google, and more.",
   integrationLogos: [
-    ...integrationsContent.row1,
-    ...integrationsContent.row2,
-  ].map((name) => {
-    const iconMap: Record<string, { imageUrl?: string; accentColor: string }> = {
-      AWS: {
-        imageUrl: "/integrations/aws.svg",
-        accentColor: "from-orange-500/20",
-      },
-      Razorpay: {
-        imageUrl: "https://cdn.simpleicons.org/razorpay/0C2451",
-        accentColor: "from-indigo-500/20",
-      },
-      Zoom: {
-        imageUrl: "https://cdn.simpleicons.org/zoom/0B5CFF",
-        accentColor: "from-blue-500/20",
-      },
-      "Google Meet": {
-        imageUrl: "https://cdn.simpleicons.org/googlemeet/00897B",
-        accentColor: "from-zinc-500/20",
-      },
-      Agora: {
-        accentColor: "from-sky-500/20",
-      },
-      MongoDB: {
-        imageUrl: "https://cdn.simpleicons.org/mongodb/47A248",
-        accentColor: "from-zinc-500/20",
-      },
-      Supabase: {
-        imageUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
-        accentColor: "from-zinc-500/20",
-      },
-      Firebase: {
-        imageUrl: "https://cdn.simpleicons.org/firebase/DD2C00",
-        accentColor: "from-amber-500/20",
-      },
-      Redis: {
-        imageUrl: "https://cdn.simpleicons.org/redis/DC382D",
-        accentColor: "from-red-500/20",
-      },
-      Brevo: {
-        imageUrl: "https://cdn.simpleicons.org/brevo/0B996E",
-        accentColor: "from-zinc-600/20",
-      },
-      OpenAI: {
-        imageUrl: "/integrations/openai.svg",
-        accentColor: "from-slate-500/20",
-      },
-      HuggingFace: {
-        imageUrl: "https://cdn.simpleicons.org/huggingface/FFD21E",
-        accentColor: "from-yellow-500/20",
-      },
-      "Google Sheets": {
-        imageUrl: "https://cdn.simpleicons.org/googlesheets/34A853",
-        accentColor: "from-lime-500/20",
-      },
-    };
-
-    return {
-      name,
-      ...(iconMap[name] ?? { accentColor: "from-zinc-500/20" }),
-    };
-  }),
-  faqTitle: "Frequently Asked Questions",
-  faqHeading: "Everything you need to know",
-  faqSubtext:
-    "Find answers to common questions about Classgrid, features, and setup.",
-  faqSectionTitle: "Everything you need to know",
-  faqSectionDescription:
-    "Find answers to common questions about Classgrid, features, and setup.",
-  faqButtonText: "Explore Help Center",
-  faqButtonLabel: "Explore Help Center",
-  faqButtonHref: "/help-center",
-  faqEntries: faqContent,
+    { name: "AWS", imageUrl: "/integrations/aws.svg", accentColor: "from-orange-500/20" },
+    { name: "Google Meet", imageUrl: "https://cdn.simpleicons.org/googlemeet/00897B", accentColor: "from-zinc-500/20" },
+    { name: "Zoom", imageUrl: "https://cdn.simpleicons.org/zoom/0B5CFF", accentColor: "from-blue-500/20" },
+  ],
   ctaFormTitle: "Talk to our team",
   ctaFormSubtitle: "See how Classgrid AI can work for your team.",
   ctaFormSubmitLabel: "Submit Demo Request",
@@ -439,7 +223,7 @@ export const placeholderHomePage = {
     captchaPlaceholder: "Enter captcha",
     captchaMismatchMessage: "Captcha did not match. Please try again.",
     securityCheckRequiredMessage: "Please complete the security check.",
-    submitLoadingLabel: "Submitting...",
+    submitLoadingLabel: "Submitting",
     genericErrorMessage: "Something went wrong. Please try again.",
     validationFullNameRequired: "Full name is required.",
     validationEmailInvalid: "Please enter a valid email address.",

@@ -1,10 +1,5 @@
 export * from "./siteMeta";
 export * from "./pageCopy";
 export * from "./pageMeta";
-export * from "./modules";
 export { privacyPolicy, termsOfService, securityPolicy, disclaimerPolicy } from "./legal";
 export { cookiePolicy } from "./cookiePolicy";
-export * from "./pricing";
-export * from "./integrations";
-export * from "./institutions";
-export * from "./forms";

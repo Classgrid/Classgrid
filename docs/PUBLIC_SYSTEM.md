@@ -27,10 +27,12 @@
 | Web research | Searches the web, opens pages and answers with sources |
 | Files | Reads PDFs, images and spreadsheets |
 | Create | Makes PDFs, charts, diagrams, documents and images |
-| Code | Runs Python and builds projects in Project Mode |
+| Code | Runs Python, and works in your GitHub projects with Project in Studio |
+| Studio | Docs, sheets, slides and Project, in one place |
+| Classgrid Code | The desktop app, from classgrid.in/download |
 | Apps | Connects to Gmail, Google Drive, Calendar, Notion, Slack, GitHub, Outlook, Teams, Zoom and more |
 | Schedules | Runs tasks and sends reminders by email or WhatsApp at the time you pick |
-| WhatsApp | Chat with the agent and get reminders on WhatsApp |
+| WhatsApp | Chat with Classgrid AI or call it, and get reminders on WhatsApp |
 | Grids | Share a chat and work on it together with other people |
 
 ---
@@ -41,7 +43,6 @@
 |---|---|---|
 | Classgrid AI | `chat.classgrid.in` | The AI agent |
 | Marketing site | `classgrid.in` | Product pages, docs, blog and changelog |
-| Community forum | `forum.classgrid.in` | Questions, ideas and product updates |
 | Status | `status.classgrid.in` | Live platform status |
 
 ---
@@ -49,5 +50,5 @@
 ## 🔒 4. Engineering Principles & Security
 
 1. **Your data stays yours:** each user only sees their own chats, files and project workspace.
-2. **Pay for what you use:** free limits refill automatically, and you can top up AI credits any time.
+2. **Plans:** Free, Pro and Max. Limits refill automatically, and Pro and Max can add top-ups. Current prices and limits are on classgrid.in/pricing.
 3. **Secure by default:** secure sign-in and encrypted connections everywhere.

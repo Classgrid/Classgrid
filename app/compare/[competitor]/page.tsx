@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ComparisonDetailClient } from "@/components/compare/ComparisonDetailClient";
-import { comparisonFallbackBySlug, comparisonFallbacks } from "@/content/compare";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getComparisonBySlug, getComparisonPages } from "@/sanity/lib/marketing";
 import { urlFor } from "@/sanity/lib/image";
@@ -23,12 +22,7 @@ function buildSanityImageUrl(image: unknown, width: number) {
 export async function generateStaticParams() {
   const cmsComparisons =
     ((await getComparisonPages()) as Array<{ slug?: string }> | null)?.filter((entry) => entry.slug) ?? [];
-  const slugs = Array.from(
-    new Set([
-      ...cmsComparisons.map((entry) => entry.slug as string),
-      ...comparisonFallbacks.map((entry) => entry.slug),
-    ])
-  );
+  const slugs = Array.from(new Set(cmsComparisons.map((entry) => entry.slug as string)));
 
   return slugs.map((competitor) => ({ competitor }));
 }
@@ -43,15 +37,13 @@ export async function generateMetadata({ params }: ComparePageProps): Promise<Me
 				ogImage?: unknown;
 		  }
 		| null;
-	const fallback = comparisonFallbackBySlug[competitor];
-	const readable = cms?.competitorName ?? fallback?.competitorName ?? competitor.replace(/-/g, " ");
-	const ogImage = buildSanityImageUrl(cms?.ogImage, 1200) ?? fallback?.ogImage;
+	const readable = cms?.competitorName ?? competitor.replace(/-/g, " ");
+	const ogImage = buildSanityImageUrl(cms?.ogImage, 1200);
 
 	return buildPageMetadata({
-		title: cms?.seoTitle ?? fallback?.seoTitle ?? `Classgrid vs ${readable}`,
+		title: cms?.seoTitle ?? `Classgrid vs ${readable}`,
 		description:
 			cms?.metaDescription ??
-			fallback?.metaDescription ??
 			`Classgrid capability comparison against ${readable}.`,
 		path: `/compare/${competitor}`,
 		canonical: `/compare/${competitor}`,
@@ -66,6 +58,7 @@ export default async function Page({ params }: ComparePageProps) {
 				_updatedAt?: string;
 				competitorName?: string;
 				slug?: string;
+				metaDescription?: string;
 				competitorLogo?: unknown;
 				websiteLink?: string;
 				body?: unknown[];
@@ -98,41 +91,24 @@ export default async function Page({ params }: ComparePageProps) {
 				}>;
 		  }
 		| null;
-	const fallback = comparisonFallbackBySlug[competitor];
-
-	if (!cms && !fallback) {
+	if (!cms) {
 		notFound();
 	}
 
-	const comparison: Parameters<typeof ComparisonDetailClient>[0]["comparison"] = cms
-		? {
-				competitorName: cms.competitorName ?? fallback?.competitorName ?? competitor.replace(/-/g, " "),
-				slug: cms.slug ?? competitor,
-				metaDescription: cms.metaDescription ?? fallback?.metaDescription,
-				competitorLogoUrl: buildSanityImageUrl(cms.competitorLogo, 240),
-				websiteLink: cms.websiteLink ?? null,
-				lastUpdated: cms._updatedAt ?? null,
-				body: cms.body ?? null,
-				ratingBadges: cms.ratingBadges ?? fallback?.ratingBadges ?? [],
-				usps: cms.usps ?? fallback?.usps ?? [],
-				featureMatrix: cms.featureMatrix ?? fallback?.featureMatrix ?? [],
-				migrationTestimonial: cms.migrationTestimonial ?? fallback?.migrationTestimonial,
-				faqs: cms.faqs ?? fallback?.faqs ?? [],
-		  }
-		: {
-				competitorName: fallback.competitorName,
-				slug: fallback.slug,
-				metaDescription: fallback.metaDescription,
-				competitorLogoUrl: null,
-				websiteLink: null,
-				lastUpdated: null,
-				body: null,
-				ratingBadges: fallback.ratingBadges,
-				usps: fallback.usps,
-				featureMatrix: fallback.featureMatrix,
-				migrationTestimonial: fallback.migrationTestimonial,
-				faqs: fallback.faqs,
-		  };
+	const comparison: Parameters<typeof ComparisonDetailClient>[0]["comparison"] = {
+		competitorName: cms.competitorName ?? competitor.replace(/-/g, " "),
+		slug: cms.slug ?? competitor,
+		metaDescription: cms.metaDescription,
+		competitorLogoUrl: buildSanityImageUrl(cms.competitorLogo, 240),
+		websiteLink: cms.websiteLink ?? null,
+		lastUpdated: cms._updatedAt ?? null,
+		body: cms.body ?? null,
+		ratingBadges: cms.ratingBadges ?? [],
+		usps: cms.usps ?? [],
+		featureMatrix: cms.featureMatrix ?? [],
+		migrationTestimonial: cms.migrationTestimonial,
+		faqs: cms.faqs ?? [],
+	};
 	const displayTitle = comparison.competitorName ? `Classgrid vs ${comparison.competitorName}` : "Classgrid Comparison";
 
 	const jsonLdData = [
