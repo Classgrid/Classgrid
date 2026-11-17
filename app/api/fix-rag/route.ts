@@ -33,7 +33,7 @@ What We Do
 We make everyday work easier with an AI agent that works as you inside connected apps like Gmail, Google Drive, Calendar, Classroom, Microsoft, Slack, Notion, GitHub, Vercel, Canva, Zoom, Spotify and more. You can message or call the Classgrid WhatsApp number, and an AI answers, takes your task, and the agent works in the background before replying on WhatsApp. For developers, Project Mode lets the agent work inside your GitHub repo in a private browser code editor, save work as pull requests through the Classgrid GitHub app, and deploy to Vercel with your own account.
 
 Why Choose Us?
-Classgrid AI does not just answer questions; it does the work. You can choose from models like DeepSeek, Claude, GLM, Kimi, Qwen, Mistral, NVIDIA Nemotron and more. Pricing is simple: free usage that refills, then pay-as-you-go top-ups. Anyone can create an account at https://chat.classgrid.in, and businesses can book a demo to talk to our team.
+Classgrid AI does not just answer questions; it does the work. You can choose from models like DeepSeek, Claude, GLM, Kimi, Qwen, Mistral, NVIDIA Nemotron and more. There are three plans, Free, Pro and Max, each with a limit that refills every 5 hours, and Pro and Max users can buy top-ups. Anyone can create an account at https://chat.classgrid.in, and businesses can book a demo to talk to our team.
 
 Mission & Vision
 Our Mission

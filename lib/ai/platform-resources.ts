@@ -52,7 +52,7 @@ export const PLATFORM_RESOURCES: PlatformResource[] = [
   {
     label: "Pricing",
     href: "/pricing",
-    description: "Classgrid AI pricing: free usage that refills, then pay-as-you-go top-ups.",
+    description: "Classgrid AI plans: Free, Pro and Max, with limits that refill every 5 hours, and top-ups for Pro and Max.",
     category: "sales",
     keywords: ["pricing", "plans", "billing", "quote", "cost"],
   },
