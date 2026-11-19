@@ -24,8 +24,6 @@ export type FeedLimits = {
   callTaskMaxMinutes?: number;
   whatsappPerDay?: number;
   projectsMax?: number;
-  codingRunsPerMonth?: number;
-  premiumRunsPerMonth?: number;
   sandboxHoursPerMonth?: number;
   uploadMaxMb?: number;
   libraryStorageMb?: number;
@@ -103,7 +101,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
     limits: {
       chatsPerWindow: 40, windowHours: 5, claudeCreditsPerWeek: 0, fableSharePercent: 0, contextTokens: 32000, helpersPerChat: 1,
       imagesPerPeriod: 4, imagesPeriod: "week", voiceInputMinutesPerDay: 15, callMinutesPerPeriod: 30, callsPerDay: 3, callMaxMinutes: 5,
-      whatsappPerDay: 10, projectsMax: 3, codingRunsPerMonth: 30, premiumRunsPerMonth: 0, sandboxHoursPerMonth: 3, uploadMaxMb: 10,
+      whatsappPerDay: 10, projectsMax: 3, sandboxHoursPerMonth: 3, uploadMaxMb: 10,
       libraryStorageMb: 600, devicesMax: 2, support: "Community",
     },
   },
@@ -127,7 +125,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
     limits: {
       chatsPerWindow: 2000, windowHours: 5, claudeCreditsPerWeek: 500000, fableSharePercent: 20, contextTokens: 128000, helpersPerChat: 3,
       imagesPerPeriod: 100, imagesPeriod: "month", voiceInputMinutesPerDay: 120, callMinutesPerPeriod: 150, callsPerDay: 10, callMaxMinutes: 10,
-      whatsappPerDay: 100, projectsMax: 25, codingRunsPerMonth: 500, premiumRunsPerMonth: 30, sandboxHoursPerMonth: 30, uploadMaxMb: 50,
+      whatsappPerDay: 100, projectsMax: 25, sandboxHoursPerMonth: 30, uploadMaxMb: 50,
       libraryStorageMb: 5120, devicesMax: 5, support: "Email",
     },
   },
@@ -151,7 +149,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
     limits: {
       chatsPerWindow: -1, windowHours: 5, claudeCreditsPerWeek: 2500000, fableSharePercent: 50, contextTokens: 400000, helpersPerChat: 5,
       imagesPerPeriod: 300, imagesPeriod: "month", voiceInputMinutesPerDay: 300, callMinutesPerPeriod: 400, callsPerDay: 30, callMaxMinutes: 15,
-      whatsappPerDay: 300, projectsMax: -1, codingRunsPerMonth: 1500, premiumRunsPerMonth: 100, sandboxHoursPerMonth: 100, uploadMaxMb: 200,
+      whatsappPerDay: 300, projectsMax: -1, sandboxHoursPerMonth: 100, uploadMaxMb: 200,
       libraryStorageMb: 20480, devicesMax: 10, support: "Priority email",
     },
   },
@@ -326,8 +324,6 @@ function buildCompare(plans: FeedPlan[]): CompareGroup[] {
       label: "Projects and code",
       rows: [
         row("Projects", (l) => cell(l.projectsMax, num)),
-        row("Coding agent runs a month", (l) => cell(l.codingRunsPerMonth, num)),
-        row("Claude coding runs a month", (l) => cell(l.premiumRunsPerMonth, num)),
         row("Cloud sandbox hours a month", (l) => cell(l.sandboxHoursPerMonth, num)),
       ],
     },
