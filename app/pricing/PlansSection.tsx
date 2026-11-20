@@ -508,7 +508,12 @@ function useCurrentPlan(reloadToken = 0) {
 const SUBSCRIBED_WAIT_S = 5;
 function SubscribedNotice({ plans, onSubscribed }: { plans: ViewPlan[]; onSubscribed: (key: string) => void }) {
   const params = useSearchParams();
-  const raw = (params.get("subscribed") ?? "").toLowerCase();
+  // Only after a payment that went through. The payment page comes back to this address for both results and adds
+  // ai_payment=success or ai_payment=failed to it; "subscribed" alone is there either way. (owner, 2026-11-20: a
+  // cancelled Rs. 499 payment came back as ?subscribed=pro&ai_payment=failed and this notice said "You're subscribed
+  // to Pro", then opened the chat with ai_payment=success, which said it again. The plan itself was never given.)
+  const paid = params.get("ai_payment") === "success";
+  const raw = paid ? (params.get("subscribed") ?? "").toLowerCase() : "";
   const key = /^[a-z]{2,20}$/.test(raw) ? raw : "";
   const plan = plans.find((p) => p.key === key);
   const chatUrl = key ? `${CHAT_APP_URL}/agent?ai_payment=success&plan=${encodeURIComponent(key)}` : CHAT_APP_URL;
