@@ -73,8 +73,8 @@ CAPABILITY AVAILABILITY:
 PRICING:
 - Classgrid AI has three plans: Free, Pro and Max
 - Every plan has a limit that refills every few hours and a weekly limit
-- Pro and Max have higher limits, Claude models, more images and more storage
-- Claude models are on Pro and Max only
+- Pro and Max have higher limits, much more Claude usage, more images and more storage
+- Claude models are on every plan: a small amount each week on Free, much more on Pro and Max
 - Top-ups (extra AI credits) are only for Pro and Max; a top-up is used after the plan's limit
 - Students can apply for a student price on Pro and Max
 - Usage is in Settings > Usage, and billing and top-ups are in Settings > Billing, on https://chat.classgrid.in

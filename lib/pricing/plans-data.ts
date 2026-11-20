@@ -6,7 +6,12 @@ export type FeedLimits = {
   chatsPerWindow?: number;
   chatsPerWeek?: number;
   windowHours?: number;
-  claudeCreditsPerWeek?: number;
+  // How much usage the plan has, as a multiple of the first plan that has any (Free: 1). The feed never carries the
+  // credit numbers themselves (owner, 2026-11-21: shown like "5x", never as a number of credits). -1 = unlimited,
+  // 0 = not in the plan.
+  sessionUsageX?: number | null;
+  weeklyUsageX?: number | null;
+  claudeUsageX?: number | null;
   fableSharePercent?: number;
   contextTokens?: number;
   helpersPerChat?: number;
@@ -92,14 +97,14 @@ export const FALLBACK_PLANS: FeedPlan[] = [
     features: [
       "40 chats every 5 hours",
       "No message limit inside a chat",
-      "Claude models: no",
+      "Claude models: a small amount each week",
       "4 images and photo edits a week",
       "30 minutes of WhatsApp AI calls a month",
       "3 projects",
       "600 MB Library",
     ],
     limits: {
-      chatsPerWindow: 40, windowHours: 5, claudeCreditsPerWeek: 0, fableSharePercent: 0, contextTokens: 32000, helpersPerChat: 1,
+      chatsPerWindow: 40, windowHours: 5, sessionUsageX: 1, weeklyUsageX: 1, claudeUsageX: 1, fableSharePercent: 10, contextTokens: 32000, helpersPerChat: 1,
       imagesPerPeriod: 4, imagesPeriod: "week", voiceInputMinutesPerDay: 15, callMinutesPerPeriod: 30, callsPerDay: 3, callMaxMinutes: 5,
       whatsappPerDay: 10, projectsMax: 3, sandboxHoursPerMonth: 3, uploadMaxMb: 10,
       libraryStorageMb: 600, devicesMax: 2, support: "Community",
@@ -123,7 +128,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
       "5 GB Library",
     ],
     limits: {
-      chatsPerWindow: 2000, windowHours: 5, claudeCreditsPerWeek: 500000, fableSharePercent: 20, contextTokens: 128000, helpersPerChat: 3,
+      chatsPerWindow: 2000, windowHours: 5, sessionUsageX: 2.67, weeklyUsageX: 5.33, claudeUsageX: 6.25, fableSharePercent: 30, contextTokens: 128000, helpersPerChat: 3,
       imagesPerPeriod: 100, imagesPeriod: "month", voiceInputMinutesPerDay: 120, callMinutesPerPeriod: 150, callsPerDay: 10, callMaxMinutes: 10,
       whatsappPerDay: 100, projectsMax: 25, sandboxHoursPerMonth: 30, uploadMaxMb: 50,
       libraryStorageMb: 5120, devicesMax: 5, support: "Email",
@@ -147,7 +152,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
       "Priority at busy times",
     ],
     limits: {
-      chatsPerWindow: -1, windowHours: 5, claudeCreditsPerWeek: 2500000, fableSharePercent: 50, contextTokens: 400000, helpersPerChat: 5,
+      chatsPerWindow: -1, windowHours: 5, sessionUsageX: 4.67, weeklyUsageX: 9.33, claudeUsageX: 31.25, fableSharePercent: 60, contextTokens: 400000, helpersPerChat: 5,
       imagesPerPeriod: 300, imagesPeriod: "month", voiceInputMinutesPerDay: 300, callMinutesPerPeriod: 400, callsPerDay: 30, callMaxMinutes: 15,
       whatsappPerDay: 300, projectsMax: -1, sandboxHoursPerMonth: 100, uploadMaxMb: 200,
       libraryStorageMb: 20480, devicesMax: 10, support: "Priority email",
@@ -191,6 +196,8 @@ function periodLabel(period: string | undefined) {
   return n === 1 ? `a ${m[2].toLowerCase()}` : `every ${n} ${m[2].toLowerCase()}s`;
 }
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+// A usage multiple as "1x", "2.7x", "31x": one decimal below 10, whole from 10 up
+const timesLabel = (x: number) => `${x >= 10 ? Math.round(x) : Math.round(x * 10) / 10}x`;
 
 function minutesLabel(m: number) {
   if (m >= 60 && m % 60 === 0) return `${m / 60} ${m === 60 ? "hour" : "hours"} a day`;
@@ -292,7 +299,10 @@ function buildCompare(plans: FeedPlan[]): CompareGroup[] {
         row(`Chats every ${hours} hours`, (l) => cell(l.chatsPerWindow, num)),
         row("Chats a week", (l) => cell(l.chatsPerWeek, num)),
         row("Limit inside a chat", (l) => (isNum(l.chatsPerWindow) ? "None" : "")),
-        row("Claude models", (l) => cell(l.claudeCreditsPerWeek, (n) => `${num(n)} credits a week`)),
+        // Usage is shown against the Free plan (1x), never as a number of credits
+        row(`Usage every ${hours} hours`, (l) => cell(l.sessionUsageX ?? undefined, timesLabel)),
+        row("Usage a week", (l) => cell(l.weeklyUsageX ?? undefined, timesLabel)),
+        row("Claude models", (l) => cell(l.claudeUsageX ?? undefined, timesLabel)),
         row("Claude Fable", (l) => cell(l.fableSharePercent, (n) => `Up to ${n}% of Claude use`)),
         row("Memory of a chat", (l) => cell(l.contextTokens, tokensLabel)),
         row("Helpers working at once", (l) => cell(l.helpersPerChat, num)),
@@ -357,7 +367,7 @@ function buildFaqs(plans: FeedPlan[], topup: TopupInfo | null): Faq[] {
   }
   faqs.push({
     question: "What happens when I reach a limit?",
-    answer: `Chat limits refill every ${hours} hours. Until then you can wait or move to a bigger plan.${topup ? " On Pro and Max you can also top up." : ""}`,
+    answer: `Every plan has a limit that refills every ${hours} hours and a weekly limit. When you reach one you can wait for it to refill or move to a bigger plan.${topup ? " On Pro and Max you can also top up." : ""}`,
   });
   if (student.length) {
     faqs.push({
