@@ -340,7 +340,7 @@ function buildCompare(plans: FeedPlan[]): CompareGroup[] {
     {
       label: "Files and account",
       rows: [
-        row("Largest file", (l) => cell(l.uploadMaxMb, bytesLabel)),
+        row("Largest file you can upload", (l) => cell(l.uploadMaxMb, bytesLabel)),
         row("Library storage", (l) => cell(l.libraryStorageMb, bytesLabel)),
         row("Signed-in devices", (l) => cell(l.devicesMax, num)),
         row("Support", (l) => (l.support?.trim() ? capitalize(l.support.trim()) : "")),
