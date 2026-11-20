@@ -503,26 +503,42 @@ function useCurrentPlan(reloadToken = 0) {
   return key;
 }
 
-// Back from the payment page (?subscribed=pro&term=month): a notice with a tick, the receipt line, a button to the
-// chat, and the chat opens by itself after a few seconds. Read inside Suspense (useSearchParams, Next 15).
+// Back from the payment page (?subscribed=pro&term=month&ai_payment=success): a notice with a tick, the receipt line,
+// a button to the chat, and the chat opens by itself after a few seconds. Read inside Suspense (useSearchParams,
+// Next 15).
+//
+// The notice is shown only when the ACCOUNT is really on that plan, read from the server (currentKey). The address
+// only says which plan to look for: anyone can type it, and the payment page comes back to it for a cancelled
+// payment too (owner, 2026-11-20: a cancelled Rs. 499 payment came back as ?subscribed=pro&ai_payment=failed and this
+// notice said "You're subscribed to Pro", then opened the chat with ai_payment=success, which said it again; the plan
+// itself was never given). The plan is put on the account when the payment is confirmed, which can be a moment after
+// this page opens, so the account is read again a few times.
 const SUBSCRIBED_WAIT_S = 5;
-function SubscribedNotice({ plans, onSubscribed }: { plans: ViewPlan[]; onSubscribed: (key: string) => void }) {
+const PLAN_RECHECK_MS = 2000;
+const PLAN_RECHECKS = 15;
+function SubscribedNotice({ plans, currentKey, onRecheck }: { plans: ViewPlan[]; currentKey: string | null; onRecheck: () => void }) {
   const params = useSearchParams();
-  // Only after a payment that went through. The payment page comes back to this address for both results and adds
-  // ai_payment=success or ai_payment=failed to it; "subscribed" alone is there either way. (owner, 2026-11-20: a
-  // cancelled Rs. 499 payment came back as ?subscribed=pro&ai_payment=failed and this notice said "You're subscribed
-  // to Pro", then opened the chat with ai_payment=success, which said it again. The plan itself was never given.)
-  const paid = params.get("ai_payment") === "success";
-  const raw = paid ? (params.get("subscribed") ?? "").toLowerCase() : "";
-  const key = /^[a-z]{2,20}$/.test(raw) ? raw : "";
+  const raw = params.get("ai_payment") === "success" ? (params.get("subscribed") ?? "").toLowerCase() : "";
+  const wanted = /^[a-z]{2,20}$/.test(raw) && raw !== "free" ? raw : "";
+  const key = wanted && currentKey === wanted ? wanted : "";
   const plan = plans.find((p) => p.key === key);
   const chatUrl = key ? `${CHAT_APP_URL}/agent?ai_payment=success&plan=${encodeURIComponent(key)}` : CHAT_APP_URL;
   const [left, setLeft] = useState(SUBSCRIBED_WAIT_S);
   const clicked = useRef(false);
 
+  // Waiting for the payment to show on the account
+  useEffect(() => {
+    if (!wanted || key) return;
+    let n = 0;
+    const again = window.setInterval(() => {
+      if (++n > PLAN_RECHECKS) window.clearInterval(again);
+      else onRecheck();
+    }, PLAN_RECHECK_MS);
+    return () => window.clearInterval(again);
+  }, [wanted, key, onRecheck]);
+
   useEffect(() => {
     if (!key) return;
-    onSubscribed(key);
     const tick = window.setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
     const go = window.setTimeout(() => {
       if (!clicked.current) window.location.assign(chatUrl);
@@ -531,7 +547,7 @@ function SubscribedNotice({ plans, onSubscribed }: { plans: ViewPlan[]; onSubscr
       window.clearInterval(tick);
       window.clearTimeout(go);
     };
-  }, [key, chatUrl, onSubscribed]);
+  }, [key, chatUrl]);
 
   if (!key) return null;
   return (
@@ -565,14 +581,11 @@ export function PricingPage({ view }: { view: PricingView }) {
   // The plan in focus wears the gradient: the hovered one, else the featured one
   const restingKey = plans.find((p) => p.featured)?.key ?? plans[0]?.key;
   const [focusKey, setFocusKey] = useState(restingKey);
-  // Just subscribed (back from the payment page): that plan counts as the visitor's at once, and the account is read again
-  const [subscribedKey, setSubscribedKey] = useState<string | null>(null);
+  // The visitor's plan is always the one the server says (never one named in the address). Back from the payment
+  // page, the account is read again until the new plan shows on it (SubscribedNotice).
   const [reloadToken, setReloadToken] = useState(0);
-  const onSubscribed = useMemo(() => (key: string) => {
-    setSubscribedKey(key);
-    setReloadToken((n) => n + 1);
-  }, []);
-  const currentKey = useCurrentPlan(reloadToken) ?? subscribedKey;
+  const onRecheck = useMemo(() => () => setReloadToken((n) => n + 1), []);
+  const currentKey = useCurrentPlan(reloadToken);
   const currentRank = currentKey ? plans.findIndex((p) => p.key === currentKey) : -1;
   const relationOf = (plan: ViewPlan, i: number): Relation =>
     currentRank < 0 ? "guest" : i === currentRank ? "current" : i > currentRank ? "below" : "above";
@@ -597,7 +610,7 @@ export function PricingPage({ view }: { view: PricingView }) {
       </section>
 
       <Suspense fallback={null}>
-        <SubscribedNotice plans={plans} onSubscribed={onSubscribed} />
+        <SubscribedNotice plans={plans} currentKey={currentKey} onRecheck={onRecheck} />
         <StudentFromQuery onStudent={studentOn} />
       </Suspense>
 
