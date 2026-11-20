@@ -31,6 +31,8 @@ export type FeedLimits = {
   projectsMax?: number;
   sandboxHoursPerMonth?: number;
   uploadMaxMb?: number;
+  filesPerMessage?: number;
+  uploadsPerWindow?: number;
   libraryStorageMb?: number;
   devicesMax?: number;
   support?: string;
@@ -340,6 +342,8 @@ function buildCompare(plans: FeedPlan[]): CompareGroup[] {
     {
       label: "Files and account",
       rows: [
+        row("Files you can upload in one message", (l) => cell(l.filesPerMessage, num)),
+        row(`Files you can upload every ${hours} hours`, (l) => cell(l.uploadsPerWindow, num)),
         row("Largest file you can upload", (l) => cell(l.uploadMaxMb, bytesLabel)),
         row("Library storage", (l) => cell(l.libraryStorageMb, bytesLabel)),
         row("Signed-in devices", (l) => cell(l.devicesMax, num)),
