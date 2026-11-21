@@ -471,8 +471,6 @@ async function LocalizedHomePage({ lang }: LocalizedPageProps) {
         </Reveal>
       ) : null}
 
-      <AgentGetStartedSection />
-
       <div id="faq">
         <AgentFaqSection />
       </div>
