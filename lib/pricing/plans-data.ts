@@ -30,6 +30,8 @@ export type FeedLimits = {
   whatsappPerDay?: number;
   projectsMax?: number;
   sandboxHoursPerMonth?: number;
+  /** Chats that may use the cloud computer at the same time (plan sandbox_sessions) */
+  sandboxSessions?: number;
   uploadMaxMb?: number;
   filesPerMessage?: number;
   uploadsPerWindow?: number;
@@ -108,7 +110,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
     limits: {
       chatsPerWindow: 40, windowHours: 5, sessionUsageX: 1, weeklyUsageX: 1, claudeUsageX: 1, fableSharePercent: 10, contextTokens: 32000, helpersPerChat: 1,
       imagesPerPeriod: 4, imagesPeriod: "week", voiceInputMinutesPerDay: 15, callMinutesPerPeriod: 30, callsPerDay: 3, callMaxMinutes: 5,
-      whatsappPerDay: 10, projectsMax: 3, sandboxHoursPerMonth: 3, uploadMaxMb: 10,
+      whatsappPerDay: 10, projectsMax: 3, sandboxHoursPerMonth: 3, sandboxSessions: 1, uploadMaxMb: 10,
       libraryStorageMb: 600, devicesMax: 2, support: "Community",
     },
   },
@@ -132,7 +134,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
     limits: {
       chatsPerWindow: 2000, windowHours: 5, sessionUsageX: 2.67, weeklyUsageX: 5.33, claudeUsageX: 6.25, fableSharePercent: 30, contextTokens: 128000, helpersPerChat: 3,
       imagesPerPeriod: 100, imagesPeriod: "month", voiceInputMinutesPerDay: 120, callMinutesPerPeriod: 150, callsPerDay: 10, callMaxMinutes: 10,
-      whatsappPerDay: 100, projectsMax: 25, sandboxHoursPerMonth: 30, uploadMaxMb: 50,
+      whatsappPerDay: 100, projectsMax: 25, sandboxHoursPerMonth: 30, sandboxSessions: 1, uploadMaxMb: 50,
       libraryStorageMb: 5120, devicesMax: 5, support: "Email",
     },
   },
@@ -156,7 +158,7 @@ export const FALLBACK_PLANS: FeedPlan[] = [
     limits: {
       chatsPerWindow: -1, windowHours: 5, sessionUsageX: 4.67, weeklyUsageX: 9.33, claudeUsageX: 31.25, fableSharePercent: 60, contextTokens: 400000, helpersPerChat: 5,
       imagesPerPeriod: 300, imagesPeriod: "month", voiceInputMinutesPerDay: 300, callMinutesPerPeriod: 400, callsPerDay: 30, callMaxMinutes: 15,
-      whatsappPerDay: 300, projectsMax: -1, sandboxHoursPerMonth: 100, uploadMaxMb: 200,
+      whatsappPerDay: 300, projectsMax: -1, sandboxHoursPerMonth: 100, sandboxSessions: 2, uploadMaxMb: 200,
       libraryStorageMb: 20480, devicesMax: 10, support: "Priority email",
     },
   },
@@ -337,6 +339,7 @@ function buildCompare(plans: FeedPlan[]): CompareGroup[] {
       rows: [
         row("Projects", (l) => cell(l.projectsMax, num)),
         row("Cloud sandbox hours a month", (l) => cell(l.sandboxHoursPerMonth, num)),
+        row("Cloud computers at once", (l) => cell(l.sandboxSessions, num)),
       ],
     },
     {
