@@ -77,6 +77,9 @@ const inMemoryFetchCache = new Map<string, { expiresAt: number; value: unknown }
 
 type SafeFetchOptions = {
   disableInMemoryCache?: boolean
+  // How long this one read is kept, when it must be fresher than the day above: for content the Sanity webhook does
+  // not cover. (A page's own "revalidate" only builds the page again; the read itself would still be a day old.)
+  revalidateSeconds?: number
 }
 
 function getCacheKey(query: string, params?: Record<string, unknown>) {
@@ -115,7 +118,7 @@ async function safeFetch<T>(
   const start = Date.now()
   try {
     const response = await client.fetch<T>(query, params, {
-      next: isDev ? undefined : { revalidate: SANITY_REVALIDATE_SECONDS, tags: [SANITY_CACHE_TAG] },
+      next: isDev ? undefined : { revalidate: options?.revalidateSeconds ?? SANITY_REVALIDATE_SECONDS, tags: [SANITY_CACHE_TAG] },
       // In dev: bypass Next.js fetch cache (in-memory cache handles dedup).
       // In prod: use 'default' so Next.js ISR fetch cache works with revalidate above.
       cache: isDev ? 'no-store' : 'default',
@@ -238,4 +241,7 @@ export type DesktopReleaseDoc = {
 const desktopReleasesQuery = `*[_type == "desktopRelease" && defined(version) && defined(releaseDate)] | order(releaseDate desc, version desc){
   version, releaseDate, windowsUrl, macosUrl, linuxUrl, notes
 }`
-export const getDesktopReleases = () => safeFetch<DesktopReleaseDoc[]>(desktopReleasesQuery)
+// Kept 5 minutes, like the download page itself: a new desktop version is added by a script, not through the
+// webhook, and with the day above the page went on showing the older version (1.0.43 was added on 2026-11-21 and
+// the page still said 1.0.42)
+export const getDesktopReleases = () => safeFetch<DesktopReleaseDoc[]>(desktopReleasesQuery, undefined, { revalidateSeconds: 300 })
