@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -245,8 +245,20 @@ export function DocsLayoutShell({ children, sidebarSections = [] }: { children: 
           </div>
         </div>
 
-        {/* Desktop TOC */}
-        <DocsToc />
+        {/* Desktop TOC. It reads the address's query in the browser (?vote=, ?openComment=), so it sits in its own
+            Suspense: a docs page is a kept page (not built per visit), and without this boundary the whole page,
+            text included, would be left for the browser to draw. The fallback is the same empty column, so nothing
+            moves when the list appears. */}
+        <Suspense
+          fallback={
+            <aside
+              aria-hidden
+              className="w-[250px] hidden xl:block sticky top-[4.5rem] h-[calc(100vh-4.5rem)] pb-8 pt-4 pl-6 border-l border-slate-200 dark:border-white/10"
+            />
+          }
+        >
+          <DocsToc />
+        </Suspense>
       </div>
     </div>
   );

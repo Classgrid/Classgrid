@@ -2,7 +2,10 @@ import { DocsLayoutShell } from '@/components/docs/docs-layout-shell';
 import { client } from '@/sanity/lib/client';
 import './docs.css';
 
-export const revalidate = 0; // disabled caching for development
+// (No time is set here: a docs page is kept for the site's day and built again at once when a doc is published in
+// Sanity, by the webhook in app/api/sync-embeddings/route.ts. Until 2026-11-21 this file and the page said
+// "revalidate = 0; // disabled caching for development", so every docs page was read from Sanity and its Markdown
+// drawn on the server again on every single visit.)
 
 async function getSidebarSections() {
   const query = `*[_type == "apiDoc" && docsVersion == "ai"] | order(coalesce(order, 999) asc, title asc) {

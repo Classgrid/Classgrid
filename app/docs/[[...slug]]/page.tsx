@@ -12,7 +12,14 @@ import { DocsNavigation } from '@/components/docs/docs-navigation';
 import { DocsFAQItem, DocsFAQSummary } from '@/components/docs/docs-faq';
 import { JsonLd } from "@/components/seo/JsonLd";
 
-export const revalidate = 0; // disabled caching for development
+// Kept for a day, and built again at once when a doc is published in Sanity (app/api/sync-embeddings/route.ts)
+export const revalidate = 86400;
+
+// No doc is built ahead: each is built on its first visit and then kept. (Without this function the server would
+// build the page again on every visit.)
+export function generateStaticParams() {
+  return [];
+}
 
 async function getDocFromSanity(slug: string) {
   const query = `*[_type == "apiDoc" && slug.current == $slug][0]`;

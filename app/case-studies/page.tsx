@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   description: "See how people and teams get more done every day with Classgrid AI.",
 };
 
-export const revalidate = 60;
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because the page's settings are a type
+// the webhook does not fire for. Until 2026-11-21 this said 1 minute.
+export const revalidate = 3600;
 
 function extractString(val: unknown): string {
   if (typeof val === "string") return val;

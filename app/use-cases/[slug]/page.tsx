@@ -9,6 +9,11 @@ import { LOCAL_USE_CASES } from "@/content/useCases";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getUseCase, getUseCases } from "@/lib/use-cases";
 
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because use cases are a type
+// the webhook does not fire for.
+export const revalidate = 3600;
+
 const CHAT_APP_URL = "https://chat.classgrid.in";
 
 type PageProps = { params: Promise<{ slug: string }> };

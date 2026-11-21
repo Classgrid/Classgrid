@@ -71,7 +71,10 @@ const EmpowerSliderSection = dynamic(() =>
   import("@/components/sections/EmpowerSliderSection").then((module) => module.EmpowerSliderSection)
 );
 
-export const revalidate = 60;
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because this page also shows content the webhook
+// does not fire for (testimonials, talks, the section switches).
+export const revalidate = 3600;
 
 type IntegrationLogoItem = {
   name: string;
@@ -136,11 +139,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Page({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
-  const sp = await searchParams;
-  const langQuery = typeof sp.lang === "string" ? sp.lang : "en";
-  const lang = (langQuery === "hi" || langQuery === "mr") ? langQuery : "en";
-  return <LocalizedHomePage lang={lang} />;
+// The page does not read the address's query. Until 2026-11-21 it read ?lang= (and then used it for nothing: the
+// home page has one language), and reading the query alone made the server build this whole page again on every
+// single visit instead of keeping it. It was the largest page of the site and the most visited.
+export default function Page() {
+  return <LocalizedHomePage lang="en" />;
 }
 
 async function LocalizedHomePage({ lang }: LocalizedPageProps) {

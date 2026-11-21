@@ -5,8 +5,10 @@ import { compareHubPageQuery, comparisonPagesQuery } from "@/sanity/lib/queries"
 import { ComparisonHubClient } from "@/components/compare/ComparisonHubClient";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-// Disable caching for this route so it's always up to date with CMS
-export const revalidate = 0;
+// Kept for an hour, and built again at once when the compare page is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because the comparisons listed here are a type the
+// webhook does not fire for. Until 2026-11-21 this said 0: the page was built again on every single visit.
+export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const hubData = await client.fetch(compareHubPageQuery);

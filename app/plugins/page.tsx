@@ -5,6 +5,11 @@ import { PLUGINS } from "@/content/plugins";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getPluginsPage } from "@/sanity/lib/marketing";
 
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because the plugins page is a type
+// the webhook does not fire for.
+export const revalidate = 3600;
+
 type PluginsPageData = {
   heading?: string | null;
   subheading?: string | null;

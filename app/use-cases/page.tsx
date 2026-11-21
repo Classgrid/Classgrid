@@ -5,6 +5,11 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { buildPageMetadata } from "@/lib/metadata";
 import { getUseCases } from "@/lib/use-cases";
 
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because use cases are a type
+// the webhook does not fire for.
+export const revalidate = 3600;
+
 export const metadata = buildPageMetadata({
   title: "Use cases",
   description:

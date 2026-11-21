@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   description: "Recognizing the mentors, contributors, and supporters who made Classgrid possible.",
 }
 
-export const revalidate = 60; // Revalidate every minute
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because acknowledgements are a type
+// the webhook does not fire for. Until 2026-11-21 this said 1 minute.
+export const revalidate = 3600;
 
 export default async function AcknowledgementPage() {
   const acknowledgements = await client.fetch(acknowledgementsQuery)

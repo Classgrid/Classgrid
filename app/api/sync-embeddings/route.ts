@@ -1,3 +1,4 @@
+import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { isValidSignature, SIGNATURE_HEADER_NAME } from "@sanity/webhook";
 
@@ -10,6 +11,7 @@ import {
 } from "@/lib/ai/rag-sync";
 import { reindexPlatformKnowledge } from "@/lib/ai/platform-knowledge";
 import { isIndexableSanityType, normalizeText } from "@/lib/ai/rag-content";
+import { SANITY_CACHE_TAG } from "@/sanity/lib/marketing";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -59,6 +61,19 @@ function isAuthorized(req: Request, rawBody: string) {
   return process.env.NODE_ENV !== "production" && !syncSecret;
 }
 
+// Something was published, changed or deleted in Sanity: every page of the site is marked as changed, so the next
+// visit to a page builds it again with the new content. This webhook ("Vector Embeddings Sync" in Sanity) is what
+// keeps the website fresh: pages are otherwise kept for a day (SANITY_REVALIDATE_SECONDS in sanity/lib/marketing.ts).
+// The types it fires for are set in the webhook's filter in Sanity, not here.
+function markSiteChanged() {
+  try {
+    revalidateTag(SANITY_CACHE_TAG);
+    revalidatePath("/", "layout");
+  } catch (error) {
+    console.error("[rag-sync] Could not mark the site as changed:", error);
+  }
+}
+
 function unique(values: Array<string | undefined | null>) {
   return Array.from(new Set(values.map((value) => normalizeText(value)).filter(Boolean)));
 }
@@ -97,6 +112,8 @@ function hasInlineDocument(payload: SanitySyncPayload) {
 }
 
 export async function POST(req: Request) {
+  // (a change of one document, as Sanity sends it: not one of the "reindex everything" calls made by hand)
+  let documentChanged = false;
   try {
     const rawBody = await req.text();
 
@@ -105,6 +122,12 @@ export async function POST(req: Request) {
     }
 
     const payload = JSON.parse(rawBody || "{}") as SanitySyncPayload;
+
+    // The pages first, before the slower work for the website AI below, so a publish reaches the site even when
+    // that work fails or runs out of time. It is done once more when this request ends (the finally below): a page
+    // visited in the second between the two could have been built from Sanity's CDN before it had the new content.
+    documentChanged = !payload.mode;
+    if (documentChanged) markSiteChanged();
 
     if (payload.mode === "reindexAll") {
       const sanity = await reindexAllSanityDocuments();
@@ -179,5 +202,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("[rag-sync] Error syncing embeddings:", error);
     return NextResponse.json({ ok: false, error: "Failed to sync RAG embeddings." }, { status: 500 });
+  } finally {
+    if (documentChanged) markSiteChanged();
   }
 }

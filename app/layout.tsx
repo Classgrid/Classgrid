@@ -93,7 +93,12 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const revalidate = 300;
+// Every page of the site is kept for a day and built again at once when something is published in Sanity (the
+// webhook in app/api/sync-embeddings/route.ts). This layout wraps every page, so the shortest time used anywhere in
+// it becomes the time of the whole site: nothing in this file may ask for less than a day. Until 2026-11-21 it said
+// 5 minutes and the status read below said 1 minute, so every page of the site was built again every minute it had
+// a visitor (Vercel CPU: 8 h 38 min in a month against the plan's 4 h).
+export const revalidate = 86400;
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const homeChrome = resolveChromeContent((await getHomeChrome()) as any);
@@ -101,8 +106,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const latestReleaseDate =
     latestChangelogEntry?.releaseDate ?? changelogFallbackEntries[0]?.releaseDate;
   // We now pass latestReleaseDate to AppChrome to handle client-side 10-day NEW badge logic
-  // Footer status comes only from incident.io (status.classgrid.in); read here too so the first HTML already shows it
-  const initialStatus = await fetchLiveStatus("status.classgrid.in", { next: { revalidate: 60 } });
+  // Footer status comes only from incident.io (status.classgrid.in); read here too so the first HTML already shows it.
+  // The footer reads it again itself the moment the page opens and every 30 s after (components/layout/Footer.tsx),
+  // so this copy only fills the first instant. Only "all fine" is put into the kept page: an incident written into
+  // a page that is kept for a day would flash on every visit long after the incident is over. With no copy the
+  // footer shows its loading state until its own read answers.
+  const statusAtBuild = await fetchLiveStatus("status.classgrid.in", { next: { revalidate: 86400 } });
+  const initialStatus = statusAtBuild?.state === "operational" ? statusAtBuild : null;
 
   return (
     <html lang="en" suppressHydrationWarning>

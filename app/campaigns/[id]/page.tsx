@@ -10,6 +10,12 @@ type CampaignPageProps = {
 	params: Promise<{ id: string }>;
 };
 
+// No campaign page is built ahead: each is built on its first visit and then kept. (Without this function the
+// server would build the page again on every visit.)
+export function generateStaticParams() {
+	return [];
+}
+
 export async function generateMetadata({ params }: CampaignPageProps): Promise<Metadata> {
 	const { id } = await params;
 	const cmsCampaign = await getCampaignBySlug(id);

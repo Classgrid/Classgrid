@@ -3,6 +3,11 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { IPProtectionClient } from "./IPProtectionClient";
 import { client } from "@/sanity/lib/client";
 
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because this page is a type
+// the webhook does not fire for.
+export const revalidate = 3600;
+
 const IP_PROTECTION_QUERY = `*[_type == "ipProtectionPage"]{
   language,
   content,

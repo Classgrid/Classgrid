@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   description: "Meet the engineers, designers, and builders behind Classgrid AI.",
 }
 
-export const revalidate = 60; // Revalidate every minute
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because team members are a type
+// the webhook does not fire for. Until 2026-11-21 this said 1 minute.
+export const revalidate = 3600;
 
 export default async function TeamPage() {
   const teamMembers = await client.fetch(teamMembersQuery)

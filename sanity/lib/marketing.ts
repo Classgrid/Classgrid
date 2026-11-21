@@ -59,7 +59,15 @@ import {
   aiPricingPageQuery,
 } from './queries'
 
-const SANITY_REVALIDATE_SECONDS = 300
+// How long a page keeps what it read from Sanity before it is built again by itself: one day. Pages are not kept
+// fresh by this timer but by the Sanity webhook (app/api/sync-embeddings/route.ts), which marks the whole site as
+// changed the moment something is published; the day is only the net under it. Until 2026-11-21 this was 5 minutes
+// (and the root layout forced 1 minute), so the server built every page again and again all day for the crawlers:
+// 8 h 38 min of Vercel CPU in a month against the plan's 4 h. A page that shows something the webhook does not
+// cover sets its own shorter time (export const revalidate) and the shortest one wins.
+export const SANITY_REVALIDATE_SECONDS = 86400
+// Every read below carries this tag, so the webhook can mark all of them as changed at once (revalidateTag)
+export const SANITY_CACHE_TAG = 'sanity'
 const DEV_SANITY_TIMEOUT_MS = 15000   // increased: CDN can be slow from India
 const PROD_SANITY_TIMEOUT_MS = 10000
 const DEV_CACHE_TTL_MS = 60_000  // 60 s — fast enough for dev, avoids hitting Sanity on every hot reload
@@ -85,7 +93,10 @@ async function safeFetch<T>(
   params?: Record<string, unknown>,
   options?: SafeFetchOptions
 ): Promise<T | null> {
-  const shouldUseInMemoryCache = !options?.disableInMemoryCache
+  // The copy kept in this process is for development only (it saves Sanity calls on every hot reload). On the
+  // live site Next.js keeps the reads itself; a second copy here could hand a page being rebuilt after a publish
+  // the old content, which would then stay for the whole day.
+  const shouldUseInMemoryCache = process.env.NODE_ENV === 'development' && !options?.disableInMemoryCache
   const cacheKey = getCacheKey(query, params)
   const label = getQueryLabel(query)
   const now = Date.now()
@@ -104,7 +115,7 @@ async function safeFetch<T>(
   const start = Date.now()
   try {
     const response = await client.fetch<T>(query, params, {
-      next: isDev ? undefined : { revalidate: SANITY_REVALIDATE_SECONDS },
+      next: isDev ? undefined : { revalidate: SANITY_REVALIDATE_SECONDS, tags: [SANITY_CACHE_TAG] },
       // In dev: bypass Next.js fetch cache (in-memory cache handles dedup).
       // In prod: use 'default' so Next.js ISR fetch cache works with revalidate above.
       cache: isDev ? 'no-store' : 'default',

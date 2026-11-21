@@ -7,6 +7,11 @@ import { cookiePolicy, disclaimerPolicy, pageMeta, privacyPolicy, securityPolicy
 import { getLegalPageBySlug, getPolicyPage } from "@/sanity/lib/marketing";
 import { JsonLd } from "@/components/seo/JsonLd";
 
+// Kept for an hour, and built again at once when something is published in Sanity (the webhook in
+// app/api/sync-embeddings/route.ts). An hour, not the site's day, because policy pages are a type
+// the webhook does not fire for.
+export const revalidate = 3600;
+
 const LEGAL_DESCRIPTIONS: Record<string, string> = {
   privacy: "How Classgrid collects, processes, and protects your data when you use Classgrid AI.",
   terms: "Legal terms for platform usage, billing, licensing, and account responsibility.",

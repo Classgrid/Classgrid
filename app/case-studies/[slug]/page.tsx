@@ -6,7 +6,14 @@ import { CaseStudyDetailClient } from "@/components/case-studies/CaseStudyDetail
 import { buildPageMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
 
-export const revalidate = 60; // ISR revalidation
+// Kept for a day, and built again at once when a case study is published in Sanity (app/api/sync-embeddings/route.ts)
+export const revalidate = 86400;
+
+// No case study is built ahead: each is built on its first visit and then kept. (Without this function the server
+// would build the page again on every visit, whatever the time above says.)
+export function generateStaticParams() {
+  return [];
+}
 
 type Props = {
   params: Promise<{ slug: string }>;

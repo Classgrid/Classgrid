@@ -4,6 +4,12 @@
  * RULE: Slugs are always plain English strings.
  * Only content fields are localized.
  * Language is selected via ?lang=hi or ?lang=mr, never via URL path.
+ *
+ * How a page gets its language (since 2026-11-21): a page never reads ?lang= itself, because reading the query makes
+ * the server build the page again on every visit instead of keeping it. The English page (app/blog/page.tsx, …)
+ * is always English. A request with ?lang=hi or ?lang=mr is sent by middleware.ts to the same page under
+ * app/i18n/[lang]/…, which takes the language from its path; the address the visitor sees does not change.
+ * Both pages draw the same view (BlogIndexView, ChangelogView, …) and only hand it the language.
  */
 
 export const SUPPORTED_LANGS = ['en', 'hi', 'mr'] as const;
@@ -51,6 +57,11 @@ export function extractLocaleString(
   if (typeof value === 'string') return value || fallback;
   const localized = extractLocaleValue<string>(value as LocalizedValue<string>, lang);
   return typeof localized === 'string' ? localized || fallback : fallback;
+}
+
+/** The language of a page under app/i18n/[lang]/…: "hi" or "mr". Anything else is null (English has its own pages). */
+export function translatedLang(value: unknown): Exclude<SupportedLang, 'en'> | null {
+  return value === 'hi' || value === 'mr' ? value : null;
 }
 
 export function parseLang(
