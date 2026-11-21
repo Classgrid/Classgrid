@@ -219,7 +219,10 @@ function cell(v: number | undefined, show: (n: number) => string): CompareValue 
 function pricePart(monthly: number, yearly: number | undefined, billing: Billing) {
   if (monthly < 0) return { amount: "Contact us", per: "", note: null };
   if (monthly === 0) return { amount: "₹0", per: "/month", note: null };
-  if (billing === "yearly" && isNum(yearly) && yearly > 0) return { amount: inr(yearly / 12), per: "/month", note: `${inr(yearly)} billed yearly` };
+  // Yearly shows the year's full price, the amount really paid ("₹3,999 /year"). Until 2026-11-21 it showed the year
+  // divided by 12 as the big number ("₹333 /month") with the year's price in small text under it; the owner that day:
+  // "on yearly it shows less, not the full year price ... show that only".
+  if (billing === "yearly" && isNum(yearly) && yearly > 0) return { amount: inr(yearly), per: "/year", note: null };
   return { amount: inr(monthly), per: "/month", note: null };
 }
 
