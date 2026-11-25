@@ -159,7 +159,7 @@ export function AgentHeroSection({
                   <img
                     src={maker.src}
                     alt=""
-                    className={cn("h-full w-full object-contain brightness-0", maker.iconClassName)}
+                    className={cn("h-full w-full object-contain brightness-0")}
                   />
                 </span>
                 {maker.name}

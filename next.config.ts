@@ -133,6 +133,11 @@ const nextConfig: NextConfig = {
   },
   images: {
     minimumCacheTTL: 3600,
+    // Local images are served with a cache-busting query (?v=2), so allow it
+    localPatterns: [
+      { pathname: "/**", search: "" },
+      { pathname: "/**", search: "?v=2" },
+    ],
     remotePatterns: [
       {
         protocol: "https",

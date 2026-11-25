@@ -212,7 +212,7 @@ export function Footer({
           SECTION 1 — 3-Column Link Grid
           grid-cols-3  gap-12  py-16
       ══════════════════════════════════════ */}
-      <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-10">
+      <div className="mx-auto max-w-350 px-6 py-16 md:px-10">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
 
           {/* CMS columns (Quick Links, Resources…) */}
@@ -233,7 +233,7 @@ export function Footer({
                     {column.heading}
                   </h4>
                 )}
-                <ul className="space-y-[10px]">
+                <ul className="space-y-2.5">
                   {links.map((link) => (
                     <li key={`${column.heading}-${link.label}`} className="flex items-center gap-2">
                       <Link
@@ -261,7 +261,7 @@ export function Footer({
                   {contactHeading}
                 </h4>
               )}
-              <div className="space-y-[10px] text-sm text-muted-foreground">
+              <div className="space-y-2.5 text-sm text-muted-foreground">
                 {address.length > 0 && (
                   <div className="flex items-start gap-2">
                     <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 opacity-50" />
@@ -343,7 +343,7 @@ export function Footer({
           LEFT: © …   RIGHT: Privacy | Terms …
       ══════════════════════════════════════ */}
       <div className="border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 py-4 md:px-10">
+        <div className="mx-auto max-w-350 px-6 py-4 md:px-10">
           <div className="flex flex-col items-start justify-between gap-3 text-[12px] text-muted-foreground sm:flex-row sm:items-center">
 
             {/* LEFT — copyright */}
@@ -383,7 +383,7 @@ export function Footer({
           RIGHT: 🌐 Language   ☀️🌙💻 Theme
       ══════════════════════════════════════ */}
       <div className="border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 py-4 md:px-10">
+        <div className="mx-auto max-w-350 px-6 py-4 md:px-10">
           <div className="flex flex-col-reverse items-center gap-4 sm:flex-row sm:justify-between">
 
             {/* LEFT — status */}
