@@ -4,6 +4,7 @@ import { checkRateLimit } from "@/lib/rate-limit";
 import { appendWhatsAppConversationMessage } from "@/lib/whatsapp/conversation-memory";
 import { resolveSupportReply } from "@/lib/whatsapp/resolve-support-reply";
 import { sendWhatsAppText } from "@/lib/whatsapp/cloud-api";
+import { CODE_VALID_MINUTES, CODE_VALID_MS } from "@/lib/code-expiry";
 
 export type WaInboundText = {
   from: string;
@@ -35,7 +36,7 @@ async function issuePlaintextOtpReply(phone: string): Promise<string> {
   }
 
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
-  const expiresAt = new Date(Date.now() + 5 * 60 * 1000);
+  const expiresAt = new Date(Date.now() + CODE_VALID_MS);
 
   await connectMongo();
   await WhatsAppOTP.updateOne(
@@ -46,7 +47,7 @@ async function issuePlaintextOtpReply(phone: string): Promise<string> {
 
   return [
     `Your ClassGrid *test* code is *${otp}*.`,
-    "It expires in 5 minutes. Do not share this code with anyone.",
+    `It expires in ${CODE_VALID_MINUTES} minutes. Do not share this code with anyone.`,
     "",
     "_Sandbox only — production should use Meta authentication templates._",
   ].join("\n");

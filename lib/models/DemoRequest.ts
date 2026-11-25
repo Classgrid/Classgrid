@@ -25,6 +25,8 @@ export interface IDemoRequest extends Document {
 
   otp?: string;
   otpExpiresAt?: Date;
+  otpSentAt?: Date;
+  otpAttempts?: number;
   isEmailVerified: boolean;
 
   createdAt: Date;
@@ -58,6 +60,8 @@ const DemoRequestSchema = new Schema<IDemoRequest>(
     notes: { type: String },
     otp: { type: String },
     otpExpiresAt: { type: Date },
+    otpSentAt: { type: Date },
+    otpAttempts: { type: Number, default: 0 },
     isEmailVerified: { type: Boolean, default: false },
   },
   { timestamps: true }

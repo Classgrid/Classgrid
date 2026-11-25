@@ -3,6 +3,7 @@ import { connectMongo } from "@/lib/mongodb";
 import WhatsAppOTP from "@/lib/models/WhatsAppOTP";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { sendWhatsAppTemplate } from "@/lib/whatsapp/cloud-api";
+import { CODE_VALID_MS } from "@/lib/code-expiry";
 
 const PHONE_REGEX = /^[6-9]\d{9}$/;
 const OTP_TEMPLATE_NAME = process.env.WHATSAPP_OTP_TEMPLATE_NAME || "careers_otp_2";
@@ -31,7 +32,7 @@ export async function POST(request: NextRequest) {
 
     // Generate 6-digit OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
-    const expiresAt = new Date(Date.now() + 2 * 60 * 1000); // 2 minutes
+    const expiresAt = new Date(Date.now() + CODE_VALID_MS); // 10 minutes, the same as every Classgrid code
 
     // Save to MongoDB (upsert)
     await connectMongo();

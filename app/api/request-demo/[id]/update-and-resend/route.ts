@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { connectMongo } from "@/lib/mongodb";
 import { DemoRequest } from "@/lib/models/DemoRequest";
 import { cookies } from "next/headers";
+import { CODE_RESEND_WAIT_SECONDS, CODE_VALID_MS } from "@/lib/code-expiry";
 
 export async function PUT(
   req: Request,
@@ -20,18 +21,19 @@ export async function PUT(
 
     await connectMongo();
 
-    // Atomic Rate Limit: prevent concurrent spamming (race conditions)
-    // We only update if `otpExpiresAt` doesn't exist, OR it has expired.
-    const twoMinutesFromNow = new Date(Date.now() + 60 * 1000);
+    // The code works for 10 minutes. A new one can be asked for once 60 seconds have passed since the last
+    // one was sent (checked in the same database step, so two requests at once cannot both send a code).
+    const now = Date.now();
     const newOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    const lastSentBefore = new Date(now - CODE_RESEND_WAIT_SECONDS * 1000);
 
     const updatedLead = await DemoRequest.findOneAndUpdate(
-      { 
+      {
         _id: id,
         $or: [
-          { otpExpiresAt: { $exists: false } },
-          { otpExpiresAt: null },
-          { otpExpiresAt: { $lt: new Date(Date.now()) } } // If it has expired, they can request a new one
+          { otpSentAt: { $exists: false } },
+          { otpSentAt: null },
+          { otpSentAt: { $lt: lastSentBefore } }
         ]
       },
       {
@@ -42,7 +44,9 @@ export async function PUT(
           adminEmail: body.adminEmail,
           adminPhone: body.adminPhone,
           otp: newOtp,
-          otpExpiresAt: twoMinutesFromNow
+          otpExpiresAt: new Date(now + CODE_VALID_MS),
+          otpSentAt: new Date(now),
+          otpAttempts: 0
         }
       },
       { returnDocument: "after" } // Return the updated document
@@ -55,7 +59,7 @@ export async function PUT(
         return NextResponse.json({ message: "Lead not found" }, { status: 404 });
       }
       return NextResponse.json(
-        { ok: false, message: "Please wait 60 seconds before requesting a new code." },
+        { ok: false, message: `Please wait ${CODE_RESEND_WAIT_SECONDS} seconds before requesting a new code.` },
         { status: 429 }
       );
     }

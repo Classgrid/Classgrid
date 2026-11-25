@@ -17,6 +17,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { toast, Toaster } from "sonner";
+import { CODE_RESEND_WAIT_SECONDS, CODE_VALID_MINUTES } from "@/lib/code-expiry";
 
 function DemoSuccessPageInner() {
   const searchParams = useSearchParams();
@@ -163,7 +164,7 @@ function DemoSuccessPageInner() {
         setIsEditing(false);
         setOtp("");
         setOtpSent(true);
-        setCooldown(60);
+        setCooldown(CODE_RESEND_WAIT_SECONDS);
       } else {
         toast.error(data.message || "Failed to update.");
       }
@@ -248,12 +249,12 @@ function DemoSuccessPageInner() {
       const data = await res.json();
       if (data.ok) {
         setOtpSent(true);
-        setCooldown(60); // Start 60-second cooldown
+        setCooldown(CODE_RESEND_WAIT_SECONDS); // wait before a new code can be asked for
         toast.success("Verification code sent to your email!");
       } else {
         // Rate-limited: code was already sent — still show the input panel
         setOtpSent(true);
-        setCooldown(60);
+        setCooldown(CODE_RESEND_WAIT_SECONDS);
         toast.error(data.message || "A code was already sent. Please check your email.");
       }
     } catch (err) {
@@ -411,6 +412,7 @@ function DemoSuccessPageInner() {
                 <div className="w-full flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-500">
                   <p className="text-sm text-muted-foreground mb-4 text-center">
                     Enter the 6-digit code sent to <br /><strong className="text-foreground">{lead.adminEmail}</strong>
+                    <br />The code works for {CODE_VALID_MINUTES} minutes.
                   </p>
                   <InputOTP maxLength={6} value={otp} onChange={(val) => setOtp(val.replace(/\D/g, ""))} className="gap-1 sm:gap-2" inputMode="numeric" pattern="[0-9]*">
                     <InputOTPGroup className="gap-1 sm:gap-2">

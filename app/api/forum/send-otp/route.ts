@@ -5,8 +5,7 @@ import ForumUser from "@/lib/models/ForumUser";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { getForumOtpEmailHtml } from "@/lib/email-templates";
 import { getNoReplyAddress, getSupportEmail, getSmtpConfig, getSmtpTransporter, sanitizeMailerError } from "@/lib/smtp-mailer";
-
-const OTP_TTL_SECONDS = 60;
+import { CODE_VALID_MINUTES, CODE_VALID_SECONDS } from "@/lib/code-expiry";
 
 export async function POST(req: Request) {
   let normalizedEmail: string | null = null;
@@ -50,7 +49,7 @@ export async function POST(req: Request) {
 
     // Keep the code valid for the same window shown in the login UI and email.
     const expiresAt = new Date();
-    expiresAt.setSeconds(expiresAt.getSeconds() + OTP_TTL_SECONDS);
+    expiresAt.setSeconds(expiresAt.getSeconds() + CODE_VALID_SECONDS);
 
     // Upsert the OTP record
     await ForumOTP.findOneAndUpdate(
@@ -69,7 +68,7 @@ export async function POST(req: Request) {
       replyTo: getSupportEmail(),
       to: normalizedEmail,
       subject: "Your Classgrid Login Code",
-      text: `Your Classgrid login code is ${otp}. It expires in 60 seconds.`,
+      text: `Your Classgrid login code is ${otp}. It expires in ${CODE_VALID_MINUTES} minutes.`,
       html: htmlContent,
     });
     const smtpMs = Date.now() - smtpStartedAt;

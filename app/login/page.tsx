@@ -7,8 +7,7 @@ import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import Link from "next/link";
 import { Spinner } from "@/components/ui/spinner";
-
-const OTP_TTL_SECONDS = 60;
+import { CODE_RESEND_WAIT_SECONDS, CODE_VALID_SECONDS } from "@/lib/code-expiry";
 
 /** Map NextAuth URL error codes to user-friendly messages */
 const OAUTH_ERROR_MAP: Record<string, string> = {
@@ -210,8 +209,11 @@ function LoginContent() {
 
   // Fast-forwarding down to the return JSX...
 
+  // A code works for 10 minutes, but a new one can be asked for after a short wait, not only once it has expired.
+  const resendWait = otpExpired ? 0 : Math.max(0, countdown - (CODE_VALID_SECONDS - CODE_RESEND_WAIT_SECONDS));
+
   const startCountdown = () => {
-    setCountdown(OTP_TTL_SECONDS);
+    setCountdown(CODE_VALID_SECONDS);
     setOtpExpired(false);
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
@@ -487,10 +489,10 @@ function LoginContent() {
                         setLoading(false);
                       }
                     }}
-                    disabled={loading || (countdown > 0 && !otpExpired)}
+                    disabled={loading || resendWait > 0}
                     className="text-slate-900 underline underline-offset-2 transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-30 dark:text-[#f1f1f1]"
                   >
-                    Resend code
+                    {resendWait > 0 ? `Resend code in ${resendWait}s` : "Resend code"}
                   </button>
                 </div>
               </div>

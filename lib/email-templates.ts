@@ -4,6 +4,8 @@
  * Adding huge static or dynamic headings (e.g. <h1>Re: Subject</h1> or <h1>Welcome</h1>) is COMPLETELY BANNED.
  * This applies to all human developers and AI agents.
  */
+import { CODE_VALID_MINUTES } from "@/lib/code-expiry";
+
 const FRONTEND_URL = process.env.NEXTAUTH_URL ?? "https://classgrid.in";
 const PLATFORM_LOGO_URL = "https://bumxgscngzjadyozdpce.supabase.co/storage/v1/object/public/LOGO%20AND%20%20SVG/android-chrome-512x512.png";
 
@@ -272,7 +274,7 @@ export function getForumVerificationEmailHtml(name: string, verifyLink: string):
 // ------------- OTP EMAIL -------------
 export function getForumOtpEmailHtml(otp: string): string {
   const content = `
-    <p>Use the following code to sign in to your Classgrid Community account. This code expires in <strong>60 seconds</strong>.</p>
+    <p>Use the following code to sign in to your Classgrid Community account. This code expires in <strong>${CODE_VALID_MINUTES} minutes</strong>.</p>
     
     <div class="box">
       <div class="meta">Login Code</div>
@@ -293,7 +295,7 @@ export function getDemoOtpEmailHtml(name: string, otp: string): string {
   const firstName = name.trim().split(/\s+/)[0] || 'there';
   const content = `
     <p>Hi ${firstName},</p>
-    <p>Use the following verification code to unlock the calendar and schedule your Classgrid AI demo. This code expires in <strong>60 seconds</strong>.</p>
+    <p>Use the following verification code to unlock the calendar and schedule your Classgrid AI demo. This code expires in <strong>${CODE_VALID_MINUTES} minutes</strong>.</p>
     
     <div class="box">
       <div class="meta">Verification Code</div>

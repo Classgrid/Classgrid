@@ -13,6 +13,7 @@ import FilePreviewModal from "@/app/support/components/FilePreviewModal";
 import { Spinner } from "@/components/ui/spinner";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import locationData from "@/data/india-locations.json";
+import { CODE_VALID_SECONDS } from "@/lib/code-expiry";
 
 const DEGREES = [
   "B.Tech", "B.E.", "B.Sc", "B.Com", "B.A.", "BBA", "BCA", "B.Arch", "B.Pharm",
@@ -243,8 +244,8 @@ export function CareersForm({
             return prev - 1;
           });
         }, 1000);
-        // Start 5min expiry countdown
-        setOtpExpiry(120);
+        // Start the 10-minute expiry countdown (the same time the server gives the code)
+        setOtpExpiry(CODE_VALID_SECONDS);
         if (otpExpiryRef.current) clearInterval(otpExpiryRef.current);
         otpExpiryRef.current = setInterval(() => {
           setOtpExpiry((prev) => {
