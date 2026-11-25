@@ -220,8 +220,11 @@ export async function generateMetadata({
   return buildPageMetadata(getMetaBySlug(normalizedSlug));
 }
 
+// /cookies and /cookie have their own routes (app/cookies, app/cookie), so they are not listed here: two routes
+// for one address broke /cookies on Vercel ("Cannot find module .../app/cookies/page.js"), and the page could no
+// longer be rebuilt with new content (the same conflict c4417e9 fixed for /ip-protection).
 export async function generateStaticParams() {
-  return [{ slug: "privacy" }, { slug: "terms" }, { slug: "security" }, { slug: "cookies" }, { slug: "cookie" }, { slug: "disclaimer" }];
+  return [{ slug: "privacy" }, { slug: "terms" }, { slug: "security" }, { slug: "disclaimer" }];
 }
 
 import { notFound } from "next/navigation";
