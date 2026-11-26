@@ -364,7 +364,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                             <h3 className="truncate text-base font-medium text-foreground">{rev.name}</h3>
                             {rev.isVerified && <span title="Verified Classgrid User" className="cursor-default"><BadgeCheck className="h-5 w-5 shrink-0 fill-[#1D9BF0] text-background" /></span>}
                           </div>
-                          <p title="User's Organization" className="truncate text-[13px] text-muted-foreground">{rev.institution}</p>
+                          <p title="Occupation" className="truncate text-[13px] text-muted-foreground">{rev.institution}</p>
                           <p className="mt-0.5 text-[12px] text-muted-foreground">{new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(rev._createdAt))}</p>
                         </div>
                       </div>

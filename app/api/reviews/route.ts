@@ -23,10 +23,10 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { name, email, reviewText, rating, suggestion, moduleName } = body;
-    const institution = (typeof body.institution === 'string' && body.institution.trim()) || 'Independent user';
+    const institution = typeof body.institution === 'string' ? body.institution.trim() : '';
 
-    // Basic Validation
-    if (!name || !reviewText || !rating) {
+    // Basic Validation (occupation is required, same as the form)
+    if (!name || !institution || !reviewText || !rating) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
         <p>A new review has just been submitted on classgrid.in/reviews.</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Organization:</strong> ${institution}</p>
+        <p><strong>Occupation:</strong> ${institution}</p>
         <p><strong>Feature:</strong> ${moduleName || 'Overall'}</p>
         <p><strong>Rating:</strong> ${rating} Stars</p>
         <br/>

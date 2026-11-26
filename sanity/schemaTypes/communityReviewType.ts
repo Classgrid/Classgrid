@@ -15,7 +15,7 @@ export const communityReviewType = defineType({
     }),
     defineField({
       name: 'institution',
-      title: 'Company / Organization',
+      title: 'Occupation',
       type: 'string',
     }),
     defineField({
@@ -214,7 +214,7 @@ export const communityReviewType = defineType({
       const pin = isFeatured ? '📌 ' : '';
       return {
         title: `${pin}${title} (${rating}⭐) ${categoryLabel}`,
-        subtitle: `${statusEmoji} ${subtitle || 'No organization'}`,
+        subtitle: `${statusEmoji} ${subtitle || 'No occupation'}`,
       };
     },
   },
