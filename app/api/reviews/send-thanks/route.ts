@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import nodemailer from 'nodemailer';
 import { createClient } from '@sanity/client';
 import { baseTemplate } from '@/lib/email-templates';
@@ -121,6 +122,9 @@ export async function POST(req: Request) {
       subject: review.customEmailSubject || `Thank you for sharing your Classgrid experience ❤️`,
       html,
     });
+
+    // The review is published by now: the public page shows it at once
+    if (review.status === 'published') revalidatePath('/reviews');
 
     return NextResponse.json({ message: `Thank you email sent to ${review.email}` }, { status: 200, headers: corsHeaders });
   } catch (error: any) {

@@ -16,6 +16,16 @@ export function createPublishWithEmailAction(originalPublishAction: any) {
         // 1. Call the original Sanity publish action
         originalResult.onHandle();
 
+        // 1b. A review's public page is rebuilt from Sanity, a few seconds after the publish has landed, with or
+        //     without the thank-you email (otherwise the page keeps its deploy-time copy)
+        if (draft && draft._type === 'communityReview') {
+          const site =
+            typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://classgrid.in';
+          setTimeout(() => {
+            fetch(`${site}/api/reviews/refresh`, { method: 'POST' }).catch(() => {});
+          }, 4000);
+        }
+
         // 2. If it's a review and autoSendEmail is true, automatically trigger the email API
         if (draft && draft._type === 'communityReview' && draft.autoSendEmail) {
           const siteUrl =
