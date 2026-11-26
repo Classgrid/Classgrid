@@ -210,19 +210,25 @@ function PriceBlock({ plan, billing, active, current, student }: { plan: ViewPla
 // Where the card stands against the visitor's plan (plans are listed smallest first)
 type Relation = "guest" | "current" | "below" | "above";
 
-function PlanColumn({ plan, billing, active, relation, index, onFocus, student }: { plan: ViewPlan; billing: Billing; active: boolean; relation: Relation; index: number; onFocus: () => void; student: boolean }) {
+function PlanColumn({ plan, billing, active, relation, index, onFocus, student, play }: { plan: ViewPlan; billing: Billing; active: boolean; relation: Relation; index: number; onFocus: () => void; student: boolean; play: PlayPlan | null }) {
   const current = relation === "current";
   // Student switch on: a plan with a student price buys at it (the chat confirms the student email first)
   const href = student && plan.studentHref ? plan.studentHref[billing] : plan.cta.href[billing];
   // Signed in: the plan you're on says Subscribed and buying it again adds time; a bigger plan says Upgrade; a
   // smaller one is already included. Not signed in: the plain words.
   const isFree = !plan.cta.buy && plan.cta.label !== "Contact us";
-  const label = current
+  // A plan bought on the phone runs as a Google Play subscription that renews by itself, so the website sells
+  // nothing on top of it (Nikhil, 2026-11-26: a plan is bought in one place only, phone or website): the plan
+  // you're on says where it is managed, with Google Play's own page, and a bigger plan is changed there too.
+  const onPlay = !!play && (current || relation === "below") && plan.cta.buy;
+  const label = onPlay
+    ? current ? "Managed on Google Play" : "Change on Google Play"
+    : current
     ? plan.cta.buy ? (billing === "yearly" ? "Add 1 year" : "Add 1 month") : "Your plan"
     : relation === "below" && plan.cta.buy ? "Upgrade"
     : relation === "above" && (plan.cta.buy || isFree) ? "Included"
     : plan.cta.label;
-  const inert = (current && !plan.cta.buy) || (relation === "above" && (plan.cta.buy || isFree));
+  const inert = (onPlay && !(current && play?.manageUrl)) || (current && !plan.cta.buy) || (relation === "above" && (plan.cta.buy || isFree));
   return (
     <motion.div
       className="flex flex-col p-4 sm:p-5"
@@ -240,11 +246,15 @@ function PlanColumn({ plan, billing, active, relation, index, onFocus, student }
           {label}
         </span>
       ) : (
-        <ButtonLink href={href} className="mt-4 w-full">
+        <ButtonLink href={onPlay && play?.manageUrl ? play.manageUrl : href} className="mt-4 w-full">
           {label}
         </ButtonLink>
       )}
-      {plan.tagline ? <p className="mt-4 text-[14px] leading-6 text-muted-foreground">{plan.tagline}</p> : null}
+      {onPlay && current ? (
+        <p className="mt-4 text-[14px] leading-6 text-muted-foreground">Your plan was bought on your phone and renews through Google Play. Change or cancel it there.</p>
+      ) : plan.tagline ? (
+        <p className="mt-4 text-[14px] leading-6 text-muted-foreground">{plan.tagline}</p>
+      ) : null}
 
       <div className="mt-6">
         {plan.includesLabel ? (
@@ -486,21 +496,32 @@ function Faqs({ faqs }: { faqs: Faq[] }) {
   );
 }
 
-// The signed-in visitor's plan (the login cookie is shared across classgrid.in), or null when not signed in
+// A plan that Google Play runs (bought in the phone app): where it is managed
+type PlayPlan = { manageUrl: string | null };
+
+// The signed-in visitor's plan (the login cookie is shared across classgrid.in): its key, and when it is a Google
+// Play subscription (bought on the phone), that too, with Google's manage page. Null key when not signed in.
+// The platform's /api/ai/plan says `play_live` (true while Google runs the subscription: active, in grace, on
+// hold or paused) and `manage_url`; `billing === "play"` is the older signal for the same plan.
 const PLATFORM_API = process.env.NEXT_PUBLIC_PLATFORM_API_URL || "https://api.classgrid.in";
 function useCurrentPlan(reloadToken = 0) {
   const [key, setKey] = useState<string | null>(null);
+  const [play, setPlay] = useState<PlayPlan | null>(null);
   useEffect(() => {
     const ctrl = new AbortController();
     fetch(`${PLATFORM_API}/api/ai/plan`, { credentials: "include", signal: ctrl.signal, cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
-      .then((plan: { enabled?: boolean; key?: string } | null) => {
-        if (plan?.enabled && typeof plan.key === "string") setKey(plan.key.toLowerCase());
+      .then((plan: { enabled?: boolean; key?: string; billing?: string; play_live?: boolean; manage_url?: string } | null) => {
+        if (plan?.enabled && typeof plan.key === "string") {
+          setKey(plan.key.toLowerCase());
+          const live = plan.play_live === true || (plan.play_live === undefined && plan.billing === "play");
+          setPlay(live ? { manageUrl: typeof plan.manage_url === "string" && /^https:\/\//.test(plan.manage_url) ? plan.manage_url : null } : null);
+        }
       })
       .catch(() => {});
     return () => ctrl.abort();
   }, [reloadToken]);
-  return key;
+  return { key, play };
 }
 
 // Back from the payment page (?subscribed=pro&term=month&ai_payment=success): a notice with a tick, the receipt line,
@@ -585,7 +606,7 @@ export function PricingPage({ view }: { view: PricingView }) {
   // page, the account is read again until the new plan shows on it (SubscribedNotice).
   const [reloadToken, setReloadToken] = useState(0);
   const onRecheck = useMemo(() => () => setReloadToken((n) => n + 1), []);
-  const currentKey = useCurrentPlan(reloadToken);
+  const { key: currentKey, play } = useCurrentPlan(reloadToken);
   const currentRank = currentKey ? plans.findIndex((p) => p.key === currentKey) : -1;
   const relationOf = (plan: ViewPlan, i: number): Relation =>
     currentRank < 0 ? "guest" : i === currentRank ? "current" : i > currentRank ? "below" : "above";
@@ -623,7 +644,7 @@ export function PricingPage({ view }: { view: PricingView }) {
         )}
       >
         {plans.map((plan, i) => (
-          <PlanColumn key={plan.key} plan={plan} billing={billing} index={i} active={focusKey === plan.key} relation={relationOf(plan, i)} onFocus={() => setFocusKey(plan.key)} student={student} />
+          <PlanColumn key={plan.key} plan={plan} billing={billing} index={i} active={focusKey === plan.key} relation={relationOf(plan, i)} onFocus={() => setFocusKey(plan.key)} student={student} play={play} />
         ))}
       </section>
       <p className="border-b border-border px-5 py-3 text-center text-[13px] text-muted-foreground">
