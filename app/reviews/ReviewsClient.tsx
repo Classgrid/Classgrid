@@ -375,7 +375,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                     </div>
 
                     <div className="space-y-5">
-                      <p className="text-[15px] leading-relaxed text-muted-foreground">&ldquo;{rev.reviewText}&rdquo;</p>
+                      <p className="text-[15px] leading-relaxed text-muted-foreground [overflow-wrap:anywhere]">&ldquo;{rev.reviewText}&rdquo;</p>
 
                       {(!!rev.positives?.length || (rev.moduleName && FEATURE_NAMES.includes(rev.moduleName))) && (
                         <div className="flex flex-wrap gap-2">
@@ -391,7 +391,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                       {rev.suggestion && (
                         <div className="rounded-md border border-border bg-muted/40 p-4">
                           <span className="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">Suggestion</span>
-                          <p className="text-[13px] leading-relaxed text-muted-foreground">{rev.suggestion}</p>
+                          <p className="text-[13px] leading-relaxed text-muted-foreground [overflow-wrap:anywhere]">{rev.suggestion}</p>
                         </div>
                       )}
 
@@ -401,9 +401,9 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                             <div className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-background">
                               <img src="/logo.png" alt="CG" className="h-5 w-5 object-contain" />
                             </div>
-                            <div className="flex-1">
+                            <div className="min-w-0 flex-1">
                               <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-[0.15em] text-foreground">Team response</span>
-                              <p className="rounded-md border border-border bg-muted/40 p-3 text-sm leading-relaxed text-muted-foreground">
+                              <p className="rounded-md border border-border bg-muted/40 p-3 text-sm leading-relaxed text-muted-foreground [overflow-wrap:anywhere]">
                                 {rev.adminReply}
                               </p>
                             </div>
