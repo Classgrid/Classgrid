@@ -222,13 +222,13 @@ function PlanColumn({ plan, billing, active, relation, index, onFocus, student, 
   // you're on says where it is managed, with Google Play's own page, and a bigger plan is changed there too.
   const onPlay = !!play && (current || relation === "below") && plan.cta.buy;
   const label = onPlay
-    ? current ? "Managed on Google Play" : "Change on Google Play"
+    ? current ? "Managed on your phone" : "Change on your phone"
     : current
     ? plan.cta.buy ? (billing === "yearly" ? "Add 1 year" : "Add 1 month") : "Your plan"
     : relation === "below" && plan.cta.buy ? "Upgrade"
     : relation === "above" && (plan.cta.buy || isFree) ? "Included"
     : plan.cta.label;
-  const inert = (onPlay && !(current && play?.manageUrl)) || (current && !plan.cta.buy) || (relation === "above" && (plan.cta.buy || isFree));
+  const inert = onPlay || (current && !plan.cta.buy) || (relation === "above" && (plan.cta.buy || isFree));
   return (
     <motion.div
       className="flex flex-col p-4 sm:p-5"
@@ -246,12 +246,20 @@ function PlanColumn({ plan, billing, active, relation, index, onFocus, student, 
           {label}
         </span>
       ) : (
-        <ButtonLink href={onPlay && play?.manageUrl ? play.manageUrl : href} className="mt-4 w-full">
+        <ButtonLink href={href} className="mt-4 w-full">
           {label}
         </ButtonLink>
       )}
       {onPlay && current ? (
-        <p className="mt-4 text-[14px] leading-6 text-muted-foreground">Your plan was bought on your phone and renews through Google Play. Change or cancel it there.</p>
+        <p className="mt-4 text-[14px] leading-6 text-muted-foreground">
+          Your plan was bought in the Classgrid phone app and renews through Google Play. Change or cancel it in the app, under Settings &gt; Billing
+          {play?.manageUrl ? (
+            <>
+              , or on <a href={play.manageUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4">Google Play</a>
+            </>
+          ) : null}
+          .
+        </p>
       ) : plan.tagline ? (
         <p className="mt-4 text-[14px] leading-6 text-muted-foreground">{plan.tagline}</p>
       ) : null}
