@@ -22,10 +22,11 @@ const getTransporter = () => nodemailer.createTransport({
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, institution, reviewText, rating, suggestion, moduleName } = body;
+    const { name, email, reviewText, rating, suggestion, moduleName } = body;
+    const institution = (typeof body.institution === 'string' && body.institution.trim()) || 'Independent user';
 
     // Basic Validation
-    if (!name || !institution || !reviewText || !rating) {
+    if (!name || !reviewText || !rating) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }

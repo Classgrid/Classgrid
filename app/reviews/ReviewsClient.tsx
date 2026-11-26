@@ -197,9 +197,9 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
                   />
                 </div>
                 <div>
-                  <RequiredLabel htmlFor="review-company">Company / Organization</RequiredLabel>
+                  <RequiredLabel htmlFor="review-company">Occupation</RequiredLabel>
                   <input
-                    id="review-company" type="text" required placeholder="Acme Inc."
+                    id="review-company" type="text" required placeholder="Student, Engineer, Founder"
                     value={formData.institution} onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
                     className={inputClass}
                   />
@@ -209,7 +209,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
               <div>
                 <RequiredLabel htmlFor="review-email">Email</RequiredLabel>
                 <input
-                  id="review-email" type="email" required placeholder="aarav@company.com"
+                  id="review-email" type="email" required placeholder="aarav@gmail.com"
                   value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className={inputClass}
                 />
@@ -282,7 +282,7 @@ export default function ReviewsClient({ initialReviews }: { initialReviews: Revi
               </div>
 
               <p className="text-sm leading-relaxed text-muted-foreground">
-                By sending your review, you agree that we may publish it on this page with your name and company.
+                By sending your review, you agree that we may publish it on this page with your name and occupation.
               </p>
 
               {formStatus === "error" && errorMessage ? <p className="text-sm text-red-500">{errorMessage}</p> : null}
